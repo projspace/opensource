@@ -108,3 +108,11 @@ DirectoryIndex index.php
 </IfModule>
 
 # $Id: .htaccess,v 1.90.2.3 2008/12/10 20:04:08 goba Exp $
+
+# htaccess password protection added for dev.
+AuthName "Restricted Area" 
+AuthType Basic 
+AuthUserFile /var/www/html/opensource/docroot/.htpasswd 
+AuthGroupFile /dev/null 
+require valid-user
+
