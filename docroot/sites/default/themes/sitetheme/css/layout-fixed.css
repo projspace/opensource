@@ -183,6 +183,7 @@ body {
  */
 #navbar-top {
   width: 960px;
+  position: relative;
 }
 
 #block-menu-menu-about-menu {
@@ -190,7 +191,8 @@ body {
 }
 
 #block-menu-menu-user-links {
-  float: right;
+  position: absolute;
+  right: 0;
 }
 
 /*
