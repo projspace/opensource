@@ -31,6 +31,10 @@
 .block-inner /* Additional wrapper for block */ {
 }
 
+#sidebar-second .block-inner {
+  background: #ffffff;
+}
+
 .block h2.title /* Block title */ {
 }
 

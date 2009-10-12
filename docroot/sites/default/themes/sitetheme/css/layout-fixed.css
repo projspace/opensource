@@ -122,7 +122,7 @@ body {
 }
 
 .sidebar-first #content {
-  width: 760px;
+  width: 570px;
   margin-left: 200px; /* LTR */ /* The width of #sidebar-first. */
   margin-right: -960px; /* LTR */ /* Negative value of #content's width + left margin. */
 }
@@ -140,8 +140,10 @@ body {
 }
 
 #content-inner {
-  margin: 0;
+  margin: 0 14px;
   padding: 0;
+  width: 540px;
+  border: 1px solid #cdcbca;
 }
 
 /*
@@ -216,14 +218,14 @@ body {
  */
 #sidebar-second {
   float: left; /* LTR */
-  width: 200px;
-  margin-left: 760px; /* LTR */ /* Width of content + sidebar-first. */
+  width: 390px;
+  margin-left: 570px; /* LTR */ /* Width of content + sidebar-first. */
   margin-right: -960px; /* LTR */ /* Negative value of #sidebar-second's width + left margin. */
   padding: 0; /* DO NOT CHANGE. Add padding or margin to #sidebar-second-inner. */
 }
 
 #sidebar-second-inner {
-  margin: 0 0 0 20px; /* LTR */
+  margin: 0 15px 0 15px; /* LTR */
   padding: 0;
 }
 
