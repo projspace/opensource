@@ -106,6 +106,12 @@
 
     <div id="header"><div id="header-inner" class="clearfix">
 
+      <?php if ($navbar_top): ?>
+        <div id="navbar-top" class="region region-navbar_top">
+          <?php print $navbar_top; ?>
+        </div> <!-- /#navbar-top -->
+      <?php endif; ?>
+
       <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
       <?php endif; ?>

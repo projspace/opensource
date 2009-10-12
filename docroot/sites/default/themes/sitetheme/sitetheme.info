@@ -62,6 +62,7 @@ conditional-stylesheets[if lte IE 6][all][] = css/ie6.css
   ; page.tpl.php template.
 regions[right]          = Right sidebar
 regions[navbar]         = navigation bar
+regions[navbar_top]     = navigation top
 regions[content_top]    = content top
 regions[content_bottom] = content bottom
 regions[header]         = header
