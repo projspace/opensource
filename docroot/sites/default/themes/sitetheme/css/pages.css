@@ -148,6 +148,7 @@ div.tabs /* See also the tabs.css file. */ {
 #content-area /* Wrapper for the actual page content */ {
 }
 
+#navbar-top ul.menu,
 ul.links /* List of links */ {
   margin: 1em 0;
   padding: 0;
@@ -158,6 +159,7 @@ ul.links.inline {
   display: inline;
 }
 
+#navbar-top ul.menu li,
 ul.links li {
   display: inline;
   list-style-type: none;
