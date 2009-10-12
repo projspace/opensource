@@ -178,6 +178,21 @@ body {
   padding: 0 10px 0 0; /* LTR */
 }
 
+/**
+ * Top Navbar
+ */
+#navbar-top {
+  width: 960px;
+}
+
+#block-menu-menu-about-menu {
+  float: left;
+}
+
+#block-menu-menu-user-links {
+  float: right;
+}
+
 /*
  * First sidebar
  */

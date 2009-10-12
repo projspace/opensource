@@ -107,7 +107,7 @@
     <div id="header"><div id="header-inner" class="clearfix">
 
       <?php if ($navbar_top): ?>
-        <div id="navbar-top" class="region region-navbar_top">
+        <div id="navbar-top" class="region region-navbar_top clear-block">
           <?php print $navbar_top; ?>
         </div> <!-- /#navbar-top -->
       <?php endif; ?>
