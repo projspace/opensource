@@ -115,9 +115,9 @@ body {
 #content,
 .no-sidebars #content {
   float: left; /* LTR */
-  width: 960px;
+  width: 575px;
   margin-left: 0; /* LTR */
-  margin-right: -960px; /* LTR */ /* Negative value of #content's width + left margin. */
+  margin-right: -575px; /* LTR */ /* Negative value of #content's width + left margin. */
   padding: 0; /* DO NOT CHANGE. Add padding or margin to #content-inner. */
 }
 
@@ -140,10 +140,12 @@ body {
 }
 
 #content-inner {
-  margin: 0 14px;
+  margin: 0 15px 0 14px;
   padding: 10px;
   width: 520px;
   border: 1px solid #cdcbca;
+  border-right: 5px solid #cdcbca; /* @todo replace with drop shadow */
+  border-bottom: 5px solid #cdcbca; /* @todo replace with drop shadow */
 }
 
 /*
