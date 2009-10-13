@@ -306,6 +306,7 @@ function zen_process(&$vars, $hook) {
       $vars['classes'] = !empty($vars['classes_array']) ? implode(' ', $vars['classes_array']) : '';
       break;
   }
+  dsm(array($hook => $vars));
 }
 
 /**
