@@ -192,11 +192,13 @@ body {
 
 #block-menu-menu-about-menu {
   float: left;
+  margin-bottom: 0;
 }
 
 #block-menu-menu-user-links {
   position: absolute;
   right: 0;
+  margin-bottom: 0;
 }
 
 /*
