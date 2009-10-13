@@ -34,6 +34,10 @@
 #sidebar-second .block-inner {
   background: #ffffff;
   padding: 15px;
+  border: 1px solid #cdcbca;
+  border-right: 5px solid #cdcbca; /* @todo replace with drop shadow */
+  border-bottom: 5px solid #cdcbca; /* @todo replace with drop shadow */
+  
 }
 
 .block h2.title /* Block title */ {
