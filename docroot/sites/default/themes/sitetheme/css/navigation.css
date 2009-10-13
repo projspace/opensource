@@ -37,6 +37,9 @@ li a.active {
 #main-menu li a {
   width: 168px;
   margin-left: 2px;
+  display: block;
+  text-align: center;
+  background: #1d2754;
 }
 
 #main-menu li.menu-3796 a {
