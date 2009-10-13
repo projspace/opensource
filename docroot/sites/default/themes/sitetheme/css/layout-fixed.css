@@ -227,7 +227,7 @@ body {
 }
 
 #sidebar-second-inner {
-  margin: 0 15px 0 14px; /* LTR */
+  margin: 15px 14px 15px 15px; /* LTR */
   padding: 0;
 }
 
