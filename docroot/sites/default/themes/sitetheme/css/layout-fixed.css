@@ -141,7 +141,7 @@ body {
 
 #content-inner {
   margin: 0 14px;
-  padding: 0;
+  padding: 10px;
   width: 540px;
   border: 1px solid #cdcbca;
 }
@@ -225,8 +225,9 @@ body {
 }
 
 #sidebar-second-inner {
-  margin: 0 15px 0 15px; /* LTR */
+  margin: 0 14px 0 14px; /* LTR */
   padding: 0;
+  border: 1px solid #cdcbca;
 }
 
 /*
