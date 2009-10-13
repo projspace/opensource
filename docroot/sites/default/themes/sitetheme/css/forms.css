@@ -64,6 +64,18 @@
   display: none;
 }
 
+#search-box .form-submit {
+  display: none;
+}
+
+#search-box .form-text {
+  width: 280px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+  margin: 1px solid #cdcbca;
+}
+
 
 /*
  * Search (search-block-form.tpl.php)
