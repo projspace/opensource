@@ -234,6 +234,8 @@ h3 a:visited,
 h4 a:visited,
 h5 a:visited,
 h6 a:visited {
+  text-decoration: none;
+  color: #000;
 }
 
 h1 a:hover,
