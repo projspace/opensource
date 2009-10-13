@@ -31,7 +31,7 @@
 .block-inner /* Additional wrapper for block */ {
 }
 
-#sidebar-second .block-inner {
+#sidebar-second .block {
   background: #ffffff;
   padding: 15px;
   border: 1px solid #cdcbca;
@@ -41,6 +41,12 @@
 }
 
 .block h2.title /* Block title */ {
+}
+
+#sidebar-second .block h2.title /* Block title */ {
+  font-size: 10px;
+  color: #999999;
+  text-transform: uppercase;
 }
 
 .block .content /* Block's content wrapper */ {
