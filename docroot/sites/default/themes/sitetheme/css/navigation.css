@@ -26,6 +26,22 @@ li a.active {
  * Primary and Secondary menu links
  */
 #main-menu {
+  width: 100%;
+  background: #fff;
+}
+
+#main-menu li {
+  margin-right: 1px;
+}
+
+#main-menu li a {
+  width: 168px;
+  margin-left: 2px;
+}
+
+#main-menu li.menu-3796 a {
+  width: 110px;
+  margin-left: 0;
 }
 
 #secondary-menu {
