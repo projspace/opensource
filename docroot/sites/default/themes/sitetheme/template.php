@@ -66,7 +66,7 @@
 /**
  * Implementation of HOOK_theme().
  */
-function STARTERKIT_theme(&$existing, $type, $theme, $path) {
+function sitetheme_theme(&$existing, $type, $theme, $path) {
   $hooks = zen_theme($existing, $type, $theme, $path);
   // Add your theme hooks like this:
   /*
