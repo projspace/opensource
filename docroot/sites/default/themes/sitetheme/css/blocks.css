@@ -37,7 +37,7 @@
   border: 1px solid #cdcbca;
   border-right: 5px solid #cdcbca; /* @todo replace with drop shadow */
   border-bottom: 5px solid #cdcbca; /* @todo replace with drop shadow */
-  
+  margin-bottom: 10px;
 }
 
 .block h2.title /* Block title */ {
