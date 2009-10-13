@@ -8,27 +8,41 @@
  */
 
 
-.node /* Node wrapper */ {
+.node,
+#comments /* Node wrapper */ {
   line-height: 1.4em;
   font-family: font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
+  color: #333;
 }
 
 /* Node links have different formatting from the rest of the page. */
-.node a:link {
+.node a:link,
+#comments a:links {
   color: #oo66cc;
 }
 
-.node a:visited {
+.node a:visited,
+#comments a:visited {
   color: #6699cc;
 }
 
 .node a:hover,
-.node a:focus {
+.node a:focus,
+#comments a:hover,
+#comments a:focus {
   color: #3399ff;
 }
 
-.node a:active {
+.node a:active,
+#comments a:active {
   color: #oo66cc;
+}
+
+.node caption,
+#comments caption {
+  font-size: 10px;
+  color: #999;
+  font-style: italic;
 }
 
 .node-inner /* Additional wrapper for node */ {
