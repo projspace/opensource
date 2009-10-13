@@ -54,12 +54,14 @@ div#site-name /* The name of the website */ {
   width: 500px;
 }
 
+h1#site-name strong,
 div#site-name strong {
   display: block;
   width: 500px;
   height: 100px;
 }
 
+h1#site-name a,
 div#site-name a {
   display: block;
   width: 500px;
