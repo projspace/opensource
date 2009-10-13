@@ -9,6 +9,26 @@
 
 
 .node /* Node wrapper */ {
+  line-height: 1.4em;
+  font-family: font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
+}
+
+/* Node links have different formatting from the rest of the page. */
+.node a:link {
+  color: #oo66cc;
+}
+
+.node a:visited {
+  color: #6699cc;
+}
+
+.node a:hover,
+.node a:focus {
+  color: #3399ff;
+}
+
+.node a:active {
+  color: #oo66cc;
 }
 
 .node-inner /* Additional wrapper for node */ {
