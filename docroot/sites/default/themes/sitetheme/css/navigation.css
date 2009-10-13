@@ -43,6 +43,7 @@ li a.active {
   display: block;
   text-align: center;
   background: #1d2754;
+  border-bottom: 3px solid #fff;
 }
 
 #main-menu li.menu-3796 a {
