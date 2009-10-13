@@ -45,6 +45,8 @@ li a.active {
   text-align: center;
   background: #1d2754;
   border-bottom: 3px solid #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 #main-menu li a:hover,
