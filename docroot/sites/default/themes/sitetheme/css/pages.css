@@ -28,6 +28,8 @@ body {
  * Header
  */
 #header {
+  height: 150px;
+  background: url(../images/header.png) bottom center;
 }
 
 #header-inner {
