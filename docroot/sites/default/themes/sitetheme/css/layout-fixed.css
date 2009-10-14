@@ -168,6 +168,16 @@ body {
   margin-top: 56px; /* Set this to the same value as the navbar height above. */
 }
 
+.with-channel-header #navbar {
+  height: 150px;
+}
+
+.with-channel-header #content,
+.with-channel-header #sidebar-first,
+.with-channel-header #sidebar-second {
+  margin-top: 150px;
+}
+
 #navbar-inner {
 }
 
