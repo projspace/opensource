@@ -45,7 +45,7 @@
   text-transform: uppercase;
 }
 
-.block .block-inner {
+#sidebar-second .block .block-inner {
   background: #ffffff;
   padding: 15px;
   border: 1px solid #cdcbca;
