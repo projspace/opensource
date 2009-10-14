@@ -169,13 +169,13 @@ body {
 }
 
 .with-channel-header #navbar {
-  height: 150px;
+  height: 156px;
 }
 
 .with-channel-header #content,
 .with-channel-header #sidebar-first,
 .with-channel-header #sidebar-second {
-  margin-top: 150px;
+  margin-top: 156px;
 }
 
 #navbar-inner {
