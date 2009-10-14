@@ -46,6 +46,8 @@
   color: #999999;
   text-transform: uppercase;
   background: url(../images/osdc_dot4x4.png) bottom repeat-x;
+  display: inline;
+  padding-bottom: 2px;
 }
 
 #sidebar-second .block .block-inner {
