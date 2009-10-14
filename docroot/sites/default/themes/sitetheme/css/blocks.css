@@ -32,12 +32,8 @@
 }
 
 #sidebar-second .block {
-  background: #ffffff;
-  padding: 15px;
-  border: 1px solid #cdcbca;
-  border-right: 5px solid #cdcbca; /* @todo replace with drop shadow */
-  border-bottom: 5px solid #cdcbca; /* @todo replace with drop shadow */
-  margin-bottom: 10px;
+  background: url(../images/osdc_dot4x4.png) left repeat-y;
+  padding-left: 15px;
 }
 
 .block h2.title /* Block title */ {
@@ -47,6 +43,15 @@
   font-size: 10px;
   color: #999999;
   text-transform: uppercase;
+}
+
+.block .block-inner {
+  background: #ffffff;
+  padding: 15px;
+  border: 1px solid #cdcbca;
+  border-right: 5px solid #cdcbca; /* @todo replace with drop shadow */
+  border-bottom: 5px solid #cdcbca; /* @todo replace with drop shadow */
+  margin-bottom: 10px;
 }
 
 .block .content /* Block's content wrapper */ {

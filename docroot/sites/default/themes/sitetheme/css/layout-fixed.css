@@ -239,7 +239,7 @@ body {
 }
 
 #sidebar-second-inner {
-  margin: 15px 14px 15px 15px; /* LTR */
+  margin: 15px 14px 15px 0; /* LTR */
   padding: 0;
 }
 
