@@ -35,6 +35,7 @@
   background: url(../images/osdc_dot4x4.png) left repeat-y;
   padding-left: 15px;
   padding-bottom: 15px;
+  margin-bottom: 0;
 }
 
 .block h2.title /* Block title */ {
