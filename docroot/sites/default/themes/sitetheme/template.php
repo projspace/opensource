@@ -99,7 +99,7 @@ function STARTERKIT_preprocess(&$vars, $hook) {
  *   The name of the template being rendered ("page" in this case.)
  */
 function sitetheme_preprocess_page(&$vars, $hook) {
-  if (!empth($vars['navbar'])) {
+  if (!empty($vars['navbar'])) {
     $vars['body_classes_array'][] = 'with-channel-header';
   }
 }
