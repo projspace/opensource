@@ -122,3 +122,8 @@
   margin-top: 13px;
   margin-left: 13px;
 }
+
+#block-views-channel_description-block_1 p {
+  margin: 0;
+  padding: 0;
+}

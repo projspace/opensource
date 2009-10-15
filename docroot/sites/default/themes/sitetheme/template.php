@@ -104,6 +104,16 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   }
 }
 
+function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$vars) { 
+  $vars['about_url'] = '';
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    //$url = drupal_get_path_alias('node/'. arg(1));
+    //$url .= '/about';
+    $node = node_load(arg(1));
+    $vars['about_url'] = '<a href="'. $node->path .'/about" title="About '. $node->title .'">About &raquo</a>';
+  }  
+}
+
 /**
  * Override or insert variables into the node templates.
  *

@@ -37,3 +37,4 @@
       <<?php print $field->element_type; ?> class="field-content"><?php print $field->content; ?></<?php print $field->element_type; ?>>
   </<?php print $field->inline_html;?>>
 <?php endforeach; ?>
+<?php print $about_url; ?>
