@@ -147,7 +147,8 @@ body {
   margin: 15px 0 0 0;
   padding: 10px;
   width: 520px;
-  border: 1px solid #cdcbca;
+  border-left: 1px solid #cdcbca;
+  border-top: 1px solid #cdcbca;
 }
 
 /*

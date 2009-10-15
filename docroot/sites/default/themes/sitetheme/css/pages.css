@@ -107,6 +107,7 @@ div#site-name a {
 
 #content-inner-bottom-shadow {
   background: url(../images/content-bottom-shadow.jpg) center bottom no-repeat;
+  padding-bottom: 4px;
 }
 
 #content-inner {
