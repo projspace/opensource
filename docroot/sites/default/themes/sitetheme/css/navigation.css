@@ -74,16 +74,16 @@ li a.active {
 }
 
 /* Main Menu Sprites */
-.menu-3796 li a {
+#main-menu .menu-3796 li a {
   background: url(../images/osdc_nav_sprite.png) 0px 0px no-repeat;
 }
 
-.menu-3796 li a:hover {
+#main-menu .menu-3796 li a:hover {
   
 }
 
-.menu-3796 li a:active,
-.menu-3796 li.active-trail a {
+#main-menu .menu-3796 li a:active,
+#main-menu .menu-3796 li.active-trail a {
 
 }
 
