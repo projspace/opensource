@@ -148,8 +148,6 @@ body {
   padding: 10px;
   width: 520px;
   border: 1px solid #cdcbca;
-  border-right: 5px solid #cdcbca; /* @todo replace with drop shadow */
-  border-bottom: 5px solid #cdcbca; /* @todo replace with drop shadow */
 }
 
 /*

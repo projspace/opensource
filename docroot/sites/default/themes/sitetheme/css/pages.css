@@ -105,7 +105,7 @@ div#site-name a {
   background: #ffffff url(../images/top-right-shadow.jpg) right top no-repeat;
 }
 
-content-inner-bottom-shadow {
+#content-inner-bottom-shadow {
   background: url(../images/content-bottom-shadow.jpg) center bottom no-repeat;
 }
 
