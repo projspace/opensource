@@ -154,7 +154,7 @@
 
     <div id="main"><div id="main-inner" class="clearfix<?php if ($primary_links || $navbar) { print ' with-navbar'; } ?>">
 
-      <div id="content"><div id="content-inner-right-shadow"><div id="content-inner-bottom-shadow"><div id="content-inner">
+      <div id="content"><div id="content-inner-side-shadow"><div id="content-inner-right-shadow"><div id="content-inner-bottom-shadow"><div id="content-inner">
 
         <?php if ($mission): ?>
           <div id="mission"><?php print $mission; ?></div>
@@ -194,7 +194,7 @@
           </div> <!-- /#content-bottom -->
         <?php endif; ?>
 
-      </div></div></div></div> <!-- /#content-inner, /#content -->
+      </div></div></div></div></div> <!-- /#content-inner, /#content -->
 
       <?php if ($primary_links || $navbar): ?>
         <div id="navbar"><div id="navbar-inner" class="clearfix region region-navbar">
