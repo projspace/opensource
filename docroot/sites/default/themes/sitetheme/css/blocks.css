@@ -127,3 +127,7 @@
   margin: 0;
   padding: 0;
 }
+
+.channel-about-link {
+  text-align: right;
+}
