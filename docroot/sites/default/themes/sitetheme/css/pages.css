@@ -102,11 +102,11 @@ div#site-name a {
 }
 
 #content-inner-side-shadow {
-  background: url(../images/middle-right-shadow.jpg) right top repeat-y;
+  background: #ffffff url(../images/middle-right-shadow.jpg) right top repeat-y;
 }
 
 #content-inner-right-shadow {
-  background: #ffffff url(../images/top-right-shadow.jpg) right top no-repeat;
+  background: url(../images/top-right-shadow.jpg) right top no-repeat;
 }
 
 #content-inner-bottom-shadow {
