@@ -142,6 +142,9 @@ function sitetheme_links($links, $attributes = array('class' => 'links')) {
            $class .= ' active';
            $link['attributes']['class'] .= ' active';
          }
+         elseif (strpos($class, 'active-trail') !== FALSE) {
+           $link['attributes']['class'] .= ' active-trail';
+         }
         // Pass in $link as $options, they share the same keys.
         $link = l($link['title'], $link['href'], $link);
       }
