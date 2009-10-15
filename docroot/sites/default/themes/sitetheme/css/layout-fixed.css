@@ -139,8 +139,12 @@ body {
   margin-right: -760px; /* LTR */ /* Negative value of #content's width + left margin. */
 }
 
+#content-inner-right-shadow {
+  margin: 0 15px 0 14px;
+}
+
 #content-inner {
-  margin: 15px 15px 15px 14px;
+  margin: 15px 0 0 0;
   padding: 10px;
   width: 520px;
   border: 1px solid #cdcbca;
