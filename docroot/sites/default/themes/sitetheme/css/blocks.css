@@ -50,15 +50,15 @@
   padding-bottom: 5px;
 }
 
-#sidebar-second .block .block-inner {
+#sidebar-second .block .block-inner-right-shadow {
   background: #ffffff url(../images/top-right-shadow.jpg) right top no-repeat;
 }
 
-#sidebar-second .block .block-inner .content {
+#sidebar-second .block .block-inner-bottom-shadow {
   background: url(../images/block-bottom-shadow.jpg) center bottom no-repeat;
 }
 
-#sidebar-second .block .block-inner .content-inner {
+#sidebar-second .block .block-inner {
   padding: 15px;
   margin-bottom: 3px;
   margin-right: 2px;

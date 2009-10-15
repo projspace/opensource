@@ -35,7 +35,7 @@
  * @see template_preprocess_block()
  */
 ?>
-<div id="block-<?php print $block->module . '-' . $block->delta; ?>" class="<?php print $classes; ?>"><div class="block-inner">
+<div id="block-<?php print $block->module . '-' . $block->delta; ?>" class="<?php print $classes; ?>"><div class="block-inner-right-shadow"><div class="block-inner-bottom-shadow"><div class="block-inner">
 
   <?php if ($block->subject): ?>
     <h2 class="title"><?php print $block->subject; ?></h2>
@@ -49,4 +49,4 @@
 
   <?php print $edit_links; ?>
 
-</div></div> <!-- /block-inner, /block -->
+</div></div></div></div> <!-- /block-inner, /block -->
