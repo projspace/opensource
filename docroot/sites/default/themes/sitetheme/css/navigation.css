@@ -103,56 +103,60 @@ li a.active {
   background-position: -112px -104px;
 }
 
-#main-menu li.menu-xxx a {
-  background: url(../images/osdc_nav_sprite.jpg) 0px 0px no-repeat;
+/* Education */
+#main-menu li.menu-4196 a {
+  background: url(../images/osdc_nav_sprite.jpg) -282px 0px no-repeat;
 }
 
-#main-menu li.menu-3796 a:hover {
-  background-position: 0 -52px;
+#main-menu li.menu-4196 a:hover {
+  background-position: -282px -52px;
 }
 
-#main-menu li.menu-3796 a:active,
-#main-menu li.menu-3796 a.active {
-  background-position: 0 -104px;
+#main-menu li.menu-4196 a:active,
+#main-menu li.menu-4196 a.active {
+  background-position: -282px -104px;
 }
 
-#main-menu li.menu-3796 a {
-  background: url(../images/osdc_nav_sprite.jpg) 0px 0px no-repeat;
+/* Government */
+#main-menu li.menu-4201 a {
+  background: url(../images/osdc_nav_sprite.jpg) -452px 0px no-repeat;
 }
 
-#main-menu li.menu-3796 a:hover {
-  background-position: 0 -52px;
+#main-menu li.menu-4201 a:hover {
+  background-position: -452px -52px;
 }
 
-#main-menu li.menu-3796 a:active,
-#main-menu li.menu-3796 a.active {
-  background-position: 0 -104px;
+#main-menu li.menu-4201 a:active,
+#main-menu li.menu-4201 a.active {
+  background-position: -452px -104px;
 }
 
-#main-menu li.menu-3796 a {
-  background: url(../images/osdc_nav_sprite.jpg) 0px 0px no-repeat;
+/* Law */
+#main-menu li.menu-4206 a {
+  background: url(../images/osdc_nav_sprite.jpg) -622px 0px no-repeat;
 }
 
-#main-menu li.menu-3796 a:hover {
-  background-position: 0 -52px;
+#main-menu li.menu-4206 a:hover {
+  background-position: -622px -52px;
 }
 
-#main-menu li.menu-3796 a:active,
-#main-menu li.menu-3796 a.active {
-  background-position: 0 -104px;
+#main-menu li.menu-4206 a:active,
+#main-menu li.menu-4206 a.active {
+  background-position: -622px -104px;
 }
 
-#main-menu li.menu-3796 a {
-  background: url(../images/osdc_nav_sprite.jpg) 0px 0px no-repeat;
+/* Life */
+#main-menu li.menu-4221 a {
+  background: url(../images/osdc_nav_sprite.jpg) -792px 0px no-repeat;
 }
 
-#main-menu li.menu-3796 a:hover {
-  background-position: 0 -52px;
+#main-menu li.menu-4221 a:hover {
+  background-position: -792px -52px;
 }
 
-#main-menu li.menu-3796 a:active,
-#main-menu li.menu-3796 a.active {
-  background-position: 0 -104px;
+#main-menu li.menu-4221 a:active,
+#main-menu li.menu-4221 a.active {
+  background-position: -792px -104px;
 }
 
 /*
