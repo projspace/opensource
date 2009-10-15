@@ -79,12 +79,12 @@ li a.active {
 }
 
 #main-menu li.menu-3796 a:hover {
-  background-position: 0 52px;
+  background-position: 0 -52px;
 }
 
 #main-menu li.menu-3796 a:active,
 #main-menu li.menu-3796 a.active {
-  background-position: 0 104px;
+  background-position: 0 -104px;
 }
 
 /*
