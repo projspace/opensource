@@ -113,6 +113,61 @@ function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$
   }  
 }
 
+function sitetheme_links($links, $attributes = array('class' => 'links')) {
+  $output = '';
+
+  if (count($links) > 0) {
+    $output = '<ul'. drupal_attributes($attributes) .'>';
+
+    $num_links = count($links);
+    $i = 1;
+
+    foreach ($links as $key => $link) {
+      $class = $key;
+
+      // Add first, last and active classes to the list of links to help out themers.
+      if ($i == 1) {
+        $class .= ' first';
+      }
+      if ($i == $num_links) {
+        $class .= ' last';
+      }
+      if (isset($link['href']) && ($link['href'] == $_GET['q'] || ($link['href'] == '<front>' && drupal_is_front_page()))) {
+        $class .= ' active';
+      }
+      
+      if (isset($link['href'])) {
+        // add active class for containing <li> and <a> if active-trail is set on the link itself
+        if (strpos($link['attributes']['class'], 'active-trail') !== FALSE && strpos($class, 'active') === FALSE) {
+           $class .= ' active';
+           $link['attributes']['class'] .= ' active';
+         }
+        // Pass in $link as $options, they share the same keys.
+        $link = l($link['title'], $link['href'], $link);
+      }
+      else if (!empty($link['title'])) {
+        // Some links are actually not links, but we wrap these in <span> for adding title and class attributes
+        if (empty($link['html'])) {
+          $link['title'] = check_plain($link['title']);
+        }
+        $span_attributes = '';
+        if (isset($link['attributes'])) {
+          $span_attributes = drupal_attributes($link['attributes']);
+        }
+        $link = '<span'. $span_attributes .'>'. $link['title'] .'</span>';
+      }
+
+      $i++;
+      $output .= '<li'. drupal_attributes(array('class' => $class)) .'>';
+      $output .= $link;
+      $output .= "</li>\n";
+    }
+
+    $output .= '</ul>';
+  }
+  return $output;
+}
+
 /**
  * Override or insert variables into the node templates.
  *
