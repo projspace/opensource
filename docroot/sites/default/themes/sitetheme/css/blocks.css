@@ -52,15 +52,16 @@
 
 #sidebar-second .block .block-inner {
   background: #ffffff;
-  padding: 15px 0 20px 15px;
+  padding: 15px 0 5px 0;
   border-top: 1px solid #cdcbca;
-  border-left: 1px solid #cdcbca;
-  background: url(../images/block-bottom-shadow.jpg) center bottom no-repeat;
+  background: url(../images/top-right-shadow.jpg) right top no-repeat;
+  
 }
 
 #sidebar-second .block .block-inner .content {
-  padding-right: 15px;
-  background: url(../images/top-right-shadow.jpg) right top no-repeat;
+  padding: 0 20px 15px 15px;
+  border-left: 1px solid #cdcbca;
+  background: url(../images/block-bottom-shadow.jpg) center bottom no-repeat;
 }
 
 .block .content /* Block's content wrapper */ {
