@@ -101,6 +101,14 @@ div#site-name a {
 #content {
 }
 
+#content-inner-right-shadow {
+  background: #ffffff url(../images/top-right-shadow.jpg) right top no-repeat;
+}
+
+content-inner-bottom-shadow {
+  background: url(../images/block-bottom-shadow.jpg) center bottom no-repeat;
+}
+
 #content-inner {
   background: #ffffff;
 }
