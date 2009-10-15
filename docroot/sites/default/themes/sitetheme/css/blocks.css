@@ -52,10 +52,15 @@
 
 #sidebar-second .block .block-inner {
   background: #ffffff;
-  padding: 15px;
-  border: 1px solid #cdcbca;
-  border-right: 5px solid #cdcbca; /* @todo replace with drop shadow */
-  border-bottom: 5px solid #cdcbca; /* @todo replace with drop shadow */
+  padding: 15px 0 20px 15px;
+  border-top: 1px solid #cdcbca;
+  border-left: 1px solid #cdcbca;
+  background: url(../images/block-bottom-shadow.jpg) center bottom no-repeat;
+}
+
+#sidebar-second .block .block-inner .content {
+  padding-right: 15px;
+  background: url(../images/top-right-shadow.jpg) right top no-repeat;
 }
 
 .block .content /* Block's content wrapper */ {
