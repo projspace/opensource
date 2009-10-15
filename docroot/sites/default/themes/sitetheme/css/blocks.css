@@ -51,17 +51,19 @@
 }
 
 #sidebar-second .block .block-inner {
-  border-top: 1px solid #cdcbca;
-  border-left: 1px solid #cdcbca;  
-}
-
-#sidebar-second .block .block-inner .content {
   background: #ffffff url(../images/top-right-shadow.jpg) right top no-repeat;
 }
 
-#sidebar-second .block .block-inner .content-inner {
-  padding: 15px 20px 18px 15px;
+#sidebar-second .block .block-inner .content {
   background: url(../images/block-bottom-shadow.jpg) center bottom no-repeat;
+}
+
+#sidebar-second .block .block-inner .content-inner {
+  padding: 15px;
+  margin-bottom: 3px;
+  margin-right: 5px;
+  border-top: 1px solid #cdcbca;
+  border-left: 1px solid #cdcbca;
 }
 
 .block .content /* Block's content wrapper */ {
