@@ -67,6 +67,7 @@
 }
 
 .block .content /* Block's content wrapper */ {
+  margin-top: 10px;
 }
 
 #block-aggregator-category-1 /* Block for the latest news items in the first category */ {
