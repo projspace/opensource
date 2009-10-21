@@ -1,5 +1,5 @@
 <?php
-// $Id: page.tpl.php,v 1.5 2009/08/25 09:02:17 johnalbin Exp $
+// $Id: page.tpl.php,v 1.7 2009/10/15 18:28:58 johnalbin Exp $
 
 /**
  * @file
@@ -13,8 +13,8 @@
  * - $css: An array of CSS files for the current page.
  * - $directory: The directory the template is located in, e.g. modules/system
  *   or themes/garland.
- * - $body_classes_array: Array of the body classes. It is flattened
- *   into a string within the variable $classes.
+ * - $classes_array: Array of the body classes. It is flattened into a string
+ *   within the variable $classes.
  * - $is_front: TRUE if the current page is the front page. Used to toggle the mission statement.
  * - $logged_in: TRUE if the user is registered and signed in.
  * - $is_admin: TRUE if the user has permission to access administration pages.
@@ -29,10 +29,10 @@
  * - $styles: Style tags necessary to import all CSS files for the page.
  * - $scripts: Script tags necessary to load the JavaScript files and settings
  *   for the page.
- * - $body_classes: String of classes that can be used to style contextually through
+ * - $classes: String of classes that can be used to style contextually through
  *   CSS. It should be placed within the <body> tag. When selecting through CSS
  *   it's recommended that you use the body tag, e.g., "body.front". It can be
- *   manipulated through the variable $body_classes_array from preprocess functions.
+ *   manipulated through the variable $classes_array from preprocess functions.
  *   The default values can be one or more of the following:
  *   - front: Page is the home page.
  *   - not-front: Page is not the home page.
@@ -96,7 +96,7 @@
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>
-<body class="<?php print $body_classes; ?>">
+<body class="<?php print $classes; ?>">
 
   <div id="page"><div id="page-inner">
 
@@ -138,11 +138,7 @@
         <div id="search-box"><?php print $search_box; ?></div>
       <?php endif; ?>
 
-      <?php if ($header): ?>
-        <div id="header-blocks" class="region region-header">
-          <?php print $header; ?>
-        </div> <!-- /#header-blocks -->
-      <?php endif; ?>
+      <?php print $header; ?>
 
     </div></div> <!-- /#header-inner, /#header -->
 
@@ -154,11 +150,7 @@
           <div id="mission"><?php print $mission; ?></div>
         <?php endif; ?>
 
-        <?php if ($content_top): ?>
-          <div id="content-top" class="region region-content_top">
-            <?php print $content_top; ?>
-          </div> <!-- /#content-top -->
-        <?php endif; ?>
+        <?php print $content_top; ?>
 
         <?php if ($breadcrumb || $title || $tabs || $help || $messages): ?>
           <div id="content-header">
@@ -182,16 +174,12 @@
           <div class="feed-icons"><?php print $feed_icons; ?></div>
         <?php endif; ?>
 
-        <?php if ($content_bottom): ?>
-          <div id="content-bottom" class="region region-content_bottom">
-            <?php print $content_bottom; ?>
-          </div> <!-- /#content-bottom -->
-        <?php endif; ?>
+        <?php print $content_bottom; ?>
 
       </div></div> <!-- /#content-inner, /#content -->
 
       <?php if ($primary_links || $navbar): ?>
-        <div id="navbar"><div id="navbar-inner" class="clearfix region region-navbar">
+        <div id="navbar">
 
           <a name="navigation" id="navigation"></a>
 
@@ -199,7 +187,7 @@
 
           <?php print $navbar; ?>
 
-        </div></div> <!-- /#navbar-inner, /#navbar -->
+        </div> <!-- /#navbar -->
       <?php endif; ?>
 
       <?php if ($left): ?>
@@ -217,7 +205,7 @@
     </div></div> <!-- /#main-inner, /#main -->
 
     <?php if ($footer || $footer_message || $secondary_links): ?>
-      <div id="footer"><div id="footer-inner" class="region region-footer">
+      <div id="footer">
 
         <?php print theme('links', $secondary_links, array('id' => 'secondary-menu', 'class' => 'links clearfix')); ?>
 
@@ -227,7 +215,7 @@
 
         <?php print $footer; ?>
 
-      </div></div> <!-- /#footer-inner, /#footer -->
+      </div> <!-- /#footer -->
     <?php endif; ?>
 
   </div></div> <!-- /#page-inner, /#page -->

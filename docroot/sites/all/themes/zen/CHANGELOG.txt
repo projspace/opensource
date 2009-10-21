@@ -1,8 +1,13 @@
-// $Id: CHANGELOG.txt,v 1.137 2009/09/07 10:04:13 johnalbin Exp $
+// $Id: CHANGELOG.txt,v 1.140 2009/10/15 18:28:58 johnalbin Exp $
 
 Zen 6.x-2.x-dev, xxxx-xx-xx (development release)
 ------------------------
-- * Render $edit_links_array in zen_process_block
+- Added $classes and $classes_array to all templates, not just Zen's templates.
+- Renamed page.tpl's $body_classes and $body_classes_array to $classes and $classes_array
+- #564068: Views classes are missing from $classes variable
+- Simplified header, content_top, content_bottom, navbar, and footer region markup
+- Add region.tpl.php template
+- Render $edit_links_array in zen_process_block
 - #546858: Add THEME_process_HOOK functions to Zen
 - #317417 by JohnAlbin and quicksketch: Fix off-line maintenance page since drupal_get_path('theme', 'zen') won't work
 - #549798 by caroltron: page-backgrounds.css missing from .info file
