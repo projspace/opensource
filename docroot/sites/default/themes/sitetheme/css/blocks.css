@@ -158,3 +158,8 @@
 #block-views-channel_Poll-block_1 .form-submit {
   float: right;
 }
+
+#block-views-channel_Poll-block_1 .content,
+#block-views-channel_Poll-block_1 .content h2 {
+  margin-top: 0;
+}
