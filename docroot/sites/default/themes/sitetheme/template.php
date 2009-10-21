@@ -102,15 +102,18 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   if (!empty($vars['navbar'])) {
     $vars['body_classes_array'][] = 'with-channel-header';
   }
+  if (isset($vars['node']) && $vars['node']->type == 'channel') {
+    drupal_set_title(NULL);
+  }
 }
 
-function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$vars) { 
+function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$vars) {
   $vars['about_url'] = '';
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     // All the about pages are at [channel name]/about.
     $node = node_load(arg(1));
     $vars['about_url'] = '<div class="channel-about-link"><a href="'. $node->path .'/about" title="About '. $node->title .'">About &raquo</a></div>';
-  }  
+  }
 }
 
 function sitetheme_links($links, $attributes = array('class' => 'links')) {
@@ -135,7 +138,7 @@ function sitetheme_links($links, $attributes = array('class' => 'links')) {
       if (isset($link['href']) && ($link['href'] == $_GET['q'] || ($link['href'] == '<front>' && drupal_is_front_page()))) {
         $class .= ' active';
       }
-      
+
       if (isset($link['href'])) {
         // add active class for containing <li> and <a> if active-trail is set on the link itself
         if (strpos($link['attributes']['class'], 'active-trail') !== FALSE && strpos($class, 'active') === FALSE) {
