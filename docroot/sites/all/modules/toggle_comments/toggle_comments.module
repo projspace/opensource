@@ -29,11 +29,11 @@ function toggle_comments_action_info() {
 
 function toggle_comments_action(&$node, $context) {
   if ($node->comment == 2) {
-    $node->comment == 0
+    $node->comment == 0;
   }
 
   if ($node->comment == 0) {
-    $node->comment == 2
+    $node->comment == 2;
   }
 
   node_save($node);
