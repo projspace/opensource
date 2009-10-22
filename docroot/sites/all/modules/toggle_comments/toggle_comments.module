@@ -38,6 +38,8 @@ function toggle_comments_action(&$node, $context) {
     $message = 'Comments locked';
   }
 
+  watchdog('before', print_r($node, TRUE));
   node_save($node);
+  watchdog('after', print_r($node, TRUE));
   watchdog('Toggle Comments', $message);
 }
