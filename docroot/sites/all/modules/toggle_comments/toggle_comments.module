@@ -2,7 +2,8 @@
 
 /**
  * @file
- * Adds an action which locks comments on a node.
+ * Adds an action which toggles comments on a node between
+ * read/write and read-only.
  */
 
 /**
@@ -41,12 +42,12 @@ function toggle_comments_action_info() {
 function toggle_comments_action(&$node, $context) {
   global $user;
   
-  if ($node->comment == 2) {
+  if ($node->comment == 1) {
     $node->comment = 0;
     $message = 'Comments locked on '. $node->title .' by '. $user->name;
   }
   elseif ($node->comment == 0) {
-    $node->comment = 2;
+    $node->comment = 1;
     $message = 'Comments unlocked on '. $node->title .' by '. $user->name;
   }
 
