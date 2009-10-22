@@ -100,11 +100,7 @@ function STARTERKIT_preprocess(&$vars, $hook) {
  */
 function sitetheme_preprocess_page(&$vars, $hook) {
   if (!empty($vars['navbar'])) {
-    $vars['body_classes_array'][] = 'with-channel-header';
-  }
-  if (isset($vars['node']) && $vars['node']->type == 'channel') {
-    drupal_set_title(NULL);
-    $vars['title'] = drupal_get_title();
+    $vars['classes_array'][] = 'with-channel-header';
   }
 }
 
