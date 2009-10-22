@@ -128,21 +128,25 @@ div#site-name a {
   border-top: 1px solid #cdcbca;
 }
 
-.node-type-channel #content-inner-side-shadow {
+.node-type-channel #content-inner-side-shadow,
+.front #content-inner-side-shadow {
   background: none;
   margin: 0;
 }
 
-.node-type-channel #content-inner-right-shadow {
+.node-type-channel #content-inner-right-shadow,
+.front #content-inner-right-shadow {
   background: none;
 }
 
-.node-type-channel #content-inner-bottom-shadow {
+.node-type-channel #content-inner-bottom-shadow,
+.front #content-inner-bottom-shadow {
   background: none;
   padding: 0;
 }
 
-.node-type-channel #content-inner {
+.node-type-channel #content-inner,
+.front #content-inner {
   background: none;
   margin: 0;
   padding: 0;
