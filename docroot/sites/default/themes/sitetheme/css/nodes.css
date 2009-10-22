@@ -118,3 +118,10 @@
 .preview .node /* Preview of the content before submitting new or updated content */ {
   /* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
 }
+
+.node-type-channel #content-header h1 {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
