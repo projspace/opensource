@@ -104,6 +104,7 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   }
   if (isset($vars['node']) && $vars['node']->type == 'channel') {
     drupal_set_title(NULL);
+    $vars['title'] = drupal_get_title();
   }
 }
 
