@@ -14,6 +14,9 @@ function toggle_comments_help($path, $arg) {
 	}
 }
 
+/**
+ * Implementation of hook_action_info()
+ */
 function toggle_comments_action_info() {
 	$actions['toggle_comments_action'] = array(
 		'type' => 'node',
@@ -27,15 +30,26 @@ function toggle_comments_action_info() {
 	return $actions;
 }
 
+/**
+ * Toggle comments on or off.
+ *
+ * @param $node
+ *   Current node object this will operate on.
+ * @param $context
+ *   Node, flag, and other contextual information.
+ */
 function toggle_comments_action(&$node, $context) {
+  global $user;
+  
   if ($node->comment == 2) {
     $node->comment = 0;
-    $message = 'Comments unlocked';
+    $message = 'Comments locked on '. $node->title .' by '. $user->name;
   }
   elseif ($node->comment == 0) {
     $node->comment = 2;
-    $message = 'Comments locked';
+    $message = 'Comments unlocked on '. $node->title .' by '. $user->name;
   }
 
+  watchdog('toggle comments', $message);
   node_save($node);
 }
