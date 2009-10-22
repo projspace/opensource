@@ -104,6 +104,12 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   }
 }
 
+function sitetheme_preprocess_node(&$vars) {
+  if ($vars['node']->type == 'channel') {
+    $vars['links'] = '';
+  }
+}
+
 function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$vars) {
   $vars['about_url'] = '';
   if (arg(0) == 'node' && is_numeric(arg(1))) {
