@@ -101,21 +101,53 @@ div#site-name a {
 #content {
 }
 
-#content-inner-side-shadow {
+#content-inner-side-shadow,
+.content-inner-side-shadow {
   background: #ffffff url(../images/middle-right-shadow.jpg) right top repeat-y;
+  margin: 0 14px 15px 14px;
 }
 
-#content-inner-right-shadow {
+#content-inner-right-shadow,
+.content-inner-right-shadow {
   background: url(../images/top-right-shadow.jpg) right top no-repeat;
 }
 
-#content-inner-bottom-shadow {
+#content-inner-bottom-shadow,
+.content-inner-bottom-shadow {
   background: url(../images/content-bottom-shadow.jpg) center bottom no-repeat;
   padding-bottom: 4px;
 }
 
-#content-inner {
+#content-inner,
+.content-inner-border {
   background: #ffffff;
+  margin: 15px 0 0 0;
+  padding: 10px;
+  width: 523px;
+  border-left: 1px solid #cdcbca;
+  border-top: 1px solid #cdcbca;
+}
+
+.view-id-og_ghp_ron #content-inner-side-shadow {
+  background: none;
+  margin: 0;
+}
+
+.view-id-og_ghp_ron #content-inner-right-shadow {
+  background: none;
+}
+
+.view-id-og_ghp_ron #content-inner-bottom-shadow {
+  background: none;
+  padding: 0;
+}
+
+.view-id-og_ghp_ron #content-inner {
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 100%;
 }
 
 #mission /* The mission statement of the site (displayed on homepage) */ {
