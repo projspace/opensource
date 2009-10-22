@@ -29,12 +29,12 @@ function toggle_comments_action_info() {
 
 function toggle_comments_action(&$node, $context) {
   watchdog('comment', $node->comment);
-  if ($node->comment == 2) {
+  if ($node->comment == '2') {
     $node->comment = 0;
     $message = 'Comments unlocked';
   }
 
-  if ($node->comment == 0) {
+  if ($node->comment == '0') {
     $node->comment = 2;
     $message = 'Comments locked';
   }
