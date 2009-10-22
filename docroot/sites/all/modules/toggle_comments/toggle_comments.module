@@ -27,7 +27,14 @@ function toggle_comments_action_info() {
 	return $actions;
 }
 
-function toggle_comments_action(&$object, $context) {
-  watchdog('action', print_r($object, TRUE));
-  watchdog('action', print_r($context, TRUE));
+function toggle_comments_action(&$node, $context) {
+  if ($node->comment == 2) {
+    $node->comment == 0
+  }
+
+  if ($node->comment == 0) {
+    $node->comment == 2
+  }
+
+  node_save($node);
 }
