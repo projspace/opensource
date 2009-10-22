@@ -28,19 +28,14 @@ function toggle_comments_action_info() {
 }
 
 function toggle_comments_action(&$node, $context) {
-  watchdog('comment', $node->comment);
-  if ($node->comment == '2') {
+  if ($node->comment == 2) {
     $node->comment = 0;
     $message = 'Comments unlocked';
   }
-
-  if ($node->comment == '0') {
+  elseif ($node->comment == 0) {
     $node->comment = 2;
     $message = 'Comments locked';
   }
 
-  watchdog('before', print_r($node, TRUE));
   node_save($node);
-  watchdog('after', print_r($node, TRUE));
-  watchdog('Toggle Comments', $message);
 }
