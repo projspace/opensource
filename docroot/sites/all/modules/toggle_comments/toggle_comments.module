@@ -28,7 +28,7 @@ function toggle_comments_action_info() {
 }
 
 function toggle_comments_action(&$node, $context) {
-  watchdog('really before', print_r($node, TRUE));
+  watchdog('comment', $node->comment);
   if ($node->comment == 2) {
     $node->comment = 0;
     $message = 'Comments unlocked';
