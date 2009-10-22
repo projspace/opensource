@@ -184,9 +184,9 @@
           <?php print $content; ?>
         </div>
 
-        <?php if ($feed_icons): ?>
+        <?php /* if ($feed_icons): ?>
           <div class="feed-icons"><?php print $feed_icons; ?></div>
-        <?php endif; ?>
+        <?php endif; */ ?>
 
         <?php if ($content_bottom): ?>
           <div id="content-bottom" class="region region-content_bottom">
