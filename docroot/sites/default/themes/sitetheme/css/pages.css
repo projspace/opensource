@@ -304,6 +304,7 @@ ul.links li {
   overflow: hidden;
   padding-top: 24px;
   width: 24px;
+  display: block;
 }
 
 .footer-twitter {
