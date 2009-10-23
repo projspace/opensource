@@ -163,3 +163,7 @@
 #block-views-channel_Poll-block_1 .content h2 {
   margin-top: 0;
 }
+
+#sidebar-second .vote-form .choices {
+  width: 100%;
+}
