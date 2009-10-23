@@ -84,7 +84,7 @@
 
 .view-homepage .attachment .row-wrapper
 {
-  
+  padding:30px;
 }
 
 .view-homepage .attachment .views-row /* on the homepage attached view provide space and border after every row */
@@ -108,8 +108,9 @@
 
 .view-homepage .attachment .views-field-title
 {
-  font-size:20px; /* temporary */
-  line-height:24px; /* temporary */
+  font-size:18px;
+  font-weight:bold;
+  line-height:20px;
 }
 
 .view-homepage .attachment .views-field-field-image-imceimage-path
