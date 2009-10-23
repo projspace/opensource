@@ -7,7 +7,7 @@
 
 .views-row
 {
-  
+  overflow:hidden /* clear all our floats inside each views row */
 }
 
 /*
@@ -67,8 +67,15 @@
 /*
  * Attached view for secondary articles
  */
+.attachment .views-row /* on the homepage attached view provide space and border after every row */
+{
+   padding-bottom:20px;
+   margin-bottom:20px;
+   border-bottom:1px dotted #CBCCCB; 
+}
+
 .attachment .views-field-field-image-imceimage-path
 {
-
+  float:right;
 }
 
