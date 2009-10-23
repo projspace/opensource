@@ -115,7 +115,7 @@ function sitetheme_preprocess_node(&$vars) {
     }
     $user_url = url('user/'. $vars['node']->uid);
     $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !author', array('!author' => l($vars['node']->name, $user_url))) .'<a href="'. $user_url .'" class="article-author-feed"></a></span>';
-    $vars['links_all'] .= '<span class="article-node-link">'. l(t('Read more &raquo'), 'node/'. $vars['node']->nid) .'</span>';
+    $vars['links_all'] .= '<span class="article-node-link">'. l(t('Read more È'), 'node/'. $vars['node']->nid) .'</span>';
     $vars['links_all'] .= '</div>';
   }
 }

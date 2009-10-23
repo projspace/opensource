@@ -129,3 +129,19 @@
 .view-og-ghp-ron .node h2 {
   margin-top: 0;
 }
+
+.article-comment-count {
+  padding-right: 10px;
+  display: block;
+  margin-right: 10px;
+  float: left;
+  border-right: 1px solid #7b7b7c;
+}
+
+.article-author-info {
+  float: left;
+}
+
+.article-node-link {
+  float: right;
+}
