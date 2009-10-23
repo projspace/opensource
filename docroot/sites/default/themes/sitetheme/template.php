@@ -106,7 +106,17 @@ function sitetheme_preprocess_page(&$vars, $hook) {
 
 function sitetheme_preprocess_node(&$vars) {
   if ($vars['node']->type == 'channel') {
-    $vars['links'] = '';
+    $vars['links'] = '<div class="article-links clear-block">';
+  }
+  elseif ($vars['node']-> type == 'article' && !$vars['page']) {
+    $vars['links_all'] = '';
+    if ($vars['node']->comment_count > 0) {
+      $vars['links_all'] .= '<span class="article-comment-count">'. format_plural($vars['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $vars['node']->comment_count)) .'</span>';
+    }
+    $user_url = url('user/'. $vars['node']->uid);
+    $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !author', array('!author' => l($vars['node']->name, $user_url))) .'<a href="'. $user_url .'" class="article-author-feed"></a></span>';
+    $vars['links_all'] .= '<span class="article-node-link">'. l(t('Read more &raquo'), 'node/'. $vars['node']->nid) .'</span>';
+    $vars['links_all'] .= '</div>';
   }
 }
 
