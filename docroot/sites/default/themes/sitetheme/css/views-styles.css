@@ -18,7 +18,12 @@
  */
 .views-field-group-nid
 {
-  
+
+}
+
+.views-field-group-nid a
+{
+  text-decoration:none;  
 }
 
 .views-field-type
@@ -73,6 +78,13 @@
 {
   display:inline;
   color:#767677;
+}
+
+.view-homepage .views-field-group-nid,
+.view-homepage .views-field-group-nid a,
+.view-homepage .views-field-type
+{
+  color:#676768;
 }
 
 .view-homepage .views-field-comment-count
