@@ -217,7 +217,7 @@
     </div></div> <!-- /#main-inner, /#main -->
 
     <?php if ($footer || $footer_message || $secondary_links): ?>
-      <div id="footer"><div id="footer-inner" class="region region-footer">
+      <div id="footer"><div id="footer-inner" class="region region-footer clear-block">
 
         <?php print theme('links', $secondary_links, array('id' => 'secondary-menu', 'class' => 'links clearfix')); ?>
 

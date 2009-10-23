@@ -296,6 +296,28 @@ ul.links li {
                    and for any blocks placed in the footer region */ {
 }
 
+.footer-twitter,
+.footer-facebook,
+.footer-youtube {
+  text-decoration: none;
+  height: 0;
+  overflow: hidden;
+  padding-top: 24px;
+  width: 24px;
+}
+
+.footer-twitter {
+  background: url(../images/twitter.jpg);
+}
+
+.footer-facebook {
+  background: url(../images/facebook.jpg);
+}
+
+.footer-youtube {
+  background: url(../images/youtube.jpg);
+}
+
 /*
  * Closure
  */

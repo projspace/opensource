@@ -168,6 +168,10 @@
   width: 100%;
 }
 
+#footer .block {
+  float: left;
+}
+
 #footer #block-menu-menu-footer ul {
   padding-left: 15px;
 }
