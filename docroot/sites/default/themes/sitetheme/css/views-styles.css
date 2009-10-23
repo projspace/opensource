@@ -96,7 +96,14 @@
 
 .view-homepage .attachment .views-row-first
 {
-  margin-top:20px;
+
+}
+
+.view-homepage .attachment .views-row-last
+{
+  padding-bottom:0;
+  margin-bottom:0;
+  border-bottom:none;
 }
 
 .view-homepage .attachment .views-field-title
