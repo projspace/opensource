@@ -5,8 +5,13 @@
  * Views Styling
  */
 
+.views-row
+{
+  
+}
+
 /*
- * Global
+ * Global fields
  */
 .views-field-group-nid
 {
@@ -49,12 +54,21 @@
 }
 
 /*
- * Homepage
+ * Homepage views
  */
 
 .view-homepage .views-field-comment-count,
 .view-homepage .views-field-created,
 .view-homepage .views-field-name
 {
-  
+  display:inline;
 }
+
+/*
+ * Attached view for secondary articles
+ */
+.attachment .views-field-field-image-imceimage-path
+{
+
+}
+
