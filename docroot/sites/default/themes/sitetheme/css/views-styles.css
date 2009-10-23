@@ -65,6 +65,8 @@
   line-height:28px; /* temporary */
 }
 
+.view-homepage .views-field-group-nid,
+.view-homepage .views-field-type,
 .view-homepage .views-field-comment-count,
 .view-homepage .views-field-created,
 .view-homepage .views-field-name
