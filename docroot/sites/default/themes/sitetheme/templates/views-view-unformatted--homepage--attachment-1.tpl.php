@@ -11,9 +11,11 @@
 <?php //if (!empty($title)): ?>
   <h3>More featured content<?php print $title; ?></h3>
 <?php //endif; ?>
-<?php foreach ($rows as $id => $row): ?>
-  <div class="<?php print $classes[$id]; ?>">
-    <?php print $row; ?>
-  </div>
-<?php endforeach; ?>
+<div class="row-wrapper">
+  <?php foreach ($rows as $id => $row): ?>
+    <div class="<?php print $classes[$id]; ?>">
+      <?php print $row; ?>
+    </div>
+  <?php endforeach; ?>
+</div>
 </div></div></div></div>
