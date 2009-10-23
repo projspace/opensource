@@ -106,10 +106,10 @@ function sitetheme_preprocess_page(&$vars, $hook) {
 
 function sitetheme_preprocess_node(&$vars) {
   if ($vars['node']->type == 'channel') {
-    $vars['links'] = '<div class="article-links clear-block">';
+    $vars['links'] = '';
   }
   elseif ($vars['node']-> type == 'article' && !$vars['page']) {
-    $vars['links_all'] = '';
+    $vars['links_all'] = '<div class="article-visitor-links clear-block">';
     if ($vars['node']->comment_count > 0) {
       $vars['links_all'] .= '<span class="article-comment-count">'. format_plural($vars['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $vars['node']->comment_count)) .'</span>';
     }
