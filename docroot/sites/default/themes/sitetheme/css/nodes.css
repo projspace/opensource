@@ -152,4 +152,6 @@
   height: 13px;
   display: block;
   background: url(../images/rss.jpg);
+  float: right;
+  margin-left: 5px;
 }
