@@ -145,3 +145,11 @@
 .article-node-link {
   float: right;
 }
+
+.article-author-feed {
+  width: 12px;
+  heigh: 13px;
+  display: block;
+  float: left;
+  background: url(../images/rss.jpg);
+}
