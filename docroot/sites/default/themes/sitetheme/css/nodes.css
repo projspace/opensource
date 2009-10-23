@@ -140,6 +140,7 @@
 
 .article-author-info {
   float: left;
+  display: blick;
 }
 
 .article-node-link {
@@ -148,8 +149,7 @@
 
 .article-author-feed {
   width: 12px;
-  heigh: 13px;
+  height: 13px;
   display: block;
-  float: left;
   background: url(../images/rss.jpg);
 }
