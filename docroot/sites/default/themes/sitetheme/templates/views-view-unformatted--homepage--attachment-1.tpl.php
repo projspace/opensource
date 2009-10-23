@@ -9,7 +9,7 @@
 ?>
 <div class="content-inner-side-shadow"><div class="content-inner-right-shadow"><div class="content-inner-bottom-shadow"><div class="content-inner-border">
 <?php if (!empty($title)): ?>
-  <h3><?php print $title; ?></h3>
+  <h3>More featured content<?php print $title; ?></h3>
 <?php endif; ?>
 <?php foreach ($rows as $id => $row): ?>
   <div class="<?php print $classes[$id]; ?>">
