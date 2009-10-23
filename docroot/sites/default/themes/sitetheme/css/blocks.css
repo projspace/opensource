@@ -168,10 +168,17 @@
   width: 100%;
 }
 
+#footer #block-menu-menu-footer ul {
+  padding-left: 15px;
+}
+
 #footer #block-menu-menu-footer ul li {
   display: inline;
   list-style-image: none;
   list-style-type: none;
+  padding-right: 10px;
+  border-right: 1px solid #797979;
+  margin-right: 10px;
 }
 
 #footer #block-block-1 .content {
