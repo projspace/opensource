@@ -114,7 +114,7 @@ function sitetheme_preprocess_node(&$vars) {
       $vars['links_all'] .= '<span class="article-comment-count">'. format_plural($vars['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $vars['node']->comment_count)) .'</span>';
     }
     $user_url = url('user/'. $vars['node']->uid);
-    $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($vars['node']->name, $user_url))) .'<a href="'. $user_url .'" class="article-author-feed"></a></span>';
+    $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($vars['node']->name, $user_url))) .'<a href="'. $user_url .'/feed" class="article-author-feed"></a></span>';
     $vars['links_all'] .= '<span class="article-node-link">'. l('Read more', 'node/'. $vars['node']->nid) .'</span>';
     $vars['links_all'] .= '</div>';
   }

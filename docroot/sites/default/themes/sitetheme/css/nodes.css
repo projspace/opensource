@@ -136,6 +136,8 @@
   margin-right: 10px;
   float: left;
   border-right: 1px solid #7b7b7c;
+  padding-left: 15px;
+  background: url(../images/comment.jpg) left no-repeat;
 }
 
 .article-author-info {
