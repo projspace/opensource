@@ -168,12 +168,12 @@
   width: 100%;
 }
 
-#block-menu-menu-footer #block-menu-menu-footer ul li {
+#footer #block-menu-menu-footer ul li {
   display: inline;
   list-style-image: none;
   list-style-type: none;
 }
 
-#block-menu-menu-footer #block-block-1 .content {
+#footer #block-block-1 .content {
   margin: 0 15px;
 }
