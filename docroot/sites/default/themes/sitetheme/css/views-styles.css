@@ -69,6 +69,12 @@
   display:inline;
 }
 
+.view-homepage .views-field-comment-count
+{
+  background:transparent url(../images/icon-comments.png) no-repeat scroll left top;
+  padding-left:20px;
+}
+
 /*
  * Attached view for secondary articles
  */
