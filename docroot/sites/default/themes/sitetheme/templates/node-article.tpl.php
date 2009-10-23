@@ -92,5 +92,6 @@
   </div>
 
   <?php if ($page) print $links; ?>
+  <?php print $links_all; ?>
 
 </div></div> <!-- /node-inner, /node -->
