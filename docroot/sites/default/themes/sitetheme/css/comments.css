@@ -15,7 +15,7 @@
 
 .comment /* Wrapper for a single comment */ {
   border:1px solid #E7E7E7;
-  padding:20px;
+  padding:20px 20px 10px 20px;
   margin-bottom:10px;
 }
 
