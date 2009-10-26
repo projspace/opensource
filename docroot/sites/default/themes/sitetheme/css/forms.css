@@ -27,6 +27,8 @@
   display: block;
   font-weight: bold;
   color:#B2B2B2;
+  float:left;
+  width:100px;
 }
 
 .form-item label.option /* The label for a radio button or checkbox */ {
@@ -93,6 +95,7 @@
 #search-block-form /* Wrapper for the search form */ {
 }
 
+#edit-comment-wrapper label,
 #edit-search-block-form-1-wrapper label /* Label that says "Search this site:" */ {
   display: none;
 }
