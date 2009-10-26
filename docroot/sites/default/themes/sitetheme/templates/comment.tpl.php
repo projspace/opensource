@@ -48,7 +48,7 @@
     <?php endif; ?>
   </div>
 
-  <div class="comment-bottom>"
+  <div class="comment-bottom">
   <?php print $vote_up_down; ?>
   <?php print $links ?>
   </div>
