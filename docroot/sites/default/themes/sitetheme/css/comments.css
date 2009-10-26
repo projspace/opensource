@@ -60,6 +60,7 @@
 }
 
 .comment h3.title /* Comment title */ {
+  display:inline;
 }
 
 .new /* "New" marker for comments that are new for the current user */ {
@@ -70,6 +71,7 @@
 }
 
 .comment .submitted /* The "posted by" information */ {
+  display:inline;
 }
 
 .comment .content /* Comment's content wrapper */ {
