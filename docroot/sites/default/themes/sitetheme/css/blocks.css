@@ -166,7 +166,8 @@
 #block-views-channel_Poll-block_1 .content,
 #block-views-channel_Poll-block_1 .content h2,
 #block-views-channel_Poll-block_2 .content,
-#block-views-channel_Poll-block_2 .content h2 {
+#block-views-channel_Poll-block_2 .content h2,
+#block-views-channel_description-block_1 .content {
   margin-top: 0;
 }
 
