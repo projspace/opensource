@@ -159,16 +159,13 @@ function imagecache_profiles_user($op, &$edit, &$account, $category = NULL) {
   if ($op == 'submit' && $category == 'account') {
     if ($edit['picture_delete']) {
       imagecache_image_flush($account->picture);
-      watchdog('picture delete', print_r($account, TRUE));
     }
     if (isset($edit['picture'])) {
       imagecache_image_flush($edit['picture']);
-      watchdog('picture', print_r($edit, TRUE));
     }
   }
   elseif ($op == 'delete' && isset($account->picture)) {
     imagecache_image_flush($account->picture);
-    watchdog('op delete', print_r($account, TRUE));
   }
 }
 
