@@ -37,6 +37,7 @@ stylesheets[all][]   = css/blocks.css
 stylesheets[all][]   = css/navigation.css
 stylesheets[all][]   = css/views-styles.css
 stylesheets[all][]   = css/nodes.css
+stylesheets[all][]   = css/user.css
 stylesheets[all][]   = css/comments.css
 stylesheets[all][]   = css/forms.css
 stylesheets[all][]   = css/fields.css
