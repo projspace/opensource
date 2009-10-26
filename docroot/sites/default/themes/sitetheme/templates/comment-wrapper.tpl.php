@@ -39,7 +39,7 @@
  * @see theme_comment_wrapper()
  */
 
-  dsm($content);
+  print_r($content);
 ?>
 <div id="comments" class="<?php print $classes; ?>">
   <?php if ($node->type != 'forum'): ?>
