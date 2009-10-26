@@ -246,3 +246,15 @@ function sitetheme_comment_submitted($comment) {
       '@datetime' => format_date($comment->timestamp, 'custom', 'j M Y')
     ));
 }
+
+function sitetheme_preprocess_comment_wrapper(&$variables) {
+  // Provide contextual information.
+  $variables['display_mode']  = _comment_get_display_setting('mode', $variables['node']);
+  $variables['display_order'] = _comment_get_display_setting('sort', $variables['node']);
+  $variables['comment_controls_state'] = variable_get('comment_controls_'. $variables['node']->type, COMMENT_CONTROLS_HIDDEN);
+  $variables['template_files'][] = 'comment-wrapper-'. $variables['node']->type;
+  
+  if ($vars['node']->comment_count > 0) {
+      $vars['comment_count'] .= '<span class="comment-count">'. format_plural($vars['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $vars['node']->comment_count)) .'</span>';
+  }
+}
