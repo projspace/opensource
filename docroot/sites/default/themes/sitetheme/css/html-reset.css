@@ -78,6 +78,9 @@ pre,
 code {
   font-size: 1.1em; /* Monospace fonts can be hard to read */
   font-family: "Bitstream Vera Sans Mono", "Courier New", monospace;
+  background-color:#EDF1F3;
+  border:1px solid #7F98A7;
+  padding:5px;
 }
 
 /*
