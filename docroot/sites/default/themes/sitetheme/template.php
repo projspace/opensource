@@ -249,7 +249,7 @@ function sitetheme_comment_submitted($comment) {
 
 function sitetheme_preprocess_comment_wrapper(&$variables) {
   
-  print_r($vars['node']);
+  print_r($variables['node']);
   
   // Provide contextual information.
   $variables['display_mode']  = _comment_get_display_setting('mode', $variables['node']);
@@ -257,7 +257,7 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
   $variables['comment_controls_state'] = variable_get('comment_controls_'. $variables['node']->type, COMMENT_CONTROLS_HIDDEN);
   $variables['template_files'][] = 'comment-wrapper-'. $variables['node']->type;
   
-  if ($vars['node']->comment_count > 0) {
-      $vars['comment_count'] .= '<span class="comment-count">'. format_plural($vars['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $vars['node']->comment_count)) .'</span>';
+  if ($variables['node']->comment_count > 0) {
+      $variables['comment_count'] .= '<span class="comment-count">'. format_plural($variables['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $variables['node']->comment_count)) .'</span>';
   }
 }
