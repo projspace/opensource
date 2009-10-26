@@ -99,6 +99,10 @@
   padding-right:5px;
 }
 
+.view-homepage .views-field-view-node {
+  float: right;
+}
+
 /*
  * Attached view for secondary articles
  */
