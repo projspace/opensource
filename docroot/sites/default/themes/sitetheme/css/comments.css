@@ -88,3 +88,20 @@
 .preview .comment /* Preview of the comment before submitting new or updated comment */ {
   /* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
 }
+
+/* Vote up/down icons */
+
+.vote-up-inact, .up-inact {
+  background:transparent url(../images/icon-vote-up.png) no-repeat scroll 0 0;
+}
+
+.vote-down-inact, .down-inact {
+  background:transparent url(../images/icon-vote-down.png) no-repeat scroll 0 0;
+}
+
+
+
+
+
+
+
