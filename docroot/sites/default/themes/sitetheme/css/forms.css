@@ -4,6 +4,11 @@
  * @file
  * Form Styling
  */
+.form-text,
+.form-textarea
+{
+  border:1px solid #E7E7E7;
+}
 
 
 .form-item,
@@ -21,6 +26,7 @@
 .form-item label /* The label for a form element */ {
   display: block;
   font-weight: bold;
+  color:#E7E7E7;
 }
 
 .form-item label.option /* The label for a radio button or checkbox */ {
