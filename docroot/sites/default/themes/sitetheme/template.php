@@ -239,6 +239,25 @@ function STARTERKIT_preprocess_block(&$vars, $hook) {
 }
 // */
 
+/**
+ * Format the "Submitted by username on date/time" for each node
+ *
+ * @ingroup themeable
+ */
+function theme_node_submitted($node) {
+  return t('by !username on @datetime',
+    array(
+      '!username' => theme('username', $node),
+      '@datetime' => format_date($comment->timestamp, 'custom', 'j M Y')
+    ));
+}
+/**
+ * Theme a "Submitted by ..." notice.
+ *
+ * @param $comment
+ *   The comment.
+ * @ingroup themeable
+ */
 function sitetheme_comment_submitted($comment) {
   return t('by !username on @datetime.',
     array(
