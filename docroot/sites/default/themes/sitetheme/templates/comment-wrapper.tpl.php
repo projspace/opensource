@@ -38,8 +38,6 @@
  * @see template_preprocess_comment_wrapper()
  * @see theme_comment_wrapper()
  */
-
-  dpm($content);
 ?>
 <div id="comments" class="<?php print $classes; ?>">
   <?php if ($node->type != 'forum'): ?>
