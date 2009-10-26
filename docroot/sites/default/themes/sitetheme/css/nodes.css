@@ -45,6 +45,11 @@
   font-style: italic;
 }
 
+.node .fivestar-static-form-item
+{
+  
+}
+
 .node-inner /* Additional wrapper for node */ {
 }
 
@@ -158,3 +163,6 @@
   float: right;
   margin-left: 5px;
 }
+
+
+

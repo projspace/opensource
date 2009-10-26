@@ -248,7 +248,7 @@ function sitetheme_node_submitted($node) {
   return t('Posted @datetime by !username',
     array(
       '!username' => theme('username', $node),
-      '@datetime' => format_date($comment->timestamp, 'custom', 'j M Y')
+      '@datetime' => format_date($node->timestamp, 'custom', 'j M Y')
     ));
 }
 /**
