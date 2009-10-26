@@ -83,6 +83,11 @@
 .comment ul.links /* Comment links. See also the ul.links declaration in the pages.css. */ {
 }
 
+.comment .comment-bottom
+{
+  
+}
+
 .indented /* Nested comments are indented */ {
   /* margin-left: 25px; */ /* Drupal core uses a 25px left margin */
   margin-left:40px;
