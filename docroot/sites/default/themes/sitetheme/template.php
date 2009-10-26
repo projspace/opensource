@@ -267,36 +267,3 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
       $variables['comment_count'] .= '<span class="comment-count">'. format_plural($variables['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $variables['node']->comment_count)) .'</span>';
   }
 }
-
-/**
- * Process variables for comment.tpl.php.
- *
- * @see comment.tpl.php
- * @see theme_comment()
- */
-function sitetheme_preprocess_comment(&$variables) {
-  $comment = $variables['comment'];
-  $node = $variables['node'];
-  $variables['author']    = theme('username', $comment);
-  $variables['content']   = $comment->comment;
-  $variables['date']      = format_date($comment->timestamp);
-  
-    /* Add vote up/down voting widget here */
-  //$variables['links']     .= $variables['vote_up_down'];
-  
-  $variables['links']     .= isset($variables['links']) ? theme('links', $variables['links']) : '';
- 
-  $variables['new']       = $comment->new ? t('new') : '';
-  $variables['picture']   = theme_get_setting('toggle_comment_user_picture') ? theme('user_picture', $comment) : '';
-  $variables['signature'] = $comment->signature;
-  $variables['submitted'] = theme('comment_submitted', $comment);
-  $variables['title']     = l($comment->subject, $_GET['q'], array('fragment' => "comment-$comment->cid"));
-  $variables['template_files'][] = 'comment-'. $node->type;
-  // set status to a string representation of comment->status.
-  if (isset($comment->preview)) {
-    $variables['status']  = 'comment-preview';
-  }
-  else {
-    $variables['status']  = ($comment->status == COMMENT_NOT_PUBLISHED) ? 'comment-unpublished' : 'comment-published';
-  }
-}
