@@ -45,11 +45,6 @@
   font-style: italic;
 }
 
-.node .fivestar-static-form-item
-{
-  
-}
-
 .node-inner /* Additional wrapper for node */ {
 }
 
@@ -106,6 +101,12 @@
 }
 
 .node .meta /* Wrapper for submitted and terms data */ {
+  float:left;
+}
+
+.node .fivestar-static-form-item
+{
+  float:right;
 }
 
 .node .submitted /* The "posted by" information */ {
