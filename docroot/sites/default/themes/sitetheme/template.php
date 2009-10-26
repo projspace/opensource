@@ -238,3 +238,11 @@ function STARTERKIT_preprocess_block(&$vars, $hook) {
   $vars['sample_variable'] = t('Lorem ipsum.');
 }
 // */
+
+function sitetheme_comment_submitted($comment) {
+  return t('by !username on @datetime.',
+    array(
+      '!username' => theme('username', $comment),
+      '@datetime' => format_date($comment->timestamp, 'custom', 'j M Y')
+    ));
+}
