@@ -74,11 +74,6 @@
   vertical-align:middle;  
 }
 
-.view-homepage .views-field-view-node
-{
-  
-}
-
 .view-homepage .views-field-group-nid,
 .view-homepage .views-field-type,
 .view-homepage .views-field-comment-count,
@@ -105,8 +100,14 @@
   padding-right:5px;
 }
 
-.view-homepage .views-field-view-node {
+.view-homepage .views-field-view-node 
+{
   float: right;
+}
+
+.view-homepage .views-field-view-node a
+{
+  color:#5993CE
 }
 
 /*
