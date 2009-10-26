@@ -114,6 +114,12 @@ h3 {
   margin-bottom: 0.769em;
 }
 
+.comments h3
+{
+  display:inline;
+  margin:0;
+}
+
 h4,
 h5,
 h6 {
