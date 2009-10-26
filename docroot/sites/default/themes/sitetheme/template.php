@@ -280,7 +280,7 @@ function sitetheme_preprocess_comment(&$variables) {
   $variables['author']    = theme('username', $comment);
   $variables['content']   = $comment->comment;
   $variables['date']      = format_date($comment->timestamp);
-  $variables['links']     = isset($variables['links']) ? theme('links', $variables['links']) : '';
+  $variables['links']     .= isset($variables['links']) ? theme('links', $variables['links']) : '';
   /* Add vote up/down icons here */
   $variables['links']     .= $variables['vote_up_down'];
   
