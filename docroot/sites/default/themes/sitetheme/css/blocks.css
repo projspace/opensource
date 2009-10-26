@@ -163,8 +163,10 @@
   float: right;
 }
 
-.block .view-id-channel_Poll .content,
-.block .view-id-channel_Poll .content h2 {
+#block-views-channel_Poll-block_1 .content,
+#block-views-channel_Poll-block_1 .content h2,
+#block-views-channel_Poll-block_2 .content,
+#block-views-channel_Poll-block_2 .content h2 {
   margin-top: 0;
 }
 
