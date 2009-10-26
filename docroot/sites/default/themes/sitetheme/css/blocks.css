@@ -210,3 +210,8 @@
 #footer #block-block-1 .content {
   margin: 0 15px;
 }
+
+#block-menu-menu-about-more li {
+  float: left;
+  width: 50%;
+}
