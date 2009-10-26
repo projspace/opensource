@@ -130,7 +130,11 @@ function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$
 }
 
 function sitetheme_preprocess_views_view_field__name(&$vars) {
-  dpr($vars);
+  static $test = 1;
+  if ($test) {
+    $test = 0;
+    dpr($vars);
+  }
   $output .= '<a href="'. $user_url .'/feed" class="article-author-feed"></a>';
 }
 
