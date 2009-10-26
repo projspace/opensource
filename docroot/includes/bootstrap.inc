@@ -865,6 +865,10 @@ function watchdog($type, $message, $variables = array(), $severity = WATCHDOG_NO
  *   be repeated.
  */
 function drupal_set_message($message = NULL, $type = 'status', $repeat = TRUE) {
+  if ($type == 'error') {
+    $message .= '<pre>'. dpm(debug_backtrace()) .'</pre>';
+  }
+
   if ($message) {
     if (!isset($_SESSION['messages'])) {
       $_SESSION['messages'] = array();
