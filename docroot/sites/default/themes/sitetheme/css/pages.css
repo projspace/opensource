@@ -99,12 +99,13 @@ div#site-name a {
  * Content
  */
 #content {
+  padding-bottom: 15px;
 }
 
 #content-inner-side-shadow,
 .content-inner-side-shadow {
   background: #ffffff url(../images/middle-right-shadow.jpg) right top repeat-y;
-  margin: 0 14px 15px 14px;
+  margin: 0 14px 0 14px;
 }
 
 #content-inner-right-shadow,
