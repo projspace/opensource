@@ -14,6 +14,8 @@
 }
 
 .comment /* Wrapper for a single comment */ {
+  border:1px solid #E7E7E7;
+  padding:20px;
 }
 
 .comment-inner /* Additional wrapper for a single comment */ {
