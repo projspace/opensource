@@ -244,7 +244,7 @@ function STARTERKIT_preprocess_block(&$vars, $hook) {
  *
  * @ingroup themeable
  */
-function theme_node_submitted($node) {
+function sitetheme_node_submitted($node) {
   return t('by !username on @datetime',
     array(
       '!username' => theme('username', $node),
