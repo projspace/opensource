@@ -281,8 +281,9 @@ function sitetheme_preprocess_comment(&$variables) {
   $variables['content']   = $comment->comment;
   $variables['date']      = format_date($comment->timestamp);
   
-    /* Add vote up/down icons here */
-  $variables['links']     .= $variables['vote_up_down'];
+    /* Add vote up/down voting widget here */
+  //$variables['links']     .= $variables['vote_up_down'];
+  
   $variables['links']     .= isset($variables['links']) ? theme('links', $variables['links']) : '';
  
   $variables['new']       = $comment->new ? t('new') : '';
