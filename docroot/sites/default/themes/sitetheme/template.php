@@ -248,6 +248,9 @@ function sitetheme_comment_submitted($comment) {
 }
 
 function sitetheme_preprocess_comment_wrapper(&$variables) {
+  
+  print_r($vars['node']);
+  
   // Provide contextual information.
   $variables['display_mode']  = _comment_get_display_setting('mode', $variables['node']);
   $variables['display_order'] = _comment_get_display_setting('sort', $variables['node']);
