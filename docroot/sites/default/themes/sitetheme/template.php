@@ -131,7 +131,7 @@ function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$
 
 function sitetheme_preprocess_views_view_field__name(&$vars) {
   $user_url = url('user/'. $vars['row']->users_uid);
-  $output .= '<a href="'. $user_url .'/feed" class="article-author-feed"></a>';
+  $vars['output'] .= '<a href="'. $user_url .'/feed" class="article-author-feed"></a>';
 }
 
 function sitetheme_links($links, $attributes = array('class' => 'links')) {
