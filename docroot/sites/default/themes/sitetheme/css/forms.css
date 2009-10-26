@@ -31,7 +31,7 @@
   width:100px;
 }
 
-.edit-notify-wrapper .form-item label {
+#edit-notify-wrapper .form-item label {
   width: 100%;
   margin-bottom: 10px;
 }
