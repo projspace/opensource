@@ -26,7 +26,7 @@
 .form-item label /* The label for a form element */ {
   display: block;
   font-weight: bold;
-  color:#E7E7E7;
+  color:#B2B2B2;
 }
 
 .form-item label.option /* The label for a radio button or checkbox */ {
