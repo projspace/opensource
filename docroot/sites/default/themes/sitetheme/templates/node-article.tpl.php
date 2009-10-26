@@ -91,8 +91,6 @@
     <?php print $content; ?>
   </div>
 
-  <?php print $vote_storylink_via ?>
-  <?php print $vote_up_down_widget ?>
   <?php if ($page) print $links; ?>
   <?php print $links_all; ?>
 
