@@ -91,12 +91,23 @@
 
 /* Vote up/down icons */
 
+.vote-up-down-widget
+{
+  border:none;
+  margin:0;
+  padding:0;
+}
+
 .vote-up-inact, .up-inact {
-  background:transparent url(../images/icon-vote-up.png) no-repeat scroll 0 0;
+  background:transparent url(../images/icon-vote-up.png) no-repeat scroll 50% 0;
+  float:left;
+  padding:0 5px;
 }
 
 .vote-down-inact, .down-inact {
-  background:transparent url(../images/icon-vote-down.png) no-repeat scroll 0 0;
+  background:transparent url(../images/icon-vote-down.png) no-repeat scroll 50% 0;
+  float:left;
+  padding:0 5px;
 }
 
 
