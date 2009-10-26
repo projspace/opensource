@@ -141,6 +141,7 @@ function imagecache_profiles_form_alter(&$form, $form_state, $form_id) {
  * See - http://drupal.org/node/239676
  */
 function imagecache_profiles_user_profile_form_validate($form, &$form_state) {
+  watchdog('form validate'. print_r($form_state, TRUE));
   if (isset($form_state['values']['picture'])) {
     $image_info = image_get_info($form_state['values']['picture']);
     if ($image_info['width'] < variable_get('user_picture_imagecache_profiles_min_width', 0) || $image_info['height'] < variable_get('user_picture_imagecache_profiles_min_height', 0)) {
