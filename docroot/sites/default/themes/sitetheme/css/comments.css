@@ -85,6 +85,7 @@
 
 .indented /* Nested comments are indented */ {
   /* margin-left: 25px; */ /* Drupal core uses a 25px left margin */
+  margin-left:40px;
 }
 
 .preview .comment /* Preview of the comment before submitting new or updated comment */ {
