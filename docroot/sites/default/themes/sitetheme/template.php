@@ -247,6 +247,12 @@ function sitetheme_comment_submitted($comment) {
     ));
 }
 
+/**
+ * Process variables for comment-wrapper.tpl.php.
+ *
+ * @see comment-wrapper.tpl.php
+ * @see theme_comment_wrapper()
+ */
 function sitetheme_preprocess_comment_wrapper(&$variables) {
   
   //print_r($variables['node']);
