@@ -42,7 +42,7 @@
   <?php endif; ?>
 
   <div class="content">
-  	<div class="content-inner">
+  	<div class="content-inner clear-block">
       <?php print $block->content; ?>
     </div>
   </div>
