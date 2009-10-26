@@ -148,6 +148,7 @@
 #block-views-channel_reading-block_1 .content{
   color: #797979;
   font-weight: bold;
+  overflow: visible;
 }
 
 #block-views-channel_reading-block_1 .views-field-field-url-url,
