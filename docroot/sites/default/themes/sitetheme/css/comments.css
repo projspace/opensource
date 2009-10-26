@@ -85,7 +85,8 @@
 
 .comment .comment-bottom
 {
-  
+  border-top:1px dashed #E7E7E7;
+  padding-top:10px;
 }
 
 .indented /* Nested comments are indented */ {
