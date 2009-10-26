@@ -245,7 +245,7 @@ function STARTERKIT_preprocess_block(&$vars, $hook) {
  * @ingroup themeable
  */
 function sitetheme_node_submitted($node) {
-  return t('by !username on @datetime',
+  return t('Posted @datetime by !username',
     array(
       '!username' => theme('username', $node),
       '@datetime' => format_date($comment->timestamp, 'custom', 'j M Y')
