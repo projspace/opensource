@@ -80,10 +80,6 @@
       <?php if ($submitted): ?>
         <span class="submitted"><?php print $submitted; ?></span>
       <?php endif; ?>
-
-      <?php if ($terms): ?>
-        <div class="terms terms-inline"><?php print $terms; ?></div>
-      <?php endif; ?>
     </div>
   <?php endif; ?>
 
@@ -93,5 +89,9 @@
 
   <?php if ($page) print $links; ?>
   <?php print $links_all; ?>
+  
+  <?php if ($terms): ?>
+    <div class="terms terms-inline">Tags: <?php print $terms; ?></div>
+  <?php endif; ?>
 
 </div></div> <!-- /node-inner, /node -->
