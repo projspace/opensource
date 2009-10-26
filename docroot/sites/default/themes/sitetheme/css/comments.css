@@ -101,17 +101,27 @@
   padding:0;
 }
 
-.vote-up-inact, .up-inact {
+.vote-up-act,
+.vote-up-inact
+.vote-up-inact:hover,
+.up-inact
+ {
   background:transparent url(../images/icon-vote-up.png) no-repeat scroll 50% 0;
   float:left;
   padding:0 5px;
 }
 
-.vote-down-inact, .down-inact {
+.vote-down-act, 
+.vote-down-inact,
+.vote-down-inact:hover, 
+.down-inact 
+{
   background:transparent url(../images/icon-vote-down.png) no-repeat scroll 50% 0;
   float:left;
   padding:0 5px;
 }
+
+
 
 
 
