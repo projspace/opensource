@@ -167,12 +167,26 @@
 #block-views-channel_Poll-block_1 .content h2,
 #block-views-channel_Poll-block_2 .content,
 #block-views-channel_Poll-block_2 .content h2,
-#block-views-channel_description-block_1 .content {
+#block-views-channel_description-block_1 .content,
+#block-views-author_info-block_1 .content {
   margin-top: 0;
 }
 
 #sidebar-second .vote-form .choices {
   width: 100%;
+}
+
+#block-views-author_info-block_1 .views-field-picture {
+  margin: 0 10px 10px 0;
+  float: left;
+}
+
+#block-views-author_info-block_1 .views-field-value p {
+  margin: 0;
+}
+
+#block-views-author_info-block_1 .views-field-nothing {
+  float: right;
 }
 
 #footer .block {
