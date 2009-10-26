@@ -73,6 +73,12 @@
   display:inline-block;
   vertical-align:middle;  
 }
+
+.view-homepage .views-field-view-node
+{
+  
+}
+
 .view-homepage .views-field-group-nid,
 .view-homepage .views-field-type,
 .view-homepage .views-field-comment-count,
