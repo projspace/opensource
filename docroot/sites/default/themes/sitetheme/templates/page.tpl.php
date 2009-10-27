@@ -177,11 +177,11 @@
             <?php if ($tabs): ?>
               <div class="tabs"><?php print $tabs; ?></div>
             <?php endif; ?>
-            <?php print $help; ?>
           </div> <!-- /#content-header -->
         <?php endif; ?>
 
         <div id="content-area">
+          <?php print $help; ?>
           <?php print $content; ?>
         </div>
 
