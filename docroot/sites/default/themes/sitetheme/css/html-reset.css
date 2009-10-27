@@ -25,8 +25,7 @@ body {
   font-size: 100%; /* Fixes exaggerated text resizing in IE6 and IE7 */
 }
 
-textarea, 
-select, 
+ 
 #page {
   /*
    * To use a 12px font size on the page, delete the 14px declarations.
@@ -37,6 +36,12 @@ select,
   font-size: 0.75em; /* 16px x .75 = 12px */
   line-height: 1.5em; /* 12px x 1.5 = 18px */
   color: #333333;
+}
+
+textarea, 
+select
+{
+  font-size: 12px;
 }
 
 body,
