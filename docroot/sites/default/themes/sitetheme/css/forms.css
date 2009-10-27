@@ -18,6 +18,11 @@ select
   padding:8px;
 }
 
+select
+{
+  padding:0;
+}
+
 .form-text {
   height: 14px;
   font-size: 14px;
