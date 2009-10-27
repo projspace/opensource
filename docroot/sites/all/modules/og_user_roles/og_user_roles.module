@@ -124,7 +124,6 @@ function og_user_roles_init() {
   $group_node = og_user_roles_determine_context();
   // Assign additional user roles to current user (if any).
   og_user_roles_grant_roles($user, $group_node);
-  print 'fired';
 }
 
 /**
