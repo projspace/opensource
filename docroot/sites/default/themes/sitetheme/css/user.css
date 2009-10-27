@@ -12,6 +12,7 @@
 .section-users #content-inner
 {
   padding:0;
+  width:auto;
 }
 
 .section-users #content-area
@@ -24,6 +25,7 @@
   overflow:hidden;
   margin-bottom:20px;
   border-bottom:1px solid grey;
+  padding:10px 10px 0 10px;
 }
 
 .section-users h1.title
