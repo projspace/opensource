@@ -36,6 +36,7 @@
 .section-users #content-bottom
 {
   padding:10px;
+  clear:both;
 }
 
 .section-user h1.title,
