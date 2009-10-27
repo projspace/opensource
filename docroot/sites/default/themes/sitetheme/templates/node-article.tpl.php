@@ -90,7 +90,7 @@
   <?php if ($page) print $links; ?>
   <?php print $links_all; ?>
   
-  <?php if ($terms): ?>
+  <?php if ($page && $terms): ?>
     <div class="terms terms-inline">Tags: <?php print $terms; ?></div>
   <?php endif; ?>
 
