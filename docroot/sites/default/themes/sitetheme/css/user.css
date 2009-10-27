@@ -9,17 +9,20 @@
   margin:0 1em 1em 0;
 }
 
+.section-user #content-inner,
 .section-users #content-inner
 {
   padding:0;
   width:auto;
 }
 
+.section-user #content-area,
 .section-users #content-area
 {
   padding:10px;
 }
 
+.section-user #content-header,
 .section-users #content-header
 {
   height:38px;
@@ -28,29 +31,34 @@
   padding:0 0 0 10px;
 }
 
+.section-user h1.title,
 .section-users h1.title
 {
   float:left;
   line-height:40px;
 }
 
+.section-user div.tabs,
 .section-users div.tabs
 {
   float:right;
   margin:0;
 }
 
+.section-user ul.tabs,
 .section-users ul.tabs
 {
   background:none;
   padding:0;
 }
 
+.section-user ul.tabs li,
 .section-users ul.tabs li
 {
   
 }
 
+.section-user ul.tabs li a,
 .section-users ul.tabs li a
 {
   background:none;
@@ -58,11 +66,13 @@
   padding:0;
 }
 
+.section-user ul.tabs li a:hover,
 .section-users ul.tabs li a:hover
 {
   background:none;
 }
 
+.section-user ul.tabs li a .tab,
 .section-users ul.tabs li a .tab
 {
   background:none;
@@ -71,11 +81,13 @@
   text-transform:uppercase;
 }
 
+.section-user ul.tabs li a.active .tab,
 .section-users ul.tabs li a.active .tab
 {
   border-bottom:1px solid #fff;
 }
 
+.section-user ul.tabs li a:hover .tab,
 .section-users ul.tabs li a:hover .tab
 {
   background:none;
