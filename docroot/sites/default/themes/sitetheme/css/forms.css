@@ -10,7 +10,8 @@
   border:1px solid #cdcbca;
 }
 
-.form-text {
+.form-text,
+.form-file {
   height: 14px;
   font-size: 14px;
   padding: 8px;
