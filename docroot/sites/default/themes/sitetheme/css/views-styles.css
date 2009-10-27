@@ -184,6 +184,13 @@
   border-bottom:1px dotted #CBCCCB; 
 }
 
+.view-articles .views-row-last
+{
+  padding-bottom:0;
+  margin-bottom:0;
+  border-bottom:none;
+}
+
 .view-articles .views-field-title
 {
   font-size:18px; /* temporary */
