@@ -41,6 +41,7 @@
 .form-item label.option
 {
   width:auto;
+  padding-right:10px;
 }
 
 #edit-notify-wrapper label {
