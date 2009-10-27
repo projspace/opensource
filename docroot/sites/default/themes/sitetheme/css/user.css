@@ -46,12 +46,12 @@
 .section-users ul.tabs li a
 {
   background:none;
+  height:auto;
 }
 
 .section-users ul.tabs li a:hover
 {
   background:none;
-
 }
 
 .section-users ul.tabs li a .tab
