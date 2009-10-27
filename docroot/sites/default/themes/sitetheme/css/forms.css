@@ -104,6 +104,7 @@ select
 /* Fivestar */
 form.fivestar-widget {
   float:right;
+  clear:none;
 }
 
 
