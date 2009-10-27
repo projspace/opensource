@@ -67,6 +67,7 @@
   background:none;
   padding:9px 13px;
   border-left:1px solid grey;
+  text-transform:uppercase;
 }
 
 .section-users ul.tabs li a.active .tab
