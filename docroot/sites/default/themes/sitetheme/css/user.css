@@ -21,22 +21,21 @@
   width:auto;
 }
 
-.section-user #content-area,
-.section-users #content-area
-{
-  padding:10px;
-}
-
 .section-user #content-header,
 .section-users #content-header
 {
-/*
-  overflow:hidden;
-*/
   height:38px;
   margin-bottom:10px;
   border-bottom:1px solid #D6D5D3;
   padding:0 0 0 10px;
+}
+
+.section-user #content-area,
+.section-users #content-area
+.section-user #content-bottom,
+.section-users #content-bottom
+{
+  padding:10px;
 }
 
 .section-user h1.title,
