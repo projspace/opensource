@@ -62,6 +62,16 @@
   
 }
 
+.views-field-group-nid,
+.views-field-type,
+.views-field-comment-count,
+.views-field-created,
+.views-field-name
+{
+  display:inline;
+  color:#767677;
+}
+
 /*
  * Homepage views
  */
