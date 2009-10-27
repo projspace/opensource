@@ -42,7 +42,17 @@
   background:none;
 }
 
+.section-users ul.tabs li a:hover
+{
+  
+}
+
 .section-users ul.tabs li a .tab
 {
   background:none;
+}
+
+.section-users ul.tabs li a:hover .tab
+{
+  
 }
