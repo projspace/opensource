@@ -22,7 +22,7 @@
 
 .section-users #content-header
 {
-  overflow:hidden;
+  height:38px;
   margin-bottom:10px;
   border-bottom:1px solid grey;
   padding:0 10px;
