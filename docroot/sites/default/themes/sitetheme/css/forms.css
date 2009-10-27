@@ -7,7 +7,14 @@
 .form-text,
 .form-textarea
 {
-  border:1px solid #E7E7E7;
+  border:1px solid #cdcbca;
+}
+
+.form-text {
+  height: 14px;
+  font-size: 14px;
+  padding: 8px;
+  border: 1px solid #cdcbca;
 }
 
 
