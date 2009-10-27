@@ -10,6 +10,13 @@
   border:1px solid #cdcbca;
 }
 
+textarea, 
+select
+{
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
 .form-text {
   height: 14px;
   font-size: 14px;

@@ -38,13 +38,6 @@ body {
   color: #333333;
 }
 
-textarea, 
-select
-{
-  font-size: 12px;
-  line-height: 1.5em;
-}
-
 body,
 caption,
 th,
