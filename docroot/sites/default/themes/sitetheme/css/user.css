@@ -64,6 +64,7 @@
 {
   background:none;
   padding:10px 13px;
+  border-left:1px solid grey;
 }
 
 .section-users ul.tabs li a:hover .tab
