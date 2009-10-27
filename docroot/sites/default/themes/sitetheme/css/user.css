@@ -69,6 +69,13 @@
   border-left:1px solid grey;
 }
 
+.section-users ul.tabs li a .tab
+{
+  background:none;
+  padding:0;
+  margin:0;
+}
+
 .section-users ul.tabs li a.active
 {
   border-bottom:1px solid #fff;
