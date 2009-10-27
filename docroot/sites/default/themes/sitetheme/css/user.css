@@ -24,6 +24,11 @@
   
 }
 
+dl.user-member dt
+{
+  float:left;
+}
+
 .section-users dd
 {
   margin:0;
