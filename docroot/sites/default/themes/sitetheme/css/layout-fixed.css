@@ -217,7 +217,7 @@ body {
   padding-top: 13px;
   overflow: hidden;
   right: 0;
-  bottom: 0;
+  bottom: 12px;
   background: url(../images/rss.jpg);
 }
 
