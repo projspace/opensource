@@ -48,6 +48,13 @@
   margin:0;
 }
 
+.section-user ul.secondary,
+.section-users ul.secondary
+{
+  background:none;
+  border-bottom:none;
+}
+
 .section-user ul.primary,
 .section-users ul.primary
 {
