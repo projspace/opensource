@@ -9,6 +9,21 @@
   margin:0 1em 1em 0;
 }
 
+.profile dt.profile-profile_display_name,
+.profile dt.profile-profile_loaction,
+.profile dt.profile-profile_website
+{
+  float:left;
+  width:125px;
+}
+
+.profile dd.profile-profile_display_name,
+.profile dd.profile-profile_loaction,
+.profile dd.profile-profile_website
+{
+  
+}
+
 .section-users dd
 {
   margin:0;
