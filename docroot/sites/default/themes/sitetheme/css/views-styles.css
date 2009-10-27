@@ -30,12 +30,16 @@
 
 .views-field-field-image-imceimage-path
 {
-  
+  float:right;
+  margin-left:10px;
+  margin-bottom:10px;
 }
 
 .views-field-title 
 {
   font-weight:bold;
+  font-size:24px; /* temporary */
+  line-height:28px; /* temporary */
 }
 
 .views-field-teaser
@@ -174,3 +178,5 @@
   margin-top: 10px;
   float: right;
 }
+
+
