@@ -11,7 +11,12 @@
 
 .section-users #content-inner
 {
-  padding-top:0;
+  padding:0;
+}
+
+.section-users #content-area
+{
+  padding:10px;
 }
 
 .section-users #content-header
