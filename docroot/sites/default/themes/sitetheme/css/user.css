@@ -25,7 +25,10 @@
 .section-user #content-header,
 .section-users #content-header
 {
+/*
   overflow:hidden;
+*/
+  height:38px;
   margin-bottom:10px;
   border-bottom:1px solid #D6D5D3;
   padding:0 0 0 10px;
