@@ -36,8 +36,10 @@
   margin-bottom: 10px;
 }
 
-#edit-profile-bio-wrapper label{
-  display:none;
+#edit-signature-wrapper .resizable-textarea,
+#edit-profile-bio-wrapper .resizable-textarea
+{
+  clear:both;
 }
 
 .form-item label.option /* The label for a radio button or checkbox */ {
