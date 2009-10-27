@@ -9,6 +9,11 @@
   margin:0 1em 1em 0;
 }
 
+.section-users #content-inner
+{
+  padding-top:0;
+}
+
 .section-users #content-header
 {
   overflow:hidden;
@@ -24,6 +29,7 @@
 .section-users div.tabs
 {
   float:right;
+  margin:0;
 }
 
 .section-users ul.tabs
@@ -54,5 +60,5 @@
 
 .section-users ul.tabs li a:hover .tab
 {
-  
+  padding:10px 13px 10px 6px;
 }
