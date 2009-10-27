@@ -53,6 +53,8 @@
 {
   background:none;
   border-bottom:none;
+  padding:0;
+  float:right;
 }
 
 .section-user ul.primary,
