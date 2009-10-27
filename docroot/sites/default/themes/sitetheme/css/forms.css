@@ -108,7 +108,12 @@ form.fivestar-widget {
 }
 
 .edit-vote-wrapper label{
-  
+  width:55px; 
+  font-weight:normal;
+}
+
+div.fivestar-widget {
+  display:inline;
 }
 
 
