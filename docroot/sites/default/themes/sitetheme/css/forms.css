@@ -107,7 +107,7 @@ form.fivestar-widget {
   clear:none;
 }
 
-.edit-vote-wrapper label{
+#edit-vote-wrapper label{
   width:55px; 
   font-weight:normal;
 }
