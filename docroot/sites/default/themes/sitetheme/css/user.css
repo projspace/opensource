@@ -28,6 +28,7 @@
 
 .section-users ul.tabs
 {
+  background:none;
   
 }
 
@@ -38,10 +39,10 @@
 
 .section-users ul.tabs li a
 {
-  
+  background:none;
 }
 
 .section-users ul.tabs li a .tab
 {
-  
+  background:none;
 }
