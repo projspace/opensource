@@ -220,7 +220,6 @@ div.tabs /* See also the tabs.css file. */ {
 
 .help /* Help text on a page */ {
   margin: 1em 0;
-  clear:both;
 }
 
 .more-help-link /* Link to more help */ {
