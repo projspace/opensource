@@ -133,7 +133,7 @@
               </h1>
             <?php endif; ?>
           <?php endif; ?>
-
+		  <a href="http://www.redhat.com" title="Redhat" id="redhat-link">Redhat</a>
           <?php if ($site_slogan): ?>
             <div id="site-slogan"><?php print $site_slogan; ?></div>
           <?php endif; ?>

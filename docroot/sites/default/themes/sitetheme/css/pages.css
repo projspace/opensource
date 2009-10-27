@@ -70,6 +70,15 @@ div#site-name a {
   padding-top: 100px;
 }
 
+#redhat-link {
+  display: block;
+  overflow: hidden;
+  height: 0;
+  width: 100px;
+  padding-top: 100px;
+  float: right;
+}
+
 #site-name a:link,
 #site-name a:visited {
   color: #000;
