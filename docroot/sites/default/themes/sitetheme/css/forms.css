@@ -37,7 +37,7 @@
 }
 
 #edit-profile-bio-wrapper label{
-  display:block;
+  display:none;
 }
 
 .form-item label.option /* The label for a radio button or checkbox */ {
