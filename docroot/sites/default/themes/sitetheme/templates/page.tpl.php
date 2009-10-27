@@ -109,6 +109,7 @@
       <?php if ($navbar_top): ?>
         <div id="navbar-top" class="region region-navbar_top clear-block">
           <?php print $navbar_top; ?>
+          <?php print $page_feed; ?>
         </div> <!-- /#navbar-top -->
       <?php endif; ?>
 
