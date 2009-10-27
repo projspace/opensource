@@ -103,10 +103,10 @@ function sitetheme_preprocess_page(&$vars, $hook) {
     $vars['classes_array'][] = 'with-channel-header';
   }
   if (module_exists('og') && $group = og_get_group_context()) {
-    $vars['page_feed'] = l('Feed', $group->path .'/feed'. array('attributes' => array('class' => 'page-feed')));
+    $vars['page_feed'] = l('Feed', $group->path .'/feed', array('attributes' => array('class' => 'page-feed')));
   }
   else {
-    $vars['page_feed'] = l('Feed', 'feed'. array('attributes' => array('class' => 'page-feed')));
+    $vars['page_feed'] = l('Feed', 'feed', array('attributes' => array('class' => 'page-feed')));
   }
 }
 
