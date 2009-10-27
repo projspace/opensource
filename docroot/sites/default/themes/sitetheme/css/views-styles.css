@@ -159,3 +159,18 @@
   margin-left:20px;
 }
 
+.block .view-id-featured_comment .views-field-name,
+.block .view-id-featured_comment .views-field-timestamp {
+  float: left;
+  color: #797979;
+  margin-top: 10px;
+}
+
+.block .view-id-featured_comment .views-field-name {
+  margin-right: 5px;
+}
+
+.block .view-id-featured_comment .views-field-view-comment {
+  margin-top: 10px;
+  float: right;
+}
