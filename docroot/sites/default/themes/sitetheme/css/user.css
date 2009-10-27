@@ -45,35 +45,35 @@
   margin:0;
 }
 
-.section-user ul.tabs,
-.section-users ul.tabs
+.section-user ul.primary,
+.section-users ul.primary
 {
   background:none;
   padding:0;
 }
 
-.section-user ul.tabs li,
-.section-users ul.tabs li
+.section-user ul.primary li,
+.section-users ul.primary li
 {
   
 }
 
-.section-user ul.tabs li a,
-.section-users ul.tabs li a
+.section-user ul.primary li a,
+.section-users ul.primary li a
 {
   background:none;
   height:auto;
   padding:0;
 }
 
-.section-user ul.tabs li a:hover,
-.section-users ul.tabs li a:hover
+.section-user ul.primary li a:hover,
+.section-users ul.primary li a:hover
 {
   background:none;
 }
 
-.section-user ul.tabs li a .tab,
-.section-users ul.tabs li a .tab
+.section-user ul.primary li a .tab,
+.section-users ul.primary li a .tab
 {
   background:none;
   padding:9px 13px;
@@ -81,14 +81,14 @@
   text-transform:uppercase;
 }
 
-.section-user ul.tabs li a.active .tab,
-.section-users ul.tabs li a.active .tab
+.section-user ul.primary li a.active .tab,
+.section-users ul.primary li a.active .tab
 {
   border-bottom:1px solid #fff;
 }
 
-.section-user ul.tabs li a:hover .tab,
-.section-users ul.tabs li a:hover .tab
+.section-user ul.primary li a:hover .tab,
+.section-users ul.primary li a:hover .tab
 {
   background:none;
   border-bottom:1px solid #fff;
