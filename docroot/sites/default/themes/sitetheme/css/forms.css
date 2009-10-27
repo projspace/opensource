@@ -38,7 +38,8 @@
   width:125px;
 }
 
-.form-item .option label{
+.form-item label.option
+{
   width:auto;
 }
 
