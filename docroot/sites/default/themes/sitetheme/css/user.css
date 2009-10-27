@@ -50,15 +50,18 @@
 
 .section-users ul.tabs li a:hover
 {
-  
+  background:none;
+
 }
 
 .section-users ul.tabs li a .tab
 {
   background:none;
+  padding:10px 13px 10px 6px;
 }
 
 .section-users ul.tabs li a:hover .tab
 {
-  padding:10px 13px 10px 6px;
+  background:none;
+
 }
