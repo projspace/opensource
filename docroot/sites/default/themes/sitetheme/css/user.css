@@ -27,6 +27,7 @@
 dl.user-member dt
 {
   float:left;
+  padding-right:3px;
 }
 
 .section-users dd
