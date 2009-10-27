@@ -11,12 +11,12 @@
 
 .section-users h1.title
 {
-  
+  float:left;
 }
 
 .section-users div.tabs
 {
-  
+  float:right;
 }
 
 .section-users ul.tabs
@@ -32,4 +32,14 @@
 .section-users ul.tabs li a
 {
   
+}
+
+.section-users ul.tabs li a span
+{
+  
+}
+
+.section-users #content-header
+{
+  overflow:hidden;
 }
