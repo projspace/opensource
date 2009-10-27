@@ -38,6 +38,10 @@
   width:125px;
 }
 
+.form-item .option label{
+  width:auto;
+}
+
 #edit-notify-wrapper label {
   width: 100%;
   margin-bottom: 10px;
