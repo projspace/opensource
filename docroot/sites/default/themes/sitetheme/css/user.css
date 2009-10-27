@@ -31,6 +31,7 @@
 .section-users h1.title
 {
   float:left;
+  line-height:40px;
 }
 
 .section-users div.tabs
@@ -78,5 +79,5 @@
 .section-users ul.tabs li a:hover .tab
 {
   background:none;
-
+  border-bottom:1px solid #fff;
 }
