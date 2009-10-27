@@ -157,7 +157,6 @@ function imce_user_profile($user) {
 function imce_access($user = FALSE) {
   if ($user === FALSE) {
     global $user;
-    print 'grabbed global user... ';
   }
 
   if ($user->uid == 1) {
