@@ -91,6 +91,7 @@
   padding:9px 13px;
   border-left:1px solid #D6D5D3;
   text-transform:uppercase;
+  font-size:10px;
 }
 
 .section-user ul.primary li.active a .tab,
