@@ -43,6 +43,7 @@
   margin-bottom: 10px;
 }
 
+#edit-message-wrapper .resizable-textarea,
 #edit-signature-wrapper .resizable-textarea,
 #edit-profile-bio-wrapper .resizable-textarea
 {
