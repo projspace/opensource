@@ -36,6 +36,10 @@
   margin-bottom: 10px;
 }
 
+#edit-profile-bio-wrapper label{
+  display:none;
+}
+
 .form-item label.option /* The label for a radio button or checkbox */ {
   display: inline;
   font-weight: normal;
