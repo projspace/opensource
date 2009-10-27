@@ -35,7 +35,6 @@
 .section-users ul.tabs
 {
   background:none;
-  
 }
 
 .section-users ul.tabs li
@@ -57,7 +56,7 @@
 .section-users ul.tabs li a .tab
 {
   background:none;
-  padding:10px 13px 10px 6px;
+  padding:10px 13px;
 }
 
 .section-users ul.tabs li a:hover .tab
