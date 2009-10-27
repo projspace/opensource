@@ -74,8 +74,9 @@ div#site-name a {
   display: block;
   overflow: hidden;
   height: 0;
-  width: 100px;
-  padding-top: 100px;
+  width: 200px;
+  padding-top: 40px;
+  margin-top: 15px;
   float: right;
 }
 
