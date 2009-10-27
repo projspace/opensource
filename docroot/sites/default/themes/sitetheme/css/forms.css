@@ -101,6 +101,10 @@ select
 
 .tips /* Tips for Drupal's input formats */ {
 }
+/* Fivestar */
+form.fivestar-widget {
+  float:right;
+}
 
 
 /*
