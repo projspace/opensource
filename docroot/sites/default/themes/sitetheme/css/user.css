@@ -9,6 +9,11 @@
   margin:0 1em 1em 0;
 }
 
+.section-users dd
+{
+  margin:0;
+}
+
 .section-user #content-inner,
 .section-users #content-inner
 {
