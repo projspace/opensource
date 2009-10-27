@@ -38,8 +38,6 @@
 .views-field-title 
 {
   font-weight:bold;
-  font-size:24px; /* temporary */
-  line-height:28px; /* temporary */
 }
 
 .views-field-teaser
@@ -185,6 +183,14 @@
   margin-bottom:20px;
   border-bottom:1px dotted #CBCCCB; 
 }
+
+.view-homepage .views-field-title
+{
+  font-size:18px; /* temporary */
+  line-height:28px; /* temporary */
+}
+
+
 
 
 
