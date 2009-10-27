@@ -53,6 +53,7 @@
 {
   background:none;
   height:auto;
+  padding:0;
 }
 
 .section-users ul.tabs li a:hover
@@ -63,7 +64,7 @@
 .section-users ul.tabs li a .tab
 {
   background:none;
-  padding:10px 13px;
+  padding:9px 13px;
   border-left:1px solid grey;
 }
 
