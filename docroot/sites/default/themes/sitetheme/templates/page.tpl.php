@@ -133,7 +133,7 @@
               </h1>
             <?php endif; ?>
           <?php endif; ?>
-		  <a href="http://www.redhat.com" title="Redhat" id="redhat-link">Redhat</a>
+		  
           <?php if ($site_slogan): ?>
             <div id="site-slogan"><?php print $site_slogan; ?></div>
           <?php endif; ?>
@@ -143,7 +143,7 @@
       <?php if ($search_box): ?>
         <div id="search-box"><?php print $search_box; ?></div>
       <?php endif; ?>
-
+	  <a href="http://www.redhat.com" title="Redhat" id="redhat-link">Redhat</a>
       <?php if ($header): ?>
         <div id="header-blocks" class="region region-header">
           <?php print $header; ?>
