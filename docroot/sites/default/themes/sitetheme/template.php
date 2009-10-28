@@ -226,7 +226,7 @@ function STARTERKIT_preprocess_node(&$vars, $hook) {
  *   The name of the template being rendered ("comment" in this case.)
  */
 function sitetheme_preprocess_comment(&$vars, $hook) {
-  dpm($vars);
+//  dpm($vars);
 }
 // */
 
