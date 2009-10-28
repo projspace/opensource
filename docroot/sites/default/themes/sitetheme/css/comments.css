@@ -93,6 +93,11 @@ ul.links .comment_reply
   float:right;
 }
 
+ul.links .comment_reply a
+{
+  color:#3399FF;
+}
+
 ul.links .flag-comment_abuse
 {
   float:left;
