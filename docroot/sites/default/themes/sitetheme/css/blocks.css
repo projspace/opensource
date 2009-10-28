@@ -189,6 +189,10 @@
   float: right;
 }
 
+#block-views-author_info-block_1 .views-field-nothing a {
+  color:#3399FF;
+}
+
 #footer .block {
   float: left;
   margin-bottom: 0;
