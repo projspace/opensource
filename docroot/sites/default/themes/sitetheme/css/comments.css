@@ -86,7 +86,16 @@
 .comment .comment-bottom ul.links
 {
   margin:0;
+}
+
+ul.links .comment_reply
+{
   float:right;
+}
+
+ul.links .flag-comment_abuse
+{
+  float:left;
 }
 
 .comment .comment-bottom
