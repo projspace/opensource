@@ -43,6 +43,7 @@ select
   border: 2px solid #c00;
 }
 
+.section-users .form-item label,
 .section-user .form-item label /* The label for a form element */ {
   display: block;
   font-weight: bold;
