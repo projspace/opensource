@@ -231,12 +231,12 @@
   margin-top: 10px;
 }
 
-#block-views-twitter_listing-block_1 h2.title {
+#sidebar-second #block-views-twitter_listing-block_1 h2.title {
   width: 175px;
   display: block;
 }
 
-#block-views-twitter_listing-block_1 h2.title .twitter-logo {
+#sidebar-second #block-views-twitter_listing-block_1 h2.title .twitter-logo {
   width: 58px;
   float: right;
   display: block;
