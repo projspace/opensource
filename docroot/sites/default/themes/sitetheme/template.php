@@ -196,6 +196,14 @@ function sitetheme_links($links, $attributes = array('class' => 'links')) {
   return $output;
 }
 
+function sitetheme_box($title, $content, $region = 'main') {
+  if ($region == 'main' && $title == t('Post new comment')) {
+    $title = t('Comment now');
+  }
+  $output = '<h2 class="title">'. $title .'</h2><div>'. $content .'</div>';
+  return $output;
+}
+
 /**
  * Override or insert variables into the node templates.
  *
