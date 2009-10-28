@@ -235,4 +235,9 @@
   float: left;
   display: block;
   padding-right: 60px;
+  background: url(../images/twitter-logo.jpg) right no-repeat;
+}
+
+#block-views-twitter_listing-block_1 .content {
+  margin-top: 18px;
 }
