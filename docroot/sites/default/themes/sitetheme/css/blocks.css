@@ -219,3 +219,13 @@
   float: left;
   width: 50%;
 }
+
+.block .view-twitter-listing .views-field-created-time {
+  float: left;
+  margin-top: 10px;
+}
+
+.block .view-twitter-listing .views-field-screen-name {
+  float: right;
+  margin-top: 10px;
+}
