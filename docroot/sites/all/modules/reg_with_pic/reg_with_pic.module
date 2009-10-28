@@ -32,14 +32,15 @@ function reg_with_pic_user($op, &$edit, &$user, $category=null) {
         $file = file_save_upload('picture_upload_register', $validators);
         break;
 
-      case 'insert':
+case 'insert':
         // file repopulates from uploadcache
-        $file = file_save_upload('picture_upload_register');
-        $info = image_get_info($file->filepath);
-        // save picture to correct path and update the row in the user table
-        $destination = variable_get('user_picture_path', 'pictures') .'/picture-'. $user->uid .'.'. $info['extension'];
-        if (file_copy($file, $destination, FILE_EXISTS_REPLACE)) {
-          db_query("UPDATE {users} SET picture='%s' WHERE uid=%d", $file->filepath, $user->uid);
+        if($file = file_save_upload('picture_upload_register')) {
+          $info = image_get_info($file->filepath);
+          // save picture to correct path and update the row in the user table
+          $destination = variable_get('user_picture_path', 'pictures') .'/picture-'. $user->uid .'.'. $info['extension'];
+          if (file_copy($file, $destination, FILE_EXISTS_REPLACE)) {
+            db_query("UPDATE {users} SET picture='%s' WHERE uid=%d", $file->filepath, $user->uid);
+          }
         }
         break;
     }
