@@ -91,6 +91,7 @@
 ul.links .comment_reply
 {
   float:right;
+  text-transform:capitalize;
 }
 
 ul.links .comment_reply a
