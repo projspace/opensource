@@ -121,6 +121,7 @@ body {
   margin-left: 0; /* LTR */
   margin-right: -575px; /* LTR */ /* Negative value of #content's width + left margin. */
   padding: 0; /* DO NOT CHANGE. Add padding or margin to #content-inner. */
+  padding-top: 15px;
 }
 
 .sidebar-first #content {
