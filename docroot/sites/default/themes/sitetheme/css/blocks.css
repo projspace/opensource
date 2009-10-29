@@ -33,6 +33,7 @@
 }
 
 .block-inner /* Additional wrapper for block */ {
+  height : 100%;
 }
 
 #sidebar-second .block {
