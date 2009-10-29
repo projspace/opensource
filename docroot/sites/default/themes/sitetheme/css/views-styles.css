@@ -196,7 +196,14 @@
   line-height:28px; /* temporary */
 }
 
+.node-type-channel .view-id-og_ghp_ron .views-row,
+.front .view-homepage .attachment-after {
+  margin-bottom: 15px;
+}
 
+.node-type-channel .view-id-og_ghp_ron .views-row-last {
+  margin-bottom: 0;
+}
 
 
 
