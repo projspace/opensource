@@ -68,9 +68,9 @@
  */
 function sitetheme_theme(&$existing, $type, $theme, $path) {
   $hooks = zen_theme($existing, $type, $theme, $path);
-  //$hooks['user_login'] = array(
-  //  'arguments' => array('form' => NULL),
-  //);
+  $hooks['user_login'] = array(
+    'arguments' => array('form' => NULL),
+  );
   // @TODO: Needs detailed comments. Patches welcome!
   return $hooks;
 }
@@ -308,5 +308,4 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
 
 function sitetheme_user_login($form) {
   return 'this is a test';
-}
 }
