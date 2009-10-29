@@ -126,7 +126,7 @@ function sitetheme_preprocess_node(&$vars) {
   }
   elseif ($vars['node']-> type == 'article' && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
-    $vars['submitted'] .= t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
+    $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
   }
 }
 
