@@ -68,10 +68,9 @@
  */
 function sitetheme_theme(&$existing, $type, $theme, $path) {
   $hooks = zen_theme($existing, $type, $theme, $path);
-  // Add your theme hooks like this:
-  /*
-  $hooks['hook_name_here'] = array( // Details go here );
-  */
+  $hooks['user_login'] = array(
+    'arguments' => array('form' => NULL),
+  );
   // @TODO: Needs detailed comments. Patches welcome!
   return $hooks;
 }
@@ -305,4 +304,9 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
   if ($variables['node']->comment_count > 0) {
       $variables['comment_count'] .= '<span class="comment-count">'. format_plural($variables['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $variables['node']->comment_count)) .'</span>';
   }
+}
+
+function sitetheme_user_login($form) {
+  return 'this is a test';
+}
 }
