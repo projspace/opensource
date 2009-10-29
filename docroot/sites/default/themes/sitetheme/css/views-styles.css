@@ -197,14 +197,10 @@
 }
 
 .node-type-channel .view-id-og_ghp_ron .views-row {
-  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
-.node-type-channel .view-id-og_ghp_ron .views-row-last {
-  margin-bottom: 0;
-}
-
-.front .view-homepage .attachment-after {
+.front .view-homepage .view-content {
   margin-top: 15px;
 }
 
