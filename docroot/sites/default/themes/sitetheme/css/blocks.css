@@ -212,7 +212,8 @@
   margin-right: 10px;
 }
 
-#block-block-1 {
+#block-block-1,
+#footer #block-block-11 {
   width: 960px;
 }
 
