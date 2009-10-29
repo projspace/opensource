@@ -216,7 +216,8 @@
   width: 960px;
 }
 
-#footer #block-block-1 .content {
+#footer #block-block-1 .content,
+#footer #block-block-11 .content {
   margin: 0 15px;
 }
 
