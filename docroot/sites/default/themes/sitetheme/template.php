@@ -312,6 +312,7 @@ function sitetheme_user_login($form) {
     '#required' => TRUE,
     '#title' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
     '#weight' => -0.9,
+    '#attributes' => array('class' => 'openid-legal-checkbox'),
   );
   return drupal_render($form);
 }

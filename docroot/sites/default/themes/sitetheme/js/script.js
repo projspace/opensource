@@ -5,5 +5,8 @@
     }).blur(function() {
       $(this).val(Drupal.t('Search opensource.com'));
     });
+
+    $openidLegal = $(".openid-legal-checkbox");
+    $openidLegal.hide();
   }
 })(jQuery)
