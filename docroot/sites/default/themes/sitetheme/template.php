@@ -307,5 +307,5 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
 }
 
 function sitetheme_user_login($form) {
-  return 'this is a test';
+  return drupal_render($form);
 }
