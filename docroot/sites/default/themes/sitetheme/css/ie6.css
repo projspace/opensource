@@ -105,3 +105,10 @@ div.error /* High priority messages. See also the .error declaration below. */ {
 
  *
  */
+
+#footer #block-menu-menu-footer .menu,
+#footer #block-menu-menu-footer .content,
+#footer #block-menu-menu-footer .block-inner {
+  float: left;
+}
+ 
