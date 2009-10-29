@@ -116,6 +116,7 @@ div#site-name a {
 .content-inner-side-shadow {
   background: #ffffff url(../images/middle-right-shadow.jpg) right top repeat-y;
   margin: 0 14px 0 14px;
+  height: 100%;
 }
 
 #content-inner-right-shadow,
