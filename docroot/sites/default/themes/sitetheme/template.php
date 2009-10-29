@@ -311,6 +311,7 @@ function sitetheme_user_login($form) {
     '#type' => 'checkbox',
     '#required' => TRUE,
     '#title' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
+    '#weight' => -0.9,
   );
   return drupal_render($form);
 }
