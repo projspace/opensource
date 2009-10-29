@@ -133,7 +133,7 @@ div#site-name a {
 #content-inner,
 .content-inner-border {
   background: #ffffff;
-  margin: 15px 0 0 0;
+  margin: 0;
   padding: 10px;
   width: 523px;
   border-left: 1px solid #cdcbca;
