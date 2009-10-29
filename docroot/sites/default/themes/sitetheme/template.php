@@ -307,5 +307,10 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
 }
 
 function sitetheme_user_login($form) {
+  $form['openid_identifier']['legal_checkbox'] = array(
+    '#type' => 'checkbox',
+    '#required' => TRUE,
+    '#title' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
+  );
   return drupal_render($form);
 }
