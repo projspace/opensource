@@ -307,5 +307,8 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
 }
 
 function sitetheme_user_login($form) {
+print '<pre>';
+print_r($form);
+print '</pre>';
   return drupal_render($form);
 }
