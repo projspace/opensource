@@ -160,14 +160,14 @@
   margin-left:20px;
 }
 
-.block .view-id-featured_comment .views-field-name,
+.block .view-id-featured_comment .views-field-value,
 .block .view-id-featured_comment .views-field-timestamp {
   float: left;
   color: #797979;
   margin-top: 10px;
 }
 
-.block .view-id-featured_comment .views-field-name {
+.block .view-id-featured_comment .views-field-value {
   margin-right: 5px;
 }
 
