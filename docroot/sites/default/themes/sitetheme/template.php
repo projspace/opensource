@@ -139,8 +139,10 @@ function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$
   }
 }
 
-function sitetheme_preprocess_views_view_field__name(&$vars) {
-  $vars['output'] .= '<a href="/user/'. $vars['row']->users_uid .'/feed" class="article-author-feed"></a>';
+function sitetheme_preprocess_views_view_field__value(&$vars) {
+  if (isset($vars['row']->users_uid)) {
+    $vars['output'] .= '<a href="/user/'. $vars['row']->users_uid .'/feed" class="article-author-feed"></a>';
+  }
 }
 
 function sitetheme_links($links, $attributes = array('class' => 'links')) {
