@@ -212,6 +212,10 @@
   margin-right: 10px;
 }
 
+#block-block-1 {
+  width: 960px;
+}
+
 #footer #block-block-1 .content {
   margin: 0 15px;
 }
@@ -245,4 +249,13 @@
   padding-top: 11px;
   overflow: hidden;
   background: url(../images/twitter-logo.jpg) right no-repeat;
+}
+
+#block-block-6 {
+  width: 145px;
+}
+
+#block-block-6 .find-us-text {
+  display: block;
+  float: left;
 }
