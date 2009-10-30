@@ -1,5 +1,5 @@
 <?php
-// $Id: og_user_roles.pages.inc,v 1.3 2009/06/08 13:00:05 sun Exp $
+// $Id: og_user_roles.pages.inc,v 1.4 2009/08/14 12:00:30 sun Exp $
 
 /**
  * @file
@@ -64,6 +64,7 @@ function og_user_roles_admin_settings() {
     '#title' => t('Default role for new group members'),
     '#options' => array(0 => t('None')) + $roles,
     '#default_value' => variable_get('og_user_roles_default_role', 0),
+    '#description' => t('This setting can be overridden at the group level by group admins with the %permission permission.', array('%permission' => 'override group default role')),
   );
 
   return system_settings_form($form);
@@ -75,11 +76,7 @@ function og_user_roles_admin_settings() {
 function og_user_roles_page($node) {
   drupal_set_title(t('Member roles for !title', array('!title' => l($node->title, "node/$node->nid"))));
 
-  $allowed_roles = array_filter(variable_get("og_user_roles_roles_{$node->type}", array()));
-  $user_roles = user_roles();
-  foreach ($allowed_roles as $rid => $checked) {
-    $roles[$rid] = $user_roles[$rid];
-  }
+  $roles = og_user_roles_get_group_roles($node->type);
 
   // Retrieve list of all group users
   $sql = og_list_users_sql(0, 0, 'ou.is_admin DESC, ou.is_active ASC, u.name ASC');
