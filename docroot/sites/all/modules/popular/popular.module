@@ -14,7 +14,7 @@
 function popular_menu() {
   $items = array();
 
-  $items['admin/fa/popular'] = array(
+  $items['admin/config/popular'] = array(
     'title' => 'Popular',
     'description' => 'Popular content settings.',
     'page callback' => 'drupal_get_form',
@@ -176,7 +176,7 @@ function popular_parse_path() {
   if (function_exists($func)) {
     $vars = $func($path);
 
-    // if $vars returned with data, that means we are viewing an article,
+    // if $vars returned with data, that means we are viewing an post,
     // which means it is in a channel, which means we can get that channel
     // out of the path.
     if (!empty($vars['nid'])) {
@@ -197,7 +197,7 @@ function popular_parse_path() {
  */
 function _popular_node_load($nid) {
   $node = db_fetch_object(db_query("SELECT nid, title, type FROM {node} WHERE nid = %d AND status = 1", $nid));
-  if (!empty($node->nid) && $node->type == 'article') {
+  if (!empty($node->nid) && $node->type == 'post') {
     return $node;
   }
 }
