@@ -144,10 +144,25 @@ function popular_block($op = 'list', $delta = 0, $edit = array()) {
  * Block view hook.
  */
 function popular_block_view($op, $delta, $edit) {
+  $channels = array('business', 'education', 'government', 'law', 'life');
+
+  $path = drupal_lookup_path('source', $_GET['q']);
+  if ($path === FALSE) {
+    $path = $_GET['q'];
+  }
+  $channel = arg(0, drupal_get_path_alias($path));
+  
   $block['subject'] = t('Most Viewed');
   $output = '';
   $rows = array();
-  $result = db_query_range(db_rewrite_sql("SELECT DISTINCT(n.nid), n.title, SUM(p.hit_count) FROM {node} n INNER JOIN {popular} p ON n.nid = p.nid GROUP BY p.nid ORDER BY SUM(p.hit_count) DESC"), 0, 5);
+
+  if (in_array($channel, $channels)) {
+    $result = db_query_range(db_rewrite_sql("SELECT DISTINCT(n.nid), n.title, SUM(p.hit_count) FROM {node} n INNER JOIN {popular} p ON n.nid = p.nid WHERE p.channel = '%s' GROUP BY p.nid ORDER BY SUM(p.hit_count) DESC"), 0, 5);
+  }
+  else {
+    $result = db_query_range(db_rewrite_sql("SELECT DISTINCT(n.nid), n.title, SUM(p.hit_count) FROM {node} n INNER JOIN {popular} p ON n.nid = p.nid GROUP BY p.nid ORDER BY SUM(p.hit_count) DESC"), 0, 5);    
+  }
+
   while ($data = db_fetch_object($result)) {
     $rows[] = array(
       l($data->title, "node/$data->nid"),
