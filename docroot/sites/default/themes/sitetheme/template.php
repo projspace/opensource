@@ -308,9 +308,10 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
 
 function sitetheme_user_login($form) {
   $form['legal_checkbox'] = array(
-    '#type' => 'checkbox',
-  	'#required' => TRUE,
-    '#title' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
+    //'#type' => 'checkbox',
+  	//'#required' => TRUE,
+    //'#title' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
+    '#value' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
     '#weight' => -0.9,
     '#prefix' => '<span class="openid-legal-checkbox">',
     '#suffix' => '</span>',
