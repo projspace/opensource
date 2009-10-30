@@ -151,6 +151,7 @@ function popular_block_view($op, $delta, $edit) {
     $path = $_GET['q'];
   }
   $channel = arg(0, drupal_get_path_alias($path));
+  watchdog('popular', $channel);
   
   $block['subject'] = t('Most Viewed');
   $output = '';
