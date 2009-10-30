@@ -8,9 +8,6 @@
  * (c) 2008 Palantir.net
  */
 
-define('POPULAR_NORMAL_PAGE', 0);
-define('POPULAR_EMAIL_PAGE', 1);
-
 /**
  * Implements hook_menu()
  */
@@ -112,7 +109,7 @@ function _popular_save_data($data) {
       $data['nid'], $data['channel'], 1, $hour);
   }
   
-  watchdog('popular', 'counting '. $vars['title']. ' in '. $vars['channel']. '.');
+  watchdog('popular', 'counting '. $data['page_title']. ' in '. $data['channel']. '.');
 }
 
 /**
@@ -184,11 +181,9 @@ function popular_parse_path() {
     if (!empty($vars['nid'])) {
       $alias = drupal_get_path_alias($path);
       $vars['channel'] = arg(0, $alias);
+      watchdog('popular', print_r($vars, TRUE));
     }
-  }
-
-  watchdog('popular', print_r($vars, TRUE));
-  
+  }  
   return $vars;
 }
 
