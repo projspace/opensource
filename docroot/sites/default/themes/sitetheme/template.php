@@ -113,7 +113,7 @@ function sitetheme_preprocess_node(&$vars) {
   if ($vars['node']->type == 'channel') {
     $vars['links'] = '';
   }
-  elseif ($vars['node']-> type == 'article' && !$vars['page']) {
+  elseif ($vars['node']-> type == 'post' && !$vars['page']) {
     $vars['links_all'] = '<div class="article-visitor-links clear-block">';
     if ($vars['node']->comment_count > 0) {
       $vars['links_all'] .= '<span class="article-comment-count">'. format_plural($vars['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $vars['node']->comment_count)) .'</span>';
@@ -123,7 +123,7 @@ function sitetheme_preprocess_node(&$vars) {
     $vars['links_all'] .= '<span class="article-node-link">'. l('Read more', 'node/'. $vars['node']->nid) .'</span>';
     $vars['links_all'] .= '</div>';
   }
-  elseif ($vars['node']-> type == 'article' && $vars['page']) {
+  elseif ($vars['node']-> type == 'post' && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
     $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
   }
