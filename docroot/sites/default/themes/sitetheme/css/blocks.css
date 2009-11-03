@@ -298,3 +298,8 @@
 #block-quicktabs-1 .content {
   margin-top: 0;
 }
+
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active,
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li {
+  border-color: #CDCBCA;
+}
