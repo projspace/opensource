@@ -273,7 +273,7 @@
   border: 0;
 }
 
-#block-quicktabs-1 .quicktabs_main .quicktabs-style-basic {
+#block-quicktabs-1 .quicktabs_main.quicktabs-style-basic {
   padding: 15px;
   border-color: #CDCBCA;
   border-right: none;
@@ -293,4 +293,8 @@
 #block-quicktabs-1 #block-popular-popular {
   padding: 0;
   background: none;
+}
+
+#block-quicktabs-1 .content {
+  margin-top: 0;
 }
