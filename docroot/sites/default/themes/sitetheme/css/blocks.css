@@ -289,3 +289,8 @@
 #block-quicktabs-1 .views-field-group-nid a:hover {
   color: #767677;
 }
+
+#block-quicktabs-1 #block-popular-popular {
+  padding: 0;
+  background: none;
+}
