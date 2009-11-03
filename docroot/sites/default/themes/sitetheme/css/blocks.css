@@ -342,6 +342,6 @@
 
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active a,
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic a.active,
-#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic a.hover {
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic a:hover {
   color: #666666;
 }
