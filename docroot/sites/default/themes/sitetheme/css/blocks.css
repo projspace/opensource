@@ -299,9 +299,14 @@
   margin-top: 0;
 }
 
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic {
+  height: none;
+}
+
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li {
   margin-right: 0;
   border-right: none;
+  border-bottom: 1px solid #CDCBCA;
   display: block;
   width: 32%;
   float: left;
@@ -316,4 +321,8 @@
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li,
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic {
   border-color: #CDCBCA;
+}
+
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active {
+  border-bottom: none;
 }
