@@ -300,6 +300,7 @@
 }
 
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active,
-#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li {
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li,
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic ul {
   border-color: #CDCBCA;
 }
