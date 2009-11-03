@@ -49,3 +49,7 @@ tr.odd td {
 * html .clearfix {
   zoom: 1;
 }
+
+#block-quicktabs-1 #quicktabs_container_1 ul {
+  margin-top: 20px;
+}
