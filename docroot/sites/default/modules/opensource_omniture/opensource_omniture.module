@@ -34,7 +34,7 @@ function opensource_omniture_omniture_variables($main) {
 
   $vars = array(
     'variables' => array(
-      's.pageName' => drupal_to_js($page_name),
+      's.pageName' => $page_name,
       's.server' => "",
       's.channel' => "opensource",
       's.pageType' => "",
