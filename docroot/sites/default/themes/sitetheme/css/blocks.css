@@ -301,6 +301,7 @@
 
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic {
   height: none;
+  padding-right: 0;
 }
 
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li {
