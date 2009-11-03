@@ -1,0 +1,10 @@
+; $Id: omniture.info,v 1.4.4.1 2008/10/07 21:11:16 ultimateboy Exp $
+name = Omniture
+description = Adds Omniture SiteCatalyst javascript tracking code to all your site's pages.
+core = 6.x
+; Information added by drupal.org packaging script on 2009-09-24
+version = "6.x-2.x-dev"
+core = "6.x"
+project = "omniture"
+datestamp = "1253751658"
+
