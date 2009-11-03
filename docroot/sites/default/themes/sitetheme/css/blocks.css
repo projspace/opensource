@@ -275,10 +275,17 @@
 
 #block-quicktabs-1 .quicktabs_main .quicktabs-style-basic {
   padding: 15px;
+  border-color: #CDCBCA;
   border-right: none;
   border-bottom: none;
 }
 
 #block-quicktabs-1 ul li {
   overflow: visible;
+}
+
+#block-quicktabs-1 .views-field-group-nid a:link,
+#block-quicktabs-1 .views-field-group-nid a:visited,
+#block-quicktabs-1 .views-field-group-nid a:hover {
+  color: #767677;
 }
