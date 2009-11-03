@@ -303,9 +303,13 @@
   margin-right: 0;
   border-right: none;
   display: block;
-  width: 33%;
+  width: 32%;
   float: left;
   text-align: center;
+}
+
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.last {
+  float: right;
 }
 
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active,
