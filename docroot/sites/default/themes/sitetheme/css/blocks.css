@@ -299,6 +299,15 @@
   margin-top: 0;
 }
 
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li {
+  margin-right: 0;
+  border-right: none;
+  display: block;
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active,
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li,
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic {
