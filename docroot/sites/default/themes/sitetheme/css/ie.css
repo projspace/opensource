@@ -50,6 +50,7 @@ tr.odd td {
   zoom: 1;
 }
 
-#block-quicktabs-1 #quicktabs_container_1 ul {
+#block-quicktabs-1 #quicktabs_container_1 ul,
+#block-quicktabs-1 #quicktabs_container_1 ol {
   margin-top: 20px;
 }
