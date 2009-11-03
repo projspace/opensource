@@ -335,3 +335,12 @@
 #quicktabs_container_1 ul {
   margin: 0;
 }
+
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic a {
+  color: #c1c0b3;
+}
+
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic a.active,
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic a.hover {
+  color: #666666;
+}
