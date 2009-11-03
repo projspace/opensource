@@ -271,3 +271,10 @@
   padding: 0;
   border: 0;
 }
+
+#block-quicktabs-1 .quicktabs_main.quicktabs-style-basic {
+  padding: 15px;
+  border-right: none;
+  border-bottom: none;
+  overflow: visible;
+}
