@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Add support for OpenID to the Legal Module.
+ */
+
+function legal_openid_form_user_login_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'user_login') {
+    $form['legal_checkbox'] = array(
+      '#type' => 'checkbox',
+      '#required' => TRUE,
+      '#title' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
+      '#weight' => -0.9,
+      '#prefix' => '<span class="openid-legal-checkbox">',
+      '#suffix' => '</span>',
+    );
+    $form['#validate'][] = 'legal_openid_user_login_validate';
+
+    // Add the JavaScript so the checkbox only shows when the openid login is present
+    drupal_add_js(drupal_get_path('module', 'legal_openid') .'/legal_openid.js');
+  }
+}
+
+function legal_openid_user_login_validate($form, &$form_state) {
+  if (empty($form_state['values']['openid_identifier'])) {
+    $form['legal_checkbox']['#required'] = FALSE;
+  }
+  elseif ($form_state['values']['openid_identifier'] == 0) {
+    form_set_error('legal_checkbox', t('Please accept the terms and conditions before logging in.'));
+  }
+}

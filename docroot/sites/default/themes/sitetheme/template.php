@@ -292,29 +292,16 @@ function sitetheme_comment_submitted($comment) {
  * @see theme_comment_wrapper()
  */
 function sitetheme_preprocess_comment_wrapper(&$variables) {
-  
+
   //print_r($variables['node']);
-  
+
   // Provide contextual information.
   $variables['display_mode']  = _comment_get_display_setting('mode', $variables['node']);
   $variables['display_order'] = _comment_get_display_setting('sort', $variables['node']);
   $variables['comment_controls_state'] = variable_get('comment_controls_'. $variables['node']->type, COMMENT_CONTROLS_HIDDEN);
   $variables['template_files'][] = 'comment-wrapper-'. $variables['node']->type;
-  
+
   if ($variables['node']->comment_count > 0) {
       $variables['comment_count'] .= '<span class="comment-count">'. format_plural($variables['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $variables['node']->comment_count)) .'</span>';
   }
-}
-
-function sitetheme_user_login($form) {
-  $form['legal_checkbox'] = array(
-    //'#type' => 'checkbox',
-  	//'#required' => TRUE,
-    //'#title' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
-    '#value' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
-    '#weight' => -0.9,
-    '#prefix' => '<span class="openid-legal-checkbox">',
-    '#suffix' => '</span>',
-  );
-  return drupal_render($form);
 }

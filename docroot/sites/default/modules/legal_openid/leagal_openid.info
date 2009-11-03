@@ -1,0 +1,5 @@
+name = Legal OpenID Support
+description = Add support for OpenID to the Legal Module.
+dependencies[] = legal
+dependencies[] = openid
+core = 6.x
