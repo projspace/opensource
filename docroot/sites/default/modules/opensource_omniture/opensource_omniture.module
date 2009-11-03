@@ -27,7 +27,7 @@ function opensource_omniture_omniture_variables($main) {
   // Add the content type and title.
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     $node = node_load(arg(1));
-    if ($node->type != 'channel') {
+    if (isset($node->type) && $node->type != 'channel') {
       $page_name .= '|'. $node->type .'|'. opensource_omniture_clean($node->title);
     }
   }
