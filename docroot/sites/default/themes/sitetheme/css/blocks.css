@@ -151,7 +151,9 @@
   font-weight: bold;
 }
 
-#block-views-channel_reading-block_1 .views-row {
+#block-views-channel_reading-block_1 .views-row,
+#block-views-latest_articles-block_1 .views-row,
+#block-views-editors_picks-block_1 .views-row {
   overflow: visible;
 }
 
