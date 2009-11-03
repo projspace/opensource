@@ -114,4 +114,9 @@ div.error /* High priority messages. See also the .error declaration below. */ {
 
 #block-quicktabs-1 #quicktabs-1 ul {
   margin-top: 0;
+  padding: 0;
+}
+
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.last {
+  width: 108px;
 }
