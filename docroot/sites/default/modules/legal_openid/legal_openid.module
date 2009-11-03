@@ -5,7 +5,7 @@
  * Add support for OpenID to the Legal Module.
  */
 
-function legal_openid_form_user_login_alter(&$form, $form_state, $form_id) {
+function legal_openid_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'user_login') {
     $form['legal_checkbox'] = array(
       '#type' => 'checkbox',
