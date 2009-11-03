@@ -1,0 +1,4 @@
+name = Omniture OpenSource.com Integration
+description = Add custom variables to Omniture for OpenSource.com.
+dependencies[] = omniture
+core = 6.x
