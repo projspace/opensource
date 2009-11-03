@@ -68,9 +68,6 @@
  */
 function sitetheme_theme(&$existing, $type, $theme, $path) {
   $hooks = zen_theme($existing, $type, $theme, $path);
-  $hooks['user_login'] = array(
-    'arguments' => array('form' => NULL),
-  );
   // @TODO: Needs detailed comments. Patches welcome!
   return $hooks;
 }
