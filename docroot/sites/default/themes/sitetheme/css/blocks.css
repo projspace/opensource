@@ -272,9 +272,12 @@
   border: 0;
 }
 
-#block-quicktabs-1 .quicktabs_main.quicktabs-style-basic {
+#block-quicktabs-1 .quicktabs_main .quicktabs-style-basic {
   padding: 15px;
   border-right: none;
   border-bottom: none;
+}
+
+#block-quicktabs-1 ul li {
   overflow: visible;
 }
