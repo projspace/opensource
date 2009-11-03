@@ -316,6 +316,10 @@
   padding-bottom: 5px;
 }
 
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.first {
+  width: 108px;
+}
+
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.last {
   float: right;
   width: 109px;
