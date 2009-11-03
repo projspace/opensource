@@ -107,4 +107,11 @@ div.error /* High priority messages. See also the .error declaration below. */ {
 #footer #block-menu-menu-footer .block-inner {
   float: left;
 }
- 
+
+#block-quicktabs-1 #quicktabs-1 {
+  padding: 0;
+}
+
+#block-quicktabs-1 #quicktabs-1 ul {
+  margin-top: 0;
+}
