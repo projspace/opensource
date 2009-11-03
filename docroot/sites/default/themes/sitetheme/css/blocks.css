@@ -336,12 +336,10 @@
   margin: 0;
 }
 
-#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic a {
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li a {
   color: #c1c0b3;
 }
 
-#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active a,
-#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic a.active,
-#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic a:hover {
+#block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active a {
   color: #666666;
 }
