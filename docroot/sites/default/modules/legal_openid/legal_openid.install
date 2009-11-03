@@ -4,6 +4,6 @@
  * Implementation of hook_install().
  */
 function legal_openid_install() {
-  // Increase module weight to prevent compatibility issues.
-  db_query("UPDATE {system} SET weight = 1 WHERE name = 'legal_openid'");
+  // Decrease module weight to run before OpenID module.
+  db_query("UPDATE {system} SET weight = -1 WHERE name = 'legal_openid'");
 }
