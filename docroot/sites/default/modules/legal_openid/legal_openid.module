@@ -29,4 +29,6 @@ function legal_openid_user_login_validate($form, &$form_state) {
   elseif ($form_state['values']['legal_checkbox'] == 0) {
     form_set_error('legal_checkbox', t('Please accept the terms and conditions before logging in.'));
   }
+  print 'test';
+  die();
 }
