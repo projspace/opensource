@@ -15,7 +15,7 @@ function legal_openid_form_alter(&$form, $form_state, $form_id) {
       '#prefix' => '<span class="openid-legal-checkbox">',
       '#suffix' => '</span>',
     );
-    $form['#validate'][] = 'legal_openid_user_login_validate';
+    $form['#validate'][] = array_unshift($form['#validate'], 'legal_openid_user_login_validate');
 
     // Add the JavaScript so the checkbox only shows when the openid login is present
     drupal_add_js(drupal_get_path('module', 'legal_openid') .'/legal_openid.js');
