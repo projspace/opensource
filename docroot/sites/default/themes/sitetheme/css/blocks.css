@@ -300,7 +300,7 @@
 }
 
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic {
-  height: none;
+  height: 0;
   padding-right: 0;
 }
 
@@ -309,13 +309,14 @@
   border-right: none;
   border-bottom: 1px solid #CDCBCA;
   display: block;
-  width: 30%;
+  width: 118px;
   float: left;
   text-align: center;
 }
 
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.last {
   float: right;
+  width: 119px;
 }
 
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active,
