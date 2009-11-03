@@ -20,6 +20,9 @@ function opensource_omniture_omniture_variables($main) {
        $page_name .= '|'. opensource_omniture_clean($argument);
     }
   }
+  elseif (arg(0) = '') {
+    $page_name .= '|home';
+  }
 
   // Add the content type and title.
   if (arg(0) == 'node' && is_numeric(arg(1))) {
