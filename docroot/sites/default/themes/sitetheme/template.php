@@ -108,6 +108,7 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   // Remove the file browsing tab.
   if (arg(0) == 'user' && is_numeric(arg(1))) {
     sitetheme_remove_tab('File browser', $vars);
+    sitetheme_remove_tab('Your votes', $vars);
   }
 }
 
