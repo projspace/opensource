@@ -122,6 +122,7 @@ div.fivestar-widget {
  */
 #search-box /* Wrapper for the search form */ {
   float: right;
+  margin-top: 20px;
 }
 
 #edit-search-theme-form-1-wrapper label /* Label that says "Search this site:" */ {
