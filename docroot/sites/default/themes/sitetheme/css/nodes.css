@@ -18,7 +18,7 @@
 /* Node links have different formatting from the rest of the page. */
 .node a,
 #comments a {
-  color: #oo66cc;
+  color: #0066cc;
 }
 
 .node a:visited,
@@ -35,7 +35,7 @@
 
 .node a:active,
 #comments a:active {
-  color: #oo66cc;
+  color: #0066cc;
 }
 
 .node caption,
