@@ -16,8 +16,8 @@
 }
 
 /* Node links have different formatting from the rest of the page. */
-.node a:link,
-#comments a:links {
+.node a,
+#comments a {
   color: #oo66cc;
 }
 
