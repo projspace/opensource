@@ -104,6 +104,11 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   else {
     $vars['page_feed'] = l('Feed', 'feed', array('attributes' => array('class' => 'page-feed')));
   }
+  
+  // Remove the file browsing tab.
+  if (arg(0) == 'user' && is_numeric(arg(1))) {
+    sitetheme_remove_tab('File browser', $vars);
+  }
 }
 
 function sitetheme_preprocess_node(&$vars) {
@@ -300,5 +305,25 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
 
   if ($variables['node']->comment_count > 0) {
       $variables['comment_count'] .= '<span class="comment-count">'. format_plural($variables['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $variables['node']->comment_count)) .'</span>';
+  }
+}
+
+/**
+* Remove a tab
+*
+* @param  $label
+* The label to remove
+* 
+* @param  $vars
+* $vars from _phptemplate_variables
+*/
+function sitetheme_remove_tab($label, &$vars) {
+  $tabs = explode("\n", $vars['tabs']);
+  $vars['tabs'] = '';
+
+  foreach($tabs as $tab) {
+    if(strpos($tab, '>'. $label .'<') === FALSE) {
+      $vars['tabs'] .= $tab . "\n";
+    }
   }
 }
