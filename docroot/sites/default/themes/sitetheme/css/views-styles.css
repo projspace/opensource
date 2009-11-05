@@ -133,7 +133,7 @@
 {
   padding-bottom:20px;
   margin-bottom:20px;
-  border-bottom:1px dotted #CBCCCB; 
+  background: transparent url(../images/osdc_dot4x4.png) bottom repeat-x;
 }
 
 .view-homepage .attachment .views-row-first
