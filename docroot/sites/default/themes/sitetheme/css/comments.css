@@ -106,7 +106,7 @@ ul.links .flag-comment_abuse
 
 .comment .comment-bottom
 {
-  border-top:1px dashed #E7E7E7;
+  background: transparent url(../images/osdc_dot4x4.png) top repeat-x;
   padding-top:10px;
   text-transform: capitalize;
 }
