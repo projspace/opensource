@@ -343,7 +343,7 @@ function sitetheme_fivestar($element) {
   }
 
   $output = theme('form_element', $element, $element['#children']);
-  $output .= t('<div class="fivestar-total>"(!num_votes votes)</div>', array('!num_votes' => $element['#vote_count']));
+  $output .= t('<div class="fivestar-total">(!num_votes votes)</div>', array('!num_votes' => $element['#vote_count']));
 
   return $output;
 }
