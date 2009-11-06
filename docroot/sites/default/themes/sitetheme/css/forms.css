@@ -112,8 +112,18 @@ form.fivestar-widget {
   font-weight:normal;
 }
 
+#edit-vote-wrapper
+{
+  
+}
+
 div.fivestar-widget {
   display:inline;
+}
+
+.fivestar-form-item
+{
+  
 }
 
 .fivestar-total
