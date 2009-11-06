@@ -343,7 +343,7 @@ function sitetheme_fivestar($element) {
     }
   }
 
-  //$num_votes = db_query("SELECT count(vote_id) FROM {votingapi_vote} WHERE content_id = %d", $nid);
   $output = theme('form_element', $element, $element['#children']);
+  return $output;
 }
  
