@@ -114,7 +114,7 @@ form.fivestar-widget {
 
 #edit-vote-wrapper
 {
-  
+  float:left;
 }
 
 div.fivestar-widget {
@@ -123,12 +123,12 @@ div.fivestar-widget {
 
 .fivestar-form-item
 {
-  
+  overflow:hidden;
 }
 
 .fivestar-total
 {
-  
+  float:right;
 }
 
 
