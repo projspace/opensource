@@ -113,6 +113,10 @@ div#site-name a {
   font-family: Georgia, "Bitstream Charter", serif;
 }
 
+#content .content {
+  font-family:inherit;
+}
+
 #content-inner-side-shadow,
 .content-inner-side-shadow {
   background: #ffffff url(../images/middle-right-shadow.jpg) right top repeat-y;
