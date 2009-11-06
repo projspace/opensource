@@ -179,6 +179,7 @@ ol ol, ol ul,
 li {
   margin: 0;
   padding: 0;
+  line-height:1.66em;
 }
 
 .item-list ul li /* Drupal override */ {
