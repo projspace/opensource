@@ -1,3 +1,5 @@
+xxx
+
 <?php
 // $Id: template.php,v 1.21 2009/08/12 04:25:15 johnalbin Exp $
 
@@ -333,7 +335,6 @@ function sitetheme_remove_tab($label, &$vars) {
  * Theme the fivestar form element by adding necessary css and javascript.
  */
 function sitetheme_fivestar($element) {
-  print "1";
   if (empty($element['#description'])) {
     if ($element['#feedback_enable']) {
       $element['#description'] = '<div class="fivestar-summary fivestar-feedback-enabled">&nbsp;</div>';
