@@ -1,5 +1,3 @@
-xxx
-
 <?php
 // $Id: template.php,v 1.21 2009/08/12 04:25:15 johnalbin Exp $
 
