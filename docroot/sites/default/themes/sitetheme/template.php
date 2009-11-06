@@ -333,7 +333,6 @@ function sitetheme_remove_tab($label, &$vars) {
  * Theme the fivestar form element by adding necessary css and javascript.
  */
 function sitetheme_fivestar($element) {
-  dpm($element);
   if (empty($element['#description'])) {
     if ($element['#feedback_enable']) {
       $element['#description'] = '<div class="fivestar-summary fivestar-feedback-enabled">&nbsp;</div>';
@@ -345,6 +344,7 @@ function sitetheme_fivestar($element) {
 
   $output = theme('form_element', $element, $element['#children']);
   $output .= t('(!num_votes votes)', array('!num_votes' => $element['#vote_count']));
+
   return $output;
 }
  
