@@ -245,9 +245,9 @@ body {
  */
 #sidebar-second {
   float: left; /* LTR */
-  width: 388px;
+  width: 392px;
   margin-left: 568px; /* LTR */ /* Width of content + sidebar-first. */
-  margin-right: -956px; /* LTR */ /* Negative value of #sidebar-second's width + left margin. */
+  margin-right: -960px; /* LTR */ /* Negative value of #sidebar-second's width + left margin. */
   padding: 0; /* DO NOT CHANGE. Add padding or margin to #sidebar-second-inner. */
 }
 
