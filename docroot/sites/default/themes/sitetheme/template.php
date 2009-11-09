@@ -125,12 +125,6 @@ function sitetheme_preprocess_node(&$vars) {
     $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a></span>';
     $vars['links_all'] .= '<span class="article-node-link">'. l('Read more', 'node/'. $vars['node']->nid) .'</span>';
     $vars['links_all'] .= '</div>';
-    global $user;
-    if ($user->uid == 1) {
-      print '<pre>';
-print_r($vars);
-print '</pre>';
-    }
   }
   elseif ($vars['node']->type == 'post' && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
