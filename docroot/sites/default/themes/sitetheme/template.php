@@ -128,7 +128,7 @@ function sitetheme_preprocess_node(&$vars) {
  
     static $first_image = TRUE;
     if (!$first_image) {
-      $vars['content'] = theme('imagecache', 'image-half-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) . $vars['content'];
+      $vars['content'] = '<div class="node-teaser-image">'. theme('imagecache', 'image-half-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) .'</div>'. $vars['content'];
     }
     else {
       $vars['content'] = theme('imagecache', 'image-full-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) . $vars['content'];
