@@ -31,7 +31,7 @@ function legal_openid_form_alter(&$form, $form_state, $form_id) {
       '#type' => 'checkbox',
       '#required' => TRUE,
       '#title' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
-      '#weight' => -0.9,
+      '#weight' => 1,
     );
   }
 }
