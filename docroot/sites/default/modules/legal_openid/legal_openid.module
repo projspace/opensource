@@ -2,9 +2,12 @@
 
 /**
  * @file
- * Add support for OpenID to the Legal Module.
+ * Add support for OpenID to the Legal Module and Anonymous comments.
  */
 
+/**
+ * Implementation of hook_form_alter().
+ */
 function legal_openid_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'user_login') {
     $form['legal_checkbox'] = array(
@@ -20,8 +23,16 @@ function legal_openid_form_alter(&$form, $form_state, $form_id) {
     // Add the JavaScript so the checkbox only shows when the openid login is present
     drupal_add_js(drupal_get_path('module', 'legal_openid') .'/legal_openid.js');
   }
+  elseif ($form_id == 'comment_form') {
+    print '<pre>';
+print_r($form_state);
+print '</pre>';
+  }
 }
 
+/**
+ * OpenID login form validation callback.
+ */
 function legal_openid_user_login_validate($form, &$form_state) {
   if (empty($form_state['values']['openid_identifier'])) {
     $form['legal_checkbox']['#required'] = FALSE;
