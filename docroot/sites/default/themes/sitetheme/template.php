@@ -129,10 +129,7 @@ function sitetheme_preprocess_node(&$vars) {
   elseif ($vars['node']->type == 'post' && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
     $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
-    
-    $vars['content'] = theme('imagecache', 'image-full-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) . $vars['content'];
   }
-
 }
 
 function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$vars) {
@@ -349,19 +346,4 @@ function sitetheme_fivestar($element) {
   $output .= t('<div class="fivestar-total">(!num_votes votes)</div>', array('!num_votes' => $element['#vote_count']));
 
   return $output;
-}
-
-/**
- * Helper function to get the relative path to the imceimage. Respects private downloads.
- */
-function sitetheme_get_imceimage_filepath($path) {
-  $path_parts = parse_url($path);
-
-  // $file_directory can be different for public / private download
-  $file_directory = variable_get('file_downloads', '') == FILE_DOWNLOADS_PRIVATE ? 'system/files' : file_directory_path();
-
-  $filename = basename($path);
-  $subdir =  str_replace("/". $file_directory ."/", '', str_replace( '/'. $filename, '', $path_parts['path']));
-  
-  return $subdir .'/'. $filename;
 }
