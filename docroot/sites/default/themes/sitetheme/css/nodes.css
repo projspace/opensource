@@ -165,5 +165,8 @@
   margin-left: 5px;
 }
 
-
+.node-teaser-image {
+  float: left;
+  margin-right: 10px;
+}
 
