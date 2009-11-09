@@ -234,3 +234,7 @@
 .view-id-og_ghp_ron a:active {
   color: #0066cc;
 }
+
+.view-id-og_members_faces td {
+  vertical-align: top;
+}
