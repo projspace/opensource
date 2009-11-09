@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Special urls for channels
+ */
+
+/**
+ * Implementation of hook_menu().
+ */
+function channel_urls_menu() {
+  $items['channel/%node/moderation-articles'] = array(
+    'title' => 'Faces',
+    'page callback' => 'channel_urls_moderation_articles',
+    'page arguments' => array('channel_awaiting_moderation', 'default', 1),
+    'type' => MENU_LOCAL_TASK,
+    'access callback' => 'channel_urls_admin_access',
+    'access arguments' => array(1),
+  );
+
+  return $items;
+}
+
+function channel_urls_admin_access($gid) {
+  $view = views_get_view('channel_awaiting_moderation');
+  return og_is_group_admin($gid) && !$view->disabled;
+}
+
+function channel_urls_moderation_articles($view_name, $display, $node) {
+  $arg = $node->nid;
+  return views_page($view_name, $display, $arg);
+}
