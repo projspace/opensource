@@ -16,24 +16,24 @@
 }
 
 /* Node links have different formatting from the rest of the page. */
-.node .content a,
+.node a,
 #comments a {
   color: #0066cc;
 }
 
-.node .content a:visited,
+.node a:visited,
 #comments a:visited {
   color: #6699cc;
 }
 
-.node .content a:hover,
-.node .content a:focus,
+.node a:hover,
+.node a:focus,
 #comments a:hover,
 #comments a:focus {
   color: #3399ff;
 }
 
-.node .content a:active,
+.node a:active,
 #comments a:active {
   color: #0066cc;
 }
