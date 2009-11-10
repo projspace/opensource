@@ -126,6 +126,11 @@
   padding-top: 1.5em;
 }
 
+.node-teaser .content /* Node's content wrapper */ {
+  position: relative;
+  padding-top: 0;
+}
+
 .node ul.links /* Node links. See also the ul.links declaration in the pages.css. */ {
 }
 
