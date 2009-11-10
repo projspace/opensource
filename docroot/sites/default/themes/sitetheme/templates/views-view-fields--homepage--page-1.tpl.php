@@ -19,7 +19,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="content-inner-side-shadow"><div class="content-inner-right-shadow"><div class="content-inner-bottom-shadow"><div class="content-inner-border">
+<div class="content-inner-side-shadow"><div class="content-inner-right-shadow"><div class="content-inner-bottom-shadow"><div class="content-inner-border clear-block">
 <?php foreach ($fields as $id => $field): ?>
   <?php if (!empty($field->separator)): ?>
     <?php print $field->separator; ?>
