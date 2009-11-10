@@ -396,3 +396,8 @@ ul.links li {
   overflow: hidden;
   position: absolute;
 }
+
+/* Overriding the Poll bar color everywhere */
+.poll .bar .foreground {
+  background-color: #1D2754;
+}
