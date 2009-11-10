@@ -60,7 +60,11 @@
 }
 
 .views-field-group-nid,
-.views-field-type,
+.views-field-type {
+  color:#767677;
+  display: inline;
+}
+
 .views-field-comment-count,
 .views-field-created,
 .views-field-value
