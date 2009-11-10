@@ -104,7 +104,7 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   else {
     $vars['page_feed'] = l('Feed', 'feed', array('attributes' => array('class' => 'page-feed')));
   }
-  
+
   // Remove the file browsing tab.
   if (arg(0) == 'user' && is_numeric(arg(1))) {
     sitetheme_remove_tab('File browser', $vars);
@@ -125,7 +125,7 @@ function sitetheme_preprocess_node(&$vars) {
     $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a></span>';
     $vars['links_all'] .= '<span class="article-node-link">'. l('Read more', 'node/'. $vars['node']->nid) .'</span>';
     $vars['links_all'] .= '</div>';
- 
+
     static $first_image = TRUE;
     if (!$first_image) {
       $vars['content'] = '<div class="node-teaser-image">'. theme('imagecache', 'image-half-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) .'</div>'. $vars['content'];
@@ -138,7 +138,7 @@ function sitetheme_preprocess_node(&$vars) {
   elseif ($vars['node']->type == 'post' && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
     $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
-    
+
     $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) .'</div>'. $vars['content'];
   }
 }
@@ -325,7 +325,7 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
 *
 * @param  $label
 * The label to remove
-* 
+*
 * @param  $vars
 * $vars from _phptemplate_variables
 */
@@ -370,6 +370,17 @@ function sitetheme_get_imceimage_filepath($path) {
 
   $filename = basename($path);
   $subdir =  str_replace("/". $file_directory ."/", '', str_replace( '/'. $filename, '', $path_parts['path']));
-  
+
   return $subdir .'/'. $filename;
+}
+
+/**
+ * Overriding the file element to set the default size to 30 wide rather than 60.
+ */
+function sitetheme_file($element) {
+  if ($element['#size'] == 60) {
+    $element['#size'] = 30;
+  }
+  _form_set_class($element, array('form-file'));
+  return theme('form_element', $element, '<input type="file" name="'. $element['#name'] .'"'. ($element['#attributes'] ? ' '. drupal_attributes($element['#attributes']) : '') .' id="'. $element['#id'] .'" size="'. $element['#size'] ."\" />\n");
 }
