@@ -183,8 +183,12 @@
 }
 
 #block-views-author_info-block_1 .views-field-picture {
-  margin: 0 10px 10px 0;
+  margin: 0 10px 0 0;
   float: left;
+}
+
+#block-views-author_info-block_1 .views-field-value {
+  float: none;
 }
 
 #block-views-author_info-block_1 .views-field-value p {
