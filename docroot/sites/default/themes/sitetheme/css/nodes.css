@@ -101,7 +101,8 @@
 }
 
 .node .meta /* Wrapper for submitted and terms data */ {
-  
+  position:relative;
+  z-index:1;
 }
 
 .node .node-inner form.fivestar-widget {
