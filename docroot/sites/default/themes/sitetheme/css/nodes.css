@@ -113,6 +113,7 @@
   display: block;
   float: left;
   position: relative;
+  padding-right: 15px;
 }
 
 .node .terms /* Node terms (taxonomy) */ {
