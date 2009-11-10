@@ -189,3 +189,48 @@
   margin-top: 1em;
 }
 
+.node h1 a:link,
+.node h2 a:link,
+.node h3 a:link,
+.node h4 a:link,
+.node h5 a:link,
+.node h6 a:link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.node h1 a:visited,
+.node h2 a:visited,
+.node h3 a:visited,
+.node h4 a:visited,
+.node h5 a:visited,
+.node h6 a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+
+.node h1 a:hover,
+.node h2 a:hover,
+.node h3 a:hover,
+.node h4 a:hover,
+.node h5 a:hover,
+.node h6 a:hover,
+.node h1 a:focus,
+.node h2 a:focus,
+.node h3 a:focus,
+.node h4 a:focus,
+.node h5 a:focus,
+.node h6 a:focus {
+  text-decoration: underline;
+  color: #3399ff;
+}
+
+.node h1 a:active,
+.node h2 a:active,
+.node h3 a:active,
+.node h4 a:active,
+.node h5 a:active,
+.node h6 a:active {
+  text-decoration: none;
+  color: #3399ff;
+}
