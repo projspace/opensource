@@ -108,7 +108,8 @@ form.fivestar-widget {
 }
 
 #edit-vote-wrapper label{
-  width:60px; 
+  margin-right: 5px;
+  float: left; 
   font-weight:normal;
 }
 

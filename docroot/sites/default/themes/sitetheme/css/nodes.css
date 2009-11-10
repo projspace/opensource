@@ -104,9 +104,10 @@
   
 }
 
-.node .fivestar-static-form-item
-{
-  float:right;
+.node .node-inner .fivestar-widget {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .node .submitted /* The "posted by" information */ {
@@ -114,12 +115,14 @@
   float: left;
   position: relative;
   padding-right: 15px;
+  margin-bottom: 1em;
 }
 
 .node .terms /* Node terms (taxonomy) */ {
 }
 
 .node .content /* Node's content wrapper */ {
+  position: relative;
 }
 
 .node ul.links /* Node links. See also the ul.links declaration in the pages.css. */ {
