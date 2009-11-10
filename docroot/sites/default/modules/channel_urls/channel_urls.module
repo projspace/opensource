@@ -10,7 +10,7 @@
  */
 function channel_urls_menu() {
   $items['channel/%node/moderation-articles'] = array(
-    'title' => 'Faces',
+    'title' => 'Articles Awaiting Review',
     'page callback' => 'channel_urls_moderation_articles',
     'page arguments' => array('channel_awaiting_moderation', 'default', 1),
     'type' => MENU_LOCAL_TASK,
