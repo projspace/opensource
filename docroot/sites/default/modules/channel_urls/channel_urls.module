@@ -21,12 +21,25 @@ function channel_urls_menu() {
   return $items;
 }
 
+/**
+ * Access callback. Determine if a user can see the articles awaiting review.
+ */
 function channel_urls_admin_access($gid) {
   $view = views_get_view('channel_awaiting_moderation');
   return og_is_group_admin($gid) && !$view->disabled;
 }
 
+/**
+ * Menu callback. Display the articles awaiting review for a channel.
+ */
 function channel_urls_moderation_articles($view_name, $display, $node) {
   $arg = $node->nid;
   return views_page($view_name, $display, $arg);
+}
+
+/**
+ * Implementation of hook_og_links_alter().
+ */
+function channel_urls_og_links_alter(&$links, $node) {
+  $links['articles_awaiting_moderation'] = l('Articles awaiting review', 'channel/'. $node->nid .'/moderation-articles');
 }
