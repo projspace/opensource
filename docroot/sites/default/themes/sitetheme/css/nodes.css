@@ -104,7 +104,7 @@
   
 }
 
-.node .node-inner .fivestar-widget {
+.node .node-inner form.fivestar-widget {
   position: absolute;
   top: 0;
   right: 0;
