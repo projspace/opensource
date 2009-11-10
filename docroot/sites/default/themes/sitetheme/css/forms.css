@@ -113,6 +113,10 @@ form.fivestar-widget {
   font-weight:normal;
 }
 
+form.fivestar-widget div.description {
+  display: none;
+}
+
 #edit-vote-wrapper
 {
   float:left;
