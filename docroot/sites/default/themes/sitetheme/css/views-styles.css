@@ -65,8 +65,8 @@
 .views-field-created,
 .views-field-value
 {
-  display:inline;
   color:#767677;
+  float: left;
 }
 
 /*
