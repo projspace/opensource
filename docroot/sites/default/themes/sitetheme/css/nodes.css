@@ -127,6 +127,10 @@
   font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
 }
 
+.article-visitor-links {
+  font-family:Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+}
+
 .node-type-channel .node .content {
   padding-top: 0;
 }
