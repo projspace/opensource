@@ -143,6 +143,11 @@ form.fivestar-widget {
   bottom: 0;
 }
 
+.logged-in #block-menu-menu-user-links {
+  width: 105px;
+  bottom: 0;
+}
+
 #block-menu-menu-about-menu {
   width: 50%;
 }
