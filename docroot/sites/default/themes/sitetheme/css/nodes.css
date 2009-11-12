@@ -173,9 +173,13 @@
   background: url(../images/rss.jpg);
   margin-left: 5px;
   position: absolute;
-  margin-top: -16px;
+  bottom: 0;
   right: 0;
 }
+.view-homepage .article-author-feed {
+  margin-top: -16px;
+}
+
 
 .node-teaser-image {
   float: left;
