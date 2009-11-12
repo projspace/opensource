@@ -274,7 +274,7 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
 
   $account = drupal_clone($vars['user']);
   profile_load_profile($account);
-  $vars['submitted'] = t('by !author on !date', array('!author' => l($account->profile_display_name, 'user/'. $vars['comment']->uid), '!date' => format_date($vars['node']->created, 'custom', 'j M Y')));
+  $vars['submitted'] = t('by !author on !date', array('!author' => l($account->profile_display_name, 'user/'. $vars['comment']->uid), '!date' => format_date($vars['comment']->created, 'custom', 'j M Y')));
 }
 // */
 
