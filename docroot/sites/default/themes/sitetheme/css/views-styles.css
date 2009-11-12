@@ -88,6 +88,10 @@
   display:inline-block;
   vertical-align:middle;  
 }
+.view-homepage .views-field-value {
+  padding-right: 15px;
+  position: relative;
+}
 
 .view-homepage .views-field-group-nid,
 .view-homepage .views-field-group-nid a,
