@@ -17,6 +17,14 @@ function channel_urls_menu() {
     'access callback' => 'channel_urls_admin_access',
     'access arguments' => array(1),
   );
+  $items['channel/%node/comment-moderation'] = array(
+    'title' => 'Comments Awaiting Moderation',
+    'page callback' => 'channel_urls_moderation_articles',
+    'page arguments' => array('channel_urls_comment_moderation', 'default', 1),
+    'type' => MENU_LOCAL_TASK,
+    'access callback' => 'channel_urls_comment_gardner_access',
+    'access arguments' => array(1),
+  );
 
   return $items;
 }
@@ -27,6 +35,15 @@ function channel_urls_menu() {
 function channel_urls_admin_access($gid) {
   $view = views_get_view('channel_awaiting_moderation');
   return og_is_group_admin($gid) && !$view->disabled;
+}
+
+/**
+ * Access callback. Determine if a user is a comment garnder, moderator, or admin.
+ */
+function channel_urls_comment_gardner_access($gid) {
+  $view = views_get_view('channel_urls_comment_moderation');
+  global $user;
+  return (og_is_group_admin($gid) || isset($user->roles[31])) && !$view->disabled;
 }
 
 /**
@@ -42,4 +59,5 @@ function channel_urls_moderation_articles($view_name, $display, $node) {
  */
 function channel_urls_og_links_alter(&$links, $node) {
   $links['articles_awaiting_moderation'] = l('Articles awaiting review', 'channel/'. $node->nid .'/moderation-articles');
+  $links['comments_awaiting_moderation'] = l('Comments awaiting moderation', 'channel/'. $node->nid .'/comment-moderation');
 }
