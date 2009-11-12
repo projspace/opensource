@@ -271,6 +271,11 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
     $vars['links'] = '<ul class="links">'. $vars['links'];
   }
 
+  if ($vars['user']->uid == 0) {
+    print '<pre>';
+print_r($vars['user']);
+print '</pre>';
+  }
 
   $account = drupal_clone($vars['user']);
   profile_load_profile($account);
