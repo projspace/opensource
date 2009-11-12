@@ -127,3 +127,8 @@ div.error /* High priority messages. See also the .error declaration below. */ {
 #block-quicktabs-1 #quicktabs_container_1 ul {
   padding-left: 1em;
 }
+
+.article-author-feed {
+  margin-top: 0;
+  background-repeat: no-repeat;
+}
