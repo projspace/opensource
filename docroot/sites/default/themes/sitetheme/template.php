@@ -163,6 +163,7 @@ function sitetheme_preprocess_views_view_field__value(&$vars) {
 }
 
 function sitetheme_preprocess_view_view_field__featured_comment__value(&$vars) {
+  print 'test';
   print '<pre>';
 print_r($vars);
 print '</pre>';
