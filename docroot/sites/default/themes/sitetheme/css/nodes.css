@@ -127,7 +127,8 @@
   font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
 }
 
-.article-visitor-links {
+.article-visitor-links,
+.fivestar-widget {
   font-family:Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
 }
 
