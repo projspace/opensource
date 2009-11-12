@@ -92,6 +92,7 @@ dl.user-member ul
   position: absolute;
   right: 0;
   top: 0;
+  float: none;
 }
 
 .section-user ul.secondary,
