@@ -191,7 +191,7 @@ li {
 }
 
 .item-list ul li /* Drupal override */ {
-  margin: 0;
+  margin: 2px 0;
   padding: 0;
   list-style: inherit;
 }
@@ -200,7 +200,7 @@ ul.menu li,
 li.expanded,
 li.collapsed,
 li.leaf /* Drupal override */ {
-  margin: 0;
+  margin: 2px 0;
   padding: 0;
 }
 
