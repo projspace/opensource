@@ -129,7 +129,7 @@
 }
 
 .node-type-channel .node .content {
-  padding-top: 1.5em;
+  padding-top: 0;
 }
 
 .node-teaser .content /* Node's content wrapper */ {
