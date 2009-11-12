@@ -128,6 +128,10 @@
   padding-top: 1.5em;
 }
 
+.node-type-channel .node .content {
+  padding-top: 1.5em;
+}
+
 .node-teaser .content /* Node's content wrapper */ {
   position: relative;
   padding-top: 0;
