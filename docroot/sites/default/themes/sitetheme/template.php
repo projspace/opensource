@@ -254,10 +254,7 @@ function STARTERKIT_preprocess_node(&$vars, $hook) {
  *   The name of the template being rendered ("comment" in this case.)
  */
 function sitetheme_preprocess_comment(&$vars, $hook) {
-  sitetheme_remove_tab('report to Mollom', $vars);
-  print '<pre>';
-print_r($vars);
-print '</pre>';
+  sitetheme_remove_link('report to Mollom', $vars);
 }
 // */
 
@@ -339,6 +336,26 @@ function sitetheme_remove_tab($label, &$vars) {
   foreach($tabs as $tab) {
     if(strpos($tab, '>'. $label .'<') === FALSE) {
       $vars['tabs'] .= $tab . "\n";
+    }
+  }
+}
+
+/**
+* Remove a link
+*
+* @param  $label
+* The label to remove
+*
+* @param  $vars
+* $vars from a preprocess function.
+*/
+function sitetheme_remove_link($label, &$vars) {
+  $tabs = explode("\n", $vars['links']);
+  $vars['links'] = '';
+
+  foreach($tabs as $tab) {
+    if(strpos($tab, '>'. $label .'<') === FALSE) {
+      $vars['links'] .= $tab . "\n";
     }
   }
 }
