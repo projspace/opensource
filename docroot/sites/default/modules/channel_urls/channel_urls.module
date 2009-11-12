@@ -19,7 +19,7 @@ function channel_urls_menu() {
   );
   $items['channel/%node/comment-moderation'] = array(
     'title' => 'Comments Awaiting Moderation',
-    'page callback' => 'channel_urls_moderation_articles',
+    'page callback' => 'channel_urls_comment_moderation',
     'page arguments' => array('channel_urls_comment_moderation', 'default', 1),
     'type' => MENU_LOCAL_TASK,
     'access callback' => 'channel_urls_comment_gardner_access',
@@ -50,6 +50,14 @@ function channel_urls_comment_gardner_access($gid) {
  * Menu callback. Display the articles awaiting review for a channel.
  */
 function channel_urls_moderation_articles($view_name, $display, $node) {
+  $arg = $node->nid;
+  return views_page($view_name, $display, $arg);
+}
+
+/**
+ * Menu callback. Display the comments awaiting moderation.
+ */
+function channel_urls_comment_moderation($view_name, $display, $node) {
   $arg = $node->nid;
   return views_page($view_name, $display, $arg);
 }
