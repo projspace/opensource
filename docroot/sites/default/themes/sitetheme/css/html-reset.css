@@ -186,9 +186,8 @@ ol ol, ol ul,
 }
 
 li {
-  margin: 0;
+  margin: 2px 0;
   padding: 0;
-  line-height:2.49em;
 }
 
 .item-list ul li /* Drupal override */ {
