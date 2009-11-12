@@ -272,14 +272,15 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
   }
 
   if ($vars['user']->uid == 0) {
-    print '<pre>';
-print_r($vars);
-print '</pre>';
+    $username = theme('username', $vars['comment']);
+  }
+  else {
+    $account = drupal_clone($vars['user']);
+    profile_load_profile($account);
+    $username = l($account->profile_display_name, 'user/'. $vars['comment']->uid);
   }
 
-  $account = drupal_clone($vars['user']);
-  profile_load_profile($account);
-  $vars['submitted'] = t('by !author on !date', array('!author' => l($account->profile_display_name, 'user/'. $vars['comment']->uid), '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
+  $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
 }
 // */
 
