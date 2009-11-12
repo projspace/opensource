@@ -271,9 +271,10 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
     $vars['links'] = '<ul class="links">'. $vars['links'];
   }
 
+
   $account = drupal_clone($vars['user']);
   profile_load_profile($account);
-  $vars['submitted'] = t('by !author on !date', array('!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid), '!date' => format_date($vars['node']->created, 'custom', 'j M Y')));
+  $vars['submitted'] = t('by !author on !date', array('!author' => l($account->profile_display_name, 'user/'. $vars['comment']->uid), '!date' => format_date($vars['node']->created, 'custom', 'j M Y')));
 }
 // */
 
