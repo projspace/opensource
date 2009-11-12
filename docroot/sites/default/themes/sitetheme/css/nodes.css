@@ -7,11 +7,9 @@
  * Style anything that isn't in the $content variable.
  */
 
-.views-field-teaser,
-.node,
-#comments /* Node wrapper */ {
+.node p,
+#comments p /* Node wrapper */ {
   line-height: 1.4em;
-  font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
   color: #333;
 }
 
@@ -62,7 +60,6 @@
   color: #d8d8d8;
   font-size: 75px;
   line-height: 1;
-  font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
@@ -127,6 +124,7 @@
 .node .content /* Node's content wrapper */ {
   position: relative;
   padding-top: 1.5em;
+  font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
 }
 
 .node-type-channel .node .content {

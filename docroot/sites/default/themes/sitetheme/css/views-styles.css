@@ -242,3 +242,7 @@
 .view-id-og_members_faces table td {
   vertical-align: top;
 }
+
+.views-field-teaser {
+  font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
+}
