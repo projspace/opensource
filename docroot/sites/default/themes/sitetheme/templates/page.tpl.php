@@ -155,8 +155,6 @@
 
     <div id="main"><div id="main-inner" class="clearfix<?php if ($primary_links || $navbar) { print ' with-navbar'; } ?>">
 
-	  <?php print $messages; ?>
-
       <div id="content"><div id="content-inner-side-shadow"><div id="content-inner-right-shadow"><div id="content-inner-bottom-shadow"><div id="content-inner">
 
         <?php if ($mission): ?>
@@ -178,6 +176,9 @@
             <?php if ($tabs): ?>
               <div class="tabs"><?php print $tabs; ?></div>
             <?php endif; ?>
+            
+            <?php print $messages; ?>
+            
           </div> <!-- /#content-header -->
         <?php endif; ?>
 
