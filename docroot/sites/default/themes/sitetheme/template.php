@@ -162,7 +162,7 @@ function sitetheme_preprocess_views_view_field__value(&$vars) {
   }
 }
 
-function sitetheme_preprocess_view_view_field__featured_comment_value(&$vars) {
+function sitetheme_preprocess_view_view_field__featured_comment__value(&$vars) {
   print '<pre>';
 print_r($vars);
 print '</pre>';
