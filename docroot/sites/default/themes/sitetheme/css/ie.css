@@ -54,3 +54,7 @@ tr.odd td {
 #block-quicktabs-1 #quicktabs_container_1 ol {
   margin-top: 20px;
 }
+
+.article-author-feed {
+  margin: 0;
+}
