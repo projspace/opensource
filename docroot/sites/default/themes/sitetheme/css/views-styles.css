@@ -222,25 +222,21 @@
 
 /* Node links when listed in a channel or homepage view */
 .view-id-homepage a,
-.view-id-og_ghp_ron a {
-  color: #0066cc;
-}
-
+.view-id-og_ghp_ron a,
 .view-id-homepage a:visited,
 .view-id-og_ghp_ron a:visited {
-  color: #6699cc;
+  text-decoration: none;
+  color: #000000;
 }
 
 .view-id-homepage a:hover,
 .view-id-homepage a:focus,
 .view-id-og_ghp_ron a:hover,
-.view-id-og_ghp_ron a:focus {
-  color: #3399ff;
-}
-
+.view-id-og_ghp_ron a:focus,
 .view-id-homepage a:active,
 .view-id-og_ghp_ron a:active {
-  color: #0066cc;
+  text-decoration: underline;
+  color: #3399ff;
 }
 
 .view-id-og_members_faces table td {
