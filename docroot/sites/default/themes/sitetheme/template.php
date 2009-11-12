@@ -273,7 +273,7 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
 
   if ($vars['user']->uid == 0) {
     print '<pre>';
-print_r($vars['user']);
+print_r($vars);
 print '</pre>';
   }
 
