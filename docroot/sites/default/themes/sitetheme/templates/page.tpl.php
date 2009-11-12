@@ -167,10 +167,11 @@
           </div> <!-- /#content-top -->
         <?php endif; ?>
 
+		<?php print $messages; ?>
+
         <?php if ($breadcrumb || $title || $tabs || $help || $messages): ?>
           <div id="content-header">
             <?php // print $breadcrumb; ?>
-            <?php print $messages; ?>
             <?php if ($title): ?>
               <h1 class="title"><?php print $title; ?></h1>
             <?php endif; ?>
