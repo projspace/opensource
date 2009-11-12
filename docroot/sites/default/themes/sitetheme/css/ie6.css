@@ -151,3 +151,10 @@ form.fivestar-widget {
 #block-menu-menu-about-menu {
   width: 50%;
 }
+
+.page-user-password div.tabs,
+.page-user-register div.tabs,
+.page-user-login div.tabs,
+.page-user div.tabs {
+  width: 375px;
+}
