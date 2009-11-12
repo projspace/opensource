@@ -24,10 +24,11 @@ select
 }
 
 .form-text {
-  height: 14px;
   font-size: 14px;
-  padding: 8px;
   border: 1px solid #cdcbca;
+  color:#999999;
+  height:22px;
+  padding:8px 8px 0;
 }
 
 
