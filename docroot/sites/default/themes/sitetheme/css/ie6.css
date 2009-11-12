@@ -132,3 +132,8 @@ div.error /* High priority messages. See also the .error declaration below. */ {
   margin-top: 0;
   background-repeat: no-repeat;
 }
+
+form.fivestar-widget {
+  width: 41%;
+  margin-right: 10px;
+}
