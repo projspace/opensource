@@ -270,6 +270,11 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
     // Adding it back.
     $vars['links'] = '<ul class="links">'. $vars['links'];
   }
+  
+  print '<pre>';
+print_r($vars);
+print '</pre>';
+  //$vars['submitted'] = t('by !author on !date', array('!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid), '!date' => format_date($vars['node']->created, 'custom', 'j M Y')));
 }
 // */
 
