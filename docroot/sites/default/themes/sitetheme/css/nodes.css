@@ -7,7 +7,7 @@
  * Style anything that isn't in the $content variable.
  */
 
-
+.views-field-teaser,
 .node,
 #comments /* Node wrapper */ {
   line-height: 1.4em;
