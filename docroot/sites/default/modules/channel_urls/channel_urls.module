@@ -22,7 +22,7 @@ function channel_urls_menu() {
     'page callback' => 'channel_urls_comment_moderation',
     'page arguments' => array('channel_urls_comment_moderation', 'default', 1),
     'type' => MENU_LOCAL_TASK,
-    'access callback' => 'channel_urls_comment_gardner_access',
+    'access callback' => 'channel_urls_gardner_access',
     'access arguments' => array(1),
   );
 
@@ -40,7 +40,7 @@ function channel_urls_admin_access($gid) {
 /**
  * Access callback. Determine if a user is a comment garnder, moderator, or admin.
  */
-function channel_urls_comment_gardner_access($gid) {
+function channel_urls_gardner_access($gid) {
   $view = views_get_view('channel_urls_comment_moderation');
   global $user;
   return (og_is_group_admin($gid) || isset($user->roles[31])) && !$view->disabled;
