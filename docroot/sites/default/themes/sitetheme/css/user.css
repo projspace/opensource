@@ -86,6 +86,14 @@ dl.user-member ul
   margin:0;
 }
 
+.page-user-password div.tabs,
+.page-user-register div.tabs,
+.page-user div.tabs {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 .section-user ul.secondary,
 .section-users ul.secondary
 {
