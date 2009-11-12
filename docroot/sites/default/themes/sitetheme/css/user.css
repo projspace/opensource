@@ -88,6 +88,7 @@ dl.user-member ul
 
 .page-user-password div.tabs,
 .page-user-register div.tabs,
+.page-user-login div.tabs
 .page-user div.tabs {
   position: absolute;
   right: 0;
