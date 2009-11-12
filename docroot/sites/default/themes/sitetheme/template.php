@@ -255,7 +255,9 @@ function STARTERKIT_preprocess_node(&$vars, $hook) {
  */
 function sitetheme_preprocess_comment(&$vars, $hook) {
   sitetheme_remove_tab('report to Mollom', $vars);
-  dsm($vars);
+  print '<pre>';
+print_r($vars);
+print '</pre>';
 }
 // */
 
