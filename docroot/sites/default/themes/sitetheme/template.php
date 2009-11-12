@@ -423,5 +423,9 @@ function sitetheme_file($element) {
 function sitetheme_user_profile_form($form) {
   // Removing the link to the personal contact form. If you are on your own contact form this takes you to a page
   // you do not have access to.
-  $form['contact']['contact']['#description'] = t('Allow other users to contact you by e-mail via your personal contact form. Note that while your e-mail address is not made public to other members of the community, privileged users such as site administrators are able to contact you even if you choose not to enable this feature.');
+  if (isset($form['contact']['contact']['#description'])) {
+    $form['contact']['contact']['#description'] = t('Allow other users to contact you by e-mail via your personal contact form. Note that while your e-mail address is not made public to other members of the community, privileged users such as site administrators are able to contact you even if you choose not to enable this feature.');
+  }
+  
+  return drupal_render($form);
 }
