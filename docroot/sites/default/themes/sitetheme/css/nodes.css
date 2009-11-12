@@ -111,6 +111,7 @@
   right: 0;
 }
 
+.article-author-info,
 .node .submitted /* The "posted by" information */ {
   display: block;
   float: left;
@@ -159,11 +160,6 @@
   padding-left: 18px;
   background: url(../images/comment.jpg) left no-repeat;
   height: 13px;
-}
-
-.article-author-info {
-  float: left;
-  display: block;
 }
 
 .article-node-link {
