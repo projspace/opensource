@@ -181,6 +181,10 @@
   margin-top: 0;
 }
 
+#block-views-site_homepage_poll-block_1 .content {
+  padding-top: 0;
+}
+
 #sidebar-second .vote-form .choices {
   width: 100%;
 }
