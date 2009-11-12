@@ -128,8 +128,9 @@
 }
 
 .article-visitor-links,
-.fivestar-widget {
-  font-family:Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+.fivestar-widget,
+.node .content .poll {
+  font-family: Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
 }
 
 .node-type-channel .node .content {
