@@ -254,7 +254,20 @@ function STARTERKIT_preprocess_node(&$vars, $hook) {
  *   The name of the template being rendered ("comment" in this case.)
  */
 function sitetheme_preprocess_comment(&$vars, $hook) {
-  sitetheme_remove_link('report to Mollom', $vars);
+  
+  // Remove the mollom link for comments on the comment gardner role. This is displayed even
+  // though they don't have permission. A side effect of using og_user_roles.
+  global $user;
+  print '<pre>';
+print_r($user->roles);
+print '</pre>';
+  if (FALSE) {
+    sitetheme_remove_link('report to Mollom', $vars);
+
+    // The sitetheme_remove_link function is stripping out the ul tag in this case.
+    // Adding it back.
+    $vars['links'] = '<ul class="links">'. $vars['links'];
+  }
 }
 // */
 
