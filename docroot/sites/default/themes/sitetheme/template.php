@@ -258,10 +258,8 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
   // Remove the mollom link for comments on the comment gardner role. This is displayed even
   // though they don't have permission. A side effect of using og_user_roles.
   global $user;
-  print '<pre>';
-print_r($user->roles);
-print '</pre>';
-  if (FALSE) {
+  // Role 31 is the comment gardner.
+  if (isset($user->roles[31])) {
     sitetheme_remove_link('report to Mollom', $vars);
 
     // The sitetheme_remove_link function is stripping out the ul tag in this case.
