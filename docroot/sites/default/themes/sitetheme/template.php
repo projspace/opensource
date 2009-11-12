@@ -69,6 +69,10 @@
 function sitetheme_theme(&$existing, $type, $theme, $path) {
   $hooks = zen_theme($existing, $type, $theme, $path);
   // @TODO: Needs detailed comments. Patches welcome!
+  
+  $hooks['user_profile_form'] = array(
+    'arguments' => array('form' => NULL),
+  );
   return $hooks;
 }
 
@@ -414,4 +418,10 @@ function sitetheme_file($element) {
   }
   _form_set_class($element, array('form-file'));
   return theme('form_element', $element, '<input type="file" name="'. $element['#name'] .'"'. ($element['#attributes'] ? ' '. drupal_attributes($element['#attributes']) : '') .' id="'. $element['#id'] .'" size="'. $element['#size'] ."\" />\n");
+}
+
+function sitetheme_user_profile_form($form) {
+  // Removing the link to the personal contact form. If you are on your own contact form this takes you to a page
+  // you do not have access to.
+  $form['contact']['contact']['#description'] = t('Allow other users to contact you by e-mail via your personal contact form. Note that while your e-mail address is not made public to other members of the community, privileged users such as site administrators are able to contact you even if you choose not to enable this feature.');
 }
