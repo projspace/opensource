@@ -23,6 +23,7 @@
  */
 body {
   font-size: 100%; /* Fixes exaggerated text resizing in IE6 and IE7 */
+  letter-spacing: 0; /* Some Firefox 3.0 installs on Linux seem to default to 1px */
 }
 
  
