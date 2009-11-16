@@ -91,6 +91,7 @@
 .view-homepage .views-field-value {
   padding-right: 15px;
   position: relative;
+  margin-left: 3px;
 }
 
 .view-homepage .views-field-group-nid,
