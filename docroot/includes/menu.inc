@@ -341,9 +341,6 @@ function menu_execute_active_handler($path = NULL) {
     menu_rebuild();
   }
   if ($router_item = menu_get_item($path)) {
-    print '<pre>';
-print_r($router_item);
-print '</pre>';
     if ($router_item['access']) {
       if ($router_item['file']) {
         require_once($router_item['file']);
