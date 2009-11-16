@@ -568,10 +568,6 @@ function _menu_translate(&$router_item, $map, $to_arg = FALSE) {
     $router_item['access'] = FALSE;
     return FALSE;
   }
-  print '<pre>';
-print_r($router_item);
-print_r($map);
-print '</pre>';
 
   // Generate the link path for the page request or local tasks.
   $link_map = explode('/', $router_item['path']);
