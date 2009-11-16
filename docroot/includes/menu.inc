@@ -449,6 +449,10 @@ function _menu_check_access(&$item, $map) {
       $item['access'] = (count($arguments) == 1) ? user_access($arguments[0]) : user_access($arguments[0], $arguments[1]);
     }
     else {
+      print '<pre>';
+      print_r($callback);
+print_r($arguments);
+print '</pre>';
       $item['access'] = call_user_func_array($callback, $arguments);
     }
   }
