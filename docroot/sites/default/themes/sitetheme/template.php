@@ -125,6 +125,9 @@ function sitetheme_preprocess_node(&$vars) {
     if ($vars['node']->comment_count > 0) {
       $vars['links_all'] .= '<span class="article-comment-count">'. l(format_plural($vars['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $vars['node']->comment_count)), 'node/'. $vars['node']->nid, array('fragment' => 'comments')) .'</span>';
     }
+    else {
+      $vars['links_all'] .= '<span class="article-comment-count">'. l('0 Comments', 'node/'. $vars['node']->nid, array('fragment' => 'comments')) .'</span>';
+    }
     $account = user_load(array('uid' => $vars['node']->uid));
     $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a></span>';
     $vars['links_all'] .= '<span class="article-node-link">'. l('Read more', 'node/'. $vars['node']->nid) .'</span>';
