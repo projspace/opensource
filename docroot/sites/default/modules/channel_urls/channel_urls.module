@@ -34,7 +34,7 @@ function channel_urls_menu() {
  */
 function channel_urls_admin_access($gid) {
   $view = views_get_view('channel_awaiting_moderation');
-  return og_is_group_admin($gid) && !$view->disabled;
+  return (og_is_group_admin($gid) || isset($user->roles[21]) || isset($user->roles[26])) && !$view->disabled;
 }
 
 /**
@@ -43,7 +43,7 @@ function channel_urls_admin_access($gid) {
 function channel_urls_gardner_access($gid) {
   $view = views_get_view('channel_urls_comment_moderation');
   global $user;
-  return (og_is_group_admin($gid) || isset($user->roles[31])) && !$view->disabled;
+  return (og_is_group_admin($gid) || isset($user->roles[31]) || isset($user->roles[21]) || isset($user->roles[26])) && !$view->disabled;
 }
 
 /**
