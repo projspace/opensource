@@ -480,3 +480,17 @@ function sitetheme_textfield($element) {
 
   return theme('form_element', $element, $output) . $extra;
 }
+
+function sitetheme_password($element) {
+  // If the size is 60 reduce it to 50.
+  if (isset($element['#size']) && $element['#size'] == 60) {
+    $element['#size'] = 50;
+  }
+
+  $size = $element['#size'] ? ' size="'. $element['#size'] .'" ' : '';
+  $maxlength = $element['#maxlength'] ? ' maxlength="'. $element['#maxlength'] .'" ' : '';
+
+  _form_set_class($element, array('form-text'));
+  $output = '<input type="password" name="'. $element['#name'] .'" id="'. $element['#id'] .'" '. $maxlength . $size . drupal_attributes($element['#attributes']) .' />';
+  return theme('form_element', $element, $output);
+}
