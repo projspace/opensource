@@ -313,9 +313,6 @@ function menu_get_item($path = NULL, $router_item = NULL) {
     list($ancestors, $placeholders) = menu_get_ancestors($parts);
 
     if ($router_item = db_fetch_array(db_query_range('SELECT * FROM {menu_router} WHERE path IN ('. implode (',', $placeholders) .') ORDER BY fit DESC', $ancestors, 0, 1))) {
-      print '<pre>';
-print_r($router_item);
-print '</pre>';
       $map = _menu_translate($router_item, $original_map);
       if ($map === FALSE) {
         $router_items[$path] = FALSE;
