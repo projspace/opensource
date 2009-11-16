@@ -12,6 +12,7 @@ function opensource_access_init() {
   if (arg(0) == 'flag') {
     $url = parse_url($_SERVER['HTTP_REFERER']);
     $path = drupal_get_normal_path($url['path']);
+    print '>'. $path;
     if (isset($path)) {
       global $user;      
       // Try to determine group context using customized menu system functions.
