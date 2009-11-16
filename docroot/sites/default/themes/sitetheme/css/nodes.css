@@ -127,6 +127,10 @@
   font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
 }
 
+.article-visitor-links {
+  width: 520px;
+}
+
 .article-visitor-links,
 .fivestar-widget,
 .node .content .poll {
