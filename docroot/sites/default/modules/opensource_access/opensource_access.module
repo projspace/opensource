@@ -11,7 +11,11 @@
 function opensource_access_init() {
   if (arg(0) == 'flag') {
     $url = parse_url($_SERVER['HTTP_REFERER']);
-    $path = drupal_get_normal_path($url['path']);
+    $path = $url['path'];
+    if (strpos($path, '/') === 0) {
+      $path = substr($path, 1);
+    }
+    $path = drupal_get_normal_path($path);
     if (isset($path)) {
       global $user;
       print '<pre>';
