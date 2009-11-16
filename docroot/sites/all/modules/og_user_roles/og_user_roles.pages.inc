@@ -98,6 +98,7 @@ function og_user_roles_page_form($form_state, $node, $roles, $result) {
   // Used for theming.
   $form['#id'] = 'og-user-roles';
   $form['#roles'] = $roles;
+  $all_roles = array_map('check_plain', user_roles());
 
   // Unset role titles.
   foreach ($roles as $rid => $name) {
@@ -109,11 +110,22 @@ function og_user_roles_page_form($form_state, $node, $roles, $result) {
     $form['user_roles'][$account->uid]['user'] = array(
       '#value' => theme('username', $account),
     );
+    $account_roles = og_user_roles_get_roles_by_group($node->nid, $account->uid);
     $form['user_roles'][$account->uid]['roles'] = array(
       '#type' => 'checkboxes',
-      '#default_value' => og_user_roles_get_roles_by_group($node->nid, $account->uid),
+      '#default_value' => $account_roles,
       '#options' => $roles,
       '#parents' => array('user_roles', $account->uid),
+    );
+    $auto_role_names = array();
+    // Find automatic roles that don't appear in the form.
+    foreach ($account_roles as $rid) {
+      if (!isset($roles[$rid])) {
+        $auto_role_names[] = $all_roles[$rid];
+      }
+    }
+    $form['user_roles'][$account->uid]['automatic_roles'] = array(
+      '#value' => implode(', ', $auto_role_names),
     );
   }
   $form['submit'] = array('#type' => 'submit', '#value' => t('Save'));
@@ -128,11 +140,13 @@ function og_user_roles_page_form_submit($form, &$form_state) {
   $gid = $form['#node']->nid;
 
   foreach ($form_state['values']['user_roles'] as $uid => $new_roles) {
-    og_user_roles_role_delete($gid, $uid);
-
-    $new_roles = array_filter($new_roles);
-    foreach ($new_roles as $rid => $checked) {
-      og_user_roles_role_add($gid, $uid, $rid);
+    foreach ($form['#roles'] as $rid => $name) {
+      if (empty($new_roles[$rid])) {
+        og_user_roles_role_delete($gid, $uid, $rid);
+      }
+      else {
+        og_user_roles_role_add($gid, $uid, $rid);
+      }
     }
   }
 
@@ -143,12 +157,13 @@ function og_user_roles_page_form_submit($form, &$form_state) {
  * Render the group user roles assignment form like user permissions table.
  */
 function theme_og_user_roles_page_form($form) {
-  $header = array_merge(array(''), $form['#roles']);
+  $header = array_merge(array('', t('Default roles')), $form['#roles']);
 
   $rows = array();
   foreach (element_children($form['user_roles']) as $item) {
     $row = array();
     $row[] = drupal_render($form['user_roles'][$item]['user']);
+    $row[] = drupal_render($form['user_roles'][$item]['automatic_roles']);
     foreach (element_children($form['user_roles'][$item]['roles']) as $role) {
       $row[] = drupal_render($form['user_roles'][$item]['roles'][$role]);
     }
