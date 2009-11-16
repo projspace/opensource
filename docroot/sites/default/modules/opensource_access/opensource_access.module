@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Custom access code for OpenSource.com
+ */
+
+/**
+ * Implementation of hook_user().
+ */
+function opensource_access_user($op, &$edit, &$account, $category = NULL) {
+  if ($op == 'load') {
+    // Node pages should be editable by channel/group admin. But, since the user object
+    // is passed into the access callback separate from the global user we need to modify
+    // the global user.
+    if (arg(0) == 'node' && is_numeric(arg(1))) {
+      // Try to determine group context using customized menu system functions.
+      $group_node = og_user_roles_determine_context();
+      // Assign additional user roles to current user (if any).
+      og_user_roles_grant_roles($account, $group_node);
+    }
+  }
+}
