@@ -19,8 +19,5 @@ function opensource_access_user($op, &$edit, &$account, $category = NULL) {
       // Assign additional user roles to current user (if any).
       og_user_roles_grant_roles($account, $group_node);
     }
-    print '<pre>';
-print_r($account);
-print '</pre>';
   }
 }
