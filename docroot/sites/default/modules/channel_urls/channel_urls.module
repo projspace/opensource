@@ -58,7 +58,6 @@ function channel_urls_moderation_articles($node) {
     $display = 'editor';
   } 
   $arg = $node->nid;
-  print $display;
   return views_page($view_name, $display, $arg);
 }
 
