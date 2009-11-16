@@ -2005,9 +2005,6 @@ function node_access($op, $node, $account = NULL) {
   // If no user object is supplied, the access check is for the current user.
   if (empty($account)) {
     $account = $user;
-    print '<pre>';
-print_r($account);
-print '</pre>';
   }
   // If the node is in a restricted format, disallow editing.
   if ($op == 'update' && !filter_access($node->format)) {
