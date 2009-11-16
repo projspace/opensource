@@ -1991,6 +1991,9 @@ function node_search_validate($form, &$form_state) {
  *   TRUE if the operation may be performed, or FALSE otherwise.
  */
 function node_access($op, $node, $account = NULL) {
+    print '<pre>';
+print_r($account);
+print '</pre>';
   global $user;
 
   if (!$node || !in_array($op, array('view', 'update', 'delete', 'create'), TRUE)) {
