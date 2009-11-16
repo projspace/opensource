@@ -9,8 +9,37 @@
  * Implementation of hook_init().
  */
 function opensource_access_init() {
-  // Try to determine group context using customized menu system functions.
-  //$group_node = og_user_roles_determine_context();
-  // Assign additional user roles to current user (if any).
-  //og_user_roles_grant_roles($account, $group_node);
+  if (arg(0) == 'flag') {
+    $url = parse_url($_SERVER['HTTP_REFERER']);
+    $path = drupal_get_normal_path($url['path']);
+    if (isset($path)) {
+      global $user;      
+      // Try to determine group context using customized menu system functions.
+      $group_node = opensource_access_determine_context($path);
+      // Assign additional user roles to current user (if any).
+      og_user_roles_grant_roles($user, $group_node);
+    }
+  }
+}
+
+function opensource_access_determine_context($path) {
+  $item = og_user_roles_menu_get_item($path);
+  $object = og_user_roles_menu_get_object('node', 1, $path);
+
+  // Check if this is an existing node.
+  if (!empty($object->nid)) {
+    $node = $object;
+  }
+  elseif ((!empty($item['map'][0]) && $item['map'][0] == 'og' && !empty($item['map'][2])) || $path == 'comment/reply/%') {
+    $node = og_user_roles_menu_get_object('node', 2);
+  }
+  elseif ($path == 'comment/edit' || $path == 'comment/delete') {
+    // Get the node from the comment object.
+    $comment = _comment_load($item['page_arguments'][0]);
+    $node = node_load($comment->nid);
+  }
+
+  if (!empty($node) && ($group_node = og_determine_context_get_group($node))) {
+    return $group_node;
+  }
 }
