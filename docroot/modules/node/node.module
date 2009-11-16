@@ -2002,10 +2002,6 @@ function node_access($op, $node, $account = NULL) {
   if ($op != 'create') {
     $node = (object)$node;
   }
-  print '<pre>';
-  print 'test';
-print_r($account);
-print '</pre>';
   // If no user object is supplied, the access check is for the current user.
   if (empty($account)) {
     $account = $user;
