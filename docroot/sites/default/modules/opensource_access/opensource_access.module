@@ -9,7 +9,7 @@
  * Implementation of hook_init().
  */
 function opensource_access_init() {
-  if (arg(0) == 'flag') {
+  if (arg(0) == 'flag' || arg(0) == 'node' ) {
     $url = parse_url($_SERVER['HTTP_REFERER']);
     $path = drupal_get_normal_path($url['path']);
     print '>'. $path;
