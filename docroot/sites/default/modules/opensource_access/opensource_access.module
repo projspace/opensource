@@ -18,12 +18,10 @@ function opensource_access_init() {
     $path = drupal_get_normal_path($path);
     if (isset($path)) {
       global $user;
-      print '<pre>';
-print_r($path);
-print '</pre>';
+
       // Try to determine group context using customized menu system functions.
       $group_node = opensource_access_determine_context($path);
-      
+
       // Assign additional user roles to current user (if any).
       og_user_roles_grant_roles($user, $group_node);
     }
