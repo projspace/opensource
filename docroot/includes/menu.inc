@@ -578,9 +578,6 @@ function _menu_translate(&$router_item, $map, $to_arg = FALSE) {
   }
   $router_item['href'] = implode('/', $link_map);
   $router_item['options'] = array();
-  print '<pre>';
-print_r($router_item);
-print '</pre>';
   _menu_check_access($router_item, $map);
   
   // For performance, don't localize an item the user can't access.
