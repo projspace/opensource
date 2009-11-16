@@ -247,3 +247,8 @@
 .views-field-teaser {
   font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
 }
+
+.view-display-id-attachment_1 .views-field-title {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
