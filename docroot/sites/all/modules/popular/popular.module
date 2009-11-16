@@ -169,7 +169,7 @@ function popular_block_view($op, $delta, $edit) {
       l($data->title, "node/$data->nid"),
     );
   }
-  $output .= theme('item_list', $rows, NULL, 'ol');
+  $output .= theme('item_list', $rows, NULL, 'ul');
   $block['content'] = $output;
   return $block;
 }
