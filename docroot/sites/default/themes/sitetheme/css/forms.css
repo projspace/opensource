@@ -236,6 +236,6 @@ form tbody th {
   border-bottom: 1px solid #ccc;
 }
 
-.form-autocomplete li {
+#autocomplete li {
   margin: 0;
 }
