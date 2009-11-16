@@ -410,3 +410,7 @@ ul.links li {
 .poll .bar .foreground {
   background-color: #1D2754;
 }
+
+html.js input.form-autocomplete {
+ background-image: none;
+}
