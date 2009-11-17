@@ -9,7 +9,8 @@
  * Implementation of hook_init().
  */
 function opensource_access_init() {
-  if (arg(0) == 'flag') {
+  // The flag and poll js need to have access to group context for permissions.
+  if (arg(0) == 'flag' || (arg(0) == 'poll' && arg(1) == 'js')) {
     $url = parse_url($_SERVER['HTTP_REFERER']);
     $path = $url['path'];
     if (strpos($path, '/') === 0) {
