@@ -17,6 +17,7 @@ function opensource_access_init() {
       $path = substr($path, 1);
     }
     $path = drupal_get_normal_path($path);
+    print $path;
     if (isset($path)) {
       global $user;
 
