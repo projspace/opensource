@@ -17,12 +17,15 @@ function opensource_access_init() {
       $path = substr($path, 1);
     }
     $path = drupal_get_normal_path($path);
+    print $path;
     if (isset($path)) {
       global $user;
 
       // Try to determine group context using customized menu system functions.
       $group_node = opensource_access_determine_context($path);
-
+print '<pre>';
+print_r($group_node);
+print '</pre>';
       // Assign additional user roles to current user (if any).
       og_user_roles_grant_roles($user, $group_node);
     }
