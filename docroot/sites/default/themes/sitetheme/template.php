@@ -457,8 +457,9 @@ function sitetheme_user_profile_form($form) {
 
 function sitetheme_textfield($element) {
 
-  // If the size is 60 reduce it to 50.
-  if (isset($element['#size']) && $element['#size'] == 60) {
+  // If the size is 60 reduce it to 50. 60 is the standard size and 58 is the
+  // size of OpenID.
+  if (isset($element['#size']) && ($element['#size'] == 60 || $element['#size'] == 58)) {
     $element['#size'] = 50;
   }
 
