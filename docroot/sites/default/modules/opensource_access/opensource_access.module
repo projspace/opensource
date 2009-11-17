@@ -13,26 +13,23 @@ function opensource_access_init() {
   if (arg(0) == 'flag' || arg(0) == 'poll') {
     $url = parse_url($_SERVER['HTTP_REFERER']);
     $path = $url['path'];
+    parse_str($url['query'], $query);
     if (strpos($path, '/') === 0) {
       $path = substr($path, 1);
     }
     $path = drupal_get_normal_path($path);
-    print $path;
     if (isset($path)) {
       global $user;
 
       // Try to determine group context using customized menu system functions.
-      $group_node = opensource_access_determine_context($path);
-print '<pre>';
-print_r($group_node);
-print '</pre>';
+      $group_node = opensource_access_determine_context($path, $query);
       // Assign additional user roles to current user (if any).
       og_user_roles_grant_roles($user, $group_node);
     }
   }
 }
 
-function opensource_access_determine_context($path) {
+function opensource_access_determine_context($path, $query = NULL) {
   $item = og_user_roles_menu_get_item($path);
   $object = og_user_roles_menu_get_object('node', 1, $path);
 
@@ -41,9 +38,9 @@ function opensource_access_determine_context($path) {
     $node = $object;
   }
   // Check if we are in the node add page.
-  elseif (strpos($path, 'node/add') === 0 && !empty($_REQUEST['gids'])) {
+  elseif (strpos($path, 'node/add') === 0 && !empty($query['gids'])) {
     // URL pattern: node/add/story?gids[]=1
-    $gid = intval(current($_REQUEST['gids']));
+    $gid = intval(current($query['gids']));
     $node = node_load($gid);
   }
   elseif ((!empty($item['map'][0]) && $item['map'][0] == 'og' && !empty($item['map'][2])) || $path == 'comment/reply/%') {
