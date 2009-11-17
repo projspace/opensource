@@ -17,7 +17,6 @@ function opensource_access_init() {
       $path = substr($path, 1);
     }
     $path = drupal_get_normal_path($path);
-    print $path;
     if (isset($path)) {
       global $user;
 
@@ -37,6 +36,12 @@ function opensource_access_determine_context($path) {
   // Check if this is an existing node.
   if (!empty($object->nid)) {
     $node = $object;
+  }
+  // Check if we are in the node add page.
+  elseif (strpos($path, 'node/add') === 0 && !empty($_REQUEST['gids'])) {
+    // URL pattern: node/add/story?gids[]=1
+    $gid = intval(current($_REQUEST['gids']));
+    $node = node_load($gid);
   }
   elseif ((!empty($item['map'][0]) && $item['map'][0] == 'og' && !empty($item['map'][2])) || $path == 'comment/reply/%') {
     $node = og_user_roles_menu_get_object('node', 2);
