@@ -265,7 +265,9 @@ function STARTERKIT_preprocess_node(&$vars, $hook) {
  *   The name of the template being rendered ("comment" in this case.)
  */
 function sitetheme_preprocess_comment(&$vars, $hook) {
-  
+  print '<pre>';
+print_r($vars['comment']);
+print '</pre>';
   // Remove the mollom link for comments on the comment gardner role. This is displayed even
   // though they don't have permission. A side effect of using og_user_roles.
   global $user;
