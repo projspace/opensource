@@ -285,12 +285,12 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
     $username = theme('username', $vars['comment']);
   }
   else {
-    if (!isset($account_profiles[$vars['comment']->uid])) {
+    /*if (!isset($account_profiles[$vars['comment']->uid])) {
       $account = stdClass();
       $account->uid = $vars['comment']->uid;
       profile_load_profile($account);
       $account_profiles[$account->uid] = $account;
-    }
+    }*/
     $username = l($account_profiles[$vars['comment']->uid]->profile_display_name, 'user/'. $vars['comment']->uid);
   }
 
