@@ -9,8 +9,9 @@
  * Implementation of hook_init().
  */
 function opensource_access_init() {
+  global $user;
   // The flag and poll js need to have access to group context for permissions.
-  if (arg(0) == 'flag' || arg(0) == 'poll') {
+  if (($user->uid != 1 && !isset($user->roles[16])) && (arg(0) == 'flag' || arg(0) == 'poll')) {
     $url = parse_url($_SERVER['HTTP_REFERER']);
     $path = $url['path'];
     parse_str($url['query'], $query);
@@ -19,8 +20,6 @@ function opensource_access_init() {
     }
     $path = drupal_get_normal_path($path);
     if (isset($path)) {
-      global $user;
-
       // Try to determine group context using customized menu system functions.
       $group_node = opensource_access_determine_context($path, $query);
       // Assign additional user roles to current user (if any).
