@@ -159,16 +159,21 @@ function popular_block_view($op, $delta, $edit) {
 
   if (in_array($channel, $channels)) {
     $result = db_query_range(db_rewrite_sql("SELECT DISTINCT(n.nid), n.title, SUM(p.hit_count) FROM {node} n INNER JOIN {popular} p ON n.nid = p.nid WHERE p.channel = '%s' GROUP BY p.nid ORDER BY SUM(p.hit_count) DESC"), $channel, 0, 5);
+    while ($data = db_fetch_object($result)) {
+      $rows[] = array(
+        l($data->title, "node/$data->nid"),
+      );
+    }
   }
   else {
-    $result = db_query_range(db_rewrite_sql("SELECT DISTINCT(n.nid), n.title, SUM(p.hit_count) FROM {node} n INNER JOIN {popular} p ON n.nid = p.nid GROUP BY p.nid ORDER BY SUM(p.hit_count) DESC"), 0, 5);    
+    $result = db_query_range(db_rewrite_sql("SELECT DISTINCT(n.nid), n.title, SUM(p.hit_count), g.group_nid as group_nid, gn.title as group_title FROM {node} n INNER JOIN {popular} p ON n.nid = p.nid INNER JOIN {og_ancestry} g ON g.nid = n.nid LEFT JOIN {node} gn ON gn.nid = g.group_nid GROUP BY p.nid ORDER BY SUM(p.hit_count) DESC"), 0, 5);    
+    while ($data = db_fetch_object($result)) {
+      $rows[] = array(
+        l($data->title, "node/$data->nid"),
+      );
+    }
   }
-
-  while ($data = db_fetch_object($result)) {
-    $rows[] = array(
-      l($data->title, "node/$data->nid"),
-    );
-  }
+  
   $output .= theme('item_list', $rows, NULL, 'ul');
   $block['content'] = $output;
   return $block;
