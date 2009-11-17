@@ -169,7 +169,7 @@ function popular_block_view($op, $delta, $edit) {
     $result = db_query_range(db_rewrite_sql("SELECT DISTINCT(n.nid), n.title, SUM(p.hit_count), g.group_nid as group_nid, gn.title as group_title FROM {node} n INNER JOIN {popular} p ON n.nid = p.nid INNER JOIN {og_ancestry} g ON g.nid = n.nid LEFT JOIN {node} gn ON gn.nid = g.group_nid GROUP BY p.nid ORDER BY SUM(p.hit_count) DESC"), 0, 10);    
     while ($data = db_fetch_object($result)) {
       $rows[] = array(
-        '<div class="views-field-group-nid">Open '. l($data->group_title, "node/$data->group_nid") .' &raquo </div>'. l($data->title, "node/$data->nid"),
+        '<div class="views-field-group-nid">Open '. l($data->group_title, "node/$data->group_nid") .' &raquo </div><div class="views-field-title">'. l($data->title, "node/$data->nid") .'</div>',
       );
     }
   }
