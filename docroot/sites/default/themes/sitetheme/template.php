@@ -265,9 +265,10 @@ function STARTERKIT_preprocess_node(&$vars, $hook) {
  *   The name of the template being rendered ("comment" in this case.)
  */
 function sitetheme_preprocess_comment(&$vars, $hook) {
-  print '<pre>';
-print_r($vars['comment']);
-print '</pre>';
+  // Drupal does not cache loaded users. To make for less loading we only load profiles
+  // and we statically cache them here.
+  static $account_profiles = array();
+  
   // Remove the mollom link for comments on the comment gardner role. This is displayed even
   // though they don't have permission. A side effect of using og_user_roles.
   global $user;
@@ -280,13 +281,17 @@ print '</pre>';
     $vars['links'] = '<ul class="links">'. $vars['links'];
   }
 
-  if ($vars['user']->uid == 0) {
+  if ($vars['comment']->uid == 0) {
     $username = theme('username', $vars['comment']);
   }
   else {
-    $account = drupal_clone($vars['user']);
-    profile_load_profile($account);
-    $username = l($account->profile_display_name, 'user/'. $vars['comment']->uid);
+    if (!isset($account_profiles[$vars['comment']->uid])) {
+      $account = stdClass();
+      $account->uid = $vars['comment']->uid;
+      profile_load_profile($account);
+      $account_profiles[$account->uid] = $account;
+    }
+    $username = l($account_profiles[$vars['comment']->uid]->profile_display_name, 'user/'. $vars['comment']->uid);
   }
 
   $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
