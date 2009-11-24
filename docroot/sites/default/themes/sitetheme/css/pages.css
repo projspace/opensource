@@ -58,7 +58,7 @@ h1#site-name strong,
 div#site-name strong {
   display: block;
   width: 500px;
-  height: 100px;
+  height: 120px;
 }
 
 h1#site-name a,
@@ -74,7 +74,7 @@ div#site-name a {
   display: block;
   overflow: hidden;
   height: 0;
-  width: 200px;
+  width: 250px;
   padding-top: 40px;
   margin-top: 15px;
   float: right;
