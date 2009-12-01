@@ -144,7 +144,7 @@
       <?php if ($search_box): ?>
         <div id="search-box"><?php print $search_box; ?></div>
       <?php endif; ?>
-	  <a href="http://www.redhat.com" title="Redhat" id="redhat-link">Redhat</a>
+	  <a href="http://www.redhat.com" title="Red Hat" id="redhat-link">Red Hat</a>
       <?php if ($header): ?>
         <div id="header-blocks" class="region region-header">
           <?php print $header; ?>
