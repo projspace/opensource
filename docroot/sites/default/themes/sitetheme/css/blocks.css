@@ -240,8 +240,8 @@
 }
 
 #block-menu-menu-about-more li {
-  float: left;
-  width: 50%;
+  list-style-image: none;
+  list-style-type: circle;
 }
 
 .block .view-twitter-listing .views-field-created-time {
