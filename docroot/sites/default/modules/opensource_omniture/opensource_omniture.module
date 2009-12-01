@@ -23,7 +23,7 @@ function opensource_omniture_omniture_variables($main) {
   elseif (arg(0) == 'user') {
     // Viewing a user page
     if (isnumeric(arg(1))) {
-      $accound = user_load(array('uid' => arg(1)));
+      $account = user_load(array('uid' => arg(1)));
       $page_name .= '|users|'. opensource_omniture_clean($account->name);
     }
     // On the registration form.
