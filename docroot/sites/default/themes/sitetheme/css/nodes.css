@@ -119,6 +119,8 @@
 }
 
 .node .terms /* Node terms (taxonomy) */ {
+  margin-top: 3px;
+  display: block;
 }
 
 .node .content /* Node's content wrapper */ {
