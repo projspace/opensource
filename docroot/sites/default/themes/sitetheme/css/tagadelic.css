@@ -42,51 +42,51 @@
 /* Start Customizations */
 
 .tagadelic_views .level10 {
-  font-size : 1em;
+  font-size: 10px;
   color: #303030;
 }
 
 .tagadelic_views .level9 {
-  font-size : 1em;
+  font-size: 10px;
   color: #404040;
 }
 
 .tagadelic_views .level8 {
-  font-size : 1em;
+  font-size: 10px;
   color: #505050;
 }
 
 .tagadelic_views .level7 {
-  font-size : 1em;
+  font-size: 10px;
   color: #606060;
 }
 
 .tagadelic_views .level6 {
-  font-size : 1em;
+  font-size: 10px;
   color: #707070;
 }
 
 .tagadelic_views .level5 {
-  font-size : 1em;
+  font-size: 10px;
   color: #808080;
 }
 
 .tagadelic_views .level4 {
-  font-size : 1em;
-  color: #909090;
+  font-size: 10px;
+  color: #999;
 }
 
 .tagadelic_views .level3 {
-  font-size : 1em;
-  color: #a0a0a0;
+  font-size: 12px;
+  color: #666;
 }
 
 .tagadelic_views .level2 {
-  font-size : 1em;
-  color: #b0b0b0;
+  font-size: 14px;
+  color: #333;
 }
 
 .tagadelic_views .level1 {
-  font-size : 1em;
-  color: #c0c0c0;
+  font-size: 16px;
+  color: #000;
 }
