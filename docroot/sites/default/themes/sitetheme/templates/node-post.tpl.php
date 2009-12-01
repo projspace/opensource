@@ -91,7 +91,7 @@
   <?php print $links_all; ?>
   
   <?php if ($page && $terms): ?>
-  	<div class="clearfix" />
+  	<div class="clearfix"></div>
     <div class="terms terms-inline">Tags: <?php print $terms; ?></div>
   <?php endif; ?>
 
