@@ -51,22 +51,18 @@ function opensource_omniture_omniture_variables($main) {
       }
     }
   }
-  // The user is viewing the channel homepage.
+  // The user is viewing a node homepage.
   elseif (arg(0) == 'node' && is_numeric(arg(1)) && $node = node_load(arg(1))) {
     $group_node = og_get_group_context();
-    $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|home';
-  }
-
-  // The user is viewing an article in a channel
-  elseif(arg(0) == 'node' && is_numeric(arg(1)) && $node = node_load(arg(1)) && $node->type == 'post') {
-    $group_node = og_get_group_context();
-    $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|article|'. opensource_omniture_clean($node->title);
-  }
-  
-  // The user is viewing a poll in a channel
-  elseif(arg(0) == 'node' && is_numeric(arg(1)) && $node = node_load(arg(1)) && $node->type == 'poll') {
-    $group_node = og_get_group_context();
-    $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|poll|'. opensource_omniture_clean($node->title);
+    if ($node->type == 'post') {
+      $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|article|'. opensource_omniture_clean($node->title);
+    }
+    elseif ($node->type == 'channel') {
+      $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|home';
+    }
+    elseif ($node->type == 'poll') {
+      $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|poll|'. opensource_omniture_clean($node->title);
+    }    
   }
 
   // @todo: Add in comment tracking and generic page tracking when details come to light.
