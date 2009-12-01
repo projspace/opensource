@@ -52,7 +52,8 @@ function opensource_omniture_omniture_variables($main) {
     }
   }
   // The user is viewing the channel homepage.
-  elseif ($group_node = og_get_group_context()) {
+  elseif (arg(0) == 'node' && is_numeric(arg(1)) && $node = node_load(arg(1)) && $node->type == 'channel') {
+    $group_node = og_get_group_context();
     $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|home';
   }
 
