@@ -241,7 +241,7 @@
 
 #block-menu-menu-about-more li {
   list-style-image: none;
-  list-style-type: circle;
+  list-style-type: inherit;
 }
 
 .block .view-twitter-listing .views-field-created-time {
