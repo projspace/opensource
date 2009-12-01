@@ -22,7 +22,7 @@ function opensource_omniture_omniture_variables($main) {
   // The user is viewing a user page.
   elseif (arg(0) == 'user') {
     // Viewing a user page
-    if (isnumeric(arg(1))) {
+    if (is_numeric(arg(1))) {
       $account = user_load(array('uid' => arg(1)));
       $page_name .= '|users|'. opensource_omniture_clean($account->name);
     }
