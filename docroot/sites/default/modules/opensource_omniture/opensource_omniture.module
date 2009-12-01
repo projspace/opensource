@@ -9,28 +9,66 @@
  * Implementation of hook_omniture_variables().
  */
 function opensource_omniture_omniture_variables($main) {
-  $page_name = 'opensource';  // The sitename.
-  // Add the channel name.
-  if (module_exists('og') && $group_node = og_get_group_context()) {
-    $page_name .= '|'. opensource_omniture_clean($group_node->title);
-  }
-  elseif (arg(0) == 'search') {
-    $arguments = arg();
-    foreach ($arguments as $argument) {
-       $page_name .= '|'. opensource_omniture_clean($argument);
-    }
-  }
-  elseif (arg(0) == '') {
+  global $user;
+
+  // Every page starts with the site name.
+  $page_name = 'opensource';
+
+  // The user is on the homepage.
+  if (drupal_is_front_page()) {
     $page_name .= '|home';
   }
 
-  // Add the content type and title.
-  if (arg(0) == 'node' && is_numeric(arg(1))) {
-    $node = node_load(arg(1));
-    if (isset($node->type) && $node->type != 'channel') {
-      $page_name .= '|'. $node->type .'|'. opensource_omniture_clean($node->title);
+  // The user is viewing a user page.
+  elseif (arg(0) == 'user') {
+    // Viewing a user page
+    if (isnumeric(arg(1))) {
+      $accound = user_load(array('uid' => arg(1)));
+      $page_name .= '|users|'. opensource_omniture_clean($account->name);
+    }
+    // On the registration form.
+    elseif (arg(1) == 'register') {
+      $page_name .= '|user|register';
+    }
+    // On the login form.
+    elseif (arg(1) == 'login' || ($user->uid == 0 && arg(1) == '')) {
+      $page_name .= '|user|login';
     }
   }
+
+  // The user is searching
+  elseif (arg(0) == 'search') {
+    if (arg(1) == 'apachesolr_search') {
+      $page_name .= '|contentsearch';
+      if (arg(2) != '') {
+        $page_name .= '|'. opensource_omniture_clean(arg(2));
+      }
+    }
+    elseif (arg(1) == 'user') {
+      $page_name .= '|usersearch';
+      if (arg(2) != '') {
+        $page_name .= '|'. opensource_omniture_clean(arg(2));
+      }
+    }
+  }
+  // The user is viewing the channel homepage.
+  elseif ($group_node = og_get_group_context()) {
+    $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|home';
+  }
+
+  // The user is viewing an article in a channel
+  elseif(arg(0) == 'node' && is_numeric(arg(1)) && $node = node_load(arg(1)) && $node->type == 'post') {
+    $group_node = og_get_group_context();
+    $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|article|'. opensource_omniture_clean($node->title);
+  }
+  
+  // The user is viewing a poll in a channel
+  elseif(arg(0) == 'node' && is_numeric(arg(1)) && $node = node_load(arg(1)) && $node->type == 'poll') {
+    $group_node = og_get_group_context();
+    $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|poll|'. opensource_omniture_clean($node->title);
+  }
+
+  // @todo: Add in comment tracking and generic page tracking when details come to light.
 
   $vars = array(
     'variables' => array(
