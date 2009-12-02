@@ -265,8 +265,7 @@
   float: right;
   display: block;
   height: 0;
-  padding-top: 11px;
-  margin-left: 184px;
+  padding-top: 0px;
   overflow: hidden;
   background: url(../images/twitter-logo.jpg) right no-repeat;
 }
