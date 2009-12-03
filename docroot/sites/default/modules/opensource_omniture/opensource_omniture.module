@@ -66,7 +66,7 @@ function opensource_omniture_omniture_variables($main) {
     elseif ($node->type == 'page' || $node->type == 'group_page') {
       $path = drupal_get_path_alias($_GET['q']);
       $path = explode('/', $path);
-      $page_name .= '|page|';
+      $page_name .= '|page';
       foreach ($path as $part) {
         $page_name .= '|'. opensource_omniture_clean($part);
       }
