@@ -72,6 +72,14 @@ function opensource_omniture_omniture_variables($main) {
       }
     }
   }
+  // If there are no other rules use the site url path.
+  else {
+    $path = drupal_get_path_alias($_GET['q']);
+    $path = explode('/', $path);
+    foreach ($path as $part) {
+      $page_name .= '|'. opensource_omniture_clean($part);
+    }
+  }
 
   // @todo: Add in comment tracking and generic page tracking when details come to light.
 
