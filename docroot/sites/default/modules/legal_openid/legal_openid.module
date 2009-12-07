@@ -15,7 +15,7 @@ function legal_openid_form_alter(&$form, $form_state, $form_id) {
     $form['legal_checkbox'] = array(
       '#type' => 'checkbox',
       '#required' => TRUE,
-      '#title' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
+      '#title' => t('Accept the !terms to continue.  You are licensing your contribution(s) as CC-BY-SA.', array('!terms' => l('Terms of Use', 'terms'))),
       '#weight' => -0.9,
       '#prefix' => '<span class="openid-legal-checkbox">',
       '#suffix' => '</span>',
@@ -30,7 +30,7 @@ function legal_openid_form_alter(&$form, $form_state, $form_id) {
     $form['legal_checkbox'] = array(
       '#type' => 'checkbox',
       '#required' => TRUE,
-      '#title' => t('Accept the !terms to continue.', array('!terms' => l('Terms and Conditions', 'terms'))),
+      '#title' => t('Accept the !terms to continue.  You are licensing your contribution(s) as CC-BY-SA.', array('!terms' => l('Terms of Use', 'terms'))),
       '#weight' => 1,
     );
     $form['#validate'][] = 'legal_openid_comment_form_validate';
@@ -45,13 +45,13 @@ function legal_openid_user_login_validate($form, &$form_state) {
     $form['legal_checkbox']['#required'] = FALSE;
   }
   elseif ($form_state['values']['legal_checkbox'] == 0) {
-    form_set_error('legal_checkbox', t('Please accept the terms and conditions before logging in.'));
+    form_set_error('legal_checkbox', t('Please accept the terms of use before logging in.'));
   }
 }
 
 function legal_openid_comment_form_validate($form, &$form_state) {
   global $user;
   if ($user->uid == 0 && $form_state['values']['legal_checkbox'] == 0) {
-    form_set_error('legal_checkbox', t('Please accept the terms and conditions before before leaving a comment.'));
+    form_set_error('legal_checkbox', t('Please accept the terms of use before before leaving a comment.'));
   }
 }
