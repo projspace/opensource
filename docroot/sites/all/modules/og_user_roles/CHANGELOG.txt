@@ -1,4 +1,4 @@
-// $Id: CHANGELOG.txt,v 1.40 2009/08/14 15:51:34 sun Exp $
+// $Id: CHANGELOG.txt,v 1.35 2009/06/16 21:54:28 sun Exp $
 
 OG User Roles x.x-x.x, xxxx-xx-xx
 ---------------------------------
@@ -6,13 +6,6 @@ OG User Roles x.x-x.x, xxxx-xx-xx
 
 OG User Roles 6.x-4.x, xxxx-xx-xx
 ---------------------------------
-#541062 by sun: Fixed privilege escalation does not work for menu access
-  callbacks that statically cache their own results.
-#542958 by sun: Fixed (regular) roles can no longer be deleted.
-#519794 by stella, sun: Added option for group nodes to allow group admins to
-  define default role for new members.
-#441776 by recrit, sun: Fixed all roles removed from group admin on update.
-#500006 by corey.aufang, sun: Fixed wrong default value for group node roles.
 
 
 OG User Roles 6.x-4.0, 2009-06-16
