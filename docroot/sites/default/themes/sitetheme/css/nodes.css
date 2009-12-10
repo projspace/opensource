@@ -36,6 +36,19 @@
   color: #0066cc;
 }
 
+.read-more a {
+  color: #000;
+}
+
+.read-more a:hover,
+.read-more a:focus {
+  color: #3399ff;
+}
+
+.read-more a:active {
+  color: #000;
+}
+
 .node caption,
 #comments caption {
   font-size: 10px;
