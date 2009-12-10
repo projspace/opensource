@@ -69,7 +69,7 @@
 function sitetheme_theme(&$existing, $type, $theme, $path) {
   $hooks = zen_theme($existing, $type, $theme, $path);
   // @TODO: Needs detailed comments. Patches welcome!
-  
+
   $hooks['user_profile_form'] = array(
     'arguments' => array('form' => NULL),
   );
@@ -130,7 +130,6 @@ function sitetheme_preprocess_node(&$vars) {
     }
     $account = user_load(array('uid' => $vars['node']->uid));
     $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a></span>';
-    $vars['links_all'] .= '<span class="article-node-link">'. l('Read more', 'node/'. $vars['node']->nid) .'</span>';
     $vars['links_all'] .= '</div>';
 
     static $first_image = TRUE;
@@ -268,7 +267,7 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
   // Drupal does not cache loaded users. To make for less loading we only load profiles
   // and we statically cache them here.
   static $account_profiles = array();
-  
+
   // Remove the mollom link for comments on the comment gardner role. This is displayed even
   // though they don't have permission. A side effect of using og_user_roles.
   global $user;
@@ -451,7 +450,7 @@ function sitetheme_user_profile_form($form) {
   if (isset($form['contact']['contact']['#description'])) {
     $form['contact']['contact']['#description'] = t('Allow other users to contact you by e-mail via your personal contact form. Note that while your e-mail address is not made public to other members of the community, privileged users such as site administrators are able to contact you even if you choose not to enable this feature.');
   }
-  
+
   return drupal_render($form);
 }
 
