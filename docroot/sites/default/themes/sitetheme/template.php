@@ -360,9 +360,9 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
 }
 
 function sitetheme_views_view_field__homepage__page_1__teaser(&$vars) {
-  print '<pre>';
+  /*print '<pre>';
 print_r($vars);
-print '</pre>';
+print '</pre>';*/
 }
 
 /**
