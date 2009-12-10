@@ -159,7 +159,7 @@ function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     // All the about pages are at [channel name]/about.
     $node = node_load(arg(1));
-    $vars['about_url'] = '<div class="channel-about-link"><a href="'. $node->path .'/about" title="About '. $node->title .'">About &raquo</a></div>';
+    $vars['about_url'] = '<div class="channel-about-link"><a href="'. $node->path .'/about" title="About '. $node->title .'">&raquo About</a></div>';
   }
 }
 
