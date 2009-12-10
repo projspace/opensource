@@ -363,7 +363,15 @@ function sitetheme_preprocess_views_view_field__homepage__page_1__teaser(&$vars)
   if (module_exists('ed_readmore')) {
     $display = variable_get('ed_readmore_placement', ED_READMORE_PLACEMENT_DEFAULT);
     $node = node_load($vars['view']->result[0]->nid);
-    $vars['output'] = ed_readmore_link_place($node->teaser, $node, $display);
+    if (preg_match('!</?(?:p)[^>]*>$!i', $vars['output'], $match, PREG_OFFSET_CAPTURE)) {
+      // Recalculate the position in $teaser. We do this because there may be extra CCK fields appended to the teaser.
+      // Insert the link
+      $vars['output'] = substr_replace($vars['output'], ed_readmore_link_render($node, $display), $match[0][1], 0);
+    }
+    else {
+      $display = 'after';
+      $vars['output'] .= ed_readmore_link_render($node, $display); // Not found, so just append it
+    }
   }
 }
 
