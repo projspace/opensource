@@ -360,9 +360,11 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
 }
 
 function sitetheme_views_view_field__homepage__page_1__teaser(&$vars) {
-  /*print '<pre>';
-print_r($vars);
-print '</pre>';*/
+  if (module_exists('ed_readmore')) {
+    $display = variable_get('ed_readmore_placement', ED_READMORE_PLACEMENT_DEFAULT);
+    $node = node_load($vars['result'][0]->nid);
+    $vars['output'] = ed_readmore_link_place($vars['output'], $node, $display);
+  }
 }
 
 /**
