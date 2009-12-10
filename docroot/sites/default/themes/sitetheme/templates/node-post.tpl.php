@@ -89,10 +89,11 @@
 
   <?php if ($page) print $links; ?>
   <?php print $links_all; ?>
-  
+
   <?php if ($page && $terms): ?>
   	<div class="clearfix"></div>
     <div class="terms terms-inline">Tags: <?php print $terms; ?></div>
   <?php endif; ?>
+  <?php print $add_this; ?>
 
 </div></div> <!-- /node-inner, /node -->

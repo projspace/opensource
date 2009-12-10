@@ -147,6 +147,7 @@ function sitetheme_preprocess_node(&$vars) {
 
     $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) .'</div>'. $vars['content'];
   }
+  $vars['add_this'] = _addthis_create_button($vars['node'], !$vars['page']);
 }
 
 function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$vars) {
