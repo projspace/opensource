@@ -94,6 +94,10 @@
   	<div class="clearfix"></div>
     <div class="terms terms-inline">Tags: <?php print $terms; ?></div>
   <?php endif; ?>
-  <?php print $add_this; ?>
+  <?php if ($add_this): ?>
+    <div class="node-add-this">
+    <?php print $add_this; ?>
+    </div>
+  <?php endif; ?>
 
 </div></div> <!-- /node-inner, /node -->
