@@ -15,7 +15,7 @@ function legal_openid_form_alter(&$form, $form_state, $form_id) {
     $form['legal_checkbox'] = array(
       '#type' => 'checkbox',
       '#required' => TRUE,
-      '#title' => t('Accept the !terms to continue.  You are licensing your contribution(s) as CC-BY-SA.', array('!terms' => l('Terms of Use', 'terms'))),
+      '#title' => t('Accept the !terms to continue.  You are licensing your contribution(s) as CC-BY-SA.', array('!terms' => l('Terms of Use', 'legal'))),
       '#weight' => -0.9,
       '#prefix' => '<span class="openid-legal-checkbox">',
       '#suffix' => '</span>',
@@ -30,7 +30,7 @@ function legal_openid_form_alter(&$form, $form_state, $form_id) {
     $form['legal_checkbox'] = array(
       '#type' => 'checkbox',
       '#required' => TRUE,
-      '#title' => t('Accept the !terms to continue.  You are licensing your contribution(s) as CC-BY-SA.', array('!terms' => l('Terms of Use', 'terms'))),
+      '#title' => t('Accept the !terms to continue.  You are licensing your contribution(s) as CC-BY-SA.', array('!terms' => l('Terms of Use', 'legal'))),
       '#weight' => 1,
     );
     $form['#validate'][] = 'legal_openid_comment_form_validate';
