@@ -258,17 +258,20 @@
 #sidebar-second #block-views-twitter_listing-block_1 h2.title {
   width: 177px;
   display: block;
+  position: relative;
 }
 
 #sidebar-second #block-views-twitter_listing-block_1 h2.title .twitter-logo {
   width: 58px;
-  float: right;
   display: block;
   height: 0;
   padding-top: 11px;
   overflow: hidden;
   background: url(../images/twitter-logo.jpg) right no-repeat;
   background-position: top right;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 #block-block-6 {
