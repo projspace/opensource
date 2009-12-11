@@ -113,7 +113,7 @@
 .node .meta /* Wrapper for submitted and terms data */ {
   position:relative;
   z-index:1;
-  font-family:Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+  font-family:Helvetica,Arial,sans-serif;
 }
 
 .node .node-inner form.fivestar-widget {
@@ -149,7 +149,7 @@
 .article-visitor-links,
 .fivestar-widget,
 .node .content .poll {
-  font-family: Helvetica,Arial,"Bitstream Vera Sans",sans-serif;
+  font-family: Helvetica,Arial,sans-serif;
 }
 
 .node-type-channel .node .content {

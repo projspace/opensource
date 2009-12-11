@@ -73,7 +73,7 @@ fieldset {
 
    */
 
-  font-family: Helvetica, Arial, "Bitstream Vera Sans", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 pre,
@@ -98,7 +98,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Helvetica, Arial, "Bitstream Vera Sans", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
  
 h1 {
