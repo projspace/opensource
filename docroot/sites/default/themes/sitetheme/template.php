@@ -154,9 +154,7 @@ function sitetheme_preprocess_node(&$vars) {
   }
   
   if ($vars['node']->type == 'post' && $vars['page']) {
-    print '<pre>';
-print_r($vars);
-print '</pre>';
+    //
   }
 }
 
