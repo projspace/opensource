@@ -266,4 +266,10 @@
 
 .node-add-this {
   margin-top: 3px;
+  float: left;
+}
+
+.node-license {
+  margin-top: 3px;
+  float: right;
 }

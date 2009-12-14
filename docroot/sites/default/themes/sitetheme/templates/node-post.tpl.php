@@ -106,5 +106,6 @@
       </div>
     <?php endif; ?>
   </div>
+  <div class="clearfix"></div>
 
 </div></div> <!-- /node-inner, /node -->
