@@ -152,9 +152,16 @@ function sitetheme_preprocess_node(&$vars) {
   if ($vars['page'] && user_access('view addthis')) {
     $vars['add_this'] = _addthis_create_button($vars['node'], !$vars['page']);
   }
-  
+
+  // Add the proper license information.
+  $vars['node_license'] = '';
   if ($vars['node']->type == 'post' && $vars['page']) {
-    //
+    if ($vars['node']->field_default_license[0]['value'] == 'Use the default CC license.') {
+      $vars['node_license'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.';
+    }
+    else { // Use the alternative license
+      $vars['node_license'] = check_markup($vars['node']->field_alternative_license[0]['value'], 1);
+    }
   }
 }
 

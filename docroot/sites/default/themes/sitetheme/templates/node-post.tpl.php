@@ -99,5 +99,10 @@
     <?php print $add_this; ?>
     </div>
   <?php endif; ?>
+  <?php if (node_license): ?>
+    <div class="node-license">
+    <?php print $node_license; ?>
+    </div>
+  <?php endif; ?>
 
 </div></div> <!-- /node-inner, /node -->
