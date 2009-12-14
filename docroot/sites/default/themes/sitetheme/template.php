@@ -152,6 +152,12 @@ function sitetheme_preprocess_node(&$vars) {
   if ($vars['page'] && user_access('view addthis')) {
     $vars['add_this'] = _addthis_create_button($vars['node'], !$vars['page']);
   }
+  
+  if ($vars['node']->type == 'post' && $vars['page']) {
+    print '<pre>';
+print_r($vars);
+print '</pre>';
+  }
 }
 
 function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$vars) {
