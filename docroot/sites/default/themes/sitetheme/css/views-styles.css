@@ -251,3 +251,8 @@
   margin-top: 3px;
   margin-bottom: 3px;
 }
+
+.view-id-latest_articles .views-field-title,
+.view-id-editors_picks .views-field-title {
+  color: #767677;
+}
