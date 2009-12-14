@@ -1,0 +1,9 @@
+as per:
+ 
+ https://acquia.com/network/node/1008857
+and
+ http://drupal.org/node/632304#comment-2263220
+
+only the dev version of og_user_roles contains the referenced patch.  Until that patch makes it into the release version of the module this site needs to run the dev version.
+
+ -mhaag, 12/14/09
