@@ -491,6 +491,10 @@ function sitetheme_user_profile_form($form) {
 
 function sitetheme_user_register($form) {
   $form['legal']['legal_accept']['#title'] = t('Accept the !terms to continue.  You are licensing your contribution(s) as CC-BY-SA.', array('!terms' => l('Terms of Use', 'legal')));
+  if (isset($form['legal']['conditions']['#title'])) {
+    $form['legal']['conditions']['#title'] = t('Terms of Use');
+  }
+  
   return drupal_render($form);
 }
 
