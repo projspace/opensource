@@ -34,6 +34,10 @@ function opensource_omniture_omniture_variables($main) {
     elseif (arg(1) == 'login' || ($user->uid == 0 && arg(1) == '')) {
       $page_name .= '|user|login';
     }
+    // On the registration form.
+    elseif (arg(1) == 'password') {
+      $page_name .= '|user|password';
+    }
   }
 
   // The user is searching
