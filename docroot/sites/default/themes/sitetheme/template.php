@@ -283,10 +283,6 @@ function STARTERKIT_preprocess_node(&$vars, $hook) {
  *   The name of the template being rendered ("comment" in this case.)
  */
 function sitetheme_preprocess_comment(&$vars, $hook) {
-  // Drupal does not cache loaded users. To make for less loading we only load profiles
-  // and we statically cache them here.
-  static $account_profiles = array();
-
   // Remove the mollom link for comments on the comment gardner role. This is displayed even
   // though they don't have permission. A side effect of using og_user_roles.
   global $user;
@@ -299,22 +295,7 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
     $vars['links'] = '<ul class="links">'. $vars['links'];
   }
 
-  if ($vars['comment']->uid == 0) {
-    $username = theme('username', $vars['comment']);
-  }
-  else {
-    if (!isset($account_profiles[$vars['comment']->uid])) {
-      $account = new stdClass();
-      $account->uid = $vars['comment']->uid;
-      profile_load_profile($account);
-      $account_profiles[$account->uid] = $account;
-    }
-    $username = l($account_profiles[$vars['comment']->uid]->profile_display_name, 'user/'. $vars['comment']->uid);
-    if (substr($vars['comment']->mail, -1, 11) == '@redhat.com') {
-      $username .= ' <span class="redhat-employee">('. t('Red Hat') .')</span>';
-    }
-  }
-
+  $username = theme('username', $vars['comment']);
   $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
 }
 // */
@@ -580,15 +561,19 @@ function sitetheme_textarea($element) {
  * Removing the (not verified) attached to anonymous users.
  */
 function sitetheme_username($object) {
+  // Store user info so we only load it once.
+  static $account_info = array();
 
   if ($object->uid && $object->name) {
-    // Shorten the name when it is too long or it will break many tables.
-    if (drupal_strlen($object->name) > 20) {
-      $name = drupal_substr($object->name, 0, 15) .'...';
+    if (!isset($account_info[$object->uid])) {
+      $account = new stdClass();
+      $account->uid = $object->uid;
+      $account->mail = db_result(db_query("SELECT mail FROM {users} WHERE uid = %d", $object->uid));
+      profile_load_profile($account);
+      $account_info[$account->uid] = $account;
     }
-    else {
-      $name = $object->name;
-    }
+
+    $name = $account_info[$object->uid]->profile_display_name;
 
     if (user_access('access user profiles')) {
       $output = l($name, 'user/'. $object->uid, array('attributes' => array('title' => t('View user profile.'))));
