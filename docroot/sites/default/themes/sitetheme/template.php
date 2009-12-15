@@ -563,9 +563,7 @@ function sitetheme_textarea($element) {
 function sitetheme_username($object) {
   // Store user info so we only load it once.
   static $account_info = array();
-print '<pre>';
-print_r($object);
-print '</pre>';
+
   if ($object->uid && $object->name) {
     if (!isset($account_info[$object->uid])) {
       $account = new stdClass();
@@ -585,11 +583,11 @@ print '</pre>';
     }
     if (substr($account_info[$object->uid]->mail, -1, 11) == '@redhat.com') {
       $output .= ' <span class="redhat-employee">('. t('Red Hat') .')</span>';
-      print $account_info[$object->uid]->mail;
+    }
+          print $account_info[$object->uid]->mail;
       print '<pre>';
 print_r($account_info[$object->uid]);
 print '</pre>';
-    }
   }
   else if ($object->name) {
     // Sometimes modules display content composed by people who are
