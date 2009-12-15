@@ -313,9 +313,6 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
     if (substr($vars['comment']->mail, -1, 11) == '@redhat.com') {
       $username .= ' <span class="redhat-employee">('. t('Red Hat') .')</span>';
     }
-    print '<pre>';
-print_r($vars);
-print '</pre>';
   }
 
   $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
