@@ -584,10 +584,8 @@ function sitetheme_username($object) {
     if (substr($account_info[$object->uid]->mail, -1, 11) == '@redhat.com') {
       $output .= ' <span class="redhat-employee">('. t('Red Hat') .')</span>';
     }
-          print $account_info[$object->uid]->mail;
-      print '<pre>';
-print_r($account_info[$object->uid]);
-print '</pre>';
+          print substr($account_info[$object->uid]->mail, -1, 11);
+
   }
   else if ($object->name) {
     // Sometimes modules display content composed by people who are
