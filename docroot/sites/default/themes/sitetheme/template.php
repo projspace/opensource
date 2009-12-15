@@ -297,6 +297,9 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
 
   $username = theme('username', $vars['comment']);
   $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
+  print '<pre>';
+print_r($vars);
+print '</pre>';
 }
 // */
 
