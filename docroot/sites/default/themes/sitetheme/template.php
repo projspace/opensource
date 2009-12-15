@@ -581,7 +581,7 @@ function sitetheme_username($object) {
     else {
       $output = check_plain($name);
     }
-    if (substr($object->mail, -1, 11) == '@redhat.com') {
+    if (substr($account_info[$object->uid]->mail, -1, 11) == '@redhat.com') {
       $output .= ' <span class="redhat-employee">('. t('Red Hat') .')</span>';
     }
   }
