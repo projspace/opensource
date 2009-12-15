@@ -192,6 +192,9 @@ function sitetheme_preprocess_view_view_field__featured_comment__value(&$vars) {
     $account->name = 'undefined';
     $vars['output'] = theme('username', $account);
   }
+  print '<pre>';
+print_r($vars);
+print '</pre>';
 }
 
 function sitetheme_links($links, $attributes = array('class' => 'links')) {
