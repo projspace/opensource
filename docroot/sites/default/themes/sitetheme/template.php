@@ -310,7 +310,7 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
       $account_profiles[$account->uid] = $account;
     }
     $username = l($account_profiles[$vars['comment']->uid]->profile_display_name, 'user/'. $vars['comment']->uid);
-    if (substr($vars['comment'], -1, 11) == '@redhat.com') {
+    if (substr($vars['comment']->mail, -1, 11) == '@redhat.com') {
       $username .= ' <span class="redhat-employee">('. t('Red Hat') .')</span>';
     }
   }
