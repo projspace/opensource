@@ -581,11 +581,9 @@ function sitetheme_username($object) {
     else {
       $output = check_plain($name);
     }
-    if (substr($account_info[$object->uid]->mail, -1, 11) == '@redhat.com') {
+    if (strlen($account_info[$object->uid]->mail) > 11 && substr($account_info[$object->uid]->mail, -11, 11) == '@redhat.com') {
       $output .= ' <span class="redhat-employee">('. t('Red Hat') .')</span>';
     }
-    print substr($account_info[$object->uid]->mail, -1, 11);
-    print '|'. $account_info[$object->uid]->mail;
   }
   else if ($object->name) {
     // Sometimes modules display content composed by people who are
