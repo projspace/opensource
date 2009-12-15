@@ -131,8 +131,7 @@ function sitetheme_preprocess_node(&$vars) {
     else {
       $vars['links_all'] .= '<span class="article-comment-count">'. l('0 Comments', 'node/'. $vars['node']->nid, array('fragment' => 'comments')) .'</span>';
     }
-    $account = user_load(array('uid' => $vars['node']->uid));
-    $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a></span>';
+    $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a></span>';
     $vars['links_all'] .= '</div>';
 
     static $first_image = TRUE;
@@ -146,7 +145,7 @@ function sitetheme_preprocess_node(&$vars) {
   }
   elseif ($vars['node']->type == 'post' && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
-    $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => l($account->profile_display_name, 'user/'. $vars['node']->uid))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
+    $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
 
     $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) .'</div>'. $vars['content'];
   }
