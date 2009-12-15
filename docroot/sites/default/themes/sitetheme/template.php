@@ -73,6 +73,9 @@ function sitetheme_theme(&$existing, $type, $theme, $path) {
   $hooks['user_profile_form'] = array(
     'arguments' => array('form' => NULL),
   );
+  $hooks['user_register'] = array(
+    'arguments' => array('form' => NULL),
+  );
   return $hooks;
 }
 
@@ -484,6 +487,10 @@ function sitetheme_user_profile_form($form) {
   }
 
   return drupal_render($form);
+}
+
+function sitetheme_user_register($form) {
+  $form['legal']['legal_accept']['#title'] = t('Accept the !terms to continue.  You are licensing your contribution(s) as CC-BY-SA.', array('!terms' => l('Terms of Use', 'legal')));
 }
 
 function sitetheme_textfield($element) {
