@@ -297,9 +297,6 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
 
   $username = theme('username', $vars['comment']);
   $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
-  print '<pre>';
-print_r($vars);
-print '</pre>';
 }
 // */
 
@@ -566,7 +563,9 @@ function sitetheme_textarea($element) {
 function sitetheme_username($object) {
   // Store user info so we only load it once.
   static $account_info = array();
-
+print '<pre>';
+print_r($object);
+print '</pre>';
   if ($object->uid && $object->name) {
     if (!isset($account_info[$object->uid])) {
       $account = new stdClass();
