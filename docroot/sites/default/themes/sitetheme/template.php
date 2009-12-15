@@ -185,16 +185,13 @@ function sitetheme_preprocess_views_view_field__value(&$vars) {
   }
 }
 
-function sitetheme_preprocess_view_view_field__featured_comment__value(&$vars) {
+function sitetheme_preprocess_views_view_field__featured_comment__value(&$vars) {
   if (isset($vars['row']->users_uid)) {
     $account = new stdClass();
     $account->uid = $vars['row']->users_uid;
     $account->name = 'undefined';
     $vars['output'] = theme('username', $account);
   }
-  print '<pre>';
-print_r($vars);
-print '</pre>';
 }
 
 function sitetheme_links($links, $attributes = array('class' => 'links')) {
