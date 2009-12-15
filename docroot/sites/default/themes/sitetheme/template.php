@@ -179,7 +179,9 @@ function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$
 
 function sitetheme_preprocess_views_view_field__value(&$vars) {
   if (isset($vars['row']->users_uid)) {
-    $vars['output'] .= '<a href="/user/'. $vars['row']->users_uid .'/feed" class="article-author-feed"></a>';
+    $account = new stdClass();
+    $account->uid = $vars['row']->users_uid;
+    $vars['output'] = theme('username', $account) .'<a href="/user/'. $vars['row']->users_uid .'/feed" class="article-author-feed"></a>';
   }
 }
 
