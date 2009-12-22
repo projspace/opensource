@@ -2,6 +2,15 @@
 // $Id$
 
 /**
+ * @file
+ * Main functions for IMCE Caption module.
+ */
+
+// Load the theme functions.
+module_load_include('theme', 'imce_caption');
+
+
+/**
  * Save the caption for the given file.
  *
  * @param $fid
@@ -35,7 +44,7 @@ function imce_caption_load($file) {
   if (!empty($file['filepath'])) {
     $result = db_fetch_array(db_query("SELECT caption FROM {imce_captions} WHERE filepath = '%s'", $file['filepath']));
   }
-  // Delete the caption based on the fid.
+  // Load the caption based on the fid.
   elseif (!empty($file['fid'])) {
     $result = db_fetch_array(db_query('SELECT caption FROM {imce_captions} WHERE fid = %d', $file['fid']));
   }
@@ -60,9 +69,6 @@ function imce_caption_delete($file) {
     db_query('DELETE FROM {imce_captions} WHERE fid = %d', $file['fid']);
   }
 }
-
-
-
 
 /**
  * Implements hook_form_alter().
@@ -114,50 +120,29 @@ function imce_caption_delete_form_submit(&$form, $form_state) {
 }
 
 /**
- * Implements hook_theme_registry_alter().
+ * Implements hook_theme().
  */
-function imce_caption_theme_registry_alter(&$registry) {
-  $registry['imagecache']['function'] = 'imce_caption_imagecache';
+function imce_caption_theme() {
+  return array(
+    'imce_caption_imagecache' => array(
+      'arguments' => array(
+        'presetname' => NULL,
+        'path' => NULL,
+        'alt' => '',
+        'title' => '',
+        'attributes' => NULL,
+        'getsize' => TRUE,
+      ),
+    ),
+  );
 }
 
 /**
- * Create and image tag for an imagecache derivative
- *
- * @param $presetname
- *   String with the name of the preset used to generate the derivative image.
- * @param $path
- *   String path to the original image you wish to create a derivative image
- *   tag for.
- * @param $alt
- *   Optional string with alternate text for the img element.
- * @param $title
- *   Optional string with title for the img element.
- * @param $attributes
- *   Optional drupal_attributes() array. If $attributes is an array then the
- *   default imagecache classes will not be set automatically, you must do this
- *   manually.
- * @param $getsize
- *   If set to TRUE, the image's dimension are fetched and added as width/height
- *   attributes.
- * @return
- *   HTML img element string.
+ * Implements hook_theme_registry_alter().
  */
-function imce_caption_imagecache($presetname, $path, $alt = '', $title = '', $attributes = NULL, $getsize = TRUE) {
-  // Check is_null() so people can intentionally pass an empty array of
-  // to override the defaults completely.
-  if (is_null($attributes)) {
-    $attributes = array('class' => 'imagecache imagecache-'. $presetname);
-  }
-  if ($getsize && ($image = image_get_info(imagecache_create_path($presetname, $path)))) {
-    $attributes['width'] = $image['width'];
-    $attributes['height'] = $image['height'];
-  }
-
-  if (empty($title)) {
-    $title = imce_caption_load(array('filepath' => $path));
-  }
-
-  $attributes = drupal_attributes($attributes);
-  $imagecache_url = imagecache_create_url($presetname, $path);
-  return '<img src="'. $imagecache_url .'" alt="'. check_plain($alt) .'" title="'. check_plain($title) .'" '. $attributes .' />';
+function imce_caption_theme_registry_alter(&$registry) {
+  // Store the name of the original theme function.
+  variable_set('imce_caption_imagecache_function', $registry['imagecache']['function']);
+  // Our theme function will just be a wrapper function.
+  $registry['imagecache']['function'] = $registry['imce_caption_imagecache']['function'];
 }
