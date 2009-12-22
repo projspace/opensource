@@ -1217,6 +1217,9 @@ function og_nodeapi(&$node, $op, $teaser = NULL, $page = NULL) {
       db_query($sql, $node->nid);
       break;
     case 'insert':
+    print '<pre>';
+    print_r($node);
+    die();
       if (og_is_group_type($node->type)) {
         og_insert_group($node);
         // Make sure the node owner is a full powered member.
