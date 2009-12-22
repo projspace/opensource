@@ -31,7 +31,7 @@
 function theme_imce_caption_imagecache($presetname, $path, $alt = '', $title = '', $attributes = NULL, $getsize = TRUE) {
   // Load the image's caption.
   if (empty($title)) {
-    $title = imce_caption_load(array('filepath' => $path));
+    $title = imce_caption_load(array('filepath' => file_directory_path() . '/' . $path));
   }
 
   // Call the original theme function.
