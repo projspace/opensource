@@ -1217,10 +1217,9 @@ function og_nodeapi(&$node, $op, $teaser = NULL, $page = NULL) {
       db_query($sql, $node->nid);
       break;
     case 'insert':
-    print '<pre>';
-    print_r($node);
-    die();
       if (og_is_group_type($node->type)) {
+        print 'test';
+        die();
         og_insert_group($node);
         // Make sure the node owner is a full powered member.
         og_save_subscription($node->nid, $node->uid, array('is_active' => 1, 'is_admin' => 1));
@@ -1249,6 +1248,7 @@ function og_nodeapi(&$node, $op, $teaser = NULL, $page = NULL) {
         }
       }
       else {
+        print 'test2';
         og_save_ancestry($node);
       }
       break;
@@ -1891,13 +1891,13 @@ function og_user($op, $edit, &$account, $category = NULL) {
 }
 
 function og_save_ancestry($node) {
-  print '<pre>';
-  print_r($node);
-  print '</pre>';
+  print 'test3';
   if (og_is_group_post_type($node->type)) {
+    print 'test4';
     $sql = "DELETE FROM {og_ancestry} WHERE nid = %d";
     db_query($sql, $node->nid);
     if (isset($node->og_groups)) {
+      print 'test5';
       foreach ($node->og_groups as $gid) {
         $ancestry = array(
           'nid' => $node->nid,
@@ -1907,6 +1907,9 @@ function og_save_ancestry($node) {
       }
     }
   }
+  print '<pre>';
+  print_r($node);
+  die();
 }
 
 /**
