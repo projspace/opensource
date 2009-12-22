@@ -1,0 +1,163 @@
+<?php
+// $Id$
+
+/**
+ * Save the caption for the given file.
+ *
+ * @param $fid
+ *   The file ID.
+ * @param $filepath
+ *   The file path.
+ * @param $caption
+ *   The caption to save.
+ * @return
+ *   NULL
+ */
+function imce_caption_save($fid, $filepath, $caption) {
+  $data = array(
+    'fid' => $fid,
+    'filepath' => $filepath,
+    'caption' => $caption,
+  );
+  drupal_write_record('imce_captions', $data);
+}
+
+/**
+ * Retrieve the caption for the given file.
+ *
+ * @param $file
+ *   An array containing either the file's 'fid' or 'filepath'.
+ * @return
+ *   A string containing the caption.
+ */
+function imce_caption_load($file) {
+  // Load the caption based on the filepath.
+  if (!empty($file['filepath'])) {
+    $result = db_fetch_array(db_query("SELECT caption FROM {imce_captions} WHERE filepath = '%s'", $file['filepath']));
+  }
+  // Delete the caption based on the fid.
+  elseif (!empty($file['fid'])) {
+    $result = db_fetch_array(db_query('SELECT caption FROM {imce_captions} WHERE fid = %d', $file['fid']));
+  }
+  return $result ? $result['caption'] : '';
+}
+
+/**
+ * Delete the caption for the given file.
+ *
+ * @param $file
+ *   An array containing either the file's 'fid' or 'filepath'.
+ * @return
+ *   NULL
+ */
+function imce_caption_delete($file) {
+  // Delete the caption based on the filepath.
+  if (!empty($file['filepath'])) {
+    db_query("DELETE FROM {imce_captions} WHERE filepath = '%s'", $file['filepath']);
+  }
+  // Delete the caption based on the fid.
+  elseif (!empty($file['fid'])) {
+    db_query('DELETE FROM {imce_captions} WHERE fid = %d', $file['fid']);
+  }
+}
+
+
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function imce_caption_form_imce_upload_form_alter(&$form, $form_state) {
+  // Move the thumbnails lower.
+  $form['fset_upload']['thumbnails']['#weight'] = 10;
+  // Add a caption field below the file upload field.
+  $form['fset_upload']['caption'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Caption'),
+  );
+  // Add a submit handler.
+  $form['fset_upload']['upload']['#submit'][] = 'imce_caption_upload_form_submit';
+}
+
+/**
+ * Submit handler for IMCE upload form.
+ */
+function imce_caption_upload_form_submit(&$form, $form_state) {
+  // Get the files added to IMCE.
+  foreach ($form['#parameters'][2]['imce']['added'] as $file) {
+    imce_caption_save($file['id'], $file['filepath'], $form_state['values']['caption']);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function imce_caption_form_imce_fileop_form_alter(&$form, $form_state) {
+  // Add submit handler for delete button before any other handlers.
+  $form['fset_delete']['delete']['#submit'] = array_merge(
+    array('imce_caption_delete_form_submit'),
+    $form['fset_delete']['delete']['#submit']
+  );
+}
+
+/**
+ * Submit handler for IMCE delete form.
+ */
+function imce_caption_delete_form_submit(&$form, $form_state) {
+  // Retrieve the IMCE data.
+  $imce = $form['#parameters'][2]['imce'];
+  foreach ($form_state['values']['filenames'] as $filename) {
+    $filepath = file_directory_path() . ($imce['dir'] == '.' ? '' : '/'. $imce['dir']) .'/'. $filename;
+    // Delete the caption.
+    imce_caption_delete(array('filepath' => $filepath));
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function imce_caption_theme_registry_alter(&$registry) {
+  $registry['imagecache']['function'] = 'imce_caption_imagecache';
+}
+
+/**
+ * Create and image tag for an imagecache derivative
+ *
+ * @param $presetname
+ *   String with the name of the preset used to generate the derivative image.
+ * @param $path
+ *   String path to the original image you wish to create a derivative image
+ *   tag for.
+ * @param $alt
+ *   Optional string with alternate text for the img element.
+ * @param $title
+ *   Optional string with title for the img element.
+ * @param $attributes
+ *   Optional drupal_attributes() array. If $attributes is an array then the
+ *   default imagecache classes will not be set automatically, you must do this
+ *   manually.
+ * @param $getsize
+ *   If set to TRUE, the image's dimension are fetched and added as width/height
+ *   attributes.
+ * @return
+ *   HTML img element string.
+ */
+function imce_caption_imagecache($presetname, $path, $alt = '', $title = '', $attributes = NULL, $getsize = TRUE) {
+  // Check is_null() so people can intentionally pass an empty array of
+  // to override the defaults completely.
+  if (is_null($attributes)) {
+    $attributes = array('class' => 'imagecache imagecache-'. $presetname);
+  }
+  if ($getsize && ($image = image_get_info(imagecache_create_path($presetname, $path)))) {
+    $attributes['width'] = $image['width'];
+    $attributes['height'] = $image['height'];
+  }
+
+  if (empty($title)) {
+    $title = imce_caption_load(array('filepath' => $path));
+  }
+
+  $attributes = drupal_attributes($attributes);
+  $imagecache_url = imagecache_create_url($presetname, $path);
+  return '<img src="'. $imagecache_url .'" alt="'. check_plain($alt) .'" title="'. check_plain($title) .'" '. $attributes .' />';
+}

@@ -1,0 +1,53 @@
+<?php
+// $Id$
+
+/**
+ * Implements hook_schema().
+ */
+function imce_caption_schema() {
+  $schema['imce_captions'] = array(
+    'description' => 'Stores captions for uploaded files.',
+    'fields' => array(
+      'fid' => array(
+        'description' => 'The {files}.fid for these captions.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'filepath' => array(
+        'description' => 'The {files}.filepath for these captions.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'caption' => array(
+        'description' => 'Caption of the file.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'indexes' => array(
+      'filepath' => array('filepath'),
+    ),
+    'primary key' => array('fid'),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function imce_caption_install() {
+  drupal_install_schema('imce_caption');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function imce_caption_uninstall() {
+  drupal_uninstall_schema('imce_caption');
+}
