@@ -26,10 +26,6 @@ function opensource_access_init() {
       og_user_roles_grant_roles($user, $group_node);
     }
   }
-  else {
-    print_r($_GET['gids']);
-    die();
-  }
 }
 
 function opensource_access_determine_context($path, $query = NULL) {
