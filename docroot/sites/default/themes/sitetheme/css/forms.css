@@ -239,3 +239,7 @@ form tbody th {
 #autocomplete li {
   margin: 0;
 }
+
+#imceimagealt-0-field_image-wrapper /* imceimage's caption */ {
+  display: none;
+}
