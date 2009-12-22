@@ -27,7 +27,7 @@ function opensource_access_init() {
     }
   }
   else {
-    print '>'. $_GET['gids'];
+    print_r($_GET['gids']);
     die();
   }
 }
