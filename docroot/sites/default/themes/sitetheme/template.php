@@ -162,7 +162,7 @@ function sitetheme_preprocess_node(&$vars) {
       $vars['node_license'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-3.png" title="This work is licensed under a Creative Commons Attribution-Share Alike 3.0 Unported License." /></a>';
     }
     else { // Use the alternative license
-      $vars['node_license'] = check_markup($vars['node']->field_alternative_license[0]['value'], 7);
+      $vars['node_license'] = check_markup($vars['node']->field_alternative_license[0]['value'], 7, FALSE);
     }
   }
 }
