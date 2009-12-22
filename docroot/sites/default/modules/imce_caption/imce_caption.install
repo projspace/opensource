@@ -51,3 +51,10 @@ function imce_caption_install() {
 function imce_caption_uninstall() {
   drupal_uninstall_schema('imce_caption');
 }
+
+/**
+ * Implements hook_disable().
+ */
+function imce_caption_disable() {
+  variable_del('imce_caption_imagecache_function');
+}

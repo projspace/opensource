@@ -142,7 +142,12 @@ function imce_caption_theme() {
  */
 function imce_caption_theme_registry_alter(&$registry) {
   // Store the name of the original theme function.
-  variable_set('imce_caption_imagecache_function', $registry['imagecache']['function']);
+  if ($registry['imagecache']['function'] != 'theme_imagecache') {
+    variable_set('imce_caption_imagecache_function', $registry['imagecache']['function']);
+  }
+  else {
+    variable_del('imce_caption_imagecache_function');
+  }
   // Our theme function will just be a wrapper function.
   $registry['imagecache']['function'] = $registry['imce_caption_imagecache']['function'];
 }
