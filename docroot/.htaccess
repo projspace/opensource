@@ -115,5 +115,5 @@ AuthName "Restricted Area"
 AuthType Basic 
 AuthUserFile /mnt/www/docroot/.htpasswd 
 AuthGroupFile /dev/null 
-require user opensource pilot openedu
+require user opensource
 
