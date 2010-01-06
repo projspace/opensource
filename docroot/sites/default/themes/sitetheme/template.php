@@ -176,6 +176,10 @@ function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$
   }
 }
 
+function sitetheme_preprocess_views_view_field__group_nid(&$vars) {
+  $vars['output'] = t('Open ') . $vars['output'] . ' &raquo; ';
+}
+
 function sitetheme_preprocess_views_view_field__value(&$vars) {
   if (isset($vars['row']->users_uid)) {
     $account = new stdClass();
