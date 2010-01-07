@@ -218,6 +218,20 @@
   margin-top: 1em;
 }
 
+.node-main-image-caption {
+  color: #999;
+  font-size: 10px;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.node .node-main-image-caption a:link,
+.node .node-main-image-caption a:visited,
+.node .node-main-image-caption a:hover,
+.node .node-main-image-caption a:focus{
+  text-decoration: underline;
+}
+
 .node h1 a:link,
 .node h2 a:link,
 .node h3 a:link,

@@ -147,7 +147,15 @@ function sitetheme_preprocess_node(&$vars) {
     $account = user_load(array('uid' => $vars['node']->uid));
     $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
 
-    $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) .'</div>'. $vars['content'];
+    // Grab the caption from the imce_caption module.
+    $path = sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']);
+    if (function_exists('imce_caption_load') && $caption = imce_caption_load(array('filepath' => file_directory_path() . '/' . $path))) {
+      $caption = '<br /><span class="node-main-image-caption">' . t('Image credits: !caption', array('!caption' => $caption)) . '</span>';
+    }
+    else {
+      $caption = '';
+    }
+    $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', $path, $vars['node']->field_image[0]['imceimage_alt']) . $caption .'</div>'. $vars['content'];
   }
 
   $vars['add_this'] = '';
