@@ -17,6 +17,7 @@ li a.active {
  * Navigation bar
  */
 #navbar {
+	height: 42px;
 }
 
 #navbar-inner {
@@ -78,7 +79,7 @@ li a.active {
 
 /* The Open (homepage link) */
 #main-menu li.menu-3796 a {
-  background: url(../images/osdc_nav_sprite.jpg) 0px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126.png) 0px 0px no-repeat;
 }
 
 #main-menu li.menu-3796 a:hover {
@@ -87,7 +88,7 @@ li a.active {
 
 #main-menu li.menu-3796 a.active,
 #main-menu li.menu-3796 a.active-trail {
-  background-position: 0 -104px;
+  background-position: 0 -84px;
 }
 
 /* The Business Link */
@@ -96,7 +97,7 @@ li a.active {
 }
 
 #main-menu li.menu-3091 a:hover {
-  background-position: -112px -52px;
+  background-position: -112px -42px;
 }
 
 #main-menu li.menu-3091 a.active,
