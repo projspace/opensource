@@ -239,6 +239,25 @@
   color: #3399ff;
 }
 
+/* titles */
+.view-id-homepage .views-field-title a,
+.view-id-og_ghp_ron .views-field-title a,
+.view-id-homepage .views-field-title a:visited,
+.view-id-og_ghp_ron .views-field-title a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+
+.view-id-homepage .views-field-title a:hover,
+.view-id-homepage .views-field-title a:focus,
+.view-id-og_ghp_ron .views-field-title a:hover,
+.view-id-og_ghp_ron .views-field-title a:focus,
+.view-id-homepage .views-field-title a:active,
+.view-id-og_ghp_ron .views-field-title a:active {
+  text-decoration: underline;
+  color: #3399ff;
+}
+
 .view-id-og_members_faces table td {
   vertical-align: top;
 }
