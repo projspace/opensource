@@ -110,6 +110,10 @@
   position: relative; /* Otherwise floated pictures will appear below the "Unpublished" text. */
 }
 
+.node #meta-outer {
+	width: 320px;
+}
+
 .node .meta /* Wrapper for submitted and terms data */ {
   position:relative;
   z-index:1;
