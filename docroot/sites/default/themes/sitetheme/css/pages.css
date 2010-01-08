@@ -308,6 +308,14 @@ ul.links li {
 #sidebar-second-inner {
 }
 
+#sidebar-second a{
+	text-decoration: none;
+}
+
+#sidebar-second a:hover{
+	text-decoration: underline;
+}
+
 /*
  * Footer
  */
@@ -346,6 +354,8 @@ ul.links li {
 .footer-youtube {
   background: url(../images/youtube.jpg);
 }
+
+#footer a {text-decoration: none;}
 
 /*
  * Closure
