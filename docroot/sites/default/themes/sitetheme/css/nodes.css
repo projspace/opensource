@@ -132,7 +132,7 @@
 }
 
 .node .terms /* Node terms (taxonomy) */ {
-  margin-top: 3px;
+  margin: 3px 0 8px;
   display: block;
 }
 
