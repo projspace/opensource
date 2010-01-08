@@ -167,7 +167,7 @@ body {
 .with-navbar #content,
 .with-navbar #sidebar-first,
 .with-navbar #sidebar-second {
-  margin-top: 45px; /* Set this to the same value as the navbar height above. */
+  margin-top: 43px; /* Set this to the same value as the navbar height above. */
 }
 
 .with-channel-header #navbar {
