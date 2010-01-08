@@ -93,7 +93,7 @@ li a.active {
 
 /* The Business Link */
 #main-menu li.menu-3091 a {
-  background: url(../images/osdc_nav_sprite.jpg) -112px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126.png) -112px 0px no-repeat;
 }
 
 #main-menu li.menu-3091 a:hover {
@@ -107,7 +107,7 @@ li a.active {
 
 /* Education */
 #main-menu li.menu-4196 a {
-  background: url(../images/osdc_nav_sprite.jpg) -282px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126.png) -282px 0px no-repeat;
 }
 
 #main-menu li.menu-4196 a:hover {
@@ -121,7 +121,7 @@ li a.active {
 
 /* Government */
 #main-menu li.menu-4591 a {
-  background: url(../images/osdc_nav_sprite.jpg) -452px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126.png) -452px 0px no-repeat;
 }
 
 #main-menu li.menu-4591 a:hover {
@@ -135,7 +135,7 @@ li a.active {
 
 /* Law */
 #main-menu li.menu-4206 a {
-  background: url(../images/osdc_nav_sprite.jpg) -622px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126.png) -622px 0px no-repeat;
 }
 
 #main-menu li.menu-4206 a:hover {
@@ -149,7 +149,7 @@ li a.active {
 
 /* Life */
 #main-menu li.menu-4221 a {
-  background: url(../images/osdc_nav_sprite.jpg) -792px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126.png) -792px 0px no-repeat;
 }
 
 #main-menu li.menu-4221 a:hover {
