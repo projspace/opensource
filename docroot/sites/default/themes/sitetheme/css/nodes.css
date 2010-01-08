@@ -205,8 +205,8 @@
   background: url(../images/rss.jpg);
   margin-left: 5px;
   position: absolute;
-  margin-top: -14px;
   right: 0;
+  top:0;
 }
 .view-id-homepage  .article-author-feed {
   margin-top: -16px;
