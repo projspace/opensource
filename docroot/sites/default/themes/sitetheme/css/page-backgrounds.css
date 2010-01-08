@@ -28,7 +28,7 @@ body {
 }
 
 #main {
-  background: #e2e1e6;
+  background: #fff url(../images/osdc_page_background.jpg) no-repeat;
 }
 
 #main-inner {
