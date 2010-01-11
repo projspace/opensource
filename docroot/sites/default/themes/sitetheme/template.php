@@ -227,8 +227,8 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
  */
 function sitetheme_preprocess_block(&$vars, $hook) {
   $vars['base_path'] = $GLOBALS['base_path'];
+  // Load the About block's title.
   if ($vars['block']->delta == 'channel_description-block_1' && arg(0) == 'node' && is_numeric(arg(1))) {
-    // All the about pages are at [channel name]/about.
     $node = node_load(arg(1));
     $vars['block']->subject = t('About Open !title', array('!title' => $node->title));
   }
