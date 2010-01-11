@@ -226,7 +226,7 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
  *   The name of the template being rendered ("block" in this case.)
  */
 function sitetheme_preprocess_block(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+  $vars['base_path'] = $GLOBALS['base_path'];
 }
 
 /**

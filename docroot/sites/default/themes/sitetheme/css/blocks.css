@@ -37,7 +37,6 @@
 }
 
 #sidebar-second .block {
-  background: url(../images/osdc_dot4x4.png) left repeat-y;
   padding-left: 17px;
   padding-bottom: 15px;
   margin-bottom: 0;
@@ -237,6 +236,44 @@
 #footer #block-block-1 .content,
 #footer #block-block-11 .content {
   margin: 0 15px;
+}
+
+#sidebar-second #block-menu-menu-about-more {
+  padding-left: 17px;
+  padding-bottom: 0;
+}
+
+#sidebar-second #block-menu-menu-about-more h2.title /* Block title */ {
+  background-image: none;
+  display: block;
+  padding: 18px 0 5px 3px;
+}
+
+#sidebar-second #block-menu-menu-about-more h2.title img {
+  vertical-align: bottom;
+}
+
+#sidebar-second #block-menu-menu-about-more .block-inner-right-shadow,
+#sidebar-second #block-menu-menu-about-more .block-inner-bottom-shadow {
+  background-image: none;
+  background-color: transparent;
+}
+
+#sidebar-second #block-menu-menu-about-more .block-inner {
+  padding: 0;
+  margin-bottom: 3px;
+  margin-right: 2px;
+  border-top: 0;
+  border-left: 0;
+}
+
+#sidebar-second #block-menu-menu-about-more .block-inner .content {
+  margin-top: 4px;
+  padding: 0 15px 13px 16px;
+}
+
+#block-menu-menu-about-more ul {
+  margin: 0;
 }
 
 #block-menu-menu-about-more li {
