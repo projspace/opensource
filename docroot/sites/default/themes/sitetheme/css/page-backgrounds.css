@@ -28,7 +28,10 @@ body {
 }
 
 #main {
-  background: #fff url(../images/osdc_page_background.jpg) no-repeat;
+  background-color: #fff;
+  background-image: url(../images/osdc_page_background.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 40px;
 }
 
 #main-inner {

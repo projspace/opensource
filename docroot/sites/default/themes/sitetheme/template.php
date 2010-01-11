@@ -227,6 +227,11 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
  */
 function sitetheme_preprocess_block(&$vars, $hook) {
   $vars['base_path'] = $GLOBALS['base_path'];
+  if ($vars['block']->delta == 'channel_description-block_1' && arg(0) == 'node' && is_numeric(arg(1))) {
+    // All the about pages are at [channel name]/about.
+    $node = node_load(arg(1));
+    $vars['block']->subject = t('About Open !title', array('!title' => $node->title));
+  }
 }
 
 /**
@@ -271,7 +276,7 @@ function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     // All the about pages are at [channel name]/about.
     $node = node_load(arg(1));
-    $vars['about_url'] = '<div class="channel-about-link"><a href="'. $node->path .'/about" title="About '. $node->title .'">&raquo About</a></div>';
+    $vars['about_url'] = '<div class="channel-about-link"><a href="'. $node->path .'/about" title="About '. $node->title .'">&raquo Read more</a></div>';
   }
 }
 

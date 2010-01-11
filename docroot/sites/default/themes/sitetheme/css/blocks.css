@@ -238,7 +238,8 @@
   margin: 0 15px;
 }
 
-#sidebar-second #block-menu-menu-about-more {
+#sidebar-second #block-menu-menu-about-more,
+#sidebar-second #block-views-channel_description-block_1 {
   padding-left: 17px;
   padding-bottom: 0;
 }
@@ -249,17 +250,30 @@
   padding: 18px 0 5px 3px;
 }
 
+#sidebar-second #block-views-channel_description-block_1 h2.title /* Block title */ {
+  background-image: none;
+  display: block;
+  padding: 18px 0 6px 0;
+  text-transform: none;
+  font-size: 16px;
+  font-weight: normal;
+  color: #e7321f;
+}
+
 #sidebar-second #block-menu-menu-about-more h2.title img {
   vertical-align: bottom;
 }
 
 #sidebar-second #block-menu-menu-about-more .block-inner-right-shadow,
-#sidebar-second #block-menu-menu-about-more .block-inner-bottom-shadow {
+#sidebar-second #block-menu-menu-about-more .block-inner-bottom-shadow,
+#sidebar-second #block-views-channel_description-block_1 .block-inner-right-shadow,
+#sidebar-second #block-views-channel_description-block_1 .block-inner-bottom-shadow {
   background-image: none;
   background-color: transparent;
 }
 
-#sidebar-second #block-menu-menu-about-more .block-inner {
+#sidebar-second #block-menu-menu-about-more .block-inner,
+#sidebar-second #block-views-channel_description-block_1 .block-inner {
   padding: 0;
   margin-bottom: 3px;
   margin-right: 2px;
@@ -267,7 +281,8 @@
   border-left: 0;
 }
 
-#sidebar-second #block-menu-menu-about-more .block-inner .content {
+#sidebar-second #block-menu-menu-about-more .block-inner .content,
+#sidebar-second #block-views-channel_description-block_1 .block-inner .content {
   margin-top: 4px;
   padding: 0 15px 13px 16px;
 }
