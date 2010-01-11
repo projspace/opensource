@@ -21,11 +21,11 @@
  *   this, we have to override the theme function. You have to first find the
  *   theme function that generates the output, and then "catch" it and modify it
  *   here. The easiest way to do it is to copy the original function in its
- *   entirety and paste it here, changing the prefix from theme_ to STARTERKIT_.
+ *   entirety and paste it here, changing the prefix from theme_ to sitetheme_.
  *   For example:
  *
  *     original: theme_breadcrumb()
- *     theme override: STARTERKIT_breadcrumb()
+ *     theme override: sitetheme_breadcrumb()
  *
  *   where STARTERKIT is the name of your sub-theme. For example, the
  *   zen_classic theme would define a zen_classic_breadcrumb() function.
@@ -88,7 +88,7 @@ function sitetheme_theme(&$existing, $type, $theme, $path) {
  *   The name of the template being rendered (name of the .tpl.php file.)
  */
 /* -- Delete this line if you want to use this function
-function STARTERKIT_preprocess(&$vars, $hook) {
+function sitetheme_preprocess(&$vars, $hook) {
   $vars['sample_variable'] = t('Lorem ipsum.');
 }
 // */
@@ -119,6 +119,14 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   }
 }
 
+/**
+ * Override or insert variables into the node templates.
+ *
+ * @param $vars
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("node" in this case.)
+ */
 function sitetheme_preprocess_node(&$vars) {
   if ($vars['node']->type == 'channel') {
     $vars['links'] = '';
@@ -173,6 +181,89 @@ function sitetheme_preprocess_node(&$vars) {
       $vars['node_license'] = check_markup($vars['node']->field_alternative_license[0]['value'], 7, FALSE);
     }
   }
+/*
+  // Optionally, run node-type-specific preprocess functions, like
+  // sitetheme_preprocess_node_page() or sitetheme_preprocess_node_story().
+  $function = __FUNCTION__ . '_' . $vars['node']->type;
+  if (function_exists($function)) {
+    $function($vars, $hook);
+  }
+*/
+}
+
+/**
+ * Override or insert variables into the comment templates.
+ *
+ * @param $vars
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("comment" in this case.)
+ */
+function sitetheme_preprocess_comment(&$vars, $hook) {
+  // Remove the mollom link for comments on the comment gardner role. This is displayed even
+  // though they don't have permission. A side effect of using og_user_roles.
+  global $user;
+  // Role 31 is the comment gardner.
+  if (isset($user->roles[31])) {
+    sitetheme_remove_link('report to Mollom', $vars);
+
+    // The sitetheme_remove_link function is stripping out the ul tag in this case.
+    // Adding it back.
+    $vars['links'] = '<ul class="links">'. $vars['links'];
+  }
+
+  $username = theme('username', $vars['comment']);
+  $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
+}
+// */
+
+/**
+ * Override or insert variables into the block templates.
+ *
+ * @param $vars
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+function sitetheme_preprocess_block(&$vars, $hook) {
+  $vars['sample_variable'] = t('Lorem ipsum.');
+}
+
+/**
+ * Process variables for comment-wrapper.tpl.php.
+ *
+ * @see comment-wrapper.tpl.php
+ * @see theme_comment_wrapper()
+ */
+function sitetheme_preprocess_comment_wrapper(&$variables) {
+
+  //print_r($variables['node']);
+
+  // Provide contextual information.
+  $variables['display_mode']  = _comment_get_display_setting('mode', $variables['node']);
+  $variables['display_order'] = _comment_get_display_setting('sort', $variables['node']);
+  $variables['comment_controls_state'] = variable_get('comment_controls_'. $variables['node']->type, COMMENT_CONTROLS_HIDDEN);
+  $variables['template_files'][] = 'comment-wrapper-'. $variables['node']->type;
+
+  if ($variables['node']->comment_count > 0) {
+      $variables['comment_count'] .= '<span class="comment-count">'. format_plural($variables['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $variables['node']->comment_count)) .'</span>';
+  }
+}
+
+function sitetheme_preprocess_views_view_field__homepage__page_1__teaser(&$vars) {
+  if (module_exists('ed_readmore')) {
+    $display = variable_get('ed_readmore_placement', ED_READMORE_PLACEMENT_DEFAULT);
+    $node = node_load($vars['view']->result[0]->nid);
+    if (preg_match('!</?(?:p)[^>]*>$!i', $vars['output'], $match, PREG_OFFSET_CAPTURE)) {
+      // Recalculate the position in $teaser. We do this because there may be extra CCK fields appended to the teaser.
+      // Insert the link
+      $vars['output'] = substr_replace($vars['output'], ed_readmore_link_render($node, $display), $match[0][1], 0);
+    }
+    else {
+      $display = 'after';
+      $vars['output'] .= ed_readmore_link_render($node, $display); // Not found, so just append it
+    }
+  }
 }
 
 function sitetheme_preprocess_views_view_fields__channel_description__block_1(&$vars) {
@@ -204,6 +295,33 @@ function sitetheme_preprocess_views_view_field__featured_comment__value(&$vars) 
     $account->name = 'undefined';
     $vars['output'] = theme('username', $account);
   }
+}
+
+/**
+ * Format the "Submitted by username on date/time" for each node
+ *
+ * @ingroup themeable
+ */
+function sitetheme_node_submitted($node) {
+  return t('Posted @datetime by !username',
+    array(
+      '!username' => theme('username', $node),
+      '@datetime' => format_date($node->created, 'custom', 'j M Y')
+    ));
+}
+/**
+ * Theme a "Submitted by ..." notice.
+ *
+ * @param $comment
+ *   The comment.
+ * @ingroup themeable
+ */
+function sitetheme_comment_submitted($comment) {
+  return t('by !username on @datetime.',
+    array(
+      '!username' => theme('username', $comment),
+      '@datetime' => format_date($comment->timestamp, 'custom', 'j M Y')
+    ));
 }
 
 function sitetheme_links($links, $attributes = array('class' => 'links')) {
@@ -273,139 +391,13 @@ function sitetheme_box($title, $content, $region = 'main') {
 }
 
 /**
- * Override or insert variables into the node templates.
+ * Remove a tab
  *
- * @param $vars
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("node" in this case.)
+ * @param  $label
+ * The label to remove
+ * @param  $vars
+ * $vars from _phptemplate_variables
  */
-/* -- Delete this line if you want to use this function
-function STARTERKIT_preprocess_node(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
-
-  // Optionally, run node-type-specific preprocess functions, like
-  // STARTERKIT_preprocess_node_page() or STARTERKIT_preprocess_node_story().
-  $function = __FUNCTION__ . '_' . $vars['node']->type;
-  if (function_exists($function)) {
-    $function($vars, $hook);
-  }
-}
-// */
-
-/**
- * Override or insert variables into the comment templates.
- *
- * @param $vars
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("comment" in this case.)
- */
-function sitetheme_preprocess_comment(&$vars, $hook) {
-  // Remove the mollom link for comments on the comment gardner role. This is displayed even
-  // though they don't have permission. A side effect of using og_user_roles.
-  global $user;
-  // Role 31 is the comment gardner.
-  if (isset($user->roles[31])) {
-    sitetheme_remove_link('report to Mollom', $vars);
-
-    // The sitetheme_remove_link function is stripping out the ul tag in this case.
-    // Adding it back.
-    $vars['links'] = '<ul class="links">'. $vars['links'];
-  }
-
-  $username = theme('username', $vars['comment']);
-  $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
-}
-// */
-
-/**
- * Override or insert variables into the block templates.
- *
- * @param $vars
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("block" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function STARTERKIT_preprocess_block(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
-}
-// */
-
-/**
- * Format the "Submitted by username on date/time" for each node
- *
- * @ingroup themeable
- */
-function sitetheme_node_submitted($node) {
-  return t('Posted @datetime by !username',
-    array(
-      '!username' => theme('username', $node),
-      '@datetime' => format_date($node->created, 'custom', 'j M Y')
-    ));
-}
-/**
- * Theme a "Submitted by ..." notice.
- *
- * @param $comment
- *   The comment.
- * @ingroup themeable
- */
-function sitetheme_comment_submitted($comment) {
-  return t('by !username on @datetime.',
-    array(
-      '!username' => theme('username', $comment),
-      '@datetime' => format_date($comment->timestamp, 'custom', 'j M Y')
-    ));
-}
-
-/**
- * Process variables for comment-wrapper.tpl.php.
- *
- * @see comment-wrapper.tpl.php
- * @see theme_comment_wrapper()
- */
-function sitetheme_preprocess_comment_wrapper(&$variables) {
-
-  //print_r($variables['node']);
-
-  // Provide contextual information.
-  $variables['display_mode']  = _comment_get_display_setting('mode', $variables['node']);
-  $variables['display_order'] = _comment_get_display_setting('sort', $variables['node']);
-  $variables['comment_controls_state'] = variable_get('comment_controls_'. $variables['node']->type, COMMENT_CONTROLS_HIDDEN);
-  $variables['template_files'][] = 'comment-wrapper-'. $variables['node']->type;
-
-  if ($variables['node']->comment_count > 0) {
-      $variables['comment_count'] .= '<span class="comment-count">'. format_plural($variables['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $variables['node']->comment_count)) .'</span>';
-  }
-}
-
-function sitetheme_preprocess_views_view_field__homepage__page_1__teaser(&$vars) {
-  if (module_exists('ed_readmore')) {
-    $display = variable_get('ed_readmore_placement', ED_READMORE_PLACEMENT_DEFAULT);
-    $node = node_load($vars['view']->result[0]->nid);
-    if (preg_match('!</?(?:p)[^>]*>$!i', $vars['output'], $match, PREG_OFFSET_CAPTURE)) {
-      // Recalculate the position in $teaser. We do this because there may be extra CCK fields appended to the teaser.
-      // Insert the link
-      $vars['output'] = substr_replace($vars['output'], ed_readmore_link_render($node, $display), $match[0][1], 0);
-    }
-    else {
-      $display = 'after';
-      $vars['output'] .= ed_readmore_link_render($node, $display); // Not found, so just append it
-    }
-  }
-}
-
-/**
-* Remove a tab
-*
-* @param  $label
-* The label to remove
-*
-* @param  $vars
-* $vars from _phptemplate_variables
-*/
 function sitetheme_remove_tab($label, &$vars) {
   $tabs = explode("\n", $vars['tabs']);
   $vars['tabs'] = '';
@@ -418,14 +410,13 @@ function sitetheme_remove_tab($label, &$vars) {
 }
 
 /**
-* Remove a link
-*
-* @param  $label
-* The label to remove
-*
-* @param  $vars
-* $vars from a preprocess function.
-*/
+ * Remove a link
+ *
+ * @param  $label
+ * The label to remove
+ * @param  $vars
+ * $vars from a preprocess function.
+ */
 function sitetheme_remove_link($label, &$vars) {
   $tabs = explode("\n", $vars['links']);
   $vars['links'] = '';
