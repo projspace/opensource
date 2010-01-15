@@ -428,3 +428,11 @@ html.js input.form-autocomplete {
 .redhat-employee {
   color: #999;
 }
+
+/* Legal CSS */
+.underline {
+  text-decoration: underline;
+}
+ol.lower-roman {
+  list-style-type: lower-roman;
+}
