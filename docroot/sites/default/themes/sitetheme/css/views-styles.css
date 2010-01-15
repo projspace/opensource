@@ -275,3 +275,7 @@
 .view-id-editors_picks .views-field-title {
   color: #767677;
 }
+
+#content img {
+  border:1px solid #C2C0C1;
+}
