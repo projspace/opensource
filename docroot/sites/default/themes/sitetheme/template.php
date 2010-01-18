@@ -612,12 +612,3 @@ function sitetheme_username($object) {
 
   return $output;
 }
-
-function sitetheme_menu_item_link($link) {
-  if (empty($link['localized_options'])) {
-    $link['localized_options'] = array();
-  }
-  // Add a unique class to each menu item.
-  $link['localized_options']['attributes']['class'] = empty($link['localized_options']['attributes']['class']) ? 'menu-item-'. $link['mlid'] : $link['localized_options']['attributes']['class'] . ' menu-item-'. $link['mlid'];
-  return l($link['title'], $link['href'], $link['localized_options']);
-}
