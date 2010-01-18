@@ -335,7 +335,8 @@ ul.links li {
 
 .footer-twitter,
 .footer-facebook,
-.footer-youtube {
+.footer-youtube,
+.footer-identica {
   text-decoration: none;
   height: 0;
   overflow: hidden;
@@ -357,6 +358,10 @@ ul.links li {
 
 .footer-youtube {
   background: url(../images/youtube.jpg);
+}
+
+.footer-identica {
+  background: url(../images/identica.png);
 }
 
 #footer a {text-decoration: none;}
