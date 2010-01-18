@@ -251,13 +251,62 @@
 }
 
 #sidebar-second #block-views-channel_description-block_1 h2.title /* Block title */ {
-  background-image: none;
   display: block;
-  padding: 18px 0 6px 0;
   text-transform: none;
   font-size: 16px;
   font-weight: normal;
   color: #e7321f;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+/* Nameplate about block images */
+#sidebar-second .nameplate-should-be h2.title {
+  height: 0;
+  overflow: hidden;
+  width: 164px;
+  padding-top: 17px;
+  background-image: url(../images/osdc_aboutosdc.png);
+}
+
+#sidebar-second .nameplate-business h2.title {
+  height: 0;
+  overflow: hidden;
+  width: 158px;
+  padding-top: 17px;
+  background-image: url(../images/about_business.png);
+}
+
+#sidebar-second .nameplate-education h2.title {
+  height: 0;
+  overflow: hidden;
+  width: 166px;
+  padding-top: 17px;
+  background-image: url(../images/about_education.png);
+}
+
+#sidebar-second .nameplate-government h2.title {
+  height: 0;
+  overflow: hidden;
+  width: 183px;
+  padding-top: 17px;
+  background-image: url(../images/about_government.png);
+}
+
+#sidebar-second .nameplate-law h2.title {
+  height: 0;
+  overflow: hidden;
+  width: 124px;
+  padding-top: 17px;
+  background-image: url(../images/about_law.png);
+}
+
+#sidebar-second .nameplate-life h2.title {
+  height: 0;
+  overflow: hidden;
+  width: 122px;
+  padding-top: 17px;
+  background-image: url(../images/about_life.png);
 }
 
 #sidebar-second #block-menu-menu-about-more h2.title img {
@@ -414,53 +463,4 @@
 
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active a {
   color: #666666;
-}
-
-/* Nameplate about block images */
-#sidebar-second .nameplate-should-be h2.title {
-  height: 0;
-  overflow: hidden;
-  width: 164px;
-  padding-top: 17px;
-  background-image: url(../images/osdc_aboutosdc.png);
-}
-
-#sidebar-second .nameplate-business h2.title {
-  height: 0;
-  overflow: hidden;
-  width: 158px;
-  padding-top: 17px;
-  background-image: url(../images/osdc_aboutosdc.png);
-}
-
-#sidebar-second .nameplate-education h2.title {
-  height: 0;
-  overflow: hidden;
-  width: 166px;
-  padding-top: 17px;
-  background-image: url(../images/osdc_aboutosdc.png);
-}
-
-#sidebar-second .nameplate-government h2.title {
-  height: 0;
-  overflow: hidden;
-  width: 183px;
-  padding-top: 17px;
-  background-image: url(../images/osdc_aboutosdc.png);
-}
-
-#sidebar-second .nameplate-law h2.title {
-  height: 0;
-  overflow: hidden;
-  width: 124px;
-  padding-top: 17px;
-  background-image: url(../images/osdc_aboutosdc.png);
-}
-
-#sidebar-second .nameplate-life h2.title {
-  height: 0;
-  overflow: hidden;
-  width: 122px;
-  padding-top: 17px;
-  background-image: url(../images/osdc_aboutosdc.png);
 }
