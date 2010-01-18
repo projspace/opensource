@@ -221,8 +221,8 @@ function sitetheme_preprocess_block(&$vars, $hook) {
   // Load the About block's title.
   if ($vars['block']->delta == 'channel_description-block_1' && arg(0) == 'node' && is_numeric(arg(1))) {
     $node = node_load(arg(1));
-    $vars['classes_array'][] = drupal_html_class('nameplate-'. $vars['block']->subject);
     $vars['block']->subject = t('About Open !title', array('!title' => $node->title));
+    $vars['classes_array'][] = drupal_html_class('nameplate-'. $node->title);
   }
 }
 
