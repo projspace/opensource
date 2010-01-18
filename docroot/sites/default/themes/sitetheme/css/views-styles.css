@@ -257,6 +257,11 @@
 
 .views-field-teaser {
   font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
+  width: 520px;
+}
+
+.front div.read-more {
+  display: inline; /* The read more element needs to be displayed inline on the front page. */
 }
 
 .view-display-id-attachment_1 .views-field-title {
