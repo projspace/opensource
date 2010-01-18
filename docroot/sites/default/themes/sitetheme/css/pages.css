@@ -233,7 +233,7 @@ div.tabs /* See also the tabs.css file. */ {
 
 #navbar-top ul.menu,
 ul.links /* List of links */ {
-  margin: 1em 0;
+  margin: .9em 0 1em;
   padding: 0;
 }
 
