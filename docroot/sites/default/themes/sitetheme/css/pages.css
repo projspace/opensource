@@ -260,6 +260,7 @@ ul.links li {
 
 #navbar-top ul.menu li a.menu-item-10027 {
   background: url(../images/what_should_osdc_be_nameplate.png) no-repeat;
+  display: block;
   text-indent: -1000em;
   width: 242px;
 }
