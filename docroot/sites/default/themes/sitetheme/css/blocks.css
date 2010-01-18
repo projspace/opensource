@@ -266,7 +266,7 @@
   overflow: hidden;
   width: 164px;
   padding-top: 17px;
-  background-image: url(../images/osdc_aboutosdc.png);
+  background: transparent url(../images/osdc_aboutosdc.png) no-repeat;
 }
 
 #sidebar-second .nameplate-business h2.title {
@@ -274,7 +274,7 @@
   overflow: hidden;
   width: 158px;
   padding-top: 17px;
-  background-image: url(../images/about_business.png);
+  background: transparent url(../images/about_business.png) no-repeat;
 }
 
 #sidebar-second .nameplate-education h2.title {
@@ -282,7 +282,7 @@
   overflow: hidden;
   width: 166px;
   padding-top: 17px;
-  background-image: url(../images/about_education.png);
+  background: transparent url(../images/about_education.png) no-repeat;
 }
 
 #sidebar-second .nameplate-government h2.title {
@@ -290,7 +290,7 @@
   overflow: hidden;
   width: 183px;
   padding-top: 17px;
-  background-image: url(../images/about_government.png);
+  background: transparent url(../images/about_government.png) no-repeat;
 }
 
 #sidebar-second .nameplate-law h2.title {
@@ -298,7 +298,7 @@
   overflow: hidden;
   width: 124px;
   padding-top: 17px;
-  background-image: url(../images/about_law.png);
+  background: transparent url(../images/about_law.png) no-repeat;
 }
 
 #sidebar-second .nameplate-life h2.title {
@@ -306,7 +306,7 @@
   overflow: hidden;
   width: 122px;
   padding-top: 17px;
-  background-image: url(../images/about_life.png);
+  background: transparent url(../images/about_life.png) no-repeat;
 }
 
 #sidebar-second #block-menu-menu-about-more h2.title img {
