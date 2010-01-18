@@ -141,15 +141,6 @@ function sitetheme_preprocess_node(&$vars) {
     }
     $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a></span>';
     $vars['links_all'] .= '</div>';
-
-    static $first_image = TRUE;
-    if (!$first_image) {
-      $vars['content'] = '<div class="node-teaser-image">'. theme('imagecache', 'image-half-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) .'</div>'. $vars['content'];
-    }
-    else {
-      $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']), $vars['node']->field_image[0]['imceimage_alt']) .'</div>'. $vars['content'];
-      $first_image = FALSE;
-    }
   }
   elseif ($vars['node']->type == 'post' && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
