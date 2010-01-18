@@ -258,6 +258,12 @@ ul.links li {
   color: #3399ff;
 }
 
+#navbar-top ul.menu li a.menu-item-10027 {
+  background: url(../images/what_should_osdc_be_nameplate.png) no-repeat;
+  text-indent: -1000em;
+  width: 242px;
+}
+
 .pager /* A list of page numbers when more than 1 page of content is available */ {
   clear: both;
   margin: 1em 0;
