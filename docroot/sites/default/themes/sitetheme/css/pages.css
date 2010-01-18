@@ -249,6 +249,10 @@ ul.links li {
   padding: 0 0.5em;
 }
 
+#navbar-top ul.menu li {
+  float: left;
+}
+
 #navbar-top ul.menu li a {
   text-decoration: none;
   color: #1D2754;
