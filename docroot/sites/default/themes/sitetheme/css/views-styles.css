@@ -121,7 +121,9 @@
 
 .view-homepage .views-row /* on the homepage attached view provide space and border after every row */
 {
-
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: transparent url(../images/osdc_dot4x4.png) repeat-x scroll center bottom
 }
 
 .view-homepage .views-row-first
