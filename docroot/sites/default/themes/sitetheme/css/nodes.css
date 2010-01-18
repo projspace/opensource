@@ -226,11 +226,10 @@ body.node-type-post .article-author-feed {
   margin-top: -16px;
 }
 
-
-.node-teaser-image,
 .node-type-channel .field-field-image {
   float: left;
   margin-right: 10px;
+  margin-top: 0;
 }
 
 .node-main-image {
