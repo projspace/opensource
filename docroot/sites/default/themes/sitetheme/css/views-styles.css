@@ -119,50 +119,32 @@
   color:#5993CE
 }
 
-/*
- * Attached view for secondary articles
- */
-.view-homepage .attachment h3
-{
-  background:transparent url(../images/osdc_dot4x4.png) repeat-x scroll center bottom;
-  color:#999999;
-  display:inline;
-  font-size:10px;
-  padding-bottom:5px;
-  text-transform:uppercase;
-}
-
-.view-homepage .attachment .row-wrapper
-{
-  padding:20px;
-}
-
-.view-homepage .attachment .views-row /* on the homepage attached view provide space and border after every row */
+.view-homepage .views-row /* on the homepage attached view provide space and border after every row */
 {
   padding-bottom:20px;
   margin-bottom:20px;
   background: transparent url(../images/osdc_dot4x4.png) bottom repeat-x;
 }
 
-.view-homepage .attachment .views-row-first
+.view-homepage .views-row-first
 {
 
 }
 
-.view-homepage .attachment .views-row-last
+.view-homepage .views-row-last
 {
   padding-bottom:0;
   margin-bottom:0;
   background: none;
 }
 
-.view-homepage .attachment .views-field-title
+.view-homepage .views-field-title
 {
   font-size:18px;
   line-height:20px;
 }
 
-.view-homepage .attachment .views-field-field-image-imceimage-path
+.view-homepage .views-field-field-image-imceimage-path
 {
   float:right;
   margin-left:20px;
