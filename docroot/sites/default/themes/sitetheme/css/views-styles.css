@@ -272,3 +272,7 @@
 #content img {
   border:1px solid #C2C0C1;
 }
+
+.node-add-this img {
+  border: none;
+}
