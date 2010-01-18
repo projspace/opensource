@@ -153,6 +153,7 @@
 {
   float: left;
   margin-right: 15px;
+  margin-bottom: 0;
 }
 
 .block .view-id-featured_comment .views-field-value,
