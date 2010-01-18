@@ -242,6 +242,10 @@ ul.links.inline {
   display: inline;
 }
 
+#block-menu-menu-about-menu {
+  margin-top: -4px;
+}
+
 #navbar-top ul.menu li,
 ul.links li {
   display: inline;
