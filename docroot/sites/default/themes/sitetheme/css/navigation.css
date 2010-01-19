@@ -53,7 +53,7 @@ li a.active {
 #main-menu li a:hover,
 #main-menu li.active a,
 #main-menu li.active-trail a {
-  border-bottom: 3px solid #dbd9df;
+  border-bottom: 3px solid #e0e0e0;
   background: #E2E1E6;
 }
 
