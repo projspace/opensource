@@ -207,3 +207,28 @@ form.fivestar-widget {
 #main-menu li.menu-4221 a.active-trail:hover {
   background-position: -792px -84px;
 }
+
+/* Nameplate about block images */
+#sidebar-second .nameplate-should-be h2.title {
+  background: transparent url(../images/what_should_osdc_be_nameplate.gif) no-repeat;
+}
+
+#sidebar-second .nameplate-business h2.title {
+  background: transparent url(../images/about_business.gif) no-repeat;
+}
+
+#sidebar-second .nameplate-education h2.title {
+  background: transparent url(../images/about_education.gif) no-repeat;
+}
+
+#sidebar-second .nameplate-government h2.title {
+  background: transparent url(../images/about_government.gif) no-repeat;
+}
+
+#sidebar-second .nameplate-law h2.title {
+  background: transparent url(../images/about_law.gif) no-repeat;
+}
+
+#sidebar-second .nameplate-life h2.title {
+  background: transparent url(../images/about_life.gif) no-repeat;
+}
