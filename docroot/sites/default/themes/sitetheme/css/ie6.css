@@ -162,5 +162,5 @@ form.fivestar-widget {
 #sidebar-second .block h2.title,
 .comment .comment-bottom,
 .view-homepage .views-row {
-  background-image(../images/osdc_dot4x4.gif);
+  background-image: url(../images/osdc_dot4x4.gif);
 }
