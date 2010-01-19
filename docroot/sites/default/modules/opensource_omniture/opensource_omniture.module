@@ -87,6 +87,7 @@ function opensource_omniture_omniture_variables($main) {
 
   // @todo: Add in comment tracking and generic page tracking when details come to light.
 
+  global $base_url;
   $vars = array(
     'variables' => array(
       's.pageName' => $page_name,
@@ -99,7 +100,7 @@ function opensource_omniture_omniture_variables($main) {
       's.eVar1' => "",
       's.eVar2' => "",
       's.eVar3' => "",
-      's.evar23' => $_SERVER['HTTP_HOST'] . request_uri(),
+      's.evar23' => $base_url . request_uri(),
       's.events' => "",
       's.products' => "",
       's.state' => "",
