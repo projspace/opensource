@@ -168,3 +168,7 @@ form.fivestar-widget {
 .front #content-header h1.title {
   background-image: url(../images/osdc_featured_content.gif);
 }
+
+#search-box .form-text {
+  background-image: url(../images/osdc_search_icon.gif);
+}
