@@ -99,7 +99,7 @@ function opensource_omniture_omniture_variables($main) {
       's.eVar1' => "",
       's.eVar2' => "",
       's.eVar3' => "",
-      's.evar23' => drupal_get_path_alias($_GET['q']),
+      's.evar23' => request_uri(),
       's.events' => "",
       's.products' => "",
       's.state' => "",
