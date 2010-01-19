@@ -154,7 +154,9 @@ function sitetheme_preprocess_node(&$vars) {
     else {
       $caption = '';
     }
-    $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', $path, $vars['node']->field_image[0]['imceimage_alt']) . $caption .'</div>'. $vars['content'];
+    if ($vars['node']->field_image[0]['imceimage_path']) {
+      $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', $path, $vars['node']->field_image[0]['imceimage_alt']) . $caption .'</div>'. $vars['content'];
+    }
   }
 
   $vars['add_this'] = '';
