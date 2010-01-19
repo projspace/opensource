@@ -176,3 +176,9 @@ form.fivestar-widget {
 #search-box .form-text {
   background-image: url(../images/osdc_search_icon.gif);
 }
+
+/* Main navigation to respect .active and .active-trail on hover */
+#main-menu li.menu-3091 a.active:hover,
+#main-menu li.menu-3091 a.active-trail:hover {
+  background-position: -112px -84px;
+}
