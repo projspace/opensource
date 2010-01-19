@@ -158,3 +158,9 @@ form.fivestar-widget {
 .page-user div.tabs {
   width: 375px;
 }
+
+#sidebar-second .block h2.title,
+.comment .comment-bottom,
+.view-homepage .views-row {
+  background-image(../images/osdc_dot4x4.gif);
+}
