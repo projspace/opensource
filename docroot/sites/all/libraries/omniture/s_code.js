@@ -5,17 +5,19 @@ http://www.omniture.com */
      Dynamic Account Selection
 */
 /* Specify the Report Suite ID(s) to track here */
-var s_account="redhatglobaltest"
+var s_account="redhatglobal,redhatopensourcecom"
 var s=s_gi(s_account)
 /************************** CONFIG SECTION **************************/
 /* You may add or alter any code config here. */
-s.dynamicAccountSelection=true
-s.dynamicAccountList="redhatglobaltest"
+s.dynamicAccountSelection=false
+s.dynamicAccountList="redhatglobal,redhatmobicent=mobicents.org;redhatglobal,redhatcom=redhatmagazine.com;redhatglobal,redhatrhx=rhx.redhat.com;redhatglobal,redhatjboss=jboss.com;redhatglobal,redhatjbossorg=jboss.org;redhatglobaltest,redhatdev=stage.rhb.hosted.redhat.com;redhatglobaltest,redhatdev=stage.rhs.hosted.redhat.com;redhatglobaltest,redhatdev=news.stage.rhs.hosted.redhat.com;redhatglobaltest,redhatqa=webqa.redhat.com;redhatglobaltest,redhatqa=qa.redhat.com;redhatglobaltest,redhatdev=webeng.redhat.com;redhatglobaltest,redhatdev=search.cspserver5.app.dev.redhat.com;redhatglobaltest,redhatqa=kbserver1.webqa-colo.redhat.com;redhatglobaltest,redhatstage=stage.redhat.com;redhatglobal,redhatcom=redhat.com"
+
+s.dynamicAccountMatch=window.location.host+window.location.pathname
 /* Link Tracking Config */
 s.trackDownloadLinks=true
 s.trackExternalLinks=true
 s.trackInlineStats=true
-s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,wmv,doc,pdf,xls,ogg,rm,ram,swf,flv"
+s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,wmv,doc,pdf,xls,ogg,rm,ram,swf,flv,jar"
 s.linkInternalFilters="javascript:,opensource.com"
 s.linkLeaveQueryString=false
 s.linkTrackVars="None"
@@ -32,14 +34,46 @@ function s_doPlugins(s) {
 	/* Add calls to plugins here */
 	/* External Campaign Tracking */
 	if(!s.campaign)
-		s.campaign=s.getQueryParam('sc_cid');
+		s.campaign=s.getQueryParamNC('sc_cid');
 	/* Internal Campaign Tracking */
 	if(!s.eVar1)
-		s.eVar1=s.getQueryParam('intcmp');
+		s.eVar1=s.getQueryParamNC('intcmp');
+
+        s.setCookieParam('rh_omni_tc',(s.getQueryParamNC('s_kwcid')) ? s.getQueryParamNC('s_kwcid') : s.getQueryParamNC('sc_cid'),1,365);
+
+        s.setCookieParam('rh_omni_itc',s.getQueryParamNC('intcmp'),1,365);
+
+        if(!s.c_r('rh_omni_tc') && !s.campaign) {
+          var chk_ref = document.referrer;
+          s.campaign = (chk_ref) ? '70160000000H4AoAAK' : '70160000000H4AjAAK';
+          s.setCookieParam('rh_omni_tc',s.campaign,1,365);
+        }
+
+        if(s.c_r('rh_omni_tc') == '70160000000H4Aj' && !s.campaign) {
+          var chk_ref = document.referrer;
+          s.campaign = '70160000000H4AjAAK';
+          s.setCookieParam('rh_omni_tc',s.campaign,1,365);
+        }
+
+        if(s.c_r('rh_omni_tc') == '70160000000H4Ao' && !s.campaign) {
+          var chk_ref = document.referrer;
+          s.campaign = '70160000000H4AoAAK';
+          s.setCookieParam('rh_omni_tc',s.campaign,1,365);
+        }
+
+
 }
 s.doPlugins=s_doPlugins
 /************************** PLUGINS SECTION *************************/
 /* You may insert any plugins you wish to use here.                 */
+
+/*
+ * Plugin: setCookieParam 0.2 -
+ */
+s.setCookieParam=new Function("c","v","x","t",""
++"var s=this,cr,d;cr=s.c_r(c);if(cr&&!x){s.c_w(c,cr);return cr};"
++"if(!t){d='';}else{d=new Date;d.setTime(d.getTime()+(t*24*60*60"
++"*1000));};if(v){s.c_w(c,v,d)};return v;");
 
 /*
  * Plugin: getQueryParam 1.3 - Return query string parameter values
@@ -56,6 +90,23 @@ s.cgif=new Function("t","k",""
 +"if(t){var s=this,i=t.indexOf('='),sk=i<0?t:t.substring(0,i),sv=i<0?"
 +"'True':t.substring(i+1);if(sk.toLowerCase()==k)return s.epa(sv)}ret"
 +"urn ''");
+
+/*
+ *PLUGIN: getQueryParamNC 0.1 - do not lowercase
+ */
+
+s.getQueryParamNC=new Function("p","d","u",""
++"var s=this,v='',i,t;d=d?d:'';u=u?u:(s.pageURL?s.pageURL:''+s.wd.loc"
++"ation);u=u=='f'?''+s.gtfs().location:u;while(p){i=p.indexOf(',');i="
++"i<0?p.length:i;t=s.p_gpv_nc(p.substring(0,i),u);if(t)v+=v?d+t:t;p=p.su"
++"bstring(i==p.length?i:i+1)}return v");
+s.p_gpv_nc=new Function("k","u",""
++"var s=this,v='',i=u.indexOf('?'),q;if(k&&i>-1){q=u.substring(i+1);v"
++"=s.pt(q,'&','p_gvf_nc',k)}return v");
+s.p_gvf_nc=new Function("t","k",""
++"if(t){var s=this,i=t.indexOf('='),p=i<0?t:t.substring(0,i),v=i<0?'T"
++"rue':t.substring(i+1);if(p==k)return s."
++"epa(v)}return ''");
 
 /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
 var s_objectID;function s_c2fe(f){var x='',s=0,e,a,b,c;while(1){e=
@@ -283,3 +334,4 @@ s=s.co(s);s.un=un;s.uns();return s}}if(e>0){a=parseInt(i=v.substring(e
 );else a=parseFloat(v);if(a>=5&&v.indexOf('Opera')<0&&u.indexOf(
 'Opera')<0){eval(c);return new s_c(un,pg,ss)}else s=s_c2f(c);return s(
 un,pg,ss)}
+

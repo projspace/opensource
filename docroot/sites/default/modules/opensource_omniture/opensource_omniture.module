@@ -99,6 +99,7 @@ function opensource_omniture_omniture_variables($main) {
       's.eVar1' => "",
       's.eVar2' => "",
       's.eVar3' => "",
+      's.evar23' => drupal_get_path_alias($_GET['q']),
       's.events' => "",
       's.products' => "",
       's.state' => "",
@@ -106,6 +107,20 @@ function opensource_omniture_omniture_variables($main) {
       's.purchaseID' => "",
     ),
   );
+
+  // Implementing a custom footer. This is based on the footer in the omniture.module.
+  $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/'."\n";
+  $footer .= '<script type="text/javascript" src="/sites/all/libraries/omniture/rh_omni_footer.js"></script>'."\n";
+  $footer .= '<script language="JavaScript" type="text/javascript"><!--'."\n";
+  $footer .= "if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')"."\n";
+  $footer .= '//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img src="';
+  $footer .= check_plain(variable_get("omniture_image_file_location", 'http://examplecom.112.2O7.net/b/ss/examplecom/1/H.13--NS/0')) .'"'."\n";
+  $footer .= 'height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->'."\n";
+  $footer .= '<!-- End SiteCatalyst code version: ';
+  $footer .=  check_plain(variable_get("omniture_version", 'H.13.'));
+  $footer .= ' -->'."\n";
+
+  $vars['footer'] = $footer;
 
   return $vars;
 }
