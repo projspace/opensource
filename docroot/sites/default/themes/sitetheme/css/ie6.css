@@ -164,3 +164,7 @@ form.fivestar-widget {
 .view-homepage .views-row {
   background-image: url(../images/osdc_dot4x4.gif);
 }
+
+.front #content-header h1.title {
+  background-image: url(../images/osdc_featured_content.gif);
+}
