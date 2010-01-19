@@ -38,6 +38,9 @@ function opensource_omniture_omniture_variables($main) {
     elseif (arg(1) == 'password') {
       $page_name .= '|user|password';
     }
+    else {
+      $page_name .= opensource_omniture_default_pattern();
+    }
   }
 
   // The user is searching
@@ -53,6 +56,9 @@ function opensource_omniture_omniture_variables($main) {
       if (arg(2) != '') {
         $page_name .= '|'. opensource_omniture_clean(arg(2));
       }
+    }
+    else {
+      $page_name .= opensource_omniture_default_pattern();
     }
   }
   // The user is viewing a node homepage.
@@ -75,19 +81,19 @@ function opensource_omniture_omniture_variables($main) {
         $page_name .= '|'. opensource_omniture_clean($part);
       }
     }
+    else {
+      $page_name .= opensource_omniture_default_pattern();
+    }
   }
   // If there are no other rules use the site url path.
   else {
-    $path = drupal_get_path_alias($_GET['q']);
-    $path = explode('/', $path);
-    foreach ($path as $part) {
-      $page_name .= '|'. opensource_omniture_clean($part);
-    }
+    $page_name .= opensource_omniture_default_pattern();
   }
 
   // @todo: Add in comment tracking and generic page tracking when details come to light.
 
   global $base_url;
+
   $vars = array(
     'variables' => array(
       's.pageName' => $page_name,
@@ -138,4 +144,14 @@ function opensource_omniture_clean($var) {
   $var = str_replace(' ', '-', $var);
   $var = str_replace('|', '', $var);
   return $var;
+}
+
+function opensource_omniture_default_pattern() {
+  $page_name = '';
+  $path = drupal_get_path_alias($_GET['q']);
+  $path = explode('/', $path);
+  foreach ($path as $part) {
+    $page_name .= '|'. opensource_omniture_clean($part);
+  }
+  return $page_name;
 }
