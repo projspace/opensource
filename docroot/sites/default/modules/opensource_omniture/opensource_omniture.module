@@ -106,7 +106,7 @@ function opensource_omniture_omniture_variables($main) {
       's.eVar1' => "",
       's.eVar2' => "",
       's.eVar3' => "",
-      's.evar23' => $base_url . request_uri(),
+      's.eVar23' => $base_url . request_uri(),
       's.events' => "",
       's.products' => "",
       's.state' => "",
