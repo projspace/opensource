@@ -144,7 +144,7 @@ function popular_block($op = 'list', $delta = 0, $edit = array()) {
  * Block view hook.
  */
 function popular_block_view($op, $delta, $edit) {
-  $channels = array('business', 'education', 'government', 'law', 'life');
+  $channels = array('business', 'education', 'government', 'law', 'life', 'should-be');
 
   $path = drupal_lookup_path('source', $_GET['q']);
   if ($path === FALSE) {
