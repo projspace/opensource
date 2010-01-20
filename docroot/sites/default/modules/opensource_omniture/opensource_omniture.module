@@ -50,6 +50,14 @@ function opensource_omniture_omniture_variables($main) {
       if (arg(2) != '') {
         $page_name .= '|'. opensource_omniture_clean(arg(2));
       }
+      if (!empty($_GET['filters'])) {
+        $filters = rawurldecode($_GET['filters']);
+        $filters = str_replace(':', '|', $filters);
+        $filters = explode(' ', $filters);
+        foreach ($filters as $filter) {
+          $page_name .= '|'. $filter;
+        }
+      }
     }
     elseif (arg(1) == 'user') {
       $page_name .= '|usersearch';
