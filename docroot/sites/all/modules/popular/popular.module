@@ -80,7 +80,7 @@ function popular_variable($name, $all = FALSE) {
  */
 function popular_exit($destination = NULL) {
   // Do nothing on form submissions.
-  if (!empty($_POST) || !empty($destination)) {
+  if (!empty($_POST) || !empty($destination) || !function_exists('drupal_lookup_path')) {
     return;
   }
   // Get the page information.
