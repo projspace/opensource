@@ -97,7 +97,6 @@ function popular_exit($destination = NULL) {
  *   The page data derived by popular_parse_path().
  */
 function _popular_save_data($data) {
-  watchdog('popular', print_r($data, TRUE));
   $hour = date("G");
 
   // We have several types of data that we might store, but they are all related.
@@ -109,8 +108,6 @@ function _popular_save_data($data) {
     db_query("INSERT INTO {popular} (nid, channel, hit_count, hour) VALUES (%d, '%s', %d, %d)",
       $data['nid'], $data['channel'], 1, $hour);
   }
-  
-  watchdog('popular', 'counting '. $data['page_title'] .' in '. $data['channel']. '.');
 }
 
 /**
@@ -151,7 +148,6 @@ function popular_block_view($op, $delta, $edit) {
     $path = $_GET['q'];
   }
   $channel = arg(0, drupal_get_path_alias($path));
-  watchdog('popular', $channel);
   
   $block['subject'] = t('Most Viewed');
   $output = '';
