@@ -252,7 +252,7 @@ function sitetheme_preprocess_comment_wrapper(&$variables) {
 function sitetheme_preprocess_views_view_field__homepage__page_1__teaser(&$vars) {
   if (module_exists('ed_readmore')) {
     $display = variable_get('ed_readmore_placement', ED_READMORE_PLACEMENT_DEFAULT);
-    $node = node_load($vars['view']->result[0]->nid);
+    $node = node_load($vars['row']->nid);
     if (preg_match('!</?(?:p)[^>]*>$!i', $vars['output'], $match, PREG_OFFSET_CAPTURE)) {
       // Recalculate the position in $teaser. We do this because there may be extra CCK fields appended to the teaser.
       // Insert the link
