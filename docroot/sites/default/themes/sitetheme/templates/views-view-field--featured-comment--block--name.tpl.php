@@ -20,8 +20,7 @@
   * the view is modified.
   */
 ?>
-<!-- <?php print $view; ?> -->
 
 
 
-<?php if($output) {print $output;} ?>
+<?php print $output; ?>
