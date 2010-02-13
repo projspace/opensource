@@ -162,7 +162,8 @@
 }
 
 .block .view-id-featured_comment .views-field-value,
-.block .view-id-featured_comment .views-field-timestamp {
+.block .view-id-featured_comment .views-field-timestamp,
+.block .view-id-featured_comment .views-field-nothing {
   float: left;
   color: #797979;
   margin-top: 10px;
