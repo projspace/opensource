@@ -1,4 +1,3 @@
-RedirectMatch /mnt/www/drupal$ /mnt/www/drupal/
 #
 # Apache/PHP/Drupal settings:
 #
