@@ -209,16 +209,6 @@
   right: 0;
 }
 
-.reading-feed {
-  position: relative;
-  top: -25px;
-  float: right;
-  height: 0;
-  width: 12px;
-  overflow: hidden;
-  padding-top: 13px;
-  background: url(../images/rss.jpg);
-}
 
 body.node-type-post .article-author-feed {
   width: 12px;

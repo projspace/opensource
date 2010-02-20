@@ -105,14 +105,11 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   if (!empty($vars['navbar'])) {
     $vars['classes_array'][] = 'with-channel-header';
   }
-  $vars['site_feed'] = l('Feed', 'feed', array('attributes' => array('class' => 'site-feed')));
   if (module_exists('og') && $group = og_get_group_context()) {
     $vars['page_feed'] = l('Feed', $group->path .'/feed', array('attributes' => array('class' => 'page-feed')));
-    $vars['reading_feed'] =  l('Feed', $group->path .'/feed', array('attributes' => array('class' => 'reading-feed')));
   }
   else {
-    $vars['page_feed'] = '';
-    $vars['reading_feed'] = '';
+    $vars['page_feed'] = l('Feed', 'feed', array('attributes' => array('class' => 'page-feed')));
   }
 
   // Remove the file browsing tab.
@@ -297,17 +294,6 @@ function sitetheme_preprocess_views_view_field__featured_comment__value(&$vars) 
     $account->uid = $vars['row']->users_comments_uid;
     $account->name = 'undefined';
     $vars['output'] = theme('username', $account);
-  }
-}
-
-function sitetheme_preprocess_views_view__channel_reading__block(&$vars) {
-  if (arg(0) == 'node' && is_numeric(arg(1))) {
-    // All the about pages are at [channel name]/about.
-    $node = node_load(arg(1));
-    if ($vars['view']->total_rows > 10) {
-      $vars['more'] = '<div class="channel-about-link"><a href="reading/'. $node->nid . '" title="More of what we\'re reading">&raquo Read more</a></div>';
-    }
-    $vars['reading_feed'] = '<a class="reading-feed" href="/reading/' . $node->nid . '/feed">Feed</a>';
   }
 }
 

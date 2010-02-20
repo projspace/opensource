@@ -213,7 +213,7 @@ body {
   margin-bottom: 0;
 }
 
-.site-feed {
+.page-feed {
   position: absolute;
   height: 0;
   width: 12px;
@@ -223,18 +223,6 @@ body {
   bottom: 8px;
   background: url(../images/rss.jpg);
 }
-
-.page-feed {
-  position: absolute;
-  height: 0;
-  width: 12px;
-  top: 65px;
-  right: 32px;
-  overflow: hidden;
-  padding-top: 13px;
-  background: url(../images/rss.jpg);
-}
-
 
 /*
  * First sidebar
