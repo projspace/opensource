@@ -1,0 +1,14 @@
+<?php
+
+function feedtweaks_install() {
+  db_query('UPDATE {blocks} SET pages="reading/*" WHERE module="views" AND delta="channel_reading-block_1"');
+  
+  if ($channel_reading = views_get_view('channel_reading')) {
+    $channel_reading->delete();
+    views_object_cache_clear('view', $channel_reading->name);
+  }
+  if ($homepage = views_get_view('homepage')) {
+    $homepage->delete();
+    views_object_cache_clear('view', $homepage->name);
+  }
+}

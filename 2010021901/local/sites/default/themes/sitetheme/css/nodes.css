@@ -1,0 +1,317 @@
+/* $Id: nodes.css,v 1.4 2009/08/14 06:31:11 johnalbin Exp $ */
+
+/**
+ * @file
+ * Node Styling
+ *
+ * Style anything that isn't in the $content variable.
+ */
+
+.node p,
+#comments p /* Node wrapper */ {
+  line-height: 1.4em;
+  color: #333;
+}
+
+/* Node links have different formatting from the rest of the page. */
+.node a,
+#comments a {
+  color: #0066cc;
+}
+
+.node a:visited,
+#comments a:visited {
+  color: #6699cc;
+}
+
+.node a:hover,
+.node a:focus,
+#comments a:hover,
+#comments a:focus {
+  color: #3399ff;
+}
+
+.node a:active,
+#comments a:active {
+  color: #0066cc;
+}
+
+.read-more a {
+  color: #000;
+}
+
+.read-more a:hover,
+.read-more a:focus {
+  color: #3399ff;
+}
+
+.read-more a:active {
+  color: #000;
+}
+
+.node caption,
+#comments caption {
+  font-size: 10px;
+  color: #999;
+  font-style: italic;
+}
+
+.node-inner /* Additional wrapper for node */ {
+}
+
+.node-sticky /* A sticky node (displayed before others in a list) */ {
+}
+
+.node-unpublished /* Unpublished nodes */ {
+  /* background-color: #fff4f4; */ /* Drupal core uses a #fff4f4 background */
+}
+
+.node-unpublished div.unpublished,
+.comment-unpublished div.unpublished /* The word "Unpublished" displayed underneath the content. */ {
+  height: 0;
+  overflow: visible;
+  color: #d8d8d8;
+  font-size: 75px;
+  line-height: 1;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  word-wrap: break-word; /* A very nice CSS3 property */
+}
+
+.node-mine /* A node created by the current user */ {
+}
+
+.node-teaser /* A node displayed as teaser */ {
+}
+
+/* All nodes are given a node-type-FOO class that describes the type of
+ * content that it is. If you create a new content type called
+ * "my-custom-type", it will receive a "node-type-my-custom-type" class.
+ */
+.node-type-page /* Page content node */ {
+}
+
+.node-type-story /* Story content node */ {
+}
+
+.node h2.title /* Node title */ {
+}
+
+.marker /* "New" or "Updated" marker for content that is new or updated for the current user */ {
+  color: #c00;
+}
+
+.node .picture /* The picture of the node author */ {
+}
+
+.node.node-unpublished .picture,
+.comment.comment-unpublished .picture {
+  position: relative; /* Otherwise floated pictures will appear below the "Unpublished" text. */
+}
+
+.node #meta-outer {
+	width: 320px;
+}
+
+.node .meta /* Wrapper for submitted and terms data */ {
+  position:relative;
+  z-index:1;
+  font-family:Helvetica,Arial,sans-serif;
+}
+
+.node .node-inner form.fivestar-widget {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.article-author-info,
+.node .submitted /* The "posted by" information */ {
+  display: block;
+  float: left;
+  position: relative;
+  padding-right: 15px;
+  margin-bottom: 1em;
+}
+
+.node .terms /* Node terms (taxonomy) */ {
+  margin: 3px 0 8px;
+  display: block;
+}
+
+.node .content /* Node's content wrapper */ {
+  position: relative;
+  padding-top: 1.5em;
+  font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
+}
+
+.article-visitor-links {
+  width: 520px;
+}
+
+.article-visitor-links,
+.fivestar-widget,
+.node .content .poll {
+  font-family: Helvetica,Arial,sans-serif;
+}
+
+.node-type-channel .node .content {
+  padding-top: 0;
+}
+
+.node-teaser .content /* Node's content wrapper */ {
+  position: relative;
+  padding-top: 0;
+}
+
+.node ul.links /* Node links. See also the ul.links declaration in the pages.css. */ {
+}
+
+.preview .node /* Preview of the content before submitting new or updated content */ {
+  /* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
+}
+
+.node-type-channel #content-header h1 {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.view-og-ghp-ron .node h2 {
+  margin-top: 0;
+}
+
+.article-comment-count {
+  padding-right: 10px;
+  display: block;
+  margin-right: 10px;
+  float: left;
+  border-right: 1px solid #7b7b7c;
+  padding-left: 18px;
+  background: url(../images/comment.jpg) left no-repeat;
+  height: 13px;
+}
+
+.article-node-link {
+  float: right;
+}
+
+.article-author-feed {
+  width: 12px;
+  height: 13px;
+  display: block;
+  background: url(../images/rss.jpg);
+  margin-left: 5px;
+  position: absolute;
+  margin-top: -14px;
+  right: 0;
+}
+
+.reading-feed {
+  position: relative;
+  top: -25px;
+  float: right;
+  height: 0;
+  width: 12px;
+  overflow: hidden;
+  padding-top: 13px;
+  background: url(../images/rss.jpg);
+}
+
+body.node-type-post .article-author-feed {
+  width: 12px;
+  height: 13px;
+  display: block;
+  background: url(../images/rss.jpg);
+  margin-left: 5px;
+  position: absolute;
+  right: 0;
+  top:1px;
+  margin-top: 1px;
+}
+
+.view-id-homepage  .article-author-feed {
+  margin-top: -16px;
+}
+
+.node-type-channel .field-field-image {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.node-main-image {
+  margin-top: 1em;
+}
+
+.node-main-image-caption {
+  color: #999;
+  font-size: 10px;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.node .node-main-image-caption a:link,
+.node .node-main-image-caption a:visited,
+.node .node-main-image-caption a:hover,
+.node .node-main-image-caption a:focus{
+  text-decoration: underline;
+}
+
+.node h1 a:link,
+.node h2 a:link,
+.node h3 a:link,
+.node h4 a:link,
+.node h5 a:link,
+.node h6 a:link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.node h1 a:visited,
+.node h2 a:visited,
+.node h3 a:visited,
+.node h4 a:visited,
+.node h5 a:visited,
+.node h6 a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+
+.node h1 a:hover,
+.node h2 a:hover,
+.node h3 a:hover,
+.node h4 a:hover,
+.node h5 a:hover,
+.node h6 a:hover,
+.node h1 a:focus,
+.node h2 a:focus,
+.node h3 a:focus,
+.node h4 a:focus,
+.node h5 a:focus,
+.node h6 a:focus {
+  text-decoration: underline;
+  color: #3399ff;
+}
+
+.node h1 a:active,
+.node h2 a:active,
+.node h3 a:active,
+.node h4 a:active,
+.node h5 a:active,
+.node h6 a:active {
+  text-decoration: none;
+  color: #3399ff;
+}
+
+.node-add-this {
+  margin-top: 3px;
+  float: left;
+}
+
+.node-license {
+  margin-top: 3px;
+  float: right;
+}

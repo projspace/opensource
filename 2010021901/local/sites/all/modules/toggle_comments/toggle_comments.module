@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Adds an action which toggles comments on a node between
+ * read/write and read-only.
+ */
+
+/**
+ * Implementation of hook_help()
+ */
+function toggle_comments_help($path, $arg) {
+	if ($path == 'admin/help#toggle_comments') {
+		return '<p>'. t('This module adds an action to allow a node\'s comments to be toggled between read/write and read-only.') .'</p>';
+	}
+}
+
+/**
+ * Implementation of hook_action_info()
+ */
+function toggle_comments_action_info() {
+	$actions['toggle_comments_action'] = array(
+		'type' => 'node',
+		'description' => t('Lock comments on a node.'),
+		'configurable' => FALSE,
+		'hooks' => array(
+			'any',
+		)
+	);
+ 
+	return $actions;
+}
+
+/**
+ * Toggle comments on or off.
+ *
+ * @param $node
+ *   Current node object this will operate on.
+ * @param $context
+ *   Node, flag, and other contextual information.
+ */
+function toggle_comments_action(&$node, $context) {
+  global $user;
+  
+  if ($node->comment == 2) {
+    $node->comment = 1;
+    $message = 'Comments locked on '. $node->title .' by '. $user->name;
+    watchdog('toggle comments', $message);
+    node_save($node);
+  }
+  elseif ($node->comment == 1) {
+    $node->comment = 2;
+    $message = 'Comments unlocked on '. $node->title .' by '. $user->name;
+    watchdog('toggle comments', $message);
+    node_save($node);
+  }
+}
