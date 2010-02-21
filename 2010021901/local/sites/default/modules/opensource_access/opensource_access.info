@@ -1,4 +1,0 @@
-name = OpenSource.com Access
-description = Access controls for the OpenSource.com.
-dependencies[] = og_user_roles
-core = 6.x

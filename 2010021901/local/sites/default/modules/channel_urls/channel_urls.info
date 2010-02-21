@@ -1,5 +1,0 @@
-name = Channel special urls
-description = Channel specific urls.
-dependencies[] = views
-dependencies[] = og
-core = 6.x
