@@ -1,0 +1,43 @@
+<?php
+// $Id:$
+
+/**
+ * @file
+ * Install file for Popular Content module.
+ * (c) 2008 Palantir.net
+ */
+
+function popular_schema() {
+  $schema['popular'] = array(
+    'fields' => array(
+      'pid' => array('type' => 'serial', 'not null' => TRUE),
+      'nid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+      'channel' => array('type' => 'varchar', 'length' => '40', 'not null' => TRUE, 'default' => ''),
+      'hit_count' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+      'hour' => array('type' => 'int', 'size' => 'tiny', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+    ),
+    'primary key' => array('pid'),
+    'indexes' => array(
+      'nid' => array('nid'),
+     ),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_install()
+ */
+function popular_install() {
+  drupal_install_schema('popular');
+}
+
+/**
+ * Implements hook_uninstall()
+ */
+function popular_uninstall() {
+  drupal_uninstall_schema('popular');
+  $vars = popular_variable('all', TRUE);
+  foreach ($vars as $var) {
+    variable_del('popular_'. $var);
+  }
+}

@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * @file
+ * Special urls for channels
+ */
+
+/**
+ * Implementation of hook_menu().
+ */
+function channel_urls_menu() {
+  $items['channel/%node/moderation-articles'] = array(
+    'title' => 'Articles Awaiting Review',
+    'page callback' => 'channel_urls_moderation_articles',
+    'page arguments' => array(1),
+    'type' => MENU_LOCAL_TASK,
+    'access callback' => 'channel_urls_admin_access',
+    'access arguments' => array(1),
+  );
+  $items['channel/%node/comment-moderation'] = array(
+    'title' => 'Comments Awaiting Moderation',
+    'page callback' => 'channel_urls_comment_moderation',
+    'page arguments' => array('channel_urls_comment_moderation', 'default', 1),
+    'type' => MENU_LOCAL_TASK,
+    'access callback' => 'channel_urls_gardner_access',
+    'access arguments' => array(1),
+  );
+
+  return $items;
+}
+
+/**
+ * Access callback. Determine if a user can see the articles awaiting review.
+ */
+function channel_urls_admin_access($gid) {
+  $view = views_get_view('channel_awaiting_moderation');
+  global $user;
+  return (og_is_group_admin($gid) || isset($user->roles[21]) || isset($user->roles[26])) && !$view->disabled;
+}
+
+/**
+ * Access callback. Determine if a user is a comment garnder, moderator, or admin.
+ */
+function channel_urls_gardner_access($gid) {
+  $view = views_get_view('channel_urls_comment_moderation');
+  global $user;
+  return (og_is_group_admin($gid) || isset($user->roles[31]) || isset($user->roles[21]) || isset($user->roles[26])) && !$view->disabled;
+}
+
+/**
+ * Menu callback. Display the articles awaiting review for a channel.
+ */
+function channel_urls_moderation_articles($node) {
+  $view_name = 'channel_awaiting_moderation';
+  $display = 'default';
+  global $user;
+  if(!isset($user->roles[11])) {
+    $view_name = 'channel_awaiting_moderation_user';
+  } 
+  $arg = $node->nid;
+  return views_page($view_name, $display, $arg);
+}
+
+/**
+ * Menu callback. Display the comments awaiting moderation.
+ */
+function channel_urls_comment_moderation($view_name, $display, $node) {
+  $arg = $node->nid;
+  return views_page($view_name, $display, $arg);
+}
+
+/**
+ * Implementation of hook_og_links_alter().
+ */
+function channel_urls_og_links_alter(&$links, $node) {
+  $links['articles_awaiting_moderation'] = l('Articles awaiting review', 'channel/'. $node->nid .'/moderation-articles');
+  $links['comments_awaiting_moderation'] = l('Comments awaiting moderation', 'channel/'. $node->nid .'/comment-moderation');
+}

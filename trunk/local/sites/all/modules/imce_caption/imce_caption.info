@@ -1,0 +1,7 @@
+; $Id$
+
+name = "IMCE Caption"
+description = "Provides captions for images maintained by IMCE."
+
+core = 6.x
+dependencies[] = imce
