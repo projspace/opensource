@@ -364,6 +364,10 @@ ul.links li {
   background: url(../images/identica.png);
 }
 
+.footer-flickr {
+  background: url(../images/flickr_24x24.jpg);
+}
+
 #footer a {text-decoration: none;}
 
 /*
