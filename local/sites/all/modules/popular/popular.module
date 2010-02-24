@@ -127,7 +127,7 @@ function popular_block($op = 'list', $delta = 0, $edit = array()) {
     return array(
       'popular' => array(
         'info' => t('Most Viewed'),
-        'cache' => BLOCK_CACHE_GLOBAL,
+        'cache' => BLOCK_NO_CACHE,
       ),
     );
   }
