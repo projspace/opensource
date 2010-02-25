@@ -336,7 +336,8 @@ ul.links li {
 .footer-twitter,
 .footer-facebook,
 .footer-youtube,
-.footer-identica {
+.footer-identica,
+.footer-flickr {
   text-decoration: none;
   height: 0;
   overflow: hidden;
