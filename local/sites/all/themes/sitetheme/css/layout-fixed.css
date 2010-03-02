@@ -142,14 +142,6 @@ body {
   margin-right: -760px; /* LTR */ /* Negative value of #content's width + left margin. */
 }
 
-#content-inner-side-shadow {
-  
-}
-
-#content-inner {
-  
-}
-
 /*
  * Navbar
  */
@@ -172,12 +164,6 @@ body {
 
 .with-channel-header #navbar {
   height: 149px;
-}
-
-.with-channel-header #content,
-.with-channel-header #sidebar-first,
-.with-channel-header #sidebar-second {
-  margin-top: 145px;
 }
 
 #navbar-inner {
