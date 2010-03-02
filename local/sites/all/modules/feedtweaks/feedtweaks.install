@@ -11,6 +11,7 @@ function feedtweaks_install() {
     $homepage->delete();
     views_object_cache_clear('view', $homepage->name);
   }
+  db_query("UPDATE {node} SET comment = " . COMMENT_NODE_READ_WRITE . " WHERE type = 'reading'");
 }
 
 function feedtweaks_update_1() {
