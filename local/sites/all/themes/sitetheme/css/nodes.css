@@ -194,6 +194,15 @@
   height: 13px;
 }
 
+.views-field-comment-count {
+  padding-right: 10px;
+  display: inline;
+  margin-right: 10px;
+  padding-left: 18px;
+  background: url(../images/comment.jpg) left no-repeat;
+  height: 13px;
+}
+
 .article-node-link {
   float: right;
 }
