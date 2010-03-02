@@ -301,13 +301,24 @@ function sitetheme_preprocess_views_view_field__featured_comment__value(&$vars) 
 }
 
 function sitetheme_preprocess_views_view__channel_reading__block(&$vars) {
-  if (arg(0) == 'node' && is_numeric(arg(1))) {
-    // All the about pages are at [channel name]/about.
-    $node = node_load(arg(1));
+  // Being on a path like node/42 means that 42 is the group
+  $nid = arg(1);
+  if (arg(0) == 'node' && is_numeric($nid)) {
     if ($vars['view']->total_rows > 10) {
-      $vars['more'] = '<div class="channel-about-link"><a href="reading/'. $node->nid . '" title="More of what we\'re reading">&raquo Read more</a></div>';
+      $vars['more'] = '<div class="channel-about-link"><a href="reading/'. $nid . '" title="More of what we\'re reading">&raquo Read more</a></div>';
     }
-    $vars['reading_feed'] = '<a class="reading-feed" href="/reading/' . $node->nid . '/feed">Feed</a>';
+    $vars['reading_feed'] = '<a class="reading-feed" href="/reading/' . $nid . '/feed">Feed</a>';
+  }
+}
+
+function sitetheme_preprocess_views_view_field__channel_reading__comment_count(&$vars) {
+  $comment_count = $vars['row']->node_comment_statistics_comment_count;
+  $nid = $vars['row']->nid;
+  if ($comment_count > 0) {
+    $vars['links_all'] .= '<span class="reading-comment-count">'. l(format_plural($comment_count, '1 Comment', '@count Comments', array('@count' => $comment_count)), 'node/'. $nid, array('fragment' => 'comments')) .'</span>';
+  }
+  else {
+    $vars['links_all'] .= '<span class="reading-comment-count">'. l('0 Comments', 'node/'. $nid, array('fragment' => 'comments')) .'</span>';
   }
 }
 
@@ -502,7 +513,7 @@ function sitetheme_user_register($form) {
   if (isset($form['legal']['conditions']['#title'])) {
     $form['legal']['conditions']['#title'] = t('Terms of Use');
   }
-  
+
   return drupal_render($form);
 }
 

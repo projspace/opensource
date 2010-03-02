@@ -164,6 +164,15 @@
   display: inline;
 }
 
+#block-views-channel_reading-block_1 div.views-field-comment-count {
+  float: none;
+}
+
+.reading-comment-count a {
+  color: #0066CC;
+  font-weight: normal;
+}
+
 .block .view-id-channel_Poll .form-submit,
 .block .view-id-site_homepage_poll .form-submit {
   float: right;
