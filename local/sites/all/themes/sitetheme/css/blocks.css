@@ -477,4 +477,5 @@
 #sidebar-second #block-views-featured_comment-block_1 h2.title{
   background: url('../images/osdc_featured_comment_nameplate.png') no-repeat;
   text-indent: -9999em;
+  displayt: block;
 }
