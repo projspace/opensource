@@ -150,6 +150,20 @@ ul.links .flag-comment_abuse
 }
 
 
+.comment-picture-wrapper {
+  width: 100px;
+  margin-right: 10px;
+  float: left;	
+}
+
+.comment-meta-wrapper {
+	float: right;
+}
+
+.comment .content {
+	clear: both;
+}
+
 
 
 
