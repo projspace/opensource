@@ -1,0 +1,25 @@
+Index: omniture.module
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/omniture/omniture.module,v
+retrieving revision 1.6.4.3
+diff -u -p -r1.6.4.3 omniture.module
+--- omniture.module	23 Sep 2009 23:18:18 -0000	1.6.4.3
++++ omniture.module	25 Sep 2009 12:40:36 -0000
+@@ -95,7 +95,7 @@ function omniture_footer($main = 0) {
+ 
+     if (isset($omniture_vocab_vars)) {
+       foreach ($omniture_vocab_vars as $variable => $value) {
+-        $extra_variables_formatted .= "\n". $variable .'="'. $value .'";';
++        $extra_variables_formatted .= "\n". $variable .'='. $value .';';
+       }
+     }
+ 
+@@ -134,7 +134,7 @@ function omniture_footer($main = 0) {
+           if (isset($extra_variables[$k])) {
+             $v = $extra_variables[$k];
+           }
+-          $extra_variables_formatted .= "$k=\"$v\";\n";
++          $extra_variables_formatted .= "$k=$v;\n";
+         }
+       }
+       if (isset($omniture_hooked_vars['footer'])) {
