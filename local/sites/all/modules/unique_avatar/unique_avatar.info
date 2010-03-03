@@ -1,0 +1,10 @@
+; $Id: unique_avatar.info,v 1.1.4.1 2008/12/15 16:04:42 jscheel Exp $
+name = Unique Avatar
+description = Adds a unique string onto the end of user picture uploads, so that the browser cache is invalidated and the new picture appears.
+core = 6.x
+; Information added by drupal.org packaging script on 2008-12-15
+version = "6.x-1.0-rc1"
+core = "6.x"
+project = "unique_avatar"
+datestamp = "1229358039"
+
