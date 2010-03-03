@@ -168,3 +168,7 @@ ul.links .flag-comment_abuse
 .comment .submitted {
   display: block;
 }
+
+.indented .indented .indented{
+  margin-left:0;
+}

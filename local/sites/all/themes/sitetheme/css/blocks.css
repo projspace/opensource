@@ -372,22 +372,16 @@
 }
 
 #sidebar-second #block-views-twitter_listing-block_1 h2.title {
-  width: 177px;
+  width: 288px;
+  height: 17px;
   display: block;
   position: relative;
+  background: url('../images/osdc_twitter_identica_nameplate.png') no-repeat;
+  text-indent: -9999em;
 }
 
 #sidebar-second #block-views-twitter_listing-block_1 h2.title .twitter-logo {
-  width: 58px;
-  display: block;
-  height: 0;
-  padding-top: 11px;
-  overflow: hidden;
-  background: url(../images/twitter-logo.jpg) right no-repeat;
-  background-position: top right;
-  position: absolute;
-  right: 0;
-  top: 0;
+  display: none;
 }
 
 #block-block-6 {
@@ -478,4 +472,9 @@
 
 #block-quicktabs-1 ul.quicktabs_tabs.quicktabs-style-basic li.active a {
   color: #666666;
+}
+
+#sidebar-second #block-views-featured_comment-block_1 h2.title{
+  background: url('../images/osdc_featured_comment_nameplate.png') no-repeat;
+  text-indent: -9999em;
 }
