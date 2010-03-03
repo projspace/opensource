@@ -20,12 +20,12 @@
 
 .views-field-group-nid a
 {
-  text-decoration:none;  
+  text-decoration:none;
 }
 
 .views-field-type
 {
-  
+
 }
 
 .views-field-field-image-imceimage-path
@@ -34,29 +34,29 @@
   margin-bottom:10px;
 }
 
-.views-field-title 
+.views-field-title
 {
   font-weight:bold;
 }
 
 .views-field-teaser
 {
-  
+
 }
 
 .views-field-comment-count
 {
-  
+
 }
 
 .views-field-created
 {
-  
+
 }
 
 .views-field-name
 {
-  
+
 }
 
 .views-field-group-nid,
@@ -85,7 +85,7 @@
   padding-top: 13px;
   background-image: url(../images/osdc_featured_content.png);
 }
- 
+
 .view-homepage .views-field-title
 {
   font-size:24px; /* temporary */
@@ -95,7 +95,7 @@
 .view-homepage .article-author-feed
 {
   float:none;
-  vertical-align:middle;  
+  vertical-align:middle;
 }
 .view-homepage .views-field-value {
   padding-right: 15px;
@@ -119,7 +119,7 @@
   padding-right:10px;
 }
 
-.view-homepage .views-field-view-node 
+.view-homepage .views-field-view-node
 {
   float: right;
 }
@@ -182,7 +182,7 @@
 {
   padding-bottom:20px;
   margin-bottom:20px;
-  border-bottom:1px dotted #CBCCCB; 
+  border-bottom:1px dotted #CBCCCB;
 }
 
 .view-articles .views-row-last
@@ -281,4 +281,9 @@
 
 #content .node-add-this img {
   border: none;
+}
+
+/* Reading list view */
+div.view-channel-reading li.views-row {
+  margin-bottom: 1.5em;
 }
