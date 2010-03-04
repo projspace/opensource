@@ -71,25 +71,31 @@ function opensource_access_nodeapi(&$node, $op, $teaser = NULL, $page = NULL) {
 }
 
 /**
-* Implementation of hook_user().
-*/
-function opensource_access_user($type, &$edit, &$user, $category = NULL) {
-  switch ($type) {
-    case 'form':
-      // Function comment_notify_user() adds this form field only if a user
-      // has "administer nodes" or global "create NODETYPE content" permissions.
-      // Because RH uses Organic Groups to grant roles to users, this form field
-      // is never made available to those users in their profile, so we replicate
-      // it here.
-      if (module_exists("og_user_roles") && db_result(db_query("SELECT rid FROM {og_users_roles} WHERE uid = %d", $user->uid))) {
-        $form['comment_notify_settings']['node_notify_mailalert'] = array(
-          '#type' => 'checkbox',
-          '#title' => t('Receive node follow-up notification e-mails'),
-          '#default_value' => isset($edit['node_notify_mailalert']) ? $edit['node_notify_mailalert'] : variable_get('node_notify_default_mailalert', FALSE),
-          '#description' => t('Check this box to receive an e-mail notification for follow-ups on your nodes (pages, forum topics, etc). You can not disable notifications for individual threads.')
-        );
-        return $form;
-      }
-      break;
+ * Implementation of hook_form_FORM_ID_alter().
+ */
+function acquiadev_form_user_profile_form_alter(&$form, &$form_state) {
+  // Function comment_notify_user() adds this form field only if a user has 
+  // "administer nodes" or global "create NODETYPE content" permissions.
+  // Because RH uses Organic Groups to grant roles to users, this form field is
+  // never made available to those users in their profile, so we replicate it here.
+  if (module_exists("og_user_roles") && $form["#uid"]) {
+    if (!$form['comment_notify_settings']) {
+      $form['comment_notify_settings'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Comment follow-up notification settings'),
+        '#weight' => 4,
+        '#collapsible' => TRUE
+      );
+    }
+    if (db_result(db_query("SELECT rid FROM {og_users_roles} WHERE uid = %d", $form["#uid"]))) {
+      $form['comment_notify_settings']['node_notify_mailalert'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Receive node follow-up notification e-mails'),
+        '#default_value' => isset($form["_account"]["#value"]->node_notify_mailalert) ? $form["_account"]["#value"]->node_notify_mailalert : variable_get('node_notify_default_mailalert', FALSE),
+        '#description' => t('Check this box to receive an e-mail notification for follow-ups on your nodes (pages, forum topics, etc). You can not disable notifications for individual threads.')
+      );
+    }
   }
 }
+
+
