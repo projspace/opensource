@@ -20,4 +20,4 @@
   * the view is modified.
   */
 ?>
-<?php print $links_all; ?>
+<?php print $comment_link; ?>

@@ -106,7 +106,9 @@ function sitetheme_preprocess_page(&$vars, $hook) {
     $vars['classes_array'][] = 'with-channel-header';
   }
   $vars['site_feed'] = l('Feed', 'feed', array('attributes' => array('class' => 'site-feed')));
-  if (module_exists('og') && $group = og_get_group_context()) {
+  // Only show the page feed on the organic group homepage.
+  $group = og_get_group_context();
+  if (arg(0) == 'node' && module_exists('og') && $group->nid && $group->nid == arg(1)) {
     $vars['page_feed'] = l('Feed', $group->path .'/feed', array('attributes' => array('class' => 'page-feed')));
     $vars['reading_feed'] =  l('Feed', $group->path .'/feed', array('attributes' => array('class' => 'reading-feed')));
   }
@@ -312,8 +314,15 @@ function sitetheme_preprocess_views_view__channel_reading__block(&$vars) {
 }
 
 function sitetheme_preprocess_views_view_field__channel_reading__comment_count(&$vars) {
-  $comment_count = $vars['row']->node_comment_statistics_comment_count;
+  $path = drupal_get_path('theme', 'sitetheme') . '/images/comment.jpg';
   $nid = $vars['row']->nid;
+  $image = theme('image', $path, t('Read comments'), t('Read comments'), array('class' => 'comment-image'));
+  $vars['comment_link'] = l($image, 'node/' . $nid, array('html' => TRUE));
+}
+
+function sitetheme_preprocess_views_view_field__page__comment_count(&$vars) {
+  $nid = $vars['row']->nid;
+  $comment_count = $vars['row']->node_comment_statistics_comment_count;
   if ($comment_count > 0) {
     $vars['links_all'] .= '<span class="reading-comment-count">'. l(format_plural($comment_count, '1 Comment', '@count Comments', array('@count' => $comment_count)), 'node/'. $nid, array('fragment' => 'comments')) .'</span>';
   }

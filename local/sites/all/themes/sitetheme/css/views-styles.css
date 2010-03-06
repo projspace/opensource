@@ -119,6 +119,26 @@
   padding-right:10px;
 }
 
+div.view-display-id-block_1 div.views-field-comment-count
+{
+  background: none;
+  padding-left: 0;
+  border-right: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+div.view-display-id-block_1 li.views-row {
+  width: 290px;
+}
+
+img.comment-image {
+  position: relative;
+  float: right;
+  right:-19px;
+  top:2px;
+}
+
 .view-homepage .views-field-view-node
 {
   float: right;
