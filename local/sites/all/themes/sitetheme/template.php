@@ -331,6 +331,10 @@ function sitetheme_preprocess_views_view_field__page__comment_count(&$vars) {
   }
 }
 
+
+function sitetheme_preprocess_views_view_field__channel_reading__page__name(&$vars) {
+  $vars['output'] .= '<span class="reading-author-feed"><a href="/user/'. $vars['row']->users_uid .'/feed" class="article-author-feed"></a></span>';
+}
 /**
  * Format the "Submitted by username on date/time" for each node
  *

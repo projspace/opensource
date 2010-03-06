@@ -128,8 +128,33 @@ div.view-display-id-block_1 div.views-field-comment-count
   padding-right: 0;
 }
 
-div.view-display-id-block_1 li.views-row {
+div.view-display-id-page_1 div.views-field-comment-count
+{
+  border-right:1px solid #767677;
+}
+
+div.view-display-id-page_1 div.views-field-created
+{
+  margin-right: 0.5em;
+}
+
+div.view-display-id-block_1 li.views-row
+{
   width: 290px;
+}
+
+
+span.reading-author-feed {
+  position: relative;
+  right: -15px;
+}
+
+span.reading-author-feed a.article-author-feed {
+  float: right;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  bottom: 0px;
 }
 
 img.comment-image {
