@@ -157,6 +157,22 @@ span.reading-author-feed a.article-author-feed {
   bottom: 0px;
 }
 
+/* Remove padding on reading page */
+#content-area div.view-id-channel_reading div.item-list ul
+{
+  padding: 1px;
+}
+
+#content-area div.view-id-channel_reading div.item-list ul div.content-inner-border
+{
+  width: 494px;
+}
+
+
+#content-area div.view-id-channel_reading div.item-list ul div.content-inner-side-shadow {
+  margin: 0;
+}
+
 img.comment-image {
   position: relative;
   float: right;

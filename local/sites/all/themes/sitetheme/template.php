@@ -305,12 +305,35 @@ function sitetheme_preprocess_views_view_field__featured_comment__value(&$vars) 
 function sitetheme_preprocess_views_view__channel_reading__block(&$vars) {
   // Being on a path like node/42 means that 42 is the group
   $nid = arg(1);
-  if (arg(0) == 'node' && is_numeric($nid)) {
-    if ($vars['view']->total_rows > 10) {
-      $vars['more'] = '<div class="channel-about-link"><a href="reading/'. $nid . '" title="More of what we\'re reading">&raquo Read more</a></div>';
-    }
-    $vars['reading_feed'] = '<a class="reading-feed" href="/reading/' . $nid . '/feed">Feed</a>';
+  $node = node_load($nid);
+  if ($node->type != 'channel' && !empty($node->og_groups) && is_array($node->og_groups)) {
+    $nid = array_pop($node->og_groups);
   }
+  if (arg(0) == 'node' && is_numeric($nid)) {
+    $attributes = array(
+        'attributes' => array(
+          'title' => "More of what we're reading",
+        ),
+        'absolute' => TRUE,
+    );
+    if ($vars['view']->total_rows > 10) {
+      $vars['more'] = '<div class="channel-about-link">&raquo; ' .
+        l('Read more', 'reading/' . $nid, $attributes) . '</div>';
+    }
+    else {
+      unset($vars['more']);
+    }
+    $attributes['attributes']['class'] = 'reading-feed';
+    $vars['reading_feed'] = l(t('Feed'), 'reading/' . $nid . '/feed', $attributes);
+  }
+}
+
+function sitetheme_preprocess_views_view_field__channel_reading__page__title(&$vars) {
+  //dsm($vars['row']);
+}
+
+function sitetheme_preprocess_views_view_fields__channel_reading__page_1(&$vars) {
+  $vars['fields']['title']->content = '<h2 class="title>">' . $vars['fields']['title']->content . '</h2>';
 }
 
 function sitetheme_preprocess_views_view_field__channel_reading__comment_count(&$vars) {
