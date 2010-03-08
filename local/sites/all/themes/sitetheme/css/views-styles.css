@@ -173,6 +173,19 @@ span.reading-author-feed a.article-author-feed {
   margin: 0;
 }
 
+#content-area div.view-id-channel_reading div.item-list ul div.content-inner-side-shadow a {
+  color: #3399ff;
+  text-decoration: none;
+}
+
+#content-area div.view-id-channel_reading div.item-list ul div.content-inner-side-shadow a:hover {
+  text-decoration: underline;
+}
+
+#content-area div.view-id-channel_reading div.item-list ul div.content-inner-side-shadow div.views-field-title a {
+  color: inherit;
+}
+
 img.comment-image {
   position: relative;
   float: right;
