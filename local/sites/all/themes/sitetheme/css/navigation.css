@@ -103,58 +103,58 @@ li a.active {
 }
 
 /* Education */
-#main-menu li.menu-4196 a {
+#main-menu li.menu-10739 a {
   background: url(../images/osdc_nav_sprite960x126.png) -282px 0px no-repeat;
 }
 
-#main-menu li.menu-4196 a:hover {
+#main-menu li.menu-10739 a:hover {
   background-position: -282px -42px;
 }
 
-#main-menu li.menu-4196 a.active,
-#main-menu li.menu-4196 a.active-trail {
+#main-menu li.menu-10739 a.active,
+#main-menu li.menu-10739 a.active-trail {
   background-position: -282px -84px;
 }
 
 /* Government */
-#main-menu li.menu-4591 a {
+#main-menu li.menu-10740 a {
   background: url(../images/osdc_nav_sprite960x126.png) -452px 0px no-repeat;
 }
 
-#main-menu li.menu-4591 a:hover {
+#main-menu li.menu-10740 a:hover {
   background-position: -452px -42px;
 }
 
-#main-menu li.menu-4591 a.active,
-#main-menu li.menu-4591 a.active-trail {
+#main-menu li.menu-10740 a.active,
+#main-menu li.menu-10740 a.active-trail {
   background-position: -452px -84px;
 }
 
 /* Law */
-#main-menu li.menu-4206 a {
+#main-menu li.menu-10741 a {
   background: url(../images/osdc_nav_sprite960x126.png) -622px 0px no-repeat;
 }
 
-#main-menu li.menu-4206 a:hover {
+#main-menu li.menu-10741 a:hover {
   background-position: -622px -42px;
 }
 
-#main-menu li.menu-4206 a.active,
-#main-menu li.menu-4206 a.active-trail {
+#main-menu li.menu-10741 a.active,
+#main-menu li.menu-10741 a.active-trail {
   background-position: -622px -84px;
 }
 
 /* Life */
-#main-menu li.menu-4221 a {
+#main-menu li.menu-10742 a {
   background: url(../images/osdc_nav_sprite960x126.png) -792px 0px no-repeat;
 }
 
-#main-menu li.menu-4221 a:hover {
+#main-menu li.menu-10742 a:hover {
   background-position: -792px -42px;
 }
 
-#main-menu li.menu-4221 a.active,
-#main-menu li.menu-4221 a.active-trail {
+#main-menu li.menu-10742 a.active,
+#main-menu li.menu-10742 a.active-trail {
   background-position: -792px -84px;
 }
 
