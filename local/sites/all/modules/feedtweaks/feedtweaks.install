@@ -1,8 +1,6 @@
 <?php
 
 function feedtweaks_install() {
-  db_query('UPDATE {blocks} SET pages="reading/*" WHERE module="views" AND delta="channel_reading-block_1"');
-
   if ($channel_reading = views_get_view('channel_reading')) {
     $channel_reading->delete();
     views_object_cache_clear('view', $channel_reading->name);
@@ -17,5 +15,28 @@ function feedtweaks_install() {
 function feedtweaks_update_1() {
   // Enable commenting on reading nodes.
   $ret[] = update_sql("UPDATE {node} SET comment = " . COMMENT_NODE_READ_WRITE . " WHERE type = 'reading'");
+  return $ret;
+}
+
+function feedtweaks_update_2() {
+  db_query('UPDATE {blocks} SET pages="node/*/reading" WHERE module="views" AND delta="channel_reading-block_1"');
+  
+  if ($channel_reading = views_get_view('channel_reading')) {
+    $channel_reading->delete();
+    views_object_cache_clear('view', $channel_reading->name);
+  }
+  $channels = array(
+    '16' => 'business',
+    '36' => 'education',
+    '171' => 'government',
+    '46' => 'law',
+    '51' => 'life',
+  );
+  foreach ($channels as $nid => $channel) {
+    $ret[] = update_sql(sprintf("INSERT INTO {url_alias} (src, dst) VALUES ('%s', '%s')", "reading/$nid", "{$channel}/reading"));
+    $ret[] = update_sql(sprintf("INSERT INTO {url_alias} (src, dst) VALUES ('%s', '%s')", "node/{$nid}/reading", "{$channel}/reading"));
+    $ret[] = update_sql(sprintf("INSERT INTO {url_alias} (src, dst) VALUES ('%s', '%s')", "reading/{$nid}/feed", "{$channel}/reading/feed"));
+    $ret[] = update_sql(sprintf("INSERT INTO {url_alias} (src, dst) VALUES ('%s', '%s')", "node/{$nid}/reading/feed", "{$channel}/reading/feed"));
+  }
   return $ret;
 }

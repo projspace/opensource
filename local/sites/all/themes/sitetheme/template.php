@@ -318,18 +318,17 @@ function sitetheme_preprocess_views_view__channel_reading__block(&$vars) {
     );
     if ($vars['view']->total_rows > 10) {
       $vars['more'] = '<div class="channel-about-link">&raquo; ' .
-        l('Read more', 'reading/' . $nid, $attributes) . '</div>';
+        l('Read more', 'node/' . $nid . '/reading', $attributes) . '</div>';
     }
     else {
       unset($vars['more']);
     }
     $attributes['attributes']['class'] = 'reading-feed';
-    $vars['reading_feed'] = l(t('Feed'), 'reading/' . $nid . '/feed', $attributes);
+    $vars['reading_feed'] = l(t('Feed'), 'node/' . $nid . '/reading/feed', $attributes);
   }
 }
 
 function sitetheme_preprocess_views_view_field__channel_reading__page__title(&$vars) {
-  //dsm($vars['row']);
 }
 
 function sitetheme_preprocess_views_view_fields__channel_reading__page_1(&$vars) {
@@ -352,6 +351,13 @@ function sitetheme_preprocess_views_view_field__page__comment_count(&$vars) {
   else {
     $vars['links_all'] .= '<span class="reading-comment-count">'. l('0 Comments', 'node/'. $nid, array('fragment' => 'comments')) .'</span>';
   }
+}
+
+function sitetheme_preprocess_views_view__channel_reading__page_1(&$vars) {
+  // This code makes the right primary link have the active class.
+  $item = menu_get_item();
+  $item['href'] = 'node/' . arg(1);
+  menu_set_item(NULL, $item);
 }
 
 

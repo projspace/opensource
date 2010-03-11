@@ -18,11 +18,15 @@ function _feedtweaks_views_default_views() {
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('sorts', array(
-    'status' => array(
+    'created' => array(
       'order' => 'DESC',
-      'id' => 'status',
+      'granularity' => 'hour',
+      'id' => 'created',
       'table' => 'node',
-      'field' => 'status',
+      'field' => 'created',
+      'override' => array(
+        'button' => 'Override',
+      ),
       'relationship' => 'none',
     ),
   ));
@@ -562,14 +566,14 @@ function _feedtweaks_views_default_views() {
   ));
   $handler->override_option('arguments', array(
     'group_nid' => array(
-      'default_action' => 'not found',
+      'default_action' => 'default',
       'style_plugin' => 'default_summary',
       'style_options' => array(),
       'wildcard' => 'all',
       'wildcard_substitution' => 'All',
       'title' => '',
       'breadcrumb' => '',
-      'default_argument_type' => 'fixed',
+      'default_argument_type' => 'node',
       'default_argument' => '',
       'validate_type' => 'og_group_types',
       'validate_fail' => 'not found',
@@ -598,12 +602,13 @@ function _feedtweaks_views_default_views() {
       'default_argument_fixed' => '',
       'default_argument_php' => '',
       'validate_argument_node_type' => array(
+        'webform' => 0,
         'poll' => 0,
+        'reading' => 0,
         'channel' => 0,
         'group_page' => 0,
         'page' => 0,
         'post' => 0,
-        'reading' => 0,
       ),
       'validate_argument_node_access' => 0,
       'validate_argument_nid_type' => 'nid',
@@ -683,7 +688,7 @@ function _feedtweaks_views_default_views() {
     'separator' => '',
     'hide_empty' => 0,
   ));
-  $handler->override_option('path', 'reading');
+  $handler->override_option('path', 'node/%/reading');
   $handler->override_option('menu', array(
     'type' => 'none',
     'title' => '',
@@ -700,14 +705,14 @@ function _feedtweaks_views_default_views() {
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
   $handler->override_option('arguments', array(
     'group_nid' => array(
-      'default_action' => 'not found',
+      'default_action' => 'default',
       'style_plugin' => 'default_summary',
       'style_options' => array(),
       'wildcard' => 'all',
       'wildcard_substitution' => 'All',
       'title' => 'What we\'re reading in %1',
       'breadcrumb' => '',
-      'default_argument_type' => 'fixed',
+      'default_argument_type' => 'node',
       'default_argument' => '',
       'validate_type' => 'og_group_types',
       'validate_fail' => 'not found',
@@ -736,12 +741,13 @@ function _feedtweaks_views_default_views() {
       'default_argument_fixed' => '',
       'default_argument_php' => '',
       'validate_argument_node_type' => array(
+        'webform' => 0,
         'poll' => 0,
+        'reading' => 0,
         'channel' => 0,
         'group_page' => 0,
         'page' => 0,
         'post' => 0,
-        'reading' => 0,
       ),
       'validate_argument_node_access' => 0,
       'validate_argument_nid_type' => 'nid',
@@ -771,7 +777,7 @@ function _feedtweaks_views_default_views() {
     'relationship' => 'none',
     'item_length' => 'default',
   ));
-  $handler->override_option('path', 'reading/%/feed');
+  $handler->override_option('path', 'node/%/reading/feed');
   $handler->override_option('menu', array(
     'type' => 'none',
     'title' => '',
