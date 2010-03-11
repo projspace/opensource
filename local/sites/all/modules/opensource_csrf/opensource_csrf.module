@@ -1,0 +1,17 @@
+<?php
+
+/**
+* Implementation of hook_form_FORM_ID_alter().
+*/
+function opensource_csrf_form_user_login_alter(&$form) {
+  if (!$form['#programmed']) {
+    $form['#token'] = $form['form_id']['#value'];
+    $form['form_token'] = array(
+      '#id' => form_clean_id('edit-'. $form_id .'-form-token'),
+      '#type' => 'token',
+      '#default_value' => drupal_get_token($form['#token']),
+    );
+    // Add some dummy session data to force pressflow to save it.
+    $_SESSION['user/login'] = TRUE;
+  }
+}

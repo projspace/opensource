@@ -1,0 +1,3 @@
+name = Opensource.com CSRF
+description = Protect login form from Cross Site Request Forgery
+core = 6.x
