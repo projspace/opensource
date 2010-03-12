@@ -226,3 +226,8 @@ ini_set('url_rewriter.tags',        '');
 #   'forum'      => 'Discussion board',
 #   '@count min' => '@count minutes',
 # );
+
+// CSRF Protection: See https://acquia.com/network/node/1124803
+if (strpos($_GET['q'], 'user/login') === 0) {
+  $conf['cache'] = CACHE_DISABLED;
+}
