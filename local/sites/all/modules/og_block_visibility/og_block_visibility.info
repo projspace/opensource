@@ -1,0 +1,15 @@
+; $Id: og_block_visibility.info,v 1.1.4.2 2008/09/01 13:51:13 paulbooker Exp $
+
+name = OG Block Visibility
+description = Allows restricting of block visibility to a particular organic group.
+
+package = Organic groups
+dependencies[] = og
+core = 6.x
+
+; Information added by drupal.org packaging script on 2009-01-22
+version = "6.x-1.2"
+core = "6.x"
+project = "og_block_visibility"
+datestamp = "1232634028"
+

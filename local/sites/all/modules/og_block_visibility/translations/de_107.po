@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OG Block Visibility\n"
+"POT-Creation-Date: 2008-08-02 17:00+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Frank Tartler <frank.tartler@googlemail.com>\n"
+"Language-Team: Frank Tartler <rastatt@drupal.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: og_block_visibility.module:15
+#: og_block_visibility.info:0
+msgid "Allows restricting of block visibility to a particular organic group."
+msgstr "Ermöglicht das Begrenzen der Sichtbarkeit eines Blocks auf eine bestimmte organische Gruppe."
+
+#: og_block_visibility.module:34
+msgid "Group visibility settings"
+msgstr "Einstellungen der Gruppen-Sichtbarkeit"
+
+#: og_block_visibility.module:43
+msgid "No group types have been defined. Please define at least one group node type under <a href=\"%settings\">administer >> settings >> og</a>"
+msgstr "Es wurden keine Gruppentypen definiert. Es muss mindestens ein Gruppen-Inhaltstyp unter <a href=\"%settings\">Verwalten >> Einstellungen>> Gruppen</a> definiert werden."
+
+#: og_block_visibility.module:52
+msgid "No groups have been defined, or you do not have access to any groups."
+msgstr "Es wurden keine Gruppen definiert oder Sie haben keinen Zugriff auf eine Gruppe."
+
+#: og_block_visibility.module:61
+msgid "Show this block only within the following groups:"
+msgstr "Diesen Block nur für folgende Gruppen zeigen:"
+
+#: og_block_visibility.module:71;82
+msgid "Groups:"
+msgstr "Gruppen:"
+
+#: og_block_visibility.module:76
+msgid "To select a single group, simply click on it. To select multiple groups, or to deselect a group, please hold the <code>ctrl</code> or <code>command</code> key and click on its name."
+msgstr "Um eine einzelne Gruppe auszuwählen muss sie einfach angeklickt werden. Um mehrere Gruppen auszuwählen oder eine Gruppe abzuwählen muss deren Name mit gedrückter <code>Strg</code>- oder <code>Kommando</code>-Taste angeklickt werden."
+
+#: og_block_visibility.module:310
+msgid "The module %module was deactivated--it requires the following disabled/non-existant modules to function properly: %dependencies"
+msgstr "Das Modul %module wurde deaktiviert - Es erfordert die folgenden deaktivierten/nicht-existenten Module, um korrekt zu funktionieren: %dependencies"
+
+#: og_block_visibility.module:0
+msgid "og_block_visibility"
+msgstr "og_blck_visibi"
+
+#: og_block_visibility.info:0
+msgid "OG Block Visibility"
+msgstr "OG Block Visibility"
+
+#: og_block_visibility.info:0
+msgid "Organic groups"
+msgstr "Organische Gruppen"
+

@@ -1,0 +1,26 @@
+<?php
+// $Id: og_block_visibility.install,v 1.4.2.1 2008/06/27 08:54:45 paulbooker Exp $
+
+/**
+ * Implementation of hook_install().
+ */
+function og_block_visibility_install() {
+  // Create tables.
+  drupal_install_schema('og_block_visibility');
+}
+
+/**
+* Implementation of hook_schema().
+*/
+function og_block_visibility_schema() {
+  $schema['og_block_visibility'] = array(
+    'fields' => array(
+      'block_module' => array('type' => 'varchar', 'length' => '64','default' => '', 'not null' => TRUE),
+      'block_delta' => array('type' => 'varchar', 'length' => '32','default' => 0, 'not null' => TRUE),
+      'og_nid' => array('type' => 'int', 'length' => '10','unsigned' => TRUE, 'not null' => TRUE )  
+    ),   
+    'primary key' => array('block_module','block_delta','og_nid')
+  );
+    
+  return $schema;
+} 
