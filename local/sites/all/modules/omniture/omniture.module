@@ -1,5 +1,5 @@
 <?php
-// $Id: omniture.module,v 1.6.4.3 2009/09/23 23:18:18 greggles Exp $
+// $Id: omniture.module,v 1.6.4.5 2010/02/11 11:07:24 cytefx Exp $
 /*
  * @file
  * Drupal Module: Omniture SiteCatalyst Stats
@@ -50,9 +50,11 @@ function omniture_footer($main = 0) {
 
   // Check if we should track the currently active user's role
   $track = 0;
-  foreach ($user->roles as $role) {
-    $role = str_replace(' ', '_', $role);
-    $track += variable_get("omniture_track_{$role}", FALSE);
+  if (is_array($user->roles)) {
+    foreach ($user->roles as $role) {
+      $role = str_replace(' ', '_', $role);
+      $track += variable_get("omniture_track_{$role}", FALSE);
+    }
   }
 
   // Don't track page views in the admin sections, or for certain roles
@@ -95,7 +97,7 @@ function omniture_footer($main = 0) {
 
     if (isset($omniture_vocab_vars)) {
       foreach ($omniture_vocab_vars as $variable => $value) {
-        $extra_variables_formatted .= "\n". $variable .'='. $value .';';
+        $extra_variables_formatted .= "\n". $variable .'="'. $value .'";';
       }
     }
 
@@ -112,7 +114,7 @@ function omniture_footer($main = 0) {
     $footer .= '<script language="JavaScript" type="text/javascript"><!--'."\n";
     $footer .= "if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')"."\n";
     $footer .= '//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img src="';
-    $footer .= check_plain(variable_get("omniture_image_file_location", 'http://examplecom.112.2O7.net/b/ss/examplecom/1/H.13--NS/0')) .'"'."\n";
+    $footer .= check_plain(variable_get("omniture_image_file_location", 'http://examplecom.112.2O7.net/b/ss/examplecom/1/H.13--NS/0')).'/'.rand(0, 10000000).'"'."\n";
     $footer .= 'height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->'."\n";
     $footer .= '<!-- End SiteCatalyst code version: ';
     $footer .=  check_plain(variable_get("omniture_version", 'H.13.'));
@@ -134,7 +136,7 @@ function omniture_footer($main = 0) {
           if (isset($extra_variables[$k])) {
             $v = $extra_variables[$k];
           }
-          $extra_variables_formatted .= "$k=$v;\n";
+          $extra_variables_formatted .= "$k=\"$v\";\n";
         }
       }
       if (isset($omniture_hooked_vars['footer'])) {
