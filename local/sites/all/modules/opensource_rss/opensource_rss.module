@@ -1,0 +1,21 @@
+<?php
+
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function opensource_rss_nodeapi(&$node, $op, $teaser = NULL, $page = NULL) {
+  // OG adds group links to the description field on RSS feeds. Removing the hardcoded
+  // groups links from rss feeds and replacing with a "Read more..." link.
+  if ($op == "rss item") {
+    if (isset($node->og_groups)) {
+      unset($node->og_groups);
+      $append = array("read-more" => array(
+        "title" => "Read more...",
+        "href" => "node/" . $node->nid,
+      ));
+      $node->body .= '<div class="read-more">'. theme('links', $append). '</div>';
+      $node->teaser .= '<div class="read-more">'. theme('links', $append). '</div>';
+    }
+  }
+}
