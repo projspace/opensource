@@ -151,6 +151,7 @@ function opensource_omniture_omniture_variables($main) {
 function opensource_omniture_clean($var) {
   $var = str_replace(' ', '-', $var);
   $var = str_replace('|', '', $var);
+  $var = str_replace('"', '', $var);
   return $var;
 }
 
