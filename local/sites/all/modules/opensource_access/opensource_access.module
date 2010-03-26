@@ -98,4 +98,12 @@ function opensource_access_form_user_profile_form_alter(&$form, &$form_state) {
   }
 }
 
+/**
+ * Implementation of hook_form_FORM_ID_alter().
+ */
+function opensource_access_form_user_login_form_alter(&$form, &$form_state) {
+  $form['legal_checkbox']['#required'] = FALSE;
+}
+
+
 
