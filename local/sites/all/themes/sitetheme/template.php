@@ -682,3 +682,26 @@ function sitetheme_username($object) {
 
   return $output;
 }
+
+/**
+ * Theme function for Channel Reading RSS feeds.
+ */
+function sitetheme_preprocess_views_view_row_rss__channel_reading(&$vars) {
+  // load node
+  $result = $vars['view']->result;
+  $id = $vars['id'];
+  $node = node_load($result[$id-1]->nid);
+
+  // override description
+  $description = "<div>" . $node->title . ": " . $node->field_url[0]["url"] . " - " 
+    . $node->field_url[0]["title"] . "</div>";
+
+
+  $description = '<div>' . $node->title . " - " . $node->field_url[0]["title"] . '</div>';
+
+
+  // update rss item
+  $vars["title"] = check_plain($node->field_url[0]["title"]);
+  $vars["link"] = check_plain($node->field_url[0]["url"]);
+  $vars["description"] = check_plain($description);
+}
