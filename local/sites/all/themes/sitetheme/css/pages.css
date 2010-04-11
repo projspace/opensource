@@ -450,8 +450,3 @@ html.js input.form-autocomplete {
 ol.lower-roman {
   list-style-type: lower-roman;
 }
-
-/* Poll CSS */
-.poll-login {
-  padding: 10px 0;
-}
