@@ -450,3 +450,23 @@ html.js input.form-autocomplete {
 ol.lower-roman {
   list-style-type: lower-roman;
 }
+
+.pollfield-form {
+  clear: both;
+}
+.pollfield-row {
+  display: block;
+}
+.barcell {
+  display: block;
+}
+.barcell {
+  display: block;
+}
+.pollfield-percent {
+  text-align: right;
+}
+.barcell .bar .pollfield-foreground {
+  background-image: none;
+  background-color: #1d2754;
+}
