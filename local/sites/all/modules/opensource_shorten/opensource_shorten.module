@@ -5,7 +5,7 @@
 function opensource_shorten_shorten_service() {
   $services = array();
   $services['custom'] = array(
-    'custom' => '_custom_tracking',
+    'custom' => '_opensource_shorten_tracking',
   );
   return $services;
 }
