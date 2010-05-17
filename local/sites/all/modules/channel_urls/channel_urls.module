@@ -54,7 +54,7 @@ function channel_urls_moderation_articles($node) {
   $view_name = 'channel_awaiting_moderation';
   $display = 'default';
   global $user;
-  if(!isset($user->roles[11])) {
+  if(!isset($user->roles[11]) && !isset($user->roles[26])) {
     $view_name = 'channel_awaiting_moderation_user';
   } 
   $arg = $node->nid;
