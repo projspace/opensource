@@ -1,0 +1,24 @@
+<?php
+/**
+ * Implementation of hook_shorten_service().
+ */
+function opensource_shorten_shorten_service() {
+  $services = array();
+  $services['custom'] = array(
+    'custom' => '_custom_tracking',
+  );
+  return $services;
+}
+
+/**
+ * Our custom Shorten service to add tracking code to URLs.
+ */
+function _opensource_shorten_tracking($original) {
+  $original = $original .'?sc_cid=70160000000IDmjAAG';
+  $url = 'http://api.bit.ly/shorten?version=2.0.1&format=xml&history=1&login='.
+    variable_get('shorten_bitly_login', '') .'&apiKey='.
+    variable_get('shorten_bitly_key', '') .'&longUrl='. $original;
+  $bitly = shorten_fetch($url, 'shortUrl');
+  return $bitly;
+}
+
