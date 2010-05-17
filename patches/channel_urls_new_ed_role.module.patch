@@ -1,0 +1,20 @@
+Index: channel_urls.module
+===================================================================
+--- channel_urls.module	(revision 1152)
++++ channel_urls.module	(working copy)
+@@ -54,7 +54,7 @@
+   $view_name = 'channel_awaiting_moderation';
+   $display = 'default';
+   global $user;
+-  if(!isset($user->roles[11])) {
++  if(!isset($user->roles[11]) && !isset($user->roles[26])) {
+     $view_name = 'channel_awaiting_moderation_user';
+   } 
+   $arg = $node->nid;
+@@ -75,4 +75,4 @@
+ function channel_urls_og_links_alter(&$links, $node) {
+   $links['articles_awaiting_moderation'] = l('Articles awaiting review', 'channel/'. $node->nid .'/moderation-articles');
+   $links['comments_awaiting_moderation'] = l('Comments awaiting moderation', 'channel/'. $node->nid .'/comment-moderation');
+-}
+\ No newline at end of file
++}
