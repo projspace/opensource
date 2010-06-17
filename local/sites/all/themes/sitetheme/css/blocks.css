@@ -479,3 +479,21 @@
   text-indent: -9999em;
   display: block;
 }
+
+#sidebar-second #block-menu-menu-oywf-may2010 h2.title {
+  background:url("../images/osdc_openyorworld_nameplate_.png") no-repeat scroll center bottom transparent;
+  display:block;
+  font-size:0;
+  height:17px;
+  padding-bottom:0px;
+  text-indent:-1000em;
+  width:288px;
+}
+
+#sidebar-second #block-menu-menu-oywf-may2010 .block-inner {
+  background:url("../images/osdc_oywf_background.png") no-repeat scroll left top transparent;
+}
+
+
+
+
