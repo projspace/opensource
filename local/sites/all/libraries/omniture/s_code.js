@@ -5,7 +5,7 @@ More info available at http://www.omniture.com */
      Dynamic Account Selection
 */
 /* Specify the Report Suite ID(s) to track here */
-var s_account="redhatglobal,redhatopensourcecom"
+var s_account="redhatopensourcecom,redhatglobal"
 var s=s_gi(s_account)
 /************************** CONFIG SECTION **************************/
 /* You may add or alter any code config here. */
