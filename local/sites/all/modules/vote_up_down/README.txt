@@ -1,123 +1,166 @@
-[[ THIS FILE NEEDS TO BE UPDATED OR REMOVED ]]
-**********************************************
+// $Id: README.txt,v 1.14.2.2.2.3 2010/06/29 04:26:32 marvil07 Exp $
 
-Vote Up/Down Package:
----------------------------
-Author - Fredrik Jonsson fredrik at combonet dot se
-Maintainer - Pratul Kalia (lut4rp)
-Requires - Drupal 5
-License - GPL (see LICENSE)
+= Vote Up/Down =
+
+== Overview ==
+
+This module will let you make votes on some entities inside drupal with
+different widgets, by using Voting API and its some submodules: vud_node,
+vud_comment and vud_term.
+
+AJAX functionality, provided by ctools, is used for voting if the browser
+supports it.
+
+=== Features ===
+
+* Vote on the entities: nodes, comments and terms.
+
+To submit bug reports and feature suggestions, or to track changes:
+  http://drupal.org/project/issues/vote_up_down
+
+== Requirements ==
+
+* Drupal modules:
+** voting_api: http://drupal.org/project/voting_api
+** ctools: http://drupal.org/project/ctools
+
+== Instalation ==
+
+* Install as usual, see http://drupal.org/node/70151 for further
+information.
+
+== Configuration ==
+
+* Configure permissions in Administer >> User management >> Permissions
+>> vud* module:
+*** vud module
+**** access vote up/down statistics
++
+Users in roles with the 'access vote up/down statistics' permission
+will be able to see the votes performed by each user on its 'Votes' tab.
++
+**** administer vote up/down
++
+Users in roles with the 'administer vote up/down' permission will be able
+to modify the Voting API tag for Vote Up/Down votes.
++
+**** reset vote up/down votes
++
+Users in roles with the 'reset vote up/down votes' permission will be able
+to undo their own votes if it's also permitted in the configuration for
+the respective module.
++
+**** use vote up/down
++
+Users in roles with the 'use vote up/down' permission will be able to
+actually cast a vote with vote up/down(for the callback).
++
+*** vud_comment
+**** administer vote up/down on comments 
++
+Users in roles with the 'administer vote up/down on comments' permission
+will be able to modify the settings regardin voting on comments.
++
+**** use vote up/down on comments
++
+Users in roles with the 'use vote up/down on comments' permission will be
+able to see the widget for casting votes on comments.
++
+*** vud_node
+**** administer vote up/down on nodes
++
+Users in roles with the 'administer vote up/down on nodes' permission
+will be able to modify the settings regarding voting on nodes.
++
+**** see vote up/down node stats
++
+Users in roles with the 'see vote up/down node stats' permission will be
+able to see the votes performed by each user on the 'Voting details' node
+tab.
++
+**** use vote up/down on nodes
++
+Users in roles with the 'use vote up/down on nodes' permission will be
+able to see the widget for casting votes on nodes.
++
+**** view vote up/down count on nodes
++
+Users in roles with the 'view vote up/down count on nodes' permission
+will be able to see the widget for casting votes on nodes.
++
+*** vud_term
+**** administer vote up/down on terms
++
+Users in roles with the 'administer vote up/down on terms' permission
+will be able to modify the settings regarding voting on terms.
++
+**** use vote up/down on terms
++
+Users in roles with the 'use vote up/down on terms' permission will be
+able to see the widget for casting votes on terms.
++
+* Customize the  settings in Administer >> Site configuration >>
+Vote Up/Down, so you can
+** match:
+*** vud_node: what node types should be votable
+*** vud_comment: what comments of node types should be votable
+*** vid_term: what terms of node types should be votable
+** which widget is going to be used
+** if you want to display the widget in on teasers/full nodes
+** if the user is going to be able to reset their own votes
+* Start voting!
+
+== Customization ==
+
+You can write your own widget for Vote Up/Down, and you can put it in
+your module or in your theme. Please take a look to
+link:WIDGETAPI.html[WIDGETAPI.txt] for more information.
+
+=== Theming widgets and votes ===
+
+Since widgets are implemented through plugins, and we have many plugins
+to choose at runtime, we can not use direct theme templates, so instead
+we render by hands the templates.
+
+NOTE: It is not possible to decide dinamically the path where the
+template is located. In contrast we can dinamically define function and
+template names.
+
+So, before rendering the template('widget.tpl.php' or 'votes.tpl.php') we
+verify in the following order the files:
+
+* For 'vud_comment'
++
+----
+<template_type>_comment_<plugin_name>__<node_type>
+<template_type>_comment_<plugin_name>
+<template_type>_comment
+----
+* For 'vud_node'
++
+----
+<template_type>_comment_<plugin_name>__<node_type>
+<template_type>_comment_<plugin_name>
+<template_type>_comment
+----
+* For 'vud_term'
++
+----
+<template_type>_comment_<plugin_name>__<term_vid>
+<template_type>_comment_<plugin_name>
+<template_type>_comment
+----
+
+Where '<template_type>' is 'widget' or 'votes'.
+
+This templates can be located on the root of your theme folder or inside
+your widget folder(not really recommended).
 
 
-Overview:
---------
-This project is an attempt to build a digg.com/reddit.com clone.
-There are voting widgets that mimic both, i.e. +1/-1 and +1 voting.
-It builds upon a number of other module, se below.
+== Credits ==
 
-AJAX functionality is used for voting if the browser supports it
-(using drupal.js included in Druapl 4.7). Bookmarklets are supported
-for quickly submitting new story links. A number of RSS feeds are
-available.
+Original Author - Fredrik Jonsson fredrik at combonet dot se
 
-This is not a point and click solution. This project provide the missing
-pieces but you need to put them all together. Please try it out and
-report back with bugs you find and suggestions you have.
+Orginal 2.x version - Pratul Kalia (lut4rp)
 
-
-Features and files:
-------------------
-List of the files and there function:
-* vote_up_down.module - Provides voting widgets for nodes and comments.
-* vote_storylink.module - Provides a node type suitable for links to storys.
-* node-storylink.tpl.php - PHPTemplate theming of story links
-* alternative/node-storylink.tpl.php - PHPTemplate theming of story links
-* template.php - PHPTemplate theming of story links
-* vote_up_down.css - Adds some css style to the above files.
-* ajax_vote_up_down.js - JavaScript for AJAX functionality
-
-The "vote_up_down.module" can be used on any node type to allow
-users to vote +1/-1 on them.
-
-The "vote_storylink.module" give a new node type that is well suited
-for a digg.com/reddit.com style site. It provides two blocks.
-* A user navigation block with links to, "submit new story", "my account", 
-  "my posts" and "log out".
-* A "Top story links" block with links to "this day", "this week", 
-  "this month", "this year" and "all time".
-
-Pages that are generated by "vote_up_down.module":
-* admin/vote_up_down
-* admin/vote_up_down/user_votes
-* node/[nid]/votes
-
-Pages that are generated by "vote_storylink.module":
-* storylink (same as storylink/new)
-* storylink/new
-* storylink/queue
-* storylink/top
-* storylink/top/day
-* storylink/top/week
-* storylink/top/month
-* storylink/top/year
-* storylink/[uid] (all posts for a user)
-
-Feed that are generated by "vote_storylink.module":
-* storylink/new/feed
-* storylink/queue/feed
-* storylink/top/feed
-* storylink/top/week/feed
-* storylink/top/month/feed
-* storylink/top/year/feed
-* storylink/[uid]/feed
-
-
-Installation and configuration:
-------------------------------
-See INSTALL.txt contributed by Ron Williams.
-
-
-Theme story links:
------------------
-If you use a PHPTemplate theme you can theme story links nodes with a
-"node-storylink.tpl.php" file.
-
-An example "node-storylink.tpl.php" and "template.php" is included.
-Place them in the folder of your theme. The examples are styled with the
-css file "vote_up_down.css" in the vote_up_down module folder.
-
-In "alternative" there are a "node-storylink.tpl.php" for use with the 
-"Alternative +1 vote style" (digg style) voting widget.
-
-The example include these functions:
-* Make the title an external link to the submitted story.
-* Inserts the voting widget directly for greater control.
-* Inserts the domain of the submitted story url like "(via example.com)".
-* Displays a small user picture above the voting widget.
-
-OBS! When using "node-storylink.tpl.php" you must turn off
-"Vote widget display..." in "admin/settings/vote_up_down" to avoid
-getting double voting widgets.
-
-
-Bookmarklet to submit story links:
----------------------------------
-javascript:location.href='http://www.example.com/node/add/storylink?edit[url]='+encodeURIComponent(location.href)+'&edit[title]='+encodeURIComponent(document.title)
-
-Replace "www.example.com" with your domain.
-
-
-Contributions:
--------------
-* INSTALL.txt contributed by Ron Williams.
-  This has cut down on the support requst considerbly and
-  has made the package much more accessible for users.
-
-* jQuery verision of ajax_vote_up_down.js by Nedjo Rogers.
-  The Drupal 5 version whould have taken a *lot* longer
-  if I have had to do this myself.
-
-
-Last updated:
-------------
-$Id: README.txt,v 1.14.2.2 2009/01/29 18:37:27 lut4rp Exp $
+Current Maintainer: Marco Villegas (marvil07)
