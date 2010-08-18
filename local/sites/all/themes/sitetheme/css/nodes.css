@@ -8,9 +8,11 @@
  */
 
 .node p,
+.node a,
 #comments p /* Node wrapper */ {
   line-height: 1.4em;
   color: #333;
+  font-family: "Arial", sans-serif;
 }
 
 /* Node links have different formatting from the rest of the page. */
