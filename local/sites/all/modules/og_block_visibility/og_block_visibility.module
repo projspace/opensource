@@ -1,0 +1,312 @@
+<?php
+// $Id: og_block_visibility.module,v 1.13.2.2 2009/01/22 14:15:23 paulbooker Exp $
+
+/**
+ * @file
+ * Allows restricting block visibility to a particular organic group.
+ */
+
+/**
+ * Implementation of hook_help().
+ */
+function og_block_visibility_help($path, $arg) {
+  switch ($path) {
+    case 'admin/modules#description':
+      return t('Allows restricting of block visibility to a particular organic group.');
+  }
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function og_block_visibility_form_alter(&$form, &$form_state, $form_id) { 
+
+  // Show group visibility sections on the block configure form
+  if ($form_id == 'block_admin_configure') {
+
+    $module = $form['module']['#value'];
+    $delta = $form['delta']['#value'];
+
+    $groups = og_block_visibility_get_assignments($module, $delta);
+    
+    $form['group_vis_settings'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Group visibility settings'),
+      '#collapsible' => TRUE,
+      '#collapsed' => $groups ? FALSE : TRUE,
+      '#weight' => 0,
+    );
+
+    $options = og_block_visibility_get_visible_groups();
+    if (!$options) {
+      $form['group_vis_settings']['groups'] = array(
+        '#value' => '<p>'. t('No group types have been defined. Please define at least one group node type under <a href="%settings">administer >> settings >> og</a>', array('%settings' => url('admin/settings/og'))) .'</p>',
+      );
+      return $form;
+    }
+    $count = count($options);
+    
+    if ($count == 0) {
+      // No groups are currently visible
+      $form['group_vis_settings']['groups'] = array(
+        '#value' => '<p>'. t('No groups have been defined, or you do not have access to any groups.') .'</p>',
+      );
+      return $form;
+    }
+
+    $form['#submit'][] = 'og_block_visibility_submit';
+
+    $form['group_vis_settings']['group_visibility'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Show this block only within the following groups:'),
+      '#default_value' => !empty($groups) ? 1 : 0,
+    );
+
+    // In general, multi-selects are bad, however this will get crazy if there
+    // are too many groups. If there are more than 10, use multi-select, else
+    // use checkboxes.
+    if ($count > 10) {
+      $form['group_vis_settings']['groups'] = array(
+        '#type' => 'select',
+        '#title' => t('Groups:'),
+        '#default_value' => $groups,
+        '#options' => $options,
+        '#multiple' => TRUE,
+        '#size' => 10,
+        '#description' => t('To select a single group, simply click on it. To select multiple groups, or to deselect a group, please hold the <code>ctrl</code> or <code>command</code> key and click on its name.'),
+      );
+    }
+    else {
+      $form['group_vis_settings']['groups'] = array(
+        '#type' => 'checkboxes',
+        '#title' => t('Groups:'),
+        '#default_value' => $groups,
+        '#options' => $options,
+      );
+    }
+
+    return $form;
+  }
+
+  // Dependency checker
+  if ($form_id == 'system_modules' && !$_POST) {
+    og_block_visibility_system_module_validate($form);
+  }
+
+}
+
+/**
+ * Implementation of hook_form_submit().
+ *
+ * @param $module
+ *   The name of the module that houses the block
+ * @param $delta
+ *   Which of the module's blocks
+ */
+function og_block_visibility_submit($form, &$form_state) {
+  
+  // Was group visibility disabled? If so, reset visibility.
+  // Make sure to check for existing groups so this doesn't overwrite non-related
+  // visibility settings.
+  $form_values = $form_state['values']; 
+  $module = $form_values['module'];
+  $delta = $form_values['delta'];
+  
+  if ($form_values['group_visibility'] == 0) {
+    $groups = og_block_visibility_get_assignments($module, $delta);
+    if (!empty($groups)) {
+      og_block_visibility_reset_visibility($module, $delta);
+    }
+  }
+
+  // Was group visibility enabled?
+  // Check for is_array because $form['groups'] might be a message stating that no groups exist.
+  if ($form_values['group_visibility'] == 1 && is_array($form_values['groups'])) {
+
+    // Remove all unchecked elements
+    foreach ($form_values['groups'] as $nid => $checked) {
+      if (!$checked) {
+        unset($form_values['groups'][$nid]);
+      }
+    }
+
+    // Are there group changes since last time? Check for this so that other 
+    // visibility settings can be used in conjunction w/ the group ones.
+    $diffs = array_merge(array_diff($form_values['groups'], og_block_visibility_get_assignments($module, $delta)), array_diff(og_block_visibility_get_assignments($module, $delta), $form_values['groups']));
+     if (!empty($diffs)) { 
+      // Block visibility has changed; set block visibility
+      og_block_visibility_set_visibility($module, $delta, $form_values['groups']);
+    }
+  } 
+
+}
+
+/**
+ * Retrieve array of groups user has access to.
+ *
+ * @return
+ *  Array of groups in the form of nid => 'title' or an empty array if none were found.
+ */
+function og_block_visibility_get_visible_groups() {
+  // Find list of groups
+  $types = og_get_types('group'); 
+  if (empty($types)) {
+    return FALSE;
+  } 
+  
+  if (user_access('administer nodes')) { 
+    // retrieve a list of all groups
+    $sql = 'SELECT n.nid, n.title FROM {node} n INNER JOIN {og} og ON n.nid = og.nid WHERE n.status = 1 AND n.type IN ('. str_pad('', count($types) * 5 - 1, "'%s',") .') ORDER BY n.title';
+    $result = db_query($sql, $types);
+    while ($node = db_fetch_object($result)) {
+	  $options[$node->nid] = $node->title;
+    }
+  }
+  else {
+    // retrieve only current user's groups
+    global $user;
+    $options = array();
+    $subs = og_get_subscriptions($user->uid);
+    foreach ($subs as $key => $val) {
+      $options[$key] = $val['title'];
+    }
+  }
+
+  return $options;
+}
+
+/**
+ * Determine whether a given block is assigned to any groups.
+ *
+ * @param $module
+ *   The module to which the block belongs.
+ * @param $delta
+ *   Specifies which of the module's blocks
+ * @return
+ *   Array of node IDs where block is assigned
+ */
+function og_block_visibility_get_assignments($module, $delta) {
+  $result = db_query("SELECT og_nid FROM {og_block_visibility} WHERE block_module = '%s' AND block_delta = '%s'", $module, $delta);
+  $groups = array();
+  while ($group = db_fetch_object($result)) {
+    $groups[$group->og_nid] = $group->og_nid;
+  }
+  return $groups;
+}
+
+/**
+ * Determines whether a given block should be visible.
+ *
+ * @param $module
+ *   The name of the module that houses the block
+ * @param $delta
+ *   Which of the module's blocks
+ * @return
+ *   TRUE if current block should be shown.
+ */
+function og_block_visibility_check($module, $delta) {
+  // Are we in a group?
+  if ($group = og_get_group_context()) {
+    // Does the current group have this block assigned to it?
+    $groups = og_block_visibility_get_assignments($module, $delta);    
+    if (in_array($group->nid, $groups)) {
+      // Is the block public?
+      if ($group->og_selective <= OG_MODERATED) {
+        return TRUE;
+      }
+      // Is current user a member of this group?
+      global $user;
+      if (in_array($group->nid, array_keys($user->og_groups))) {
+        return TRUE;
+      }
+    }
+  }
+}
+
+/**
+ * Set block visibility to be restricted to a given group
+ *
+ * @param $module
+ *   The module to which the block belongs
+ * @param $delta
+ *   Which of the module's blocks
+ * @param $nid
+ *   Group node ID
+ */
+function og_block_visibility_set_visibility($module, $delta, $groups) {
+
+  // Create PHP visibility string
+  $php = "
+if (module_exists('og_block_visibility')) {
+  return og_block_visibility_check('$module', '$delta');
+}
+";
+
+  // Delete all existing block visibility settings for this block.
+  db_query("DELETE FROM {og_block_visibility} WHERE block_module = '%s' AND block_delta = '%s'", $module, $delta);
+
+  // Insert records to keep track of block <-> nid relations
+  foreach($groups as $key => $nid) {
+    db_query("INSERT INTO {og_block_visibility} VALUES ('%s', '%s', %d)", $module, $delta, $nid);
+  }
+
+  // Get current block visibility
+  $result = db_result(db_query("SELECT pages FROM {blocks} WHERE module = '%s' AND delta = '%s'", $module, $delta));
+
+  // If group block visibility hasn't already been set, set it now.
+  if (!strstr($result, $php)) {
+    db_query("UPDATE {blocks} SET visibility = %d, pages = '%s' WHERE module = '%s' AND delta = '%s'", 2, '<?php'. $php .'?>', $module, $delta);
+  }
+}
+
+/**
+ * Resets a block visibility to default.
+ */
+function og_block_visibility_reset_visibility($module, $delta) {
+  db_query("DELETE FROM {og_block_visibility} WHERE block_module = '%s' AND block_delta = '%s'", $module, $delta);
+  db_query("UPDATE {blocks} SET visibility = %d, pages = '%s' WHERE module = '%s' AND delta = '%s'", 0, '', $module, $delta);
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function og_block_visibility_nodeapi(&$node, $op) {
+  // Is a group node being deleted?
+  if (og_is_group_type($node->type) && $op == 'delete') {
+    // Delete any records from og_block_visibility as well
+    $result = db_query("SELECT block_module, block_delta FROM {og_block_visibility} WHERE og_nid = %d", $node->nid);
+    $blocks = array();
+    while ($block = db_fetch_object($result)) {
+      $blocks[$block->block_module] = $block->block_delta;
+    }
+    db_query("DELETE FROM {og_block_visibility} WHERE og_nid = %d", $node->nid);
+    foreach ($blocks as $module => $delta) {
+      if (!db_result(db_query("SELECT COUNT(*) FROM {og_block_visibility} WHERE block_module = '%s' AND block_delta = '%s'", $module, $delta))) {
+        // No further groups assigned to this block; reset visibility.
+        og_block_visibility_reset_visibility($module, $delta);
+      }
+    }
+  }
+}
+
+/**
+ * Validates module dependencies.
+ */
+function og_block_visibility_system_module_validate(&$form) {
+  $module = 'og_block_visibility';
+  $dependencies = array('og');
+
+  foreach ($dependencies as $dependency) {
+    if (!in_array($dependency, $form['status']['#default_value'])) {
+      $missing_dependency = TRUE;
+      $missing_dependency_list[] = $dependency;
+    }
+  }
+
+  if (in_array($module, $form['status']['#default_value']) && isset($missing_dependency)) {
+    db_query("UPDATE {system} SET status = 0 WHERE type = 'module' AND name = '%s'", $module);
+    $key = array_search($module, $form['status']['#default_value']);
+    unset($form['status']['#default_value'][$key]);
+    drupal_set_message(t('The module %module was deactivated--it requires the following disabled/non-existant modules to function properly: %dependencies', array('%module' => $module, '%dependencies' => implode(', ', $missing_dependency_list))), 'error');
+  }
+}
