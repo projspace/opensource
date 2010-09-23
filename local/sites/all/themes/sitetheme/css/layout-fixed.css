@@ -192,19 +192,19 @@ body {
 
 #block-menu-menu-user-links {
   position: absolute;
-  right: 24px;
+  right: 34px;
   margin-bottom: 0;
 }
 
 .site-feed {
   position: absolute;
   height: 0;
-  width: 12px;
-  padding-top: 13px;
+  width: 24px;
+  padding-top: 24px;
   overflow: hidden;
   right: 0;
-  bottom: 8px;
-  background: url(../images/rss.jpg);
+  bottom: 4px;
+  background: url(../images/osdc_rss_24x24.png);
 }
 
 .page-feed {
