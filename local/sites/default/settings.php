@@ -226,3 +226,8 @@ ini_set('url_rewriter.tags',        '');
 #   'forum'      => 'Discussion board',
 #   '@count min' => '@count minutes',
 # );
+
+$conf['locale_custom_strings_en'] = array(
+  'You already voted or your are not allowed to vote' => 'You already voted or you are not allowed to vote',
+);
+
