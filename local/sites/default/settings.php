@@ -227,7 +227,12 @@ ini_set('url_rewriter.tags',        '');
 #   '@count min' => '@count minutes',
 # );
 
+// Poll Field error msg: https://acquia.com/network/node/1438847
 $conf['locale_custom_strings_en'] = array(
   'You already voted or your are not allowed to vote' => 'You already voted or you are not allowed to vote',
 );
 
+// CSRF Protection: See https://acquia.com/network/node/1124803
+if (isset($_GET['q']) && strpos($_GET['q'], 'user/login') === 0) {
+  $conf['cache'] = CACHE_DISABLED;
+}

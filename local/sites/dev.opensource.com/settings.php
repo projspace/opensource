@@ -227,6 +227,7 @@ ini_set('url_rewriter.tags',        '');
 #   '@count min' => '@count minutes',
 # );
 
+// Poll Field error msg: https://acquia.com/network/node/1438847
 $conf['locale_custom_strings_en'] = array(
   'You already voted or your are not allowed to vote' => 'You already voted or you are not allowed to vote',
 );
