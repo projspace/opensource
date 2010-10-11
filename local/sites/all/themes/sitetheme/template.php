@@ -691,14 +691,7 @@ function sitetheme_username($object) {
     // not registered members of the site (e.g. mailing list or news
     // aggregator modules). This clause enables modules to display
     // the true author of the content.
-    if (!empty($object->homepage)) {
-      $output = l($object->name, $object->homepage, array('attributes' => array('rel' => 'nofollow')));
-    }
-    else {
-      $output = check_plain($object->name);
-    }
-
-    //$output .= ' ('. t('not verified') .')';
+    $output = check_plain($object->name);
   }
   else {
     $output = check_plain(variable_get('anonymous', t('Anonymous')));
