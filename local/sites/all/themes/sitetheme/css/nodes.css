@@ -119,7 +119,7 @@
 .node .meta /* Wrapper for submitted and terms data */ {
   position:relative;
   z-index:1;
-  font-family:Helvetica,Arial,sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .node .node-inner form.fivestar-widget {
@@ -145,7 +145,7 @@
 .node .content /* Node's content wrapper */ {
   position: relative;
   padding-top: 1.5em;
-  font-family: Georgia, "Bitstream Vera Serif", "Times New Roman", serif;
+  font-family: Arial, sans-serif;
 }
 
 .article-visitor-links {
@@ -155,7 +155,7 @@
 .article-visitor-links,
 .fivestar-widget,
 .node .content .poll {
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .node-type-channel .node .content {
@@ -260,7 +260,7 @@ body.node-type-post .article-author-feed {
 .node-main-image-caption {
   color: #999;
   font-size: 10px;
-  font-family: Georgia, serif;
+  font-family: Arial, sans-serif;
   font-style: italic;
 }
 
@@ -320,6 +320,28 @@ body.node-type-post .article-author-feed {
 .node-add-this {
   margin-top: 3px;
   float: left;
+  position:relative;
+  height:66px;
+}
+.node-add-this iframe {
+  position:absolute;
+  bottom:0;
+  left:189px;
+}
+.node-add-this .fb-share-button {
+  position:absolute;
+  bottom:1px;
+  left:0;
+}
+.node-add-this iframe.twitter-share-button {
+  position:absolute;
+  bottom:0;
+  left:68px;
+}
+.node-add-this span.db-wrapper {
+  position:absolute;
+  bottom:0;
+  left:131px;
 }
 
 .node-license {

@@ -122,6 +122,11 @@ function sitetheme_preprocess_page(&$vars, $hook) {
     sitetheme_remove_tab('File browser', $vars);
     sitetheme_remove_tab('Your votes', $vars);
   }
+  
+  // share JS
+  $vars['closure'] .= '<script type="text/javascript" src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script>';
+  $vars['closure'] .= '<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>';
+  $vars['closure'] .= '<script type="text/javascript">(function() { var s = document.createElement("SCRIPT"), s1 = document.getElementsByTagName("SCRIPT")[0]; s.type = "text/javascript"; s.async = true; s.src = "http://widgets.digg.com/buttons.js"; s1.parentNode.insertBefore(s, s1); })();</script>';
 }
 
 /**
@@ -163,12 +168,31 @@ function sitetheme_preprocess_node(&$vars) {
       $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', $path, $vars['node']->field_image[0]['imceimage_alt']) . $caption .'</div>'. $vars['content'];
     }
   }
-
+  
+  /*
   $vars['add_this'] = '';
   if ($vars['page'] && user_access('view addthis')) {
     $vars['add_this'] = _addthis_create_button($vars['node'], !$vars['page']);
   }
-
+  */
+  
+  $vars['add_this'] = '';
+  if ($vars['page'] && !in_array($vars['node']->type, array("webform"))) {
+    $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000IDmjAAG", "absolute" => TRUE));
+    // shorten
+    if (module_exists("shorten")) {
+      $url = shorten_url($url);
+    }
+    // urlencode
+    $url = urlencode($url);
+    $title = urlencode($vars["node"]->title);
+    // add share links
+    $vars['add_this'] = '<a class="fb-share-button" name="fb_share" type="box_count" share_url="' . $url . '" href="http://www.facebook.com/sharer.php">Share</a>';
+    $vars['add_this'] .= '<a class="twitter-share-button" href="http://twitter.com/share" data-url="' . $url . '" data-text="' . $title . '" data-count="vertical">Tweet</a>';
+    $vars['add_this'] .= '<a class="digg-share-button DiggThisButton DiggMedium" href="http://digg.com/submit?url=' . $url . '&amp;title=' . $title . '" rev="news, technology"></a>';
+    $vars['add_this'] .= '<script type="text/javascript" src="http://www.stumbleupon.com/hostedbadge.php?s=5&r=' . $url . '"></script>';
+  }
+  
   // Add the proper license information.
   $vars['node_license'] = '';
   if ($vars['node']->type == 'post' && $vars['page']) {
