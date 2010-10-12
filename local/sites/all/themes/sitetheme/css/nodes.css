@@ -359,4 +359,10 @@ body.node-type-post .article-author-feed {
   overflow:visible;
   text-align:center;
   text-transform:uppercase;
+  margin-bottom: 5px;
+}
+
+.view-channel-awaiting-moderation .node-unpublished h2.title {
+  border-top: 1px solid #666;
+  padding-top: 2px;
 }
