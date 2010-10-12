@@ -68,10 +68,10 @@
   <?php print $user_picture; ?>
 
   <?php if (!$page): ?>
-    <h2 class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a><?php if ($unpublished):?><span class="unpublished">Unpublished</span><?php endif; ?></h2>
+    <h2 class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
   <?php endif; ?>
 
-  <?php if ($unpublished && $page): ?>
+  <?php if ($unpublished): ?>
     <div class="unpublished"><?php print t('Unpublished'); ?></div>
   <?php endif; ?>
 
