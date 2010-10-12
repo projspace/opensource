@@ -352,10 +352,10 @@ body.node-type-post .article-author-feed {
 /* Taming the Unpublished Heading */
 .node-unpublished div.unpublished, .comment-unpublished div.unpublished {
   color:#CC0000;
-  float:right;
   font-size:18px;
   font-weight:bold;
   line-height:26px;
+  height: 18px;
   overflow:visible;
   text-align:center;
   text-transform:uppercase;
