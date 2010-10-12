@@ -176,7 +176,7 @@ function sitetheme_preprocess_node(&$vars) {
     
     // add_this
     if ($vars['add_this']) {
-      $vars['content'] = '<div class="node-add-this">' . $vars['add_this'] . '</div>' . $vars['content'];
+      $vars['content'] = '<div class="node-add-this" style="float:none;">' . $vars['add_this'] . '</div>' . $vars['content'];
       $vars['add_this'] = NULL;
     }
     
