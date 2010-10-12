@@ -193,14 +193,10 @@ function sitetheme_preprocess_node(&$vars) {
     }
   }
   
-  /*
   $vars['add_this'] = '';
   if ($vars['page'] && user_access('view addthis')) {
     $vars['add_this'] = _addthis_create_button($vars['node'], !$vars['page']);
   }
-  */
-  
-  
   
   // Add the proper license information.
   $vars['node_license'] = '';
