@@ -138,6 +138,24 @@ function sitetheme_preprocess_page(&$vars, $hook) {
  *   The name of the template being rendered ("node" in this case.)
  */
 function sitetheme_preprocess_node(&$vars) {
+  
+  $vars['add_this'] = '';
+  if ($vars['page'] && !in_array($vars['node']->type, array("webform"))) {
+    $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000IDmjAAG", "absolute" => TRUE));
+    // shorten
+    if (module_exists("shorten")) {
+      $url = shorten_url($url);
+    }
+    // urlencode
+    $url = urlencode($url);
+    $title = urlencode($vars["node"]->title);
+    // add share links
+    $vars['add_this'] = '<a class="fb-share-button" name="fb_share" type="box_count" share_url="' . $url . '" href="http://www.facebook.com/sharer.php">Share</a>';
+    $vars['add_this'] .= '<a class="twitter-share-button" href="http://twitter.com/share" data-url="' . $url . '" data-text="' . $title . '" data-count="vertical">Tweet</a>';
+    $vars['add_this'] .= '<a class="digg-share-button DiggThisButton DiggMedium" href="http://digg.com/submit?url=' . $url . '&amp;title=' . $title . '" rev="news, technology"></a>';
+    $vars['add_this'] .= '<script type="text/javascript" src="http://www.stumbleupon.com/hostedbadge.php?s=5&r=' . $url . '"></script>';
+  }
+  
   if ($vars['node']->type == 'channel') {
     $vars['links'] = '';
   }
@@ -155,7 +173,13 @@ function sitetheme_preprocess_node(&$vars) {
   elseif ($vars['node']->type == 'post' && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
     $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
-
+    
+    // add_this
+    if ($vars['add_this']) {
+      $vars['content'] = '<div class="node-add-this">' . $vars['add_this'] . '</div>' . $vars['content'];
+      $vars['add_this'] = NULL;
+    }
+    
     // Grab the caption from the imce_caption module.
     $path = sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']);
     if (function_exists('imce_caption_load') && $caption = imce_caption_load(array('filepath' => file_directory_path() . '/' . $path))) {
@@ -176,22 +200,7 @@ function sitetheme_preprocess_node(&$vars) {
   }
   */
   
-  $vars['add_this'] = '';
-  if ($vars['page'] && !in_array($vars['node']->type, array("webform"))) {
-    $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000IDmjAAG", "absolute" => TRUE));
-    // shorten
-    if (module_exists("shorten")) {
-      $url = shorten_url($url);
-    }
-    // urlencode
-    $url = urlencode($url);
-    $title = urlencode($vars["node"]->title);
-    // add share links
-    $vars['add_this'] = '<a class="fb-share-button" name="fb_share" type="box_count" share_url="' . $url . '" href="http://www.facebook.com/sharer.php">Share</a>';
-    $vars['add_this'] .= '<a class="twitter-share-button" href="http://twitter.com/share" data-url="' . $url . '" data-text="' . $title . '" data-count="vertical">Tweet</a>';
-    $vars['add_this'] .= '<a class="digg-share-button DiggThisButton DiggMedium" href="http://digg.com/submit?url=' . $url . '&amp;title=' . $title . '" rev="news, technology"></a>';
-    $vars['add_this'] .= '<script type="text/javascript" src="http://www.stumbleupon.com/hostedbadge.php?s=5&r=' . $url . '"></script>';
-  }
+  
   
   // Add the proper license information.
   $vars['node_license'] = '';
