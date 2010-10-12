@@ -139,7 +139,7 @@ function sitetheme_preprocess_page(&$vars, $hook) {
  */
 function sitetheme_preprocess_node(&$vars) {
   
-  $vars['add_this'] = '';
+  $vars['social_bottons'] = '';
   if ($vars['page'] && !in_array($vars['node']->type, array("webform"))) {
     $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000IDmjAAG", "absolute" => TRUE));
     // shorten
@@ -150,10 +150,10 @@ function sitetheme_preprocess_node(&$vars) {
     $url = urlencode($url);
     $title = urlencode($vars["node"]->title);
     // add share links
-    $vars['add_this'] = '<a class="fb-share-button" name="fb_share" type="box_count" share_url="' . $url . '" href="http://www.facebook.com/sharer.php">Share</a>';
-    $vars['add_this'] .= '<a class="twitter-share-button" href="http://twitter.com/share" data-url="' . $url . '" data-text="' . $title . '" data-count="vertical">Tweet</a>';
-    $vars['add_this'] .= '<a class="digg-share-button DiggThisButton DiggMedium" href="http://digg.com/submit?url=' . $url . '&amp;title=' . $title . '" rev="news, technology"></a>';
-    $vars['add_this'] .= '<script type="text/javascript" src="http://www.stumbleupon.com/hostedbadge.php?s=5&r=' . $url . '"></script>';
+    $vars['social_bottons'] = '<a class="fb-share-button" name="fb_share" type="box_count" share_url="' . $url . '" href="http://www.facebook.com/sharer.php">Share</a>';
+    $vars['social_bottons'] .= '<a class="twitter-share-button" href="http://twitter.com/share" data-url="' . $url . '" data-text="' . $title . '" data-count="vertical">Tweet</a>';
+    $vars['social_bottons'] .= '<a class="digg-share-button DiggThisButton DiggMedium" href="http://digg.com/submit?url=' . $url . '&amp;title=' . $title . '" rev="news, technology"></a>';
+    $vars['social_bottons'] .= '<script type="text/javascript" src="http://www.stumbleupon.com/hostedbadge.php?s=5&r=' . $url . '"></script>';
   }
   
   if ($vars['node']->type == 'channel') {
@@ -175,9 +175,9 @@ function sitetheme_preprocess_node(&$vars) {
     $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
     
     // add_this
-    if ($vars['add_this']) {
-      $vars['content'] = '<div class="node-add-this" style="float:none;">' . $vars['add_this'] . '</div>' . $vars['content'];
-      $vars['add_this'] = NULL;
+    if ($vars['social_bottons']) {
+      $vars['content'] = '<div class="node-add-this" style="float:none;">' . $vars['social_bottons'] . '</div>' . $vars['content'];
+      $vars['social_bottons'] = NULL;
     }
     
     // Grab the caption from the imce_caption module.
