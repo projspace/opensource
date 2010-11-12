@@ -124,9 +124,13 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   }
   
   // share JS
+/*
   $vars['closure'] .= '<script type="text/javascript" src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script>';
   $vars['closure'] .= '<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>';
   $vars['closure'] .= '<script type="text/javascript">(function() { var s = document.createElement("SCRIPT"), s1 = document.getElementsByTagName("SCRIPT")[0]; s.type = "text/javascript"; s.async = true; s.src = "http://widgets.digg.com/buttons.js"; s1.parentNode.insertBefore(s, s1); })();</script>';
+*/
+  $vars['closure'] .= '<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>';
+  $vars['closure'] .= '<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=opensourceway"></script>';
 }
 
 /**
@@ -147,13 +151,23 @@ function sitetheme_preprocess_node(&$vars) {
       $url = shorten_url($url);
     }
     // urlencode
-    $url = urlencode($url);
+    $url_enc = urlencode($url);
     $title = urlencode($vars["node"]->title);
-    // add share links
+
+    // add share link
+    $vars['social_bottons'] = '<a class="addthis_button_tweet" addthis:url="' . $url . '" addthis:title="' . $vars["node"]->title . '"></a>';
+    $vars['social_bottons'] .= ' <a href="javascript:(function(){var%20d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f=\'http://identi.ca//index.php?action=bookmarklet\',l=d.location,e=encodeURIComponent,g=f+\'&status_textarea=%E2%80%9C\'+((e(s))?e(s):e(document.title))+\'%E2%80%9D%20%E2%80%94%20\'+\'' . $url_enc . '\';function%20a(){if(!w.open(g,\'t\',\'toolbar=0,resizable=0,scrollbars=1,status=1,width=450,height=200\')){l.href=g;}}a();})()"><img src="http://www.nuxified.org/images/identica.png" style="border:
+1px solid #CCCCCC; padding:2px;" /></a>';
+    $vars['social_bottons'] .= ' <a href="http://reddit.com/submit?url=' . $url_enc . '" onclick="window.location = \'http://reddit.com/submit?url=' . $url . '\'; return false"><img src="http://reddit.com/static/spreddit7.gif" alt="submit to reddit" border="0" /></a>';
+    $vars['social_bottons'] .= ' <script src="http://www.stumbleupon.com/hostedbadge.php?s=1&r=' . $url . '"></script>';
+    $vars['social_bottons'] .= ' <a class="addthis_button_facebook_like" fb:like:layout="button_count" addthis:url="' . $url . '" addthis:title="' . $vars["node"]->title . '"></a>';
+
+/*
     $vars['social_bottons'] = '<a class="fb-share-button" name="fb_share" type="box_count" share_url="' . $url . '" href="http://www.facebook.com/sharer.php">Share</a>';
     $vars['social_bottons'] .= '<a class="twitter-share-button" href="http://twitter.com/share" data-url="' . $url . '" data-text="' . $title . '" data-count="vertical">Tweet</a>';
     $vars['social_bottons'] .= '<a class="digg-share-button DiggThisButton DiggMedium" href="http://digg.com/submit?url=' . $url . '&amp;title=' . $title . '" rev="news, technology"></a>';
     $vars['social_bottons'] .= '<script type="text/javascript" src="http://www.stumbleupon.com/hostedbadge.php?s=5&r=' . $url . '"></script>';
+*/
   }
   
   if ($vars['node']->type == 'channel') {

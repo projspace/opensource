@@ -317,37 +317,45 @@ body.node-type-post .article-author-feed {
   color: #3399ff;
 }
 
+
+/* share buttons */
 .node-add-this {
+  display:block;
   margin-top: 3px;
-  float: left;
   position:relative;
-  height:66px;
+  width:515px;
+  height:25px;
+}
+.node-add-this a {
+  float:left !important;
+  margin-right:8px;
+}
+.node-add-this a img {
+  margin-top:1px;
 }
 .node-add-this iframe {
-  position:absolute;
-  bottom:0;
-  left:189px;
+  float:left !important;
+  margin-right:8px;
 }
-.node-add-this .fb-share-button {
-  position:absolute;
-  bottom:1px;
-  left:0;
+.node-add-this a.addthis_button_tweet {
+  margin-right:0;
 }
-.node-add-this iframe.twitter-share-button {
-  position:absolute;
-  bottom:0;
-  left:68px;
+.node-add-this a.addthis_button_tweet iframe {
+  height:20px !important;
+  width:56px !important;
 }
-.node-add-this span.db-wrapper {
-  position:absolute;
-  bottom:0;
-  left:131px;
+.node-add-this a.addthis_button_facebook_like {
 }
+.node-add-this a.addthis_button_facebook_like iframe {
+  width:100px !important;
+}
+
 
 .node-license {
   margin-top: 3px;
   float: right;
 }
+
 
 /* Taming the Unpublished Heading */
 .node-unpublished div.unpublished, .comment-unpublished div.unpublished {
