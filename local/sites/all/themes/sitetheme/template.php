@@ -124,11 +124,11 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   }
   
   // share JS
-/*
+  /*
   $vars['closure'] .= '<script type="text/javascript" src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script>';
   $vars['closure'] .= '<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>';
   $vars['closure'] .= '<script type="text/javascript">(function() { var s = document.createElement("SCRIPT"), s1 = document.getElementsByTagName("SCRIPT")[0]; s.type = "text/javascript"; s.async = true; s.src = "http://widgets.digg.com/buttons.js"; s1.parentNode.insertBefore(s, s1); })();</script>';
-*/
+  */
   $vars['closure'] .= '<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>';
   $vars['closure'] .= '<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=opensourceway"></script>';
 }
@@ -161,12 +161,12 @@ function sitetheme_preprocess_node(&$vars) {
     $vars['social_bottons'] .= ' <script src="http://www.stumbleupon.com/hostedbadge.php?s=1&r=' . $url . '"></script>';
     $vars['social_bottons'] .= ' <a class="addthis_button_facebook_like" fb:like:layout="button_count" addthis:url="' . $url . '" addthis:title="' . $vars["node"]->title . '"></a>';
 
-/*
+    /*
     $vars['social_bottons'] = '<a class="fb-share-button" name="fb_share" type="box_count" share_url="' . $url . '" href="http://www.facebook.com/sharer.php">Share</a>';
     $vars['social_bottons'] .= '<a class="twitter-share-button" href="http://twitter.com/share" data-url="' . $url . '" data-text="' . $title . '" data-count="vertical">Tweet</a>';
     $vars['social_bottons'] .= '<a class="digg-share-button DiggThisButton DiggMedium" href="http://digg.com/submit?url=' . $url . '&amp;title=' . $title . '" rev="news, technology"></a>';
     $vars['social_bottons'] .= '<script type="text/javascript" src="http://www.stumbleupon.com/hostedbadge.php?s=5&r=' . $url . '"></script>';
-*/
+    */
   }
   
   if ($vars['node']->type == 'channel') {
