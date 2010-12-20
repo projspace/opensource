@@ -718,6 +718,14 @@ function sitetheme_username($object) {
     // display (Red Hat) for users with @redhat.com email address
     if (strlen($account_info[$object->uid]->mail) > 11 && substr($account_info[$object->uid]->mail, -11, 11) == '@redhat.com') {
       // but don't display (Red Hat) for placeholder accounts (username+value@redhat.com)
+
+/*
+global $user;
+if ($user->uid == 1928) {
+  print '<pre>'; print_r($account_info); print '</pre><hr />';
+}
+*/
+
       if (!preg_match("/osdc-admin\+.+@redhat.com/", $account_info[$object->uid]->mail)) {
         $output .= ' <span class="redhat-employee">('. t('Red Hat') .')</span>';
       }

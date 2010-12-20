@@ -25,6 +25,16 @@
  * @see template_preprocess_comment()
  * @see theme_comment()
  */
+
+
+global $user;
+  if ($user->uid == 1928) {
+    
+    //print '<pre>'; print_r($comment); print '</pre>';
+    //print '<pre>'; print_r($vote_up_down); print '</pre>';
+  }
+
+
 ?>
 <div class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ' '. $status ?> clear-block">
   <div class="comment-picture-wrapper">
