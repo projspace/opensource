@@ -504,21 +504,39 @@
   width:288px;
 }
 
+#sidebar-second #block-menu-menu-oywf-may2010 .block-inner {
+  background:url("../images/osdc_oywf_background2.png") no-repeat scroll left top transparent;
+}
+
+#sidebar-second #block-views-contributor_spotlight-block_1 h2.title {
+  background:url("../images/osdc_contributor_spotlight.png") no-repeat scroll center bottom transparent;
+  display:block;
+  font-size:0;
+  height:17px;
+  padding-bottom:0px;
+  text-indent:-10000em;
+  width:288px;
+}
+
+#sidebar-second #block-views-contributor_spotlight-block_1 a {
+  color: #39F;	
+}
+
 #sidebar-second #block-views-contributor_spotlight-block_1 img {
-	float: left;
+  float: left;
 }
 
 #sidebar-second #block-views-contributor_spotlight-block_1 .views-field-badge img {
-	margin-top: .5em;
+  margin-top: .5em;
 }
 
 #sidebar-second #block-views-contributor_spotlight-block_1 .views-field-value {
-	float: right;
-	width: 60%;
+  float: right;
+  width: 60%;
 }
 
 #sidebar-second #block-views-contributor_spotlight-block_1 p {
-	float: right;
-	width: 65%;
-	margin: .5em 0 0 0;
+  float: right;
+  width: 65%;
+  margin: .5em 0 0 0;
 }
