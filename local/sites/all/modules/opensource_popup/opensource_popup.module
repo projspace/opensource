@@ -32,7 +32,7 @@ function opensource_popup_page() {
   $output = '<div class="popup">';
   $output .= '<img src="'. base_path() . drupal_get_path('module', 'opensource_popup') .'/opensource_popup.png" />';
   $output .= '<div class="popup-links" style="text-align: center;">';
-  $output .= '<a class="popup-close" href="#" onclick="javascript:Lightbox.end(\'forceClose\');">Continue to opensource.com</a> | '. l('Celebrate with us', 'http://opensource.com/1-year-anniversary');
+  $output .= '<a class="popup-close" href="#" onclick="javascript:Lightbox.end(\'forceClose\');">Continue to opensource.com</a> | '. l('Celebrate with us', '1-year-anniversary');
   $output .= '</div>';
   $output .= '</div>';
   print $output;
