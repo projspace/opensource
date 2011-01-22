@@ -519,15 +519,12 @@
 }
 
 #sidebar-second #block-views-contributor_spotlight-block_1 a {
-  color: #39F;	
+  color: #39F;
 }
 
 #sidebar-second #block-views-contributor_spotlight-block_1 img {
   float: left;
-}
-
-#sidebar-second #block-views-contributor_spotlight-block_1 .views-field-badge img {
-  margin-top: .5em;
+  margin-top: .25em;
 }
 
 #sidebar-second #block-views-contributor_spotlight-block_1 .views-field-value {
