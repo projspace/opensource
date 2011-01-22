@@ -1,0 +1,3 @@
+<?php
+
+include_once('contributor_spotlight.features.inc');
