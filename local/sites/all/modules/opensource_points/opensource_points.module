@@ -27,3 +27,19 @@ function opensource_points_userpoints($op, &$params) {
       
   }
 }
+
+/**
+ * Implementation of hook_mail_alter
+ *
+ * This checks that a user has opted in to receive the points notification mail.
+ */
+function opensource_points_mail_alter(&$message){
+  switch($message){
+    case 'userpoints_role_userpoints_role':
+      // If the user has not opted in to this mail send, don't send it.
+      $user = user_load(array('mail' => $message['to']));
+      if(!$user->profile_points_notifications){
+        unset($message);
+      }   
+  }
+}
