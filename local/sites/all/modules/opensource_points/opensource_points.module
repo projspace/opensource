@@ -21,7 +21,7 @@ function opensource_points_userpoints($op, &$params) {
       
       // If the user has earned more than points today and it is the currently logged in user.
       if($points_today >= 10 && $user->uid == $params['uid']){
-        drupal_set_message("Sorry, you have reached the maximum number of 10 points you can be awarded in one day.", "status");
+        drupal_set_message("Sorry, you have reached the maximum number of 10 points you can be awarded in one day.", "status", false);
         return false;
       }
       
