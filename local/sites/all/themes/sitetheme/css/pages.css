@@ -478,7 +478,7 @@ ol.lower-roman {
 }
 
 .profile-right{
-  width: 70%;
+  width: 75%;
   float: right;
 }
 
@@ -517,7 +517,7 @@ ol.lower-roman {
 
 
 .profile .profile-display-name {
-  margin-bottom: 0px;
+  margin: 0px;
   width: auto;
 }
 
