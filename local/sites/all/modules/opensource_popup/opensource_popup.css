@@ -11,3 +11,6 @@
 .popup-links {
   text-align: center;
 }
+#modalContainer {
+  padding-right: 0px !important;
+}
