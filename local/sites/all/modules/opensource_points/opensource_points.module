@@ -51,7 +51,7 @@ function opensource_points_user($op, &$edit, &$account, $category = NULL) {
       if(count($edit['roles']) > count($account->roles)){        
         // Define the roles that makeup earned points roles.
         // @TODO: Make this more dynamic
-        $earned = array('Community Member', 'Newbie', 'Open Source Enthusiast', 'Rock Star');
+        $earned = array('Community Member', 'Newbie', 'Open Enthusiast', 'Rock Star');
         
         foreach($account->roles as $key => $value) {
           // If the roles are any of the points eligible roles, then grab the ID

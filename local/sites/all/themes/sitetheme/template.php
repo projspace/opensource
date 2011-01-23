@@ -755,3 +755,11 @@ function sitetheme_preprocess_views_view_row_rss__channel_reading(&$vars) {
   $vars["link"] = check_plain($node->field_url[0]["url"]);
   $vars["description"] = check_plain($description);
 }
+
+function sitetheme_preprocess_user_profile(&$vars) {
+  $vars['points'] = '<div class="points"><h3>Points</h3>' . userpoints_get_current_points($vars['account']->uid) . '</div>';
+  $vars['profile_display_name'] = check_plain($vars['account']->profile_display_name);
+  $vars['profile_location'] = check_plain($vars['account']->profile_location);
+  $vars['profile_website'] = l('Visit User\'s Website', $vars['account']->profile_website);
+  $vars['profile_bio'] = check_markup($vars['account']->profile_bio);
+}

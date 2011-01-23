@@ -470,3 +470,59 @@ ol.lower-roman {
   background-image: none;
   background-color: #1d2754;
 }
+
+/* User Profiles @acquia-KS */
+.profile-left{
+  width: 120px;
+  float: left;
+}
+
+.profile-right{
+  width: 70%;
+  float: right;
+}
+
+.profile .profile-left .picture {
+  float: none;
+  margin-bottom: 0;
+}
+
+.profile .profile-left h3 {
+  display: none;
+}
+
+.profile .profile-left dl.user-badges {
+  margin: 0;
+}
+
+.profile .user-badges img {
+  display: block;
+}
+
+.profile .profile-points {
+  float: right;
+  background-color: #1D2753;
+  color: white;
+  border: 1px solid #0033FF;
+  padding: 5px;
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+  margin-top: -25px;
+}
+
+.profile .profile-points h3 {
+  margin: 0;
+}
+
+
+.profile .profile-display-name {
+  margin-bottom: 0px;
+  width: auto;
+}
+
+.profile-location,
+.profile-bio,
+.profile-website {
+
+}
