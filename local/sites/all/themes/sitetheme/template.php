@@ -764,3 +764,67 @@ function sitetheme_preprocess_user_profile(&$vars) {
   $vars['profile_website'] = l('Visit User\'s Website', $vars['account']->profile_website);
   $vars['profile_bio'] = check_markup($vars['account']->profile_bio);
 }
+
+/**
+ * Return html representation of a group of badges
+ * $badgeimages is an array of badge image tags from theme_user_badge()
+ */
+function sitetheme_user_badge_group($badgeimages) {
+  if (!empty($badgeimages)) {
+    foreach($badgeimages as $badge) {
+      if(preg_match('/Rock Star/', $badge)) {
+        $do = TRUE;
+      }
+      if(!$do && preg_match('/Open Enthusiast/', $badge)) {
+        $do = TRUE;
+      }
+      if(!$do && preg_match('/Open Enthusiast/', $badge)) {
+        $do = TRUE;
+      }
+      if(!$do && preg_match('/Open Enthusiast/', $badge)) {
+        $do = TRUE;
+      }
+    }
+    
+    return '<div class="user_badges">'. implode('', $badgeimages) .'</div>';
+  }
+}
+
+/**
+ * Return html representation of a badge image
+ * (note: theme_image does the check_plaining)
+ */
+function sitetheme_user_badge($badge, $account = NULL) {
+  //If we haven't been supplied with a user, use whoever is logged in
+  global $user;
+  if (is_null($account)) {
+    $account = $user;
+  }
+
+  //If we have a full image URL, don't require theme_image to get the size (it only breaks)
+  $get_size = valid_url($badge->image, TRUE);
+  if (variable_get('user_badges_imagecache', 0)) {
+    $image = theme('imagecache', 'user-badges', $badge->image, $badge->name, $badge->name, array('class' => $badge->class));
+  }
+  else {
+    $image = theme('image', $badge->image, $badge->name, $badge->name, array('class' => $badge->class), !get_size);
+  }
+
+  //We don't link the badge if there is no link and no default, or if the default is overridden
+  if (
+    ($badge->href == "" && !variable_get('user_badges_defaulthref', ''))
+    || drupal_strtolower($badge->href) == '<none>') {
+    return $image;
+  }
+  else {
+    $href = $badge->href ? $badge->href : variable_get('user_badges_defaulthref', '') ;
+
+    //Implement token replacement
+    if (module_exists('token')) {
+      $href = token_replace($href, $type = 'userbadge', $object = $badge);
+      $href = token_replace($href, $type = 'user', $object = $account);
+    }
+
+    return l($image, $href, array('html' => TRUE));
+  }
+}

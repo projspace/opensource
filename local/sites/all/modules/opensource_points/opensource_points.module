@@ -66,7 +66,8 @@ function opensource_points_user($op, &$edit, &$account, $category = NULL) {
 }
 
 function opensource_points_form_comment_form_alter(&$form, &$form_state, $form_id) {
-  if(!$form['uid']['#value']) {
+  global $user;
+  if(!$user->uid) {
     $form['login-register'] = array(
       '#type' => 'markup',
       '#value' => l('Login or Register', 'user') . ' ' . t('to earn points for your comments.'),
