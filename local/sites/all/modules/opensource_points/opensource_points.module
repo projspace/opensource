@@ -65,5 +65,11 @@ function opensource_points_user($op, &$edit, &$account, $category = NULL) {
 }
 
 function opensource_points_form_comment_form_alter(&$form, &$form_state, $form_id) {
-  $form['#submit']['#prefix'] = t('Login or Register to earn points for your comments.');
+  if(!$form['uid']['#value']) {
+    $form['login-register'] = array(
+      '#type' => 'markup',
+      '#value' => l('Login or Register', 'user') . ' ' . t('to earn points for your comments.'),
+      '#weight' => -10,
+    );
+  }
 }

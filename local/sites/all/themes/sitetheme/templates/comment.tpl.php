@@ -38,7 +38,8 @@ global $user;
 ?>
 <div class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ' '. $status ?> clear-block">
   <div class="comment-picture-wrapper">
-  <?php print $picture ?>
+    <?php print $picture ?>
+    <?php print $badges ?>
   </div>
 
   <div class="comment-meta-wrapper">
