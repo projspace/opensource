@@ -11,7 +11,7 @@
  * This checks various values before awarding points such as the daily limit.
  */
 
-function opensource_points_userpoints($op, &$params) {
+function opensource_points_userpoints($op, &$params = array()) {
   global $user;
   
   switch($op){
@@ -24,7 +24,47 @@ function opensource_points_userpoints($op, &$params) {
         drupal_set_message("Sorry, you have reached the maximum number of 10 points you can be awarded in one day.", "status", false);
         return false;
       }
-      
+      break;
+    case 'points after':
+      $uid        = $params['uid'];
+      $new_points = $params['points'];
+
+      // Check the roles the user belong to, and if they are exempted from userpoints
+      // This accounts for role assignments working "backward" -
+      //   see _userpoints_role_update_roles
+      $points = userpoints_get_current_points($uid);
+      _opensource_points_role_update_roles($uid, $points, $new_points);
+      break;
+  }
+}
+
+function _opensource_points_role_update_roles($uid, $points, $new_points) {
+  $role_points = userpoints_role_load_role_points();
+  if ($new_points < 0) {
+    $role_join = array(
+      'points' => 0,
+    );
+    foreach($role_points as $role_point) {
+      if ($role_point['points'] > 0) {
+        // Ignore roles that have 0 in them, since the admin does not want
+        // users to join those roles
+        if ($role_point['tid'] > 0) {
+          $cat_points = userpoints_get_current_points($uid, $role_point['tid']);
+          if ($cat_points > $role_point['points']) {
+            userpoints_role_join($uid, $role_point);
+          }
+        }
+        else if ($points > $role_point['points']) {
+          // find the highest-ranked role we can join in this direction
+          if ($role_point['points'] > $role_join['points']) {
+            $role_join = $role_point;
+          }
+        }
+      }
+    }
+    if ($role_join['points']) {
+      userpoints_role_join($uid, $role_join);
+    }
   }
 }
 
@@ -49,7 +89,7 @@ function opensource_points_user($op, &$edit, &$account, $category = NULL) {
   switch($op) {
     case 'update':
       // Only act if roles are being added.
-      if(count($edit['roles']) > count($account->roles)){        
+      if(count($edit['roles']) > count($account->roles)){
         // Define the roles that makeup earned points roles.
         // @TODO: Make this more dynamic
         $earned = array('Community Member', 'Newbie', 'Open Enthusiast', 'Rock Star');
