@@ -63,10 +63,8 @@ global $user;
   </div>
 
   <div class="comment-bottom">
-    <?php if(user_access('use vote up/down on comments')): ?>
-      <?php print $vote_up_down; ?>
-    <?php endif; ?>
-  <?php print $links ?>
+    <?php print $vote_up_down; ?>
+    <?php print $links ?>
   </div>
   
 </div>

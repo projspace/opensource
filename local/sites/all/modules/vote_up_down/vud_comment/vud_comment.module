@@ -168,7 +168,7 @@ function vud_comment_link($type, $object, $teaser = FALSE) {
       $tag = variable_get('vud_tag', 'vote');
       $node = node_load($comment->nid);
       $votable_node_type_comment = in_array($node->type, variable_get('vud_comment_node_types', array()), TRUE);
-      if ($votable_node_type_comment && $votes_display_mode) {
+      if (($votable_node_type_comment && $votes_display_mode) && user_access('use vote up/down on comments')) {
         $links['vud_comment_votes_count'] = array(
           'title' => theme('vud_votes', $comment->cid, $type, $tag, $widget_theme),
           'html' => TRUE,
