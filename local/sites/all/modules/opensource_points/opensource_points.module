@@ -40,7 +40,7 @@ function opensource_points_mail_alter(&$message){
       $user = user_load(array('mail' => $message['to']));
       if(!$user->profile_point_notifications){
         watchdog('opensource_points', 'A message was going to be sent to %mail but the user elected not to receive notifications.', array('%mail' => $message['to']));
-        $message['to'] = 'dev.null@opensource.com';
+        $message['to'] = 'dev-null@opensource.com';
       }
   }
 }
