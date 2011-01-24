@@ -38,7 +38,7 @@ function opensource_points_mail_alter(&$message){
     case 'userpoints_role_userpoints_role':
       // If the user has not opted in to this mail send, don't send it.
       $user = user_load(array('mail' => $message['to']));
-      if(!$user->profile_points_notifications){
+      if(!$user->profile_point_notifications){
         unset($message);
       }   
   }
