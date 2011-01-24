@@ -16,14 +16,7 @@ function opensource_points_userpoints($op, &$params = array()) {
   
   switch($op){
     case 'points before':
-      $query = "SELECT SUM(points) FROM {userpoints} WHERE last_update >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY) AND uid = %d";
-      $points_today = db_result(db_query($query, $params['uid']));
-      
-      // If the user has earned more than points today and it is the currently logged in user.
-      if($points_today >= 10 && $user->uid == $params['uid']){
-        drupal_set_message("Sorry, you have reached the maximum number of 10 points you can be awarded in one day.", "status", false);
-        return false;
-      }
+      // Removing daily limit.
       break;
     case 'points after':
       $uid        = $params['uid'];
