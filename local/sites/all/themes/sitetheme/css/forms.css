@@ -159,7 +159,8 @@ div.fivestar-widget {
   font-size: 14px;
   padding: 8px;
   padding-bottom: 0px;
-  border: 1px solid #cdcbca;
+  /* border: 1px solid #cdcbca; */
+  border: 0px solid #cdcbca;
   color:#999;
   background:url(../images/osdc_search_icon.png) no-repeat 98% 50%;
 }
