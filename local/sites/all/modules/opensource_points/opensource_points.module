@@ -15,7 +15,7 @@ function opensource_points_user($op, &$edit, &$account, $category = NULL) {
       if(count($edit['roles']) > count($account->roles)){
         // Define the roles that makeup earned points roles.
         // @TODO: Make this more dynamic
-        $earned = array('Community Member', 'Newbie', 'Open Enthusiast', 'Rock Star');
+        $earned = array('Newbie', 'Community Member', 'Open Enthusiast', 'Rock Star');
         
         foreach($account->roles as $key => $value) {
           // If the roles are any of the points eligible roles, then grab the ID
@@ -78,21 +78,16 @@ function _opensource_points_update_badges($uid, $points) {
 
 function _opensource_points_role_update_roles($uid, $points, $new_points) {
   $role_points = userpoints_role_load_role_points();
-  if ($new_points < 0) {
-    $role_join = array(
-      'points' => 0,
-    );
+  $role_join = array(
+    'points' => 0,
+  );
+
+  if ($new_points != 0) {
     foreach($role_points as $role_point) {
       if ($role_point['points'] > 0) {
-        // Ignore roles that have 0 in them, since the admin does not want
-        // users to join those roles
-        if ($role_point['tid'] > 0) {
-          $cat_points = userpoints_get_current_points($uid, $role_point['tid']);
-          if ($cat_points > $role_point['points']) {
-            userpoints_role_join($uid, $role_point);
-          }
-        }
-        else if ($points > $role_point['points']) {
+        db_query('DELETE FROM {users_roles} WHERE uid = %d AND rid = %d', $uid, $role_point['rid']);
+        
+        if ($points >= $role_point['points']) {
           // find the highest-ranked role we can join in this direction
           if ($role_point['points'] > $role_join['points']) {
             $role_join = $role_point;
@@ -100,10 +95,12 @@ function _opensource_points_role_update_roles($uid, $points, $new_points) {
         }
       }
     }
-    if ($role_join['points']) {
-      userpoints_role_join($uid, $role_join);
-    }
   }
+
+  if ($role_join['points']) {
+    userpoints_role_join($uid, $role_join);
+  }
+
 }
 
 /**
