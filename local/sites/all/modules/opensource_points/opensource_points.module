@@ -6,9 +6,34 @@
  */
 
 /**
- * Implementation of hook_userpoints
+ * Implementation of hook_user().
+ */
+function opensource_points_user($op, &$edit, &$account, $category = NULL) {
+  switch($op) {
+    case 'update':
+      // Only act if roles are being added.
+      if(count($edit['roles']) > count($account->roles)){
+        // Define the roles that makeup earned points roles.
+        // @TODO: Make this more dynamic
+        $earned = array('Community Member', 'Newbie', 'Open Enthusiast', 'Rock Star');
+        
+        foreach($account->roles as $key => $value) {
+          // If the roles are any of the points eligible roles, then grab the ID
+          if(in_array($value, $earned)){
+            // If the roles already exist in the edit array (as they would), remove them.
+            unset($edit['roles'][$key]);
+          }
+        }
+      }
+  }
+}
+
+/**
+ * Implementation of hook_userpoints().
  *
  * This checks various values before awarding points such as the daily limit.
+ * Also responsible for allowing roles to flow backwards with points,
+ * and giving the single best available userpoints-based badge.
  */
 
 function opensource_points_userpoints($op, &$params = array()) {
@@ -82,7 +107,7 @@ function _opensource_points_role_update_roles($uid, $points, $new_points) {
 }
 
 /**
- * Implementation of hook_mail_alter
+ * Implementation of hook_mail_alter().
  *
  * This checks that a user has opted in to receive the points notification mail.
  */
