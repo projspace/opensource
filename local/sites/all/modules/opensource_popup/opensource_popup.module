@@ -42,13 +42,15 @@ function opensource_popup_page() {
  * Implementation of hook_preprocess_page().
  */
 function opensource_popup_preprocess_page(&$vars, $hook) {
-  if (module_exists('lightbox2') && (module_exists('session_api')) && (arg(0) != 'opensource_popup')) {
-    $sid = session_api_get_sid();
-    $session_id = db_result(db_query("SELECT session_id FROM {session_api} WHERE sid = %d", $sid));
-    $status = db_result(db_query("SELECT COUNT(*) FROM {opensource_popup} WHERE sid = '%s'", $session_id));
-    if (!$status) {
-      $vars['content'] = l('Popup Ad', 'opensource_popup/lightbox2', array('attributes' => array('class' => 'hidden', 'rel' => 'lightmodal[|width:900px;height:640px; scrolling: none;]', 'id' => 'popup-ad'))) . $vars['content'];
-      opensource_popup_insert($session_id);
+  if (module_exists('lightbox2') && (module_exists('session_api') && module_exists('securepages')) && (arg(0) != 'opensource_popup')) {
+    if (!securepages_is_secure()) {
+      $sid = session_api_get_sid();
+      $session_id = db_result(db_query("SELECT session_id FROM {session_api} WHERE sid = %d", $sid));
+      $status = db_result(db_query("SELECT COUNT(*) FROM {opensource_popup} WHERE sid = '%s'", $session_id));
+      if (!$status) {
+        $vars['content'] = l('Popup Ad', 'opensource_popup/lightbox2', array('attributes' => array('class' => 'hidden', 'rel' => 'lightmodal[|width:900px;height:640px; scrolling: none;]', 'id' => 'popup-ad'))) . $vars['content'];
+        opensource_popup_insert($session_id);
+      }
     }
   }
 }
