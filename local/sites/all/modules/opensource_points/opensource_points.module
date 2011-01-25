@@ -27,8 +27,28 @@ function opensource_points_userpoints($op, &$params = array()) {
       //   see _userpoints_role_update_roles
       $points = userpoints_get_current_points($uid);
       _opensource_points_role_update_roles($uid, $points, $new_points);
+      _opensource_points_update_badges($uid, $points);
       break;
   }
+}
+
+function _opensource_points_update_badges($uid, $points) {
+  $best_badge = -1;
+  $badges = userpoints_badges_get_badges();
+  
+  // Remove all existing badges for this user
+  db_query("DELETE FROM {user_badges_user} WHERE uid = %d AND type LIKE 'Userpoints%'", $uid);
+  
+  // Iterate through each userpoints badge and find the best possible one
+  foreach ($badges as $badge) {
+    if ($points >= $badge->userpoints_goal) {
+      $best_badge = $badge->bid;
+    }
+  }
+  if ($best_badge > -1) {
+    user_badges_user_add_badge($uid, $best_badge, t('Userpoints @bid', array('@bid' => $badge->bid)));
+  }
+  
 }
 
 function _opensource_points_role_update_roles($uid, $points, $new_points) {
