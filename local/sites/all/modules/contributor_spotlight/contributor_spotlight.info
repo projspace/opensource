@@ -1,7 +1,7 @@
 core = "6.x"
 dependencies[] = "features"
 dependencies[] = "profile"
-dependencies[] = "userpoints_badges"
+dependencies[] = "user_badges"
 dependencies[] = "userreference"
 dependencies[] = "views"
 description = "Defines a content type and block for spotlighting users"
