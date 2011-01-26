@@ -1,3 +1,5 @@
+/* @override http://dev.opensource.com/sites/all/themes/sitetheme/css/blocks.css?Y */
+
 /* $Id: blocks.css,v 1.2 2009/08/12 08:03:52 johnalbin Exp $ */
 
 /**
@@ -532,10 +534,9 @@
   width: 60%;
 }
 
-#sidebar-second #block-views-contributor_spotlight-block_1 p {
+#sidebar-second #block-views-contributor_spotlight-block_1 .views-field-body {
   float: right;
   width: 65%;
-  margin: .5em 0 0 0;
 }
 
 #sidebar-second #block-menu-menu-one-year-anniversary h2.title {
