@@ -263,7 +263,9 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
   }
   $username = theme('username', $vars['comment']);
   $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
-  $vars['badges'] = user_badges_for_user(array('uid' => $vars['comment']->uid));
+  
+  // Heavy Modification of Badge Display
+  $vars['role_badge'] = opensource_points_comment_badges_for_user()
 }
 // */
 
