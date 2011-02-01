@@ -775,6 +775,12 @@ function sitetheme_preprocess_user_profile(&$vars) {
   $vars['points'] = '<div class="points"><h3>Points</h3>' . userpoints_get_current_points($vars['account']->uid) . '</div>';
   $vars['profile_display_name'] = check_plain($vars['account']->profile_display_name);
   $vars['profile_location'] = check_plain($vars['account']->profile_location);
-  $vars['profile_website'] = l('Visit User\'s Website', $vars['account']->profile_website);
-  $vars['profile_bio'] = check_markup($vars['account']->profile_bio);
+  
+  // If the user is not a Newbie, display these fields
+  if(!in_array('Newbie', $vars['account']->roles)) {
+    $vars['profile_website'] = l('Visit User\'s Website', $vars['account']->profile_website);
+    $vars['profile_bio'] = check_markup($vars['account']->profile_bio);
+  } else {
+    $vars['profile_nodisplay'] = 'The users website and bio will be viewable once they reach our <a href="http://opensource.com/points-and-badges#roles">Community Member role</a>';
+  }
 }

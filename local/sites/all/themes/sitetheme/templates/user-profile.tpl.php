@@ -62,6 +62,9 @@
         <?php if($profile_bio): ?>
           <div class='profile-bio'><?php print $profile_bio; ?></div>
         <?php endif; ?>
+        <?php if($profile_nodisplay): ?>
+          <div class='profile-nodisplay'><?php print $profile_nodisplay; ?></div>
+        <?php endif; ?>
       </div>
     </div>
   </div>
