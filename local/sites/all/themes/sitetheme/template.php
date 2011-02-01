@@ -272,9 +272,9 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
       // If the badge weight is a negative number, then this is a role badge
       if($badge->weight < 0) {
         $vars['badge_role'] = '<div class="badge-role">'. $badge->name . '</div>';
-      } elseif($badge->weight == 0) {
+      } elseif($badge->weight == 1) {
         $vars['badges'] .= '<div class="badge-green">' . $badge->name . '</div>';
-      } elseif($badge->weight == 3) {
+      } elseif($badge->weight == 2) {
         $vars['badges'] .= '<div class="badge-blue">' . $badge->name . '</div>';
       }
     }
