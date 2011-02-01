@@ -226,22 +226,28 @@ function _userpoints_role_update_roles($uid, $points, $new_points) {
   }
   else {
     // we need to promote the user to new roles, if they have the threshold
+    // Patch for 15066-12000: Only join the highest eligible role.
+    $role_to_join = array('points' => 0);
     foreach($role_points as $role_point) {
       if ($role_point['points'] > 0) {
         // Ignore roles that have 0 in them, since the admin does not want
         // users to join those roles
         if ($role_point['tid'] > 0) {
           $cat_points = userpoints_get_current_points($uid, $role_point['tid']);
-          if ($cat_points < $role_point['points']) {
-            userpoints_role_join($uid, $role_point);
+          if ($cat_points < $role_point['points'] && $role_point['points'] > $role_to_join['points']) {
+            $role_to_join = $role_point;
           }
         }
-        else if ($points >= $role_point['points']) {
-          userpoints_role_join($uid, $role_point);
+        else if ($points >= $role_point['points'] && $role_point['points'] > $role_to_join['points']) {
+          $role_to_join = $role_point;
         }
       }
     }
+    if ($role_to_join['points']) {
+      userpoints_role_join($uid, $role_to_join);
+    }
   }
+  
 }
 
 function userpoints_role_check_user_role($uid, $rid) {
