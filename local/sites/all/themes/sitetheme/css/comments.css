@@ -172,3 +172,34 @@ ul.links .flag-comment_abuse
 .indented .indented .indented{
   margin-left:0;
 }
+
+
+/* Badge Display for Text in Comments */
+.comment .badge-role {
+  width: 46px;
+  height: 16px;
+  background-color: #E1432B;
+  color: white;
+  font-family: sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px;
+  text-align: center;
+}
+
+.comment .badge-wrapper {
+  display: inline;
+}
+
+.comment .badge-green {
+  height: 16px;
+  background-color: #8BAA4A;
+  color: white;
+  font-family: sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px;
+  text-align: center;
+  float: left;
+  margin-right: 3px;
+}

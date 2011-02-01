@@ -130,37 +130,3 @@ function opensource_points_form_comment_form_alter(&$form, &$form_state, $form_i
     );
   }
 }
-
-/**
- * Returns HTML representation of user badges for given user
- * $array is array defining criteria for user_load()
- * most common use will be:
- *   user_badges_for_user(array('uid'=>123));
- */
-function opensource_points_comment_badges_for_user($array) {
-  if(!$text){
-    $account = user_load($array);
-    foreach ((array)$account->badges as $badge) {
-      $badges[] = theme('opensource_points_comment_user_badge', $badge, $account);
-    }
-    if ($badges) {
-      return theme('opensource_points_comment_user_badge_group', $badges);
-    }
-    else {
-      return FALSE;
-    }
-  } else {
-    // We are doing text representations of badges
-    die('Hong Kong Fooey');
-  }
-}
-
-/**
- * Return html representation of a group of badges
- * $badgeimages is an array of badge image tags from theme_user_badge()
- */
-function theme_opensource_points_comment_user_badge_group($badgeimages) {
-  if (!empty($badgeimages)) {
-    return '<div class="user_badges">'. implode('', $badgeimages) .'</div>';
-  }
-}

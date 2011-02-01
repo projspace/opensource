@@ -263,6 +263,22 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
   }
   $username = theme('username', $vars['comment']);
   $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
+  
+  // Badge Display Code
+  $badges = user_badges_get_badges($vars['comment']->uid);
+  
+  if($badges) {
+    foreach($badges as $badge) {
+      // If the badge weight is a negative number, then this is a role badge
+      if($badge->weight < 0) {
+        $vars['badge_role'] = '<div class="badge-role">'. $badge->name . '</div>';
+      } elseif($badge->weight == 0) {
+        $vars['badges'] .= '<div class="badge-green">' . $badge->name . '</div>';
+      } elseif($badge->weight == 3) {
+        $vars['badges'] .= '<div class="badge-blue">' . $badge->name . '</div>';
+      }
+    }
+  }
 }
 
 

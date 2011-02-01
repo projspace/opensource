@@ -527,9 +527,3 @@ ol.lower-roman {
 .profile-website {
 
 }
-
-/* @TODO: Should use imagecache but how? */
-.comment img.badge {
-  width: 50px;
-  height: 20px;
-}

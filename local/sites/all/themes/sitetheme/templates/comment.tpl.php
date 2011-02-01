@@ -25,21 +25,11 @@
  * @see template_preprocess_comment()
  * @see theme_comment()
  */
-
-
-global $user;
-  if ($user->uid == 1928) {
-    
-    //print '<pre>'; print_r($comment); print '</pre>';
-    //print '<pre>'; print_r($vote_up_down); print '</pre>';
-  }
-
-
 ?>
 <div class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ' '. $status ?> clear-block">
   <div class="comment-picture-wrapper">
     <?php print $picture ?>
-    <?php print $badges ?>
+    <?php print $badge_role ?>
   </div>
 
   <div class="comment-meta-wrapper">
@@ -49,10 +39,14 @@ global $user;
   
     <h3><?php print $title ?></h3>
     
-  
     <div class="submitted">
       <?php print $submitted ?>
     </div>
+    
+    <?php if($badges): ?>
+      <div class="badge-wrapper"><?php print $badges; ?></div>
+    <?php endif; ?>
+    
   </div>
   <div class="content">
     <?php print $content ?>
