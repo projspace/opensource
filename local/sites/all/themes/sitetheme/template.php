@@ -782,7 +782,9 @@ function sitetheme_preprocess_user_profile(&$vars) {
     if(!(strpos($url, "http://") === 0)) {
       $website = "http://$url";
     }
-    $vars['profile_website'] = l($website, $website); 
+    if($url){
+      $vars['profile_website'] = l($website, $website); 
+    }
     $vars['profile_bio'] = check_markup($vars['account']->profile_bio);
   } else {
     $vars['profile_nodisplay'] = 'The users website and bio will be viewable once they reach our <a href="http://opensource.com/points-and-badges#roles">Community Member role</a>';
