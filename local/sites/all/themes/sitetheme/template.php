@@ -781,8 +781,10 @@ function sitetheme_preprocess_user_profile(&$vars) {
     $url = check_url($vars['account']->profile_website);
     if(!(strpos($url, "http://") === 0)) {
       $website = "http://$url";
+    } else {
+      $website = url;
     }
-    if($url){
+    if($website){
       $vars['profile_website'] = l($website, $website); 
     }
     $vars['profile_bio'] = check_markup($vars['account']->profile_bio);
