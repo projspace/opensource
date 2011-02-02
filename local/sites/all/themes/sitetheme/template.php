@@ -782,7 +782,7 @@ function sitetheme_preprocess_user_profile(&$vars) {
     if(!(strpos($url, "http://") === 0)) {
       $website = "http://$url";
     } else {
-      $website = url;
+      $website = $url;
     }
     if($website){
       $vars['profile_website'] = l($website, $website); 
