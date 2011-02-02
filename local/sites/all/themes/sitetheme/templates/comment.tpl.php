@@ -29,7 +29,6 @@
 <div class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ' '. $status ?> clear-block">
   <div class="comment-picture-wrapper">
     <?php print $picture ?>
-    <?php print $badge_role ?>
   </div>
 
   <div class="comment-meta-wrapper">
@@ -42,10 +41,6 @@
     <div class="submitted">
       <?php print $submitted ?>
     </div>
-    
-    <?php if($badges): ?>
-      <div class="badge-wrapper"><?php print $badges; ?></div>
-    <?php endif; ?>
     
   </div>
   <div class="content">

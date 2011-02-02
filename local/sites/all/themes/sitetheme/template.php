@@ -779,10 +779,12 @@ function sitetheme_preprocess_user_profile(&$vars) {
   // If the user is not a Newbie, display these fields
   if(!in_array('Newbie', $vars['account']->roles)) {
     $url = check_url($vars['account']->profile_website);
-    if(!(strpos($url, "http://") === 0)) {
-      $website = "http://$url";
-    } else {
-      $website = $url;
+    if($url){
+      if(!(strpos($url, "http://") === 0)) {
+        $website = "http://$url";
+      } else {
+        $website = $url;
+      }
     }
     if($website){
       $vars['profile_website'] = l($website, $website); 
