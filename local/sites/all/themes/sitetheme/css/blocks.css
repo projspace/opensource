@@ -504,6 +504,16 @@
   width:288px;
 }
 
+#sidebar-second #block-menu-menu-in-the-news .block-inner h2.title {
+  background:url("../images/osdc_in_the_news.png") no-repeat scroll center bottom transparent;
+  display:block;
+  font-size:0;
+  height:17px;
+  padding-bottom:0px;
+  text-indent:-10000em;
+  width:288px;
+}
+
 #sidebar-second #block-menu-menu-oywf-may2010 .block-inner {
   background:url("../images/osdc_oywf_background2.png") no-repeat scroll left top transparent;
 }
