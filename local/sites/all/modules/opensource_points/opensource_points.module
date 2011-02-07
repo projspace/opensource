@@ -97,10 +97,6 @@ function _opensource_points_role_update_roles($uid, $points, $new_points) {
     }
   }
 
-  if ($role_join['points']) {
-    userpoints_role_join($uid, $role_join);
-  }
-
 }
 
 /**
