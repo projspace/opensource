@@ -545,6 +545,7 @@
 #sidebar-second #block-views-contributor_spotlight-block_1 .views-field-body {
   float: right;
   width: 65%;
+  margin-bottom: 0.25em;
 }
 
 #sidebar-second #block-menu-menu-one-year-anniversary h2.title {
