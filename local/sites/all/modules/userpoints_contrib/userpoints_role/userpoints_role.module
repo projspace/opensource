@@ -284,7 +284,7 @@ function userpoints_role_send_mail($op = 'join', $uid, $role_point) {
   );
 
   $from = variable_get('site_mail', ini_get('sendmail_from'));
-  // HOTFIX by jonathan.webb@acquia.com: drupal_mail('userpoints_role', 'userpoints_role', $account->mail, $language, $params, $from);
+  // HOTFIX jonathan.webb@acquia.com: drupal_mail('userpoints_role', 'userpoints_role', $account->mail, $language, $params, $from);
 }
 
 function userpoints_role_email($op = 'join', $type = 'text', $rid, $vars) {
