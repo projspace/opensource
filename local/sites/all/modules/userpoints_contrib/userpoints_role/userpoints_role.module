@@ -241,9 +241,6 @@ function _userpoints_role_update_roles($uid, $points, $new_points) {
         }
       }
     }
-    if ($role_to_join['points']) {
-      userpoints_role_join($uid, $role_to_join);
-    }
   }
 }
 
