@@ -776,8 +776,11 @@ function sitetheme_preprocess_user_profile(&$vars) {
   $vars['profile_display_name'] = check_plain($vars['account']->profile_display_name);
   $vars['profile_location'] = check_plain($vars['account']->profile_location);
   
-  // If the user is not a Newbie, display these fields
-  if(!in_array('Newbie', $vars['account']->roles)) {
+  // @TODO: I feel like we can test this condition better, @acquia-ks
+  // If the user has any role badge except Newbie
+  if(in_array('Community Member', $vars['account']->roles)
+     || in_array('Open Enthusiast', $vars['account']->roles)
+     || in_array('Rock Star', $vars['account']->roles)) {
     $url = check_url($vars['account']->profile_website);
     if($url){
       if(!(strpos($url, "http://") === 0)) {
