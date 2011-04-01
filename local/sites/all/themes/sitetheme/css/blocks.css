@@ -279,6 +279,15 @@
   background: transparent url(../images/what_should_osdc_be_nameplate.png) no-repeat;
 }
 
+#sidebar-second .nameplate-health h2.title {
+  height: 0;
+  overflow: hidden;
+  width: 158px;
+  padding-top: 17px;
+  padding-bottom: 0;
+  background: transparent url(../images/about_health.png) no-repeat;
+}
+
 #sidebar-second .nameplate-business h2.title {
   height: 0;
   overflow: hidden;

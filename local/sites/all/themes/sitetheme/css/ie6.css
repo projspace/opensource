@@ -217,6 +217,10 @@ form.fivestar-widget {
   background: transparent url(../images/about_business.gif) no-repeat;
 }
 
+#sidebar-second .nameplate-health h2.title {
+  background: transparent url(../images/about_health.gif) no-repeat;
+}
+
 #sidebar-second .nameplate-education h2.title {
   background: transparent url(../images/about_education.gif) no-repeat;
 }
