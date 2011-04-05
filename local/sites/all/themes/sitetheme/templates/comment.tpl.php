@@ -29,17 +29,16 @@
 <div class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ' '. $status ?> clear-block">
   <div class="comment-picture-wrapper">
     <?php print $picture ?>
+    <?php print $badge_role ?>
   </div>
 
   <div class="comment-meta-wrapper">
-    <?php if ($comment->new): ?>
-      <span class="new"><?php print $new ?></span>
-    <?php endif; ?>
   
     <h3><?php print $title ?></h3>
     
-    <div class="submitted">
-      <?php print $submitted ?>
+    <div class="submitted<?php print ($badges) ? '' : ' no-badges'; ?>">
+      <div><?php print $submitted ?></div>
+      <div><?php print $badges; ?></div>
     </div>
     
   </div>
@@ -54,6 +53,7 @@
 
   <div class="comment-bottom">
     <?php print $links ?>
+    <?php print $comment->vud_comment_widget; ?>
   </div>
   
 </div>

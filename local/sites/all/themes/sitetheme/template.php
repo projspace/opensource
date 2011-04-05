@@ -262,7 +262,7 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
     $vars['links'] = '<ul class="links">'. $vars['links'];
   }
   $username = theme('username', $vars['comment']);
-  $vars['submitted'] = t('by !author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
+  $vars['submitted'] = t('!author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
   
   // Badge Display Code
   $badges = user_badges_get_badges($vars['comment']->uid);
