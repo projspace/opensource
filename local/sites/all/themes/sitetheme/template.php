@@ -269,13 +269,14 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
   
   if($badges) {
     foreach($badges as $badge) {
+      //die(print_r($badge));
       // If the badge weight is a negative number, then this is a role badge
       if($badge->weight < 0) {
-        $vars['badge_role'] = '<div class="badge-role">'. $badge->name . '</div>';
+        $vars['badge_role'] = '<div class="badge-role"><img src="/'. $badge->image . '" alt="' . $badge->name . '" /></div>';
       } elseif($badge->weight == 1) {
-        $vars['badges'] .= '<div class="badge-green">' . $badge->name . '</div>';
+        $vars['badges'] .= '<div class="badge-green"><img src="/'. $badge->image . '" alt="' . $badge->name . '" /></div>';
       } elseif($badge->weight == 2) {
-        $vars['badges'] .= '<div class="badge-blue">' . $badge->name . '</div>';
+        $vars['badges'] .= '<div class="badge-blue"><img src="/'. $badge->image . '" alt="' . $badge->name . '" /></div>';
       }
     }
   }
@@ -793,7 +794,14 @@ function sitetheme_preprocess_user_profile(&$vars) {
       $vars['profile_website'] = l($website, $website); 
     }
     $vars['profile_bio'] = check_markup($vars['account']->profile_bio);
-  } else {
+  }
+  else {
     $vars['profile_nodisplay'] = 'The users website and bio will be viewable once they reach our <a href="http://opensource.com/points-and-badges#roles">Community Member role</a>';
   }
+
+  if (!empty($vars['profile']['user_badges'])) {
+    $vars['profile']['user_badges'] = preg_replace('/_sm.png/', '.png', $vars['profile']['user_badges']);
+  }
 }
+
+
