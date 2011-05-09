@@ -236,3 +236,9 @@ $conf['locale_custom_strings_en'] = array(
 if (isset($_GET['q']) && strpos($_GET['q'], 'user/login') === 0) {
   $conf['cache'] = CACHE_DISABLED;
 }
+
+$conf['apachesolr_read_only'] = '1';
+$conf['smtp_library'] = 'sites/all/modules/devel/devel.module';
+$conf['twitter_consumer_key'] = "-dev-read-only-";
+$conf['twitter_consumer_secret'] = "-dev-read-only-";
+
