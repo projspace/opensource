@@ -2,6 +2,7 @@
 
 .vud-widget-upanddown {
   margin: 5px 0px;
+  clear: both;
   position: relative;
   float: right;
 }
