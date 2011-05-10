@@ -299,6 +299,9 @@ function sitetheme_preprocess_block(&$vars, $hook) {
     $vars['block']->subject = t('About Open !title', array('!title' => $node->title));
     $vars['classes_array'][] = drupal_html_class('nameplate-'. $node->title);
   }
+  else if ($vars['block']->delta == 'contributor_spotlight-block_1') {
+    $vars['block']->content = preg_replace('/_sm.png/', '.png', $vars['block']->content);;
+  }
 }
 
 
