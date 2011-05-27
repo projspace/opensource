@@ -36,12 +36,10 @@ li a.active {
 }
 
 #main-menu li a {
-  width: 168px;
+  width: 142px;
   height: 0;
   padding-top: 38px;
   overflow: hidden;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
   display: block;
   text-align: center;
   background: #1d2754;
@@ -76,7 +74,8 @@ li a.active {
 
 /* The Open (homepage link) */
 #main-menu li.menu-3796 a {
-  background: url(../images/osdc_nav_sprite960x126.png) 0px 0px no-repeat;
+  background: url("../images/osdc_nav_sprite960x126_0411.png") 0px 0px no-repeat;
+  width:110px;
 }
 
 #main-menu li.menu-3796 a:hover {
@@ -90,72 +89,91 @@ li a.active {
 
 /* The Business Link */
 #main-menu li.menu-3091 a {
-  background: url(../images/osdc_nav_sprite960x126.png) -112px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -110px 0px no-repeat;
 }
 
 #main-menu li.menu-3091 a:hover {
-  background-position: -112px -42px;
+  background-position: -110px -42px;
 }
 
 #main-menu li.menu-3091 a.active,
 #main-menu li.menu-3091 a.active-trail {
-  background-position: -112px -84px;
+  background-position: -110px -84px;
 }
 
 /* Education */
 #main-menu li.menu-10739 a {
-  background: url(../images/osdc_nav_sprite960x126.png) -282px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -252px 0px no-repeat;
 }
 
 #main-menu li.menu-10739 a:hover {
-  background-position: -282px -42px;
+  background-position: -252px -42px;
 }
 
 #main-menu li.menu-10739 a.active,
 #main-menu li.menu-10739 a.active-trail {
-  background-position: -282px -84px;
+  background-position: -252px -84px;
 }
 
 /* Government */
 #main-menu li.menu-10740 a {
-  background: url(../images/osdc_nav_sprite960x126.png) -452px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -394px 0px no-repeat;
 }
 
 #main-menu li.menu-10740 a:hover {
-  background-position: -452px -42px;
+  background-position: -394px -42px;
 }
 
 #main-menu li.menu-10740 a.active,
 #main-menu li.menu-10740 a.active-trail {
-  background-position: -452px -84px;
+  background-position: -394px -84px;
+}
+
+/* Health */
+#main-menu li.menu-13224 a,
+#main-menu li.menu-12686 a {
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -536px 0px no-repeat;
+}
+
+#main-menu li.menu-13224 a:hover,
+#main-menu li.menu-12686 a:hover {
+  background-position: -536px -42px;
+}
+
+#main-menu li.menu-13224 a.active,
+#main-menu li.menu-13224 a.active-trail,
+#main-menu li.menu-12686 a.active,
+#main-menu li.menu-12686 a.active-trail {
+  background-position: -536px -84px;
 }
 
 /* Law */
 #main-menu li.menu-10741 a {
-  background: url(../images/osdc_nav_sprite960x126.png) -622px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -678px 0px no-repeat;
 }
 
 #main-menu li.menu-10741 a:hover {
-  background-position: -622px -42px;
+  background-position: -678px -42px;
 }
 
 #main-menu li.menu-10741 a.active,
 #main-menu li.menu-10741 a.active-trail {
-  background-position: -622px -84px;
+  background-position: -678px -84px;
 }
 
 /* Life */
 #main-menu li.menu-10742 a {
-  background: url(../images/osdc_nav_sprite960x126.png) -792px 0px no-repeat;
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -820px 0px no-repeat;
+  width:139px;
 }
 
 #main-menu li.menu-10742 a:hover {
-  background-position: -792px -42px;
+  background-position: -820px -42px;
 }
 
 #main-menu li.menu-10742 a.active,
 #main-menu li.menu-10742 a.active-trail {
-  background-position: -792px -84px;
+  background-position: -820px -84px;
 }
 
 /*
