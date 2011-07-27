@@ -476,7 +476,7 @@ function imceimage_elements() {
 function imceimage_process($element, $edit, $form_state, $form) {
   $field = $form['#field_info'][$element['#field_name']];
   $delta = $element['#delta'];
-
+/*
   $link = url('imce/browse');
   $field_id = $field['field_name'];
 
@@ -496,7 +496,6 @@ function imceimage_process($element, $edit, $form_state, $form) {
                .' [<a href="'
                ."javascript:imceImage.open('$link', '$delta-$field_id')"
                .'" class="imceimage-add">'. $links );
-
 
   $element['imceimage_path'] = array(
     '#type' => 'hidden',
@@ -537,7 +536,7 @@ function imceimage_process($element, $edit, $form_state, $form) {
                             $element['#value']['imceimage_alt'], 
                             "imceimagearea-$delta-$field_id")
   );
-
+*/
 
   return $element;
 }
