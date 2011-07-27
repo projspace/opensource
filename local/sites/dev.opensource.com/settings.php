@@ -241,4 +241,4 @@ $conf['apachesolr_read_only'] = '1';
 $conf['smtp_library'] = 'sites/all/modules/devel/devel.module';
 $conf['twitter_consumer_key'] = "-dev-read-only-";
 $conf['twitter_consumer_secret'] = "-dev-read-only-";
-
+#$conf['file_directory_path'] = "sites/dev.opensource.com/files";
