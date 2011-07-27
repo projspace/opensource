@@ -530,12 +530,23 @@ ol.lower-roman {
 }
 
 .field-field-lead-image h2 {
-display:none;
+  display:none;
 }
 
 .field-field-lead-image .content p {
-color: #999;
-font-size: 10px;
-font-family: Arial,sans-serif;
-font-style: italic;
+  color: #999;
+  font-size: 10px;
+  font-family: Arial,sans-serif;
+  font-style: italic;
 }
+
+.node-teaser .field-field-lead-image {
+  float:left;
+  width:262px;
+  margin-right:1em;
+}
+
+.node-teaser .field-field-lead-image p {
+  display:none;
+}
+
