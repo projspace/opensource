@@ -144,6 +144,7 @@ function sitetheme_preprocess_page(&$vars, $hook) {
  */
 function sitetheme_preprocess_node(&$vars) {
   $vars['social_bottons'] = '';
+
   if ($vars['page'] && !in_array($vars['node']->type, array("webform"))) {
     
     // shorten
@@ -211,6 +212,13 @@ function sitetheme_preprocess_node(&$vars) {
     }
     else {
       $caption = '';
+    }
+    if (isset($vars['node']->field_lead_image[0]['view'])) {
+      $field_lead_image_view = $vars['node']->field_lead_image[0]['view'];
+      if (preg_match('/(<img [^>]+>)/', $field_lead_image_view, $lead_matches)) {
+        $field_lead_image = $lead_matches[1];
+        $vars['content'] = '<div class="node-main-image">'. $field_lead_image  . $caption .'</div>' . $vars['content'];
+      }
     }
     if ($vars['node']->field_image[0]['imceimage_path']) {
       $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', $path, $vars['node']->field_image[0]['imceimage_alt']) . $caption .'</div>'. $vars['content'];
