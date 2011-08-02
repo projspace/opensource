@@ -277,14 +277,13 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
   
   if($badges) {
     foreach($badges as $badge) {
-      //die(print_r($badge));
       // If the badge weight is a negative number, then this is a role badge
       if($badge->weight < 0) {
         $vars['badge_role'] = '<div class="badge-role"><img src="/'. $badge->image . '" alt="' . $badge->name . '" /></div>';
       } elseif($badge->weight == 1) {
         $vars['badges'] .= '<div class="badge-green"><img src="/'. $badge->image . '" alt="' . $badge->name . '" /></div>';
       } elseif($badge->weight == 2) {
-        $vars['badges'] .= '<div class="badge-blue"><img src="/'. $badge->image . '" alt="' . $badge->name . '" /></div>';
+        $vars['badges'] .= '<div class="badge-blue"><img src="/'. preg_replace('/_sm.png/', '.png', $badge->image) . '" alt="' . $badge->name . '" /></div>';
       }
     }
   }
