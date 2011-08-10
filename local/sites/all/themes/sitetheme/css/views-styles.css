@@ -235,6 +235,15 @@ img.comment-image {
   margin-bottom: 0;
 }
 
+.view-homepage .views-field-field-lead-image-fid
+{
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+
+
 .block .view-id-featured_comment .views-field-value,
 .block .view-id-featured_comment .views-field-timestamp,
 .block .view-id-featured_comment .views-field-nothing {
