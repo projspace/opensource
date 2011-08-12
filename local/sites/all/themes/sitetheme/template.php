@@ -283,7 +283,7 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
       } elseif($badge->weight == 1) {
         $vars['badges'] .= '<div class="badge-green"><img src="/'. $badge->image . '" alt="' . $badge->name . '" /></div>';
       } elseif($badge->weight == 2) {
-        $vars['badges'] .= '<div class="badge-blue"><img src="/'. preg_replace('/_sm.png/', '.png', $badge->image) . '" alt="' . $badge->name . '" /></div>';
+        $vars['badges'] .= '<div class="badge-blue"><img src="/'. preg_replace('/.png/', '_sm.png', $badge->image) . '" alt="' . $badge->name . '" /></div>';
       }
     }
   }
