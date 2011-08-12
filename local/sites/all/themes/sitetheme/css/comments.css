@@ -196,4 +196,5 @@ ul.links .flag-comment_abuse
 .comment .badge-blue {
   float: left;
   margin-right: 3px;
+  padding: 2px;
 }
