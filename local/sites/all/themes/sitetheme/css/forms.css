@@ -257,3 +257,19 @@ form#webform-components-form input#edit-add-name {
   padding:3px;
   width:110px;
 }
+
+/**
+ * Filefield Sources overrides for IMCE Widget
+ *   to minimize confusion limit choices available to the editor
+ *   also in sitetheme.js: $('a.filefield-source-imce').trigger('click');
+ */
+div.filefield-sources-list {
+  display:none
+}
+div.filefield-upload {
+  display:none;
+}
+div.filefield-source-imce {
+  display:block;
+}
+

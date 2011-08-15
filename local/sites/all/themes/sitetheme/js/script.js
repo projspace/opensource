@@ -5,5 +5,10 @@
     }).blur(function() {
       $(this).val(Drupal.t('Search opensource.com'));
     });
+
+    // with forms.css hides default filefield source from content editor
+    $('a.filefield-source-imce').trigger('click');
+
   }
+
 })(jQuery)
