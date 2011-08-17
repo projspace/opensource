@@ -14,10 +14,10 @@ function opensource_reports_menu() {
     'title' => 'User Activity Report Export',
   );
   $items['admin/user/activity/points'] = array(
-    'type' => MENU_CALLBACK,
+    'type' => MENU_NORMAL_ITEM,
     'page callback' => '_opensource_user_activity_points',
     'access callback' => user_access('administer users'),
-    'title' => 'User Corrupted Points Report',
+    'title' => 'Users w/ Negative Points',
   );
   return $items;
 }
@@ -224,11 +224,13 @@ function _opensource_user_activity_points() {
   
   $dataset = array(); // initialize on first query
   while ($row = db_fetch_object($result)) {
-    $dataset[$row->uid]['Name'] = $row->name;
-    $dataset[$row->uid]['Points'] += $row->points;
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Current Points'] = db_result(db_query("SELECT SUM(points) FROM {userpoints_txn} WHERE uid = %d", $row->uid));
+    $dataset[$row->uid]['Actual Points'] = db_result(db_query("SELECT SUM(points) FROM {userpoints_txn} WHERE uid = %d AND points > 0", $row->uid));
+    $dataset[$row->uid]['Role'] = implode(", ", user_load($row->uid)->roles);
   }
   
-  $cols = array("Name", "Points");
+  $cols = array("Name", "Current Points", "Actual Points", "Role");
   $output = theme_table($cols, $dataset, array('cellspacing' => 10));
   
   return $output;
