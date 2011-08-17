@@ -212,7 +212,7 @@ function sitetheme_preprocess_node(&$vars) {
       $caption = '<br /><span class="node-main-image-caption">' . t('Image credits: !caption', array('!caption' => $caption)) . '</span>';
     }
     else {
-      $caption = '';
+      $caption = '<br /><span class="node-main-image-caption">Image by opensource.com</span>';
     }
     if (isset($vars['node']->field_lead_image[0]['view'])) {
       $field_lead_image_view = $vars['node']->field_lead_image[0]['view'];
@@ -221,6 +221,8 @@ function sitetheme_preprocess_node(&$vars) {
         $caption = $vars['node']->field_lead_image[0]['data']['title'];
         if($caption) {
           $caption = '<br /><span class="node-main-image-caption">' . t('Image credits: !caption', array('!caption' => $caption)) . '</span>';
+        } else {
+          $caption = '<br /><span class="node-main-image-caption">Image by opensource.com</span>';
         }
         $vars['content'] = '<div class="node-main-image">'. $field_lead_image  . $caption .'</div>' . $vars['content'];
       }

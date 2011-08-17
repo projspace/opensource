@@ -13,6 +13,12 @@ function opensource_reports_menu() {
     'access callback' => user_access('administer users'),
     'title' => 'User Activity Report Export',
   );
+  $items['admin/user/activity/points'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => '_opensource_user_activity_points',
+    'access callback' => user_access('administer users'),
+    'title' => 'User Corrupted Points Report',
+  );
   return $items;
 }
 
@@ -202,4 +208,26 @@ function _opensource_user_activity_csv() {
   header("Pragma: no-cache");
   header("Expires: 0");
   print $output;
+}
+
+
+function _opensource_user_activity_points() {
+  $result = db_query(
+    "SELECT DISTINCT(u.uid) AS uid, u.name, n.points
+      FROM userpoints_txn n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.points < 0
+      GROUP BY u.uid
+      ORDER BY u.name"
+  );
+  
+  $dataset = array(); // initialize on first query
+  while ($row = db_fetch_object($result)) {
+    $dataset[$row->uid]['Name'] = $row->name;
+    $dataset[$row->uid]['Points'] += $row->points;
+  }
+  
+  $cols = array("Name", "Points");
+  $output = theme_table($cols, $dataset, array('cellspacing' => 10));
+  
+  return $output;
 }
