@@ -1,14 +1,14 @@
 <?php
 
 function opensource_reports_menu() {
-  $items['reports/activity'] = array(
+  $items['admin/user/activity'] = array(
     'type' => MENU_NORMAL_ITEM,
     'page callback' => '_opensource_user_activity_view',
     'access callback' => user_access('administer users'),
     'title' => 'User Activity Report',
   );
-  $items['reports/activity/csv'] = array(
-    'type' => MENU_NORMAL_ITEM,
+  $items['admin/user/activity/csv'] = array(
+    'type' => MENU_CALLBACK,
     'page callback' => '_opensource_user_activity_csv',
     'access callback' => user_access('administer users'),
     'title' => 'User Activity Report Export',
@@ -101,6 +101,7 @@ function _opensource_user_activity_view() {
   
   $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes');
 
+  $output .= l("Export this as a CSV", 'reports/activity/csv') . '<br/>';
   $output = theme_table($cols, $dataset, array('cellspacing' => 10));
   $output .= '<br/>' . l("Export this as a CSV", 'reports/activity/csv');
   return $output;
