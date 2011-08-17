@@ -73,7 +73,7 @@ function _opensource_user_activity_view() {
     }
     
     $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
-    $dataset[$row->uid]['Fivestar Ratings'] = $row->votes;
+    $dataset[$row->uid]['Fivestar Ratings'] += $row->votes;
   }
   
   $result = db_query(
@@ -90,7 +90,7 @@ function _opensource_user_activity_view() {
     }
     
     $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
-    $dataset[$row->uid]['Poll Votes'] = $row->polls;
+    $dataset[$row->uid]['Poll Votes'] += $row->polls;
   }
   
   $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes');
