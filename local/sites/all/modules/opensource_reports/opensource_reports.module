@@ -108,7 +108,7 @@ function _opensource_user_activity_view() {
   $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes');
 
   $output .= l("Export this as a CSV", 'admin/user/activity/csv') . '<br/>';
-  $output = theme_table($cols, $dataset, array('cellspacing' => 10));
+  $output .= theme_table($cols, $dataset, array('cellspacing' => 10));
   $output .= '<br/>' . l("Export this as a CSV", 'admin/user/activity/csv');
   return $output;
 }
