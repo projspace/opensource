@@ -10,6 +10,16 @@ function opensource_reports_menu() {
   return $items;
 }
 
+function _opensource_user_activity_row() {
+  return array (
+    'Name' => '',
+    'Articles' => 0,
+    'Comments' => 0,
+    'Fivestar Ratings' => 0,
+    'Poll Votes' => 0,
+  );
+}
+
 function _opensource_user_activity_view() {
   $result = db_query(
     "SELECT n.uid, u.name, COUNT( n.nid ) AS articles
@@ -25,14 +35,11 @@ function _opensource_user_activity_view() {
   $dataset = array(); // initialize on first query
   while ($row = db_fetch_object($result)) {
     if (!isset($dataset[$row->uid])) {
-      $dataset[$row->uid] = array();
-      $dataset[$row->uid]['Comments'] = 0;
-      $dataset[$row->uid]['Fivestar Ratings'] = 0;
-      $dataset[$row->uid]['Poll Votes'] = 0;
+      $dataset[$row->uid] = _opensource_user_activity_row();
     }
     
     $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
-    $dataset[$row->uid]['Articles'] = $row->articles;
+    $dataset[$row->uid]['Articles'] += $row->articles;
   }
   
   $result = db_query(
@@ -45,14 +52,11 @@ function _opensource_user_activity_view() {
   
   while ($row = db_fetch_object($result)) {
     if (!isset($dataset[$row->uid])) {
-      $dataset[$row->uid] = array();
-      $dataset[$row->uid]['Articles'] = 0;
-      $dataset[$row->uid]['Fivestar Ratings'] = 0;
-      $dataset[$row->uid]['Poll Votes'] = 0;
+      $dataset[$row->uid] = _opensource_user_activity_row();
     }
     
     $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
-    $dataset[$row->uid]['Comments'] = (isset($row->comments) ? $row->comments : '0');
+    $dataset[$row->uid]['Comments'] += $row->comments;
   }
   
     $result = db_query(
@@ -65,14 +69,11 @@ function _opensource_user_activity_view() {
   
   while ($row = db_fetch_object($result)) {
     if (!isset($dataset[$row->uid])) {
-      $dataset[$row->uid] = array();
-      $dataset[$row->uid]['Articles'] = 0;
-      $dataset[$row->uid]['Comments'] = 0;
-      $dataset[$row->uid]['Poll Votes'] = 0;
+      $dataset[$row->uid] = _opensource_user_activity_row();
     }
     
     $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
-    $dataset[$row->uid]['Fivestar Ratings'] = (isset($row->votes) ? $row->votes : '0');
+    $dataset[$row->uid]['Fivestar Ratings'] = $row->votes;
   }
   
   $result = db_query(
@@ -85,14 +86,11 @@ function _opensource_user_activity_view() {
   
   while ($row = db_fetch_object($result)) {
     if (!isset($dataset[$row->uid])) {
-      $dataset[$row->uid] = array();
-      $dataset[$row->uid]['Articles'] = 0;
-      $dataset[$row->uid]['Comments'] = 0;
-      $dataset[$row->uid]['Fivestar Ratings'] = 0;
+      $dataset[$row->uid] = _opensource_user_activity_row();
     }
     
     $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
-    $dataset[$row->uid]['Poll Votes'] = (isset($row->polls) ? $row->polls : '0');
+    $dataset[$row->uid]['Poll Votes'] = $row->polls;
   }
   
   $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes');
