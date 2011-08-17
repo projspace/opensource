@@ -7,6 +7,12 @@ function opensource_reports_menu() {
     'access callback' => user_access('administer users'),
     'title' => 'User Activity Report',
   );
+  $items['reports/activity/csv'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => '_opensource_user_activity_csv',
+    'access callback' => user_access('administer users'),
+    'title' => 'User Activity Report Export',
+  );
   return $items;
 }
 
@@ -96,5 +102,103 @@ function _opensource_user_activity_view() {
   $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes');
 
   $output = theme_table($cols, $dataset, array('cellspacing' => 10));
+  $output .= '<br/>' . l("Export this as a CSV", 'reports/activity/csv');
   return $output;
+}
+
+
+/**
+ * Should create CSV files
+ **/
+
+function _opensource_user_activity_csv() {
+  $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.nid ) AS articles
+      FROM {node} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.type = 'post'
+      AND n.status = '1'
+      AND u.status = '1'
+      GROUP BY n.uid
+      HAVING articles > 1
+      ORDER BY articles DESC"
+  );
+  
+  $dataset = array(); // initialize on first query
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = $row->name;
+    $dataset[$row->uid]['Articles'] += $row->articles;
+  }
+  
+  $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.cid ) AS comments
+      FROM {comments} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.status = 0
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = $row->name;
+    $dataset[$row->uid]['Comments'] += $row->comments;
+  }
+  
+    $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.vote_id ) AS votes
+      FROM {votingapi_vote} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.value_type = 'percent'
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = $row->name;
+    $dataset[$row->uid]['Fivestar Ratings'] += $row->votes;
+  }
+  
+  $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.nid ) AS polls
+      FROM {pollfield_votes} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.field_table = 'post'
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = $row->name;
+    $dataset[$row->uid]['Poll Votes'] += $row->polls;
+  }
+  
+  $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes');
+  $output = "Name, Articles, Comments, Fivestar Ratings, Poll Votes\n";
+  foreach($dataset as $datasetrow) {    
+    foreach ($cols as $key) {
+      $output .= $datasetrow[$key];
+      if($key != 'Poll Votes') {
+        $output .= ', ';
+      }
+    }
+    $output .= "\n";
+  }
+  
+  header("Content-type: application/csv");
+  header("Content-Disposition: attachment; filename=user-activity.csv");
+  header("Pragma: no-cache");
+  header("Expires: 0");
+  print $output;
 }

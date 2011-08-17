@@ -550,3 +550,8 @@ ol.lower-roman {
   display:none;
 }
 
+.section-reports th, .section-reports td {
+  padding: 5px;
+  border: 1px solid gray;
+}
+
