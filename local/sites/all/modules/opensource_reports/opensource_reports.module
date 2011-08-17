@@ -107,9 +107,9 @@ function _opensource_user_activity_view() {
   
   $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes');
 
-  $output .= l("Export this as a CSV", 'reports/activity/csv') . '<br/>';
+  $output .= l("Export this as a CSV", 'admin/user/activity/csv') . '<br/>';
   $output = theme_table($cols, $dataset, array('cellspacing' => 10));
-  $output .= '<br/>' . l("Export this as a CSV", 'reports/activity/csv');
+  $output .= '<br/>' . l("Export this as a CSV", 'admin/user/activity/csv');
   return $output;
 }
 
@@ -216,6 +216,8 @@ function _opensource_user_activity_points() {
     "SELECT DISTINCT(u.uid) AS uid, u.name, n.points
       FROM userpoints_txn n LEFT JOIN {users} u ON n.uid = u.uid
       WHERE n.points < 0
+      AND u.status = 1
+      AND u.login > 0
       GROUP BY u.uid
       ORDER BY u.name"
   );
