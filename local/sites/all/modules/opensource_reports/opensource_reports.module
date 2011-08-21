@@ -29,6 +29,7 @@ function _opensource_user_activity_row() {
     'Comments' => 0,
     'Fivestar Ratings' => 0,
     'Poll Votes' => 0,
+    'Points' => 0,
   );
 }
 
@@ -105,7 +106,24 @@ function _opensource_user_activity_view() {
     $dataset[$row->uid]['Poll Votes'] += $row->polls;
   }
   
-  $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes');
+  $result = db_query(
+    "SELECT n.uid, u.name, SUM( n.points ) AS points
+      FROM {userpoints_txn} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.points > 0
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Points'] += $row->points;
+  }
+  
+  $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes', 'Points');
 
   $output .= l("Export this as a CSV", 'admin/user/activity/csv') . '<br/>';
   $output .= theme_table($cols, $dataset, array('cellspacing' => 10));
@@ -191,12 +209,29 @@ function _opensource_user_activity_csv() {
     $dataset[$row->uid]['Poll Votes'] += $row->polls;
   }
   
-  $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes');
-  $output = "Name, Articles, Comments, Fivestar Ratings, Poll Votes\n";
+  $result = db_query(
+    "SELECT n.uid, u.name, SUM( n.points ) AS points
+      FROM {userpoints_txn} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.points > 0
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Points'] += $row->points;
+  }
+  
+  $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes', 'Points');
+  $output = "Name, Articles, Comments, Fivestar Ratings, Poll Votes, Points\n";
   foreach($dataset as $datasetrow) {    
     foreach ($cols as $key) {
       $output .= $datasetrow[$key];
-      if($key != 'Poll Votes') {
+      if($key != 'Points') {
         $output .= ', ';
       }
     }
