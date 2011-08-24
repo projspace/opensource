@@ -86,18 +86,25 @@
   background-image: url(../images/osdc_featured_content.png);
 }
 
-.view-homepage .views-field-title
+.view-homepage .views-field-title,
+.view-homepage_discussions .views-field-title,
+.view-homepage_popular .views-field-title
 {
   font-size:24px; /* temporary */
   line-height:28px; /* temporary */
 }
 
-.view-homepage .article-author-feed
+.view-homepage .article-author-feed,
+.view-homepage_discussions .article-author-feed,
+.view-homepage_popular .article-author-feed
 {
   float:none;
   vertical-align:middle;
 }
-.view-homepage .views-field-value {
+.view-homepage .views-field-value,
+.view-homepage_discussions .views-field-value,
+.view-homepage_popular .views-field-value
+{
   padding-right: 15px;
   position: relative;
   margin-left: 3px;
@@ -105,12 +112,20 @@
 
 .view-homepage .views-field-group-nid,
 .view-homepage .views-field-group-nid a,
-.view-homepage .views-field-type
+.view-homepage .views-field-type,
+.view-homepage_discussions .views-field-group-nid,
+.view-homepage_discussions .views-field-group-nid a,
+.view-homepage_discussions .views-field-type,
+.view-homepage_popular .views-field-group-nid,
+.view-homepage_popular .views-field-group-nid a,
+.view-homepage_popular .views-field-type
 {
   color:#676768;
 }
 
-.view-homepage .views-field-comment-count
+.view-homepage .views-field-comment-count,
+.view-homepage_discussions .views-field-comment-count,
+.view-homepage_popular .views-field-comment-count
 {
   background:transparent url(../images/comment.jpg) no-repeat scroll left top;
   padding-left:20px;
@@ -193,17 +208,23 @@ img.comment-image {
   top:2px;
 }
 
-.view-homepage .views-field-view-node
+.view-homepage .views-field-view-node,
+.view-homepage_popular .views-field-view-node,
+.view-homepage_discussions .views-field-view-node
 {
   float: right;
 }
 
-.view-homepage .views-field-view-node a
+.view-homepage .views-field-view-node a,
+.view-homepage_popular .views-field-view-node a,
+.view-homepage_discussions .views-field-view-node a
 {
   color:#5993CE
 }
 
-.view-homepage .views-row /* on the homepage attached view provide space and border after every row */
+.view-homepage .views-row, /* on the homepage attached view provide space and border after every row */
+.view-homepage_popular .views-row,
+.view-homepage_discussions .views-row
 {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -215,27 +236,35 @@ img.comment-image {
 
 }
 
-.view-homepage .views-row-last
+.view-homepage .views-row-last,
+.view-homepage_popular .views-row-last,
+.view-homepage_discussions .views-row-last
 {
   padding-bottom:0;
   margin-bottom:0;
   background: none;
 }
 
-.view-homepage .views-field-title
+.view-homepage .views-field-title,
+.view-homepage_popular .views-field-title,
+.view-homepage_discussions .views-field-title
 {
   font-size:18px;
   line-height:20px;
 }
 
-.view-homepage .views-field-field-image-imceimage-path
+.view-homepage .views-field-field-image-imceimage-path,
+.view-homepage_popular .views-field-field-image-imceimage-path,
+.view-homepage_discussions .views-field-field-image-imceimage-path
 {
   float: left;
   margin-right: 15px;
   margin-bottom: 0;
 }
 
-.view-homepage .views-field-field-lead-image-fid
+.view-homepage .views-field-field-lead-image-fid,
+.view-homepage_popular .views-field-field-lead-image-fid,
+.view-homepage_discussions .views-field-field-lead-image-fid
 {
   float: left;
   margin-right: 15px;
@@ -293,7 +322,9 @@ img.comment-image {
   margin-bottom: 0;
 }
 
-.front .view-homepage .attachment-after {
+.front .view-homepage .attachment-after,
+.front .view-homepage_popular .attachment-after,
+.front .view-homepage_discussions .attachment-after {
   margin-top: 15px;
 }
 
@@ -301,7 +332,11 @@ img.comment-image {
 .view-id-homepage a,
 .view-id-og_ghp_ron a,
 .view-id-homepage a:visited,
-.view-id-og_ghp_ron a:visited {
+.view-id-og_ghp_ron a:visited,
+.view-id-homepage_discussions a,
+.view-id-homepage_popular a,
+.view-id-homepage_discussions a:visited,
+.view-id-homepage_popular a:visited {
   text-decoration: none;
   color: #3399ff;
 }
@@ -311,7 +346,11 @@ img.comment-image {
 .view-id-og_ghp_ron a:hover,
 .view-id-og_ghp_ron a:focus,
 .view-id-homepage a:active,
-.view-id-og_ghp_ron a:active {
+.view-id-og_ghp_ron a:active,
+.view-id-homepage_discussions a:hover,
+.view-id-homepage_discussions a:focus,
+.view-id-homepage_popular a:hover,
+.view-id-homepage_popular a:focus {
   text-decoration: underline;
   color: #3399ff;
 }
@@ -320,7 +359,11 @@ img.comment-image {
 .view-id-homepage .views-field-title a,
 .view-id-og_ghp_ron .views-field-title a,
 .view-id-homepage .views-field-title a:visited,
-.view-id-og_ghp_ron .views-field-title a:visited {
+.view-id-og_ghp_ron .views-field-title a:visited,
+.view-id-homepage_discussions .views-field-title a,
+.view-id-homepage_popular .views-field-title a,
+.view-id-homepage_discussions .views-field-title a:visited,
+.view-id-homepage_popular .views-field-title a:visited {
   text-decoration: none;
   color: #000000;
 }
@@ -330,7 +373,13 @@ img.comment-image {
 .view-id-og_ghp_ron .views-field-title a:hover,
 .view-id-og_ghp_ron .views-field-title a:focus,
 .view-id-homepage .views-field-title a:active,
-.view-id-og_ghp_ron .views-field-title a:active {
+.view-id-og_ghp_ron .views-field-title a:active,
+.view-id-homepage_discussions .views-field-title a:hover,
+.view-id-homepage_discussions .views-field-title a:focus,
+.view-id-homepage_discussions .views-field-title a:active,
+.view-id-homepage_popular .views-field-title a:hover,
+.view-id-homepage_popular .views-field-title a:focus,
+.view-id-homepage_popular .views-field-title a:active {
   text-decoration: underline;
   color: #3399ff;
 }
