@@ -87,23 +87,23 @@
 }
 
 .view-homepage .views-field-title,
-.view-homepage_discussions .views-field-title,
-.view-homepage_popular .views-field-title
+.view-homepage-discussions .views-field-title,
+.view-homepage-popular .views-field-title
 {
   font-size:24px; /* temporary */
   line-height:28px; /* temporary */
 }
 
 .view-homepage .article-author-feed,
-.view-homepage_discussions .article-author-feed,
-.view-homepage_popular .article-author-feed
+.view-homepage-discussions .article-author-feed,
+.view-homepage-popular .article-author-feed
 {
   float:none;
   vertical-align:middle;
 }
 .view-homepage .views-field-value,
-.view-homepage_discussions .views-field-value,
-.view-homepage_popular .views-field-value
+.view-homepage-discussions .views-field-value,
+.view-homepage-popular .views-field-value
 {
   padding-right: 15px;
   position: relative;
@@ -113,19 +113,19 @@
 .view-homepage .views-field-group-nid,
 .view-homepage .views-field-group-nid a,
 .view-homepage .views-field-type,
-.view-homepage_discussions .views-field-group-nid,
-.view-homepage_discussions .views-field-group-nid a,
-.view-homepage_discussions .views-field-type,
-.view-homepage_popular .views-field-group-nid,
-.view-homepage_popular .views-field-group-nid a,
-.view-homepage_popular .views-field-type
+.view-homepage-discussions .views-field-group-nid,
+.view-homepage-discussions .views-field-group-nid a,
+.view-homepage-discussions .views-field-type,
+.view-homepage-popular .views-field-group-nid,
+.view-homepage-popular .views-field-group-nid a,
+.view-homepage-popular .views-field-type
 {
   color:#676768;
 }
 
 .view-homepage .views-field-comment-count,
-.view-homepage_discussions .views-field-comment-count,
-.view-homepage_popular .views-field-comment-count
+.view-homepage-discussions .views-field-comment-count,
+.view-homepage-popular .views-field-comment-count
 {
   background:transparent url(../images/comment.jpg) no-repeat scroll left top;
   padding-left:20px;
@@ -209,22 +209,22 @@ img.comment-image {
 }
 
 .view-homepage .views-field-view-node,
-.view-homepage_popular .views-field-view-node,
-.view-homepage_discussions .views-field-view-node
+.view-homepage-popular .views-field-view-node,
+.view-homepage-discussions .views-field-view-node
 {
   float: right;
 }
 
 .view-homepage .views-field-view-node a,
-.view-homepage_popular .views-field-view-node a,
-.view-homepage_discussions .views-field-view-node a
+.view-homepage-popular .views-field-view-node a,
+.view-homepage-discussions .views-field-view-node a
 {
   color:#5993CE
 }
 
 .view-homepage .views-row, /* on the homepage attached view provide space and border after every row */
-.view-homepage_popular .views-row,
-.view-homepage_discussions .views-row
+.view-homepage-popular .views-row,
+.view-homepage-discussions .views-row
 {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -237,8 +237,8 @@ img.comment-image {
 }
 
 .view-homepage .views-row-last,
-.view-homepage_popular .views-row-last,
-.view-homepage_discussions .views-row-last
+.view-homepage-popular .views-row-last,
+.view-homepage-discussions .views-row-last
 {
   padding-bottom:0;
   margin-bottom:0;
@@ -246,16 +246,16 @@ img.comment-image {
 }
 
 .view-homepage .views-field-title,
-.view-homepage_popular .views-field-title,
-.view-homepage_discussions .views-field-title
+.view-homepage-popular .views-field-title,
+.view-homepage-discussions .views-field-title
 {
   font-size:18px;
   line-height:20px;
 }
 
 .view-homepage .views-field-field-image-imceimage-path,
-.view-homepage_popular .views-field-field-image-imceimage-path,
-.view-homepage_discussions .views-field-field-image-imceimage-path
+.view-homepage-popular .views-field-field-image-imceimage-path,
+.view-homepage-discussions .views-field-field-image-imceimage-path
 {
   float: left;
   margin-right: 15px;
@@ -263,8 +263,8 @@ img.comment-image {
 }
 
 .view-homepage .views-field-field-lead-image-fid,
-.view-homepage_popular .views-field-field-lead-image-fid,
-.view-homepage_discussions .views-field-field-lead-image-fid
+.view-homepage-popular .views-field-field-lead-image-fid,
+.view-homepage-discussions .views-field-field-lead-image-fid
 {
   float: left;
   margin-right: 15px;
@@ -323,8 +323,8 @@ img.comment-image {
 }
 
 .front .view-homepage .attachment-after,
-.front .view-homepage_popular .attachment-after,
-.front .view-homepage_discussions .attachment-after {
+.front .view-homepage-popular .attachment-after,
+.front .view-homepage-discussions .attachment-after {
   margin-top: 15px;
 }
 
