@@ -1,0 +1,31 @@
+<?php 
+/**
+ * Installation and update scripts for Opensource Points
+ */
+
+function opensource_points_update_6001(&$sandbox){
+  $result = db_query(
+    "SELECT DISTINCT(u.uid) AS uid, u.name, n.points
+      FROM userpoints_txn n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.points < 0
+      AND u.status = 1
+      AND u.login > 0
+      GROUP BY u.uid
+      ORDER BY u.name"
+  );
+  
+  $dataset = array(); // initialize on first query
+  while ($row = db_fetch_object($result)) {
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Current Points'] = db_result(db_query("SELECT SUM(points) FROM {userpoints_txn} WHERE uid = %d", $row->uid));
+    $dataset[$row->uid]['Actual Points'] = db_result(db_query("SELECT SUM(points) FROM {userpoints_txn} WHERE uid = %d AND points > 0", $row->uid));
+    $dataset[$row->uid]['Role'] = implode(", ", user_load($row->uid)->roles);
+    
+    _opensource_points_role_update_roles($row->uid, $dataset[$row->uid]['Actual Points'], 1);
+    _opensource_points_update_badges($row->uid, $dataset[$row->uid]['Actual Points']);
+    
+    # db_query("DELETE FROM {userpoints_txn} WHERE uid = %d AND points < 0", $row->uid);
+    $sandbox['#finished'] = $dataset[$row->uid]['Name'] . ' was updated.';
+  }
+  
+}
