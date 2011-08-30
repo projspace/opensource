@@ -555,3 +555,7 @@ ol.lower-roman {
   border: 1px solid gray;
 }
 
+h1 span.hide {
+  display: none;
+}
+

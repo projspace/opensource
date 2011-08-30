@@ -93,6 +93,27 @@ function sitetheme_preprocess(&$vars, $hook) {
 }
 // */
 
+
+function sitetheme_menu_item_link($link) {
+  if (empty($link['localized_options'])) {
+    $link['localized_options'] = array();
+  }
+  
+  if($link['menu_name'] == "menu-resources") {
+    $nid = ereg_replace("[^0-9]", "", $link['link_path']);
+    $node = node_load($nid);
+    return l(theme_image($node->field_menu_image[0]['filepath']), $link['href'], array('html' => TRUE));
+  }
+  
+  // If an item is a LOCAL TASK, render it as a tab
+  if ($link['type'] & MENU_IS_LOCAL_TASK) {
+    $link['title'] = '<span class="tab">' . check_plain($link['title']) . '</span>';
+    $link['localized_options']['html'] = TRUE;
+  }
+
+  return l($link['title'], $link['href'], $link['localized_options']);
+}
+
 /**
  * Override or insert variables into the page templates.
  *
@@ -121,6 +142,11 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   if (arg(0) == 'user' && is_numeric(arg(1))) {
     sitetheme_remove_tab('File browser', $vars);
     sitetheme_remove_tab('Your votes', $vars);
+  }
+  
+  if($vars['node']->type == 'resource') {
+    $lead = $vars['node']->field_lead_image[0];
+    $vars['title'] = '<span class="hide">' . $vars['node']->title . '</span>' . theme_image($lead['filepath']);
   }
   
   // share JS
@@ -257,6 +283,7 @@ function sitetheme_preprocess_node(&$vars) {
 */
 }
 
+
 /**
  * Override or insert variables into the comment templates.
  *
@@ -315,6 +342,9 @@ function sitetheme_preprocess_block(&$vars, $hook) {
   }
   else if ($vars['block']->delta == 'contributor_spotlight-block_1') {
     $vars['block']->content = preg_replace('/_sm.png/', '.png', $vars['block']->content);;
+  }
+  else if($vars['block']->delta == 'menu-resources') {
+    $vars['block']->subject = l("Open Source Resources", "resources/open-source");
   }
 }
 

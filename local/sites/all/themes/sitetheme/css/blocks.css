@@ -573,3 +573,25 @@
   text-indent: -9999em;
   width: 288px;
 }
+
+#sidebar-second #block-menu-menu-resources h2.title a,
+#sidebar-second #block-menu-menu-resources h2.title{
+  text-decoration: none;
+  border: none;
+  font-family: sans-serif;
+  font-size: 22px;
+  color: #DD3823;
+  text-transform: capitalize;
+  font-weight: normal;
+  background: none;
+}
+
+#sidebar-second #block-menu-menu-resources ul {
+  padding: 5px;
+}
+
+#sidebar-second #block-menu-menu-resources ul li{
+  list-style: none;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
