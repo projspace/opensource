@@ -14,6 +14,8 @@ function opensource_points_update_6001(&$sandbox){
       ORDER BY u.name"
   );
   
+  $results = array();
+  
   $dataset = array(); // initialize on first query
   while ($row = db_fetch_object($result)) {
     $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
@@ -25,7 +27,8 @@ function opensource_points_update_6001(&$sandbox){
     _opensource_points_update_badges($row->uid, $dataset[$row->uid]['Actual Points']);
     
     # db_query("DELETE FROM {userpoints_txn} WHERE uid = %d AND points < 0", $row->uid);
-    $sandbox['#finished'] = $dataset[$row->uid]['Name'] . ' was updated.';
+    $results[] = array('success' => TRUE, 'query' => $dataset[$row->uid]['Name'] . '\'s role and points were adjusted.');
   }
   
+  return $results;
 }
