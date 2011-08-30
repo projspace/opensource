@@ -26,7 +26,7 @@ function opensource_points_update_6001(&$sandbox){
     _opensource_points_role_update_roles($row->uid, $dataset[$row->uid]['Actual Points'], 1);
     _opensource_points_update_badges($row->uid, $dataset[$row->uid]['Actual Points']);
     
-    # db_query("DELETE FROM {userpoints_txn} WHERE uid = %d AND points < 0", $row->uid);
+    db_query("DELETE FROM {userpoints_txn} WHERE uid = %d AND points < 0", $row->uid);
     $results[] = array('success' => TRUE, 'query' => $dataset[$row->uid]['Name'] . '\'s role and points were adjusted.');
   }
   
