@@ -3,7 +3,7 @@
  * Installation and update scripts for Opensource Points
  */
 
-function opensource_points_update_6001(&$sandbox){
+function opensource_points_update_6002(&$sandbox){
   $result = db_query(
     "SELECT DISTINCT(u.uid) AS uid, u.name, n.points
       FROM userpoints_txn n LEFT JOIN {users} u ON n.uid = u.uid
@@ -26,9 +26,10 @@ function opensource_points_update_6001(&$sandbox){
     _opensource_points_role_update_roles($row->uid, $dataset[$row->uid]['Actual Points'], 1);
     _opensource_points_update_badges($row->uid, $dataset[$row->uid]['Actual Points']);
     
-    db_query("DELETE FROM {userpoints_txn} WHERE uid = %d AND points < 0", $row->uid);
+    db_query("UPDATE {userpoints} SET points = %d WHERE uid = %d", $dataset[$row->uid]['Actual Points'], $row->uid);
     $results[] = array('success' => TRUE, 'query' => $dataset[$row->uid]['Name'] . '\'s role and points were adjusted.');
   }
   
+  db_query("DELETE FROM {userpoints_txn} WHERE points < 0");
   return $results;
 }
