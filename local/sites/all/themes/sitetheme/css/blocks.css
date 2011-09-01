@@ -581,7 +581,7 @@
   font-family: sans-serif;
   font-size: 22px;
   color: #DD3823;
-  text-transform: capitalize;
+  text-transform: none;
   font-weight: normal;
   background: none;
 }

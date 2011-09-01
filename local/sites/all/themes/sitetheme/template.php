@@ -222,7 +222,7 @@ function sitetheme_preprocess_node(&$vars) {
     $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a></span>';
     $vars['links_all'] .= '</div>';
   }
-  elseif ($vars['node']->type == 'post' && $vars['page']) {
+  elseif (($vars['node']->type == 'post' || $vars['node']->type == 'podcast') && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
     $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
     
@@ -344,7 +344,7 @@ function sitetheme_preprocess_block(&$vars, $hook) {
     $vars['block']->content = preg_replace('/_sm.png/', '.png', $vars['block']->content);;
   }
   else if($vars['block']->delta == 'menu-resources') {
-    $vars['block']->subject = l("Open Source Resources", "resources/open-source");
+    $vars['block']->subject = l("Open source resources", "resources/open-source");
   }
 }
 
