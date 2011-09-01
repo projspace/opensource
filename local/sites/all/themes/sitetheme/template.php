@@ -211,7 +211,7 @@ function sitetheme_preprocess_node(&$vars) {
   if ($vars['node']->type == 'channel') {
     $vars['links'] = '';
   }
-  elseif ($vars['node']->type == 'post' && !$vars['page']) {
+  elseif (($vars['node']->type == 'post' || $vars['node']->type == 'podcast') && !$vars['page']) {
     $vars['links_all'] = '<div class="clearfix"></div><div class="article-visitor-links clear-block">';
     if ($vars['node']->comment_count > 0) {
       $vars['links_all'] .= '<span class="article-comment-count">'. l(format_plural($vars['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $vars['node']->comment_count)), 'node/'. $vars['node']->nid, array('fragment' => 'comments')) .'</span>';
