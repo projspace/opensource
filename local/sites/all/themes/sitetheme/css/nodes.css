@@ -128,6 +128,12 @@
   right: 0;
 }
 
+.node-type-podcast form.fivestar-widget {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .article-author-info,
 .node .submitted /* The "posted by" information */ {
   display: block;
