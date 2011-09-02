@@ -344,7 +344,7 @@ function sitetheme_preprocess_block(&$vars, $hook) {
     $vars['block']->content = preg_replace('/_sm.png/', '.png', $vars['block']->content);;
   }
   else if($vars['block']->delta == 'menu-resources') {
-    $vars['block']->subject = l("Open source resources", "resources/open-source");
+    $vars['block']->subject = l("Open source resources", "resources");
   }
 }
 

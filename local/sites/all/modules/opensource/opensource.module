@@ -4,5 +4,12 @@
  * Implementation of hook_form_alter
  */
 function opensource_form_alter(&$form, &$form_state, $form_id) {
-
+ // If we have a lead image, we know we should include an /imce upload link
+ if($form['field_lead_image']) {
+  $form['imce_link'] = array(
+    '#type' => 'markup',
+    '#weight' => -10,
+    '#value' => l("Upload Images", "imce", array('attributes' => array('target' => '_blank'))),
+  );
+ }
 }
