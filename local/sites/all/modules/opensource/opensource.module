@@ -21,13 +21,14 @@ function opensource_block($op = 'list', $delta = 0, $edit = array()) {
   switch($op) {
     case "list":
       $blocks = array();
-      $blocks[0] = array(
+      $blocks[1] = array(
         'info' => t('opensource: Social Links'),
         'status' => 1,
+        'weight' => 10,
       );
       return $blocks;
     case "view":
-      if($delta == 0){
+      if($delta == 1){
         $block = array(
           'subject' => 'Stay Connected',
           'content' => opensource_display_social_block(),
