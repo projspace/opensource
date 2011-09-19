@@ -13,3 +13,30 @@ function opensource_form_alter(&$form, &$form_state, $form_id) {
   );
  }
 }
+
+/**
+ * Implementation of hook_block
+ */
+function opensource_block($op = 'list', $delta = 0, $edit = array()) {
+  switch($op) {
+    case "list":
+      $blocks = array();
+      $blocks[0] = array(
+        'info' => t('opensource: Social Links'),
+        'status' => 1,
+      );
+      return $blocks;
+    case "view":
+      if($delta == 0){
+        $block = array(
+          'subject' => 'Stay Connected',
+          'content' => opensource_display_social_block(),
+        );
+      }
+      return $block;
+  }
+}
+
+function opensource_display_social_block() {
+  return "Here is some content";
+}
