@@ -21,16 +21,14 @@ function opensource_block($op = 'list', $delta = 0, $edit = array()) {
   switch($op) {
     case "list":
       $blocks = array();
-      $blocks[1] = array(
-        'info' => t('opensource: Social Links'),
-        'status' => 1,
-        'weight' => 10,
+      $blocks['opensource-social-links'] = array(
+        'info' => 'opensource: Social Links',
       );
       return $blocks;
     case "view":
-      if($delta == 1){
+      if($delta == 'opensource-social-links'){
         $block = array(
-          'subject' => 'Stay Connected',
+          'subject' => '<none>',
           'content' => opensource_display_social_block(),
         );
       }
@@ -39,5 +37,38 @@ function opensource_block($op = 'list', $delta = 0, $edit = array()) {
 }
 
 function opensource_display_social_block() {
-  return "Here is some content";
+  $links = array();
+  $links['twitter'] = array(
+    'href' => 'http://twitter.com/opensourceway',
+    'title' => theme_image('sites/all/themes/sitetheme/images/twitter.jpg'),
+    'html' => TRUE,
+  );
+  $links['facebook'] = array(
+    'href' => 'http://facebook.com/pages/opensourcecom/162962298056',
+    'title' => theme_image('sites/all/themes/sitetheme/images/facebook.jpg'),
+    'html' => TRUE,
+  );
+  $links['identica'] = array(
+    'href' => 'http://identi.ca/opensourceway',
+    'title' => theme_image('sites/all/themes/sitetheme/images/identica.png'),
+    'html' => TRUE,
+  );
+  $links['flickr'] = array(
+    'href' => 'http://www.flickr.com/photos/opensourceway',
+    'title' => theme_image('sites/all/themes/sitetheme/images/flickr_24x24.jpg'),
+    'html' => TRUE,
+  );
+  $links['youtube'] = array(
+    'href' => 'http://www.youtube.com/opensourceway',
+    'title' => theme_image('sites/all/themes/sitetheme/images/youtube.jpg'),
+    'html' => TRUE,
+  );
+  $links['rss'] = array(
+    'href' => 'http://www.youtube.com/opensourceway',
+    'title' => theme_image('sites/all/themes/sitetheme/images/osdc_rss_24x24.png'),
+    'html' => TRUE,
+  );
+  
+  $output = theme_links($links, array('class' => 'social-links'));
+  return $output;
 }
