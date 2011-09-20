@@ -21,6 +21,7 @@ function opensource_block($op = 'list', $delta = 0, $edit = array()) {
   switch($op) {
     case "list":
       $blocks = array();
+      $blocks[0] = array('info' => 'Dummy Block');
       $blocks['opensource-social-links'] = array(
         'info' => 'opensource: Social Links',
       );
