@@ -559,3 +559,13 @@ h1 span.hide {
   display: none;
 }
 
+.social-links {
+  text-align: center;
+}
+
+.social-links li {
+  list-style: none;
+  list-style-type: none;
+  display: inline;
+  padding: 5px;
+}
