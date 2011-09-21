@@ -569,3 +569,9 @@ h1 span.hide {
   display: inline;
   padding: 5px;
 }
+
+.block-opensource a.newsletter{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
