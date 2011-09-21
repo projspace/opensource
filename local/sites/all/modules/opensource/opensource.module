@@ -42,36 +42,42 @@ function opensource_display_social_block() {
   $links['twitter'] = array(
     'href' => 'http://twitter.com/opensourceway',
     'title' => theme_image('sites/all/themes/sitetheme/images/twitter.jpg'),
+    'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
   $links['facebook'] = array(
     'href' => 'http://facebook.com/pages/opensourcecom/162962298056',
     'title' => theme_image('sites/all/themes/sitetheme/images/facebook.jpg'),
+    'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
   $links['identica'] = array(
     'href' => 'http://identi.ca/opensourceway',
     'title' => theme_image('sites/all/themes/sitetheme/images/identica.png'),
+    'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
   $links['flickr'] = array(
     'href' => 'http://www.flickr.com/photos/opensourceway',
     'title' => theme_image('sites/all/themes/sitetheme/images/flickr_24x24.jpg'),
+    'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
   $links['youtube'] = array(
     'href' => 'http://www.youtube.com/opensourceway',
     'title' => theme_image('sites/all/themes/sitetheme/images/youtube.jpg'),
+    'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
   $links['rss'] = array(
     'href' => 'http://www.youtube.com/opensourceway',
     'title' => theme_image('sites/all/themes/sitetheme/images/osdc_rss_24x24.png'),
+    'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
   
   $output = theme_links($links, array('class' => 'social-links'));
   $output .= l(theme_image('sites/all/themes/sitetheme/images/email-signup.png'), 'https://engage.redhat.com/forms/opensourcedotcom-subscription',
-               array('html' => TRUE, 'attributes' => array('class' => 'newsletter')));
+               array('html' => TRUE, 'attributes' => array('class' => 'newsletter', 'target' => '_blank')));
   return $output;
 }
