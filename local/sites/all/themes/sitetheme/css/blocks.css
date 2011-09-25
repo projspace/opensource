@@ -595,3 +595,65 @@
   list-style-type: none;
   margin-bottom: 10px;
 }
+
+
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li {
+  width: 162px;
+  margin-bottom: -1px;
+}
+
+
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li.active,
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li,
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic {
+  border-color: #CDCBCA;
+}
+
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li.active {
+  border-bottom: none;
+}
+
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li a:link,
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li a:visited,
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li a:hover,
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li a:active {
+  color: transparent !important;
+  display: block;
+}
+
+
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li.active a:link,
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li.active a:visited,
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li.active a:hover,
+#quicktabs-3 ul.quicktabs_tabs.quicktabs-style-basic li.active a:active {
+  color: transparent !important;
+  display: block;
+}
+
+#quicktabs-3 .qtab-0 {
+  background: transparent url('/sites/all/themes/sitetheme/images/osdc_featured_inactive.png') no-repeat 50px 8px;
+}
+
+#quicktabs-3 .qtab-0.active,
+#quicktabs-3 .qtab-0:hover {
+  background: transparent url('/sites/all/themes/sitetheme/images/osdc_featured_active.png') no-repeat 50px 8px;
+}
+
+
+#quicktabs-3 .qtab-1 {
+  background: transparent url('/sites/all/themes/sitetheme/images/osdc_mostcomments_inactive.png') no-repeat 30px 8px;
+}
+
+#quicktabs-3 .qtab-1.active,
+#quicktabs-3 .qtab-1:hover {
+  background: transparent url('/sites/all/themes/sitetheme/images/osdc_mostcomments_active.png') no-repeat 30px 8px;
+}
+
+#quicktabs-3 .qtab-2 {
+  background: transparent url('/sites/all/themes/sitetheme/images/osdc_mostpopular_inactive.png') no-repeat 30px 8px;
+}
+
+#quicktabs-3 .qtab-2.active,
+#quicktabs-3 .qtab-2:hover {
+  background: transparent url('/sites/all/themes/sitetheme/images/osdc_mostpopular_active.png') no-repeat 30px 8px;
+}
