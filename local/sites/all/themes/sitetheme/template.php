@@ -157,6 +157,8 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   */
   $vars['closure'] .= '<script type="text/javascript">var addthis_config = {data_track_clickback:true};</script>';
   $vars['closure'] .= '<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=opensourceway"></script>';
+  $vars['closure'] .= '<script type="text/javascript">(function trackTab(tabName){var oldPageName = s.pageName; s.pageName = s.pageName + " | " + tabName; void(s.t()); s.pageName = oldPageName;})();</script>';
+  
 }
 
 
@@ -851,3 +853,31 @@ function sitetheme_preprocess_user_profile(&$vars) {
 }
 
 
+function sitetheme_quicktabs_tabs($quicktabs, $active_tab = 'none') {
+  $output = '';
+  $tabs_count = count($quicktabs['tabs']);
+  if ($tabs_count <= 0) {
+    return $output;
+  }
+
+  $index = 1;
+  $output .= '<ul class="quicktabs_tabs quicktabs-style-'. drupal_strtolower($quicktabs['style']) .'">';
+  foreach ($quicktabs['tabs'] as $i => $tab) {
+    $class = 'qtab-'. $i;
+    // Add first, last and active classes to the list of tabs to help out themers.
+    $class .= ($i == $active_tab ? ' active' : '');
+    $class .= ($index == 1 ? ' first' : '');
+    $class .= ($index == $tabs_count ? ' last': '');
+    if ($quicktabs['title'] == 'Front Hall') {
+      $attributes_li = drupal_attributes(array('class' => $class, 'onClick' => 'trackTabs('. $tab['title'] .')'));
+    }
+    else {
+      $attributes_li = drupal_attributes(array('class' => $class));
+    }
+    $options = _quicktabs_construct_link_options($quicktabs, $i);
+    $output .= '<li'. $attributes_li .'>'. l($tab['title'], $_GET['q'], $options) .'</li>';
+    $index++;
+  }
+  $output .= '</ul>';
+  return $output;
+}
