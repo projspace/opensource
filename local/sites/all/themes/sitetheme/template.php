@@ -869,7 +869,7 @@ function sitetheme_quicktabs_tabs($quicktabs, $active_tab = 'none') {
     $class .= ($index == 1 ? ' first' : '');
     $class .= ($index == $tabs_count ? ' last': '');
     if ($quicktabs['title'] == 'Front Hall') {
-      $attributes_li = drupal_attributes(array('class' => $class, 'onClick' => 'trackTabs("'. $tab['title'] .'")'));
+      $attributes_li = drupal_attributes(array('class' => $class, 'onClick' => 'trackTabs(\''. $tab['title'] .'\')'));
     }
     else {
       $attributes_li = drupal_attributes(array('class' => $class));
