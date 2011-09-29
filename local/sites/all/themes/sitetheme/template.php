@@ -157,7 +157,7 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   */
   $vars['closure'] .= '<script type="text/javascript">var addthis_config = {data_track_clickback:true};</script>';
   $vars['closure'] .= '<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=opensourceway"></script>';
-  $vars['closure'] .= '<script type="text/javascript">(function trackTab(tabName){var oldPageName = s.pageName; s.pageName = s.pageName + " | " + tabName; void(s.t()); s.pageName = oldPageName;})();</script>';
+  $vars['closure'] .= '<script type="text/javascript">function trackTab(tabName){var oldPageName = s.pageName; s.pageName = s.pageName + "|" + tabName; void(s.t()); s.pageName = oldPageName;} trackTab();</script>';
   
 }
 
