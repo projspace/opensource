@@ -106,7 +106,9 @@ function opensource_omniture_omniture_variables($main) {
     'variables' => array(
       's.pageName' => $page_name,
       's.server' => "",
-      's.channel' => "opensource",
+      's.channel' => ($_SERVER['SERVER_NAME'] == 'opensource.com')
+        ? "opensource"
+        : ('osdc:' . $_SERVER['SERVER_NAME']),
       's.pageType' => "",
       's.prop1' => "",
       /* E-commerce Variables */
