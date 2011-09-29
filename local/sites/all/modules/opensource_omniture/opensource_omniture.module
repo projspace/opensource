@@ -12,7 +12,8 @@ function opensource_omniture_omniture_variables($main) {
   global $user;
 
   // Every page starts with the site name.
-  $page_name = 'opensource';
+  $page_name = ($_SERVER['SERVER_NAME'] == 'opensource.com')
+    ? ('opensource') : ('osdc:' . $_SERVER['SERVER_NAME']);
 
   // The user is on the homepage.
   if (drupal_is_front_page()) {
@@ -106,9 +107,7 @@ function opensource_omniture_omniture_variables($main) {
     'variables' => array(
       's.pageName' => $page_name,
       's.server' => "",
-      's.channel' => ($_SERVER['SERVER_NAME'] == 'opensource.com')
-        ? "opensource"
-        : ('osdc:' . $_SERVER['SERVER_NAME']),
+      's.channel' => "opensource",
       's.pageType' => "",
       's.prop1' => "",
       /* E-commerce Variables */
