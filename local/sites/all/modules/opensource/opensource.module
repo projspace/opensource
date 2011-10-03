@@ -70,7 +70,7 @@ function opensource_display_social_block() {
     'html' => TRUE,
   );
   $links['rss'] = array(
-    'href' => 'http://www.youtube.com/opensourceway',
+    'href' => 'http://opensource.com/feed',
     'title' => theme_image('sites/all/themes/sitetheme/images/osdc_rss_24x24.png'),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
