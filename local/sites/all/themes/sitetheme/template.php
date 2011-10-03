@@ -157,7 +157,10 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   */
   $vars['closure'] .= '<script type="text/javascript">var addthis_config = {data_track_clickback:true};</script>';
   $vars['closure'] .= '<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=opensourceway"></script>';
-  $vars['closure'] .= '<script type="text/javascript">function trackTab(tabName){var oldPageName = s.pageName; s.pageName = s.pageName + "|" + tabName; console.log(s.pageName); void(s.t()); s.pageName = oldPageName;}</script>';
+
+  // Quicktabs executes a click on the default tab to ensure that it is active
+  // but we only want to track real clicks for omniture, so check for a clientX
+  $vars['closure'] .= '<script type="text/javascript">function trackTab(tabName, e) {var evt = (window.event) ? window.event : e; if (evt && evt.clientX) { var oldPageName = s.pageName; s.pageName = s.pageName + "|" + tabName; void(s.t()); s.pageName = oldPageName;}}</script>';
   
 }
 
@@ -875,7 +878,7 @@ function sitetheme_quicktabs_tabs($quicktabs, $active_tab = 'none') {
     $attributes_li = drupal_attributes(array('class' => $class));
     //}
     $options = _quicktabs_construct_link_options($quicktabs, $i);
-    $options['attributes']['onmousedown'] = 'trackTab(this.innerHTML)';
+    $options['attributes']['onclick'] = 'trackTab(this.innerHTML, event)';
     $output .= '<li'. $attributes_li .'>'. l($tab['title'], $_GET['q'], $options) .'</li>';
     $index++;
   }
