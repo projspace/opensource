@@ -160,7 +160,20 @@ function sitetheme_preprocess_page(&$vars, $hook) {
 
   // Quicktabs executes a click on the default tab to ensure that it is active
   // but we only want to track real clicks for omniture, so check for a clientX
-  $vars['closure'] .= '<script type="text/javascript">function trackTab(tabName, e) {var evt = (window.event) ? window.event : e; if (evt && evt.clientX) { var oldPageName = s.pageName; s.pageName = s.pageName + "|" + tabName; void(s.t()); s.pageName = oldPageName;}}</script>';
+  $vars['closure'] .= '<script type="text/javascript">
+<!--//--><![CDATA[//><!-- 
+function trackTab(tabName, e) {
+  var evt = (window.event) ? window.event : e; 
+  if (evt && evt.clientX) { 
+    var oldPageName = s.pageName; 
+    s.pageName = s.pageName + "|" + tabName; 
+    //console.debug(s.t);
+    void(s.t()); 
+    s.pageName = oldPageName;
+  }
+}
+//--><!]]>
+</script>';
   
 }
 
