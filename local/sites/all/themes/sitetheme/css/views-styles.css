@@ -77,13 +77,7 @@
  * Homepage views
  */
 .front #content-header h1.title {
-  font-weight: normal;
-  color: #dd3823;
-  height: 0;
-  overflow: hidden;
-  width: 123px;
-  padding-top: 13px;
-  background-image: url(../images/osdc_featured_content.png);
+  display: none;
 }
 
 .view-homepage .views-field-title,
