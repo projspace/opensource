@@ -250,8 +250,18 @@ function sitetheme_preprocess_node(&$vars) {
     }
     
     // Grab the caption from the imce_caption module.
-    $path = sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']);
-    if (function_exists('imce_caption_load') && $caption = imce_caption_load(array('filepath' => file_directory_path() . '/' . $path))) {
+    if (function_exists('imce_caption_load')) {
+      if ($vars['node']->field_image[0]['imceimage_path']) {
+        $path = sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']);
+        $caption = imce_caption_load(array('filepath' => file_directory_path() . '/' . $path));
+      }
+      
+      if ($vars['node']->field_lead_image[0]['view']) {
+        $caption = imce_caption_load(array('fid' => $vars['node']->field_lead_image[0]['fid']));
+      }
+    }
+  
+    if ($caption) {
       $caption = '<br /><span class="node-main-image-caption">' . t('Image credits: !caption', array('!caption' => $caption)) . '</span>';
     }
     else {
@@ -261,12 +271,6 @@ function sitetheme_preprocess_node(&$vars) {
       $field_lead_image_view = $vars['node']->field_lead_image[0]['view'];
       if (preg_match('/(<img [^>]+>)/', $field_lead_image_view, $lead_matches)) {
         $field_lead_image = $lead_matches[1];
-        $caption = $vars['node']->field_lead_image[0]['data']['title'];
-        if($caption) {
-          $caption = '<br /><span class="node-main-image-caption">' . t('Image credits: !caption', array('!caption' => $caption)) . '</span>';
-        } else {
-          $caption = '<br /><span class="node-main-image-caption">Image by opensource.com</span>';
-        }
         $vars['content'] = '<div class="node-main-image">'. $field_lead_image  . $caption .'</div>' . $vars['content'];
       }
     }
