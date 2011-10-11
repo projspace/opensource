@@ -172,6 +172,7 @@
   font-weight: normal;
 }
 
+.block .view-poll-block .form-submit,
 .block .view-id-channel_Poll .form-submit,
 .block .view-id-site_homepage_poll .form-submit {
   float: right;

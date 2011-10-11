@@ -330,9 +330,24 @@ img.comment-image {
 .view-id-homepage_discussions a,
 .view-id-homepage_popular a,
 .view-id-homepage_discussions a:visited,
-.view-id-homepage_popular a:visited {
+.view-id-homepage_popular a:visited,
+.view-site-homepage-poll a,
+.view-site-homepage-poll a:visited,
+.view-poll-block a,
+.view-poll-block a:visited{
   text-decoration: none;
   color: #3399ff;
+}
+
+.view-poll-block .views-field-comment-count,
+.view-poll-block .views-field-view-node,
+.view-site-homepage-poll .views-field-comment-count,
+.view-site-homepage-poll .views-field-view-node {
+  padding-top: 5px;
+}
+
+.views-field-view-node a {
+  font-weight: bold;
 }
 
 .view-id-homepage a:hover,
