@@ -432,6 +432,9 @@ div.view-channel-reading li.views-row {
 div#content-area > div.view-contributor-spotlight div.views-row {
   margin-top:1em;
   margin-bottom:1em;
+  padding-bottom:1.5em;
+  background: url("../images/osdc_dot4x4.png") repeat-x scroll center bottom transparent;
+
 }
 
 div#content-area > div.view-contributor-spotlight img {
