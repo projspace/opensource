@@ -230,6 +230,7 @@ ini_set('url_rewriter.tags',        '');
 // Poll Field error msg: https://acquia.com/network/node/1438847
 $conf['locale_custom_strings_en'] = array(
   'You already voted or your are not allowed to vote' => 'You already voted or you are not allowed to vote',
+  'To complete this form, please complete the word verification below.' => "We don't like getting SPAM so we're using Mollom to protect us. We need to make sure you're a real person, so please complete the word verification below to continue.",
 );
 
 // CSRF Protection: See https://acquia.com/network/node/1124803
