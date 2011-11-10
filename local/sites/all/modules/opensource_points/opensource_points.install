@@ -31,3 +31,22 @@ function opensource_points_update_6003(&$sandbox){
   
   return $results;
 }
+
+/**
+ *
+ * Update the points for users who have more than 1000 so
+ * there aren't duplicated badges. To do this, we assign
+ * everyone a single point who meets the criteria.
+ */
+function opensource_points_update_6004(&$sandbox) {
+  $result = db_query(
+    "SELECT DISTINCT(uid) AS uid, points FROM {userpoints} WHERE points > 999"
+  );
+  while($row = db_fetch_object($result)) {
+    _opensource_points_role_update_roles($row->uid, $row->points, 1);
+    _opensource_points_update_badges($row->uid, $row->points);
+  }
+  $results = array();
+  $results[] = array('success' => TRUE, 'query' => "All users with more than 999 points have been adjusted to new badges/roles.");
+  return $results;
+}
