@@ -157,7 +157,7 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   */
   $vars['closure'] .= '<script type="text/javascript">var addthis_config = {data_track_clickback:true};</script>';
   $vars['closure'] .= '<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=opensourceway"></script>';
-  $vars['closure'] .= '<script type="text/javascript">var addthis_share = {url_transforms : {shorten: {twitter: 'bitly'}}, shorteners : {bitly : {login: 'opensourceway',apiKey: 'R_789680ae32a4a961941c3b9a7daf0495'}}}</script>';  
+  $vars['closure'] .= '<script type="text/javascript">var addthis_share = {url_transforms : {shorten: {twitter: 'bitly'}}, shorteners : {bitly : {login: 'opensourceway',apiKey: 'R_789680ae32a4a961941c3b9a7daf0495'}}}</script>';
 
   // Quicktabs executes a click on the default tab to ensure that it is active
   // but we only want to track real clicks for omniture, so check for a clientX
