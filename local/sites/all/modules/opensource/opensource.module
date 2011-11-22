@@ -79,5 +79,40 @@ function opensource_display_social_block() {
   $output = theme_links($links, array('class' => 'social-links'));
   $output .= l(theme_image('sites/all/themes/sitetheme/images/email-signup.png'), 'https://engage.redhat.com/forms/opensourcedotcom-subscription',
                array('html' => TRUE, 'attributes' => array('class' => 'newsletter', 'target' => '_blank')));
+  $output .= drupal_get_form('opensource_eloqua_form');
   return $output;
+}
+
+function opensource_eloqua_form(){
+  $form['C_EmailAddress'] = array(
+    '#type' => 'textfield',
+    '#default_value' => $object['foo'],
+    '#size' => 24,
+    '#maxlength' => 96,
+  );
+  $form['elqFormName'] = array(
+    '#type' => 'hidden',
+    '#value' => 'opensourcedotcom-subscription',
+  );
+  
+  $form['elqSiteID'] = array(
+    '#type' => 'hidden',
+    '#value' => 1795,
+  );
+  
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Sign Up'),
+  );
+  $form['#action'] = 'https://secure.eloqua.com/e/f2.aspx';
+  $form['#id'] = 'opensourcedotcom-subscription';
+  $form['#redirect'] = base_path();
+  
+  return $form;
+}
+
+function opensource_eloqua_form_validate($form, &$form_state) {
+  if ($form_state['values']['c_EmailAddress'] == '') {    
+    form_set_error('name', t('You must enter a valid email address.'));
+  }
 }

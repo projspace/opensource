@@ -669,3 +669,22 @@
 #quicktabs-3 li.last a {
   border-right: none;
 }
+
+/** Additions for Eloqua Form **/
+#opensourcedotcom-subscription {
+  text-align: center;
+}
+
+#opensourcedotcom-subscription input {
+  display: inline;
+}
+
+#opensourcedotcom-subscription div.form-item {
+  display: inline;
+}
+
+#opensourcedotcom-subscription input.form-submit {
+  font-size: 14px;
+  height: 32px; 
+  padding: 0px 8px 0;
+}
