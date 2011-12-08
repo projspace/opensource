@@ -84,6 +84,9 @@ function opensource_display_social_block() {
 }
 
 function opensource_eloqua_form(){
+  // Build the Redirect
+  $redirect = url($_GET['q'], array('absolute' => TRUE));
+  
   $form['C_EmailAddress'] = array(
     '#type' => 'textfield',
     '#default_value' => $object['foo'],
@@ -98,6 +101,11 @@ function opensource_eloqua_form(){
   $form['elqSiteID'] = array(
     '#type' => 'hidden',
     '#value' => 1795,
+  );
+  
+  $form['redirect'] = array(
+    '#type' => 'hidden',
+    '#value' => check_url($redirect),
   );
   
   $form['submit'] = array(
