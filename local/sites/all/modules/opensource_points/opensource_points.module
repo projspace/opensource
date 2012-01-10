@@ -125,7 +125,7 @@ function opensource_points_form_comment_form_alter(&$form, &$form_state, $form_i
   if(!$user->uid) {
     $form['login-register'] = array(
       '#type' => 'markup',
-      '#value' => l('Login or Register', 'user?destination=' . $_SERVER['REQUEST_URI']) . ' ' . t('to earn points for your comments.'),
+      '#value' => l('Login or Register', 'user', array('query', array("destination", $_SERVER['REQUEST_URI']))) . ' ' . t('to earn points for your comments.'),
       '#weight' => -10,
     );
   }
