@@ -186,6 +186,13 @@ function comment_closer_cron() {
     // If an age number is set, do this one.
     if ($age_num) {
       $oldest_allowed = _comment_closer_oldest_allowed($age_unit, $age_num, $now);
+      
+      //@acquia: Debug code for comment closer
+      $debug = db_query("SELECT nid, created FROM {node} WHERE created < %d AND type = '%s'", array($oldest_allowed, $type));
+      while($node = db_fetch_object($debug)){
+        $params = array('!nid' => $node->nid, '!created' => format_date($node->created), '!target' => format_date($oldest_allowed));
+        watchdog('comment_closer', "!target - Closed comments on node/!nid: Created on !created", $params);
+      }
 
       // Knock it out.
       $query = "UPDATE {node} SET comment = 1 WHERE created < %d AND type = '%s'";
