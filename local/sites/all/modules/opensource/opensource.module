@@ -80,13 +80,19 @@ function opensource_display_social_block() {
   $output .= l(theme_image('sites/all/themes/sitetheme/images/email-signup.png'), 'https://engage.redhat.com/forms/opensourcedotcom-subscription',
                array('html' => TRUE, 'attributes' => array('class' => 'newsletter', 'target' => '_blank')));
   // @TODO: Reimplement this when the eloqua folks respond.
-  // $output .= drupal_get_form('opensource_eloqua_form');
+  $output .= drupal_get_form('opensource_eloqua_form');
   return $output;
+}
+
+function opensource_init(){
+  if(array_key_exists('success', $_REQUEST)) {
+    drupal_set_message('Thank you. You have been subscribed to our weekly email.');
+  }
 }
 
 function opensource_eloqua_form(){
   // Build the Redirect
-  $redirect = url($_GET['q'], array('absolute' => TRUE));
+  $redirect = url($_GET['q'], array('absolute' => TRUE, 'query' => 'success'));
   
   $form['C_EmailAddress'] = array(
     '#type' => 'textfield',
@@ -104,7 +110,7 @@ function opensource_eloqua_form(){
     '#value' => 1795,
   );
   
-  $form['redirect'] = array(
+  $form['sendToURL'] = array(
     '#type' => 'hidden',
     '#value' => check_url($redirect),
   );
