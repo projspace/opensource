@@ -25,6 +25,9 @@ function opensource_block($op = 'list', $delta = 0, $edit = array()) {
       $blocks['opensource-social-links'] = array(
         'info' => 'opensource: Social Links',
       );
+      $blocks['opensource-reader-survey'] = array(
+        'info' => 'Annual Reader Survey',
+      );
       return $blocks;
     case "view":
       if($delta == 'opensource-social-links'){
@@ -33,6 +36,13 @@ function opensource_block($op = 'list', $delta = 0, $edit = array()) {
           'content' => opensource_display_social_block(),
         );
       }
+      if($delta == 'opensource-reader-survey'){
+        $block = array(
+          'subject' => 'Annual Reader Survey',
+          'content' => opensource_display_survey_block(),
+        );
+      }
+
       return $block;
   }
 }
@@ -82,6 +92,11 @@ function opensource_display_social_block() {
   // @TODO: Reimplement this when the eloqua folks respond.
   $output .= drupal_get_form('opensource_eloqua_form');
   return $output;
+}
+
+function opensource_display_survey_block(){
+  return l('Take our Annual Reader Survey by January 27', 'life/12/1/take-our-reader-survey-help-us-improve-opensourcecom',
+           array('attributes' => array('title' => 'Annual Reader Survey', 'alt' => 'Annual Reader Survey')));
 }
 
 function opensource_init(){

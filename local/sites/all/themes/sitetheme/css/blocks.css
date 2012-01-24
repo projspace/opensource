@@ -688,3 +688,10 @@
   height: 32px; 
   padding: 0px 8px 0;
 }
+
+#sidebar-second #block-opensource-opensource-reader-survey h2.title{
+  background: url(../images/osdc_annual_survey.png) no-repeat;
+  text-indent: -999px;
+  display: block;
+  line-height: 17px;
+}
