@@ -1578,7 +1578,7 @@ function workflow_token_values($type, $object = NULL) {
 
       $values['workflow-current-state-date-iso']            =  date('Ymdhis', $date);
       $values['workflow-current-state-date-tstamp']         =  $date;
-      $values['workflow-current-state-date-formatted']      =  date('M d, Y h:i:s', $date);
+      $values['workflow-current-state-date-formatted']      =  format_date($row->stamp, 'custom', 'M d, Y h:i:s');
 
       $values['workflow-current-state-updating-user-name']  = check_plain($user_name);
       $values['workflow-current-state-updating-user-uid']   = $uid;
