@@ -695,3 +695,7 @@
   display: block;
   line-height: 17px;
 }
+
+#sidebar-second #block-views-homepage_popular-block_2 {
+  padding-left: 0;
+}
