@@ -699,3 +699,68 @@
 #sidebar-second #block-views-homepage_popular-block_2 {
   padding-left: 0;
 }
+
+/*Montly favorites*/
+#sidebar-second #block-menu-menu-monthly-favorites h2.title{
+  background: url(../../../../default/files/images/nameplates/osdc_nameplate_Monthlyfavorites.png) no-repeat;
+  text-indent: -999px;
+  display: block;
+  line-height: 17px;
+}
+
+/*Open source resources*/
+#sidebar-second #block-menu-menu-resources-promo h2.title{
+  background: url(../../../../default/files/images/nameplates/osdc_nameplate_Opensourceresources.png) no-repeat;
+  text-indent: -999px;
+  display: block;
+  line-height: 17px;
+}
+
+/*More information*/
+#sidebar-second #block-menu-menu-education-more-info h2.title{
+  background: url(../../../../default/files/images/nameplates/osdc_nameplate_Moreinformation.png) no-repeat;
+  text-indent: -999px;
+  display: block;
+  line-height: 17px;
+}
+
+/*Participate*/
+#sidebar-second #block-menu-menu-participate h2.title{
+  background: url(../../../../default/files/images/nameplates/osdc_nameplate_Participate.png) no-repeat;
+  text-indent: -999px;
+  display: block;
+  line-height: 17px;
+}
+
+/*Related*/
+#sidebar-second #block-apachesolr-mlt-001 h2.title{
+  background: url(../../../../default/files/images/nameplates/osdc_nameplate_Relatedcontent.png) no-repeat;
+  text-indent: -999px;
+  display: block;
+  line-height: 17px;
+}
+
+/*Most popular*/
+#sidebar-second #block-views-homepage_popular-block_1 h2.title{
+  background: url(../../../../default/files/images/nameplates/osdc_nameplate_Mostpopular.png) no-repeat;
+  text-indent: -999px;
+  display: block;
+  line-height: 17px;
+}
+
+/*
+On Quicktabs: Most popular, Participate
+#sidebar-second #quicktabs-tab-1-1{
+  background: url(../../../../default/files/images/nameplates/osdc_nameplate_Mostpopular.png) no-repeat;
+  text-indent: -999px;
+  display: block;
+  line-height: 17px;
+}
+
+#sidebar-second #quicktabs-tab-1-2{
+  background: url(../../../../default/files/images/nameplates/osdc_nameplate_Participate.png) no-repeat;
+  text-indent: -999px;
+  display: block;
+  line-height: 17px;
+}
+*/
