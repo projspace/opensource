@@ -136,7 +136,7 @@ function opensource_eloqua_form(){
   );
   $form['#action'] = 'https://secure.eloqua.com/e/f2.aspx';
   $form['#id'] = 'opensourcedotcom-subscription';
-  $form['#redirect'] = base_path();
+  $form['#redirect'] = $_SERVER['REQUEST_URI'];
   
   return $form;
 }
