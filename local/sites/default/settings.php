@@ -237,3 +237,7 @@ $conf['locale_custom_strings_en'] = array(
 if (isset($_GET['q']) && strpos($_GET['q'], 'user/login') === 0) {
   $conf['cache'] = CACHE_DISABLED;
 }
+
+// Suppress PHP Notices (15066-25631)
+error_reporting(E_ALL & ~E_NOTICE);
+
