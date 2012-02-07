@@ -150,6 +150,8 @@ div.view-display-id-page_1 div.views-field-created
 div.view-display-id-block_1 li.views-row
 {
   width: 290px;
+  overflow: visible;
+  color: #797979;
 }
 
 
