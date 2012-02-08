@@ -107,7 +107,7 @@ function opensource_init(){
 
 function opensource_eloqua_form(){
   // Build the Redirect
-  $redirect = url($_SERVER['REQUEST_URI'], array('absolute' => TRUE, 'query' => 'success'));
+  $redirect = url('fronthall', array('absolute' => TRUE, 'query' => 'success'));
   
   $form['C_EmailAddress'] = array(
     '#type' => 'textfield',
