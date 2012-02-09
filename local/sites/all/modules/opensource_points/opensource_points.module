@@ -120,7 +120,11 @@ function opensource_points_mail_alter(&$message){
   }
 }
 
-function opensource_points_form_comment_form_alter(&$form, &$form_state, $form_id) {
+/**
+ * Implementation of hook_form_FORM_ID_alter()
+ * This adds a Login/Register link for anonymous users
+ */
+function opensource_points_form_comment_form_alter(&$form, &$form_state) {
   global $user;
   if(!$user->uid) {
     $form['login-register'] = array(
