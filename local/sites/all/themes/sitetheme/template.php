@@ -856,7 +856,9 @@ function sitetheme_preprocess_user_profile(&$vars) {
   // If the user has any role badge except Newbie
   if(in_array('Community Member', $vars['account']->roles)
      || in_array('Open Enthusiast', $vars['account']->roles)
-     || in_array('Rock Star', $vars['account']->roles)) {
+     || in_array('Rock Star', $vars['account']->roles)
+     || in_array('Open Source Sensei', $vars['account']->roles)
+     || in_array('Open Sorcerer', $vars['account']->roles)) {
     $url = check_url($vars['account']->profile_website);
     if($url){
       if(!(strpos($url, "http://") === 0)) {
