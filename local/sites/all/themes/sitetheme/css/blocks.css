@@ -717,7 +717,7 @@
 }
 
 /*More information*/
-#sidebar-second #block-menu-menu-education-more-info h2.title{
+#sidebar-second #block-menu-menu-education-more-info h2.title, #sidebar-second #block-menu-menu-life-more-info h2.title, #sidebar-second #block-menu-menu-health-more-information h2.title{
   background: url(../../../../default/files/images/nameplates/osdc_nameplate_Moreinformation.png) no-repeat;
   text-indent: -999px;
   display: block;
