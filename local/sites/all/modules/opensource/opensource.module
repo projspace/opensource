@@ -107,7 +107,7 @@ function opensource_init(){
 
 function opensource_eloqua_form(){
   // Build the Redirect
-  $redirect = url($_SERVER["REQUEST_URI"], array('absolute' => TRUE, 'query' => 'success'));
+  $redirect = url('thank-you-subscription');
   
   $form['C_EmailAddress'] = array(
     '#type' => 'textfield',
@@ -144,4 +144,17 @@ function opensource_eloqua_form_validate($form, &$form_state) {
   if ($form_state['values']['c_EmailAddress'] == '') {    
     form_set_error('name', t('You must enter a valid email address.'));
   }
+}
+
+function opensource_cron() {
+  // Log what we are going to close.
+  $time = time() - 60 * 60 * 24 * 90;
+  $debug = db_query("SELECT nid, created FROM {node} WHERE created < %d AND type = 'post'", $time);
+  while($node = db_fetch_object($debug)){
+    $params = array('!nid' => $node->nid, '!created' => format_date($node->created), '!target' => format_date($time));
+    watchdog('opensource_cron', "!target - Closed comments on node/!nid: Created on !created", $params);
+  }
+  
+  // Closes all comments on nodes which are 90 days old.
+  db_query("UPDATE {node} n SET comment = 0 WHERE n.created < %d AND n.type = 'post'", $time);
 }
