@@ -691,7 +691,7 @@
 
 #sidebar-second #block-opensource-opensource-reader-survey h2.title{
   background: url(../images/osdc_annual_survey.png) no-repeat;
-  text-indent: -999px;
+  text-indent: -9999em;
   display: block;
   line-height: 17px;
 }
