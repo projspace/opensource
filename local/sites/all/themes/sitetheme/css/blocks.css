@@ -703,7 +703,8 @@
 /*Montly favorites*/
 #sidebar-second #block-menu-menu-monthly-favorites h2.title{
   background: url(../../../../default/files/images/nameplates/osdc_nameplate_Monthlyfavorites.png) no-repeat;
-  text-indent: -999px;
+  text-indent: -9999px;
+  overflow:hidden;
   display: block;
   line-height: 17px;
 }
@@ -711,7 +712,8 @@
 /*Open source resources*/
 #sidebar-second #block-menu-menu-resources-promo h2.title{
   background: url(../../../../default/files/images/nameplates/osdc_nameplate_Opensourceresources.png) no-repeat;
-  text-indent: -999px;
+  text-indent: -9999px;
+  overflow:hidden;
   display: block;
   line-height: 17px;
 }
@@ -719,7 +721,8 @@
 /*More information*/
 #sidebar-second #block-menu-menu-education-more-info h2.title, #sidebar-second #block-menu-menu-life-more-info h2.title, #sidebar-second #block-menu-menu-health-more-information h2.title{
   background: url(../../../../default/files/images/nameplates/osdc_nameplate_Moreinformation.png) no-repeat;
-  text-indent: -999px;
+  text-indent: -9999px;
+  overflow:hidden;
   display: block;
   line-height: 17px;
 }
@@ -727,7 +730,8 @@
 /*Participate*/
 #sidebar-second #block-menu-menu-participate h2.title{
   background: url(../../../../default/files/images/nameplates/osdc_nameplate_Participate.png) no-repeat;
-  text-indent: -999px;
+  text-indent: -9999px;
+  overflow:hidden;
   display: block;
   line-height: 17px;
 }
@@ -735,7 +739,8 @@
 /*Related*/
 #sidebar-second #block-apachesolr-mlt-001 h2.title{
   background: url(../../../../default/files/images/nameplates/osdc_nameplate_Relatedcontent.png) no-repeat;
-  text-indent: -999px;
+  text-indent: -9999px;
+  overflow:hidden;
   display: block;
   line-height: 17px;
 }
@@ -743,7 +748,8 @@
 /*Most popular*/
 #sidebar-second #block-views-homepage_popular-block_1 h2.title{
   background: url(../../../../default/files/images/nameplates/osdc_nameplate_Mostactive.png) no-repeat;
-  text-indent: -999px;
+  text-indent: -9999px;
+  overflow:hidden;
   display: block;
   line-height: 17px;
 }
