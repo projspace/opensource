@@ -14,10 +14,17 @@
 }
 
 .comment /* Wrapper for a single comment */ {
-  border:1px solid #E7E7E7;
+  /*border:1px solid #E7E7E7;
   padding:20px 20px 10px 20px;
-  margin-bottom:10px;
+  margin-bottom:10px;*/
+    border-color: #E7E7E7 #CCCCCC #CCCCCC #E7E7E7;
+    border-style: solid;
+    border-width: 1px 2px 2px 1px;
+    margin-bottom: 10px;
+    padding: 20px 20px 10px;
 }
+
+
 
 .comment-inner /* Additional wrapper for a single comment */ {
 }
