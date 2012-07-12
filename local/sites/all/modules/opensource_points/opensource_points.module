@@ -82,7 +82,7 @@ function _opensource_points_role_update_roles($uid, $points, $new_points) {
     'points' => 0,
   );
 
-  if ($new_points != 0) {
+  if ($new_points > 0) {
     foreach($role_points as $role_point) {
       if ($role_point['points'] > 0) {
         db_query('DELETE FROM {users_roles} WHERE uid = %d AND rid = %d', $uid, $role_point['rid']);

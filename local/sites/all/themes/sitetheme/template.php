@@ -207,7 +207,7 @@ function sitetheme_preprocess_node(&$vars) {
     $title = urlencode($vars["node"]->title);
     
     // add share links
-		$url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000IDmjAAG", "absolute" => TRUE));
+    $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000IDmjAAG", "absolute" => TRUE));
     $vars['social_bottons'] = '<a class="addthis_button_tweet" addthis:url="' . $url . '" addthis:title="' . $vars["node"]->title . '"></a>';
     
     $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2GAAS", "absolute" => TRUE));

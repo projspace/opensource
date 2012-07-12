@@ -85,12 +85,12 @@ function opensource_display_social_block() {
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
-  
+
   $output = theme_links($links, array('class' => 'social-links'));
   $output .= l(theme_image('sites/all/themes/sitetheme/images/email-signup.png'), 'https://engage.redhat.com/forms/opensourcedotcom-subscription',
                array('html' => TRUE, 'attributes' => array('class' => 'newsletter', 'target' => '_blank')));
   // @TODO: Reimplement this when Red Hat approves
-  # $output .= drupal_get_form('opensource_eloqua_form');
+  $output .= drupal_get_form('opensource_eloqua_form');
   return $output;
 }
 
@@ -108,7 +108,7 @@ function opensource_init(){
 function opensource_eloqua_form(){
   // Build the Redirect
   $redirect = url('thank-you-subscription');
-  
+
   $form['C_EmailAddress'] = array(
     '#type' => 'textfield',
     '#default_value' => $object['foo'],
@@ -119,29 +119,29 @@ function opensource_eloqua_form(){
     '#type' => 'hidden',
     '#value' => 'opensourcedotcom-subscription',
   );
-  
+
   $form['elqSiteID'] = array(
     '#type' => 'hidden',
     '#value' => 1795,
   );
-  
+
   $form['sendToURL'] = array(
     '#type' => 'hidden',
     '#value' => check_url($redirect),
   );
-  
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Sign Up'),
   );
   $form['#action'] = 'https://secure.eloqua.com/e/f2.aspx';
   $form['#id'] = 'opensourcedotcom-subscription';
-  
+
   return $form;
 }
 
 function opensource_eloqua_form_validate($form, &$form_state) {
-  if ($form_state['values']['c_EmailAddress'] == '') {    
+  if ($form_state['values']['c_EmailAddress'] == '') {
     form_set_error('name', t('You must enter a valid email address.'));
   }
 }
@@ -154,7 +154,7 @@ function opensource_cron() {
     $params = array('!nid' => $node->nid, '!created' => format_date($node->created), '!target' => format_date($time));
     watchdog('opensource_cron', "!target - Closed comments on node/!nid: Created on !created", $params);
   }
-  
+
   // Closes all comments on nodes which are 90 days old.
   db_query("UPDATE {node} n SET comment = 0 WHERE n.created < %d AND n.type = 'post'", $time);
 }
