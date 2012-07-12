@@ -107,7 +107,7 @@ function opensource_init(){
 
 function opensource_eloqua_form(){
   // Build the Redirect
-  $redirect = url('thank-you-subscription');
+  $redirect = url('thank-you-subscription', array('absolute' => TRUE));
 
   $form['C_EmailAddress'] = array(
     '#type' => 'textfield',
