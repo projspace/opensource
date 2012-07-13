@@ -158,5 +158,5 @@ function opensource_cron() {
   }
 
   // Closes all comments on nodes which are 90 days old.
-  db_query("UPDATE {node} n SET comment = 0 WHERE n.created < %d AND n.type = 'post'", $time);
+  db_query("UPDATE {node} n SET comment = 1 WHERE n.created < %d AND n.type = 'post'", $time);
 }
