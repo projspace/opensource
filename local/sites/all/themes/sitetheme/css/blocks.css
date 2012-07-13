@@ -685,7 +685,7 @@
 
 #opensourcedotcom-subscription input.form-submit {
   font-size: 14px;
-  height: 32px; 
+  height: 32px;
   padding: 0px 8px 0;
 }
 
@@ -754,19 +754,11 @@
   line-height: 17px;
 }
 
-/*
-On Quicktabs: Most popular, Participate
-#sidebar-second #quicktabs-tab-1-1{
-  background: url(../../../../default/files/images/nameplates/osdc_nameplate_Mostpopular.png) no-repeat;
-  text-indent: -999px;
-  display: block;
-  line-height: 17px;
+/* Sign up form for Eloqua Newsletter */
+#edit-C-EmailAddress-wrapper input{
+  padding: 4px;
 }
 
-#sidebar-second #quicktabs-tab-1-2{
-  background: url(../../../../default/files/images/nameplates/osdc_nameplate_Participate.png) no-repeat;
-  text-indent: -999px;
-  display: block;
-  line-height: 17px;
+#block-opensource-opensource-social-links {
+  text-align: center;
 }
-*/

@@ -87,8 +87,10 @@ function opensource_display_social_block() {
   );
 
   $output = theme_links($links, array('class' => 'social-links'));
-  $output .= l(theme_image('sites/all/themes/sitetheme/images/email-signup.png'), 'https://engage.redhat.com/forms/opensourcedotcom-subscription',
-               array('html' => TRUE, 'attributes' => array('class' => 'newsletter', 'target' => '_blank')));
+  $output .= theme_image('sites/all/themes/sitetheme/images/email-signup.png',
+                         'Sign up for our newsletter',
+                         'Sign up for our newsletter',
+                         array('class' => 'newsletter'));
   // @TODO: Reimplement this when Red Hat approves
   $output .= drupal_get_form('opensource_eloqua_form');
   return $output;
