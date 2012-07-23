@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * Implementation of hook_mail_alter().
+ */
+function contact_google_analytics_mail_alter(&$message) {
+    // Create an array of allowed emails.
+    $allowed_emails = explode(',',variable_get('contact_google_analytics_allowed_recipients', 'all'));
+    // Loop through each allowed email and compare it to the "to" in the message.
+    foreach ($allowed_emails as $allowed_email) {
+        if (trim($allowed_email) == $message['to'] || $allowed_email == 'all') {
+            // If there is a match, continue processing the email footer.  trim added to remove spaces.
+            switch($message['id']) {
+		// Other known message ids: contact_page_autoreply
+                case "contact_page_mail":
+                    $body_footer = theme('contact_google_analytics_footer', $footer);
+                    $body_footer = token_replace_multiple($body_footer);
+                    $message['body'][] = $body_footer;
+                    break;
+                case "webform_submission":
+                    $body_footer = theme('contact_google_analytics_footer', $footer);
+                    $body_footer = token_replace_multiple($body_footer);
+                    $message['body'][] = $body_footer;
+                    break;
+                case "rules_rules_action_mail":
+                    $body_footer = theme('contact_google_analytics_footer', $footer);
+                    $body_footer = token_replace_multiple($body_footer);
+                    $message['body'][] = $body_footer;
+                    break;
+            }
+        }
+    }
+}
+
+
+/**
+ * Implementation of hook_theme().
+ */
+function contact_google_analytics_theme() {
+  return array(
+    'contact_google_analytics_footer' => array(
+      'arguments' => array('footer' => NULL),
+    ),
+  );
+}
+
+/**
+ * Theme the email footer.
+ */
+function theme_contact_google_analytics_footer($footer) {
+	$footer = "\n\n";
+	$footer .= "================================================\n";
+	$footer .= t('Google Analytics Information')."\n";
+	$footer .= "================================================\n";
+	$footer .= t('Source:')." [ga-source]\n";
+	$footer .= t('Campaign:')." [ga-campaign]\n";
+	$footer .= t('Medium:')." [ga-medium]\n";
+	$footer .= t('Content:')." [ga-content]\n";
+	$footer .= t('Term:')." [ga-term]\n";
+	$footer .= "\n";
+	$footer .= t('First Visit:')." [ga-first-visit]\n";
+	$footer .= t('Previous Visit:')." [ga-previous-visit]\n";
+	$footer .= t('Current Visit:')." [ga-current-visit]\n";
+	$footer .= t('Times Visited:')." [ga-times-visited]\n";
+	$footer .= "\n";
+	$footer .= t('Current IP:')." ".$_SERVER['REMOTE_ADDR']."\n";
+	$footer .= "================================================\n\n";
+
+	return $footer;
+}
+
+function contact_google_analytics_menu() 
+{
+   $items['admin/settings/contact-google-analytics'] = array(
+     'title' => 'Contact google analytics',
+     'page callback' => 'drupal_get_form',
+     'page arguments' => array('contact_google_analytics_admin'),
+     'access arguments' => array('administer contact google analytics'),
+     'description' => 'Configure the contact google analytics module settings.'
+   );
+   return $items;
+}
+
+function contact_google_analytics_admin() {
+  $form = array();
+
+  $form['contact_google_analytics_allowed_recipients'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Allowed Recipients'),
+    '#description' => t('The email addresses that are allowed to see the Contact Google Analytics footer.  Comma separated.  For all recipients to receive the footer, type: all.  For no recipients to receive the footer, leave blank.'),
+    '#size' => 60,
+    '#default_value' => variable_get('contact_google_analytics_allowed_recipients', 'all'),
+    );
+  return system_settings_form($form);
+}
+
+function contact_google_analytics_admin_submit($form, &$form_state) {
+    $form_values = $form_state['values'];
+    variable_set('contact_google_analytics_allowed_recipients', $form_values['allowed_recipients']);
+    //drupal_set_message(t('Your settings have been saved.'));
+}

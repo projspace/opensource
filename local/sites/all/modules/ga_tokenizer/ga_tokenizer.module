@@ -1,0 +1,52 @@
+<?php
+/**
+ * @file
+ * The class for parsing the Google Analytics cookie. 
+ */
+$path = drupal_get_path('module', 'ga_tokenizer') .'/class.gaparse.php';
+
+if (file_exists($path)) {
+  require_once $path;
+}
+  
+/**
+ * Implementation of hook_token_values(). (token.module)
+ */
+function ga_tokenizer_token_values($type = 'all', $object = NULL) {
+	$values = array();
+	if ($type == 'global' || $type == 'all') {
+		$aux = new GA_Parse($_COOKIE);
+		$values['ga-source'] = $aux->campaign_source;
+		$values['ga-campaign'] = $aux->campaign_name;
+		$values['ga-medium'] = $aux->campaign_medium;
+		$values['ga-content'] = $aux->campaign_content;
+		$values['ga-term'] = $aux->campaign_term;
+
+		$values['ga-first-visit'] = $aux->first_visit;
+		$values['ga-previous-visit'] = $aux->previous_visit;
+		$values['ga-current-visit'] = $aux->current_visit_started;
+		$values['ga-times-visited'] = $aux->times_visited;
+	}
+    return $values;
+}
+
+
+/**
+ * Implementation of hook_token_list(). (token.module)
+ */
+function ga_tokenizer_token_list($type = 'all') {
+    $tokens = array();
+	if ($type == 'global' || $type == 'all') {
+		$tokens['global']['ga-source'] = t('Search engine, newsletter name, or other source.');
+		$tokens['global']['ga-campaign'] = t('To identify a specific product promotion or strategic campaign.');
+		$tokens['global']['ga-medium'] = t('A medium such as email or cost-per-click.');
+		$tokens['global']['ga-content'] = t('Used for A/B testing. To differentiate ads or links that point to the same URL.');
+		$tokens['global']['ga-term'] = t('The keywords for the organic search or ad.');
+
+		$tokens['global']['ga-first-visit'] = t('Date/Time of initial visit.');
+		$tokens['global']['ga-previous-visit'] = t('Date/Time of previous visit.');
+		$tokens['global']['ga-current-visit'] = t('Date/Time of current visit.');
+		$tokens['global']['ga-times-visited'] = t('Total number of times visited.');
+	}
+    return $tokens;
+}
