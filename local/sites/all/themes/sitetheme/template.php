@@ -922,7 +922,7 @@ function check_display_types($type){
 	$types = array("post", "podcast", "video");
 	
 	$nodetype = strtolower($type)
-	if (in_array($nodetype, $types){
+	if (in_array($nodetype, $types)){
 		return TRUE;
 	}
 	else {
