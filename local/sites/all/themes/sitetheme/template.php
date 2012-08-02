@@ -924,10 +924,7 @@ function check_display_types($type){
 	$nodetype = strtolower($type);
 	if (in_array($nodetype, $types)){
 		return TRUE;
-	}else {
-		return '';
 	}
-	
 }
 	
 	
