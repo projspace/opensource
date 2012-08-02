@@ -921,11 +921,10 @@ function check_display_types($type){
 	//$type is machine name of node, returns TRUE if $vars['node']->type is in array.
 	$types = array("post", "podcast", "video");
 	
-	$nodetype = strtolower($type)
+	$nodetype = strtolower($type);
 	if (in_array($nodetype, $types)){
 		return TRUE;
-	}
-	else {
+	}else {
 		return '';
 	}
 	
