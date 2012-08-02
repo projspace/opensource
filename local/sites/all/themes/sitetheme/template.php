@@ -235,7 +235,7 @@ function sitetheme_preprocess_node(&$vars) {
   if ($vars['node']->type == 'channel') {
     $vars['links'] = '';
   }
-  elseif (($vars['node']->type == 'post' || $vars['node']->type == 'podcast') && !$vars['page']) {
+  elseif (($vars['node']->type == 'post' || $vars['node']->type == 'video') && !$vars['page']) {
     $vars['links_all'] = '<div class="clearfix"></div><div class="article-visitor-links clear-block">';
     if ($vars['node']->comment_count > 0) {
       $vars['links_all'] .= '<span class="article-comment-count">'. l(format_plural($vars['node']->comment_count, '1 Comment', '@count Comments', array('@count' => $vars['node']->comment_count)), 'node/'. $vars['node']->nid, array('fragment' => 'comments')) .'</span>';
@@ -246,7 +246,7 @@ function sitetheme_preprocess_node(&$vars) {
     $vars['links_all'] .= '<span class="article-author-info">'. t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a></span>';
     $vars['links_all'] .= '</div>';
   }
-  elseif (($vars['node']->type == 'post' || $vars['node']->type == 'podcast') && $vars['page']) {
+  elseif (($vars['node']->type == 'post' || $vars['node']->type == 'video') && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
     $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
     
@@ -293,7 +293,7 @@ function sitetheme_preprocess_node(&$vars) {
   
   // Add the proper license information.
   $vars['node_license'] = '';
-  if ($vars['node']->type == 'post' && $vars['page']) {
+  if ($vars['node']->type == 'post' || $vars['node']->type == 'video' && $vars['page']) {
     if ($vars['node']->field_default_license[0]['value'] == 'Use the default CC license.') {
       $vars['node_license'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-3.png" title="This work is licensed under a Creative Commons Attribution-Share Alike 3.0 Unported License." /></a>';
     }
