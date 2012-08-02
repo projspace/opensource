@@ -163,7 +163,9 @@ function opensource_cron() {
 
 
 
-//CM ACQUIA creating validation function for preprocess theming
+/**
+ * CM ACQUIA creating validation function for preprocess theming
+ */
 
 function check_display_types($type){
 	//$type is machine name of node, returns TRUE if $vars['node']->type is in array.
