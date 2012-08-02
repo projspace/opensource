@@ -913,27 +913,5 @@ function sitetheme_quicktabs_tabs($quicktabs, $active_tab = 'none') {
 }
 
 
-
-
-//CM ACQUIA creating validation function for preprocess theming
-
-function check_display_types($type){
-	//$type is machine name of node, returns TRUE if $vars['node']->type is in array.
-	//$types = array(
-	//"post", 
-	//"podcast", 
-	//"video"
-	//);
-	
-	//$nodetype = strtolower($type);
-	//if (in_array($nodetype, $types)){
-	//	return TRUE;
-	//}
-	//return $types;
-	print "Hello world";
-}
-	
-	
-	
 	
 	
