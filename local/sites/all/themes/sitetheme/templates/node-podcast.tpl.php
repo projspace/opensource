@@ -88,6 +88,10 @@
   <div class="content">
     <?php print $content; ?>
   </div>
+  
+  <?php if ($page && $below_content): ?>
+    <div class="below_content"><?php print $below_content; ?></div>
+  <?php endif; ?>
 
   <?php if ($page) print $links; ?>
   <?php print $links_all; ?>

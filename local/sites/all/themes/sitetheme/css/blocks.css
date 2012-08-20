@@ -737,12 +737,29 @@
 }
 
 /*Related*/
-#sidebar-second #block-apachesolr-mlt-001 h2.title{
+#sidebar-second #block-apachesolr-mlt-001 h2.title,
+.region-below-content #block-apachesolr-mlt-001 h2.title{
   background: url(../../../../default/files/images/nameplates/osdc_nameplate_Relatedcontent.png) no-repeat;
   text-indent: -9999px;
   overflow:hidden;
   display: block;
   line-height: 17px;
+}
+.region-below-content #block-apachesolr-mlt-001 .content {
+  padding-top: 0;
+}
+.region-below-content #block-apachesolr-mlt-001 li {
+  list-style-image: url("../../../../../misc/menu-leaf.png");
+  list-style-type: square;
+}
+.region-below-content #block-apachesolr-mlt-001 .content a:link {
+  color: #000000;
+  text-decoration: none;
+}
+.region-below-content #block-apachesolr-mlt-001 .content a:hover,
+.region-below-content #block-apachesolr-mlt-001 .content a:focus {
+  color: #3399FF;
+  text-decoration: underline;
 }
 
 /*Most popular*/

@@ -305,6 +305,10 @@ function sitetheme_preprocess_node(&$vars) {
       $vars['node_license'] = check_markup($vars['node']->field_alternative_license[0]['value'], 7, FALSE);
     }
   }
+
+  // Add a region to the node
+  $vars['below_content'] = theme('blocks', 'below_content');
+
 /*
   // Optionally, run node-type-specific preprocess functions, like
   // sitetheme_preprocess_node_page() or sitetheme_preprocess_node_story().
