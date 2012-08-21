@@ -61,21 +61,27 @@ function opensource_display_social_block() {
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
-  $links['identica'] = array(
-    'href' => 'http://identi.ca/opensourceway',
-    'title' => theme_image('sites/all/themes/sitetheme/images/identica.png'),
-    'attributes' => array('target' => '_blank'),
-    'html' => TRUE,
-  );
-  $links['flickr'] = array(
+   $links['flickr'] = array(
     'href' => 'http://www.flickr.com/photos/opensourceway',
     'title' => theme_image('sites/all/themes/sitetheme/images/flickr_24x24.jpg'),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
-  $links['youtube'] = array(
+   $links['youtube'] = array(
     'href' => 'http://www.youtube.com/opensourceway',
     'title' => theme_image('sites/all/themes/sitetheme/images/youtube.jpg'),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+   $links['pinterest'] = array(
+    'href' => 'http://pinterest.com/opensourceway/',
+    'title' => theme_image('sites/all/themes/sitetheme/images/pinterest.png'),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+    $links['linkedin'] = array(
+    'href' => 'http://www.linkedin.com/groups/Open-Source-Professionals-Advocates-2769297?gid=2769297',
+    'title' => theme_image('sites/all/themes/sitetheme/images/in.jpg'),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
