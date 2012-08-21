@@ -31,6 +31,9 @@ if (checkRegEvent() == 1) {
     s.events = "event2";
 }
 
+s.eVar18 = window.location.href;
+s.prop21 = window.location.href;
+
 /* */
 
 
