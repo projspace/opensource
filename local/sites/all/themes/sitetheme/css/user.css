@@ -1,6 +1,8 @@
 .profile
 {
   overflow:hidden;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .profile .picture 
@@ -70,6 +72,7 @@ dl.user-member ul
 .section-users h1.title
 {
   float:left;
+  padding-left: 20px;
   line-height:40px;
   width: 224px;
 }

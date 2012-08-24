@@ -475,7 +475,7 @@ ol.lower-roman {
 
 /* User Profiles @acquia-KS */
 .profile-left{
-  width: 120px;
+  width: 102px;
   float: left;
 }
 
@@ -502,15 +502,16 @@ ol.lower-roman {
 }
 
 .profile .profile-points {
-  float: right;
-  background-color: #1D2753;
-  color: white;
-  border: 1px solid #0033FF;
-  padding: 5px;
-  margin: 0;
-  font-size: 16px;
-  text-align: center;
-  margin-top: -25px;
+   background-color: #1D2753;
+   border: 1px solid #0033FF;
+   color: white;
+   float: right;
+   font-size: 16px;
+   margin: -38px 320px 0;
+   padding: 5px;
+   position: absolute;
+   text-align: center;
+   width: 55px;
 }
 
 .profile .profile-points h3 {
