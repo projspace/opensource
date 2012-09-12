@@ -486,7 +486,7 @@ function ecard_send_card($ecard) {
     ecard_save_card($ecard);
 
     $card_copy_url = url('ecard/view/'. $ecard->random, array('absolute' => true));
-    drupal_set_message(t('You can view the e-card at <a href="!url">here</a>.', array('!url' => $card_copy_url)));
+    drupal_set_message(t('You can view the e-card <a href="!url">here</a>.', array('!url' => $card_copy_url)));
 
     $params['card_copy'] = $card_copy_url;
     drupal_mail('ecard', 'ecard-copy', $ecard->sender_email, $language, $params, variable_get('site_mail', ini_get('sendmail_from')));
