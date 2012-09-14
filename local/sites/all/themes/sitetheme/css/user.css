@@ -1,8 +1,8 @@
 .profile
 {
   overflow:hidden;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .profile .picture 
@@ -71,6 +71,7 @@ dl.user-member ul
 .section-user h1.title,
 .section-users h1.title
 {
+  color: #292929;
   float:left;
   padding-left: 20px;
   line-height:40px;
@@ -79,7 +80,7 @@ dl.user-member ul
 
 .section-users h3
 {
-  
+  color: #292929;
 }
 
 .section-user div.tabs,
@@ -158,4 +159,9 @@ dl.user-member ul
 {
   background:none;
   border-bottom:1px solid #fff;
+}
+
+.section-users .region.region-content-bottom {
+  padding-left: 10px;
+  padding-right: 10px;
 }
