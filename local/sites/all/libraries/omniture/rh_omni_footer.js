@@ -33,7 +33,7 @@ if (checkRegEvent() == 1) {
 
 
 //  var urlparts= url.split('?');
-var address = split(window.location.href, '?');
+var address = window.location.href.split('?');
 s.eVar18 = address[0];
 s.prop21 = address[0];
 
