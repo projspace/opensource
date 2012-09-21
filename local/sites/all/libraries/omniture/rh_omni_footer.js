@@ -36,6 +36,7 @@ if (checkRegEvent() == 1) {
 var address = window.location.href.split('?');
 s.eVar18 = address[0];
 s.prop21 = address[0];
+s.prop4 = window.location.href;
 
 
 /* */
