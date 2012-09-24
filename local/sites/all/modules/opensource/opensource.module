@@ -61,7 +61,13 @@ function opensource_display_social_block() {
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
-   $links['flickr'] = array(
+  $links['gplus'] = array(
+    'href' => 'https://plus.google.com/108750398488318674353',
+    'title' => theme_image('sites/all/themes/sitetheme/images/gplus.png'),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['flickr'] = array(
     'href' => 'http://www.flickr.com/photos/opensourceway',
     'title' => theme_image('sites/all/themes/sitetheme/images/flickr_24x24.jpg'),
     'attributes' => array('target' => '_blank'),
