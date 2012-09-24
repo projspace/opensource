@@ -336,6 +336,7 @@ ul.links li {
 }
 
 .footer-twitter,
+.footer-gplus,
 .footer-facebook,
 .footer-youtube,
 .footer-identica,
@@ -353,6 +354,10 @@ ul.links li {
 
 .footer-twitter {
   background: url(../images/twitter.jpg);
+}
+
+.footer-gplus {
+  background: url(../images/gplus.png);
 }
 
 .footer-facebook {
