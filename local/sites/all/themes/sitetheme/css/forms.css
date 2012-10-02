@@ -266,9 +266,12 @@ form#webform-components-form input#edit-add-name {
 div.filefield-sources-list {
   display:none
 }
+/* Commentted out by Acquia 10-02-2012 to restore filefield UI to resource content type
 div.filefield-upload {
   display:none;
 }
+*/
+
 div.filefield-source-imce {
   display:block;
 }
