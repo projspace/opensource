@@ -13,9 +13,7 @@ function opensource_points_user($op, &$edit, &$account, $category = NULL) {
     case 'update':
       // Only act if roles are being added.
       if(count($edit['roles']) > count($account->roles)){
-        // Define the roles that makeup earned points roles.
-        // @TODO: Make this more dynamic
-        $earned = array('Newbie', 'Community Member', 'Open Enthusiast', 'Rock Star', 'Open Source Sensei', 'Open Sorcerer');
+        $earned = opensource_points_earned_roles();
         
         foreach($account->roles as $key => $value) {
           // If the roles are any of the points eligible roles, then grab the ID
@@ -26,6 +24,15 @@ function opensource_points_user($op, &$edit, &$account, $category = NULL) {
         }
       }
   }
+}
+
+/**
+ * helper to return array of roles which are earned via userpoints
+ */
+function opensource_points_earned_roles() {
+  // Define the roles that makeup earned points roles.
+  // @TODO: Make this more dynamic
+  return array('Newbie', 'Community Member', 'Open Enthusiast', 'Rock Star', 'Open Source Sensei', 'Open Sorcerer');
 }
 
 /**
