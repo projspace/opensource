@@ -182,7 +182,7 @@ function ecard_admin() {
       '#default_value' => variable_get('ecard_copy', _ecard_copy()),
       '#cols' => 70,
       '#rows' => 5,
-      '#description' => t('This text is the body of the email to notify the sender that his e-card has been picked up. These are the variables you may use: %site = your site name, %site_url = your site URL, %site_mail = your site email address, %card_url = the URL for the e-card'),
+      '#description' => t('This text is the body of the email to notify the sender that his e-card has been picked up. These are the variables you may use: %site = your site name, %site_url = your site URL, %site_mail = your site email address, %card_url = the URL for the e-card, %sender = sender name, %recipient = recipient email'),
   );
 
   $form['notify'] = array(
@@ -489,6 +489,9 @@ function ecard_send_card($ecard) {
     drupal_set_message(t('You can view the e-card <a href="!url">here</a>.', array('!url' => $card_copy_url)));
 
     $params['card_copy'] = $card_copy_url;
+    $params['sender'] = $ecard->sender_name;
+    $params['sendermail'] = $ecard->sender_email;
+    $params['recipient'] = $email;
     drupal_mail('ecard', 'ecard-copy', $ecard->sender_email, $language, $params, variable_get('site_mail', ini_get('sendmail_from')));
   }
 }
@@ -643,6 +646,9 @@ function ecard_mail($key, &$message, $params) {
           '%site_url' => $base_url,
           '%site_mail' => variable_get('site_mail', ini_get('sendmail_from')),
           '%card_url' => $params['card_copy'],
+          '%sender' => $params['sender'],
+          '%sender_email' => $params['sendermail'],
+          '%recipient' => $params['recipient'],
       );
       $body = strtr(variable_get('ecard_copy', _ecard_copy()), $variables);
       $subject = strtr(variable_get('ecard_copy_subject', 'Copy of your E-card'), $variables);
