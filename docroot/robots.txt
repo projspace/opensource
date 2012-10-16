@@ -50,6 +50,7 @@ Disallow: /user/register/
 Disallow: /user/password/
 Disallow: /user/login/
 Disallow: /users/
+Disallow: /user/
 # Paths (no clean URLs)
 Disallow: /?q=admin/
 Disallow: /?q=comment/reply/
@@ -60,3 +61,4 @@ Disallow: /?q=search/
 Disallow: /?q=user/password/
 Disallow: /?q=user/register/
 Disallow: /?q=user/login/
+Disallow: /?q=user/
