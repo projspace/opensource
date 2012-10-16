@@ -48,6 +48,8 @@ function drush_opensource_points_osp_audit_badges($limit = NULL) {
     'earned_roles_failures'   => 0,
     'users_with_failures'     => 0,
     'total_users_audited'     => 0,
+    'problem_roles'           => array(),
+    'problem_badges'          => array(),
   );
   $show_debug = drush_get_option('show-debug');
   $show_failures = drush_get_option('show-failures');
@@ -101,6 +103,7 @@ function drush_opensource_points_osp_audit_badges($limit = NULL) {
           $stats['users_with_failures'] ++;
         }
         $stats['highest_badge_failures'] ++;
+        $stats['problem_badges'][$audit['highest_badge']] ++;
         $failures[$uid]['highest_badge'] = $audit['results']['highest_badge'];
       }
     }
@@ -130,6 +133,7 @@ function drush_opensource_points_osp_audit_badges($limit = NULL) {
               $stats['users_with_failures'] ++;
             }            
             $stats['earned_roles_failures'] ++;
+            $stats['problem_roles'][$rid] ++;
             $failures[$uid]['earned_roles'][$rid] = $audit['results']['earned_roles'][$rid];
           }
         }
