@@ -22,8 +22,11 @@ function opensource_points_drush_command() {
   $items['osp-audit-badges'] = array(
     'description' => 'Audit user badges and roles.',
     'options' => array(
-        '--show-failures'   => 'Show info about each failure',
-        '--show-debug'      => 'Lots of debug output',
+        'show-failures'   => 'Show info about each failure',
+        'show-debug'      => 'Lots of debug output',
+        'quiet'           => 'Suppress all output',
+        'repair'          => 'Repair any problems which are found',
+        'no-logging'      => 'Do not log to watchdog',
       ),
     'arguments' => array(
         'limit'   => 'Only process the first X items',
@@ -42,6 +45,9 @@ function drush_opensource_points_osp_audit_badges($limit = NULL) {
   // prepare some info for the audit
   $earned_roles = _osp_ab_earned_roles();
   $userpoints_goals = _osp_ab_userpoints_goals();
+  $all_badges = _osp_ab_all_badges();
+  
+  // stats collection
   $failures = array();
   $stats = array(
     'highest_badge_failures'  => 0,
@@ -51,8 +57,13 @@ function drush_opensource_points_osp_audit_badges($limit = NULL) {
     'problem_roles'           => array(),
     'problem_badges'          => array(),
   );
-  $show_debug = drush_get_option('show-debug');
-  $show_failures = drush_get_option('show-failures');
+  
+  $option_show_debug        = drush_get_option('show-debug', FALSE);
+  $option_show_failures     = drush_get_option('show-failures', FALSE);
+  $option_quiet             = drush_get_option('quiet', FALSE);
+  $option_repair            = drush_get_option('repair', FALSE);
+  $option_no_logging        = drush_get_option('no-logging', FALSE);
+  
   if (!empty($limit) && is_numeric($limit)) {
     $limit_clause = ' LIMIT %d';
   }
@@ -67,10 +78,12 @@ function drush_opensource_points_osp_audit_badges($limit = NULL) {
   while ($row = db_fetch_object($result)) {
     $stats['total_users_audited'] ++;
     $uid = $row->uid;
-    $user = user_load($row->uid);
+    // todo: this could be expensive; perhaps look at just loading what we need?
+    //  which would be badges, roles and userpoints?
+    $user = user_load($uid);
     $audit = array();
     
-    $audit['user'] = $user->uid . ' (' . $user->name . ')';
+    $audit['user'] = $uid . ' (' . $user->name . ')';
 
     // userpoints don't get loaded onto the user object by hook_user
     $audit['userpoints'] = userpoints_get_current_points($uid, 'all'); // all badges seem to have tid = 0
@@ -105,19 +118,27 @@ function drush_opensource_points_osp_audit_badges($limit = NULL) {
         $stats['highest_badge_failures'] ++;
         $stats['problem_badges'][$audit['highest_badge']] ++;
         $failures[$uid]['highest_badge'] = $audit['results']['highest_badge'];
+        if ($option_repair) {
+          _osp_ab_repair_badge($user, $highest_badge);
+          // we have to assume that this has worked for the purposes of checking
+          //  that the user has the roles that correspond to their badges
+          // it's important here that the value be the correct badge name, as that's how it's matched with a role
+          $audit['badges'][$highest_badge] = $all_badges[$highest_badge];
+        }
       }
     }
     else {
       $audit['results']['highest_badge'] = 'User is yet to earn any badges';
     }
     
-    // check the badges this user has against the roles they have
+    // check the roles this user has against their badges
     $audit['roles'] = $user->roles;
     
     if (is_array($audit['badges'])) {
       foreach ($audit['badges'] as $bid => $badge) {
         
         // looks like we should only be doing this check for the highest badge
+        //  todo: this could be refactored as we don't really need to loop over badges at all
         if ($bid != $audit['highest_badge']) {
           continue;
         }
@@ -135,19 +156,36 @@ function drush_opensource_points_osp_audit_badges($limit = NULL) {
             $stats['earned_roles_failures'] ++;
             $stats['problem_roles'][$rid] ++;
             $failures[$uid]['earned_roles'][$rid] = $audit['results']['earned_roles'][$rid];
+            if ($option_repair) {
+              _osp_ab_repair_role($user, $rid);
+            }
           }
         }
       }
     }
     
-    if ($show_debug) {
+    if (!$option_quiet && $option_show_debug) {
       drush_print_r($audit);
     }
   }
-  if ($show_failures) {
+  
+  // deal with outputting / logging feedback
+  if (!$option_quiet && $option_show_failures) {
     drush_print_r($failures);
   }
-  drush_print_r($stats);
+  if (!$option_quiet && $option_repair) {
+    drush_print('N.B. results are gathered during the repair process. To check that repairs worked, run the audit again.');
+  }
+  // not really worth peppering logs with "didn't find anything" messages
+  //  n.b. quiet shouldn't affect logging
+  if (count($failures) > 0 && !$option_no_logging) {
+    // this will output $stats to stdout (or is it stderr?), so no need to drush_print_r them again
+    watchdog('opensource_points.drush', 'osp_audit_badges found one or more problems: !stats', 
+      array('!stats' => print_r($stats, TRUE)), WATCHDOG_WARNING); 
+  }
+  else if (!$option_quiet) {
+    drush_print_r($stats);
+  }
 }
 
 /**
@@ -164,6 +202,18 @@ function _osp_ab_userpoints_goals() {
 }
 
 /**
+ * helper to fetch an array of badge bids (keys) and their names (vals)
+ */
+function _osp_ab_all_badges() {
+  $badges = array();
+  $badge_data = user_badges_get_badges('all');
+  foreach($badge_data as $bid => $badge) {
+    $badges[$bid] = $badge->name;
+  }
+  return $badges;  
+}
+
+/**
  * helper to fetch an array of role rids (keys) and the names (vals) for each earned role
  */
 function _osp_ab_earned_roles() {
@@ -177,4 +227,55 @@ function _osp_ab_earned_roles() {
     }
   }
   return $earned_roles;
+}
+
+/**
+ * helper to repair a user missing a badge
+ */ 
+function _osp_ab_repair_badge($user, $bid) {
+  $type = "Userpoints $bid";
+  user_badges_user_add_badge($user->uid, $bid, $type);
+  
+  $message = 'Attempted to repair User uid = !uid by adding badge bid = !bid';
+  $variables = array('!uid' => $user->uid, '!bid' => $bid);
+  if (!drush_get_option('quiet', FALSE)) {
+    drush_print(dt($message, $variables));
+  }
+  if (!drush_get_option('no-logging', FALSE)) {
+    watchdog('opensource_points', $message, $variables, WATCHDOG_INFO);
+  }
+}
+
+/**
+ * helper to repair a user missing a role
+ */ 
+function _osp_ab_repair_role($user, $rid) { 
+  _osp_ab_add_user_to_role($user->uid, $rid);
+  
+  $message = 'Attempted to repair User uid = !uid by adding role rid = !rid';
+  $variables = array('!uid' => $user->uid, '!rid' => $rid);
+  if (!drush_get_option('quiet', FALSE)) {
+    drush_print(dt($message, $variables));
+  }
+  if (!drush_get_option('no-logging', FALSE)) {
+    watchdog('opensource_points', $message, $variables, WATCHDOG_INFO);
+  }
+}
+
+/**
+ * borrowed from install_profile_api
+ * 
+ * Add a user to a role.
+ */
+function _osp_ab_add_user_to_role($uid, $rid) {
+  if ($uid <= 0 || $rid <= 0) {
+    return FALSE;
+  }
+
+  $count = db_result(db_query("SELECT COUNT(uid) FROM {users_roles} WHERE uid = %d AND rid = %d", $uid, $rid));
+  if ($count == 0) {
+    return db_query("INSERT INTO {users_roles} (uid, rid) VALUES (%d, %d)", $uid, $rid);
+  }
+
+  return FALSE;
 }
