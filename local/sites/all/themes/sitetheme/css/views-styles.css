@@ -431,6 +431,7 @@ div.view-channel-reading li.views-row {
   margin-bottom: 1.5em;
 }
 
+div#content-area > div.view-moderator-spotlight div.views-row,
 div#content-area > div.view-contributor-spotlight div.views-row {
   margin-top:1em;
   margin-bottom:1em;
@@ -439,12 +440,14 @@ div#content-area > div.view-contributor-spotlight div.views-row {
 
 }
 
+div#content-area > div.view-moderator-spotlight img,
 div#content-area > div.view-contributor-spotlight img {
   float: left;
   margin-bottom: .25em;
   border:1px solid #C2C0C1;
 }
 
+div#content-area > div.view-moderator-spotlight .views-field-value,
 div#content-area > div.view-contributor-spotlight .views-field-value {
   color: black;
   float: right;
@@ -454,24 +457,29 @@ div#content-area > div.view-contributor-spotlight .views-field-value {
   width: 78%;
 }
 
+div#content-area > div.view-moderator-spotlight .views-field-value a,
 div#content-area > div.view-contributor-spotlight .views-field-value a {
   text-decoration: none;
 }
 
+div#content-area > div.view-moderator-spotlight .views-field-body,
 div#content-area > div.view-contributor-spotlight .views-field-body {
   float: right;
   width: 78%;
 }
 
+div#content-area > div.view-moderator-spotlight .views-field-body a,
 div#content-area > div.view-contributor-spotlight .views-field-body a {
   color: #39F;
   text-decoration: none;
 }
 
+div#content-area > div.view-moderator-spotlight .user_badges,
 div#content-area > div.view-contributor-spotlight .user_badges {
   width: 100px;
 }
 
+div#content-area > div.view-moderator-spotlight .user_badges img,
 div#content-area > div.view-contributor-spotlight .user_badges img {
   margin:0px;
 }
