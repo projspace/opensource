@@ -29,8 +29,8 @@ fi
 #    'aliases' => array('osp-ab'),
 #  ); 
 
-#audit_options='--repair --quiet'   # this is probably how we want the task to run on cron
-audit_options='--limit=50'          # debug just by examining a small number of users
+audit_options='--repair --quiet'   # this is probably how we want the task to run on cron
+#audit_options='50'                  # (limit argument) debug just by examining a small number of users
 
 $drush_command osp-ab $audit_options
 
