@@ -99,7 +99,7 @@ function sitetheme_menu_item_link($link) {
     $link['localized_options'] = array();
   }
   
-  if($link['menu_name'] == "menu-resources") {
+  if($link['menu_name'] == "menu-resources" || $link['menu_name'] == "menu-resources-home") {
     $nid = ereg_replace("[^0-9]", "", $link['link_path']);
     $node = node_load($nid);
     return l(theme_image($node->field_menu_image[0]['filepath']), $link['href'], array('html' => TRUE));
@@ -379,7 +379,7 @@ function sitetheme_preprocess_block(&$vars, $hook) {
   else if ($vars['block']->delta == 'contributor_spotlight-block_1') {
     $vars['block']->content = preg_replace('/_sm.png/', '.png', $vars['block']->content);;
   }
-  else if($vars['block']->delta == 'menu-resources') {
+  else if($vars['block']->delta == 'menu-resources' || $vars['block']->delta == 'menu-resources-home') {
     $vars['block']->subject = l("Open source resources", "resources");
   }
 }
