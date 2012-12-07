@@ -14,9 +14,19 @@ config_prod='--uri=www.opensource.com --root=/mnt/www/ara/docroot'
 
 # default to dev
 drush_command="$drush $config_dev"
-if [ -z "$1" ]; then
+if [ -n "$1" ]; then
   if [ "$1" == 'prod' ]; then
     drush_command="$drush $config_prod"
+  fi
+fi
+
+# option to run without --repair for debugging
+if [ -n "$2" ]; then
+  if [ "$2" == 'debug' ]; then
+    audit_options=''
+    echo "about to run: $drush_command osp-ab $audit_options"
+    echo "\$1 was $1"
+    echo "\$2 was $2"
   fi
 fi
 

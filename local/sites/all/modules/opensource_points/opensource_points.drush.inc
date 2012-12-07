@@ -176,12 +176,18 @@ function drush_opensource_points_osp_audit_badges($limit = NULL) {
   if (!$option_quiet && $option_repair) {
     drush_print('N.B. results are gathered during the repair process. To check that repairs worked, run the audit again.');
   }
-  // not really worth peppering logs with "didn't find anything" messages
+
   //  n.b. quiet shouldn't affect logging
-  if (count($failures) > 0 && !$option_no_logging) {
+  if (!$option_no_logging) {
     // this will output $stats to stdout (or is it stderr?), so no need to drush_print_r them again
-    watchdog('opensource_points.drush', 'osp_audit_badges found one or more problems: !stats', 
-      array('!stats' => print_r($stats, TRUE)), WATCHDOG_WARNING); 
+    if (count($failures) > 0) {
+      watchdog('opensource_points.drush', 'osp_audit_badges found one or more problems: !stats', 
+        array('!stats' => print_r($stats, TRUE)), WATCHDOG_WARNING); 
+    }
+    else {
+      watchdog('opensource_points.drush', 'osp_audit_badges ran but found no problems: !stats', 
+        array('!stats' => print_r($stats, TRUE)), WATCHDOG_INFO);
+    }
   }
   else if (!$option_quiet) {
     drush_print_r($stats);
