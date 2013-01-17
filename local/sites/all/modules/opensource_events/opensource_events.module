@@ -115,29 +115,129 @@ function opensource_events_menu() {
 
   $items = array();
 
-  $items['event-submitted-for-review'] = array(
-    'title' => t('Thank you.'),
-    'page callback' => '_opensource_events_success',
-    'access callback' => TRUE,
+  $items['admin/content/opensource-events'] = array(
+    'title' => 'Events',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('moderation-queue/events/all'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  
+  /**
+   * Monthly view
+   */
+
+  $items['admin/content/opensource-events/monthly'] = array(
+    'title' => 'Monthly View',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('resources/conferences-and-events-monthly'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/monthly/intro'] = array(
+    'title' => 'Intro',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/build/views/nojs/display/events_listing_monthly_new/attachment_1/header'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/monthly/page-title'] = array(
+    'title' => 'Page title',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/build/views/nojs/display/events_listing_monthly_new/page_1/title'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/monthly/default-text'] = array(
+    'title' => 'Default text',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/build/views/nojs/display/events_listing_monthly_new/attachment_1/empty'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  
+  /**
+   * Alphabetical view
+   */
+
+  $items['admin/content/opensource-events/alphabetical'] = array(
+    'title' => 'Alphabetical View',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('resources/conferences-and-events-list'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/alphabetical/intro'] = array(
+    'title' => 'Intro',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/build/views/nojs/display/events_listing_alphabetical/page/header'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/alphabetical/page-title'] = array(
+    'title' => 'Page title',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/build/views/nojs/display/events_listing_alphabetical/page/title'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/alphabetical/default-text'] = array(
+    'title' => 'Default text',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/build/views/nojs/display/events_listing_alphabetical/page/empty'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  /**
+   * Notifications
+   */
+
+  $items['admin/content/opensource-events/admin-notification'] = array(
+    'title' => 'Admin notification',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/rules/rules/opensource_events_1/edit'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 10,
+  );
+  $items['admin/content/opensource-events/user-notification-event-creation'] = array(
+    'title' => 'User notification on event creation',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/rules/rules/opensource_events_5/edit'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 10,
+  );
+  $items['admin/content/opensource-events/user-notification-event-publish'] = array(
+    'title' => 'User notification on event publish',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/rules/rules/opensource_events_4/edit'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 10,
+  );
+
+  /**
+   * Other
+   */
+
+  $items['admin/content/opensource-events/configure-meta'] = array(
+    'title' => 'Configure Meta',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/content/nodewords/meta-tags/custom'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 20,
   );
 
   return $items;
 }
 
-function _opensource_events_success() {
-  return t('Your event has been submitted for review. Check out our ') . l(t('event listings'), 'resources/conferences-and-events-monthly') . t(' or ') . l(t('submit another event'), 'node/add/event') . '.';
-}
 function opensource_events_form_alter(&$form, &$form_state, $form_id) {
   if($form_id=='event_node_form') {
     drupal_set_title('Submit an event below');
     $form['#attributes'] = array('class' => 'event-form');
-    $form['buttons']['submit']['#submit'][] = '_opensource_events_redirect_handler';
-  }
-}
-
-function _opensource_events_redirect_handler($form, &$form_state) {
-  if($form_state['nid']) {
-    $form_state['redirect'] = 'event-submitted-for-review';
   }
 }
 
@@ -149,6 +249,7 @@ function opensource_events_theme_registry_alter(&$theme_registry) {
 function opensource_events_preprocess_node(&$vars) {
   $vars['template_files'][] = 'node-event-type';
 }
+
 /*function opensource_events_theme_registry_alter(&$theme_registry) {
   $theme_path = drupal_get_path('module', 'opensource_events');
   // $theme_registry['calendar_month_node']['path'] = $theme_path . '/templates';

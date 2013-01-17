@@ -97,9 +97,10 @@
   <?php endif; ?>
 
   <div class="clearfix">
-    <?php if($current_alpha != 'a'): ?>
+    <?php if($digits_rolodex != '1'): ?>
       <div class="previous">
-	<a href="<?php print url($view_path . chr(ord($current_alpha) - 1)); ?>">Previous</a>
+        <?php $previous = ($current_alpha == 'a') ? 'all/1' : chr(ord($current_alpha) - 1); ?>
+        <a href="<?php print url($view_path . $previous); ?>">Previous</a>
       </div>
     <?php endif; ?>
   <div class="monthly">
@@ -107,7 +108,8 @@
   </div>
     <?php if($current_alpha != 'z'): ?>
       <div class="next">
-	<a href="<?php print url($view_path . chr(ord($current_alpha) + 1)); ?>">Next</a>
+        <?php $next = ($digits_rolodex == '1') ? 'a' : chr(ord($current_alpha) + 1); ?>
+        <a href="<?php print url($view_path . $next); ?>">Next</a>
       </div>
     <?php endif; ?>
   </div>

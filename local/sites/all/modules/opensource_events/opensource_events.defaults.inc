@@ -420,13 +420,21 @@ function _opensource_events_rules_defaults() {
         '#active' => 1,
         '#weight' => '0',
         '#categories' => array(
-          '0' => 'events',
-          'opensource_events' => 'opensource_events',
+          '0' => 'opensource_events',
         ),
         '#status' => 'default',
         '#conditions' => array(
           '0' => array(
-            '#weight' => 0,
+            '#type' => 'condition',
+            '#settings' => array(
+              'type' => array(
+                'event' => 'event',
+              ),
+              '#argument map' => array(
+                'node' => 'node',
+              ),
+            ),
+            '#name' => 'rules_condition_content_is_type',
             '#info' => array(
               'label' => 'Created content is Event',
               'arguments' => array(
@@ -437,13 +445,92 @@ function _opensource_events_rules_defaults() {
               ),
               'module' => 'Node',
             ),
-            '#name' => 'rules_condition_content_is_type',
+            '#weight' => 0,
+          ),
+        ),
+        '#actions' => array(
+          '0' => array(
+            '#info' => array(
+              'label' => 'Send a mail to an arbitrary mail address',
+              'module' => 'System',
+              'eval input' => array(
+                '0' => 'subject',
+                '1' => 'message',
+                '2' => 'from',
+                '3' => 'to',
+              ),
+            ),
+            '#name' => 'rules_action_mail',
             '#settings' => array(
-              'type' => array(
-                'event' => 'event',
+              'to' => '[node:field_event_submitter_email-formatted]',
+              'from' => 'osdc-mail@redhat.com',
+              'subject' => 'New event submitted',
+              'message' => 'A new event has been submitted. Please visit http://opensource.devel.axelerant.com/moderation-queue/events/all to approve.
+
+Thanks,
+All mighty Drupal',
+              '#eval input' => array(
+                'token_rules_input_evaluator' => array(
+                  'subject' => array(
+                    '0' => ':global',
+                  ),
+                  'message' => array(
+                    '0' => ':global',
+                  ),
+                  'from' => array(
+                    '0' => ':global',
+                  ),
+                  'to' => array(
+                    '0' => 'node',
+                    '1' => ':global',
+                  ),
+                ),
+              ),
+            ),
+            '#type' => 'action',
+            '#weight' => 0,
+          ),
+        ),
+        '#version' => 6003,
+      ),
+      'opensource_events_4' => array(
+        '#type' => 'rule',
+        '#set' => 'event_workflow_state_changed',
+        '#label' => 'Send notification to author of event on event getting published',
+        '#active' => 1,
+        '#weight' => '0',
+        '#categories' => array(
+          '0' => 'opensource_events',
+        ),
+        '#status' => 'default',
+        '#conditions' => array(
+          '0' => array(
+            '#weight' => 0,
+            '#info' => array(
+              'label' => 'Check workflow transition from Any state to Published',
+              'arguments' => array(
+                'old_state' => array(
+                  'type' => 'workflow_state',
+                  'label' => 'Old workflow state',
+                ),
+                'new_state' => array(
+                  'type' => 'workflow_state',
+                  'label' => 'New workflow state',
+                ),
+              ),
+              'module' => 'Workflow',
+            ),
+            '#name' => 'workflow_check_transition',
+            '#settings' => array(
+              'from_state' => array(
+                'ANY' => 'ANY',
+              ),
+              'to_state' => array(
+                '11' => '11',
               ),
               '#argument map' => array(
-                'node' => 'node',
+                'old_state' => 'old_state',
+                'new_state' => 'new_state',
               ),
             ),
             '#type' => 'condition',
@@ -455,12 +542,12 @@ function _opensource_events_rules_defaults() {
             '#type' => 'action',
             '#settings' => array(
               'to' => '[node:field_event_submitter_email-formatted]',
-              'from' => 'osdc-mail@redhat.com',
-              'subject' => 'New event submitted',
-              'message' => 'A new event has been submitted. Please visit http://opensource.devel.axelerant.com/moderation-queue/events/all to approve.
+              'from' => 'osdc-admin@redhat.com',
+              'subject' => 'Your event has been approved',
+              'message' => 'We have approved your event, please visit our calendar to view your event listing.
 
 Thanks,
-All mighty Drupal',
+opensource.com team',
               '#eval input' => array(
                 'token_rules_input_evaluator' => array(
                   'subject' => array(
@@ -490,6 +577,86 @@ All mighty Drupal',
                 '3' => 'to',
               ),
             ),
+          ),
+        ),
+        '#version' => 6003,
+      ),
+      'opensource_events_5' => array(
+        '#type' => 'rule',
+        '#set' => 'event_node_insert',
+        '#label' => 'Send notification to author of event upon event creation',
+        '#active' => 1,
+        '#weight' => '0',
+        '#categories' => array(
+          '0' => 'opensource_events',
+        ),
+        '#status' => 'default',
+        '#conditions' => array(
+          '0' => array(
+            '#weight' => 0,
+            '#info' => array(
+              'label' => 'Created content is Event',
+              'arguments' => array(
+                'node' => array(
+                  'type' => 'node',
+                  'label' => 'Content',
+                ),
+              ),
+              'module' => 'Node',
+            ),
+            '#name' => 'rules_condition_content_is_type',
+            '#settings' => array(
+              'type' => array(
+                'event' => 'event',
+              ),
+              '#argument map' => array(
+                'node' => 'node',
+              ),
+            ),
+            '#type' => 'condition',
+          ),
+        ),
+        '#actions' => array(
+          '0' => array(
+            '#type' => 'action',
+            '#settings' => array(
+              'to' => '[node:field_event_submitter_email-formatted]',
+              'from' => 'osdc-mail@redhat.com',
+              'subject' => 'Thanks for submitting your event',
+              'message' => 'Our admins will review your submission and approve your event if it fits within our guidelines. We will contact you if there are any questions.
+
+Thanks,
+opensource.com team',
+              '#eval input' => array(
+                'token_rules_input_evaluator' => array(
+                  'subject' => array(
+                    '0' => ':global',
+                  ),
+                  'message' => array(
+                    '0' => ':global',
+                  ),
+                  'from' => array(
+                    '0' => ':global',
+                  ),
+                  'to' => array(
+                    '0' => 'node',
+                    '1' => ':global',
+                  ),
+                ),
+              ),
+            ),
+            '#name' => 'rules_action_mail',
+            '#info' => array(
+              'label' => 'Send a mail to an arbitrary mail address',
+              'module' => 'System',
+              'eval input' => array(
+                '0' => 'subject',
+                '1' => 'message',
+                '2' => 'from',
+                '3' => 'to',
+              ),
+            ),
+            '#weight' => 0,
           ),
         ),
         '#version' => 6003,
@@ -604,176 +771,6 @@ All mighty Drupal',
         ),
         '#version' => 6003,
       ),
-      'opensource_events_4' => array(
-        '#type' => 'rule',
-        '#set' => 'event_workflow_state_changed',
-        '#label' => 'Send notification to author of event on event getting published',
-        '#active' => 1,
-        '#weight' => '0',
-        '#categories' => array(
-          '0' => 'events',
-          'opensource_events' => 'opensource_events',
-        ),
-        '#status' => 'default',
-        '#conditions' => array(
-          '0' => array(
-            '#type' => 'condition',
-            '#settings' => array(
-              'from_state' => array(
-                'ANY' => 'ANY',
-              ),
-              'to_state' => array(
-                '11' => '11',
-              ),
-              '#argument map' => array(
-                'old_state' => 'old_state',
-                'new_state' => 'new_state',
-              ),
-            ),
-            '#name' => 'workflow_check_transition',
-            '#info' => array(
-              'label' => 'Check workflow transition from Any state to Published',
-              'arguments' => array(
-                'old_state' => array(
-                  'type' => 'workflow_state',
-                  'label' => 'Old workflow state',
-                ),
-                'new_state' => array(
-                  'type' => 'workflow_state',
-                  'label' => 'New workflow state',
-                ),
-              ),
-              'module' => 'Workflow',
-            ),
-            '#weight' => 0,
-          ),
-        ),
-        '#actions' => array(
-          '0' => array(
-            '#info' => array(
-              'label' => 'Send a mail to an arbitrary mail address',
-              'module' => 'System',
-              'eval input' => array(
-                '0' => 'subject',
-                '1' => 'message',
-                '2' => 'from',
-                '3' => 'to',
-              ),
-            ),
-            '#name' => 'rules_action_mail',
-            '#settings' => array(
-              'to' => '[node:field_event_submitter_email-formatted]',
-              'from' => 'osdc-admin@redhat.com',
-              'subject' => 'Your event has been approved',
-              'message' => 'We have approved your event, please visit our calendar to view your event listing.
-
-Thanks,
-opensource.com team',
-              '#eval input' => array(
-                'token_rules_input_evaluator' => array(
-                  'subject' => array(
-                    '0' => ':global',
-                  ),
-                  'message' => array(
-                    '0' => ':global',
-                  ),
-                  'from' => array(
-                    '0' => ':global',
-                  ),
-                  'to' => array(
-                    '0' => 'node',
-                    '1' => ':global',
-                  ),
-                ),
-              ),
-            ),
-            '#type' => 'action',
-            '#weight' => 0,
-          ),
-        ),
-        '#version' => 6003,
-      ),
-      'opensource_events_5' => array(
-        '#type' => 'rule',
-        '#set' => 'event_node_insert',
-        '#label' => 'Send notification to author of event upon event creation',
-        '#active' => 1,
-        '#weight' => '0',
-        '#categories' => array(
-          '0' => 'events',
-          'opensource_events' => 'opensource_events',
-        ),
-        '#status' => 'default',
-        '#conditions' => array(
-          '0' => array(
-            '#type' => 'condition',
-            '#settings' => array(
-              'type' => array(
-                'event' => 'event',
-              ),
-              '#argument map' => array(
-                'node' => 'node',
-              ),
-            ),
-            '#name' => 'rules_condition_content_is_type',
-            '#info' => array(
-              'label' => 'Created content is Event',
-              'arguments' => array(
-                'node' => array(
-                  'type' => 'node',
-                  'label' => 'Content',
-                ),
-              ),
-              'module' => 'Node',
-            ),
-            '#weight' => 0,
-          ),
-        ),
-        '#actions' => array(
-          '0' => array(
-            '#weight' => 0,
-            '#info' => array(
-              'label' => 'Send a mail to an arbitrary mail address',
-              'module' => 'System',
-              'eval input' => array(
-                '0' => 'subject',
-                '1' => 'message',
-                '2' => 'from',
-                '3' => 'to',
-              ),
-            ),
-            '#name' => 'rules_action_mail',
-            '#settings' => array(
-              'to' => '[node:field_event_submitter_email-formatted]',
-              'from' => 'osdc-mail@redhat.com',
-              'subject' => 'Thanks for submitting your event',
-              'message' => 'Our admins will review your submission and approve your event if it fits within our guidelines. We will contact you if there are any questions.
-
-Thanks,
-opensource.com team',
-              '#eval input' => array(
-                'token_rules_input_evaluator' => array(
-                  'subject' => array(
-                    '0' => ':global',
-                  ),
-                  'message' => array(
-                    '0' => ':global',
-                  ),
-                  'from' => array(
-                    '0' => ':global',
-                  ),
-                  'to' => array(
-                    '0' => 'node',
-                    '1' => ':global',
-                  ),
-                ),
-              ),
-            ),
-            '#type' => 'action',
-          ),
-        ),
-        '#version' => 6003,
-      ),
       'opensource_events_6' => array(
         '#type' => 'rule',
         '#set' => 'rules_mark_events_published',
@@ -884,43 +881,115 @@ opensource.com team',
         ),
         '#version' => 6003,
       ),
-    ),
-    'rule_sets' => array(
-      'rules_mark_events_published' => array(
-        'arguments' => array(
-          'node' => array(
-            'label' => 'Content',
-            'type' => 'node',
+      'opensource_events_8' => array(
+        '#type' => 'rule',
+        '#set' => 'event_workflow_state_changed',
+        '#label' => 'Award a registered user 10 points after an event the submitted is published',
+        '#active' => 1,
+        '#weight' => '0',
+        '#categories' => array(
+          '0' => 'opensource_events',
+        ),
+        '#status' => 'default',
+        '#conditions' => array(
+          '0' => array(
+            '#weight' => 0,
+            '#info' => array(
+              'label' => 'Updated content is Event',
+              'arguments' => array(
+                'node' => array(
+                  'type' => 'node',
+                  'label' => 'Content',
+                ),
+              ),
+              'module' => 'Node',
+            ),
+            '#name' => 'rules_condition_content_is_type',
+            '#settings' => array(
+              'type' => array(
+                'event' => 'event',
+              ),
+              '#argument map' => array(
+                'node' => 'node',
+              ),
+            ),
+            '#type' => 'condition',
           ),
-          'workflow_state' => array(
-            'label' => 'Workflow state',
-            'type' => 'workflow_state',
+          '1' => array(
+            '#type' => 'condition',
+            '#settings' => array(
+              'from_state' => array(
+                'ANY' => 'ANY',
+              ),
+              'to_state' => array(
+                '11' => '11',
+              ),
+              '#argument map' => array(
+                'old_state' => 'old_state',
+                'new_state' => 'new_state',
+              ),
+            ),
+            '#name' => 'workflow_check_transition',
+            '#info' => array(
+              'label' => 'Check workflow transition from Any state to Published',
+              'arguments' => array(
+                'old_state' => array(
+                  'type' => 'workflow_state',
+                  'label' => 'Old workflow state',
+                ),
+                'new_state' => array(
+                  'type' => 'workflow_state',
+                  'label' => 'New workflow state',
+                ),
+              ),
+              'module' => 'Workflow',
+            ),
+            '#weight' => 0,
           ),
         ),
-        'label' => 'Mark events "Published"',
-        'status' => 'default',
-        'categories' => array(
-          '0' => 'events',
-          'opensource_events' => 'opensource_events',
-        ),
-      ),
-      'rules_mark_events_review' => array(
-        'arguments' => array(
-          'node' => array(
-            'label' => 'Content',
-            'type' => 'node',
+        '#actions' => array(
+          '0' => array(
+            '#weight' => 0,
+            '#info' => array(
+              'label' => 'Grant points to a user',
+              'arguments' => array(
+                'user' => array(
+                  'type' => 'user',
+                  'label' => 'User',
+                ),
+              ),
+              'module' => 'Userpoints',
+              'eval input' => array(
+                '0' => 'points',
+                '1' => 'entity_id',
+              ),
+            ),
+            '#name' => 'userpoints_action_grant_points',
+            '#settings' => array(
+              'points' => '10',
+              'description' => '',
+              'operation' => '',
+              'entity_type' => '',
+              'entity_id' => '',
+              'tid' => '',
+              '#argument map' => array(
+                'user' => 'user',
+              ),
+              '#eval input' => array(
+                'token_rules_input_evaluator' => array(
+                  'points' => array(
+                    '0' => ':global',
+                  ),
+                  'entity_id' => array(
+                    '0' => ':global',
+                  ),
+                ),
+              ),
+            ),
+            '#type' => 'action',
           ),
-          'workflow_state' => array(
-            'label' => 'Workflow state',
-            'type' => 'workflow_state',
-          ),
         ),
-        'label' => 'Mark events "Review"',
-        'status' => 'default',
-        'categories' => array(
-          '0' => 'events',
-          'opensource_events' => 'opensource_events',
-        ),
+        '#version' => 6003,
       ),
     ),
   );
