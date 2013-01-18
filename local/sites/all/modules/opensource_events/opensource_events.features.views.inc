@@ -435,13 +435,16 @@ function _opensource_events_views_default_views() {
       'validate_argument_user_flag_id_type' => 'id',
       'validate_argument_is_member' => 0,
       'validate_argument_php' => 'if ($argument == \'1\') {
-$myresult = db_query("SELECT nid FROM {node} n WHERE n.title LIKE \'0%%\' OR n.title LIKE \'1%%\' OR n.title LIKE \'2%%\' OR n.title LIKE \'3%%\' OR n.title LIKE \'4%%\' OR n.title LIKE \'5%%\' OR n.title LIKE \'6%%\' OR n.title LIKE \'7%%\' OR n.title LIKE \'8%%\' OR n.title LIKE \'9%%\' AND n.type=\'event\'");
+$myresult = db_query("SELECT nid FROM {node} n WHERE n.title NOT REGEXP \'^[[:alpha:]]\'AND n.type=\'event\'");
 while ($myNode = db_fetch_object($myresult)) {
   $nodes[] = $myNode->nid;
 }
 $handler->argument = implode(\'+\', $nodes);
 }
 return TRUE;',
+      'override' => array(
+        'button' => 'Override',
+      ),
     ),
   ));
   $handler->override_option('filters', array(

@@ -413,6 +413,116 @@ return array(
 function _opensource_events_rules_defaults() {
   return array(
     'rules' => array(
+      'opensource_events_8' => array(
+        '#type' => 'rule',
+        '#set' => 'event_workflow_state_changed',
+        '#label' => 'Award a registered user 10 points after an event the submitted is published',
+        '#active' => 1,
+        '#weight' => '0',
+        '#categories' => array(
+          '0' => 'opensource_events',
+        ),
+        '#status' => 'default',
+        '#conditions' => array(
+          '0' => array(
+            '#type' => 'condition',
+            '#settings' => array(
+              'type' => array(
+                'event' => 'event',
+              ),
+              '#argument map' => array(
+                'node' => 'node',
+              ),
+            ),
+            '#name' => 'rules_condition_content_is_type',
+            '#info' => array(
+              'label' => 'Updated content is Event',
+              'arguments' => array(
+                'node' => array(
+                  'type' => 'node',
+                  'label' => 'Content',
+                ),
+              ),
+              'module' => 'Node',
+            ),
+            '#weight' => 0,
+          ),
+          '1' => array(
+            '#weight' => 0,
+            '#info' => array(
+              'label' => 'Check workflow transition from Any state to Published',
+              'arguments' => array(
+                'old_state' => array(
+                  'type' => 'workflow_state',
+                  'label' => 'Old workflow state',
+                ),
+                'new_state' => array(
+                  'type' => 'workflow_state',
+                  'label' => 'New workflow state',
+                ),
+              ),
+              'module' => 'Workflow',
+            ),
+            '#name' => 'workflow_check_transition',
+            '#settings' => array(
+              'from_state' => array(
+                'ANY' => 'ANY',
+              ),
+              'to_state' => array(
+                '11' => '11',
+              ),
+              '#argument map' => array(
+                'old_state' => 'old_state',
+                'new_state' => 'new_state',
+              ),
+            ),
+            '#type' => 'condition',
+          ),
+        ),
+        '#actions' => array(
+          '0' => array(
+            '#weight' => 0,
+            '#type' => 'action',
+            '#settings' => array(
+              'points' => '10',
+              'description' => '',
+              'operation' => '',
+              'entity_type' => '',
+              'entity_id' => '',
+              'tid' => '',
+              '#argument map' => array(
+                'user' => 'author',
+              ),
+              '#eval input' => array(
+                'token_rules_input_evaluator' => array(
+                  'points' => array(
+                    '0' => ':global',
+                  ),
+                  'entity_id' => array(
+                    '0' => ':global',
+                  ),
+                ),
+              ),
+            ),
+            '#name' => 'userpoints_action_grant_points',
+            '#info' => array(
+              'label' => 'Grant points to a user',
+              'arguments' => array(
+                'user' => array(
+                  'type' => 'user',
+                  'label' => 'User',
+                ),
+              ),
+              'module' => 'Userpoints',
+              'eval input' => array(
+                '0' => 'points',
+                '1' => 'entity_id',
+              ),
+            ),
+          ),
+        ),
+        '#version' => 6003,
+      ),
       'opensource_events_1' => array(
         '#type' => 'rule',
         '#set' => 'event_node_insert',
@@ -881,116 +991,6 @@ opensource.com team',
         ),
         '#version' => 6003,
       ),
-      'opensource_events_8' => array(
-        '#type' => 'rule',
-        '#set' => 'event_workflow_state_changed',
-        '#label' => 'Award a registered user 10 points after an event the submitted is published',
-        '#active' => 1,
-        '#weight' => '0',
-        '#categories' => array(
-          '0' => 'opensource_events',
-        ),
-        '#status' => 'default',
-        '#conditions' => array(
-          '0' => array(
-            '#weight' => 0,
-            '#info' => array(
-              'label' => 'Updated content is Event',
-              'arguments' => array(
-                'node' => array(
-                  'type' => 'node',
-                  'label' => 'Content',
-                ),
-              ),
-              'module' => 'Node',
-            ),
-            '#name' => 'rules_condition_content_is_type',
-            '#settings' => array(
-              'type' => array(
-                'event' => 'event',
-              ),
-              '#argument map' => array(
-                'node' => 'node',
-              ),
-            ),
-            '#type' => 'condition',
-          ),
-          '1' => array(
-            '#type' => 'condition',
-            '#settings' => array(
-              'from_state' => array(
-                'ANY' => 'ANY',
-              ),
-              'to_state' => array(
-                '11' => '11',
-              ),
-              '#argument map' => array(
-                'old_state' => 'old_state',
-                'new_state' => 'new_state',
-              ),
-            ),
-            '#name' => 'workflow_check_transition',
-            '#info' => array(
-              'label' => 'Check workflow transition from Any state to Published',
-              'arguments' => array(
-                'old_state' => array(
-                  'type' => 'workflow_state',
-                  'label' => 'Old workflow state',
-                ),
-                'new_state' => array(
-                  'type' => 'workflow_state',
-                  'label' => 'New workflow state',
-                ),
-              ),
-              'module' => 'Workflow',
-            ),
-            '#weight' => 0,
-          ),
-        ),
-        '#actions' => array(
-          '0' => array(
-            '#weight' => 0,
-            '#info' => array(
-              'label' => 'Grant points to a user',
-              'arguments' => array(
-                'user' => array(
-                  'type' => 'user',
-                  'label' => 'User',
-                ),
-              ),
-              'module' => 'Userpoints',
-              'eval input' => array(
-                '0' => 'points',
-                '1' => 'entity_id',
-              ),
-            ),
-            '#name' => 'userpoints_action_grant_points',
-            '#settings' => array(
-              'points' => '10',
-              'description' => '',
-              'operation' => '',
-              'entity_type' => '',
-              'entity_id' => '',
-              'tid' => '',
-              '#argument map' => array(
-                'user' => 'user',
-              ),
-              '#eval input' => array(
-                'token_rules_input_evaluator' => array(
-                  'points' => array(
-                    '0' => ':global',
-                  ),
-                  'entity_id' => array(
-                    '0' => ':global',
-                  ),
-                ),
-              ),
-            ),
-            '#type' => 'action',
-          ),
-        ),
-        '#version' => 6003,
-      ),
     ),
   );
 }
@@ -1004,6 +1004,15 @@ function _opensource_events_user_default_permissions() {
   // Exported permission: create event content
   $permissions[] = array(
     'name' => 'create event content',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: view unpublished event content
+  $permissions[] = array(
+    'name' => 'view unpublished event content',
     'roles' => array(
       '0' => 'anonymous user',
       '1' => 'authenticated user',

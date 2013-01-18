@@ -58,12 +58,12 @@
       $digits_rolodex = filter_xss(arg(3));
       $current_alpha = ($rolodex != '' ? strtolower(substr($rolodex,0)) : 'a');
       $digits_active_class = ($digits_rolodex == '1') ? ' active' : '';
-      $alpha_pager .= '<a href="' . url($view_path) . 'all/1" class="alpha-pager' . $digits_active_class . '">0-9</a>  ';
       foreach($array as $alpha) {
         $active_class = ($current_alpha == $alpha ? ' active' : '');
         $url = $view_path . $alpha;
         $alpha_pager .= '<a href="' . url($url) . '" class="alpha-pager' . $active_class . '">' . strtoupper($alpha) . '</a>  ';
       }
+      $alpha_pager .= '<a href="' . url($view_path) . 'all/1" class="alpha-pager' . $digits_active_class . '">0-9</a>  ';
       print $alpha_pager;
       $glossary_title = ($digits_rolodex == '1') ? '0-9' : $current_alpha;
       print "<h2 class='alpha-title'>" . strtoupper($glossary_title) . "</h2>";
@@ -97,21 +97,17 @@
   <?php endif; ?>
 
   <div class="clearfix">
-    <?php if($digits_rolodex != '1'): ?>
-      <div class="previous">
-        <?php $previous = ($current_alpha == 'a') ? 'all/1' : chr(ord($current_alpha) - 1); ?>
-        <a href="<?php print url($view_path . $previous); ?>">Previous</a>
-      </div>
-    <?php endif; ?>
+    <div class="previous">
+      <?php $previous = ($current_alpha == 'a') ? 'all/1' : (($digits_rolodex == '1') ? 'z' : chr(ord($current_alpha) - 1)); ?>
+      <a href="<?php print url($view_path . $previous); ?>">Previous</a>
+    </div>
   <div class="monthly">
 	<a href="/resources/conferences-and-events-monthly">View monthly listing</a>
   </div>
-    <?php if($current_alpha != 'z'): ?>
-      <div class="next">
-        <?php $next = ($digits_rolodex == '1') ? 'a' : chr(ord($current_alpha) + 1); ?>
-        <a href="<?php print url($view_path . $next); ?>">Next</a>
-      </div>
-    <?php endif; ?>
+    <div class="next">
+      <?php $next = ($digits_rolodex == '1') ? 'a' : (($current_alpha == 'z') ? 'all/1' : chr(ord($current_alpha) + 1)); ?>
+      <a href="<?php print url($view_path . $next); ?>">Next</a>
+    </div>
   </div>
 
   <?php if ($footer): ?>

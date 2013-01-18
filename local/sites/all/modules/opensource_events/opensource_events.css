@@ -229,3 +229,8 @@ tr.multi-day:nth-child(even) .monthview{background: #d4dd4c!important;}
 .node-type-event.node-unpublished {
 	background-color: #fff;
 }
+.calendar-calendar .month-view .full tr td.multi-day, .calendar-calendar .month-view .full tr td.date-box {
+    height: 19px;
+    max-height: 19px;
+    max-width: 60px;
+}
