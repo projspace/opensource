@@ -501,6 +501,7 @@ div#content-area > div.view-contributor-spotlight .user_badges img {
 .view-id-articles .views-field-field-lead-image-fid,
 .view-id-articles .views-field-field-image-imceimage-path {
   float: left;
+  height: 115px;
   margin-right: 15px;
 }
 
