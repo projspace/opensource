@@ -177,6 +177,10 @@
 	border-bottom: 3px double #292929;
 	padding-bottom: 5px;
 }
+.page-node-add-event .node h2.title {
+	background: none repeat scroll 0 0 transparent;
+    padding-top: 15px;
+}
 .event-form .collapsible.collapsed{
 	display: none;
 }
@@ -222,10 +226,6 @@ tr.multi-day:nth-child(even) .monthview{background: #d4dd4c!important;}
 .node-type-event .field-label-inline-first {display: block;}
 .node-type-event ul .first{ padding: 0; }
 
-.page-node-add-event h1.title{
-	background: none;
-	padding-top: 0;
-}
 .node-type-event.node-unpublished {
 	background-color: #fff;
 }

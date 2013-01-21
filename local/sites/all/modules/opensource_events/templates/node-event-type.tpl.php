@@ -111,7 +111,9 @@
       <span class="field-content"><?php print $node->field_event_website['0']['view']; ?> </span>
     </div>
   </div><br />
-  <?php print t('Thank you! Your event has been submitted for review. Check out our ') . l(t('event listings'), 'resources/conferences-and-events-monthly') . t(' or ') . l(t('submit another event'), 'node/add/event') . '.'; ?>
+  <?php if(is_numeric(arg(1))): ?>
+    <?php print t('Thank you! Your event has been submitted for review. Check out our ') . l(t('event listings'), 'resources/conferences-and-events-monthly') . t(' or ') . l(t('submit another event'), 'node/add/event') . '.'; ?>
+  <?php endif; ?>
   <br />
 </div>
 
