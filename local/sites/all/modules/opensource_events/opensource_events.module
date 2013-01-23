@@ -122,7 +122,7 @@ function opensource_events_menu() {
     'access arguments' => array('administer site configuration'),
     'type' => MENU_LOCAL_TASK,
   );
-  
+
   /**
    * Monthly view
    */
@@ -155,7 +155,7 @@ function opensource_events_menu() {
     'access arguments' => array('administer site configuration'),
     'type' => MENU_LOCAL_TASK,
   );
-  
+
   /**
    * Alphabetical view
    */
@@ -256,7 +256,9 @@ function opensource_events_theme_registry_alter(&$theme_registry) {
 }
 
 function opensource_events_preprocess_node(&$vars) {
-  $vars['template_files'][] = 'node-event-type';
+  if($vars['type']=='event') {
+    $vars['template_files'][] = 'node-event-type';
+  }
 }
 
 /*function opensource_events_theme_registry_alter(&$theme_registry) {
