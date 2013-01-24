@@ -98,20 +98,20 @@ function sitetheme_menu_item_link($link) {
   if (empty($link['localized_options'])) {
     $link['localized_options'] = array();
   }
-  
-  if($link['menu_name'] == "menu-resources" || $link['menu_name'] == "menu-resources-home") {
+
+  if($link['menu_name'] == "menu-resources") {
     $nid = ereg_replace("[^0-9]", "", $link['link_path']);
     $node = node_load($nid);
     return l(theme_image($node->field_menu_image[0]['filepath']), $link['href'], array('html' => TRUE));
   }
-  
+
   // If an item is a LOCAL TASK, render it as a tab
   if ($link['type'] & MENU_IS_LOCAL_TASK) {
     $link['title'] = '<span class="tab">' . check_plain($link['title']) . '</span>';
     $link['localized_options']['html'] = TRUE;
   }
-  
-  
+
+
   //Put in destination parameter for user/login link - CM 1/30/12 - #15066-29513
     if($link['href'] == 'user/login') {
 	 $link['localized_options']['query'] = drupal_get_destination();
@@ -149,12 +149,15 @@ function sitetheme_preprocess_page(&$vars, $hook) {
     sitetheme_remove_tab('File browser', $vars);
     sitetheme_remove_tab('Your votes', $vars);
   }
-  
+
   if($vars['node']->type == 'resource') {
     $lead = $vars['node']->field_lead_image[0];
     $vars['title'] = '<span class="hide">' . $vars['node']->title . '</span>' . theme_image($lead['filepath']);
   }
-  
+
+  if(in_array('page-resources-conferences-and-events-monthly', $vars['template_files']) || in_array('page-resources-conferences-and-events-list', $vars['template_files'])) {
+    $vars['title'] = '<span class="hide">' . $vars['title'] . '</span>';
+  }
   // share JS
   /*
   $vars['closure'] .= '<script type="text/javascript" src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script>';
@@ -168,20 +171,20 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   // Quicktabs executes a click on the default tab to ensure that it is active
   // but we only want to track real clicks for omniture, so check for a clientX
   $vars['closure'] .= '<script type="text/javascript">
-<!--//--><![CDATA[//><!-- 
+<!--//--><![CDATA[//><!--
 function trackTab(tabName, e) {
-  var evt = (window.event) ? window.event : e; 
-  if (evt && evt.clientX) { 
-    var oldPageName = s.pageName; 
-    s.pageName = s.pageName + "|" + tabName; 
+  var evt = (window.event) ? window.event : e;
+  if (evt && evt.clientX) {
+    var oldPageName = s.pageName;
+    s.pageName = s.pageName + "|" + tabName;
     //console.debug(s.t);
-    void(s.t()); 
+    void(s.t());
     s.pageName = oldPageName;
   }
 }
 //--><!]]>
 </script>';
-  
+
 }
 
 
@@ -197,30 +200,30 @@ function sitetheme_preprocess_node(&$vars) {
   $vars['social_bottons'] = '';
 
   if ($vars['page'] && !in_array($vars['node']->type, array("webform"))) {
-    
+
     // shorten
     //if (module_exists("shorten")) {
     //  $url = shorten_url($url);
     //}
-    
+
     // urlencode title
     $title = urlencode($vars["node"]->title);
-    
+
     // add share links
     $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000IDmjAAG", "absolute" => TRUE));
     $vars['social_bottons'] = '<a class="addthis_button_tweet" addthis:url="' . $url . '" addthis:title="' . $vars["node"]->title . '"></a>';
-    
+
     $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2GAAS", "absolute" => TRUE));
     $url_enc = urlencode($url);
     $vars['social_bottons'] .= ' <a href="javascript:(function(){var%20d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f=\'http://identi.ca//index.php?action=bookmarklet\',l=d.location,e=encodeURIComponent,g=f+\'&status_textarea=%E2%80%9C\'+((e(s))?e(s):e(document.title))+\'%E2%80%9D%20%E2%80%94%20\'+\'' . $url_enc . '\';function%20a(){if(!w.open(g,\'t\',\'toolbar=0,resizable=0,scrollbars=1,status=1,width=450,height=200\')){l.href=g;}}a();})()"><img src="http://www.nuxified.org/images/identica.png" style="border:1px solid #CCCCCC; padding:2px;" /></a>';
-    
+
     $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2GAAS", "absolute" => TRUE));
     $url_enc = urlencode($url);
     $vars['social_bottons'] .= ' <a href="http://reddit.com/submit?url=' . $url_enc . '&title=' . $title . '" onclick="window.location = \'http://reddit.com/submit?url=' . $url_enc . '&title=' . $title . '\'; return false"><img src="http://reddit.com/static/spreddit7.gif" alt="submit to reddit" border="0" /></a>';
-    
+
     $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2LAAS", "absolute" => TRUE));
     $vars['social_bottons'] .= ' <script src="http://www.stumbleupon.com/hostedbadge.php?s=1&r=' . $url . '"></script>';
-    
+
     $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2QAAS", "absolute" => TRUE));
     $vars['social_bottons'] .= ' <a class="addthis_button_facebook_like" fb:like:layout="button_count" addthis:url="' . $url . '" addthis:title="' . $vars["node"]->title . '"></a>';
 
@@ -231,7 +234,7 @@ function sitetheme_preprocess_node(&$vars) {
     $vars['social_bottons'] .= '<script type="text/javascript" src="http://www.stumbleupon.com/hostedbadge.php?s=5&r=' . $url . '"></script>';
     */
   }
-  
+
   if ($vars['node']->type == 'channel') {
     $vars['links'] = '';
   }
@@ -251,25 +254,25 @@ function sitetheme_preprocess_node(&$vars) {
   	elseif (check_display_types($vars['node']->type) && $vars['page']) {
     $account = user_load(array('uid' => $vars['node']->uid));
     $vars['submitted'] = t('Posted !date by !author', array('!date' => format_date($vars['node']->created, 'custom', 'j M Y'), '!author' => theme('username', $vars['node']))) .'<a href="/user/'. $vars['node']->uid .'/feed" class="article-author-feed"></a>';
-    
+
     // add_this
     if ($vars['social_bottons']) {
       $vars['content'] = '<div class="node-add-this" style="float:none;">' . $vars['social_bottons'] . '</div>' . $vars['content'];
       $vars['social_bottons'] = NULL;
     }
-    
+
     // Grab the caption from the imce_caption module.
     if (function_exists('imce_caption_load')) {
       if ($vars['node']->field_image[0]['imceimage_path']) {
         $path = sitetheme_get_imceimage_filepath($vars['node']->field_image[0]['imceimage_path']);
         $caption = imce_caption_load(array('filepath' => file_directory_path() . '/' . $path));
       }
-      
+
       if ($vars['node']->field_lead_image[0]['view']) {
         $caption = imce_caption_load(array('fid' => $vars['node']->field_lead_image[0]['fid']));
       }
     }
-  
+
     if ($caption) {
       $caption = '<br /><span class="node-main-image-caption">' . t('Image credits: !caption', array('!caption' => $caption)) . '</span>';
     }
@@ -287,17 +290,17 @@ function sitetheme_preprocess_node(&$vars) {
       $vars['content'] = '<div class="node-main-image">'.theme('imagecache', 'image-full-size', $path, $vars['node']->field_image[0]['imceimage_alt']) . $caption .'</div>'. $vars['content'];
     }
   }
-  
+
   $vars['add_this'] = '';
   if ($vars['page'] && user_access('view addthis')) {
     $vars['add_this'] = _addthis_create_button($vars['node'], !$vars['page']);
   }
-  
+
   // Add the proper license information.
   $vars['node_license'] = '';
   //if ($vars['node']->type == 'post' || $vars['node']->type == 'video' && $vars['page']) {
   	if (check_display_types($vars['node']->type) && $vars['page']) {
-  	
+
     if ($vars['node']->field_default_license[0]['value'] == 'Use the default CC license.') {
       $vars['node_license'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-3.png" title="This work is licensed under a Creative Commons Attribution-Share Alike 3.0 Unported License." /></a>';
     }
@@ -341,10 +344,10 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
   }
   $username = theme('username', $vars['comment']);
   $vars['submitted'] = t('!author on !date', array('!author' => $username, '!date' => format_date($vars['comment']->timestamp, 'custom', 'j M Y')));
-  
+
   // Badge Display Code
   $badges = user_badges_get_badges($vars['comment']->uid);
-  
+
   if($badges) {
     foreach($badges as $badge) {
       // If the badge weight is a negative number, then this is a role badge
@@ -379,7 +382,7 @@ function sitetheme_preprocess_block(&$vars, $hook) {
   else if ($vars['block']->delta == 'contributor_spotlight-block_1') {
     $vars['block']->content = preg_replace('/_sm.png/', '.png', $vars['block']->content);;
   }
-  else if($vars['block']->delta == 'menu-resources' || $vars['block']->delta == 'menu-resources-home') {
+  else if($vars['block']->delta == 'menu-resources') {
     $vars['block']->subject = l("Open source resources", "resources");
   }
 }
@@ -860,12 +863,12 @@ function sitetheme_preprocess_views_view_row_rss__channel_reading(&$vars) {
   $result = $vars['view']->result;
   $id = $vars['id'];
   $node = node_load($result[$id-1]->nid);
-  
+
   // override description
-  $description = "<div>" . $node->title . ": " . $node->field_url[0]["url"] . " - " 
+  $description = "<div>" . $node->title . ": " . $node->field_url[0]["url"] . " - "
     . $node->field_url[0]["title"] . "</div>";
   $description = '<div>' . $node->title . " - " . $node->field_url[0]["title"] . '</div>';
-  
+
   // update rss item
   $vars["title"] = check_plain($node->field_url[0]["title"]);
   $vars["link"] = check_plain($node->field_url[0]["url"]);
@@ -876,7 +879,7 @@ function sitetheme_preprocess_user_profile(&$vars) {
   $vars['points'] = '<div class="points"><h3>Points</h3>' . userpoints_get_current_points($vars['account']->uid) . '</div>';
   $vars['profile_display_name'] = check_plain($vars['account']->profile_display_name);
   $vars['profile_location'] = check_plain($vars['account']->profile_location);
-  
+
   // @TODO: I feel like we can test this condition better, @acquia-ks
   // If the user has any role badge except Newbie
   if(in_array('Community Member', $vars['account']->roles)
@@ -893,7 +896,7 @@ function sitetheme_preprocess_user_profile(&$vars) {
       }
     }
     if($website){
-      $vars['profile_website'] = l($website, $website); 
+      $vars['profile_website'] = l($website, $website);
     }
     $vars['profile_bio'] = check_markup($vars['account']->profile_bio);
   }
@@ -938,5 +941,5 @@ function sitetheme_quicktabs_tabs($quicktabs, $active_tab = 'none') {
 }
 
 
-	
-	
+
+

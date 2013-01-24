@@ -247,7 +247,13 @@ function opensource_events_form_alter(&$form, &$form_state, $form_id) {
   if($form_id=='event_node_form') {
     drupal_set_title('Submit an event below');
     $form['#attributes'] = array('class' => 'event-form');
+    $form['#after_build'][] = '_opensource_events_form_after_build';
   }
+}
+
+function _opensource_events_form_after_build($form, &$form_state) {
+  $form['field_event_summary'][0]['format']['#access'] = FALSE;
+  return $form;
 }
 
 function opensource_events_theme_registry_alter(&$theme_registry) {

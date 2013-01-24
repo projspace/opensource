@@ -65,7 +65,7 @@
 .event-listing .item-list ul{
 	padding: 0
 }
-.event-listing .item-list li{
+.event-listing .item-list li.views-row{
 	border-bottom: 1px solid #000;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
@@ -92,7 +92,7 @@
 	left: 25px;
 }
 
-.event-listing.view-id-events_listing_alphabetical div.next, 
+.event-listing.view-id-events_listing_alphabetical div.next,
 .event-listing.view-display-id-date_nav_1 .date-next{
 	float: right;
 	background: url(img/arrow-next.png);
@@ -100,7 +100,7 @@
 	height: 20px;
 	background-position: right;
 }
-.event-listing.view-id-events_listing_alphabetical div.previous, 
+.event-listing.view-id-events_listing_alphabetical div.previous,
 .event-listing.view-display-id-date_nav_1 .date-prev{
 	float: left;
 	background: url(img/arrow-previous.png);
@@ -108,11 +108,11 @@
 	height: 20px;
 	background-position: left;
 }
-.event-listing.view-id-events_listing_alphabetical div.next a, 
-.event-listing.view-id-events_listing_alphabetical div.previous a, 
-.event-listing.view-id-events_listing_alphabetical div.monthly a, 
-.event-listing.view-display-id-date_nav_1 div.date-next a, 
-.event-listing.view-display-id-date_nav_1 div.date-prev a, 
+.event-listing.view-id-events_listing_alphabetical div.next a,
+.event-listing.view-id-events_listing_alphabetical div.previous a,
+.event-listing.view-id-events_listing_alphabetical div.monthly a,
+.event-listing.view-display-id-date_nav_1 div.date-next a,
+.event-listing.view-display-id-date_nav_1 div.date-prev a,
 .event-listing.view-display-id-date_nav_1 .date-heading h3{
 	position: relative;
 	top: 3px;
@@ -121,11 +121,11 @@
 	color: #292929 !important;
 	font-size: 13px;
 }
-.event-listing.view-id-events_listing_alphabetical div.next a, 
+.event-listing.view-id-events_listing_alphabetical div.next a,
 .event-listing.view-display-id-date_nav_1 .date-next a{
 	padding-right: 2.5em;
 }
-.event-listing.view-id-events_listing_alphabetical div.previous a, 
+.event-listing.view-id-events_listing_alphabetical div.previous a,
 .event-listing.view-display-id-date_nav_1 .date-prev a{
 	padding-left: 2.5em;
 }
@@ -220,8 +220,7 @@
 /*Calendar items listing*/
 .monthview{padding-left: 10px!important; border-radius: 0 !important;}
 .monthview a{color:#000 !important; font-family: helvetica, sans-serif; font-size: 11px; font-weight: bold!important;}
-tr.multi-day:nth-child(odd) .monthview{background: #cfebf0!important;}
-tr.multi-day:nth-child(even) .monthview{background: #d4dd4c!important;}
+tr.multi-day .monthview{background: #d4dd4c!important;}
 
 .node-type-event .field-label-inline-first {display: block;}
 .node-type-event ul .first{ padding: 0; }
@@ -237,5 +236,13 @@ tr.multi-day:nth-child(even) .monthview{background: #d4dd4c!important;}
 
 .page-resources-conferences-and-events-monthly div#content-header h1.title,
 .page-resources-conferences-and-events-list div#content-header h1.title {
+	display: none;
+}
+
+.page-node-add-event fieldset #edit-format-1-wrapper,
+.page-node-add-event fieldset #edit-format-6-wrapper,
+.page-node-add-event fieldset #edit-format-7-wrapper,
+.page-node-add-event fieldset #edit-format-8-wrapper,
+.page-node-add-event fieldset p a {
 	display: none;
 }
