@@ -24,4 +24,8 @@ Drupal.behaviors.opensource_events = function (context) {
       buttonText: "Choose"
     });
   }
+
+  $('#edit-field-event-start-date-0-value-datepicker-popup-0').change({
+    $('#edit-field-event-start-date-0-value2-datepicker-popup-0').val($(this).val());
+  });
 };
