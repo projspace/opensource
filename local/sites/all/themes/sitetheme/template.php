@@ -100,9 +100,14 @@ function sitetheme_menu_item_link($link) {
   }
 
   if($link['menu_name'] == "menu-resources" || $link['menu_name'] == "menu-resources-home") {
-    $nid = ereg_replace("[^0-9]", "", $link['link_path']);
-    $node = node_load($nid);
-    return l(theme_image($node->field_menu_image[0]['filepath']), $link['href'], array('html' => TRUE));
+    if($link['href'] == 'resources/conferences-and-events-monthly') {
+      $link_image = '/sites/default/files/images/resources/OSDC_Resources_Thumbnail_ConfEvents.png';
+    } else {
+      $nid = ereg_replace("[^0-9]", "", $link['link_path']);
+      $node = node_load($nid);
+      $link_image = $node->field_menu_image[0]['filepath'];
+    }
+    return l(theme_image($link_image), $link['href'], array('html' => TRUE));
   }
 
   // If an item is a LOCAL TASK, render it as a tab
