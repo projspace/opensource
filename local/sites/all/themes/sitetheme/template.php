@@ -107,6 +107,7 @@ function sitetheme_menu_item_link($link) {
       $node = node_load($nid);
       $link_image = $node->field_menu_image[0]['filepath'];
     }
+    print $link_image;
     return l(theme_image($link_image), $link['href'], array('html' => TRUE));
   }
 
