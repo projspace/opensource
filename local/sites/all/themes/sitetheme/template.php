@@ -101,13 +101,12 @@ function sitetheme_menu_item_link($link) {
 
   if($link['menu_name'] == "menu-resources" || $link['menu_name'] == "menu-resources-home") {
     if($link['href'] == 'resources/conferences-and-events-monthly') {
-      $link_image = '/sites/default/files/images/resources/OSDC_Resources_Thumbnail_ConfEvents.png';
+      $link_image = 'sites/default/files/images/resources/OSDC_Resources_Thumbnail_ConfEvents.png';
     } else {
       $nid = ereg_replace("[^0-9]", "", $link['link_path']);
       $node = node_load($nid);
       $link_image = $node->field_menu_image[0]['filepath'];
     }
-    print $link_image;
     return l(theme_image($link_image), $link['href'], array('html' => TRUE));
   }
 
