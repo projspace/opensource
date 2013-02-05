@@ -362,6 +362,8 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
         $vars['badges'] .= '<div class="badge-green"><img src="/'. $badge->image . '" alt="' . $badge->name . '" /></div>';
       } elseif($badge->weight == 2) {
         $vars['badges'] .= '<div class="badge-blue"><img src="/'. preg_replace('/.png/', '_sm.png', $badge->image) . '" alt="' . $badge->name . '" /></div>';
+      } elseif($badge->weight == 3) {
+        $vars['badges'] .= '<div class="badge-blue"><img src="/'. preg_replace('/_2013.png/', '_sm.png', $badge->image) . '" alt="' . $badge->name . '" /></div>';
       }
     }
   }
