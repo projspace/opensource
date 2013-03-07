@@ -155,11 +155,6 @@ function sitetheme_preprocess_page(&$vars, $hook) {
     sitetheme_remove_tab('Your votes', $vars);
   }
 
-  // Custom page title for Channel pages
-  if($vars['node']->type == 'channel') {
-    $vars['head_title'] == 'Verifying page title';
-  }
-
   if($vars['node']->type == 'resource') {
     $lead = $vars['node']->field_lead_image[0];
     $vars['title'] = '<span class="hide">' . $vars['node']->title . '</span>' . theme_image($lead['filepath']);
