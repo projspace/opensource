@@ -1,0 +1,13 @@
+<?php
+
+function opensource_removereading_enable() {
+    // Disabling Channel reading view
+    $views_status = variable_get('views_defaults', array());
+    $views_status['channel_reading'] = TRUE;
+    variable_set('views_defaults', $views_status);
+    views_invalidate_cache();
+
+    // Unpublishing reading content
+    db_query('UPDATE {node} SET status=0 WHERE type="reading"');
+    menu_rebuild();
+}

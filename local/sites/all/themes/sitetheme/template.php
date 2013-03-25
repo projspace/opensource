@@ -155,6 +155,15 @@ function sitetheme_preprocess_page(&$vars, $hook) {
     sitetheme_remove_tab('Your votes', $vars);
   }
 
+  if($ptoken = token_replace('[ptoken]')) {
+    if($vars['node']->type == 'channel' || filter_xss(arg(0)) == 'taxonomy') {
+      $vars['head_title'] = str_replace('|', ' - ' . $ptoken . ' |', $vars['head_title']);
+    }
+    if(filter_xss(arg(0)) == 'taxonomy') {
+      $vars['title'] .=  ' - ' . $ptoken;
+    }
+  }
+
   if($vars['node']->type == 'resource') {
     $lead = $vars['node']->field_lead_image[0];
     $vars['title'] = '<span class="hide">' . $vars['node']->title . '</span>' . theme_image($lead['filepath']);

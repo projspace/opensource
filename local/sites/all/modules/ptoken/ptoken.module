@@ -1,0 +1,52 @@
+<?php
+
+
+/**
+ * @file
+ * The Token API module.
+ *
+ * The Token module provides an API for providing tokens to other modules.
+ * Tokens are small bits of text that can be placed into larger documents
+ * via simple placeholders, like %site-name or [user].
+ *
+ * @ingroup token
+ */
+
+/**
+ * Implementation of hook_token_list().
+ */
+function ptoken_token_list($type = 'all') {
+  $tokens = array();
+
+  if ($type == 'global' || $type == 'all') {
+    $tokens['global']['ptoken']  = t("Pagination token.");
+  }
+  if ($type == 'node' || $type == 'all') {
+    // Node tokens here.
+  }
+
+  return $tokens;
+}
+
+/**
+ * Implementation of hook_token_values().
+ */
+function ptoken_token_values($type, $object = NULL, $options = array()) {
+  $values = array();
+  switch ($type) {
+    case 'global':
+          if ($page = filter_input(INPUT_GET, 'page')) {
+            // @see PagerDefault::execute()
+            $pager_page_array = explode(',', $page);
+            $page = $pager_page_array[0];
+            $values['ptoken'] = t("Page number ").((int) $page + 1);
+            break;
+          }
+          $values['ptoken'] = NULL;
+      break;
+    case 'node':
+      // Node tokens here.
+      break;
+  }
+  return $values;
+}
