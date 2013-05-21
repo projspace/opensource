@@ -224,26 +224,21 @@ function sitetheme_preprocess_node(&$vars) {
     $title = urlencode($vars["node"]->title);
 
     // add share links
-    //$url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000IDmjAAG", "absolute" => TRUE));
-    $url = url("node/" . $vars['node']->nid, array("absolute" => TRUE));
+    $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000IDmjAAG", "absolute" => TRUE));
     $vars['social_bottons'] = '<a class="addthis_button_tweet" addthis:url="' . $url . '" addthis:title="' . $vars["node"]->title . '"></a>';
 
-    //$url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2GAAS", "absolute" => TRUE));
-    $url = url("node/" . $vars['node']->nid, array("absolute" => TRUE));
+    $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2GAAS", "absolute" => TRUE));
     $url_enc = urlencode($url);
     $vars['social_bottons'] .= ' <a href="javascript:(function(){var%20d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f=\'http://identi.ca//index.php?action=bookmarklet\',l=d.location,e=encodeURIComponent,g=f+\'&status_textarea=%E2%80%9C\'+((e(s))?e(s):e(document.title))+\'%E2%80%9D%20%E2%80%94%20\'+\'' . $url_enc . '\';function%20a(){if(!w.open(g,\'t\',\'toolbar=0,resizable=0,scrollbars=1,status=1,width=450,height=200\')){l.href=g;}}a();})()"><img src="http://www.nuxified.org/images/identica.png" style="border:1px solid #CCCCCC; padding:2px;" /></a>';
 
-    //$url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2GAAS", "absolute" => TRUE));
-    $url = url("node/" . $vars['node']->nid, array("absolute" => TRUE));
+    $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2GAAS", "absolute" => TRUE));
     $url_enc = urlencode($url);
     $vars['social_bottons'] .= ' <a href="http://reddit.com/submit?url=' . $url_enc . '&title=' . $title . '" onclick="window.location = \'http://reddit.com/submit?url=' . $url_enc . '&title=' . $title . '\'; return false"><img src="http://reddit.com/static/spreddit7.gif" alt="submit to reddit" border="0" /></a>';
 
-    //$url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2LAAS", "absolute" => TRUE));
-    $url = url("node/" . $vars['node']->nid, array("absolute" => TRUE));
+    $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2LAAS", "absolute" => TRUE));
     $vars['social_bottons'] .= ' <script src="http://www.stumbleupon.com/hostedbadge.php?s=1&r=' . $url . '"></script>';
 
-    //$url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2QAAS", "absolute" => TRUE));
-    $url = url("node/" . $vars['node']->nid, array("absolute" => TRUE));
+    $url = url("node/" . $vars['node']->nid, array("query" => "sc_cid=70160000000Sz2QAAS", "absolute" => TRUE));
     $vars['social_bottons'] .= ' <a class="addthis_button_facebook_like" fb:like:layout="button_count" addthis:url="' . $url . '" addthis:title="' . $vars["node"]->title . '"></a>';
 
     /*

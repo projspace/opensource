@@ -51,6 +51,13 @@ Disallow: /user/password/
 Disallow: /user/login/
 Disallow: /users/
 Disallow: /user/
+Disallow: /user
+Disallow: /business/reading/
+Disallow: /education/reading/
+Disallow: /government/reading/
+Disallow: /health/reading/
+Disallow: /law/reading/
+Disallow: /life/reading/
 # Paths (no clean URLs)
 Disallow: /?q=admin/
 Disallow: /?q=comment/reply/
