@@ -1,6 +1,6 @@
 <?php
 
-include_once('related_content_block.features.inc');
+include_once('opensource_related_content.features.inc');
 
 function opensource_related_content_init() {
   $module_path = drupal_get_path('module', 'opensource_related_content');
