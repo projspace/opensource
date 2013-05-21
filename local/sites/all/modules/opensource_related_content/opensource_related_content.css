@@ -1,0 +1,9 @@
+.apachesolr-related-content-item {
+    display: inline;
+    float: left;
+    padding-right: 30px;
+}
+.apachesolr-related-content-item-title {
+    width: 140px;
+    font-size: 11.5px;
+}
