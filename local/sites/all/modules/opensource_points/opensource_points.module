@@ -43,7 +43,7 @@ function opensource_points_earned_roles() {
  * and giving the single best available userpoints-based badge.
  */
 
-function opensource_points_userpoints($op, &$params = array()) {
+function opensource_points_userpoints($op, $params = array()) {
   global $user;
   
   switch($op){
