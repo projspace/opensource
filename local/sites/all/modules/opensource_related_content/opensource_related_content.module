@@ -18,7 +18,7 @@ function sitetheme_apachesolr_mlt_recommendation_block($docs, $delta) {
         $node = node_load($result->nid);
         $output .= "<div class='apachesolr-related-content-item'>";
         $image = empty($node->field_lead_image[0]['filepath']) ? $node->field_image[0]['imceimage_path'] : $node->field_lead_image[0]['filepath'];
-        $domains = array('http://opensource.prod.acquia-sites.com', 'http://opensource.com/');
+        $domains = array('http://opensource.prod.acquia-sites.com/', 'http://opensource.com/');
         $item = theme('imagecache', 'related_content_lead_thumbnail', str_replace($domains, '', $image), $node->title, $node->title);
         $item .= "<div class='apachesolr-related-content-item-title'>" . $node->title . "</div>";
         $output .= l($item, 'node/' . $result->nid, array('html' => TRUE));
