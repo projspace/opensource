@@ -341,7 +341,6 @@ function sitetheme_preprocess_node(&$vars) {
 */
 }
 
-
 /**
  * Override or insert variables into the comment templates.
  *
@@ -366,23 +365,22 @@ function sitetheme_preprocess_comment(&$vars, $hook) {
 
   // Badge Display Code
   $badges = user_badges_get_badges($vars['comment']->uid);
-
   if($badges) {
     foreach($badges as $badge) {
       // If the badge weight is a negative number, then this is a role badge
-      if($badge->weight < 0) {
+      if($badge->weight > 190) {
+        if (isset($vars['badge_role'])) break; //seeing the next role badge. should only display the highest ordered.
         $vars['badge_role'] = '<div class="badge-role"><img src="/'. $badge->image . '" alt="' . $badge->name . '" /></div>';
-      } elseif($badge->weight == 1) {
+      } elseif($badge->weight == -20) {
         $vars['badges'] .= '<div class="badge-green"><img src="/'. $badge->image . '" alt="' . $badge->name . '" /></div>';
-      } elseif($badge->weight == 2) {
+      } elseif($badge->weight == -30) {
         $vars['badges'] .= '<div class="badge-blue"><img src="/'. preg_replace('/.png/', '_sm.png', $badge->image) . '" alt="' . $badge->name . '" /></div>';
-      } elseif($badge->weight == 3) {
+      } elseif($badge->weight == -40) {
         $vars['badges'] .= '<div class="badge-blue"><img src="/'. preg_replace('/_2013.png/', '_sm.png', $badge->image) . '" alt="' . $badge->name . '" /></div>';
       }
     }
   }
 }
-
 
 /**
  * Override or insert variables into the block templates.
@@ -961,6 +959,19 @@ function sitetheme_quicktabs_tabs($quicktabs, $active_tab = 'none') {
   return $output;
 }
 
+/**
+ * Return html representation of a group of badges.
+ * The role badges are at the bottom. We are simply reversing the array to get desired output
+ *
+ * $badgeimages is an array of badge image tags from theme_user_badge()
+ */
+function sitetheme_user_badge_group($badgeimages) {
 
+  if (!empty($badgeimages)) {
+    $role_badge = array_pop($badgeimages);
+    array_unshift($badgeimages,$role_badge);
+    return '<div class="user_badges">'. implode('', $badgeimages) .'</div>';
+  }
+}
 
 
