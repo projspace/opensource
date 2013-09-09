@@ -37,9 +37,11 @@
       <span class="next views-summary"> <?php print l(($block ? '' : date_t('Prev', 'date_nav')), $prev_url, $prev_options); ?></span>
     <?php endif; ?>
   &nbsp;</div>
+<!--
   <div class="date-heading">
     <h3><?php print l('View alphabetical listing', 'resources/conferences-and-events-list'); ?></h3>
   </div>
+-->
   <div class="date-next">&nbsp;
     <?php if (!empty($next_url)) : ?>
       <span class="next views-summary"> <?php print l(($block ? '' : date_t('Next', 'date_nav')), $next_url, $next_options); ?></span>

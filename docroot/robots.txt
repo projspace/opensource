@@ -58,6 +58,8 @@ Disallow: /government/reading/
 Disallow: /health/reading/
 Disallow: /law/reading/
 Disallow: /life/reading/
+Disallow: /resources/conferences-and-events-list
+Disallow: /resources/conferences-and-events-list/*
 # Paths (no clean URLs)
 Disallow: /?q=admin/
 Disallow: /?q=comment/reply/
