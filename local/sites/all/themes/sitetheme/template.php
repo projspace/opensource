@@ -182,6 +182,11 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   $vars['closure'] .= '<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=opensourceway"></script>';
   $vars['closure'] .= '<script type="text/javascript">var addthis_share = {url_transforms : {shorten: {twitter: \'bitly\'}}, shorteners : {bitly : {login: \'opensourceway\',apiKey: \'R_789680ae32a4a961941c3b9a7daf0495\'}}}</script>';
 
+  //Acquia Support:99344
+  $vars['closure'] .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>';
+  $vars['clousre'] .= '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=opensourceway"></script>';
+
+
   // Quicktabs executes a click on the default tab to ensure that it is active
   // but we only want to track real clicks for omniture, so check for a clientX
   $vars['closure'] .= '<script type="text/javascript">
@@ -246,6 +251,9 @@ function sitetheme_preprocess_node(&$vars) {
     $url = url("node/" . $vars['node']->nid, array("absolute" => TRUE));
     $vars['social_bottons'] .= ' <a class="addthis_button_facebook_like" fb:like:layout="button_count" addthis:url="' . $url . '" addthis:title="' . $vars["node"]->title . '"></a>';
 
+    // Acquia Support: 99344
+    $url = url("node/" . $vars['node']->nid, array("absolute" => TRUE));
+    $vars['social_bottons'] .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
     /*
     $vars['social_bottons'] = '<a class="fb-share-button" name="fb_share" type="box_count" share_url="' . $url . '" href="http://www.facebook.com/sharer.php">Share</a>';
     $vars['social_bottons'] .= '<a class="twitter-share-button" href="http://twitter.com/share" data-url="' . $url . '" data-text="' . $title . '" data-count="vertical">Tweet</a>';
