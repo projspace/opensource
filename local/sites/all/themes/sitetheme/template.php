@@ -183,7 +183,7 @@ function sitetheme_preprocess_page(&$vars, $hook) {
   $vars['closure'] .= '<script type="text/javascript">var addthis_share = {url_transforms : {shorten: {twitter: \'bitly\'}}, shorteners : {bitly : {login: \'opensourceway\',apiKey: \'R_789680ae32a4a961941c3b9a7daf0495\'}}}</script>';
 
   //Acquia Support:99344
-  $vars['closure'] .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>';
+  $vars['closure'] .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>';
   $vars['clousre'] .= '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=opensourceway"></script>';
 
 
