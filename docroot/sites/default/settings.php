@@ -241,3 +241,10 @@ if (isset($_GET['q']) && strpos($_GET['q'], 'user/login') === 0) {
 // Suppress PHP Notices (15066-25631)
 error_reporting(E_ALL & ~E_NOTICE);
 
+
+$extracts = explode("/",__FILE__);
+
+$project = $extracts[2];
+$env = $extracts[4];
+
+include "/home/$project/includes/$env.inc";
