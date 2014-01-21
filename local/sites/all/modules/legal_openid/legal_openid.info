@@ -1,6 +1,0 @@
-name = Legal OpenID Support
-description = Add support for Legal module to OpenID and Anonymous comments.
-dependencies[] = legal
-dependencies[] = openid
-dependencies[] = comment
-core = 6.x

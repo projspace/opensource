@@ -1,4 +1,0 @@
-name = Opensource Remove Reading
-description = Remove Reading content & disable related views
-core = 6.x
-package = Deployments

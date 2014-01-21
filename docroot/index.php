@@ -1,1 +1,0 @@
-../vendor/acquia/index.php

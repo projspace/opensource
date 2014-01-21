@@ -1,1 +1,0 @@
-../vendor/acquia/update.php

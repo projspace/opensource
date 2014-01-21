@@ -1,4 +1,0 @@
-name = OpenSource.com Points
-description = Modifies the behavior of User Points
-dependencies[] = userpoints
-core = 6.x
