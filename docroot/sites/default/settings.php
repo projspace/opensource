@@ -241,3 +241,4 @@ if (isset($_GET['q']) && strpos($_GET['q'], 'user/login') === 0) {
 // Suppress PHP Notices (15066-25631)
 error_reporting(E_ALL & ~E_NOTICE);
 $conf['stage_file_proxy_origin'] = 'http://www.opensource.com';
+$conf['stage_file_proxy_hotlink'] = TRUE;
