@@ -1,0 +1,272 @@
+<?php
+
+function opensource_reports_menu() {
+  $items['admin/user/activity'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => '_opensource_user_activity_view',
+    'access callback' => user_access('administer users'),
+    'title' => 'User Activity Report',
+  );
+  $items['admin/user/activity/csv'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => '_opensource_user_activity_csv',
+    'access callback' => user_access('administer users'),
+    'title' => 'User Activity Report Export',
+  );
+  $items['admin/user/activity/points'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => '_opensource_user_activity_points',
+    'access callback' => user_access('administer users'),
+    'title' => 'Users w/ Negative Points',
+  );
+  return $items;
+}
+
+function _opensource_user_activity_row() {
+  return array (
+    'Name' => '',
+    'Articles' => 0,
+    'Comments' => 0,
+    'Fivestar Ratings' => 0,
+    'Poll Votes' => 0,
+    'Points' => 0,
+  );
+}
+
+function _opensource_user_activity_view() {
+  $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.nid ) AS articles
+      FROM {node} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.type = 'post'
+      AND n.status = '1'
+      AND u.status = '1'
+      GROUP BY n.uid
+      HAVING articles > 1
+      ORDER BY articles DESC"
+  );
+  
+  $dataset = array(); // initialize on first query
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Articles'] += $row->articles;
+  }
+  
+  $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.cid ) AS comments
+      FROM {comments} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.status = 0
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Comments'] += $row->comments;
+  }
+  
+    $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.vote_id ) AS votes
+      FROM {votingapi_vote} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.value_type = 'percent'
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Fivestar Ratings'] += $row->votes;
+  }
+  
+  $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.nid ) AS polls
+      FROM {pollfield_votes} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.field_table = 'post'
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Poll Votes'] += $row->polls;
+  }
+  
+  $result = db_query(
+    "SELECT n.uid, u.name, SUM( n.points ) AS points
+      FROM {userpoints_txn} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.points > 0
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Points'] += $row->points;
+  }
+  
+  $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes', 'Points');
+
+  $output .= l("Export this as a CSV", 'admin/user/activity/csv') . '<br/>';
+  $output .= theme_table($cols, $dataset, array('cellspacing' => 10));
+  $output .= '<br/>' . l("Export this as a CSV", 'admin/user/activity/csv');
+  return $output;
+}
+
+
+/**
+ * Should create CSV files
+ **/
+
+function _opensource_user_activity_csv() {
+  $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.nid ) AS articles
+      FROM {node} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.type = 'post'
+      AND n.status = '1'
+      AND u.status = '1'
+      GROUP BY n.uid
+      HAVING articles > 1
+      ORDER BY articles DESC"
+  );
+  
+  $dataset = array(); // initialize on first query
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = $row->name;
+    $dataset[$row->uid]['Articles'] += $row->articles;
+  }
+  
+  $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.cid ) AS comments
+      FROM {comments} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.status = 0
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = $row->name;
+    $dataset[$row->uid]['Comments'] += $row->comments;
+  }
+  
+    $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.vote_id ) AS votes
+      FROM {votingapi_vote} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.value_type = 'percent'
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = $row->name;
+    $dataset[$row->uid]['Fivestar Ratings'] += $row->votes;
+  }
+  
+  $result = db_query(
+    "SELECT n.uid, u.name, COUNT( n.nid ) AS polls
+      FROM {pollfield_votes} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.field_table = 'post'
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = $row->name;
+    $dataset[$row->uid]['Poll Votes'] += $row->polls;
+  }
+  
+  $result = db_query(
+    "SELECT n.uid, u.name, SUM( n.points ) AS points
+      FROM {userpoints_txn} n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.points > 0
+      AND u.status = '1'
+      GROUP BY n.uid"
+  );
+  
+  while ($row = db_fetch_object($result)) {
+    if (!isset($dataset[$row->uid])) {
+      $dataset[$row->uid] = _opensource_user_activity_row();
+    }
+    
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Points'] += $row->points;
+  }
+  
+  $cols = array('Name','Articles', 'Comments', 'Fivestar Ratings', 'Poll Votes', 'Points');
+  $output = "Name, Articles, Comments, Fivestar Ratings, Poll Votes, Points\n";
+  foreach($dataset as $datasetrow) {    
+    foreach ($cols as $key) {
+      $output .= $datasetrow[$key];
+      if($key != 'Points') {
+        $output .= ', ';
+      }
+    }
+    $output .= "\n";
+  }
+  
+  header("Content-type: application/csv");
+  header("Content-Disposition: attachment; filename=user-activity.csv");
+  header("Pragma: no-cache");
+  header("Expires: 0");
+  print $output;
+}
+
+
+function _opensource_user_activity_points() {
+  $result = db_query(
+    "SELECT DISTINCT(u.uid) AS uid, u.name, n.points
+      FROM userpoints_txn n LEFT JOIN {users} u ON n.uid = u.uid
+      WHERE n.points < 0
+      AND u.status = 1
+      AND u.login > 0
+      GROUP BY u.uid
+      ORDER BY u.name"
+  );
+  
+  $dataset = array(); // initialize on first query
+  while ($row = db_fetch_object($result)) {
+    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Current Points'] = db_result(db_query("SELECT SUM(points) FROM {userpoints_txn} WHERE uid = %d", $row->uid));
+    $dataset[$row->uid]['Actual Points'] = db_result(db_query("SELECT SUM(points) FROM {userpoints_txn} WHERE uid = %d AND points > 0", $row->uid));
+    $dataset[$row->uid]['Role'] = implode(", ", user_load($row->uid)->roles);
+  }
+  
+  $cols = array("Name", "Current Points", "Actual Points", "Role");
+  $output = theme_table($cols, $dataset, array('cellspacing' => 10));
+  
+  return $output;
+}

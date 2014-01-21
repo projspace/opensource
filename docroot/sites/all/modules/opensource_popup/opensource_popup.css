@@ -1,0 +1,16 @@
+#imageDataContainer {
+  display: none !important;
+}
+#popup-ad {
+  display: none;
+}
+.popup {
+  margin: 0;
+  padding: 0;
+}
+.popup-links {
+  text-align: center;
+}
+#modalContainer {
+  padding-right: 0px !important;
+}

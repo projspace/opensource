@@ -1,0 +1,143 @@
+<?php
+
+/**
+ * @file
+ * Custom points code for opensource.com
+ */
+
+/**
+ * Implementation of hook_user().
+ */
+function opensource_points_user($op, &$edit, &$account, $category = NULL) {
+  switch($op) {
+    case 'update':
+      // Only act if roles are being added.
+      if(count($edit['roles']) > count($account->roles)){
+        $earned = opensource_points_earned_roles();
+        
+        foreach($account->roles as $key => $value) {
+          // If the roles are any of the points eligible roles, then grab the ID
+          if(in_array($value, $earned)){
+            // If the roles already exist in the edit array (as they would), remove them.
+            unset($edit['roles'][$key]);
+          }
+        }
+      }
+  }
+}
+
+/**
+ * helper to return array of roles which are earned via userpoints
+ */
+function opensource_points_earned_roles() {
+  // Define the roles that makeup earned points roles.
+  // @TODO: Make this more dynamic
+  return array('Newbie', 'Community Member', 'Open Enthusiast', 'Rock Star', 'Open Source Sensei', 'Open Sorcerer');
+}
+
+/**
+ * Implementation of hook_userpoints().
+ *
+ * This checks various values before awarding points such as the daily limit.
+ * Also responsible for allowing roles to flow backwards with points,
+ * and giving the single best available userpoints-based badge.
+ */
+
+function opensource_points_userpoints($op, $params = array()) {
+  global $user;
+  
+  switch($op){
+    case 'points before':
+      // Removing daily limit.
+      break;
+    case 'points after':
+      $uid        = $params['uid'];
+      $new_points = $params['points'];
+
+      // Check the roles the user belong to, and if they are exempted from userpoints
+      // This accounts for role assignments working "backward" -
+      //   see _userpoints_role_update_roles
+      $points = userpoints_get_current_points($uid);
+      _opensource_points_role_update_roles($uid, $points, $new_points);
+      _opensource_points_update_badges($uid, $points);
+      break;
+  }
+}
+
+function _opensource_points_update_badges($uid, $points) {
+  $best_badge = -1;
+  $badges = userpoints_badges_get_badges();
+  
+  // Remove all existing badges for this user
+  db_query("DELETE FROM {user_badges_user} WHERE uid = %d AND type LIKE 'Userpoints%'", $uid);
+  
+  // Iterate through each userpoints badge and find the best possible one
+  foreach ($badges as $badge) {
+    if ($points >= $badge->userpoints_goal) {
+      $best_badge = $badge->bid;
+    }
+  }
+  if ($best_badge > -1) {
+    user_badges_user_add_badge($uid, $best_badge, t('Userpoints @bid', array('@bid' => $badge->bid)));
+  }
+  
+}
+
+function _opensource_points_role_update_roles($uid, $points, $new_points) {
+  $role_points = userpoints_role_load_role_points();
+  $role_join = array(
+    'points' => 0,
+  );
+
+  if ($new_points > 0) {
+    foreach($role_points as $role_point) {
+      if ($role_point['points'] > 0) {
+        db_query('DELETE FROM {users_roles} WHERE uid = %d AND rid = %d', $uid, $role_point['rid']);
+        
+        if ($points >= $role_point['points']) {
+          // find the highest-ranked role we can join in this direction
+          if ($role_point['points'] > $role_join['points']) {
+            $role_join = $role_point;
+          }
+        }
+      }
+    }
+  }
+
+  if ($role_join['points']) {
+    userpoints_role_join($uid, $role_join);
+  }
+
+}
+
+/**
+ * Implementation of hook_mail_alter().
+ *
+ * This checks that a user has opted in to receive the points notification mail.
+ */
+function opensource_points_mail_alter(&$message){
+  switch($message['id']){
+    case 'userpoints_role_userpoints_role':
+      // If the user has not opted in to this mail send, don't send it.
+      $user = user_load(array('mail' => $message['to']));
+      if(!$user->profile_point_notifications){
+        watchdog('opensource_points', 'A message was going to be sent to %mail but the user elected not to receive notifications.', array('%mail' => $message['to']));
+        $message['to'] = 'dev-null@opensource.com';
+      }
+  }
+}
+
+/**
+ * Implementation of hook_form_FORM_ID_alter()
+ * This adds a Login/Register link for anonymous users
+ */
+function opensource_points_form_comment_form_alter(&$form, &$form_state) {
+  global $user;
+  if(!$user->uid) {
+    $form['login-register'] = array(
+      '#type' => 'markup',
+      '#value' => l('Login or Register', 'user', array('query' => drupal_get_destination() . '%23comments')) . ' ' . t('to earn points for your comments.'),
+      '#weight' => -10,
+    );
+  }
+}

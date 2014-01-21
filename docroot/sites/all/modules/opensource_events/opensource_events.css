@@ -1,0 +1,248 @@
+.page-node-add-event .title {
+	background: url(/sites/default/files/images/resources/OSDC_Resources_SectionImage_ConfEvents.png);
+	padding-top: 105px;
+	background-repeat: no-repeat;
+	font-size: 15px;
+	color: #292929;
+	font-family: helvetica, sans-serif;
+}
+.event-listing .view-header p{
+	margin: 0;
+	width: 518px;
+	height: 90px;
+	margin-bottom: 17px;
+}
+.event-listing .view-header p img{
+	max-width: 100%;
+}
+.view-display-id-date_nav_2{
+	background: #E6E7E8;
+	padding: 15px 20px;
+}
+.view-display-id-date_nav_2 .date-nav{
+	width: auto;
+}
+.view-display-id-date_nav_2 .date-nav a{
+	line-height: 1;
+	font-size: 22px;
+	text-decoration: none;
+	color: #c9cacc;
+}
+.view-display-id-date_nav_2 .date-nav a::after{
+	content: '.';
+}
+.view-display-id-date_nav_2 .date-nav h3{
+	font-size: 22px;
+	line-height: 1;
+	font-weight: normal;
+	color: #ec4d25;
+}
+.event-listing .view-header h2{
+	font-size: 17px;
+	color: #292929;
+}
+.event-listing .view-header a{
+	color: #39f !important;
+}
+.node-type-event .event-summary a,
+.event-listing .event-summary a{
+	color: #6f6acc;
+	text-decoration: none;
+}
+.node-type-event .event-summary a:hover,
+.event-listing .event-summary a:hover{
+	text-decoration: underline;
+}
+.node-type-event .view-events-listing-alphabetical .views-summary a,
+.event-listing .view-events-listing-alphabetical .views-summary a{
+	font-size: 12px;
+	color: #292929 !important;
+	text-decoration: none;
+}
+.event-listing .item-list{
+	margin-bottom: 50px;
+}
+.event-listing .item-list ul{
+	padding: 0
+}
+.event-listing .item-list li.views-row{
+	border-bottom: 1px solid #000;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+}
+.node-type-event .views-label-nothing,
+.event-listing .views-label-nothing{
+	margin: 7px 0;
+	display: block;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: helvetica, sans-serif;
+}
+.event-listing .views-field-title{
+	cursor: pointer;
+	text-transform: capitalize;
+}
+.event-listing .views-field-title::before{
+	content: "+/-";
+	color: #c2c2c2;
+	font-weight: normal;
+	position: absolute;
+	left: 25px;
+}
+
+.event-listing.view-id-events_listing_alphabetical div.next,
+.event-listing.view-display-id-date_nav_1 .date-next{
+	float: right;
+	background: url(img/arrow-next.png);
+	background-repeat: no-repeat;
+	height: 20px;
+	background-position: right;
+}
+.event-listing.view-id-events_listing_alphabetical div.previous,
+.event-listing.view-display-id-date_nav_1 .date-prev{
+	float: left;
+	background: url(img/arrow-previous.png);
+	background-repeat: no-repeat;
+	height: 20px;
+	background-position: left;
+}
+.event-listing.view-id-events_listing_alphabetical div.next a,
+.event-listing.view-id-events_listing_alphabetical div.previous a,
+.event-listing.view-id-events_listing_alphabetical div.monthly a,
+.event-listing.view-display-id-date_nav_1 div.date-next a,
+.event-listing.view-display-id-date_nav_1 div.date-prev a,
+.event-listing.view-display-id-date_nav_1 .date-heading h3{
+	position: relative;
+	top: 3px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #292929 !important;
+	font-size: 13px;
+}
+.event-listing.view-id-events_listing_alphabetical div.next a,
+.event-listing.view-display-id-date_nav_1 .date-next a{
+	padding-right: 2.5em;
+}
+.event-listing.view-id-events_listing_alphabetical div.previous a,
+.event-listing.view-display-id-date_nav_1 .date-prev a{
+	padding-left: 2.5em;
+}
+.event-listing.view-id-events_listing_alphabetical div.monthly{
+	float: left;
+	position: absolute;
+	left: 225px;
+}
+
+.event-form .container-inline-date{
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: 100px;
+	padding-right: 30px;
+	margin-top: 0;
+}
+
+.event-form .container-inline-date input,
+.event-form .container-inline-date img.ui-datepicker-trigger {
+	display: inline-block;
+}
+
+#content .event-form .container-inline-date img.ui-datepicker-trigger {
+	float: right;
+	padding: 3px 0;
+	border: 0 none;
+	cursor: pointer;
+}
+
+.event-form .container-inline-date input{
+	width: 77px !important;
+}
+.event-form label{
+	font-family: Helvetica, sans-serif;
+	color: #292929;
+}
+.alpha-pager a{
+	color: #292929 !important;
+	text-decoration: none;
+	padding-right: .5em;
+}
+.alpha-pager .active{
+	font-weight: bold;
+}
+.alpha-title{
+	font-size: 17px;
+	font-weight: bold;
+	color: #292929;
+	border-bottom: 3px double #292929;
+	padding-bottom: 5px;
+}
+.page-node-add-event .node h2.title {
+	background: none repeat scroll 0 0 transparent;
+    padding-top: 15px;
+}
+.event-form .collapsible.collapsed{
+	display: none;
+}
+.event-form .node-form fieldset{
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+.event-form .node-form fieldset legend{
+	display: none;
+}
+.node-type-event #content .content{
+	clear: left;
+}
+.node-type-event #content .field{
+	margin-bottom: 10px;
+}
+.node-type-event #content .field-label{
+	font-family: helvetica, sans-serif;
+	color: #292929;
+}
+.page-node-add-event fieldset:first-child {
+	display: none;
+}
+.view-content .calendar-calendar{
+	margin-top: 0;
+}
+.event-form .vertical-tabs{
+	display: none !important;
+}
+.event-form .wysiwyg{
+	display: none;
+}
+.event-form .wysiwyg + p{
+	display: none;
+}
+/*Calendar items listing*/
+.monthview{padding-left: 10px!important; border-radius: 0 !important;}
+.monthview a{color:#000 !important; font-family: helvetica, sans-serif; font-size: 11px; font-weight: bold!important;}
+tr.multi-day .monthview{background: #d4dd4c!important;}
+
+.node-type-event .field-label-inline-first {display: block;}
+.node-type-event ul .first{ padding: 0; }
+
+.node-type-event.node-unpublished {
+	background-color: #fff;
+}
+.calendar-calendar .month-view .full tr td.multi-day, .calendar-calendar .month-view .full tr td.date-box {
+    height: 19px;
+    max-height: 19px;
+    max-width: 60px;
+}
+
+.page-resources-conferences-and-events-monthly div#content-header h1.title,
+.page-resources-conferences-and-events-list div#content-header h1.title {
+	display: none;
+}
+
+.page-node-add-event fieldset #edit-format-1-wrapper,
+.page-node-add-event fieldset #edit-format-6-wrapper,
+.page-node-add-event fieldset #edit-format-7-wrapper,
+.page-node-add-event fieldset #edit-format-8-wrapper,
+.page-node-add-event fieldset p a {
+	display: none;
+}

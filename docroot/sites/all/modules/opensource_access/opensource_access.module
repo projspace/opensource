@@ -1,0 +1,108 @@
+<?php
+
+/**
+ * @file
+ * Custom access code for OpenSource.com
+ */
+
+/**
+ * Implementation of hook_init().
+ */
+function opensource_access_init() {
+  global $user;
+  // The flag and poll js need to have access to group context for permissions.
+  if (($user->uid != 1 && !isset($user->roles[16])) && (arg(0) == 'flag' || arg(0) == 'poll')) {
+    $url = parse_url($_SERVER['HTTP_REFERER']);
+    $path = $url['path'];
+    parse_str($url['query'], $query);
+    if (strpos($path, '/') === 0) {
+      $path = substr($path, 1);
+    }
+    $path = drupal_get_normal_path($path);
+    if (isset($path)) {
+      // Try to determine group context using customized menu system functions.
+      $group_node = opensource_access_determine_context($path, $query);
+      // Assign additional user roles to current user (if any).
+      og_user_roles_grant_roles($user, $group_node);
+    }
+  }
+}
+
+function opensource_access_determine_context($path, $query = NULL) {
+  $item = og_user_roles_menu_get_item($path);
+  $object = og_user_roles_menu_get_object('node', 1, $path);
+
+  // Check if this is an existing node.
+  if (!empty($object->nid)) {
+    $node = $object;
+  }
+  // Check if we are in the node add page.
+  elseif (strpos($path, 'node/add') === 0 && !empty($query['gids'])) {
+    // URL pattern: node/add/story?gids[]=1
+    $gid = intval(current($query['gids']));
+    $node = node_load($gid);
+  }
+  elseif ((!empty($item['map'][0]) && $item['map'][0] == 'og' && !empty($item['map'][2])) || $path == 'comment/reply/%') {
+    $node = og_user_roles_menu_get_object('node', 2);
+  }
+  elseif ($path == 'comment/edit' || $path == 'comment/delete') {
+    // Get the node from the comment object.
+    $comment = _comment_load($item['page_arguments'][0]);
+    $node = node_load($comment->nid);
+  }
+
+  if (!empty($node) && ($group_node = og_determine_context_get_group($node))) {
+    return $group_node;
+  }
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function opensource_access_nodeapi(&$node, $op, $teaser = NULL, $page = NULL) {
+  // On the node/add/poll form it can occassionaly loose its context when more than two
+  // items are used on a poll. This is due to the interaction between og_user_roles, og,
+  // and polls. Here we add back the groups. In this we only want to act on polls and only
+  // if the poll is set to be a group post type.
+  if ($op == 'presave' && og_is_group_post_type($node->type) && $node->type == 'poll') {
+    // We use array_unique to make sure a group is not saved twice in a future call.
+    $node->og_groups = array_unique($node->og_groups + $node->og_initial_groups);
+  }
+}
+
+/**
+ * Implementation of hook_form_FORM_ID_alter().
+ */
+function opensource_access_form_user_profile_form_alter(&$form, &$form_state) {
+  // Function comment_notify_user() adds this form field only if a user has 
+  // "administer nodes" or global "create NODETYPE content" permissions.
+  // Because RH uses Organic Groups to grant roles to users, this form field is
+  // never made available to those users in their profile, so we replicate it here.
+  if (module_exists("og_user_roles") && $form["#uid"]) {
+    if (!$form['comment_notify_settings']) {
+      $form['comment_notify_settings'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Comment follow-up notification settings'),
+        '#weight' => 4,
+        '#collapsible' => TRUE
+      );
+    }
+    if (db_result(db_query("SELECT rid FROM {og_users_roles} WHERE uid = %d", $form["#uid"]))) {
+      $form['comment_notify_settings']['node_notify_mailalert'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Receive node follow-up notification e-mails'),
+        '#default_value' => isset($form["_account"]["#value"]->node_notify_mailalert) ? $form["_account"]["#value"]->node_notify_mailalert : variable_get('node_notify_default_mailalert', FALSE),
+        '#description' => t('Check this box to receive an e-mail notification for follow-ups on your nodes (pages, forum topics, etc). You can not disable notifications for individual threads.')
+      );
+    }
+  }
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function opensource_access_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'user_login') {
+    $form['legal_checkbox']['#required'] = FALSE;
+  }
+}

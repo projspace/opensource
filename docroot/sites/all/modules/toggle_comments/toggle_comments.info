@@ -1,0 +1,6 @@
+;$Id$
+name = "Toggle Comments Action"
+description = "Adds an action to allow a node's comments to be toggled between read/write and read-only."
+core = 6.x
+php = 5.2
+dependencies[] = trigger

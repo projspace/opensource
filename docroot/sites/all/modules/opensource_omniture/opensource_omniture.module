@@ -1,0 +1,167 @@
+<?php
+
+/**
+ * @file
+ * Add custom variables to opensource.com for Omniture SiteCatalyst.
+ */
+
+/**
+ * Implementation of hook_omniture_variables().
+ */
+function opensource_omniture_omniture_variables($main) {
+  global $user;
+
+  // Every page starts with the site name.
+  $page_name = ($_SERVER['SERVER_NAME'] == 'opensource.com')
+    ? ('opensource') : ('osdc:' . $_SERVER['SERVER_NAME']);
+
+  // The user is on the homepage.
+  if (drupal_is_front_page()) {
+    $page_name .= '|home';
+  }
+
+  // The user is viewing a user page.
+  elseif (arg(0) == 'user') {
+    // Viewing a user page
+    if (is_numeric(arg(1))) {
+      $account = user_load(array('uid' => arg(1)));
+      $page_name .= '|users|'. opensource_omniture_clean($account->name);
+    }
+    // On the registration form.
+    elseif (arg(1) == 'register') {
+      $page_name .= '|user|register';
+    }
+    // On the login form.
+    elseif (arg(1) == 'login' || ($user->uid == 0 && arg(1) == '')) {
+      $page_name .= '|user|login';
+    }
+    // On the registration form.
+    elseif (arg(1) == 'password') {
+      $page_name .= '|user|password';
+    }
+    else {
+      $page_name .= opensource_omniture_default_pattern();
+    }
+  }
+
+  // The user is searching
+  elseif (arg(0) == 'search') {
+    if (arg(1) == 'apachesolr_search') {
+      $page_name .= '|contentsearch';
+      if (arg(2) != '') {
+        $page_name .= '|'. opensource_omniture_clean(arg(2));
+      }
+      if (!empty($_GET['filters'])) {
+        $filters = rawurldecode($_GET['filters']);
+        $filters = str_replace(':', '|', $filters);
+        $filters = explode(' ', $filters);
+        foreach ($filters as $filter) {
+          $page_name .= '|'. $filter;
+        }
+      }
+    }
+    elseif (arg(1) == 'user') {
+      $page_name .= '|usersearch';
+      if (arg(2) != '') {
+        $page_name .= '|'. opensource_omniture_clean(arg(2));
+      }
+    }
+    else {
+      $page_name .= opensource_omniture_default_pattern();
+    }
+  }
+  // The user is viewing a node homepage.
+  elseif (arg(0) == 'node' && is_numeric(arg(1)) && $node = node_load(arg(1))) {
+    $group_node = og_get_group_context();
+    if ($node->type == 'post') {
+      $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|article|'. opensource_omniture_clean($node->title);
+    }
+    elseif ($node->type == 'channel') {
+      $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|home';
+    }
+    elseif ($node->type == 'poll') {
+      $page_name .= '|'. strtolower(opensource_omniture_clean($group_node->title)) .'|poll|'. opensource_omniture_clean($node->title);
+    }
+    elseif ($node->type == 'page' || $node->type == 'group_page') {
+      $path = drupal_get_path_alias($_GET['q']);
+      $path = explode('/', $path);
+      $page_name .= '|page';
+      foreach ($path as $part) {
+        $page_name .= '|'. opensource_omniture_clean($part);
+      }
+    }
+    else {
+      $page_name .= opensource_omniture_default_pattern();
+    }
+  }
+  // If there are no other rules use the site url path.
+  else {
+    $page_name .= opensource_omniture_default_pattern();
+  }
+
+  // @todo: Add in comment tracking and generic page tracking when details come to light.
+
+  global $base_url;
+
+  $vars = array(
+    'variables' => array(
+      's.pageName' => $page_name,
+      's.server' => "",
+      's.channel' => "opensource",
+      's.pageType' => "",
+      's.prop1' => "",
+      /* E-commerce Variables */
+      's.campaign' => "",
+      's.eVar1' => "",
+      's.eVar2' => "",
+      's.eVar3' => "",
+      's.eVar23' => $base_url . request_uri(),
+      's.events' => "",
+      's.products' => "",
+      's.state' => "",
+      's.zip' => "",
+      's.purchaseID' => "",
+    ),
+  );
+
+  // Implementing a custom footer. This is based on the footer in the omniture.module.
+  $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/'."\n";
+  $footer .= '//--></script><script type="text/javascript" src="/sites/all/libraries/omniture/rh_omni_footer.js"></script>'."\n";
+  $footer .= '<script language="JavaScript" type="text/javascript"><!--'."\n";
+  $footer .= "if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')"."\n";
+  $footer .= '//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img src="';
+  $footer .= check_plain(variable_get("omniture_image_file_location", 'http://examplecom.112.2O7.net/b/ss/examplecom/1/H.13--NS/0')) .'"'."\n";
+  $footer .= 'height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->'."\n";
+  $footer .= '<!-- End SiteCatalyst code version: ';
+  $footer .=  check_plain(variable_get("omniture_version", 'H.13.'));
+  $footer .= ' -->'."\n";
+
+  $vars['footer'] = $footer;
+
+  return $vars;
+}
+
+/**
+ * Clean a variable for javaScript
+ * @param $var
+ *   Variable to be cleaned for JavaScript.
+ *
+ * @return string
+ *   Variable to pass to JavaScript.
+ */
+function opensource_omniture_clean($var) {
+  $var = str_replace(' ', '-', $var);
+  $var = str_replace('|', '', $var);
+  $var = str_replace('"', '', $var);
+  return $var;
+}
+
+function opensource_omniture_default_pattern() {
+  $page_name = '';
+  $path = drupal_get_path_alias($_GET['q']);
+  $path = explode('/', $path);
+  foreach ($path as $part) {
+    $page_name .= '|'. opensource_omniture_clean($part);
+  }
+  return $page_name;
+}

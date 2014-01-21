@@ -1,0 +1,11 @@
+name = "Google Analytics Tokenizer"
+description = "Converts the Google Analytics cookie into useful token values.."
+core = 6.x
+package = Statistics
+dependencies[] = token
+; Information added by drupal.org packaging script on 2011-04-21
+version = "6.x-1.2"
+core = "6.x"
+project = "ga_tokenizer"
+datestamp = "1303420915"
+

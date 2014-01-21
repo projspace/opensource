@@ -1,0 +1,4 @@
+name = "Opensource"
+description = "A general module for alters and other site-specific pieces for opensource.com"
+core = 6.x
+version = 6.x-1.0

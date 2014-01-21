@@ -1,0 +1,278 @@
+/* $Id: forms.css,v 1.3 2009/08/12 08:37:42 johnalbin Exp $ */
+
+/**
+ * @file
+ * Form Styling
+ */
+.form-text,
+.form-textarea
+{
+  border:1px solid #cdcbca;
+}
+
+textarea, 
+select
+{
+  font-size: 14px;
+  line-height: 1.5em;
+  padding:8px;
+}
+
+select
+{
+  padding:0;
+}
+
+.form-text {
+  font-size: 14px;
+  border: 1px solid #cdcbca;
+  height:22px;
+  padding:8px 8px 0;
+}
+
+
+.form-item,
+.form-checkboxes,
+.form-radios /* Wrapper for a form element (or group of form elements) and its label */ {
+  margin: 1em 0;
+}
+
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error /* Highlight the form elements that caused a form submission error */ {
+  border: 2px solid #c00;
+}
+
+.section-users .form-item label,
+.section-user .form-item label /* The label for a form element */ {
+  display: block;
+  font-weight: bold;
+  color:#B2B2B2;
+  width:125px;
+}
+
+.form-item label.option
+{
+  width:auto;
+  padding-right:10px;
+}
+
+#edit-notify-wrapper label {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#edit-message-wrapper .resizable-textarea,
+#edit-signature-wrapper .resizable-textarea,
+#edit-profile-bio-wrapper .resizable-textarea
+{
+  clear:both;
+}
+
+.form-item label.option /* The label for a radio button or checkbox */ {
+  display: inline;
+  font-weight: normal;
+}
+
+.form-required /* The part of the label that indicates a required field */ {
+  color: #c00;
+}
+
+.form-item .description /* The descriptive help text (separate from the label) */ {
+  font-size: 0.85em;
+}
+
+.form-checkboxes .form-item,
+.form-radios .form-item /* Pack groups of checkboxes and radio buttons closer together */ {
+  margin: 0.4em 0;
+}
+
+.form-submit /* The submit button */ {
+  border: none;
+  background: #1D2754;
+  padding: 5px;
+  color: #fff;
+}
+
+.container-inline div,
+.container-inline label /* Inline labels and form divs */ {
+  display: inline;
+}
+
+.tips /* Tips for Drupal's input formats */ {
+}
+/* Fivestar */
+form.fivestar-widget {
+  float:right;
+  clear:none;
+}
+
+#edit-vote-wrapper label{
+  margin-right: 5px;
+  float: left; 
+  font-weight:normal;
+}
+
+form.fivestar-widget div.description {
+  display: none;
+}
+
+#edit-vote-wrapper
+{
+  float:left;
+}
+
+div.fivestar-widget {
+  display:inline;
+}
+
+.fivestar-form-item
+{
+  overflow:hidden;
+}
+
+.fivestar-total
+{
+  float:right;
+}
+
+
+/*
+ * Search (search-theme-form.tpl.php)
+ */
+#search-box /* Wrapper for the search form */ {
+  float: right;
+  margin-top: 20px;
+}
+
+#edit-search-theme-form-1-wrapper label /* Label that says "Search this site:" */ {
+  display: none;
+}
+
+#search-box .form-submit {
+  display: none;
+}
+
+#search-box .form-text {
+  width: 264px;
+  height: 22px;
+  font-size: 14px;
+  padding: 8px;
+  padding-bottom: 0px;
+  /* border: 1px solid #cdcbca; */
+  border: 0px solid #cdcbca;
+  color:#999;
+  background:url(../images/osdc_search_icon.png) no-repeat 98% 50%;
+}
+
+
+/*
+ * Search (search-block-form.tpl.php)
+ */
+#search-block-form /* Wrapper for the search form */ {
+}
+
+#edit-comment-wrapper label,
+#edit-search-block-form-1-wrapper label /* Label that says "Search this site:" */ {
+  display: none;
+}
+
+
+/*
+ * Drupal's default login form block
+ */
+#user-login-form {
+  text-align: left; /* LTR */
+}
+
+
+/*
+ * OpenID
+ *
+ * The default styling for the OpenID login link seems to assume Garland's
+ * styling of list items.
+ */
+
+#user-login-form ul /* OpenID creates a new ul above the login form's links. */ {
+  margin-bottom: 0; /* Position OpenID's ul next to the rest of the links. */
+}
+
+#user-login-form li.openid-link /* The "Log in using OpenID" link. */ {
+  margin-top: 1em;
+  margin-left: -20px; /* LTR */ /* Un-do some of the padding on the ul list. */
+}
+
+#user-login-form li.user-link /* The "Cancel OpenID login" link. */ {
+  margin-top: 1em;
+}
+
+#user-login ul {
+  margin: 1em 0;
+}
+
+#user-login li.openid-link,
+#user-login li.user-link /* The OpenID links on the /user form. */ {
+  margin-left: -2em; /* LTR */ /* Un-do all of the padding on the ul list. */
+}
+
+
+/*
+ * Drupal admin tables
+ *
+ * We overrode these styles in html-elements.css, but restore them for the admin
+ * section of the site.
+ */
+
+form tbody {
+  border-top: 1px solid #ccc;
+}
+
+form th,
+form thead th {
+  text-align: left; /* LTR */
+  padding-right: 1em; /* LTR */
+  border-bottom: 3px solid #ccc;
+}
+
+form tbody th {
+  border-bottom: 1px solid #ccc;
+}
+
+#autocomplete li {
+  margin: 0;
+}
+
+#imceimagealt-0-field_image-wrapper /* imceimage's caption */ {
+  display: none;
+}
+
+
+/**
+ * webform add field form
+ */
+form#webform-components-form input#edit-add-name {
+  font-size:11px; 
+  height:1em;
+  margin:3px 40px 3px 0;
+  padding:3px;
+  width:110px;
+}
+
+/**
+ * Filefield Sources overrides for IMCE Widget
+ *   to minimize confusion limit choices available to the editor
+ *   also in sitetheme.js: $('a.filefield-source-imce').trigger('click');
+ */
+div.filefield-sources-list {
+  display:none
+}
+/* Commentted out by Acquia 10-02-2012 to restore filefield UI to resource content type
+div.filefield-upload {
+  display:none;
+}
+*/
+
+div.filefield-source-imce {
+  display:block;
+}
+

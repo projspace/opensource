@@ -1,0 +1,189 @@
+/* $Id: navigation.css,v 1.3 2009/08/12 22:17:26 johnalbin Exp $ */
+
+/**
+ * @file
+ * Navigation Styling
+ */
+
+
+/*
+ * The active item in a Drupal menu
+ */
+li a.active {
+  color: #000;
+}
+
+/*
+ * Navigation bar
+ */
+#navbar {
+}
+
+#navbar-inner {
+}
+
+/*
+ * Primary and Secondary menu links
+ */
+#main-menu {
+  width: 100%;
+  background: #fff;
+}
+
+#main-menu li {
+  padding: 0;
+  margin: 0;
+}
+
+#main-menu li a {
+  width: 142px;
+  height: 0;
+  padding-top: 38px;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  background: #1d2754;
+  border-bottom: 3px solid #fff;
+  text-decoration: none;
+  color: #fff;
+}
+
+#main-menu li a:hover,
+#main-menu li.active a,
+#main-menu li.active-trail a {
+  border-bottom: 3px solid #e0e0e0;
+  background-color: #E2E1E6;
+}
+
+#main-menu li.menu-3796 a {
+  width: 109px;
+}
+
+#main-menu li.first a {
+  border-left: 0;
+}
+
+#main-menu li.last a {
+  border-right: 0;
+}
+
+#secondary-menu {
+}
+
+/* Main Menu Sprites */
+
+/* The Open (homepage link) */
+#main-menu li.menu-3796 a {
+  background: url("../images/osdc_nav_sprite960x126_0411.png") 0px 0px no-repeat;
+  width:110px;
+}
+
+#main-menu li.menu-3796 a:hover {
+  background-position: 0 -42px;
+}
+
+#main-menu li.menu-3796 a.active,
+#main-menu li.menu-3796 a.active-trail {
+  background-position: 0 -84px;
+}
+
+/* The Business Link */
+#main-menu li.menu-3091 a {
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -110px 0px no-repeat;
+}
+
+#main-menu li.menu-3091 a:hover {
+  background-position: -110px -42px;
+}
+
+#main-menu li.menu-3091 a.active,
+#main-menu li.menu-3091 a.active-trail {
+  background-position: -110px -84px;
+}
+
+/* Education */
+#main-menu li.menu-10739 a {
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -252px 0px no-repeat;
+}
+
+#main-menu li.menu-10739 a:hover {
+  background-position: -252px -42px;
+}
+
+#main-menu li.menu-10739 a.active,
+#main-menu li.menu-10739 a.active-trail {
+  background-position: -252px -84px;
+}
+
+/* Government */
+#main-menu li.menu-10740 a {
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -394px 0px no-repeat;
+}
+
+#main-menu li.menu-10740 a:hover {
+  background-position: -394px -42px;
+}
+
+#main-menu li.menu-10740 a.active,
+#main-menu li.menu-10740 a.active-trail {
+  background-position: -394px -84px;
+}
+
+/* Health */
+#main-menu li.menu-13224 a,
+#main-menu li.menu-12686 a {
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -536px 0px no-repeat;
+}
+
+#main-menu li.menu-13224 a:hover,
+#main-menu li.menu-12686 a:hover {
+  background-position: -536px -42px;
+}
+
+#main-menu li.menu-13224 a.active,
+#main-menu li.menu-13224 a.active-trail,
+#main-menu li.menu-12686 a.active,
+#main-menu li.menu-12686 a.active-trail {
+  background-position: -536px -84px;
+}
+
+/* Law */
+#main-menu li.menu-10741 a {
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -678px 0px no-repeat;
+}
+
+#main-menu li.menu-10741 a:hover {
+  background-position: -678px -42px;
+}
+
+#main-menu li.menu-10741 a.active,
+#main-menu li.menu-10741 a.active-trail {
+  background-position: -678px -84px;
+}
+
+/* Life */
+#main-menu li.menu-10742 a {
+  background: url(../images/osdc_nav_sprite960x126_0411.png) -820px 0px no-repeat;
+  width:139px;
+}
+
+#main-menu li.menu-10742 a:hover {
+  background-position: -820px -42px;
+}
+
+#main-menu li.menu-10742 a.active,
+#main-menu li.menu-10742 a.active-trail {
+  background-position: -820px -84px;
+}
+
+/*
+ * Menu blocks
+ */
+.block-menu {
+}
+
+/*
+ * "Menu block" blocks. See http://drupal.org/project/menu_block
+ */
+.block-menu_block {
+}

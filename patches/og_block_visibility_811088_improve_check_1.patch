@@ -1,0 +1,13 @@
+diff --git og_block_visibility.module og_block_visibility.module
+index 51d77c4..ee32fa1 100644
+--- og_block_visibility.module
++++ og_block_visibility.module
+@@ -211,7 +211,7 @@ function og_block_visibility_check($module, $delta) {
+     $groups = og_block_visibility_get_assignments($module, $delta);    
+     if (in_array($group->nid, $groups)) {
+       // Is the block public?
+-      if ($group->og_selective <= OG_MODERATED) {
++      if ($group->og_private == 0) {
+         return TRUE;
+       }
+       // Is current user a member of this group?
