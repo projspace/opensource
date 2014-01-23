@@ -1,0 +1,583 @@
+/* $Id: pages.css,v 1.6 2009/08/12 21:41:11 johnalbin Exp $ */
+
+/**
+ * @file
+ * Page Styling
+ *
+ * Style the markup found in page.tpl.php. Also includes some styling of
+ * miscellaneous Drupal elements that appear in the $content variable, such as
+ * ul.links, .pager, .more-link, etc.
+ */
+
+
+/*
+ * Body
+ */
+body {
+  margin: 0;
+  padding: 10px;
+}
+
+#page {
+}
+
+#page-inner {
+}
+
+/*
+ * Header
+ */
+#header {
+  height: 170px;
+  /* background: url(../images/OSDC_hmpg_1-year_masthead_960x128.png) bottom center no-repeat; */
+  /* background: url(../images/OSDC_hmpg_1-year_masthead_search.png) bottom center no-repeat; */
+  background: url(../images/osdc_hmpg_masthead_0211JTG.png) bottom center no-repeat;
+}
+
+#header-inner {
+}
+
+#logo /* Wrapping link for logo */ {
+  float: left; /* LTR */
+  margin: 0 10px 0 0; /* LTR */
+  padding: 0;
+}
+
+#name-and-slogan /* Wrapper for website name and slogan */ {
+  float: left;
+}
+
+h1#site-name,
+div#site-name /* The name of the website */ {
+  margin: 0;
+  font-size: 2em;
+  line-height: 1.3em;
+  height: 100px;
+  width: 500px;
+}
+
+h1#site-name strong,
+div#site-name strong {
+  display: block;
+  width: 500px;
+  height: 120px;
+}
+
+h1#site-name a,
+div#site-name a {
+  display: block;
+  width: 500px;
+  height: 0;
+  overflow: hidden;
+  padding-top: 100px;
+}
+
+#redhat-link {
+  display: block;
+  overflow: hidden;
+  height: 0;
+  width: 250px;
+  padding-top: 40px;
+  margin-top: 15px;
+  float: right;
+}
+
+#site-name a:link,
+#site-name a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+#site-name a:hover {
+  text-decoration: underline;
+}
+
+#site-slogan /* The slogan (or tagline) of a website */ {
+}
+
+#header-blocks /* Wrapper for any blocks placed in the header region */ {
+}
+
+/*
+ * Main (container for everything else)
+ */
+#main {
+}
+
+#main-inner {
+}
+
+/*
+ * Content
+ */
+#content {
+  padding-bottom: 15px;
+}
+
+#content .content .content {
+  font-family: Georgia, "Bitstream Charter", serif;
+}
+
+#content-inner-side-shadow,
+.content-inner-side-shadow {
+  background: #ffffff url(../images/middle-right-shadow.jpg) right top repeat-y;
+  margin: 0 14px 0 14px;
+  height: 100%;
+}
+
+#content-inner-right-shadow,
+.content-inner-right-shadow {
+  background: url(../images/top-right-shadow.jpg) right top no-repeat;
+}
+
+#content-inner-bottom-shadow,
+.content-inner-bottom-shadow {
+  background: url(../images/content-bottom-shadow.jpg) center bottom no-repeat;
+  padding-bottom: 4px;
+}
+
+#content-inner,
+.content-inner-border {
+  background: #ffffff;
+  margin: 0;
+  padding: 10px;
+  width: 520px;
+  border-left: 1px solid #cdcbca;
+  border-top: 1px solid #cdcbca;
+}
+
+.node-type-channel #content-inner-side-shadow {
+  background: none;
+  margin: 0;
+}
+
+.node-type-channel #content-inner-right-shadow {
+  background: none;
+}
+
+.node-type-channel #content-inner-bottom-shadow {
+  background: none;
+  padding: 0;
+}
+
+.node-type-channel #content-inner {
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+
+#mission /* The mission statement of the site (displayed on homepage) */ {
+}
+
+#content-top /* Wrapper for any blocks placed in the "content top" region */ {
+}
+
+#content-header /* Wrapper for breadcrumb, title, messages, tabs, and help */ {
+}
+
+.breadcrumb /* The path to the current page in the form of a list of links */ {
+  padding-bottom: 0; /* Undo system.css */
+}
+
+h1.title, /* The title of the page */
+h2.title, /* Block title or the title of a piece of content when it is given in a list of content */
+h3.title /* Comment title */ {
+  margin: 0;
+}
+
+tr.even /* Some tables have rows marked even or odd. */ {
+  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+tr.odd {
+  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+div.messages /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */ {
+}
+
+div.status /* Normal priority messages */ {
+}
+
+div.warning,
+tr.warning /* Medium priority messages */ {
+  /* border: 1px solid #f0c020; */ /* Drupal core uses: 1px solid #f0c020 */
+}
+
+div.error,
+tr.error /* High priority messages. See also the .error declaration below. */ {
+}
+
+.error /* Errors that are separate from div.messages status messages. */ {
+  /* color: #e55; */ /* Drupal core uses a #e55 background */
+}
+
+.warning /* Warnings that are separate from div.messages status messages. */ {
+  /* color: #e09010; */ /* Drupal core uses a #e09010 background */
+}
+
+div.tabs /* See also the tabs.css file. */ {
+}
+
+.help /* Help text on a page */ {
+  margin: 1em 0;
+}
+
+.more-help-link /* Link to more help */ {
+  font-size: 0.85em;
+  text-align: right;
+}
+
+#content-area /* Wrapper for the actual page content */ {
+}
+
+#navbar-top ul.menu,
+ul.links /* List of links */ {
+  margin: 1em 0;
+  padding: 0;
+}
+
+ul.links.inline {
+  margin: 0;
+  display: inline;
+}
+
+#block-menu-menu-about-menu {
+  margin-top: -4px;
+}
+
+#navbar-top ul.menu li,
+ul.links li {
+  display: inline;
+  list-style-type: none;
+  padding: 0 0.5em;
+}
+
+#navbar-top #block-menu-menu-about-menu ul.menu li {
+  float: left;
+}
+
+#navbar-top ul.menu li a {
+  text-decoration: none;
+  color: #1D2754;
+}
+
+#navbar-top ul.menu li a:hover {
+  color: #3399ff;
+}
+
+.pager /* A list of page numbers when more than 1 page of content is available */ {
+  clear: both;
+  margin: 1em 0;
+  text-align: center;
+}
+
+.pager a,
+.pager strong.pager-current /* Each page number in the pager list */ {
+  padding: 0.5em;
+}
+
+.feed-icons /* The links to the RSS or Atom feeds for the current list of content */ {
+  margin: 1em 0;
+}
+
+.more-link /* Aggregator, blog, and forum more link */ {
+  text-align: right; /* LTR */
+}
+
+#content-bottom /* Wrapper for any blocks placed in the "content bottom" region */ {
+}
+
+/*
+ * First sidebar (on left in LTR languages, on right in RTL)
+ *
+ * Remember to NOT add padding or margin to your #sidebar-first
+ * (see the layout.css file.)
+ */
+#sidebar-first {
+}
+
+#sidebar-first-inner {
+}
+
+/*
+ * Second sidebar (on right in LTR languages, on left in RTL)
+ *
+ * Remember to NOT add padding or margin to your #sidebar-second
+ * (see the layout.css file.)
+ */
+#sidebar-second {
+}
+
+#sidebar-second-inner {
+}
+
+#sidebar-second a{
+	text-decoration: none;
+}
+
+#sidebar-second a:hover{
+	text-decoration: underline;
+}
+
+/*
+ * Footer
+ */
+#footer {
+}
+
+#footer-inner {
+}
+
+#footer-message /* Wrapper for the footer message from Drupal's "Site information"
+                   and for any blocks placed in the footer region */ {
+}
+
+.footer-twitter,
+.footer-gplus,
+.footer-facebook,
+.footer-youtube,
+.footer-identica,
+.footer-flickr {
+  text-decoration: none;
+  height: 0;
+  overflow: hidden;
+  padding-top: 24px;
+  width: 24px;
+  display: block;
+  margin-left: 10px;
+  margin-top: -3px;
+  float: right;
+}
+
+.footer-twitter {
+  background: url(../images/twitter.jpg);
+}
+
+.footer-gplus {
+  background: url(../images/gplus.png);
+}
+
+.footer-facebook {
+  background: url(../images/facebook.jpg);
+}
+
+.footer-youtube {
+  background: url(../images/youtube.jpg);
+}
+
+.footer-identica {
+  background: url(../images/identica.png);
+}
+
+.footer-flickr {
+  background: url(../images/flickr_24x24.jpg);
+}
+
+#footer a {text-decoration: none;}
+
+/*
+ * Closure
+ */
+#closure-blocks /* Wrapper for any blocks placed in the closure region */ {
+}
+
+/*
+ * Drupal boxes
+ *
+ * Wrapper for Comment form, Comment viewing options, Menu admin, and
+ * Search results.
+ */
+.box /* Wrapper for box */ {
+}
+
+.box h2 /* Box title */ {
+}
+
+.box .content /* Box's content wrapper */ {
+}
+
+/*
+ * Markup free clearing (See: http://www.positioniseverything.net/easyclearing.html )
+ */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/**
+ * Hide elements from all users.
+ *
+ * Used for elements which should not be immediately displayed to any user. An
+ * example would be a collapsible fieldset that will be expanded with a click
+ * from a user. The effect of this class can be toggled with the jQuery show()
+ * and hide() functions.
+ */
+.element-hidden {
+  display: none;
+}
+
+/**
+ * Hide elements visually, but keep them available for screen-readers.
+ *
+ * Used for information required for screen-reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user. Must
+ * not be used for focusable elements (such as links and form elements) as this
+ * causes issues for keyboard only or voice recognition users.
+ */
+.element-invisible {
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* Overriding the Poll bar color everywhere */
+.poll .bar .foreground {
+  background-color: #1D2754;
+}
+
+html.js input.form-autocomplete {
+ background-image: none;
+}
+
+.redhat-employee {
+  color: #999;
+}
+
+/* Legal CSS */
+.underline {
+  text-decoration: underline;
+}
+ol.lower-roman {
+  list-style-type: lower-roman;
+}
+
+.pollfield-form {
+  clear: both;
+}
+.pollfield-row {
+  display: block;
+}
+.barcell {
+  display: block;
+}
+.barcell {
+  display: block;
+}
+.pollfield-percent {
+  text-align: right;
+}
+.barcell .bar .pollfield-foreground {
+  background-image: none;
+  background-color: #1d2754;
+}
+
+/* User Profiles @acquia-KS */
+.profile-left{
+  width: 102px;
+  float: left;
+}
+
+.profile-right{
+  width: 75%;
+  float: right;
+}
+
+.profile .profile-left .picture {
+  float: none;
+  margin-bottom: 0;
+}
+
+.profile .profile-left h3 {
+  display: none;
+}
+
+.profile .profile-left dl.user-badges {
+  margin: 0;
+}
+
+.profile .user-badges img {
+  display: block;
+}
+
+.profile .profile-points {
+   background-color: #1D2753;
+   border: 1px solid #0033FF;
+   color: white;
+   float: right;
+   font-size: 16px;
+   margin: -38px 320px 0;
+   padding: 5px;
+   position: absolute;
+   text-align: center;
+   width: 55px;
+}
+
+.profile .profile-points h3 {
+  margin: 0;
+}
+
+
+.profile .profile-display-name {
+  margin: 0px;
+  width: auto;
+}
+
+.profile-location,
+.profile-bio,
+.profile-website {
+
+}
+
+.field-field-lead-image h2 {
+  display:none;
+}
+
+.field-field-lead-image .content p {
+  color: #999;
+  font-size: 10px;
+  font-family: Arial,sans-serif;
+  font-style: italic;
+}
+
+.node-teaser .field-field-lead-image {
+  float:left;
+  width:262px;
+  margin-right:1em;
+}
+
+.node-teaser .field-field-lead-image p {
+  display:none;
+}
+
+.section-reports th, .section-reports td {
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+h1 span.hide {
+  display: none;
+}
+
+.social-links {
+  text-align: center;
+}
+
+.social-links li {
+  list-style: none;
+  list-style-type: none;
+  display: inline;
+  padding: 5px;
+}
+
+.block-opensource a.newsletter{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}

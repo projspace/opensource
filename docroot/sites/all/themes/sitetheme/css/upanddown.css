@@ -1,0 +1,98 @@
+/* $Id: upanddown.css,v 1.1.2.1 2010/07/24 23:23:54 marvil07 Exp $ */
+
+.vud-widget-upanddown {
+  margin: 5px 0px;
+  clear: both;
+  position: relative;
+  float: right;
+}
+
+.vud-widget-upanddown a {
+  text-decoration: none;
+  float: left;
+}
+
+.vud-widget-upanddown a.vud-link-up {
+  float: right;
+}
+
+.vud-widget-upanddown a.vud-link-up span,
+.vud-widget-upanddown a.vud-link-down span {
+  margin-right: 7px;
+}
+
+.vud-widget-upanddown .up-score .up-current-score,
+.vud-widget-upanddown .down-score .down-current-score {
+  display: block;
+  font-size: 10pt;
+  margin-left: 19px;
+  text-align: right;
+  padding-top: 2px;
+}
+
+.vud-widget-upanddown .up-score,
+.vud-widget-upanddown .down-score {
+  display: inline-block;
+}
+
+.vud-widget-upanddown .up-active,
+.vud-widget-upanddown .down-active {
+  cursor: default;
+}
+.vud-widget-upanddown .up-inactive,
+.vud-widget-upanddown .down-inactive,
+.vud-widget-upanddown .up-active,
+.vud-widget-upanddown .down-active {
+  display: block;
+  width: 16px;
+  height: 22px;
+  font-weight: bold;
+  text-align: center;
+  background: url(arrows.png) 0 0 no-repeat;
+}
+
+.vud-widget-upanddown .up-active {
+  Xbackground-position: 0 -22px;
+  background-image:url(../images/icon-vote-up.png);
+  float:right;
+}
+.vud-widget-upanddown .down-active {
+  Xbackground-position: -20px -22px;
+  background-image:url(../images/icon-vote-down.png);
+  background-position: 0px 6px;
+  float:left;
+}
+.vud-widget-upanddown .up-inactive {
+  Xbackground-position: 0 -44px;
+  background-image:url(../images/icon-vote-up.png);
+}
+.vud-widget-upanddown .down-inactive {
+  Xbackground-position: -20px -44px;
+  background-image:url(../images/icon-vote-down.png);
+  background-position: 0px 6px;
+}
+.vud-widget-upanddown .up-inactive:hover {
+  Xbackground-position: 0 -66px;
+  background-image:url(../images/icon-vote-up.png);
+}
+.vud-widget-upanddown .down-inactive:hover {
+  Xbackground-position: -20px -66px;
+  background-image:url(../images/icon-vote-down.png);
+  background-position: 0px 6px;
+}
+
+.vud-widget-upanddown a.ctools-ajaxing,
+.vud-widget-upanddown a.ctools-ajaxing:hover {
+  padding-right: 0 !important;
+  Xbackground-image: url(status-active.gif);
+  background-position: center;
+}
+
+.vud-widget-upanddown .up-score .up-current-score {
+  float:left;
+  margin-right:4px;
+}
+
+vud-widget-upanddown .up-score .down-current-score {
+  float:right;
+}

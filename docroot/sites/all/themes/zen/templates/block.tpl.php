@@ -1,20 +1,50 @@
 <?php
+// $Id: block.tpl.php,v 1.2 2009/09/07 10:03:59 johnalbin Exp $
+
 /**
- * @file
- * Returns the HTML for a block.
+ * @file block.tpl.php
  *
- * Complete documentation for this file is available online.
- * @see https://drupal.org/node/1728246
+ * Theme implementation to display a block.
+ *
+ * Available variables:
+ * - $block->subject: Block title.
+ * - $block->content: Block content.
+ * - $block->module: Module that generated the block.
+ * - $block->delta: This is a numeric id connected to each module.
+ * - $block->region: The block region embedding the current block.
+ * - $classes_array: 
+ *   ...
+ * - $classes: A set of CSS classes for the DIV wrapping the block.
+     Possible values are: block-MODULE, region-odd, region-even, odd, even,
+     region-count-X, and count-X.
+ * - $edit_links_array: 
+ *   ...
+ * - $edit_links: 
+ *   ...
+ *
+ * Helper variables:
+ * - $block_zebra: Outputs 'odd' and 'even' dependent on each block region.
+ * - $zebra: Same output as $block_zebra but independent of any block region.
+ * - $block_id: Counter dependent on each block region.
+ * - $id: Same output as $block_id but independent of any block region.
+ * - $is_front: Flags true when presented in the front page.
+ * - $logged_in: Flags true when the current user is a logged-in member.
+ * - $is_admin: Flags true when the current user is an administrator.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_block()
  */
 ?>
-<div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<div id="block-<?php print $block->module . '-' . $block->delta; ?>" class="<?php print $classes; ?>"><div class="block-inner">
 
-  <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
-    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
+  <?php if ($block->subject): ?>
+    <h2 class="title"><?php print $block->subject; ?></h2>
   <?php endif; ?>
-  <?php print render($title_suffix); ?>
 
-  <?php print $content; ?>
+  <div class="content">
+    <?php print $block->content; ?>
+  </div>
 
-</div>
+  <?php print $edit_links; ?>
+
+</div></div> <!-- /block-inner, /block -->
