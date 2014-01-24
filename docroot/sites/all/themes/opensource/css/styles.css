@@ -111,7 +111,7 @@ audio:not([controls]) {
  */
 /* line 106, ../sass/_normalize.scss */
 html {
-  font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
   /* 1 */
   font-size: 100%;
   /* 3 */
@@ -597,7 +597,7 @@ table {
 .region-bottom {
   margin-left: auto;
   margin-right: auto;
-  max-width: 960px;
+  max-width: 980px;
 }
 
 /* Apply the shared properties of grid items in a single, efficient ruleset. */
@@ -886,7 +886,8 @@ table {
 .element-invisible,
 .element-focusable,
 #navigation .block-menu .block__title,
-#navigation .block-menu-block .block__title {
+#navigation .block-menu-block .block__title,
+.region-navigation-top #block-system-user-menu li:last-child {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -1795,21 +1796,38 @@ a {
 }
 
 /* line 3, ../sass/partials/header/_top-nav.scss */
-.region-navigation-top [role='navigation'] {
+.region-navigation-top #block-menu-menu-about-menu, .region-navigation-top #block-system-user-menu {
   float: left;
 }
 /* line 6, ../sass/partials/header/_top-nav.scss */
-.region-navigation-top [role='navigation'] li {
-  display: inline-block;
+.region-navigation-top #block-menu-menu-about-menu ul, .region-navigation-top #block-system-user-menu ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
 }
-/* line 10, ../sass/partials/header/_top-nav.scss */
-.region-navigation-top [role='navigation'] a {
+/* line 12, ../sass/partials/header/_top-nav.scss */
+.region-navigation-top #block-menu-menu-about-menu li, .region-navigation-top #block-system-user-menu li {
+  float: left;
+  list-style: none;
+}
+/* line 17, ../sass/partials/header/_top-nav.scss */
+.region-navigation-top #block-menu-menu-about-menu a, .region-navigation-top #block-system-user-menu a {
   font-size: 12px;
   color: #1D2754;
-  padding: 0 0.5em;
+  padding: 0 6px;
 }
-/* line 15, ../sass/partials/header/_top-nav.scss */
-.region-navigation-top [role='navigation'] a:hover {
+/* line 22, ../sass/partials/header/_top-nav.scss */
+.region-navigation-top #block-menu-menu-about-menu a:hover, .region-navigation-top #block-system-user-menu a:hover {
   color: #39f;
   text-decoration: none;
+}
+/* line 29, ../sass/partials/header/_top-nav.scss */
+.region-navigation-top #block-system-user-menu {
+  float: right;
+}
+/* line 34, ../sass/partials/header/_top-nav.scss */
+.region-navigation-top #block-system-user-menu li:last-child {
+  background: url("../images/rss.png") no-repeat;
+  height: 24px;
+  width: 24px;
 }
