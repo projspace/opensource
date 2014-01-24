@@ -20,6 +20,6 @@
 // Optionally, add your own components here.
 @import "print";
 
-/* SMACSS theme rules */
-/* @import "theme-A"; */
-/* @import "theme-B"; */
+@import "partials/base/base";
+
+@import "partials/header/top-nav";
