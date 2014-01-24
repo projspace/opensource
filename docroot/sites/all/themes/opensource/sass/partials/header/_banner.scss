@@ -12,13 +12,13 @@
         }
     }
 
-    #edit-search-block-form--2 {
+    input[type="text"] {
         border: none;
         line-height: 29px;
         width: 238px;
     }
 
-    #edit-submit {
+    input[type="submit"] {
         border: none;
         text-indent: -9999px;
         background: url('../images/search.png') no-repeat center;

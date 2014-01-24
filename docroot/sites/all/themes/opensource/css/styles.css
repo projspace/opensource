@@ -1790,6 +1790,11 @@ tr.selected td {
   }
 }
 /* line 1, ../sass/partials/base/_base.scss */
+body {
+  line-height: 1.5;
+}
+
+/* line 5, ../sass/partials/base/_base.scss */
 a {
   text-decoration: none;
 }
@@ -1853,13 +1858,13 @@ a {
   margin-top: 10px;
 }
 /* line 15, ../sass/partials/header/_banner.scss */
-.header-banner #edit-search-block-form--2 {
+.header-banner input[type="text"] {
   border: none;
   line-height: 29px;
   width: 238px;
 }
 /* line 21, ../sass/partials/header/_banner.scss */
-.header-banner #edit-submit {
+.header-banner input[type="submit"] {
   border: none;
   text-indent: -9999px;
   background: url("../images/search.png") no-repeat center;
@@ -2023,4 +2028,84 @@ a {
 /* line 126, ../sass/partials/header/_main-nav.scss */
 #main-menu li.menu-1131 a.active, #main-menu li.menu-1131 a.active-trail {
   background-position: -820px -84px;
+}
+
+/* line 1, ../sass/partials/footer/_footer-top.scss */
+#footer {
+  font-size: 12px;
+}
+/* line 4, ../sass/partials/footer/_footer-top.scss */
+#footer p {
+  margin: 1em 0;
+}
+/* line 8, ../sass/partials/footer/_footer-top.scss */
+#footer a {
+  color: black;
+}
+/* line 12, ../sass/partials/footer/_footer-top.scss */
+#footer #block-block-1 {
+  color: #333;
+}
+
+/* line 2, ../sass/partials/footer/_footer-nav.scss */
+#block-menu-block-1 ul, #block-block-2 ul {
+  padding-left: 0;
+  list-style: none;
+}
+/* line 7, ../sass/partials/footer/_footer-nav.scss */
+#block-menu-block-1 li, #block-block-2 li {
+  list-style: none;
+  float: left;
+  padding-right: 10px;
+  border-right: 1px solid #797979;
+  margin-right: 10px;
+  line-height: 12px;
+}
+
+/* line 10, ../sass/partials/footer/_footer-social.scss */
+.footer-twitter,
+.footer-gplus,
+.footer-facebook,
+.footer-youtube,
+.footer-identica,
+.footer-flickr {
+  text-decoration: none;
+  height: 0;
+  overflow: hidden;
+  padding-top: 24px;
+  width: 24px;
+  display: block;
+  margin-left: 10px;
+  margin-top: -3px;
+  float: right;
+}
+
+/* line 22, ../sass/partials/footer/_footer-social.scss */
+.footer-twitter {
+  background: url(../images/footer-social/twitter.jpg);
+}
+
+/* line 26, ../sass/partials/footer/_footer-social.scss */
+.footer-gplus {
+  background: url(../images/footer-social/gplus.png);
+}
+
+/* line 30, ../sass/partials/footer/_footer-social.scss */
+.footer-facebook {
+  background: url(../images/footer-social/facebook.jpg);
+}
+
+/* line 34, ../sass/partials/footer/_footer-social.scss */
+.footer-youtube {
+  background: url(../images/footer-social/youtube.jpg);
+}
+
+/* line 38, ../sass/partials/footer/_footer-social.scss */
+.footer-identica {
+  background: url(../images/footer-social/identica.png);
+}
+
+/* line 42, ../sass/partials/footer/_footer-social.scss */
+.footer-flickr {
+  background: url(../images/footer-social/flickr.png);
 }
