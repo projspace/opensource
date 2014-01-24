@@ -34,8 +34,7 @@
 
         li {
             &:last-child {
-                text-align: -9999px;
-                vertical-align: bottom;
+                text-indent: -9999px;
                 background: url('../images/rss.png') no-repeat;
                 height: 24px;
                 width: 24px;

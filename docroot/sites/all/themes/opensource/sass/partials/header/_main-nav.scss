@@ -1,0 +1,128 @@
+#main-menu {
+    width: 100%;
+    background: #fff;
+}
+
+#main-menu li {
+    padding: 0 !important;
+    margin: 0;
+}
+
+#main-menu li a {
+    width: 142px;
+    height: 0;
+    padding-top: 38px;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    background: #1d2754;
+    border-bottom: 3px solid #fff;
+    text-decoration: none;
+    color: #fff;
+}
+
+#main-menu li a:hover,#main-menu li.active a,#main-menu li.active-trail a {
+    border-bottom: 3px solid #e0e0e0;
+    background-color: #E2E1E6;
+}
+
+#main-menu li.menu-1129 a {
+    width: 109px;
+}
+
+#main-menu li.first a {
+    border-left: 0;
+}
+
+#main-menu li.last a {
+    border-right: 0;
+}
+
+#secondary-menu {
+}
+
+#main-menu li.menu-1129 a {
+    background: url('../images/nav-sprite.png') 0px 0px no-repeat;
+    width: 110px;
+}
+
+#main-menu li.menu-1129 a:hover {
+    background-position: 0 -42px;
+}
+
+#main-menu li.menu-1129 a.active,#main-menu li.menu-1129 a.active-trail {
+    background-position: 0 -84px;
+}
+
+#main-menu li.menu-1008 a {
+    background: url('../images/nav-sprite.png') -110px 0px no-repeat;
+}
+
+#main-menu li.menu-1008 a:hover {
+    background-position: -110px -42px;
+}
+
+#main-menu li.menu-1008 a.active,#main-menu li.menu-1008 a.active-trail {
+    background-position: -110px -84px;
+}
+
+#main-menu li.menu-1009 a {
+    background: url('../images/nav-sprite.png') -252px 0px no-repeat;
+}
+
+#main-menu li.menu-1009 a:hover {
+    background-position: -252px -42px;
+}
+
+#main-menu li.menu-1009 a.active,#main-menu li.menu-1009 a.active-trail {
+    background-position: -252px -84px;
+}
+
+#main-menu li.menu-1006 a {
+    background: url('../images/nav-sprite.png') -394px 0px no-repeat;
+}
+
+#main-menu li.menu-1006 a:hover {
+    background-position: -394px -42px;
+}
+
+#main-menu li.menu-1006 a.active,#main-menu li.menu-1006 a.active-trail {
+    background-position: -394px -84px;
+}
+
+#main-menu li.menu-1007 a,#main-menu li.menu-12686 a {
+    background: url('../images/nav-sprite.png') -536px 0px no-repeat;
+}
+
+#main-menu li.menu-1007 a:hover,#main-menu li.menu-12686 a:hover {
+    background-position: -536px -42px;
+}
+
+#main-menu li.menu-1007 a.active,#main-menu li.menu-1007 a.active-trail,#main-menu li.menu-12686 a.active,#main-menu li.menu-12686 a.active-trail {
+    background-position: -536px -84px;
+}
+
+#main-menu li.menu-1130 a {
+    background: url('../images/nav-sprite.png') -678px 0px no-repeat;
+}
+
+#main-menu li.menu-1130 a:hover {
+    background-position: -678px -42px;
+}
+
+#main-menu li.menu-1130 a.active,#main-menu li.menu-1130 a.active-trail {
+    background-position: -678px -84px;
+}
+
+#main-menu li.menu-1131 a {
+    background: url('../images/nav-sprite.png') -820px 0px no-repeat;
+    width: 139px;
+}
+
+#main-menu li.menu-1131 a:hover {
+    background-position: -820px -42px;
+}
+
+#main-menu li.menu-1131 a.active,#main-menu li.menu-1131 a.active-trail {
+    background-position: -820px -84px;
+}

@@ -1,0 +1,32 @@
+.header-banner {
+    height: 128px;
+    background: url('../images/banner.png') no-repeat bottom center;
+
+    .region-header {
+        clear: none;
+        float: right;
+
+        #block-search-form {
+            margin-top: 10px;
+
+        }
+    }
+
+    #edit-search-block-form--2 {
+        border: none;
+        line-height: 29px;
+        width: 238px;
+    }
+
+    #edit-submit {
+        border: none;
+        text-indent: -9999px;
+        background: url('../images/search.png') no-repeat center;
+        line-height: 29px;
+        width: 40px;
+    }
+
+    .header__name-and-slogan {
+        text-indent: -9999px;
+    }
+}
