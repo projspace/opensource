@@ -1796,39 +1796,41 @@ a {
 
 /* line 2, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top {
+  clear: both;
+  overflow: hidden;
   margin-top: 10px;
 }
-/* line 5, ../sass/partials/header/_top-nav.scss */
+/* line 7, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu, .region-navigation-top #block-system-user-menu {
   float: left;
 }
-/* line 8, ../sass/partials/header/_top-nav.scss */
+/* line 10, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu ul, .region-navigation-top #block-system-user-menu ul {
   padding-left: 0;
   margin: 0;
   list-style: none;
 }
-/* line 14, ../sass/partials/header/_top-nav.scss */
+/* line 16, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu li, .region-navigation-top #block-system-user-menu li {
   float: left;
   list-style: none;
 }
-/* line 19, ../sass/partials/header/_top-nav.scss */
+/* line 21, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu a, .region-navigation-top #block-system-user-menu a {
   font-size: 12px;
   color: #1D2754;
   padding: 0 6px;
 }
-/* line 24, ../sass/partials/header/_top-nav.scss */
+/* line 26, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu a:hover, .region-navigation-top #block-system-user-menu a:hover {
   color: #39f;
   text-decoration: none;
 }
-/* line 31, ../sass/partials/header/_top-nav.scss */
+/* line 33, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu {
   float: right;
 }
-/* line 36, ../sass/partials/header/_top-nav.scss */
+/* line 38, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu li:last-child {
   text-indent: -9999px;
   background: url("../images/rss.png") no-repeat;
