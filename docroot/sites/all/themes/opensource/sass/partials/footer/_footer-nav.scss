@@ -1,7 +1,12 @@
 #block-menu-block-1 {
+    float: left;
+
     ul {
+        margin: 0;
         padding-left: 0;
         list-style: none;
+        clear: both;
+        overflow: hidden;
     }
 
     li {

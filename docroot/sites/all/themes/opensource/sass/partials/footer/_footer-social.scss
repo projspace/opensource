@@ -1,5 +1,16 @@
 #block-block-2 {
     @extend #block-menu-block-1;
+    float: left;
+
+    span {
+        list-style: none;
+        float: left;
+        line-height: 12px;
+    }
+
+    p {
+        margin: 0;
+    }
 }
 
 .footer-twitter,
@@ -40,5 +51,5 @@
 }
 
 .footer-flickr {
-    background: url(../images/footer-social/flickr.png);
+    background: url(../images/footer-social/flickr.jpg);
 }

@@ -1791,7 +1791,7 @@ tr.selected td {
 }
 /* line 1, ../sass/partials/base/_base.scss */
 body {
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 /* line 5, ../sass/partials/base/_base.scss */
@@ -2045,14 +2045,22 @@ a {
 /* line 12, ../sass/partials/footer/_footer-top.scss */
 #footer #block-block-1 {
   color: #333;
+  margin-bottom: 2.5em;
 }
 
-/* line 2, ../sass/partials/footer/_footer-nav.scss */
+/* line 1, ../sass/partials/footer/_footer-nav.scss */
+#block-menu-block-1, #block-block-2 {
+  float: left;
+}
+/* line 4, ../sass/partials/footer/_footer-nav.scss */
 #block-menu-block-1 ul, #block-block-2 ul {
+  margin: 0;
   padding-left: 0;
   list-style: none;
+  clear: both;
+  overflow: hidden;
 }
-/* line 7, ../sass/partials/footer/_footer-nav.scss */
+/* line 12, ../sass/partials/footer/_footer-nav.scss */
 #block-menu-block-1 li, #block-block-2 li {
   list-style: none;
   float: left;
@@ -2062,7 +2070,22 @@ a {
   line-height: 12px;
 }
 
-/* line 10, ../sass/partials/footer/_footer-social.scss */
+/* line 1, ../sass/partials/footer/_footer-social.scss */
+#block-block-2 {
+  float: left;
+}
+/* line 5, ../sass/partials/footer/_footer-social.scss */
+#block-block-2 span {
+  list-style: none;
+  float: left;
+  line-height: 12px;
+}
+/* line 11, ../sass/partials/footer/_footer-social.scss */
+#block-block-2 p {
+  margin: 0;
+}
+
+/* line 21, ../sass/partials/footer/_footer-social.scss */
 .footer-twitter,
 .footer-gplus,
 .footer-facebook,
@@ -2080,32 +2103,32 @@ a {
   float: right;
 }
 
-/* line 22, ../sass/partials/footer/_footer-social.scss */
+/* line 33, ../sass/partials/footer/_footer-social.scss */
 .footer-twitter {
   background: url(../images/footer-social/twitter.jpg);
 }
 
-/* line 26, ../sass/partials/footer/_footer-social.scss */
+/* line 37, ../sass/partials/footer/_footer-social.scss */
 .footer-gplus {
   background: url(../images/footer-social/gplus.png);
 }
 
-/* line 30, ../sass/partials/footer/_footer-social.scss */
+/* line 41, ../sass/partials/footer/_footer-social.scss */
 .footer-facebook {
   background: url(../images/footer-social/facebook.jpg);
 }
 
-/* line 34, ../sass/partials/footer/_footer-social.scss */
+/* line 45, ../sass/partials/footer/_footer-social.scss */
 .footer-youtube {
   background: url(../images/footer-social/youtube.jpg);
 }
 
-/* line 38, ../sass/partials/footer/_footer-social.scss */
+/* line 49, ../sass/partials/footer/_footer-social.scss */
 .footer-identica {
   background: url(../images/footer-social/identica.png);
 }
 
-/* line 42, ../sass/partials/footer/_footer-social.scss */
+/* line 53, ../sass/partials/footer/_footer-social.scss */
 .footer-flickr {
-  background: url(../images/footer-social/flickr.png);
+  background: url(../images/footer-social/flickr.jpg);
 }
