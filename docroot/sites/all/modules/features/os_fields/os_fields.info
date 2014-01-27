@@ -1,0 +1,16 @@
+name = OpenSource Fields
+description = Provides field base definitions for all fields used by various OpenSource.com content types.
+core = 7.x
+package = OpenSource.com Content
+php = 5.2.4
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = image
+dependencies[] = list
+dependencies[] = og
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_base][] = field_channel_header
+features[field_base][] = group_group
+features[field_base][] = og_group_ref
