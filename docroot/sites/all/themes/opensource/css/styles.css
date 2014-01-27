@@ -1820,27 +1820,30 @@ a {
   float: left;
   list-style: none;
 }
-/* line 21, ../sass/partials/header/_top-nav.scss */
+/* line 19, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu a, .region-navigation-top #block-system-user-menu a {
   font-size: 12px;
   color: #1D2754;
   padding: 0 6px;
 }
-/* line 26, ../sass/partials/header/_top-nav.scss */
+/* line 24, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu a:hover, .region-navigation-top #block-system-user-menu a:hover {
   color: #39f;
   text-decoration: none;
 }
-/* line 33, ../sass/partials/header/_top-nav.scss */
+/* line 31, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu {
   float: right;
 }
-/* line 38, ../sass/partials/header/_top-nav.scss */
+/* line 36, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu li:last-child {
-  text-indent: -9999px;
   background: url("../images/rss.png") no-repeat;
   height: 24px;
   width: 24px;
+}
+/* line 41, ../sass/partials/header/_top-nav.scss */
+.region-navigation-top #block-system-user-menu li:last-child a {
+  color: transparent;
 }
 
 /* line 1, ../sass/partials/header/_banner.scss */
@@ -1860,10 +1863,12 @@ a {
 /* line 15, ../sass/partials/header/_banner.scss */
 .header-banner input[type="text"] {
   border: none;
-  line-height: 29px;
+  line-height: 28px;
   width: 238px;
+  color: #999;
+  font-size: 14px;
 }
-/* line 21, ../sass/partials/header/_banner.scss */
+/* line 23, ../sass/partials/header/_banner.scss */
 .header-banner input[type="submit"] {
   border: none;
   text-indent: -9999px;
@@ -1871,7 +1876,7 @@ a {
   line-height: 29px;
   width: 40px;
 }
-/* line 29, ../sass/partials/header/_banner.scss */
+/* line 31, ../sass/partials/header/_banner.scss */
 .header-banner .header__name-and-slogan {
   text-indent: -9999px;
 }
@@ -2043,17 +2048,17 @@ a {
   color: black;
 }
 /* line 12, ../sass/partials/footer/_footer-top.scss */
-#footer #block-block-1 {
+#footer #block-bean-copyrigt-block {
   color: #333;
   margin-bottom: 2.5em;
 }
 
 /* line 1, ../sass/partials/footer/_footer-nav.scss */
-#block-menu-block-1, #block-block-2 {
+#block-menu-menu-footer, #block-bean-social-media {
   float: left;
 }
 /* line 4, ../sass/partials/footer/_footer-nav.scss */
-#block-menu-block-1 ul, #block-block-2 ul {
+#block-menu-menu-footer ul, #block-bean-social-media ul {
   margin: 0;
   padding-left: 0;
   list-style: none;
@@ -2061,7 +2066,7 @@ a {
   overflow: hidden;
 }
 /* line 12, ../sass/partials/footer/_footer-nav.scss */
-#block-menu-block-1 li, #block-block-2 li {
+#block-menu-menu-footer li, #block-bean-social-media li {
   list-style: none;
   float: left;
   padding-right: 10px;
@@ -2071,17 +2076,17 @@ a {
 }
 
 /* line 1, ../sass/partials/footer/_footer-social.scss */
-#block-block-2 {
+#block-bean-social-media {
   float: left;
 }
 /* line 5, ../sass/partials/footer/_footer-social.scss */
-#block-block-2 span {
+#block-bean-social-media span {
   list-style: none;
   float: left;
   line-height: 12px;
 }
 /* line 11, ../sass/partials/footer/_footer-social.scss */
-#block-block-2 p {
+#block-bean-social-media p {
   margin: 0;
 }
 
