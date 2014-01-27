@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OS Beans feature.
+ */
+
+include_once 'os_beans.features.inc';
