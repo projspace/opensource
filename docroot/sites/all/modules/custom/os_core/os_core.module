@@ -33,4 +33,52 @@ function os_core_install() {
     'value' => '<p><span class="find-us-text">Find us:</span> <a class="footer-identica" title="identi.ca" href="http://identi.ca/opensourceway">identi.ca</a> <a class="footer-youtube" title="Youtube" href="http://www.youtube.com/opensourceway">Youtube</a> <a class="footer-flickr" title="Flickr" href="http://www.flickr.com/photos/opensourceway">Flickr</a> <a class="footer-gplus" title="Google Plus" href="https://plus.google.com/108750398488318674353">Google Plus</a> <a class="footer-facebook" title="Facebook" href="http://www.facebook.com/pages/opensourcecom/162962298056">Facebook</a> <a class="footer-twitter" title="Twitter" href="https://twitter.com/OpenSourceWay">Twitter</a></p>',
     'format' => 'panopoly_wysiwyg_text' );
   $bean->save();
+
+  block_flush_caches();
+  db_update('block')
+    ->fields(array(
+      'status' => 1,
+      'weight' => -10,
+      'region' => 'navigation_top',
+      'title' => '<none>',
+    ))
+    ->condition('module', 'menu')
+    ->condition('delta', 'menu-about-menu')
+    ->condition('theme', 'opensource')
+    ->execute();
+
+  db_update('block')
+    ->fields(array(
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'footer',
+      'title' => '<none>',
+    ))
+    ->condition('module', 'menu')
+    ->condition('delta', 'menu-footer')
+    ->condition('theme', 'opensource')
+    ->execute();
+
+  db_update('block')
+    ->fields(array(
+      'status' => 1,
+      'weight' => -12,
+      'region' => 'footer',
+    ))
+    ->condition('module', 'bean')
+    ->condition('delta', 'copyrigt-block')
+    ->condition('theme', 'opensource')
+    ->execute();
+
+  block_flush_caches();
+  db_update('block')
+    ->fields(array(
+      'status' => 1,
+      'weight' => 10,
+      'region' => 'footer',
+    ))
+    ->condition('module', 'bean')
+    ->condition('delta', 'social-media')
+    ->condition('theme', 'opensource')
+    ->execute();
 }

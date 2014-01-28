@@ -12,7 +12,6 @@ dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = menu
 dependencies[] = os_beans
-dependencies[] = os_core
 dependencies[] = search
 dependencies[] = strongarm
 features[content_menu_links][] = main-menu_business:<front>
