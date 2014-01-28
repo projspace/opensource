@@ -1913,11 +1913,6 @@ a {
   background-color: #E2E1E6;
 }
 
-/* line 29, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1129 a {
-  width: 109px;
-}
-
 /* line 33, ../sass/partials/header/_main-nav.scss */
 #main-menu li.first a {
   border-left: 0;
@@ -1928,110 +1923,96 @@ a {
   border-right: 0;
 }
 
-/* line 44, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1129 a {
+/* line 41, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(1) a {
   background: url("../images/nav-sprite.png") 0px 0px no-repeat;
   width: 110px;
 }
-
-/* line 49, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1129 a:hover {
+/* line 45, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(1) a:hover {
   background-position: 0 -42px;
 }
-
-/* line 53, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1129 a.active, #main-menu li.menu-1129 a.active-trail {
+/* line 50, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(1) a.active, #main-menu li:nth-child(1) a.active-trail {
   background-position: 0 -84px;
 }
 
-/* line 57, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1008 a {
+/* line 56, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(2) a {
   background: url("../images/nav-sprite.png") -110px 0px no-repeat;
 }
-
-/* line 61, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1008 a:hover {
+/* line 59, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(2) a:hover {
   background-position: -110px -42px;
 }
-
-/* line 65, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1008 a.active, #main-menu li.menu-1008 a.active-trail {
+/* line 64, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(2) a.active, #main-menu li:nth-child(2) a.active-trail {
   background-position: -110px -84px;
 }
 
-/* line 69, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1009 a {
+/* line 70, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(3) a {
   background: url("../images/nav-sprite.png") -252px 0px no-repeat;
 }
-
 /* line 73, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1009 a:hover {
+#main-menu li:nth-child(3) a:hover {
   background-position: -252px -42px;
 }
-
-/* line 77, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1009 a.active, #main-menu li.menu-1009 a.active-trail {
+/* line 78, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(3) a.active, #main-menu li:nth-child(3) a.active-trail {
   background-position: -252px -84px;
 }
 
-/* line 81, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1006 a {
+/* line 84, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(4) a {
   background: url("../images/nav-sprite.png") -394px 0px no-repeat;
 }
-
-/* line 85, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1006 a:hover {
+/* line 87, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(4) a:hover {
   background-position: -394px -42px;
 }
-
-/* line 89, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1006 a.active, #main-menu li.menu-1006 a.active-trail {
+/* line 92, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(4) a.active, #main-menu li:nth-child(4) a.active-trail {
   background-position: -394px -84px;
 }
 
-/* line 93, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1007 a, #main-menu li.menu-12686 a {
+/* line 98, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(5) a {
   background: url("../images/nav-sprite.png") -536px 0px no-repeat;
 }
-
-/* line 97, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1007 a:hover, #main-menu li.menu-12686 a:hover {
+/* line 101, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(5) a:hover {
   background-position: -536px -42px;
 }
-
-/* line 101, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1007 a.active, #main-menu li.menu-1007 a.active-trail, #main-menu li.menu-12686 a.active, #main-menu li.menu-12686 a.active-trail {
+/* line 106, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(5) a.active, #main-menu li:nth-child(5) a.active-trail {
   background-position: -536px -84px;
 }
 
-/* line 105, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1130 a {
+/* line 112, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(6) a {
   background: url("../images/nav-sprite.png") -678px 0px no-repeat;
 }
-
-/* line 109, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1130 a:hover {
+/* line 115, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(6) a:hover {
   background-position: -678px -42px;
 }
-
-/* line 113, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1130 a.active, #main-menu li.menu-1130 a.active-trail {
+/* line 120, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(6) a.active, #main-menu li:nth-child(6) a.active-trail {
   background-position: -678px -84px;
 }
 
-/* line 117, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1131 a {
+/* line 126, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(7) a {
   background: url("../images/nav-sprite.png") -820px 0px no-repeat;
   width: 139px;
 }
-
-/* line 122, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1131 a:hover {
+/* line 130, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(7) a:hover {
   background-position: -820px -42px;
 }
-
-/* line 126, ../sass/partials/header/_main-nav.scss */
-#main-menu li.menu-1131 a.active, #main-menu li.menu-1131 a.active-trail {
+/* line 135, ../sass/partials/header/_main-nav.scss */
+#main-menu li:nth-child(7) a.active, #main-menu li:nth-child(7) a.active-trail {
   background-position: -820px -84px;
 }
 
