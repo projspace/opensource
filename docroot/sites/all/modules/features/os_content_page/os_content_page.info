@@ -14,6 +14,7 @@ features[features_api][] = api:2
 features[field_instance][] = comment-comment_node_page-comment_body
 features[field_instance][] = node-page-body
 features[field_instance][] = node-page-field_attachments
+features[field_instance][] = node-page-field_section
 features[node][] = page
 features[variable][] = comment_anonymous_page
 features[variable][] = comment_default_mode_page

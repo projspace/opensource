@@ -20,6 +20,7 @@ features[field_instance][] = node-podcast-body
 features[field_instance][] = node-podcast-field_alternative_license
 features[field_instance][] = node-podcast-field_default_license
 features[field_instance][] = node-podcast-field_lead_image
+features[field_instance][] = node-podcast-field_tags
 features[field_instance][] = node-podcast-og_group_ref
 features[node][] = podcast
 features[variable][] = comment_anonymous_podcast
