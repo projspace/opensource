@@ -68,6 +68,24 @@ function os_fields_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_add_this'
+  $field_bases['field_add_this'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_add_this',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'addthis',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'addthis',
+  );
+
   // Exported field_base: 'field_alternative_license'
   $field_bases['field_alternative_license'] = array(
     'active' => 1,
