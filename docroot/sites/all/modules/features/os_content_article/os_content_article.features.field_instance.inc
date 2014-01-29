@@ -60,6 +60,54 @@ function os_content_article_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-article-field_add_this'
+  $field_instances['node-article-field_add_this'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addthis_displays',
+        'settings' => array(
+          'buttons_size' => 'addthis_16x16_style',
+          'counter_orientation' => 'horizontal',
+          'extra_css' => '',
+          'share_services' => 'twitter,reddit,stumbleupon,facebook,google_plusone',
+        ),
+        'type' => 'addthis_basic_toolbox',
+        'weight' => 8,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_add_this',
+    'label' => 'Add This',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'addthis',
+      'settings' => array(),
+      'type' => 'addthis_button_widget',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-article-field_alternative_license'
   $field_instances['node-article-field_alternative_license'] = array(
     'bundle' => 'article',
@@ -429,6 +477,7 @@ function os_content_article_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add This');
   t('Alternative License');
   t('Attachments');
   t('Body');
