@@ -58,21 +58,27 @@ function os_beans_user_default_permissions() {
   // Exported permission: create any generic_block bean.
   $permissions['create any generic_block bean'] = array(
     'name' => 'create any generic_block bean',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'bean',
   );
 
   // Exported permission: delete any generic_block bean.
   $permissions['delete any generic_block bean'] = array(
     'name' => 'delete any generic_block bean',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'bean',
   );
 
   // Exported permission: edit any generic_block bean.
   $permissions['edit any generic_block bean'] = array(
     'name' => 'edit any generic_block bean',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'bean',
   );
 
@@ -88,7 +94,10 @@ function os_beans_user_default_permissions() {
   // Exported permission: view any generic_block bean.
   $permissions['view any generic_block bean'] = array(
     'name' => 'view any generic_block bean',
-    'roles' => array(),
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'bean',
   );
 

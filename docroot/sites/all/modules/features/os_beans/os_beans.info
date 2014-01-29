@@ -1,7 +1,7 @@
 name = OS Beans
 description = Bean block type for Opensource.com
 core = 7.x
-package = Features
+package = OpenSource.com Content
 php = 5.2.4
 version = 7.x-1.0
 project = os_beans
