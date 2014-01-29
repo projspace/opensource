@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * os_content_group_page.features.field_instance.inc
+ * os_content_page.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function os_content_group_page_field_default_field_instances() {
+function os_content_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_group_page-comment_body'
-  $field_instances['comment-comment_node_group_page-comment_body'] = array(
-    'bundle' => 'comment_node_group_page',
+  // Exported field_instance: 'comment-comment_node_page-comment_body'
+  $field_instances['comment-comment_node_page-comment_body'] = array(
+    'bundle' => 'comment_node_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -43,9 +43,9 @@ function os_content_group_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-group_page-body'
-  $field_instances['node-group_page-body'] = array(
-    'bundle' => 'group_page',
+  // Exported field_instance: 'node-page-body'
+  $field_instances['node-page-body'] = array(
+    'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -55,7 +55,7 @@ function os_content_group_page_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'featured' => array(
         'label' => 'above',
@@ -70,7 +70,7 @@ function os_content_group_page_field_default_field_instances() {
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -89,23 +89,22 @@ function os_content_group_page_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'node-group_page-og_group_ref'
-  $field_instances['node-group_page-og_group_ref'] = array(
-    'bundle' => 'group_page',
-    'default_value' => NULL,
+  // Exported field_instance: 'node-page-field_attachments'
+  $field_instances['node-page-field_attachments'] = array(
+    'bundle' => 'page',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
+        'module' => 'file',
         'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 0,
+        'type' => 'file_default',
+        'weight' => 1,
       ),
       'featured' => array(
         'label' => 'above',
@@ -121,49 +120,32 @@ function os_content_group_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => 1,
+    'field_name' => 'field_attachments',
+    'label' => 'Attachments',
+    'required' => 0,
     'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_buttons',
-          ),
-          'status' => TRUE,
-        ),
-      ),
+      'description_field' => 0,
+      'file_directory' => 'articles',
+      'file_extensions' => 'txt pdf odp ogg jpg jpeg odt epub',
+      'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 0,
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 3,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Attachments');
   t('Body');
   t('Comment');
-  t('Groups audience');
 
   return $field_instances;
 }

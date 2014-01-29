@@ -263,6 +263,59 @@ function os_content_article_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-article-field_rating'
+  $field_instances['node-article-field_rating'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => TRUE,
+          'style' => 'average',
+          'text' => 'average',
+          'widget' => array(
+            'fivestar_widget' => NULL,
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
+        'weight' => 6,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_rating',
+    'label' => 'Rating',
+    'required' => 0,
+    'settings' => array(
+      'allow_clear' => 0,
+      'stars' => 5,
+      'target' => 'none',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'fivestar',
+      'settings' => array(),
+      'type' => 'exposed',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-article-og_group_ref'
   $field_instances['node-article-og_group_ref'] = array(
     'bundle' => 'article',
@@ -336,6 +389,7 @@ function os_content_article_field_default_field_instances() {
   t('Default CC License');
   t('Groups audience');
   t('Lead Image');
+  t('Rating');
   t('This is the banner image at the head of the Article. To select an existing image click the "File Browser" link, then click "Browse".');
 
   return $field_instances;
