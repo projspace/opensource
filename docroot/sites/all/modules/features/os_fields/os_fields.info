@@ -27,6 +27,7 @@ features[field_base][] = field_channel
 features[field_base][] = field_default_license
 features[field_base][] = field_lead_image
 features[field_base][] = field_rating
+features[field_base][] = field_related_poll
 features[field_base][] = field_section
 features[field_base][] = field_tags
 features[field_base][] = field_url
