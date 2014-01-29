@@ -1,0 +1,8 @@
+name = OpenSource Taxonomy Fields
+description = Provides fields base definitions for all fields used by various OpenSource.com vocabularies.
+core = 7.x
+package = OpenSource.com Content
+dependencies[] = features
+dependencies[] = image
+features[features_api][] = api:2
+features[field_base][] = field_channel_header

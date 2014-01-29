@@ -89,12 +89,12 @@ function os_content_group_page_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-group_page-og_group_ref'
-  $field_instances['node-group_page-og_group_ref'] = array(
+  // Exported field_instance: 'node-group_page-field_channel'
+  $field_instances['node-group_page-field_channel'] = array(
     'bundle' => 'group_page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -102,10 +102,10 @@ function os_content_group_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 0,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
       ),
       'featured' => array(
         'label' => 'above',
@@ -121,49 +121,26 @@ function os_content_group_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
+    'field_name' => 'field_channel',
+    'label' => 'Channel',
     'required' => 1,
     'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_buttons',
-          ),
-          'status' => TRUE,
-        ),
-      ),
       'user_register_form' => FALSE,
     ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'og',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 0,
+      'type' => 'options_buttons',
+      'weight' => 1,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Channel');
   t('Comment');
-  t('Groups audience');
 
   return $field_instances;
 }

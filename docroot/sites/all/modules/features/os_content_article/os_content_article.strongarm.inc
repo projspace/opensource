@@ -114,7 +114,7 @@ function os_content_article_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
       ),
       'display' => array(),
@@ -219,7 +219,7 @@ function os_content_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_article_pattern';
-  $strongarm->value = '[node:og_group_ref]/[node:created:custom:y]/[node:created:custom:n]/[node:title]';
+  $strongarm->value = '[node:field-channel:url:path]/[node:created:custom:y]/[node:created:custom:n]/[node:title]';
   $export['pathauto_node_article_pattern'] = $strongarm;
 
   return $export;

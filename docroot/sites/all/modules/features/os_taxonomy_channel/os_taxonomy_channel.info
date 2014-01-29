@@ -1,0 +1,16 @@
+name = OpenSource Taxonomy - Channel
+description = Provides Channel vocabulary for OpenSource.com
+core = 7.x
+package = OpenSource.com Content
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = image
+dependencies[] = os_taxonomy_fields
+dependencies[] = strongarm
+dependencies[] = taxonomy
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[field_instance][] = taxonomy_term-channel-field_channel_header
+features[taxonomy][] = channel
+features[variable][] = pathauto_taxonomy_term_channel_pattern
+features_exclude[field][taxonomy_term-channel-field_channel_header] = taxonomy_term-channel-field_channel_header

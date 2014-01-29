@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenSource Taxonomy - Channel feature.
+ */
+
+include_once 'os_taxonomy_channel.features.inc';
