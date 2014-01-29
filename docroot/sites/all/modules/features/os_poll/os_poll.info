@@ -1,0 +1,15 @@
+name = OpenSource Poll
+description = Provides configuration for polls.
+core = 7.x
+package = OpenSource.com Config
+dependencies[] = ctools
+dependencies[] = poll
+dependencies[] = pollanon
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = pathauto_node_poll_pattern
+features[variable][] = pollanon_threshold_count
+features[variable][] = pollanon_threshold_time
+features[variable][] = pollanon_use_ajah
+features[variable][] = pollanon_use_cookie_method

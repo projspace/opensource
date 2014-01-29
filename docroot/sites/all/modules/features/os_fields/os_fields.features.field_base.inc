@@ -320,7 +320,7 @@ function os_fields_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'advpoll' => 'advpoll',
+          'poll' => 'poll',
         ),
       ),
       'target_type' => 'node',
