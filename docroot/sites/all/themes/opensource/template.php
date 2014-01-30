@@ -130,3 +130,18 @@ function opensource_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+function opensource_preprocess_comment(&$vars) {
+  // If no image is present then show the default image.
+  $filepath = empty($vars['elements']['#comment']->picture->uri) ? variable_get('user_picture_default', '') : $vars['elements']['#comment']->picture->uri;
+  $image_item = array(
+    'style_name' => 'comment_avatar', // style name of imagecache preset.
+    'path' => $filepath,
+    'alt' => $vars['elements']['#comment']->name, // optional
+    'title' => $vars['elements']['#comment']->name, // optional
+  );
+  $vars['picture'] = theme('image_style', $image_item);
+
+  $commenttime = '<div class="comment-datetime">'.format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL). '</div>';
+  $vars['submitted'] = $vars['author'] .t('on'). $commenttime;
+}
