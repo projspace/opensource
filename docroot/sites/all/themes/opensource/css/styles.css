@@ -1822,7 +1822,7 @@ a:hover {
 .region-navigation-top {
   clear: both;
   overflow: hidden;
-  margin-top: 1.2em;
+  margin-top: 1.7em;
 }
 /* line 7, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu, .region-navigation-top #block-system-user-menu {
@@ -1845,23 +1845,24 @@ a:hover {
   font-size: 12px;
   color: #1D2754;
   padding: 0 6px;
+  text-decoration: none;
 }
-/* line 25, ../sass/partials/header/_top-nav.scss */
+/* line 26, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu a:hover, .region-navigation-top #block-system-user-menu a:hover {
   color: #39f;
   text-decoration: none;
 }
-/* line 32, ../sass/partials/header/_top-nav.scss */
+/* line 33, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu {
   float: right;
 }
-/* line 37, ../sass/partials/header/_top-nav.scss */
+/* line 38, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu li:last-child {
   background: url("../images/rss.png") no-repeat;
   height: 24px;
   width: 24px;
 }
-/* line 42, ../sass/partials/header/_top-nav.scss */
+/* line 43, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu li:last-child a {
   color: transparent;
 }
