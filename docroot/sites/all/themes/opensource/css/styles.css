@@ -1705,11 +1705,9 @@ tr.selected td {
 
 /* line 3, ../sass/components/_article.scss */
 .burr-flipped-content-inner {
-  margin-right: 20px;
   border: 1px solid #cdcbca;
   box-shadow: 2px 2px 3px #cdcbca;
-  box-sizing: border-box;
-  width: 520px;
+  width: 540px;
   padding: 1em;
 }
 
@@ -1800,17 +1798,22 @@ tr.selected td {
   }
 }
 /* line 1, ../sass/partials/base/_base.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 4, ../sass/partials/base/_base.scss */
 body {
   line-height: 1.4;
   font-size: 0.75em;
   color: #333;
 }
 
-/* line 7, ../sass/partials/base/_base.scss */
+/* line 10, ../sass/partials/base/_base.scss */
 a {
   color: #0066cc;
 }
-/* line 10, ../sass/partials/base/_base.scss */
+/* line 13, ../sass/partials/base/_base.scss */
 a:hover {
   color: #3399ff;
 }
