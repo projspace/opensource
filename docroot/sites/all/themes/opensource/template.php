@@ -142,6 +142,6 @@ function opensource_preprocess_comment(&$vars) {
   );
   $vars['picture'] = theme('image_style', $image_item);
 
-  $commenttime = '<div class="comment-datetime">'.format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL). '</div>';
-  $vars['submitted'] = $vars['author'] .t('on'). $commenttime;
+  $commenttime = format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL);
+  $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
 }
