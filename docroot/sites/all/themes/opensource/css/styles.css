@@ -1704,21 +1704,25 @@ tr.selected td {
 }
 
 /* line 2, ../sass/components/_article.scss */
+.box-wrapper, .burr-flipped-content {
+  border: 1px solid #cdcbca;
+  background: #fff;
+  padding: 1em;
+  box-shadow: 2px 2px 3px #cdcbca;
+}
+
+/* line 8, ../sass/components/_article.scss */
 .burr-flipped-content {
   width: 520px;
-  background: #fff;
   margin-right: 2em;
 }
 
-/* line 7, ../sass/components/_article.scss */
+/* line 13, ../sass/components/_article.scss */
 .burr-flipped-content-inner {
-  border: 1px solid #cdcbca;
-  box-shadow: 2px 2px 3px #cdcbca;
   width: 520px;
-  padding: 1em;
 }
 
-/* line 13, ../sass/components/_article.scss */
+/* line 16, ../sass/components/_article.scss */
 .burr-flipped-sidebar {
   width: 385px;
 }

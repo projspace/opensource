@@ -1,14 +1,17 @@
 // Article page Main Column
+.box-wrapper {
+    border: 1px solid #cdcbca;
+    background: #fff;
+    padding: 1em;
+    box-shadow: 2px 2px 3px #cdcbca;
+}
 .burr-flipped-content {
     width: 520px;
-    background: #fff;
     margin-right: 2em;
+    @extend .box-wrapper;
 }
 .burr-flipped-content-inner {
-    border: 1px solid #cdcbca;
-    box-shadow: 2px 2px 3px #cdcbca;
     width: 520px;
-    padding: 1em;
 }
 .burr-flipped-sidebar {
     width: 385px;
