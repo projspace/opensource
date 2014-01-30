@@ -1703,6 +1703,16 @@ tr.selected td {
   background-image: url('../images/progress.gif?1390974093');
 }
 
+/* line 3, ../sass/components/_article.scss */
+.burr-flipped-content-inner {
+  margin-right: 20px;
+  border: 1px solid #cdcbca;
+  box-shadow: 2px 2px 3px #cdcbca;
+  box-sizing: border-box;
+  width: 520px;
+  padding: 1em;
+}
+
 /**
  * @file
  * Print styling
@@ -1798,10 +1808,9 @@ body {
 
 /* line 7, ../sass/partials/base/_base.scss */
 a {
-  text-decoration: none;
   color: #0066cc;
 }
-/* line 11, ../sass/partials/base/_base.scss */
+/* line 10, ../sass/partials/base/_base.scss */
 a:hover {
   color: #3399ff;
 }

@@ -18,6 +18,7 @@
 /* Component (SMACSS module) rules */
 @import "components/misc";
 // Optionally, add your own components here.
+@import "components/article";
 @import "print";
 
 @import "partials/base/base";
