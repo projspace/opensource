@@ -1134,7 +1134,7 @@ table {
 }
 
 /* line 275, ../sass/components/_misc.scss */
-.tabs-primary__tab, .tabs-primary__tab.is-active, .tabs-secondary__tab,
+.tabs-primary__tab, .tabs-secondary__tab,
 .tabs-secondary__tab.is-active {
   float: left;
   /* LTR */
@@ -1142,7 +1142,7 @@ table {
 }
 
 /* line 279, ../sass/components/_misc.scss */
-a.tabs-primary__tab-link, a.tabs-primary__tab-link.is-active, a.tabs-secondary__tab-link, a.tabs-secondary__tab-link.is-active {
+a.tabs-primary__tab-link, a.tabs-secondary__tab-link {
   border: 1px solid #e9e9e9;
   border-right: 0;
   border-bottom: 0;
@@ -1700,7 +1700,7 @@ tr.selected td {
 /* line 803, ../sass/components/_misc.scss */
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1390482288');
+  background-image: url('../images/progress.gif?1390974093');
 }
 
 /**
@@ -1803,45 +1803,46 @@ a {
 .region-navigation-top {
   clear: both;
   overflow: hidden;
-  margin-top: 10px;
+  margin-top: 1.2em;
 }
 /* line 7, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu, .region-navigation-top #block-system-user-menu {
   float: left;
+  margin-bottom: 0.55em;
 }
-/* line 10, ../sass/partials/header/_top-nav.scss */
+/* line 11, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu ul, .region-navigation-top #block-system-user-menu ul {
   padding-left: 0;
   margin: 0;
   list-style: none;
 }
-/* line 16, ../sass/partials/header/_top-nav.scss */
+/* line 17, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu li, .region-navigation-top #block-system-user-menu li {
   float: left;
   list-style: none;
 }
-/* line 19, ../sass/partials/header/_top-nav.scss */
+/* line 20, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu a, .region-navigation-top #block-system-user-menu a {
   font-size: 12px;
   color: #1D2754;
   padding: 0 6px;
 }
-/* line 24, ../sass/partials/header/_top-nav.scss */
+/* line 25, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu a:hover, .region-navigation-top #block-system-user-menu a:hover {
   color: #39f;
   text-decoration: none;
 }
-/* line 31, ../sass/partials/header/_top-nav.scss */
+/* line 32, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu {
   float: right;
 }
-/* line 36, ../sass/partials/header/_top-nav.scss */
+/* line 37, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu li:last-child {
   background: url("../images/rss.png") no-repeat;
   height: 24px;
   width: 24px;
 }
-/* line 41, ../sass/partials/header/_top-nav.scss */
+/* line 42, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu li:last-child a {
   color: transparent;
 }

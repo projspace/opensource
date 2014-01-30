@@ -289,7 +289,7 @@ ul {
  * Tabs.
  */
 /* line 58, ../sass/components/_misc-rtl.scss */
-.tabs-primary__tab, .tabs-primary__tab.is-active, .tabs-secondary__tab,
+.tabs-primary__tab, .tabs-secondary__tab,
 .tabs-secondary__tab.is-active {
   float: right;
 }
