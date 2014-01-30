@@ -1792,11 +1792,18 @@ tr.selected td {
 /* line 1, ../sass/partials/base/_base.scss */
 body {
   line-height: 1.4;
+  font-size: 0.75em;
+  color: #333;
 }
 
-/* line 5, ../sass/partials/base/_base.scss */
+/* line 7, ../sass/partials/base/_base.scss */
 a {
   text-decoration: none;
+  color: #0066cc;
+}
+/* line 11, ../sass/partials/base/_base.scss */
+a:hover {
+  color: #3399ff;
 }
 
 /* line 2, ../sass/partials/header/_top-nav.scss */
