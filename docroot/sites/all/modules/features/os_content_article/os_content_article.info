@@ -6,6 +6,7 @@ php = 5.2.4
 dependencies[] = addthis
 dependencies[] = addthis_displays
 dependencies[] = ctools
+dependencies[] = entity_token
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = file

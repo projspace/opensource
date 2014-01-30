@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenSource Homepage feature.
+ */
+
+include_once 'os_homepage.features.inc';
