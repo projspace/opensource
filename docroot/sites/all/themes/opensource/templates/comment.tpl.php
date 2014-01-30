@@ -85,4 +85,5 @@
   </div>
 
   <?php print render($content['links']) ?>
+  <?php print render($comment->vud_comment_widget); ?>
 </div>
