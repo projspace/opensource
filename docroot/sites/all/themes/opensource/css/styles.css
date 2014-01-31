@@ -1723,8 +1723,8 @@ tr.selected td {
 
 /* line 15, ../sass/components/_article.scss */
 .burr-flipped-content {
-  width: 520px;
-  margin-right: 2em;
+  width: 545px;
+  margin-right: 1em;
 }
 
 /* line 20, ../sass/components/_article.scss */
@@ -1735,6 +1735,7 @@ tr.selected td {
 /* line 23, ../sass/components/_article.scss */
 .burr-flipped-sidebar {
   width: 375px;
+  padding-left: 1.8em;
 }
 
 /**

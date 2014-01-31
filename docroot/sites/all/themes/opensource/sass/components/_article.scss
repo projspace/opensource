@@ -13,8 +13,8 @@
     }
 }
 .burr-flipped-content {
-    width: 520px;
-    margin-right: 2em;
+    width: 545px;
+    margin-right: 1em;
     @extend .box-wrapper;
 }
 .burr-flipped-content-inner {
@@ -22,4 +22,5 @@
 }
 .burr-flipped-sidebar {
     width: 375px;
+    padding-left: 1.8em;
 }
