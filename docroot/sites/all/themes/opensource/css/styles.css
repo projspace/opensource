@@ -1704,7 +1704,7 @@ tr.selected td {
 }
 
 /* line 2, ../sass/components/_article.scss */
-.box-wrapper, .burr-flipped-content {
+.box-wrapper, .node-type-article .burr-flipped-content {
   border: 1px solid #cdcbca;
   background: #fff;
   padding: 1em;
@@ -1713,27 +1713,60 @@ tr.selected td {
 }
 
 /* line 9, ../sass/components/_article.scss */
-.box-wrapper p, .burr-flipped-content p {
+.box-wrapper p, .node-type-article .burr-flipped-content p {
   margin: 0;
 }
 /* line 11, ../sass/components/_article.scss */
-.box-wrapper p br, .burr-flipped-content p br {
+.box-wrapper p br, .node-type-article .burr-flipped-content p br {
   display: none;
 }
 
-/* line 15, ../sass/components/_article.scss */
-.burr-flipped-content {
+/* line 17, ../sass/components/_article.scss */
+.node-type-article .view-author-info .views-field-field-user-picture {
+  float: left;
+  margin-left: 1em;
+}
+/* line 21, ../sass/components/_article.scss */
+.node-type-article .view-author-info .views-field-nothing {
+  text-align: right;
+}
+/* line 23, ../sass/components/_article.scss */
+.node-type-article .view-author-info .views-field-nothing a {
+  text-decoration: none;
+}
+/* line 29, ../sass/components/_article.scss */
+.node-type-article .pane-menu-menu-monthly-favorites h2.pane-title {
+  background: url(../images/osdc_nameplate_Monthlyfavorites.png) no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+  line-height: 17px;
+  margin: 0;
+}
+/* line 37, ../sass/components/_article.scss */
+.node-type-article .pane-menu-menu-monthly-favorites ul.menu {
+  padding-left: 20px;
+}
+/* line 39, ../sass/components/_article.scss */
+.node-type-article .pane-menu-menu-monthly-favorites ul.menu li {
+  padding-bottom: 8px;
+}
+/* line 41, ../sass/components/_article.scss */
+.node-type-article .pane-menu-menu-monthly-favorites ul.menu li a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 48, ../sass/components/_article.scss */
+.node-type-article .burr-flipped-content {
   width: 545px;
   margin-right: 1em;
 }
-
-/* line 20, ../sass/components/_article.scss */
-.burr-flipped-content-inner {
+/* line 53, ../sass/components/_article.scss */
+.node-type-article .burr-flipped-content-inner {
   width: 520px;
 }
-
-/* line 23, ../sass/components/_article.scss */
-.burr-flipped-sidebar {
+/* line 56, ../sass/components/_article.scss */
+.node-type-article .burr-flipped-sidebar {
   width: 375px;
   padding-left: 1.8em;
 }
