@@ -4,6 +4,13 @@
     background: #fff;
     padding: 1em;
     box-shadow: 2px 2px 3px #cdcbca;
+    margin-bottom: 1.5em;
+}
+.box-wrapper p {
+    margin: 0;
+    br {
+        display:  none;
+    }
 }
 .burr-flipped-content {
     width: 520px;
@@ -14,5 +21,5 @@
     width: 520px;
 }
 .burr-flipped-sidebar {
-    width: 385px;
+    width: 375px;
 }

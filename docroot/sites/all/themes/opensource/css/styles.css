@@ -1709,22 +1709,32 @@ tr.selected td {
   background: #fff;
   padding: 1em;
   box-shadow: 2px 2px 3px #cdcbca;
+  margin-bottom: 1.5em;
 }
 
-/* line 8, ../sass/components/_article.scss */
+/* line 9, ../sass/components/_article.scss */
+.box-wrapper p, .burr-flipped-content p {
+  margin: 0;
+}
+/* line 11, ../sass/components/_article.scss */
+.box-wrapper p br, .burr-flipped-content p br {
+  display: none;
+}
+
+/* line 15, ../sass/components/_article.scss */
 .burr-flipped-content {
   width: 520px;
   margin-right: 2em;
 }
 
-/* line 13, ../sass/components/_article.scss */
+/* line 20, ../sass/components/_article.scss */
 .burr-flipped-content-inner {
   width: 520px;
 }
 
-/* line 16, ../sass/components/_article.scss */
+/* line 23, ../sass/components/_article.scss */
 .burr-flipped-sidebar {
-  width: 385px;
+  width: 375px;
 }
 
 /**
