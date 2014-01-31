@@ -1797,6 +1797,17 @@ tr.selected td {
 .node-type-article .pane-node-field-rating {
   float: right;
 }
+/* line 83, ../sass/components/_article.scss */
+.node-type-article .pane-node-field-lead-image {
+  display: inline-block;
+}
+/* line 86, ../sass/components/_article.scss */
+.node-type-article .image-credits {
+  font-size: 10px;
+  color: #999;
+  margin: 1em 0;
+  font-style: italic;
+}
 
 /**
  * @file
