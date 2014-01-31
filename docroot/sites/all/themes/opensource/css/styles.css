@@ -1709,20 +1709,21 @@ tr.selected td {
   background: #fff;
   padding: 1em;
   box-shadow: 2px 2px 3px #cdcbca;
+  margin-bottom: 1.5em;
 }
 
-/* line 8, ../sass/components/_article.scss */
+/* line 9, ../sass/components/_article.scss */
 .burr-flipped-content {
   width: 520px;
   margin-right: 2em;
 }
 
-/* line 13, ../sass/components/_article.scss */
+/* line 14, ../sass/components/_article.scss */
 .burr-flipped-content-inner {
   width: 520px;
 }
 
-/* line 16, ../sass/components/_article.scss */
+/* line 17, ../sass/components/_article.scss */
 .burr-flipped-sidebar {
   width: 385px;
 }
