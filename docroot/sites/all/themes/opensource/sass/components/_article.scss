@@ -12,11 +12,15 @@
         display:  none;
     }
 }
+.article-title {
+    font-size: 24px;
+    font-weight: bold;
+}
 .node-type-article {
     .view-author-info {
         .views-field-field-user-picture {
             float: left;
-            margin-left: 1em;
+            margin-right: 1em;
         }
         .views-field-nothing {
             text-align: right;
