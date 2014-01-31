@@ -1776,6 +1776,17 @@ tr.selected td {
   width: 375px;
   padding-left: 1.8em;
 }
+/* line 65, ../sass/components/_article.scss */
+.node-type-article div.author-feed p:first-child {
+  float: left;
+}
+/* line 68, ../sass/components/_article.scss */
+.node-type-article div.author-feed span.author-feed a {
+  background: url(../images/rss.jpg) no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+}
 
 /**
  * @file
