@@ -12,15 +12,49 @@
         display:  none;
     }
 }
-.burr-flipped-content {
-    width: 545px;
-    margin-right: 1em;
-    @extend .box-wrapper;
-}
-.burr-flipped-content-inner {
-    width: 520px;
-}
-.burr-flipped-sidebar {
-    width: 375px;
-    padding-left: 1.8em;
+.node-type-article {
+    .view-author-info {
+        .views-field-field-user-picture {
+            float: left;
+            margin-left: 1em;
+        }
+        .views-field-nothing {
+            text-align: right;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    .pane-menu-menu-monthly-favorites {
+        h2.pane-title{
+            background: url(../images/osdc_nameplate_Monthlyfavorites.png) no-repeat;
+            text-indent: -9999px;
+            overflow: hidden;
+            display: block;
+            line-height: 17px;
+            margin: 0;
+        }
+        ul.menu {
+            padding-left: 20px;
+            li {
+                padding-bottom: 8px;
+                a {
+                    color: #000;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .burr-flipped-content {
+        width: 545px;
+        margin-right: 1em;
+        @extend .box-wrapper;
+    }
+    .burr-flipped-content-inner {
+        width: 520px;
+    }
+    .burr-flipped-sidebar {
+        width: 375px;
+        padding-left: 1.8em;
+    }
 }
