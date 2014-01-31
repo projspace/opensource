@@ -1779,13 +1779,23 @@ tr.selected td {
 /* line 65, ../sass/components/_article.scss */
 .node-type-article div.author-feed p:first-child {
   float: left;
+  margin-left: 3px;
 }
-/* line 68, ../sass/components/_article.scss */
+/* line 69, ../sass/components/_article.scss */
+.node-type-article div.author-feed span.author-feed {
+  float: left;
+  width: 15px;
+}
+/* line 72, ../sass/components/_article.scss */
 .node-type-article div.author-feed span.author-feed a {
   background: url(../images/rss.jpg) no-repeat;
   text-indent: -9999px;
   overflow: hidden;
   display: block;
+}
+/* line 80, ../sass/components/_article.scss */
+.node-type-article .pane-node-field-rating {
+  float: right;
 }
 
 /**

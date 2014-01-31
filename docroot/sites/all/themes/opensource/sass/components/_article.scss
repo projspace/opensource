@@ -64,12 +64,20 @@
     div.author-feed {
         p:first-child {
             float: left;
+            margin-left: 3px;
         }
-        span.author-feed a{
-            background: url(../images/rss.jpg) no-repeat;
-            text-indent: -9999px;
-            overflow: hidden;
-            display: block;
+        span.author-feed {
+            float:left;
+            width: 15px;
+            a {
+                background: url(../images/rss.jpg) no-repeat;
+                text-indent: -9999px;
+                overflow: hidden;
+                display: block;
+          }
         }
+    }
+    .pane-node-field-rating {
+        float: right;
     }
 }
