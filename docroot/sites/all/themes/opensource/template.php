@@ -133,7 +133,7 @@ function opensource_preprocess_block(&$variables, $hook) {
 
 function opensource_preprocess_comment(&$vars) {
   // If no image is present then show the default image.
-  $commentauthor = user_load($vars['elements']['#comment']->uid, reset);
+  $commentauthor = user_load($vars['elements']['#comment']->uid);
   $filepath = empty($commentauthor->field_user_picture[LANGUAGE_NONE][0]['uri']) ? variable_get('user_picture_default', '') : $commentauthor->field_user_picture[LANGUAGE_NONE][0]['uri'];
   $image_item = array(
     'style_name' => 'comment_avatar', // style name of imagecache preset.
