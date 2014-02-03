@@ -155,4 +155,41 @@
             margin-top: 1.3em;
         }
     }
+    .pane-node-comments {
+        .comment {
+            @extend .box-wrapper;
+            .content {     
+                margin: 1em 0;
+                border-bottom: 2px dotted #ccc;
+                padding-bottom: 1em;
+            }
+            .submitted {
+                margin-left: 1em;
+                display: inline-block;
+            }
+            .vud-widget {
+                float: right;
+            }
+            .links a {
+                text-transform:  capitalize;
+            }
+            .vud-widget-upanddown .up-active {
+                background: url(../images/icon-vote-up.png) no-repeat;
+                background-position: 0 0;
+                &:hover {
+                    background-position: 0 0;
+                }
+            }
+            .vud-widget-upanddown .down-inactive {
+                background: url(../images/icon-vote-down.png) no-repeat;
+                background-position: 0 0;
+                &:hover {
+                    background-position: 0 0;
+                }
+            }
+            .vud-widget-upanddown .up-score .up-current-score, .vud-widget-upanddown .down-score .down-current-score {
+                font-size: 12px;
+            }
+        }
+    }
 }
