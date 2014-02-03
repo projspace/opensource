@@ -1783,7 +1783,7 @@ tr.selected td {
 /* line 68, ../sass/components/_article.scss */
 .node-type-article div.author-feed p:first-child {
   float: left;
-  margin-left: 3px;
+  margin-right: 3px;
 }
 /* line 72, ../sass/components/_article.scss */
 .node-type-article div.author-feed span.author-feed {
@@ -1815,7 +1815,7 @@ tr.selected td {
 /* line 96, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title {
   background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
-  margin-bottom: 0;
+  margin-bottom: 8px;
 }
 /* line 102, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title {
@@ -1825,6 +1825,24 @@ tr.selected td {
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a {
   text-decoration: none;
   color: #000;
+}
+/* line 111, ../sass/components/_article.scss */
+.node-type-article #content .pane-node-field-tags {
+  margin: 1em 0;
+}
+/* line 113, ../sass/components/_article.scss */
+.node-type-article #content .pane-node-field-tags h2.pane-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: normal;
+  margin-right: 1em;
+  float: left;
+}
+/* line 121, ../sass/components/_article.scss */
+.node-type-article .field-items .field-item {
+  display: inline-block;
+  margin-top: 5px;
+  margin-right: 1.5em;
 }
 
 /**

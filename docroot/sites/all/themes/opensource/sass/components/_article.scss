@@ -67,7 +67,7 @@
     div.author-feed {
         p:first-child {
             float: left;
-            margin-left: 3px;
+            margin-right: 3px;
         }
         span.author-feed {
             float:left;
@@ -96,7 +96,7 @@
         h2.pane-title {
             @extend .image-title;
             background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
-            margin-bottom: 0;
+            margin-bottom: 8px;
         }
         .view-related-articles {
             .views-field-title {
@@ -107,5 +107,20 @@
                 }
             }
         }
+    }
+    #content .pane-node-field-tags {
+        margin: 1em 0;
+        h2.pane-title {
+            margin: 0;
+            font-size: 12px;
+            font-weight: normal;
+            margin-right: 1em;
+            float: left;
+        }
+    }
+    .field-items .field-item {
+            display: inline-block;
+            margin-top: 5px;
+            margin-right: 1.5em;
     }
 }
