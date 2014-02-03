@@ -1989,9 +1989,26 @@ a:hover {
   color: #3399ff;
 }
 
-/* line 17, ../sass/partials/base/_base.scss */
+/* Some basic styling */
+/* line 20, ../sass/partials/base/_base.scss */
 #content .burr-flipped-content img {
   border: 1px solid #C2C0C1;
+}
+
+/* line 23, ../sass/partials/base/_base.scss */
+.form-text {
+  font-size: 14px;
+  border: 1px solid #cdcbca;
+  height: 22px;
+  padding: 8px 8px 0;
+}
+
+/* line 29, ../sass/partials/base/_base.scss */
+.form-submit {
+  border: none;
+  background: #1D2754;
+  padding: 5px;
+  color: #fff;
 }
 
 /* line 1, ../sass/partials/base/_layout.scss */
