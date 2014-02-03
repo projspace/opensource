@@ -1704,6 +1704,14 @@ tr.selected td {
 }
 
 /* line 2, ../sass/components/_article.scss */
+.image-title, .node-type-article .pane-menu-menu-monthly-favorites h2.pane-title, .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title {
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+  line-height: 17px;
+}
+
+/* line 8, ../sass/components/_article.scss */
 .box-wrapper, .node-type-article .burr-flipped-content {
   border: 1px solid #cdcbca;
   background: #fff;
@@ -1712,101 +1720,111 @@ tr.selected td {
   margin-bottom: 1.5em;
 }
 
-/* line 9, ../sass/components/_article.scss */
+/* line 15, ../sass/components/_article.scss */
 .box-wrapper p, .node-type-article .burr-flipped-content p {
   margin: 0;
 }
-/* line 11, ../sass/components/_article.scss */
+/* line 17, ../sass/components/_article.scss */
 .box-wrapper p br, .node-type-article .burr-flipped-content p br {
   display: none;
 }
 
-/* line 15, ../sass/components/_article.scss */
+/* line 21, ../sass/components/_article.scss */
 .article-title {
   font-size: 24px;
   font-weight: bold;
 }
 
-/* line 21, ../sass/components/_article.scss */
+/* line 27, ../sass/components/_article.scss */
 .node-type-article .view-author-info .views-field-field-user-picture {
   float: left;
   margin-right: 1em;
 }
-/* line 25, ../sass/components/_article.scss */
+/* line 31, ../sass/components/_article.scss */
 .node-type-article .view-author-info .views-field-nothing {
   text-align: right;
 }
-/* line 27, ../sass/components/_article.scss */
+/* line 33, ../sass/components/_article.scss */
 .node-type-article .view-author-info .views-field-nothing a {
   text-decoration: none;
 }
-/* line 33, ../sass/components/_article.scss */
+/* line 39, ../sass/components/_article.scss */
 .node-type-article .pane-menu-menu-monthly-favorites h2.pane-title {
   background: url(../images/osdc_nameplate_Monthlyfavorites.png) no-repeat;
-  text-indent: -9999px;
-  overflow: hidden;
-  display: block;
-  line-height: 17px;
   margin: 0;
 }
-/* line 41, ../sass/components/_article.scss */
+/* line 44, ../sass/components/_article.scss */
 .node-type-article .pane-menu-menu-monthly-favorites ul.menu {
   padding-left: 20px;
 }
-/* line 43, ../sass/components/_article.scss */
+/* line 46, ../sass/components/_article.scss */
 .node-type-article .pane-menu-menu-monthly-favorites ul.menu li {
   padding-bottom: 8px;
 }
-/* line 45, ../sass/components/_article.scss */
+/* line 48, ../sass/components/_article.scss */
 .node-type-article .pane-menu-menu-monthly-favorites ul.menu li a {
   color: #000;
   text-decoration: none;
 }
-/* line 52, ../sass/components/_article.scss */
+/* line 55, ../sass/components/_article.scss */
 .node-type-article .burr-flipped-content {
   width: 545px;
   margin-right: 1em;
 }
-/* line 57, ../sass/components/_article.scss */
+/* line 60, ../sass/components/_article.scss */
 .node-type-article .burr-flipped-content-inner {
   width: 520px;
 }
-/* line 60, ../sass/components/_article.scss */
+/* line 63, ../sass/components/_article.scss */
 .node-type-article .burr-flipped-sidebar {
   width: 375px;
   padding-left: 1.8em;
 }
-/* line 65, ../sass/components/_article.scss */
+/* line 68, ../sass/components/_article.scss */
 .node-type-article div.author-feed p:first-child {
   float: left;
   margin-left: 3px;
 }
-/* line 69, ../sass/components/_article.scss */
+/* line 72, ../sass/components/_article.scss */
 .node-type-article div.author-feed span.author-feed {
   float: left;
   width: 15px;
 }
-/* line 72, ../sass/components/_article.scss */
+/* line 75, ../sass/components/_article.scss */
 .node-type-article div.author-feed span.author-feed a {
   background: url(../images/rss.jpg) no-repeat;
   text-indent: -9999px;
   overflow: hidden;
   display: block;
 }
-/* line 80, ../sass/components/_article.scss */
+/* line 83, ../sass/components/_article.scss */
 .node-type-article .pane-node-field-rating {
   float: right;
 }
-/* line 83, ../sass/components/_article.scss */
+/* line 86, ../sass/components/_article.scss */
 .node-type-article .pane-node-field-lead-image {
   display: inline-block;
 }
-/* line 86, ../sass/components/_article.scss */
+/* line 89, ../sass/components/_article.scss */
 .node-type-article .image-credits {
   font-size: 10px;
   color: #999;
   margin: 1em 0;
   font-style: italic;
+}
+/* line 96, ../sass/components/_article.scss */
+.node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title {
+  background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
+  margin-bottom: 0;
+}
+/* line 102, ../sass/components/_article.scss */
+.node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title {
+  margin-top: 5px;
+}
+/* line 104, ../sass/components/_article.scss */
+.node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a {
+  text-decoration: none;
+  color: #000;
 }
 
 /**
@@ -1914,6 +1932,11 @@ a {
 /* line 13, ../sass/partials/base/_base.scss */
 a:hover {
   color: #3399ff;
+}
+
+/* line 17, ../sass/partials/base/_base.scss */
+#content img {
+  border: 1px solid #C2C0C1;
 }
 
 /* line 1, ../sass/partials/base/_layout.scss */

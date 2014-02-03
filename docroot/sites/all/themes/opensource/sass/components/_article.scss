@@ -1,4 +1,10 @@
 // Article page Main Column
+.image-title {
+      text-indent: -9999px;
+      overflow: hidden;
+       display: block;
+       line-height: 17px;
+}
 .box-wrapper {
     border: 1px solid #cdcbca;
     background: #fff;
@@ -31,11 +37,8 @@
     }
     .pane-menu-menu-monthly-favorites {
         h2.pane-title{
+            @extend .image-title;
             background: url(../images/osdc_nameplate_Monthlyfavorites.png) no-repeat;
-            text-indent: -9999px;
-            overflow: hidden;
-            display: block;
-            line-height: 17px;
             margin: 0;
         }
         ul.menu {
@@ -88,5 +91,21 @@
         color: #999;
         margin: 1em 0;
         font-style: italic;
+    }
+    #content .pane-related-articles-panel-pane-1 {
+        h2.pane-title {
+            @extend .image-title;
+            background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
+            margin-bottom: 0;
+        }
+        .view-related-articles {
+            .views-field-title {
+                margin-top: 5px;
+                a {
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+        }
     }
 }
