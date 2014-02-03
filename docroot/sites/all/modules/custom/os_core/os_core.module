@@ -99,6 +99,11 @@ function os_core_install() {
   );
   $item['options']['attributes']['title'] = 'Sign Up';
   menu_link_save($item);
+
+  //Creating the terms of vocabulary programatically
+  //
+  os_core_generate_taxonomy_terms();
+
 }
 
 /**
@@ -132,49 +137,49 @@ function os_core_display_social_block() {
   $links = array();
   $links['twitter'] = array(
     'href' => 'http://twitter.com/opensourceway',
-    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/twitter.jpg')),
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/twitter.jpg')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
   $links['facebook'] = array(
     'href' => 'http://facebook.com/pages/opensourcecom/162962298056',
-    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/facebook.jpg')),
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/facebook.jpg')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
   $links['gplus'] = array(
     'href' => 'https://plus.google.com/108750398488318674353',
-    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/gplus.png')),
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/gplus.png')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
   $links['flickr'] = array(
     'href' => 'http://www.flickr.com/photos/opensourceway',
-    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/flickr_24x24.jpg')),
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/flickr_24x24.jpg')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
    $links['youtube'] = array(
     'href' => 'http://www.youtube.com/opensourceway',
-    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/youtube.jpg')),
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/youtube.jpg')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
    $links['pinterest'] = array(
     'href' => 'http://pinterest.com/opensourceway/',
-    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/pinterest.png')),
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/pinterest.png')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
     $links['linkedin'] = array(
     'href' => 'http://www.linkedin.com/groups/Open-Source-Professionals-Advocates-2769297?gid=2769297',
-    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/in.jpg')),
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/in.jpg')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
   $links['rss'] = array(
     'href' => 'http://opensource.com/feed',
-    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/osdc_rss_24x24.png')),
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/osdc_rss_24x24.png')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
@@ -245,4 +250,87 @@ function os_core_eloqua_form_validate($form, &$form_state) {
   if ($form_state['values']['c_EmailAddress'] == '') {
     form_set_error('name', t('You must enter a valid email address.'));
   }
+}
+
+function os_core_generate_taxonomy_terms() {
+  $vocabularies = taxonomy_get_vocabularies('article');
+  foreach ($vocabularies as $vocab) {
+    if($vocab->machine_name == 'channel'){
+      $channelvid = $vocab->vid;
+    }
+  }
+
+  //Business Taxonomy
+  $fid = os_core_file_upload('business');
+  $term = new stdClass();
+  $term->vid = $channelvid;
+  $term->name = 'Business';
+  $term->description = 'Business';
+  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="http://opensource.com/business/14/1/drupal-history?sc_cid=70160000000c9pFAAQ">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+
+  //Education Taxonomy term
+  $fid = os_core_file_upload('education');
+  $term = new stdClass();
+  $term->vid = $channelvid;
+  $term->name = 'Education';
+  $term->description = 'Education';
+  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/education/14/1/upgrade-to-open-source-in-schools?sc_cid=70160000000c9pPAAQ">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+
+  //Government Term generation
+  $fid = os_core_file_upload('government');
+  $term = new stdClass();
+  $term->vid = $channelvid;
+  $term->name = 'Government';
+  $term->description = 'Government';
+  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/government/13/12/government-year-in-review-2013?sc_cid=70160000000c9pZAAQ">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+
+  // Health Term generation
+  $fid = os_core_file_upload('health');
+  $term = new stdClass();
+  $term->vid = $channelvid;
+  $term->name = 'Health';
+  $term->description = 'Health';
+  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/health/13/12/health-science-year-in-review-2013?sc_cid=70160000000c9poAAA">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+
+  // Law term generation
+  $fid = os_core_file_upload('Law');
+  $term = new stdClass();
+  $term->vid = $channelvid;
+  $term->name = 'Law';
+  $term->description = 'Law';
+  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/law/13/12/year-in-review-law-2013?sc_cid=70160000000c9pyAAA">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+
+  // Life term generation
+  $fid = os_core_file_upload('life');
+  $term = new stdClass();
+  $term->vid = $channelvid;
+  $term->name = 'Life';
+  $term->description = 'Life';
+  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/life/13/12/top-open-source-projects-2013?sc_cid=70160000000c9ptAAA">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+}
+
+function os_core_file_upload($filename){
+  $file = drupal_get_path('module', 'os_core') .'/images/'.$filename.'.png';
+  if (file_exists($file)){
+    $dfile = (object) array(
+      'uri' => $file,
+      'filemime' => file_get_mimetype($file),
+      'status' => 1,
+    );
+    $drupalfile = file_copy($dfile, 'public://');
+    $fid = $drupalfile->fid;
+  }
+  return $fid;
 }
