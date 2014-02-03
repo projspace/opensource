@@ -258,6 +258,9 @@ function os_core_generate_taxonomy_terms() {
     if($vocab->machine_name == 'channel'){
       $channelvid = $vocab->vid;
     }
+    elseif($vocab->machine_name == 'article_type'){
+      $article_type_vid = $vocab->vid;
+    }
   }
 
   //Business Taxonomy
@@ -318,6 +321,13 @@ function os_core_generate_taxonomy_terms() {
   $term->description = 'Life';
   $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/life/13/12/top-open-source-projects-2013?sc_cid=70160000000c9ptAAA">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+
+  //Generating the terms of article_type vocabulary.
+  $term = new stdClass();
+  $term->vid = $article_type_vid;
+  $term->name = 'article';
+  $term->description = 'Article';
   taxonomy_term_save($term);
 }
 
