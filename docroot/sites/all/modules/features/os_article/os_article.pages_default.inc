@@ -127,7 +127,7 @@ function os_article_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Author ',
       'title' => '',
-      'body' => '<p>Posted <span class="created-date">%node:created by&nbsp;</span><a href="%user:url">%user:name</a></p><span class="author-feed"><a href="user/%user:uid/feed">Feed</a></span>',
+      'body' => '<p>Posted <span class="created-date">%node:created by&nbsp;</span><a href="%user:url">%user:name</a></p><span class="author-feed"><a href="/user/%user:uid/feed">Feed</a></span>',
       'format' => 'panopoly_html_text',
       'substitute' => 1,
     );
@@ -805,12 +805,49 @@ function os_article_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'box-wrapper signup-email',
+    );
     $pane->extras = array();
     $pane->position = 6;
     $pane->locks = array();
     $display->content['new-23'] = $pane;
     $display->panels['sidebar'][6] = 'new-23';
+    $pane = new stdClass();
+    $pane->pid = 'new-24';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'poll_block-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $display->content['new-24'] = $pane;
+    $display->panels['sidebar'][7] = 'new-24';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
