@@ -173,7 +173,7 @@
             .links a {
                 text-transform:  capitalize;
             }
-            .vud-widget-upanddown .up-active {
+            .vud-widget-upanddown .up-active,  .vud-widget-upanddown .up-inactive {
                 background: url(../images/icon-vote-up.png) no-repeat;
                 background-position: 0 0;
                 &:hover {

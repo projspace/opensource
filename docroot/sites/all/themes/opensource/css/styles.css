@@ -1901,12 +1901,12 @@ tr.selected td {
   text-transform: capitalize;
 }
 /* line 176, ../sass/components/_article.scss */
-.node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active {
+.node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active, .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-inactive {
   background: url(../images/icon-vote-up.png) no-repeat;
   background-position: 0 0;
 }
 /* line 179, ../sass/components/_article.scss */
-.node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active:hover {
+.node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active:hover, .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-inactive:hover {
   background-position: 0 0;
 }
 /* line 183, ../sass/components/_article.scss */
