@@ -1922,6 +1922,14 @@ tr.selected td {
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-score .up-current-score, .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-score .down-current-score {
   font-size: 12px;
 }
+/* line 195, ../sass/components/_article.scss */
+.node-type-article .addthis_toolbox.addthis_default_style {
+  margin-bottom: 1em;
+}
+/* line 197, ../sass/components/_article.scss */
+.node-type-article .addthis_toolbox.addthis_default_style a {
+  margin-right: 1em;
+}
 
 /**
  * @file
