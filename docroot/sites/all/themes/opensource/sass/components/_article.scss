@@ -128,26 +128,31 @@
          }
     }
     .signup-email {
+        width: 100%;
+        display: inline-block;
         .form-item-C-EmailAddress {
             float: left;
-            width: 65%;
+            width: 72%;
             margin-right: 1em;
         }
         .signup-email-title {
             @extend .image-title;
             background: url(../images/email-signup.png) no-repeat;
+            margin-top: 1.5em;
+            margin-left: 5em;
         }
         #edit-c-emailaddress {
-            height: 3em;
+            height: 2.5em;
             width: 100%;
             border: 1px solid #ccc;
         }
         .form-submit {           
             background: #1D2754;
             border: 0;
-            padding: 0.75em;
+            padding: 0.65em;
             font-size: 14px;
             color: #fff;
+            margin-top: 1.3em;
         }
     }
 }

@@ -1849,29 +1849,37 @@ tr.selected td {
   margin-top: 5px;
   margin-right: 1.5em;
 }
-/* line 131, ../sass/components/_article.scss */
+/* line 130, ../sass/components/_article.scss */
+.node-type-article .signup-email {
+  width: 100%;
+  display: inline-block;
+}
+/* line 133, ../sass/components/_article.scss */
 .node-type-article .signup-email .form-item-C-EmailAddress {
   float: left;
-  width: 65%;
+  width: 72%;
   margin-right: 1em;
 }
-/* line 136, ../sass/components/_article.scss */
+/* line 138, ../sass/components/_article.scss */
 .node-type-article .signup-email .signup-email-title {
   background: url(../images/email-signup.png) no-repeat;
+  margin-top: 1.5em;
+  margin-left: 5em;
 }
-/* line 140, ../sass/components/_article.scss */
+/* line 144, ../sass/components/_article.scss */
 .node-type-article .signup-email #edit-c-emailaddress {
-  height: 3em;
+  height: 2.5em;
   width: 100%;
   border: 1px solid #ccc;
 }
-/* line 145, ../sass/components/_article.scss */
+/* line 149, ../sass/components/_article.scss */
 .node-type-article .signup-email .form-submit {
   background: #1D2754;
   border: 0;
-  padding: 0.75em;
+  padding: 0.65em;
   font-size: 14px;
   color: #fff;
+  margin-top: 1.3em;
 }
 
 /**
@@ -1981,9 +1989,27 @@ a:hover {
   color: #3399ff;
 }
 
-/* line 17, ../sass/partials/base/_base.scss */
+/* Some basic styling */
+/* line 20, ../sass/partials/base/_base.scss */
 #content .burr-flipped-content img {
   border: 1px solid #C2C0C1;
+}
+
+/* line 23, ../sass/partials/base/_base.scss */
+.form-text {
+  font-size: 14px;
+  border: 1px solid #cdcbca;
+  height: 22px;
+  padding: 8px 8px 0;
+}
+
+/* line 29, ../sass/partials/base/_base.scss */
+.form-submit {
+  border: none;
+  background: #1D2754;
+  padding: 5px;
+  color: #fff;
+  margin-right: 5px;
 }
 
 /* line 1, ../sass/partials/base/_layout.scss */
