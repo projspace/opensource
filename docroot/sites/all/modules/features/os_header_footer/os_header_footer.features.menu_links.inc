@@ -388,7 +388,7 @@ function os_header_footer_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => 50,
   );
   // Exported menu link: user-menu_log-in:user/login
   $menu_links['user-menu_log-in:user/login'] = array(
@@ -404,8 +404,27 @@ function os_header_footer_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => 11,
     'parent_identifier' => 'user-menu_my-account:user',
+  );
+  // Exported menu link: user-menu_sign-up:user/register
+  $menu_links['user-menu_sign-up:user/register'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/register',
+    'router_path' => 'user/register',
+    'link_title' => 'Sign Up',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Sign Up',
+      ),
+      'identifier' => 'user-menu_sign-up:user/register',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 30,
   );
   // Translatables
   // Included for use with string extractors like potx.
@@ -426,6 +445,7 @@ function os_header_footer_menu_default_menu_links() {
   t('Participate');
   t('Privacy Policy');
   t('Resources');
+  t('Sign Up');
   t('Submit your story');
   t('Terms of Use');
   t('The open source way');

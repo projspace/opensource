@@ -40,7 +40,6 @@ function os_header_footer_default_fe_block_settings() {
 
   $export['bean-social-media'] = array(
     'cache' => 1,
-    'custom' => 0,
     'delta' => 'social-media',
     'module' => 'bean',
     'node_types' => array(),
@@ -57,11 +56,9 @@ function os_header_footer_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'opensource',
-        'weight' => 10,
+        'weight' => 11,
       ),
     ),
-    'title' => '',
-    'visibility' => 0,
   );
 
   $export['menu-menu-about-menu'] = array(
@@ -83,7 +80,7 @@ function os_header_footer_default_fe_block_settings() {
         'region' => 'navigation_top',
         'status' => 1,
         'theme' => 'opensource',
-        'weight' => 0,
+        'weight' => -10,
       ),
     ),
     'title' => '',
