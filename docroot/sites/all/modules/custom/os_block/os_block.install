@@ -53,6 +53,17 @@ function os_block_install() {
     'format' => 'panopoly_wysiwyg_text',
   );
   $bean->save();
+
+  $fid = os_block_file_upload('what_is_open_source');
+  $bean = bean_create(array('type' => 'generic_block'));
+  $bean->label = 'What is Open Source?';
+  $bean->title = '<none>';
+  $bean->delta = 'what-is-open-source';
+  $bean->field_body[LANGUAGE_NONE][0] = array(
+    'value' => '<p><a title="What is open source?" href="http://opensource.com/resources/what-open-source" target="_self">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"What is open source?","field_file_image_title_text[und][0][value]":"What is open source?","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"135","width":"325","class":"media-element file-default"}}]]</a></p>',
+    'format' => 'panopoly_wysiwyg_text',
+  );
+  $bean->save();
 }
 
 /**

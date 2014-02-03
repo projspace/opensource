@@ -1,0 +1,16 @@
+name = OpenSource Common Components
+description = Provides common components such as views, mini-panels, etc... for use all over the site.
+core = 7.x
+package = OpenSource.com Components
+php = 5.2.4
+dependencies[] = ctools
+dependencies[] = os_block
+dependencies[] = os_poll
+dependencies[] = panels_mini
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = panels_mini:panels_default:1
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[panels_mini][] = common_1
+features[views_view][] = poll_block
