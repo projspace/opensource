@@ -1,7 +1,6 @@
-name = OS Core
+name = OpenSource Core
 description = This module generates the bean entitis for the footer block.
 core = 7.x
-version = 7.x-1.0
+package = OpenSource.com Custom
 dependencies[] = bean
 dependencies[] = os_beans
-project path = sites/all/modules/features

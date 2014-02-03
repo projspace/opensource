@@ -1,5 +1,6 @@
-name = OS Block
+name = OpenSource Block
 description = This module generates the bean block entitis for the opensource.com.
 core = 7.x
+package = OpenSource.com Custom
 dependencies[] = bean
 dependencies[] = os_beans
