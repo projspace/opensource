@@ -1,0 +1,68 @@
+<?php
+/**
+ * @file
+ * Code for the OS core functionality.
+ */
+/**
+ * Implements hook_install().
+ * Purpose of module is to generate the bean block programatically.
+ *
+ **/
+function os_block_install() {
+	$what_is_opensource_fid = os_block_file_upload('resources_whatisopensource');
+	$conference_event_fid = os_block_file_upload('resources_event');
+	$books_fid = os_block_file_upload('resources_book');
+	$bean = bean_create(array('type' => 'generic_block'));
+	$bean->label = 'Opensource Resources';
+	$bean->title = '<none>';
+	$bean->delta = 'opensource-resources';
+	$bean->field_body['und'][0] = array(
+		'value' => '<p><span><a href="/node/4">Open source resources</a></span></p><p><a href="http://opensource.com/resources/what-open-source"><span>[[{"fid":"'.$what_is_opensource_fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"","field_file_image_title_text[und][0][value]":"What is Opensource","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"30","width":"310","class":"media-element file-default"}}]]</span></a></p><p><a href="http://opensource.com/resources/conferences-and-events-monthly" style="background-color: transparent; line-height: 1.538em;">[[{"fid":"'.$conference_event_fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"","field_file_image_title_text[und][0][value]":"Conferences and events","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"30","width":"310","class":"media-element file-default"}}]]</a></p><p><a href="http://opensource.com/resources/ebooks" style="background-color: transparent; line-height: 1.538em;"><span>[[{"fid":"'.$books_fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"30","width":"310","class":"media-element file-default"}}]]</span></a></p>',
+		'format' => 'panopoly_wysiwyg_text' );
+	$bean->save();
+
+
+	$fid = os_block_file_upload('weekly_spotlight');
+	$bean = bean_create(array('type' => 'generic_block'));
+	$bean->label = 'Weekly spotlight';
+	$bean->title = '<none>';
+	$bean->delta = 'weekly-spotlight';
+	$bean->field_body['und'][0] = array(
+		'value' => '<p>[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"","field_file_image_title_text[und][0][value]":"Weekly spotlight","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"135","width":"325","class":"media-element file-default"}}]]</p>',
+		'format' => 'panopoly_wysiwyg_text' );
+	$bean->save();
+
+	$fid = os_block_file_upload('new_to_opensource');
+	$bean = bean_create(array('type' => 'generic_block'));
+	$bean->label = 'New to Opensource';
+	$bean->title = '<none>';
+	$bean->delta = 'new-to-open-source';
+	$bean->field_body['und'][0] = array(
+		'value' => '<p>[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"New to OpenSource","field_file_image_title_text[und][0][value]":"New to OpenSource","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"135","width":"325","class":"media-element file-default"}}]]</p>',
+		'format' => 'panopoly_wysiwyg_text' );
+	$bean->save();
+
+	$fid = os_block_file_upload('submit_an_article');
+	$bean = bean_create(array('type' => 'generic_block'));
+	$bean->label = 'Submit An Article';
+	$bean->title = '<none>';
+	$bean->delta = 'submit-an-article';
+	$bean->field_body['und'][0] = array(
+		'value' => '<p><a href="http://opensource.com/how-submit-article">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Submit an article","field_file_image_title_text[und][0][value]":"Submit an article","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"135","width":"325","class":"media-element file-default"}}]]</a></p>',
+		'format' => 'panopoly_wysiwyg_text' );
+	$bean->save();
+}
+
+function os_block_file_upload($filename){
+	$file = drupal_get_path('module', 'os_block') .'/images/'.$filename.'.png';
+	if (file_exists($file)){
+		$dfile = (object) array(
+			'uri' => $file,
+			'filemime' => file_get_mimetype($file),
+			'status' => 1,
+		);
+		$drupalfile = file_copy($dfile, 'public://');
+		$fid = $drupalfile->fid;
+	}
+	return $fid;
+}

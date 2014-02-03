@@ -1,0 +1,7 @@
+name = OS Block
+description = This module generates the bean block entitis for the opensource.com.
+core = 7.x
+version = 7.x-1.0
+dependencies[] = bean
+dependencies[] = os_beans
+project path = sites/all/modules/features
