@@ -1,4 +1,10 @@
 // Article page Main Column
+.image-title {
+      text-indent: -9999px;
+      overflow: hidden;
+       display: block;
+       line-height: 17px;
+}
 .box-wrapper {
     border: 1px solid #cdcbca;
     background: #fff;
@@ -31,11 +37,8 @@
     }
     .pane-menu-menu-monthly-favorites {
         h2.pane-title{
+            @extend .image-title;
             background: url(../images/osdc_nameplate_Monthlyfavorites.png) no-repeat;
-            text-indent: -9999px;
-            overflow: hidden;
-            display: block;
-            line-height: 17px;
             margin: 0;
         }
         ul.menu {
@@ -64,7 +67,7 @@
     div.author-feed {
         p:first-child {
             float: left;
-            margin-left: 3px;
+            margin-right: 3px;
         }
         span.author-feed {
             float:left;
@@ -88,5 +91,36 @@
         color: #999;
         margin: 1em 0;
         font-style: italic;
+    }
+    #content .pane-related-articles-panel-pane-1 {
+        h2.pane-title {
+            @extend .image-title;
+            background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
+            margin-bottom: 8px;
+        }
+        .view-related-articles {
+            .views-field-title {
+                margin-top: 5px;
+                a {
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+        }
+    }
+    #content .pane-node-field-tags {
+        margin: 1em 0;
+        h2.pane-title {
+            margin: 0;
+            font-size: 12px;
+            font-weight: normal;
+            margin-right: 1em;
+            float: left;
+        }
+    }
+    .field-items .field-item {
+            display: inline-block;
+            margin-top: 5px;
+            margin-right: 1.5em;
     }
 }
