@@ -16,9 +16,25 @@ function os_menus_menu_default_menu_custom() {
     'title' => 'Monthly favorites',
     'description' => 'The top 5 articles from each month',
   );
+  // Exported menu: menu-opensource-resources.
+  $menus['menu-opensource-resources'] = array(
+    'menu_name' => 'menu-opensource-resources',
+    'title' => 'OpenSource Resources',
+    'description' => 'OpenSource menu for /resource navigation.',
+  );
+  // Exported menu: menu-opensource-resources-homepa.
+  $menus['menu-opensource-resources-homepa'] = array(
+    'menu_name' => 'menu-opensource-resources-homepa',
+    'title' => 'OpenSource Resources Homepage',
+    'description' => 'OpenSource resources for listing on homepage.',
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('Monthly favorites');
+  t('OpenSource Resources');
+  t('OpenSource Resources Homepage');
+  t('OpenSource menu for /resource navigation.');
+  t('OpenSource resources for listing on homepage.');
   t('The top 5 articles from each month');
 
 
