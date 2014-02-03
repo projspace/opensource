@@ -276,6 +276,25 @@ function os_header_footer_content_menu_links_defaults() {
     'expanded' => 0,
     'weight' => -44,
   );
+  // Exported menu link: menu-footer:contact
+  $menu_links['menu-footer:contact'] = array(
+    'menu_name' => 'menu-footer',
+    'link_path' => 'contact',
+    'router_path' => 'contact',
+    'link_title' => 'Contact',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Contact Us',
+      ),
+      'identifier' => 'menu-footer_contact:contact',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+  );
   // Exported menu link: menu-footer_colophon:<front>
   $menu_links['menu-footer_colophon:<front>'] = array(
     'menu_name' => 'menu-footer',
@@ -426,7 +445,9 @@ function os_header_footer_content_menu_links_defaults() {
     'link_path' => 'user/login',
     'router_path' => 'user/login',
     'link_title' => 'Log in',
-    'options' => array(),
+    'options' => array(
+      'identifier' => 'user-menu_log-in:user/login',
+    ),
     'module' => 'system',
     'hidden' => -1,
     'external' => 0,
@@ -459,6 +480,7 @@ function os_header_footer_content_menu_links_defaults() {
   t('Business');
   t('Colophon');
   t('Community');
+  t('Contact');
   t('Education');
   t('Feed');
   t('Government');
