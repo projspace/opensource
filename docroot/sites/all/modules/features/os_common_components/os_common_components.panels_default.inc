@@ -59,7 +59,10 @@ function os_common_components_default_panels_mini() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'box-wrapper',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -88,7 +91,10 @@ function os_common_components_default_panels_mini() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'box-wrapper',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -122,7 +128,10 @@ function os_common_components_default_panels_mini() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'box-wrapper',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
@@ -151,7 +160,10 @@ function os_common_components_default_panels_mini() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'box-wrapper',
+    );
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
@@ -172,7 +184,10 @@ function os_common_components_default_panels_mini() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'box-wrapper',
+    );
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
@@ -193,7 +208,10 @@ function os_common_components_default_panels_mini() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'box-wrapper signup-email',
+    );
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();

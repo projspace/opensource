@@ -82,7 +82,10 @@ function os_homepage_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -96,14 +99,17 @@ function os_homepage_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Open source resources',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'box-wrapper',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -124,7 +130,10 @@ function os_homepage_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'box-wrapper',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -158,7 +167,10 @@ function os_homepage_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'box-wrapper',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
@@ -179,7 +191,10 @@ function os_homepage_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
