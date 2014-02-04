@@ -46,6 +46,11 @@
                 text-decoration: underline;
             }
         }
+        .views-field-created {         
+        display: inline-block;
+        width: 100%;
+        margin-top: 1em;
+        }
 }
 
 .view-poll-homepage {
@@ -119,6 +124,7 @@
             text-indent: -9999px;
             overflow: hidden;
             display: block;
+            width: 15px;
         }
     }
 }

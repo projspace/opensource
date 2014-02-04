@@ -1924,47 +1924,53 @@ tr.selected td {
   color: #3399ff;
   text-decoration: underline;
 }
+/* line 49, ../sass/components/_homepage.scss */
+#quicktabs-container-homepage_tabs .view-homepage .views-field-created {
+  display: inline-block;
+  width: 100%;
+  margin-top: 1em;
+}
 
-/* line 52, ../sass/components/_homepage.scss */
+/* line 57, ../sass/components/_homepage.scss */
 .view-poll-homepage h2.node-title {
   font-size: 12px;
   font-weight: normal;
 }
-/* line 55, ../sass/components/_homepage.scss */
+/* line 60, ../sass/components/_homepage.scss */
 .view-poll-homepage h2.node-title a {
   text-decoration: none;
   color: #000;
 }
-/* line 60, ../sass/components/_homepage.scss */
+/* line 65, ../sass/components/_homepage.scss */
 .view-poll-homepage .poll .vote-form {
   text-align: right;
 }
-/* line 63, ../sass/components/_homepage.scss */
+/* line 68, ../sass/components/_homepage.scss */
 .view-poll-homepage .poll .vote-form .choices {
   margin: 1px;
 }
-/* line 66, ../sass/components/_homepage.scss */
+/* line 71, ../sass/components/_homepage.scss */
 .view-poll-homepage .form-item.form-type-radio.form-item-choice {
   margin: 9px 0;
 }
 
-/* line 72, ../sass/components/_homepage.scss */
+/* line 77, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa h2 {
   font-size: 22px;
   color: #DD3823;
   margin: 0;
   font-weight: normal;
 }
-/* line 78, ../sass/components/_homepage.scss */
+/* line 83, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul {
   padding-left: 8px;
 }
-/* line 80, ../sass/components/_homepage.scss */
+/* line 85, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul li {
   list-style-image: none !important;
   list-style-type: none !important;
 }
-/* line 84, ../sass/components/_homepage.scss */
+/* line 89, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul a {
   margin-bottom: 0.75em;
   width: 100%;
@@ -1972,7 +1978,7 @@ tr.selected td {
   padding: 1em;
 }
 
-/* line 94, ../sass/components/_homepage.scss */
+/* line 99, ../sass/components/_homepage.scss */
 .teaser-info .teaser-comment {
   background: transparent url(../images/comment.jpg) no-repeat scroll left top;
   padding-left: 20px;
@@ -1980,33 +1986,34 @@ tr.selected td {
   margin-right: 10px;
   padding-right: 10px;
 }
-/* line 101, ../sass/components/_homepage.scss */
+/* line 106, ../sass/components/_homepage.scss */
 .teaser-info .teaser-date {
   color: #767677;
 }
-/* line 104, ../sass/components/_homepage.scss */
+/* line 109, ../sass/components/_homepage.scss */
 .teaser-info .teaser-author {
   display: inline-block;
   position: relative;
   top: 3px;
   margin-left: 1em;
 }
-/* line 109, ../sass/components/_homepage.scss */
+/* line 114, ../sass/components/_homepage.scss */
 .teaser-info .teaser-author a {
   float: left;
   margin-right: 5px;
 }
-/* line 114, ../sass/components/_homepage.scss */
+/* line 119, ../sass/components/_homepage.scss */
 .teaser-info .author-feed {
   float: left;
   width: 15px;
 }
-/* line 117, ../sass/components/_homepage.scss */
+/* line 122, ../sass/components/_homepage.scss */
 .teaser-info .author-feed a {
   background: url(../images/rss.jpg) no-repeat;
   text-indent: -9999px;
   overflow: hidden;
   display: block;
+  width: 15px;
 }
 
 /**
