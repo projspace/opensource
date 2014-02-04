@@ -47,3 +47,23 @@
             }
         }
 }
+
+.view-poll-homepage {
+    h2.node-title {
+        font-size: 12px;
+        font-weight: normal;
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+    .poll .vote-form {
+        text-align: right;
+    }
+    .poll .vote-form .choices {
+        margin: 1px;
+    }
+    .form-item.form-type-radio.form-item-choice {
+        margin: 9px 0;
+    }
+}

@@ -1989,6 +1989,29 @@ tr.selected td {
   text-decoration: underline;
 }
 
+/* line 52, ../sass/components/_homepage.scss */
+.view-poll-homepage h2.node-title {
+  font-size: 12px;
+  font-weight: normal;
+}
+/* line 55, ../sass/components/_homepage.scss */
+.view-poll-homepage h2.node-title a {
+  text-decoration: none;
+  color: #000;
+}
+/* line 60, ../sass/components/_homepage.scss */
+.view-poll-homepage .poll .vote-form {
+  text-align: right;
+}
+/* line 63, ../sass/components/_homepage.scss */
+.view-poll-homepage .poll .vote-form .choices {
+  margin: 1px;
+}
+/* line 66, ../sass/components/_homepage.scss */
+.view-poll-homepage .form-item.form-type-radio.form-item-choice {
+  margin: 9px 0;
+}
+
 /**
  * @file
  * Print styling
