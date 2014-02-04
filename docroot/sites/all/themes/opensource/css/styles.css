@@ -1704,7 +1704,7 @@ tr.selected td {
 }
 
 /* line 2, ../sass/components/_article.scss */
-.image-title, .node-type-article .pane-menu-menu-monthly-favorites h2.pane-title, .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title, .node-type-article .signup-email .signup-email-title {
+.image-title, .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title, .burr-flipped-sidebar .pane-menu-monthly-favorites h2.pane-title, .burr-flipped-sidebar .signup-email .signup-email-title {
   text-indent: -9999px;
   overflow: hidden;
   display: block;
@@ -1749,79 +1749,61 @@ tr.selected td {
   text-decoration: none;
 }
 /* line 39, ../sass/components/_article.scss */
-.node-type-article .pane-menu-menu-monthly-favorites h2.pane-title {
-  background: url(../images/osdc_nameplate_Monthlyfavorites.png) no-repeat;
-  margin: 0;
-}
-/* line 44, ../sass/components/_article.scss */
-.node-type-article .pane-menu-menu-monthly-favorites ul.menu {
-  padding-left: 20px;
-}
-/* line 46, ../sass/components/_article.scss */
-.node-type-article .pane-menu-menu-monthly-favorites ul.menu li {
-  padding-bottom: 8px;
-}
-/* line 48, ../sass/components/_article.scss */
-.node-type-article .pane-menu-menu-monthly-favorites ul.menu li a {
-  color: #000;
-  text-decoration: none;
-}
-/* line 56, ../sass/components/_article.scss */
 .node-type-article div.author-feed p:first-child {
   float: left;
   margin-right: 3px;
 }
-/* line 60, ../sass/components/_article.scss */
+/* line 43, ../sass/components/_article.scss */
 .node-type-article div.author-feed span.author-feed {
   float: left;
   width: 15px;
 }
-/* line 63, ../sass/components/_article.scss */
+/* line 46, ../sass/components/_article.scss */
 .node-type-article div.author-feed span.author-feed a {
   background: url(../images/rss.jpg) no-repeat;
   text-indent: -9999px;
   overflow: hidden;
   display: block;
 }
-/* line 71, ../sass/components/_article.scss */
+/* line 54, ../sass/components/_article.scss */
 .node-type-article .pane-node-field-rating {
   float: right;
 }
-/* line 74, ../sass/components/_article.scss */
+/* line 57, ../sass/components/_article.scss */
 .node-type-article .pane-node-field-lead-image {
   display: inline-block;
 }
-/* line 77, ../sass/components/_article.scss */
+/* line 60, ../sass/components/_article.scss */
 .node-type-article .image-credits {
   font-size: 10px;
   color: #999;
   margin: 1em 0;
   font-style: italic;
 }
-/* line 84, ../sass/components/_article.scss */
+/* line 67, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title {
   background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
   margin-bottom: 8px;
 }
-/* line 90, ../sass/components/_article.scss */
+/* line 73, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title {
   margin-top: 5px;
 }
-/* line 92, ../sass/components/_article.scss */
+/* line 75, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a {
   text-decoration: none;
   color: #000;
 }
-/* line 95, ../sass/components/_article.scss */
+/* line 78, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a:hover {
   text-decoration: underline;
   color: #3399ff;
 }
-/* line 103, ../sass/components/_article.scss */
+/* line 86, ../sass/components/_article.scss */
 .node-type-article #content .pane-node-field-tags {
   margin: 1em 0;
 }
-/* line 105, ../sass/components/_article.scss */
+/* line 88, ../sass/components/_article.scss */
 .node-type-article #content .pane-node-field-tags h2.pane-title {
   margin: 0;
   font-size: 12px;
@@ -1829,120 +1811,88 @@ tr.selected td {
   margin-right: 1em;
   float: left;
 }
-/* line 112, ../sass/components/_article.scss */
+/* line 95, ../sass/components/_article.scss */
 .node-type-article #content .pane-node-field-tags .field-items .field-item {
   display: inline-block;
   margin-top: 5px;
   margin-right: 1.5em;
 }
-/* line 118, ../sass/components/_article.scss */
-.node-type-article .signup-email {
-  width: 100%;
-  display: inline-block;
-}
-/* line 121, ../sass/components/_article.scss */
-.node-type-article .signup-email .form-item-C-EmailAddress {
-  float: left;
-  width: 72%;
-  margin-right: 1em;
-}
-/* line 126, ../sass/components/_article.scss */
-.node-type-article .signup-email .signup-email-title {
-  background: url(../images/email-signup.png) no-repeat;
-  margin-top: 1.5em;
-  margin-left: 5em;
-}
-/* line 132, ../sass/components/_article.scss */
-.node-type-article .signup-email #edit-c-emailaddress {
-  height: 2.5em;
-  width: 100%;
-  border: 1px solid #ccc;
-}
-/* line 137, ../sass/components/_article.scss */
-.node-type-article .signup-email .form-submit {
-  background: #1D2754;
-  border: 0;
-  padding: 0.65em;
-  font-size: 14px;
-  color: #fff;
-  margin-top: 1.3em;
-}
-/* line 149, ../sass/components/_article.scss */
+/* line 104, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .content {
   margin: 1em 0;
   border-bottom: 2px dotted #ccc;
   padding-bottom: 1em;
 }
-/* line 154, ../sass/components/_article.scss */
+/* line 109, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .submitted {
   margin-left: 1em;
   display: inline-block;
 }
-/* line 158, ../sass/components/_article.scss */
+/* line 113, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget {
   float: right;
 }
-/* line 161, ../sass/components/_article.scss */
+/* line 116, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .links a {
   text-transform: capitalize;
 }
-/* line 164, ../sass/components/_article.scss */
+/* line 119, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active, .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-inactive {
   background: url(../images/icon-vote-up.png) no-repeat;
   background-position: 0 0;
 }
-/* line 167, ../sass/components/_article.scss */
+/* line 122, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active:hover, .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-inactive:hover {
   background-position: 0 0;
 }
-/* line 171, ../sass/components/_article.scss */
+/* line 126, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-inactive {
   background: url(../images/icon-vote-down.png) no-repeat;
   background-position: 0 0;
 }
-/* line 174, ../sass/components/_article.scss */
+/* line 129, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-inactive:hover {
   background-position: 0 0;
 }
-/* line 178, ../sass/components/_article.scss */
+/* line 133, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-score .up-current-score, .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-score .down-current-score {
   font-size: 12px;
 }
-/* line 183, ../sass/components/_article.scss */
+/* line 138, ../sass/components/_article.scss */
 .node-type-article .addthis_toolbox.addthis_default_style {
   margin-bottom: 1em;
 }
-/* line 185, ../sass/components/_article.scss */
+/* line 140, ../sass/components/_article.scss */
 .node-type-article .addthis_toolbox.addthis_default_style a {
   margin-right: 1em;
 }
 
 /* line 2, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li.first {
+#quicktabs-homepage_tabs .item-list li.first {
   background: url(../images/osdc_featured_active.png) no-repeat;
 }
 /* line 4, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li.first.active {
+#quicktabs-homepage_tabs .item-list li.first.active {
   background: url(../images/osdc_featured_inactive.png) no-repeat;
 }
 /* line 8, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li.last {
+#quicktabs-homepage_tabs .item-list li.last {
   background: url(../images/osdc_mostpopular_active.png) no-repeat !important;
 }
 /* line 10, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li.last.active {
+#quicktabs-homepage_tabs .item-list li.last.active {
   background: url(../images/osdc_mostpopular_inactive.png) no-repeat !important;
 }
 /* line 14, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li:nth-child(2) {
+#quicktabs-homepage_tabs .item-list li:nth-child(2) {
   background: url(../images/osdc_mostcomments_active.png) no-repeat;
 }
 /* line 16, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li:nth-child(2).active {
+#quicktabs-homepage_tabs .item-list li:nth-child(2).active {
   background: url(../images/osdc_mostcomments_inactive.png) no-repeat;
 }
 /* line 20, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li a {
+#quicktabs-homepage_tabs .item-list li a {
   color: transparent;
   padding: 1em;
 }
@@ -2173,6 +2123,56 @@ a:hover {
 .burr-flipped-sidebar {
   width: 375px;
   padding-left: 1.8em;
+}
+/* line 18, ../sass/partials/base/_layout.scss */
+.burr-flipped-sidebar .pane-menu-monthly-favorites h2.pane-title {
+  background: url(../images/osdc_nameplate_Monthlyfavorites.png) no-repeat;
+  margin: 0;
+}
+/* line 23, ../sass/partials/base/_layout.scss */
+.burr-flipped-sidebar .pane-menu-monthly-favorites ul.menu {
+  padding-left: 20px;
+}
+/* line 25, ../sass/partials/base/_layout.scss */
+.burr-flipped-sidebar .pane-menu-monthly-favorites ul.menu li {
+  padding-bottom: 8px;
+}
+/* line 27, ../sass/partials/base/_layout.scss */
+.burr-flipped-sidebar .pane-menu-monthly-favorites ul.menu li a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 34, ../sass/partials/base/_layout.scss */
+.burr-flipped-sidebar .signup-email {
+  width: 100%;
+  display: inline-block;
+}
+/* line 37, ../sass/partials/base/_layout.scss */
+.burr-flipped-sidebar .signup-email .form-item-C-EmailAddress {
+  float: left;
+  width: 72%;
+  margin-right: 1em;
+}
+/* line 42, ../sass/partials/base/_layout.scss */
+.burr-flipped-sidebar .signup-email .signup-email-title {
+  background: url(../images/email-signup.png) no-repeat;
+  margin-top: 1.5em;
+  margin-left: 5em;
+}
+/* line 48, ../sass/partials/base/_layout.scss */
+.burr-flipped-sidebar .signup-email #edit-c-emailaddress {
+  height: 2.5em;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+/* line 53, ../sass/partials/base/_layout.scss */
+.burr-flipped-sidebar .signup-email .form-submit {
+  background: #1D2754;
+  border: 0;
+  padding: 0.65em;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 1.3em;
 }
 
 /* line 2, ../sass/partials/header/_top-nav.scss */

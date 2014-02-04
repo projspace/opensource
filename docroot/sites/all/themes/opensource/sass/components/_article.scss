@@ -35,23 +35,6 @@
             }
         }
     }
-    .pane-menu-menu-monthly-favorites {
-        h2.pane-title{
-            @extend .image-title;
-            background: url(../images/osdc_nameplate_Monthlyfavorites.png) no-repeat;
-            margin: 0;
-        }
-        ul.menu {
-            padding-left: 20px;
-            li {
-                padding-bottom: 8px;
-                a {
-                    color: #000;
-                    text-decoration: none;
-                }
-            }
-        }
-    }
     div.author-feed {
         p:first-child {
             float: left;
@@ -114,34 +97,6 @@
             margin-top: 5px;
             margin-right: 1.5em;
          }
-    }
-    .signup-email {
-        width: 100%;
-        display: inline-block;
-        .form-item-C-EmailAddress {
-            float: left;
-            width: 72%;
-            margin-right: 1em;
-        }
-        .signup-email-title {
-            @extend .image-title;
-            background: url(../images/email-signup.png) no-repeat;
-            margin-top: 1.5em;
-            margin-left: 5em;
-        }
-        #edit-c-emailaddress {
-            height: 2.5em;
-            width: 100%;
-            border: 1px solid #ccc;
-        }
-        .form-submit {           
-            background: #1D2754;
-            border: 0;
-            padding: 0.65em;
-            font-size: 14px;
-            color: #fff;
-            margin-top: 1.3em;
-        }
     }
     .pane-node-comments {
         .comment {
