@@ -69,9 +69,11 @@
 }
 
 .pane-menu-menu-opensource-resources-homepa  {
-    font-size: 22px;
-    color: #DD3823;
-    margin: 0;
+    h2 {
+         font-size: 22px;
+        color: #DD3823;
+        margin: 0;
+    }
     ul {
         list-style-image: none !important;
         a {
