@@ -1941,11 +1941,11 @@ tr.selected td {
 }
 /* line 8, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs li.last {
-  background: url(../images/osdc_mostpopular_active.png) no-repeat;
+  background: url(../images/osdc_mostpopular_active.png) no-repeat !important;
 }
 /* line 10, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs li.last.active {
-  background: url(../images/osdc_mostpopular_inactive.png) no-repeat;
+  background: url(../images/osdc_mostpopular_inactive.png) no-repeat !important;
 }
 /* line 14, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs li:nth-child(2) {
@@ -1959,6 +1959,34 @@ tr.selected td {
 #quicktabs-homepage_tabs li a {
   color: transparent;
   padding: 1em;
+}
+
+/* line 27, ../sass/components/_homepage.scss */
+#quicktabs-container-homepage_tabs .view-homepage .views-row {
+  border-bottom: 2px dotted #ccc;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+/* line 32, ../sass/components/_homepage.scss */
+#quicktabs-container-homepage_tabs .view-homepage .views-field-field-lead-image {
+  float: left;
+  margin-right: 1em;
+}
+/* line 36, ../sass/components/_homepage.scss */
+#quicktabs-container-homepage_tabs .view-homepage .views-field-nothing, #quicktabs-container-homepage_tabs .view-homepage .views-field-nothing a {
+  color: #676768;
+}
+/* line 39, ../sass/components/_homepage.scss */
+#quicktabs-container-homepage_tabs .view-homepage .views-field-title a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+/* line 44, ../sass/components/_homepage.scss */
+#quicktabs-container-homepage_tabs .view-homepage .views-field-title a:hover {
+  color: #3399ff;
+  text-decoration: underline;
 }
 
 /**

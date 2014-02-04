@@ -6,9 +6,9 @@
         }
     }
      li.last{
-        background: url(../images/osdc_mostpopular_active.png)no-repeat;
+        background: url(../images/osdc_mostpopular_active.png)no-repeat !important;
         &.active {
-             background: url(../images/osdc_mostpopular_inactive.png)no-repeat;
+             background: url(../images/osdc_mostpopular_inactive.png)no-repeat !important;
         }
     }
     li:nth-child(2){
@@ -21,4 +21,29 @@
             color: transparent;
             padding: 1em;
     }
+}
+
+#quicktabs-container-homepage_tabs  .view-homepage {
+        .views-row {    
+            border-bottom: 2px dotted #ccc;
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+        }
+        .views-field-field-lead-image {
+            float: left;
+            margin-right: 1em;
+        }
+        .views-field-nothing, .views-field-nothing a {
+            color: #676768;
+        }
+        .views-field-title a {
+            font-size: 18px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            &:hover {
+                color: #3399ff;
+                text-decoration: underline;
+            }
+        }
 }
