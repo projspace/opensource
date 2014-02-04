@@ -32,27 +32,40 @@ function os_common_components_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Entity Reference: Referencing entity */
-  $handler->display->display_options['relationships']['reverse_field_related_poll_node']['id'] = 'reverse_field_related_poll_node';
-  $handler->display->display_options['relationships']['reverse_field_related_poll_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_related_poll_node']['field'] = 'reverse_field_related_poll_node';
-  $handler->display->display_options['relationships']['reverse_field_related_poll_node']['required'] = TRUE;
-  /* Field: Content: Related Poll */
-  $handler->display->display_options['fields']['field_related_poll']['id'] = 'field_related_poll';
-  $handler->display->display_options['fields']['field_related_poll']['table'] = 'field_data_field_related_poll';
-  $handler->display->display_options['fields']['field_related_poll']['field'] = 'field_related_poll';
-  $handler->display->display_options['fields']['field_related_poll']['relationship'] = 'reverse_field_related_poll_node';
-  $handler->display->display_options['fields']['field_related_poll']['label'] = '';
-  $handler->display->display_options['fields']['field_related_poll']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_related_poll']['type'] = 'entityreference_entity_view';
-  $handler->display->display_options['fields']['field_related_poll']['settings'] = array(
-    'view_mode' => 'teaser',
-    'links' => 0,
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['label'] = 'channel';
+  $handler->display->display_options['relationships']['term_node_tid']['required'] = TRUE;
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'channel' => 'channel',
+    'article_type' => 0,
+    'panopoly_categories' => 0,
+    'sections' => 0,
+    'tags' => 0,
   );
+  /* Relationship: Taxonomy term: Content using Channel */
+  $handler->display->display_options['relationships']['reverse_field_channel_node']['id'] = 'reverse_field_channel_node';
+  $handler->display->display_options['relationships']['reverse_field_channel_node']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_channel_node']['field'] = 'reverse_field_channel_node';
+  $handler->display->display_options['relationships']['reverse_field_channel_node']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['reverse_field_channel_node']['label'] = 'Poll via field_channel';
+  /* Field: Content: Rendered Node */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['relationship'] = 'reverse_field_channel_node';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['relationship'] = 'reverse_field_channel_node';
   $handler->display->display_options['fields']['comment_count']['label'] = '';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['separator'] = ' ';
@@ -61,6 +74,7 @@ function os_common_components_views_default_views() {
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['relationship'] = 'reverse_field_channel_node';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['path']['alter']['text'] = 'Read More';
@@ -72,6 +86,7 @@ function os_common_components_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['relationship'] = 'reverse_field_channel_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Poll';
@@ -79,7 +94,6 @@ function os_common_components_views_default_views() {
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_related_poll_node';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
@@ -89,9 +103,18 @@ function os_common_components_views_default_views() {
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['relationship'] = 'reverse_field_channel_node';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_channel_node';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'poll' => 'poll',
+  );
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
