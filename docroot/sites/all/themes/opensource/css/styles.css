@@ -1877,11 +1877,11 @@ tr.selected td {
 }
 /* line 8, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li.last {
-  background: url(../images/osdc_mostpopular_active.png) no-repeat !important;
+  background: url(../images/osdc_mostpopular_active.png) no-repeat;
 }
 /* line 10, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li.last.active {
-  background: url(../images/osdc_mostpopular_inactive.png) no-repeat !important;
+  background: url(../images/osdc_mostpopular_inactive.png) no-repeat;
 }
 /* line 14, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li:nth-child(2) {

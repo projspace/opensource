@@ -6,9 +6,9 @@
         }
     }
      li.last{
-        background: url(../images/osdc_mostpopular_active.png)no-repeat !important;
+        background: url(../images/osdc_mostpopular_active.png)no-repeat;
         &.active {
-             background: url(../images/osdc_mostpopular_inactive.png)no-repeat !important;
+             background: url(../images/osdc_mostpopular_inactive.png)no-repeat;
         }
     }
     li:nth-child(2){
