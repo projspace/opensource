@@ -2003,16 +2003,18 @@ tr.selected td {
   font-size: 22px;
   color: #DD3823;
   margin: 0;
+  font-weight: normal;
 }
-/* line 77, ../sass/components/_homepage.scss */
+/* line 78, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul {
   padding-left: 8px;
 }
-/* line 79, ../sass/components/_homepage.scss */
+/* line 80, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul li {
   list-style-image: none !important;
+  list-style-type: none !important;
 }
-/* line 82, ../sass/components/_homepage.scss */
+/* line 84, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul a {
   margin-bottom: 0.75em;
   width: 100%;

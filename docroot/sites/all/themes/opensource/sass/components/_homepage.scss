@@ -73,11 +73,13 @@
          font-size: 22px;
         color: #DD3823;
         margin: 0;
+        font-weight: normal;
     }
     ul {
         padding-left: 8px;
         li {
             list-style-image: none !important;
+            list-style-type: none !important;
         }
         a {
             margin-bottom: 0.75em;
