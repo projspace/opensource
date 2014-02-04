@@ -1,0 +1,12 @@
+#quicktabs-homepage_tabs {
+    li.first {
+        background: url(../images/osdc_featured_inactive.png)no-repeat;
+        &.active {
+             background: url(../images/osdc_featured_active.png)no-repeat;
+        }
+    }
+    li a{ 
+            color: transparent;
+            padding: 1em;
+    }
+}
