@@ -1998,6 +1998,24 @@ tr.selected td {
   margin: 9px 0;
 }
 
+/* line 71, ../sass/components/_homepage.scss */
+.pane-menu-menu-opensource-resources-homepa {
+  font-size: 22px;
+  color: #DD3823;
+  margin: 0;
+}
+/* line 75, ../sass/components/_homepage.scss */
+.pane-menu-menu-opensource-resources-homepa ul {
+  list-style-image: none !important;
+}
+/* line 77, ../sass/components/_homepage.scss */
+.pane-menu-menu-opensource-resources-homepa ul a {
+  margin-bottom: 0.75em;
+  width: 100%;
+  display: inline-block;
+  padding: 1em;
+}
+
 /**
  * @file
  * Print styling
