@@ -89,3 +89,26 @@
         }
     }
 }
+
+.teaser-info {
+    .teaser-comment {
+        background: transparent url(../images/comment.jpg) no-repeat scroll left top;
+        padding-left: 20px;
+        border-right: 1px solid #767677;
+        margin-right: 10px;
+        padding-right: 10px;
+    }
+    .teaser-date {
+        color: #767677;
+    }
+    .author-feed {
+        float: left;
+        width: 15px;
+        a {
+            background: url(../images/rss.jpg) no-repeat;
+            text-indent: -9999px;
+            overflow: hidden;
+            display: block;
+        }
+    }
+}
