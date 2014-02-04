@@ -75,7 +75,10 @@
         margin: 0;
     }
     ul {
-        list-style-image: none !important;
+        padding-left: 8px;
+        li {
+            list-style-image: none !important;
+        }
         a {
             margin-bottom: 0.75em;
             width: 100%;

@@ -2006,9 +2006,13 @@ tr.selected td {
 }
 /* line 77, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul {
-  list-style-image: none !important;
+  padding-left: 8px;
 }
 /* line 79, ../sass/components/_homepage.scss */
+.pane-menu-menu-opensource-resources-homepa ul li {
+  list-style-image: none !important;
+}
+/* line 82, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul a {
   margin-bottom: 0.75em;
   width: 100%;
