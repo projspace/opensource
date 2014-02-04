@@ -1868,31 +1868,31 @@ tr.selected td {
 }
 
 /* line 2, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li.first {
+#quicktabs-homepage_tabs .item-list li.first {
   background: url(../images/osdc_featured_active.png) no-repeat;
 }
 /* line 4, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li.first.active {
+#quicktabs-homepage_tabs .item-list li.first.active {
   background: url(../images/osdc_featured_inactive.png) no-repeat;
 }
 /* line 8, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li.last {
+#quicktabs-homepage_tabs .item-list li.last {
   background: url(../images/osdc_mostpopular_active.png) no-repeat !important;
 }
 /* line 10, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li.last.active {
+#quicktabs-homepage_tabs .item-list li.last.active {
   background: url(../images/osdc_mostpopular_inactive.png) no-repeat !important;
 }
 /* line 14, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li:nth-child(2) {
+#quicktabs-homepage_tabs .item-list li:nth-child(2) {
   background: url(../images/osdc_mostcomments_active.png) no-repeat;
 }
 /* line 16, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li:nth-child(2).active {
+#quicktabs-homepage_tabs .item-list li:nth-child(2).active {
   background: url(../images/osdc_mostcomments_inactive.png) no-repeat;
 }
 /* line 20, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs li a {
+#quicktabs-homepage_tabs .item-list li a {
   color: transparent;
   padding: 1em;
 }
