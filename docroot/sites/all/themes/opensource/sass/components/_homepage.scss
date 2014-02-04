@@ -1,8 +1,20 @@
 #quicktabs-homepage_tabs {
     li.first {
-        background: url(../images/osdc_featured_inactive.png)no-repeat;
+        background: url(../images/osdc_featured_active.png)no-repeat;
         &.active {
-             background: url(../images/osdc_featured_active.png)no-repeat;
+             background: url(../images/osdc_featured_inactive.png)no-repeat;
+        }
+    }
+     li.last{
+        background: url(../images/osdc_mostpopular_active.png)no-repeat;
+        &.active {
+             background: url(../images/osdc_mostpopular_inactive.png)no-repeat;
+        }
+    }
+    li:nth-child(2){
+        background: url(../images/osdc_mostcomments_active.png)no-repeat;
+        &.active {
+             background: url(../images/osdc_mostcomments_inactive.png)no-repeat;
         }
     }
     li a{ 
