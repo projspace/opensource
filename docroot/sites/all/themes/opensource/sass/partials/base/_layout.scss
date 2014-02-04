@@ -13,4 +13,21 @@
 .burr-flipped-sidebar {
         width: 375px;
         padding-left: 1.8em;
+        .pane-menu-monthly-favorites {
+                h2.pane-title{
+                    @extend .image-title;
+                    background: url(../images/osdc_nameplate_Monthlyfavorites.png) no-repeat;
+                    margin: 0;
+                }
+                ul.menu {
+                    padding-left: 20px;
+                    li {
+                        padding-bottom: 8px;
+                        a {
+                            color: #000;
+                            text-decoration: none;
+                        }
+                    }
+                }
+        }
 }
