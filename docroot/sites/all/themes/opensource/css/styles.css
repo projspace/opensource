@@ -1704,7 +1704,7 @@ tr.selected td {
 }
 
 /* line 2, ../sass/components/_article.scss */
-.image-title, .node-type-article .pane-menu-menu-monthly-favorites h2.pane-title, .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title, .node-type-article .signup-email .signup-email-title {
+.image-title, .node-type-article .pane-menu-monthly-favorites h2.pane-title, .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title, .node-type-article .signup-email .signup-email-title {
   text-indent: -9999px;
   overflow: hidden;
   display: block;
@@ -1749,20 +1749,20 @@ tr.selected td {
   text-decoration: none;
 }
 /* line 39, ../sass/components/_article.scss */
-.node-type-article .pane-menu-menu-monthly-favorites h2.pane-title {
+.node-type-article .pane-menu-monthly-favorites h2.pane-title {
   background: url(../images/osdc_nameplate_Monthlyfavorites.png) no-repeat;
   margin: 0;
 }
 /* line 44, ../sass/components/_article.scss */
-.node-type-article .pane-menu-menu-monthly-favorites ul.menu {
+.node-type-article .pane-menu-monthly-favorites ul.menu {
   padding-left: 20px;
 }
 /* line 46, ../sass/components/_article.scss */
-.node-type-article .pane-menu-menu-monthly-favorites ul.menu li {
+.node-type-article .pane-menu-monthly-favorites ul.menu li {
   padding-bottom: 8px;
 }
 /* line 48, ../sass/components/_article.scss */
-.node-type-article .pane-menu-menu-monthly-favorites ul.menu li a {
+.node-type-article .pane-menu-monthly-favorites ul.menu li a {
   color: #000;
   text-decoration: none;
 }
