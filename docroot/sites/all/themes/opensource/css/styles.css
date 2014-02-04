@@ -1985,11 +1985,23 @@ tr.selected td {
   color: #767677;
 }
 /* line 104, ../sass/components/_homepage.scss */
+.teaser-info .teaser-author {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  margin-left: 1em;
+}
+/* line 109, ../sass/components/_homepage.scss */
+.teaser-info .teaser-author a {
+  float: left;
+  margin-right: 5px;
+}
+/* line 114, ../sass/components/_homepage.scss */
 .teaser-info .author-feed {
   float: left;
   width: 15px;
 }
-/* line 107, ../sass/components/_homepage.scss */
+/* line 117, ../sass/components/_homepage.scss */
 .teaser-info .author-feed a {
   background: url(../images/rss.jpg) no-repeat;
   text-indent: -9999px;
