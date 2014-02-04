@@ -127,7 +127,7 @@ function os_article_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Author ',
       'title' => '',
-      'body' => '<p>Posted <span class="created-date">%node:created by&nbsp;</span><a href="%user:url">%user:name</a></p><span class="author-feed"><a href="user/%user:uid/feed">Feed</a></span>',
+      'body' => '<p>Posted <span class="created-date">%node:created by&nbsp;</span><a href="%user:url">%user:name</a></p><span class="author-feed"><a href="/user/%user:uid/feed">Feed</a></span>',
       'format' => 'panopoly_html_text',
       'substitute' => 1,
     );
@@ -700,9 +700,9 @@ function os_article_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-19';
     $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'bean-reader-favourite';
-    $pane->shown = FALSE;
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'common_1';
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
@@ -718,99 +718,6 @@ function os_article_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-19'] = $pane;
     $display->panels['sidebar'][2] = 'new-19';
-    $pane = new stdClass();
-    $pane->pid = 'new-20';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-monthly-favorites';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'December Favorites',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'box-wrapper',
-    );
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $display->content['new-20'] = $pane;
-    $display->panels['sidebar'][3] = 'new-20';
-    $pane = new stdClass();
-    $pane->pid = 'new-21';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'bean-new-to-open-source';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'box-wrapper',
-    );
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $display->content['new-21'] = $pane;
-    $display->panels['sidebar'][4] = 'new-21';
-    $pane = new stdClass();
-    $pane->pid = 'new-22';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'bean-submit-an-article';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'box-wrapper',
-    );
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $display->content['new-22'] = $pane;
-    $display->panels['sidebar'][5] = 'new-22';
-    $pane = new stdClass();
-    $pane->pid = 'new-23';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'os_core-opensource-social-links';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $display->content['new-23'] = $pane;
-    $display->panels['sidebar'][6] = 'new-23';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

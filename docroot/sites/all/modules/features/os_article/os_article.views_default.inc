@@ -13,7 +13,7 @@ function os_article_views_default_views() {
   $view = new view();
   $view->name = 'author_info';
   $view->description = 'Author information block for the content author.';
-  $view->tag = 'default';
+  $view->tag = 'author, article';
   $view->base_table = 'node';
   $view->human_name = 'Author Info';
   $view->core = 7;
@@ -91,9 +91,6 @@ function os_article_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
@@ -178,8 +175,8 @@ function os_article_views_default_views() {
 
   $view = new view();
   $view->name = 'related_articles';
-  $view->description = 'Related articles list for the Opensource.com';
-  $view->tag = 'default';
+  $view->description = 'Related articles list for the Opensource.com.';
+  $view->tag = 'article';
   $view->base_table = 'node';
   $view->human_name = 'Related Articles';
   $view->core = 7;
@@ -227,7 +224,7 @@ function os_article_views_default_views() {
   $handler->display->display_options['fields']['field_lead_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_lead_image']['settings'] = array(
     'image_style' => 'related-content-lead-thumbnail',
-    'image_link' => '',
+    'image_link' => 'content',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -280,11 +277,6 @@ function os_article_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
   );
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
-  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['use_ajax'] = TRUE;
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
