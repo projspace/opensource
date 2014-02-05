@@ -2,7 +2,7 @@
 .region-navigation-top {
     clear: both;
     overflow: hidden;
-    margin-top: 1.9em;
+    padding-top: 1.9em;
 
     #block-menu-menu-about-menu {
         float: left;
@@ -39,6 +39,9 @@
                 background: url('../images/rss.png') no-repeat;
                 height: 24px;
                 width: 24px;
+                position: relative;
+                top: -7px;
+                margin-left: 10px;
 
                 a {
                     color: transparent;

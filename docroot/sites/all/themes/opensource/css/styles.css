@@ -2234,7 +2234,7 @@ a:hover {
 .region-navigation-top {
   clear: both;
   overflow: hidden;
-  margin-top: 1.9em;
+  padding-top: 1.9em;
 }
 /* line 7, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-menu-menu-about-menu, .region-navigation-top #block-system-user-menu {
@@ -2273,8 +2273,11 @@ a:hover {
   background: url("../images/rss.png") no-repeat;
   height: 24px;
   width: 24px;
+  position: relative;
+  top: -7px;
+  margin-left: 10px;
 }
-/* line 43, ../sass/partials/header/_top-nav.scss */
+/* line 46, ../sass/partials/header/_top-nav.scss */
 .region-navigation-top #block-system-user-menu li:last-child a {
   color: transparent;
 }
@@ -2460,8 +2463,13 @@ a:hover {
 /* line 8, ../sass/partials/footer/_footer-top.scss */
 #footer a {
   color: black;
+  text-decoration: none;
 }
 /* line 12, ../sass/partials/footer/_footer-top.scss */
+#footer a:hover {
+  color: #3399ff;
+}
+/* line 17, ../sass/partials/footer/_footer-top.scss */
 #footer #block-bean-copyrigt-block {
   color: #333;
   margin-bottom: 2.5em;
