@@ -1872,7 +1872,7 @@ tr.selected td {
   margin-top: 0.75em;
 }
 /* line 3, ../sass/components/_homepage.scss */
-#quicktabs-homepage_tabs .active.first a {
+#quicktabs-homepage_tabs .first a {
   border-right: 1px solid #ccc;
   margin-right: 7px;
 }
