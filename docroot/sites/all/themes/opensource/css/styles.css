@@ -2008,7 +2008,7 @@ tr.selected td {
   margin-left: 1em;
 }
 /* line 121, ../sass/components/_homepage.scss */
-.teaser-info .teaser-author a {
+.teaser-info .teaser-author .username {
   float: left;
   margin-right: 5px;
 }
