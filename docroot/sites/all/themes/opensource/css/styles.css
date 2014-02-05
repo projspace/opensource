@@ -2016,8 +2016,9 @@ tr.selected td {
 .teaser-info .author-feed {
   float: left;
   width: 15px;
+  margin-top: 2px;
 }
-/* line 129, ../sass/components/_homepage.scss */
+/* line 130, ../sass/components/_homepage.scss */
 .teaser-info .author-feed a {
   background: url(../images/rss.jpg) no-repeat;
   text-indent: -9999px;
