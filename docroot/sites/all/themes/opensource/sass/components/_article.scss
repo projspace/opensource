@@ -142,3 +142,8 @@
         }
     }
 }
+.view-poll-block {
+    .comment-add, .statistics_counter{
+        display: none;
+    }
+}
