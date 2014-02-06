@@ -1891,11 +1891,15 @@ tr.selected td {
   text-decoration: none;
 }
 /* line 165, ../sass/components/_article.scss */
+.m-polls .views-field-nothing {
+  font-weight: bold;
+}
+/* line 167, ../sass/components/_article.scss */
 .m-polls .views-field-nothing a {
   text-decoration: none;
 }
 
-/* line 170, ../sass/components/_article.scss */
+/* line 173, ../sass/components/_article.scss */
 .view-poll-block ul.links {
   display: none;
 }

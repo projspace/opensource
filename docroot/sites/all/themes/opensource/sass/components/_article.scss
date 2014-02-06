@@ -162,8 +162,11 @@
             text-decoration: none;
         }
     }
-    .views-field-nothing a{
-        text-decoration: none;
+    .views-field-nothing {
+        font-weight: bold;
+            a {
+            text-decoration: none;
+        }
     }
 }
 .view-poll-block {
