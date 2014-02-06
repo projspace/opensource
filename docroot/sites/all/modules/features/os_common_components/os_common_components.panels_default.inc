@@ -75,7 +75,13 @@ function os_common_components_default_panels_mini() {
     $pane->subtype = 'bean-new-to-open-source';
     $pane->shown = TRUE;
     $pane->access = array(
-      'plugins' => array(),
+      'plugins' => array(
+        0 => array(
+          'name' => 'front',
+          'settings' => NULL,
+          'not' => TRUE,
+        ),
+      ),
     );
     $pane->configuration = array(
       'override_title' => 0,
