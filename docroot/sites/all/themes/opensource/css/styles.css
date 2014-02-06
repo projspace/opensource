@@ -1134,7 +1134,7 @@ table {
 }
 
 /* line 275, ../sass/components/_misc.scss */
-.tabs-primary__tab, .tabs-secondary__tab,
+.tabs-primary__tab, .tabs-primary__tab.is-active, .tabs-secondary__tab,
 .tabs-secondary__tab.is-active {
   float: left;
   /* LTR */
@@ -1142,7 +1142,7 @@ table {
 }
 
 /* line 279, ../sass/components/_misc.scss */
-a.tabs-primary__tab-link, a.tabs-secondary__tab-link {
+a.tabs-primary__tab-link, a.tabs-primary__tab-link.is-active, a.tabs-secondary__tab-link, a.tabs-secondary__tab-link.is-active {
   border: 1px solid #e9e9e9;
   border-right: 0;
   border-bottom: 0;
@@ -1700,7 +1700,7 @@ tr.selected td {
 /* line 803, ../sass/components/_misc.scss */
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1390974093');
+  background-image: url('../images/progress.gif?1391143080');
 }
 
 /* line 2, ../sass/components/_article.scss */
@@ -2306,17 +2306,17 @@ a:hover {
 .header-banner input[type="text"] {
   border: none;
   line-height: 28px;
+  height: 31px;
   width: 238px;
   color: #999;
   font-size: 14px;
 }
-/* line 23, ../sass/partials/header/_banner.scss */
+/* line 24, ../sass/partials/header/_banner.scss */
 .header-banner input[type="submit"] {
   border: none;
   text-indent: -9999px;
   background: url("../images/search.png") no-repeat center;
   line-height: 29px;
-  height: 31px;
   width: 40px;
 }
 /* line 32, ../sass/partials/header/_banner.scss */
