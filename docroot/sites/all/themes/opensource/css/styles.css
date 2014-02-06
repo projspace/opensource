@@ -1868,6 +1868,26 @@ tr.selected td {
 }
 
 /* line 146, ../sass/components/_article.scss */
+.m-polls .views-field-comment-count {
+  float: left;
+  border-right: 1px solid #686666;
+  padding-right: 1em;
+  margin-right: 1em;
+}
+/* line 152, ../sass/components/_article.scss */
+.m-polls .views-field-path a {
+  font-weight: bold;
+}
+/* line 155, ../sass/components/_article.scss */
+.m-polls .views-field-comment-count {
+  background: transparent url(../images/comment.jpg) no-repeat scroll left top;
+  padding-left: 20px;
+  border-right: 1px solid #767677;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+/* line 164, ../sass/components/_article.scss */
 .view-poll-block ul.links {
   display: none;
 }
