@@ -1868,7 +1868,7 @@ tr.selected td {
 }
 
 /* line 146, ../sass/components/_article.scss */
-.view-poll-block ul.links, .view-poll-block .views-field-comment-count, .view-poll-block .views-field-edit-node {
+.view-poll-block .comment-add, .view-poll-block .statistics_counter {
   display: none;
 }
 
