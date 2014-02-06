@@ -2115,32 +2115,33 @@ tr.selected td {
 }
 /* line 1, ../sass/partials/base/_base.scss */
 * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 4, ../sass/partials/base/_base.scss */
+/* line 5, ../sass/partials/base/_base.scss */
 body {
   line-height: 1.4;
   font-size: 0.75em;
   color: #333;
 }
 
-/* line 10, ../sass/partials/base/_base.scss */
+/* line 11, ../sass/partials/base/_base.scss */
 a {
   color: #0066cc;
 }
-/* line 13, ../sass/partials/base/_base.scss */
+/* line 14, ../sass/partials/base/_base.scss */
 a:hover {
   color: #3399ff;
 }
 
 /* Some basic styling */
-/* line 20, ../sass/partials/base/_base.scss */
+/* line 21, ../sass/partials/base/_base.scss */
 #content .burr-flipped-content img {
   border: 1px solid #C2C0C1;
 }
 
-/* line 23, ../sass/partials/base/_base.scss */
+/* line 24, ../sass/partials/base/_base.scss */
 .form-text {
   font-size: 14px;
   border: 1px solid #cdcbca;
@@ -2148,7 +2149,7 @@ a:hover {
   padding: 8px 8px 0;
 }
 
-/* line 29, ../sass/partials/base/_base.scss */
+/* line 30, ../sass/partials/base/_base.scss */
 .form-submit {
   border: none;
   background: #1D2754;
