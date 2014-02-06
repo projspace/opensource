@@ -1886,8 +1886,16 @@ tr.selected td {
   margin-right: 10px;
   padding-right: 10px;
 }
+/* line 161, ../sass/components/_article.scss */
+.m-polls .views-field-comment-count a {
+  text-decoration: none;
+}
+/* line 165, ../sass/components/_article.scss */
+.m-polls .views-field-nothing a {
+  text-decoration: none;
+}
 
-/* line 164, ../sass/components/_article.scss */
+/* line 170, ../sass/components/_article.scss */
 .view-poll-block ul.links {
   display: none;
 }
