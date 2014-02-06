@@ -1134,7 +1134,7 @@ table {
 }
 
 /* line 275, ../sass/components/_misc.scss */
-.tabs-primary__tab, .tabs-primary__tab.is-active, .tabs-secondary__tab,
+.tabs-primary__tab, .tabs-secondary__tab,
 .tabs-secondary__tab.is-active {
   float: left;
   /* LTR */
@@ -1142,7 +1142,7 @@ table {
 }
 
 /* line 279, ../sass/components/_misc.scss */
-a.tabs-primary__tab-link, a.tabs-primary__tab-link.is-active, a.tabs-secondary__tab-link, a.tabs-secondary__tab-link.is-active {
+a.tabs-primary__tab-link, a.tabs-secondary__tab-link {
   border: 1px solid #e9e9e9;
   border-right: 0;
   border-bottom: 0;
@@ -1700,7 +1700,7 @@ tr.selected td {
 /* line 803, ../sass/components/_misc.scss */
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1391143080');
+  background-image: url('../images/progress.gif?1390974093');
 }
 
 /* line 2, ../sass/components/_article.scss */
@@ -1867,6 +1867,11 @@ tr.selected td {
   margin-right: 1em;
 }
 
+/* line 146, ../sass/components/_article.scss */
+.view-poll-block ul.links, .view-poll-block .views-field-comment-count, .view-poll-block .views-field-edit-node {
+  display: none;
+}
+
 /* line 1, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs {
   margin-top: 0.75em;
@@ -1942,25 +1947,25 @@ tr.selected td {
 }
 
 /* line 64, ../sass/components/_homepage.scss */
-.view-poll-homepage h2.node-title {
+.view-poll-homepage h2.node-title, .view-poll-block h2.node-title {
   font-size: 12px;
   font-weight: normal;
 }
 /* line 67, ../sass/components/_homepage.scss */
-.view-poll-homepage h2.node-title a {
+.view-poll-homepage h2.node-title a, .view-poll-block h2.node-title a {
   text-decoration: none;
   color: #000;
 }
 /* line 72, ../sass/components/_homepage.scss */
-.view-poll-homepage .poll .vote-form {
+.view-poll-homepage .poll .vote-form, .view-poll-block .poll .vote-form {
   text-align: right;
 }
 /* line 75, ../sass/components/_homepage.scss */
-.view-poll-homepage .poll .vote-form .choices {
+.view-poll-homepage .poll .vote-form .choices, .view-poll-block .poll .vote-form .choices {
   margin: 1px;
 }
 /* line 78, ../sass/components/_homepage.scss */
-.view-poll-homepage .form-item.form-type-radio.form-item-choice {
+.view-poll-homepage .form-item.form-type-radio.form-item-choice, .view-poll-block .form-item.form-type-radio.form-item-choice {
   margin: 9px 0;
 }
 

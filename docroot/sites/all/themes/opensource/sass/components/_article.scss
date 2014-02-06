@@ -142,3 +142,8 @@
         }
     }
 }
+.view-poll-block {
+    ul.links, .views-field-comment-count, .views-field-edit-node {
+        display: none;
+    }
+}
