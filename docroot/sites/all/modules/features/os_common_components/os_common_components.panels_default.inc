@@ -75,13 +75,7 @@ function os_common_components_default_panels_mini() {
     $pane->subtype = 'bean-new-to-open-source';
     $pane->shown = TRUE;
     $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'front',
-          'settings' => NULL,
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
     );
     $pane->configuration = array(
       'override_title' => 0,
@@ -130,7 +124,7 @@ function os_common_components_default_panels_mini() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'box-wrapper',
+      'css_class' => 'box-wrapper m-polls',
     );
     $pane->extras = array();
     $pane->position = 2;
