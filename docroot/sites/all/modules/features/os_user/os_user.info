@@ -1,0 +1,17 @@
+name = OpenSource User
+description = Provides fields for user.
+core = 7.x
+package = OpenSource.com Content
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = link
+dependencies[] = os_fields
+dependencies[] = panopoly_users
+dependencies[] = strongarm
+dependencies[] = text
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[field_instance][] = user-user-field_display_name
+features[field_instance][] = user-user-field_location
+features[field_instance][] = user-user-field_website
+features[variable][] = pathauto_user_pattern
