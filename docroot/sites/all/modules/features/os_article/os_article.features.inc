@@ -7,12 +7,10 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function os_article_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function os_article_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -21,7 +19,7 @@ function os_article_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function os_article_views_api() {
+function os_article_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
@@ -52,6 +50,7 @@ function os_article_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'comment_avatar',
   );
 
   // Exported image style: image-full-size.
@@ -75,6 +74,7 @@ function os_article_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'image-full-size',
   );
 
   // Exported image style: profile_pictures.
@@ -114,6 +114,7 @@ function os_article_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'profile_pictures',
   );
 
   // Exported image style: related-content-lead-thumbnail.
@@ -137,6 +138,7 @@ function os_article_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'related-content-lead-thumbnail',
   );
 
   return $styles;
