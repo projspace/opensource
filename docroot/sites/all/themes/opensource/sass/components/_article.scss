@@ -5,6 +5,7 @@
        display: block;
        line-height: 17px;
 }
+
 .box-wrapper {
     border: 1px solid #cdcbca;
     background: #fff;
@@ -12,16 +13,19 @@
     box-shadow: 2px 2px 3px #cdcbca;
     margin-bottom: 1.5em;
 }
+
 .box-wrapper p {
     margin: 0;
     br {
         display:  none;
     }
 }
+
 .article-title {
     font-size: 24px;
     font-weight: bold;
 }
+
 .node-type-article {
     .view-author-info {
         .views-field-field-user-picture {
@@ -69,6 +73,23 @@
             background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
             margin-bottom: 8px;
         }
+
+        .views-row {
+            float: left;
+            padding-right: 30px;
+            margin-bottom: 10px;
+
+            img {
+                margin-bottom: 5px;
+            }
+
+            .field-content a {
+                width: 140px;
+                display: block;
+            }
+
+        }
+
         .view-related-articles {
             .views-field-title {
                 margin-top: 5px;
@@ -101,7 +122,7 @@
     .pane-node-comments {
         .comment {
             @extend .box-wrapper;
-            .content {     
+            .content {
                 margin: 1em 0;
                 border-bottom: 2px dotted #ccc;
                 padding-bottom: 1em;
