@@ -1781,44 +1781,49 @@ tr.selected td {
   font-style: italic;
 }
 /* line 71, ../sass/components/_article.scss */
+.node-type-article #content .pane-related-articles-panel-pane-1 .view-content {
+  clear: both;
+  overflow: hidden;
+}
+/* line 76, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title {
   background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
   margin-bottom: 8px;
 }
-/* line 77, ../sass/components/_article.scss */
+/* line 82, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 .views-row {
   float: left;
   padding-right: 30px;
   margin-bottom: 10px;
 }
-/* line 82, ../sass/components/_article.scss */
+/* line 87, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 .views-row img {
   margin-bottom: 5px;
 }
-/* line 86, ../sass/components/_article.scss */
+/* line 91, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 .views-row .field-content a {
   width: 140px;
   display: block;
 }
-/* line 94, ../sass/components/_article.scss */
+/* line 99, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title {
   margin-top: 5px;
 }
-/* line 96, ../sass/components/_article.scss */
+/* line 101, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a {
   text-decoration: none;
   color: #000;
 }
-/* line 99, ../sass/components/_article.scss */
+/* line 104, ../sass/components/_article.scss */
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a:hover {
   text-decoration: underline;
   color: #3399ff;
 }
-/* line 107, ../sass/components/_article.scss */
+/* line 112, ../sass/components/_article.scss */
 .node-type-article #content .pane-node-field-tags {
   margin: 1em 0;
 }
-/* line 109, ../sass/components/_article.scss */
+/* line 114, ../sass/components/_article.scss */
 .node-type-article #content .pane-node-field-tags h2.pane-title {
   margin: 0;
   font-size: 12px;
@@ -1826,74 +1831,74 @@ tr.selected td {
   margin-right: 1em;
   float: left;
 }
-/* line 116, ../sass/components/_article.scss */
+/* line 121, ../sass/components/_article.scss */
 .node-type-article #content .pane-node-field-tags .field-items .field-item {
   display: inline-block;
   margin-top: 5px;
   margin-right: 1.5em;
 }
-/* line 125, ../sass/components/_article.scss */
+/* line 130, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .content {
   margin: 1em 0;
   border-bottom: 2px dotted #ccc;
   padding-bottom: 1em;
 }
-/* line 130, ../sass/components/_article.scss */
+/* line 135, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .submitted {
   margin-left: 1em;
   display: inline-block;
 }
-/* line 134, ../sass/components/_article.scss */
+/* line 139, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget {
   float: right;
 }
-/* line 137, ../sass/components/_article.scss */
+/* line 142, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .links a {
   text-transform: capitalize;
 }
-/* line 140, ../sass/components/_article.scss */
+/* line 145, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active, .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-inactive {
   background: url(../images/icon-vote-up.png) no-repeat;
   background-position: 0 0;
 }
-/* line 143, ../sass/components/_article.scss */
+/* line 148, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active:hover, .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-inactive:hover {
   background-position: 0 0;
 }
-/* line 147, ../sass/components/_article.scss */
+/* line 152, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-inactive {
   background: url(../images/icon-vote-down.png) no-repeat;
   background-position: 0 0;
 }
-/* line 150, ../sass/components/_article.scss */
+/* line 155, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-inactive:hover {
   background-position: 0 0;
 }
-/* line 154, ../sass/components/_article.scss */
+/* line 159, ../sass/components/_article.scss */
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-score .up-current-score, .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-score .down-current-score {
   font-size: 12px;
 }
-/* line 159, ../sass/components/_article.scss */
+/* line 164, ../sass/components/_article.scss */
 .node-type-article .addthis_toolbox.addthis_default_style {
   margin-bottom: 1em;
 }
-/* line 161, ../sass/components/_article.scss */
+/* line 166, ../sass/components/_article.scss */
 .node-type-article .addthis_toolbox.addthis_default_style a {
   margin-right: 1em;
 }
 
-/* line 167, ../sass/components/_article.scss */
+/* line 172, ../sass/components/_article.scss */
 .m-polls .views-field-comment-count {
   float: left;
   border-right: 1px solid #686666;
   padding-right: 1em;
   margin-right: 1em;
 }
-/* line 173, ../sass/components/_article.scss */
+/* line 178, ../sass/components/_article.scss */
 .m-polls .views-field-path a {
   font-weight: bold;
 }
-/* line 176, ../sass/components/_article.scss */
+/* line 181, ../sass/components/_article.scss */
 .m-polls .views-field-comment-count {
   background: transparent url(../images/comment.jpg) no-repeat scroll left top;
   padding-left: 20px;
@@ -1901,20 +1906,20 @@ tr.selected td {
   margin-right: 10px;
   padding-right: 10px;
 }
-/* line 182, ../sass/components/_article.scss */
+/* line 187, ../sass/components/_article.scss */
 .m-polls .views-field-comment-count a {
   text-decoration: none;
 }
-/* line 186, ../sass/components/_article.scss */
+/* line 191, ../sass/components/_article.scss */
 .m-polls .views-field-nothing {
   font-weight: bold;
 }
-/* line 188, ../sass/components/_article.scss */
+/* line 193, ../sass/components/_article.scss */
 .m-polls .views-field-nothing a {
   text-decoration: none;
 }
 
-/* line 194, ../sass/components/_article.scss */
+/* line 199, ../sass/components/_article.scss */
 .view-poll-block ul.links {
   display: none;
 }
