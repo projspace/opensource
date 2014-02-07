@@ -224,15 +224,22 @@ function menu_links_features_export_render($module, $data, $export = NULL) {
     if ($link = features_menu_link_load($identifier)) {
       $new_identifier = menu_links_features_identifier($link, empty($export));
 
-      $link['options']['identifier'] = $new_identifier;
-
-       // Replace plid with a parent path.
-       if (!empty($link['plid']) && $parent = menu_link_load($link['plid'])) {
-        $clean_title = features_clean_title($parent['title']);
-        $link['parent_identifier'] = "{$parent['menu_name']}_{$clean_title}:{$parent['link_path']}";
-       }
+      // Replace plid with a parent path.
+      if (!empty($link['plid']) && $parent = menu_link_load($link['plid'])) {
+        // If the new identifier is different than the old, maintain
+        // 'parent_path' for backwards compatibility.
+        if ($new_identifier != menu_links_features_identifier($link)) {
+          $link['parent_path'] = $parent['link_path'];
+        }
+        else {
+          $clean_title = features_clean_title($parent['title']);
+          $link['parent_identifier'] = "{$parent['menu_name']}_{$clean_title}:{$parent['link_path']}";
+        }
+      }
 
       if (isset($export)) {
+        // Don't show new identifier unless we are actually exporting.
+        $link['options']['identifier'] = $new_identifier;
         // identifiers are renewed, => that means we need to update them in the db
         menu_link_save($temp = $link);
       }
@@ -318,6 +325,10 @@ function menu_links_features_rebuild_ordered($menu_links, $reset = FALSE) {
       if (!empty($link['parent_identifier']) && $parent = features_menu_link_load($link['parent_identifier'])) {
         $link['plid'] = $parent['mlid'];
       }
+      // This if for backwards compatibility.
+      elseif (!empty($link['parent_path']) && $parent = features_menu_link_load("{$link['menu_name']}:{$link['parent_path']}")) {
+         $link['plid'] = $parent['mlid'];
+       }
       else {
         $link['plid'] = 0;
       }
@@ -345,10 +356,10 @@ function features_menu_link_load($identifier) {
     list($menu_name, $link_path) = explode(':', $identifier, 2);
   }
   $links = db_select('menu_links')
-    ->fields('menu_links', array('menu_name', 'mlid', 'plid', 'link_path', 'router_path', 'link_title', 'options', 'module', 'hidden', 'external', 'has_children', 'expanded', 'weight'))
-    ->condition('menu_name', $menu_name)
-    ->condition('link_path', $link_path)
-    ->execute()
+     ->fields('menu_links', array('menu_name', 'mlid', 'plid', 'link_path', 'router_path', 'link_title', 'options', 'module', 'hidden', 'external', 'has_children', 'expanded', 'weight', 'customized'))
+     ->condition('menu_name', $menu_name)
+     ->condition('link_path', $link_path)
+     ->execute()
     ->fetchAllAssoc('mlid');
 
   foreach($links as $link) {
@@ -360,12 +371,12 @@ function features_menu_link_load($identifier) {
 
       return (array)$link;
     }
-   }
+  }
 
   // Only one link with the requested menu_name and link_path does exists,
   // -- providing an upgrade possibility for links saved in a feature before the
   // new identifier-pattern was added.
-  if (count($links)==1 && empty($clean_title)) {
+  if (count($links) == 1 && empty($clean_title)) {
     $link = reset($links); // get the first item
     return (array)$link;
   }
@@ -388,11 +399,9 @@ function features_menu_link_load($identifier) {
         return (array)$link;
       }
     }
-
   }
   return FALSE;
 }
-
 
 /**
  * Returns a lowercase clean string with only letters, numbers and dashes
