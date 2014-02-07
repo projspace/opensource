@@ -1,0 +1,36 @@
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    line-height: 1.4;
+    font-size: 0.75em;
+    color: #333;
+}
+
+a {
+    color:  #0066cc;
+
+    &:hover {
+        color:  #3399ff;
+    }
+}
+
+/* Some basic styling */
+
+#content .burr-flipped-content  img {
+    border: 1px solid #C2C0C1;
+}
+.form-text {
+    font-size: 14px;
+    border: 1px solid #cdcbca;
+    height: 22px;
+    padding: 8px 8px 0;
+}
+.form-submit {
+    border: none;
+    background: #1D2754;
+    padding: 5px;
+    color: #fff;
+    margin-right: 5px;
+}

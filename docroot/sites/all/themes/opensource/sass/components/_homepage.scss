@@ -1,0 +1,138 @@
+#quicktabs-homepage_tabs {
+    margin-top: 0.75em;
+    .first a {
+        border-right: 1px solid #ccc;
+        margin-right: 7px;
+    }
+}
+#quicktabs-homepage_tabs .item-list {
+    li.first {
+        background: url(../images/osdc_featured_active.png)no-repeat;
+        &.active {
+             background: url(../images/osdc_featured_inactive.png)no-repeat;
+        }
+    }
+     li.last{
+        background: url(../images/osdc_mostpopular_active.png)no-repeat;
+        &.active {
+             background: url(../images/osdc_mostpopular_inactive.png)no-repeat;
+        }
+    }
+    li:nth-child(2){
+        background: url(../images/osdc_mostcomments_active.png)no-repeat;
+        &.active {
+             background: url(../images/osdc_mostcomments_inactive.png)no-repeat;
+        }
+    }
+    li a{ 
+            color: transparent;
+            padding: 0.25em 1em 0;
+    }
+}
+
+#quicktabs-container-homepage_tabs  .view-homepage {
+        .views-row {    
+            border-bottom: 2px dotted #ccc;
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+        }
+        .views-field-field-lead-image {
+            float: left;
+            margin-right: 1em;
+        }
+        .views-field-nothing, .views-field-nothing a {
+            color: #676768;
+        }
+        .views-field-title a {
+            font-size: 18px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            &:hover {
+                color: #3399ff;
+                text-decoration: underline;
+            }
+        }
+        .views-field-created {         
+        display: inline-block;
+        width: 100%;
+        margin-top: 1em;
+        }
+}
+
+.view-poll-homepage, .view-poll-block{
+    h2.node-title {
+        font-size: 12px;
+        font-weight: normal;
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+    .poll .vote-form {
+        text-align: right;
+    }
+    .poll .vote-form .choices {
+        margin: 1px;
+    }
+    .form-item.form-type-radio.form-item-choice {
+        margin: 9px 0;
+    }
+}
+
+.pane-menu-menu-opensource-resources-homepa  {
+    h2 {
+         font-size: 22px;
+        color: #DD3823;
+        margin: 0;
+        font-weight: normal;
+    }
+    ul {
+        padding-left: 8px;
+        li {
+            list-style-image: none !important;
+            list-style-type: none !important;
+        }
+        a {
+            margin-bottom: 0.75em;
+            width: 100%;
+            display: inline-block;
+            padding: 1em;
+        }
+    }
+}
+
+.teaser-info {
+    .teaser-comment {
+        background: transparent url(../images/comment.jpg) no-repeat scroll left top;
+        padding-left: 20px;
+        border-right: 1px solid #767677;
+        margin-right: 10px;
+        padding-right: 10px;
+    }
+    .teaser-date {
+        color: #767677;
+    }
+    .teaser-author {
+        display: inline-block;
+        position: relative;
+        top: 4px;
+        margin-left: 1em;
+        .username {
+            float: left;
+            margin-right: 5px;
+        }
+    }
+    .author-feed {
+        float: left;
+        width: 15px;
+        margin-top: 2px;
+        a {
+            background: url(../images/rss.jpg) no-repeat;
+            text-indent: -9999px;
+            overflow: hidden;
+            display: block;
+            width: 15px;
+        }
+    }
+}

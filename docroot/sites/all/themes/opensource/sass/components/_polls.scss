@@ -1,0 +1,15 @@
+.m-polls {
+    .views-field-comment-count {
+        a {
+            color: #39f;
+        }
+
+        span {
+            padding-left: 20px;
+            padding-right: 10px;
+            margin-right: 10px;
+            border-right: 1px solid #7b7b7c;
+            background-image: url('../images/comment.jpg') no-repeat left center;
+        }
+    }
+}

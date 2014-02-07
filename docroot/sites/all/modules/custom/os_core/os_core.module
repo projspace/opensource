@@ -1,0 +1,151 @@
+<?php
+/**
+ * @file
+ * Code for the OS core functionality.
+ */
+
+/**
+ * Implements hook_block_info()
+ */
+function os_core_block_info() {
+  $blocks = array();
+  $blocks['opensource-social-links'] = array(
+    'info' => 'opensource: Social Links and subscription',
+  );
+  return $blocks;
+}
+
+/**
+ *  Implements hook_block_view()
+ */
+function os_core_block_view($delta = '') {
+  // The $delta parameter tells us which block is being requested.
+  switch ($delta) {
+    case 'opensource-social-links':
+      $block = array(
+        'subject' => '<none>',
+        'content' => os_core_display_social_block(),
+       );
+    break;
+  }
+  return $block;
+}
+
+function os_core_display_social_block() {
+  $links = array();
+  $links['twitter'] = array(
+    'href' => 'http://twitter.com/opensourceway',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/twitter.jpg')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['facebook'] = array(
+    'href' => 'http://facebook.com/pages/opensourcecom/162962298056',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/facebook.jpg')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['gplus'] = array(
+    'href' => 'https://plus.google.com/108750398488318674353',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/gplus.png')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['flickr'] = array(
+    'href' => 'http://www.flickr.com/photos/opensourceway',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/flickr_24x24.jpg')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+   $links['youtube'] = array(
+    'href' => 'http://www.youtube.com/opensourceway',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/youtube.jpg')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+   $links['pinterest'] = array(
+    'href' => 'http://pinterest.com/opensourceway/',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/pinterest.png')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+    $links['linkedin'] = array(
+    'href' => 'http://www.linkedin.com/groups/Open-Source-Professionals-Advocates-2769297?gid=2769297',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/in.jpg')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['rss'] = array(
+    'href' => 'http://opensource.com/feed',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/osdc_rss_24x24.png')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $output = theme('links', array(
+      'links' => $links,
+      'attributes' => array('class' => array('social-links', 'inline')),
+    )
+  );
+
+  /*$output .= theme('image', array(
+      'path' => 'sites/all/themes/sitetheme/images/email-signup.png',
+      'alt' => 'Sign up for our newsletter',
+      'title' => 'Sign up for our newsletter',
+      'attributes' => array('class' => 'newsletter'),
+    )
+  );*/
+  $output .= '<div class="signup-email-title">' . t('Sign-up for weekly email') . '</div>';
+  $eloqua_form = drupal_get_form('os_core_eloqua_form');
+  $output .= render($eloqua_form);
+  return $output;
+}
+
+/**
+ * Implements hook_init().
+ */
+function os_core_init(){
+  if(array_key_exists('success', $_REQUEST)) {
+    drupal_set_message('Thank you. You have been subscribed to our weekly email.');
+  }
+}
+
+function os_core_eloqua_form($form, &$form_submit){
+  // Build the Redirect
+  $redirect = url('thank-you-subscription', array('absolute' => TRUE));
+
+  $form['C_EmailAddress'] = array(
+    '#type' => 'textfield',
+    '#default_value' => '',
+    '#size' => 24,
+    '#maxlength' => 96,
+  );
+  $form['elqFormName'] = array(
+    '#type' => 'hidden',
+    '#value' => 'opensourcedotcom-subscription',
+  );
+
+  $form['elqSiteID'] = array(
+    '#type' => 'hidden',
+    '#value' => 1795,
+  );
+
+  $form['sendToURL'] = array(
+    '#type' => 'hidden',
+    '#value' => check_url($redirect),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Sign Up'),
+  );
+  $form['#action'] = 'https://secure.eloqua.com/e/f2.aspx';
+  $form['#id'] = 'opensourcedotcom-subscription';
+
+  return $form;
+}
+
+function os_core_eloqua_form_validate($form, &$form_state) {
+  if ($form_state['values']['c_EmailAddress'] == '') {
+    form_set_error('name', t('You must enter a valid email address.'));
+  }
+}
