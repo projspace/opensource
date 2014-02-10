@@ -32,6 +32,9 @@ function os_core_install() {
   // Run other updates.
   // Add legal conditions for terms & conditions, only if there are none.
   os_core_update_7100();
+
+  // Disable the node_edit page override.
+  os_core_update_7101();
 }
 
 /**
@@ -56,6 +59,16 @@ function os_core_update_7100() {
       ))
       ->execute();
   }
+}
+
+/**
+ * Disable the node_edit page override.
+ */
+function os_core_update_7101() {
+  $page = page_manager_get_page_cache('node_edit');
+  $function = ctools_plugin_get_function($page->subtask, 'enable callback');
+  $function($page, TRUE);
+  menu_rebuild();
 }
 
 /**
