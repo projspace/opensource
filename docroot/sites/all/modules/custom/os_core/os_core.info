@@ -3,6 +3,7 @@ description = This module generates the bean entitis for the footer block.
 core = 7.x
 package = OpenSource.com Custom
 
+dependencies[] = legal
 dependencies[] = os_base
 dependencies[] = os_taxonomy_channel
 dependencies[] = os_taxonomy
