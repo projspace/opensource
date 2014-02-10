@@ -5,6 +5,7 @@ package = OpenSource.com Content
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = link
+dependencies[] = openid
 dependencies[] = os_fields
 dependencies[] = panopoly_users
 dependencies[] = strongarm
