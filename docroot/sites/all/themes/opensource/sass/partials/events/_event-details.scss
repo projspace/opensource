@@ -45,7 +45,12 @@
     margin-top: 20px;
 }
 
-.pane-title {
+.event-add-comment {
+    float: left;
+    margin-right: 10px;
+}
+
+.burr-flipped-content .pane-title {
     @extend %event-titles;
 }
 

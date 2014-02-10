@@ -2600,7 +2600,7 @@ a:hover {
 }
 
 /* line 1, ../sass/partials/events/_event-details.scss */
-.pane-title {
+.burr-flipped-content .pane-title {
   float: left;
   font-size: 12px;
   line-height: 1.4;
@@ -2609,7 +2609,7 @@ a:hover {
   margin: 0;
 }
 /* line 9, ../sass/partials/events/_event-details.scss */
-.pane-title:after {
+.burr-flipped-content .pane-title:after {
   content: ":";
   margin-right: 2px;
 }
@@ -2649,7 +2649,13 @@ a:hover {
   margin-top: 20px;
 }
 
-/* line 52, ../sass/partials/events/_event-details.scss */
+/* line 48, ../sass/partials/events/_event-details.scss */
+.event-add-comment {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 57, ../sass/partials/events/_event-details.scss */
 .panel-pane {
   line-height: 1.5;
 }
