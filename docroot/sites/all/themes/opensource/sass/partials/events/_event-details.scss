@@ -1,0 +1,54 @@
+%event-titles {
+    float: left;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #333333;
+    font-weight: normal;
+    margin: 0;
+
+    &:after {
+        content: ":";
+        margin-right: 2px;
+    }
+}
+
+.event-title {
+    font-size: 24px;
+    line-height: 1.3em;
+    font-weight: bold;
+    padding-bottom: 18px;
+    font-family: helvetica, sans-serif;
+}
+
+.event-summary {
+    margin: 12px 0;
+
+}
+
+.event-detail {
+    margin: 7px 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: helvetica, sans-serif;
+    display: block;
+}
+
+.event-link {
+    a {
+        color: #6f6acc;
+        text-decoration: none;
+    }
+}
+
+.event-message {
+    margin-top: 20px;
+}
+
+.pane-title {
+    @extend %event-titles;
+}
+
+.panel-pane {
+    line-height: 1.5;
+}
