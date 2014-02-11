@@ -2659,3 +2659,234 @@ a:hover {
 .panel-pane {
   line-height: 1.5;
 }
+
+/* line 2, ../sass/partials/events/_calendar.scss */
+.page-resources-conferences-and-events-monthly #page-title {
+  display: none;
+}
+
+/* line 7, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion .ui-accordion-header {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 15, ../sass/partials/events/_calendar.scss */
+.view.view-id-event_calendar .date-nav {
+  margin-top: 1em;
+  margin-bottom: 0;
+  background: #E6E7E8;
+  padding: 15px 0;
+}
+/* line 22, ../sass/partials/events/_calendar.scss */
+.view.view-id-event_calendar .pager {
+  margin: 0;
+  list-style: none;
+  background: none;
+}
+/* line 27, ../sass/partials/events/_calendar.scss */
+.view.view-id-event_calendar .pager li {
+  background: none;
+  padding: 15px 20px;
+}
+/* line 31, ../sass/partials/events/_calendar.scss */
+.view.view-id-event_calendar .pager li a {
+  line-height: 1;
+  font-size: 22px;
+  text-decoration: none;
+  color: #c9cacc;
+  margin: 0;
+}
+/* line 43, ../sass/partials/events/_calendar.scss */
+.view.view-id-event_calendar .date-prev {
+  left: 0;
+  right: auto;
+}
+/* line 49, ../sass/partials/events/_calendar.scss */
+.view.view-id-event_calendar .date-heading h3 {
+  font-size: 22px;
+  line-height: 1;
+  font-weight: normal;
+  color: #ec4d25;
+}
+
+/* line 59, ../sass/partials/events/_calendar.scss */
+.monthview {
+  background: #d4dd4c !important;
+  line-height: 20px !important;
+  height: 20px !important;
+  border-radius: 0 !important;
+}
+/* line 65, ../sass/partials/events/_calendar.scss */
+.monthview a {
+  color: black !important;
+  font-size: 11px !important;
+}
+
+/* line 71, ../sass/partials/events/_calendar.scss */
+.cutoff, .continues {
+  border-radius: 0 !important;
+  background: #d4dd4c !important;
+}
+
+/* line 76, ../sass/partials/events/_calendar.scss */
+.continues {
+  padding-left: 0 !important;
+}
+
+/* line 81, ../sass/partials/events/_calendar.scss */
+.calendar-calendar .day {
+  padding: 0 !important;
+}
+
+/* line 85, ../sass/partials/events/_calendar.scss */
+.calendar-calendar td.empty {
+  color: #777;
+}
+
+/* line 93, ../sass/partials/events/_calendar.scss */
+.event-listing .view-header h2 {
+  font-size: 17px;
+  color: #292929;
+  margin: 12px 0;
+  line-height: 1.3;
+}
+/* line 100, ../sass/partials/events/_calendar.scss */
+.event-listing .view-header ul {
+  padding-left: 24px;
+  margin: 12px 0;
+}
+/* line 104, ../sass/partials/events/_calendar.scss */
+.event-listing .view-header ul a {
+  color: #39f;
+}
+/* line 110, ../sass/partials/events/_calendar.scss */
+.event-listing .view-header .date-nav-wrapper .date-heading h3 {
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #292929;
+  border-bottom: 3px double #292929;
+  padding-bottom: 5px;
+  text-align: left;
+}
+/* line 120, ../sass/partials/events/_calendar.scss */
+.event-listing .view-header .date-nav-wrapper .pager {
+  display: none;
+}
+/* line 127, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion .views-row {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+/* line 133, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion .views-row:before {
+  content: "+/-";
+  color: #c2c2c2;
+  font-weight: normal;
+  position: absolute;
+  left: 0;
+}
+/* line 142, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion .ui-accordion-header {
+  background: none;
+}
+/* line 146, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion .ui-accordion-header a {
+  padding: 0;
+}
+/* line 152, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion-content {
+  padding: 0;
+}
+/* line 155, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion-content p {
+  margin: 12px 0;
+  line-height: 1.4;
+}
+/* line 160, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion-content a {
+  color: #6f6acc;
+  text-decoration: none;
+}
+/* line 165, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion-content .views-field-nothing {
+  margin: 7px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: helvetica,sans-serif;
+}
+/* line 172, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion-content .views-field-nothing .views-label {
+  float: none !important;
+}
+/* line 177, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion-content .views-field {
+  line-height: 1.5;
+  font-size: 12px;
+}
+/* line 181, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-accordion-content .views-field .views-label {
+  float: left;
+  margin-right: 5px;
+}
+/* line 191, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-state-focus,
+.event-listing .ui-state-active,
+.event-listing .ui-state-hover {
+  border: none !important;
+}
+/* line 195, ../sass/partials/events/_calendar.scss */
+.event-listing .ui-icon {
+  display: none;
+}
+
+/* line 202, ../sass/partials/events/_calendar.scss */
+.ui-accordion + .date-nav-wrapper .date-heading {
+  display: none;
+}
+/* line 206, ../sass/partials/events/_calendar.scss */
+.ui-accordion + .date-nav-wrapper .date-nav {
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+}
+/* line 212, ../sass/partials/events/_calendar.scss */
+.ui-accordion + .date-nav-wrapper ul {
+  list-style: none;
+}
+/* line 215, ../sass/partials/events/_calendar.scss */
+.ui-accordion + .date-nav-wrapper ul li {
+  background: none !important;
+  padding: 0 !important;
+}
+/* line 219, ../sass/partials/events/_calendar.scss */
+.ui-accordion + .date-nav-wrapper ul li a {
+  margin: 0 !important;
+  font-weight: bold;
+  color: #292929 !important;
+  font-size: 13px;
+  position: relative;
+  top: 3px;
+  height: 20px;
+  display: inline-block;
+  line-height: 20px;
+}
+/* line 233, ../sass/partials/events/_calendar.scss */
+.ui-accordion + .date-nav-wrapper .date-prev {
+  left: 0;
+  right: auto;
+}
+/* line 236, ../sass/partials/events/_calendar.scss */
+.ui-accordion + .date-nav-wrapper .date-prev a {
+  padding-left: 32px !important;
+  background: url("../images/arrow-previous.png") no-repeat left center !important;
+}
+/* line 243, ../sass/partials/events/_calendar.scss */
+.ui-accordion + .date-nav-wrapper .date-next a {
+  padding-right: 32px !important;
+  background: url("../images/arrow-next.png") no-repeat right center !important;
+}
