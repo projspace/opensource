@@ -85,6 +85,16 @@ function os_block_install() {
   );
   os_block_bean_save($data);
 
+  // What is OpenSource block.
+  $fid = os_base_file_create($filepath . 'conference_and_events.png', 'public://blocks/');
+  $data = array(
+    'delta' => 'conferences-and-events-header',
+    'title' => '<none>',
+    'label' => 'Conferences and Events Header',
+    'body' => '<p>[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"90","width":"520","class":"media-element file-default"}}]]</p>',
+  );
+  os_block_bean_save($data);
+
   _os_block_place_blocks();
 }
 
