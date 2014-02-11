@@ -3,19 +3,30 @@
  * @file
  * Code for the OS block functionality.
  */
-drupal_add_js(drupal_get_path('module', 'os_events').'/os_events.js');
+drupal_add_js(drupal_get_path('module', 'os_events') . '/os_events.js');
 
 /**
  * Implements hook_form_alter().
- * @param Array $form
- * @param Array $form_state
- * @param String $form_id
  */
 function os_events_form_alter(&$form, &$form_state, $form_id){
-	global $user;
+  global $user;
   if($form_id == 'event_node_form') {
     drupal_set_title('Submit an event below');
     $form['field_event_submitter_name'][LANGUAGE_NONE][0]['value']['#default_value']  = $user->name;
     $form['field_event_submitter_email'][LANGUAGE_NONE][0]['email']['#default_value']  = $user->mail;
   }
+}
+
+/**
+ *  Implements hook_menu().
+ */
+function os_events_menu() {
+  $items = array();
+  $items['admin/content/opensource-events'] = array(
+    'title' => 'Events',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('moderation-queue/events'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
 }
