@@ -1,3 +1,4 @@
+
 <?php
 /**
  * @file
@@ -130,6 +131,17 @@ function opensource_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+/**
+ * Override or insert variables into the username.
+ */
+function opensource_preprocess_username(&$vars) {
+  $account = $vars['account'];
+  $mail = explode('@', $account->mail);
+  if (count($mail) == 2 && strcasecmp($mail[1], 'redhat.com') == 0) {
+    $vars['name'] .= ' ' . t('(Red Hat)');
+  }
+}
 
 function opensource_preprocess_comment(&$vars) {
   // If no image is present then show the default image.
