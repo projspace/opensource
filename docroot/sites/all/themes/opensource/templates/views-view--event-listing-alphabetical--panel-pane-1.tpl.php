@@ -111,7 +111,7 @@
 
   <?php if ($footer): ?>
     <div class="view-footer">
-      <?php print 'hi' . $footer; ?>
+      <?php print $footer; ?>
     </div>
   <?php endif; ?>
 

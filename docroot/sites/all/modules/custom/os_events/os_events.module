@@ -25,8 +25,86 @@ function os_events_menu() {
   $items['admin/content/opensource-events'] = array(
     'title' => 'Events',
     'page callback' => 'drupal_goto',
-    'page arguments' => array('moderation-queue/events'),
+    'page arguments' => array('moderation-queue/events/all'),
     'access arguments' => array('administer site configuration'),
     'type' => MENU_LOCAL_TASK,
   );
+
+  /**
+	 * Monthly view
+	 */
+	$items['admin/content/opensource-events/monthly'] = array(
+		'title' => 'Monthly View',
+		'page callback' => 'drupal_goto',
+		'page arguments' => array('resources/conferences-and-events-monthly'),
+		'access arguments' => array('administer site configuration'),
+		'type' => MENU_LOCAL_TASK,
+	);
+	$items['admin/content/opensource-events/monthly/page-title'] = array(
+		'title' => 'Page title',
+		'page callback' => 'drupal_goto',
+		'page arguments' => array('admin/structure/pages/nojs/operation/page-conferences_and_events/handlers/page_conferences_and_events_panel_context/content'),
+		'access arguments' => array('administer site configuration'),
+		'type' => MENU_LOCAL_TASK,
+	);
+	$items['admin/content/opensource-events/monthly/intro'] = array(
+    'title' => 'Intro',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/structure/views/nojs/config-item/event_calendar_list/panel_pane_1/header/area'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/monthly/default-text'] = array(
+    'title' => 'Default text',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/structure/views/nojs/config-item/event_calendar_list/panel_pane_1/empty/area'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+	/**
+   * Alphabetical view
+   */
+
+  $items['admin/content/opensource-events/alphabetical'] = array(
+    'title' => 'Alphabetical View',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('resources/conferences-and-events-list'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/alphabetical/intro'] = array(
+    'title' => 'Intro',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/structure/views/nojs/config-item/event_listing_alphabetical/panel_pane_1/header/area'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/alphabetical/page-title'] = array(
+    'title' => 'Page title',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/structure/pages/nojs/operation/page-event_list_panel/handlers/page_event_list_panel_panel_context/content'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/alphabetical/default-text'] = array(
+    'title' => 'Default text',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/structure/views/nojs/config-item/event_listing_alphabetical/panel_pane_1/empty/area'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  /**
+   * Other
+   */
+  $items['admin/content/opensource-events/moderation-queue'] = array(
+    'title' => 'Moderation queue',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('moderation-queue/events/all'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 20,
+  );
+  return $items;
 }
