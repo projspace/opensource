@@ -95,7 +95,7 @@
     <?php print $more; ?>
   <?php endif; ?>
 
-  <div class="clearfix">
+  <div class="clearfix event-listing-alpha-pager">
     <div class="previous">
       <?php $previous = ($current_alpha == 'a') ? '/all/1' : (($digits_rolodex == '1') ? 'z' : chr(ord($current_alpha) - 1)); ?>
       <a href="<?php print url($alpabetic_event_path . $previous); ?>">Previous</a>
