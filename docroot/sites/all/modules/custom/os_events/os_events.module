@@ -104,5 +104,26 @@ function os_events_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 20,
   );
+
+  /**
+   * Notifications
+   */
+
+  $items['admin/content/opensource-events/admin-notification'] = array(
+    'title' => 'Admin notification',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('http://os7.evnt.projspace.com/admin/config/workflow/rules/reaction/manage/1'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 10,
+  );
+  $items['admin/content/opensource-events/user-notification-event-creation'] = array(
+    'title' => 'User notification on event creation',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('http://os7.evnt.projspace.com/admin/config/workflow/rules/reaction/manage/2'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 10,
+  );
   return $items;
 }
