@@ -1,0 +1,61 @@
+.event-conf-listing {
+    .attachment-before {
+        display: none;
+    }
+
+    .alpha-title {
+        font-size: 17px;
+        font-weight: bold;
+        color: #292929;
+        border-bottom: 3px double #292929;
+        padding-bottom: 5px;
+        line-height: 1;
+    }
+
+    .alpha-pager {
+        a{
+            padding-right: 6px;
+            text-decoration: none;
+            color: #292929;
+        }
+
+        &.active {
+            font-weight: bold;
+        }
+    }
+
+    .event-listing-alpha-pager {
+        div {
+            float: left;
+            width: 33.33%;
+            height: 20px;
+            line-height: 20px;
+            margin-top: 20px;
+        }
+
+        a {
+            position: relative;
+            top: 3px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #292929;
+            font-size: 13px;
+        }
+
+        .previous {
+            padding-left: 32px;
+            background: url("../images/arrow-previous.png") no-repeat left center !important;
+        }
+
+        .monthly {
+            text-align: center;
+        }
+
+        .next {
+            text-align: right;
+            padding-right: 32px;
+            background: url("../images/arrow-next.png") no-repeat right center !important;
+        }
+    }
+
+}
