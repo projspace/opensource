@@ -362,3 +362,45 @@ function opensource_preprocess_field(&$vars) {
     }
   }
 }
+
+function opensource_fivestar_summary($variables) {
+  $microdata = $variables['microdata'];
+  extract($variables, EXTR_SKIP);
+  $output = '';
+  $div_class = '';
+  $average_rating_microdata = '';
+  if (isset($user_rating)) {
+    $div_class = isset($votes) ? 'user-count' : 'user';
+    $user_stars = round(($user_rating * $stars) / 100, 1);
+    $output .= '<span class="user-rating">'. t('Your rating: <span>!stars</span>', array('!stars' => $user_rating ? $user_stars : t('None'))) .'</span>';
+  }
+  if (isset($user_rating) && isset($average_rating)) {
+    $output .= ' ';
+  }
+  if (isset($average_rating)) {
+    $div_class = isset($votes) ? 'average-count' : 'average';
+    $average_stars = round(($average_rating * $stars) / 100, 1);
+    if (!empty($microdata['average_rating']['#attributes'])) {
+      $average_rating_microdata = drupal_attributes($microdata['average_rating']['#attributes']);
+    }
+    //$output .= '<span class="average-rating">'. t('Average: <span !microdata>!stars</span>', array('!stars' => $average_stars, '!microdata' => $average_rating_microdata)) .'</span>';
+  }
+  if (isset($user_rating) && isset($average_rating)) {
+    $div_class = 'combo';
+  }
+
+  if (isset($votes) && !(isset($user_rating) || isset($average_rating))) {
+    $output .= ' <span class="total-votes">'. format_plural($votes, '<span>@count</span> vote', '<span>@count</span> votes') .'</span>';
+    $div_class = 'count';
+  }
+  elseif (isset($votes)) {
+    $output .= ' <span class="total-votes">('. format_plural($votes, '<span>@count</span> vote', '<span>@count</span> votes') .')</span>';
+  }
+
+  if ($votes === 0) {
+    $output = '<span class="empty">'. t('No votes yet') .'</span>';
+  }
+
+  $output = '<div class="fivestar-summary fivestar-summary-'. $div_class . '">'. $output .'</div>';
+  return $output;
+}
