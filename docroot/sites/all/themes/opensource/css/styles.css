@@ -2564,3 +2564,23 @@ a:hover {
   padding-right: 32px;
   background: url("../images/arrow-next.png") no-repeat right center !important;
 }
+
+.page-moderation-queue-events #page-title {
+  display: none;
+}
+
+.event-listing.event-status th a {
+  color: #333;
+}
+.event-listing.event-status tr, .event-listing.event-status tr.even {
+  background-color: #eee;
+}
+.event-listing.event-status .views-field-title a {
+  color: #333;
+}
+.event-listing.event-status .views-field-field-event-website a {
+  color: #333;
+}
+.event-listing.event-status .pager a {
+  color: #000;
+}
