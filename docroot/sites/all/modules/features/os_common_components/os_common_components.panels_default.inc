@@ -172,6 +172,47 @@ function os_common_components_default_panels_mini() {
     $pane = new stdClass();
     $pane->pid = 'new-5';
     $pane->panel = 'main';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'contributor_spotlight-panel_pane_promoted';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'logic' => 'or',
+      'plugins' => array(
+        0 => array(
+          'name' => 'front',
+          'settings' => NULL,
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'should-be
+should-be/*',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['main'][4] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'main';
     $pane->type = 'block';
     $pane->subtype = 'bean-submit-an-article';
     $pane->shown = TRUE;
@@ -189,12 +230,12 @@ function os_common_components_default_panels_mini() {
       'css_class' => 'box-wrapper',
     );
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['main'][4] = 'new-5';
+    $display->content['new-6'] = $pane;
+    $display->panels['main'][5] = 'new-6';
     $pane = new stdClass();
-    $pane->pid = 'new-6';
+    $pane->pid = 'new-7';
     $pane->panel = 'main';
     $pane->type = 'block';
     $pane->subtype = 'os_core-opensource-social-links';
@@ -213,10 +254,10 @@ function os_common_components_default_panels_mini() {
       'css_class' => 'box-wrapper signup-email',
     );
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 6;
     $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['main'][5] = 'new-6';
+    $display->content['new-7'] = $pane;
+    $display->panels['main'][6] = 'new-7';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $mini->display = $display;

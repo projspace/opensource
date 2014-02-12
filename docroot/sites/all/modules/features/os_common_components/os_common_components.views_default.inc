@@ -11,6 +11,108 @@ function os_common_components_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'contributor_spotlight';
+  $view->description = 'Show the user added most recently to the spotlight.';
+  $view->tag = 'user, spotlight';
+  $view->base_table = 'users';
+  $view->human_name = 'Contributor Spotlight';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Flags: spotlight */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'users';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'spotlight';
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'spotlight';
+  $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'profile_pictures',
+    'image_link' => 'content',
+  );
+  /* Field: User: Display Name */
+  $handler->display->display_options['fields']['field_display_name']['id'] = 'field_display_name';
+  $handler->display->display_options['fields']['field_display_name']['table'] = 'field_data_field_display_name';
+  $handler->display->display_options['fields']['field_display_name']['field'] = 'field_display_name';
+  $handler->display->display_options['fields']['field_display_name']['label'] = '';
+  $handler->display->display_options['fields']['field_display_name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_display_name']['alter']['path'] = 'user/[uid]';
+  $handler->display->display_options['fields']['field_display_name']['element_label_colon'] = FALSE;
+  /* Field: User: Community Description */
+  $handler->display->display_options['fields']['field_community_description']['id'] = 'field_community_description';
+  $handler->display->display_options['fields']['field_community_description']['table'] = 'field_data_field_community_description';
+  $handler->display->display_options['fields']['field_community_description']['field'] = 'field_community_description';
+  $handler->display->display_options['fields']['field_community_description']['label'] = '';
+  $handler->display->display_options['fields']['field_community_description']['element_label_colon'] = FALSE;
+  /* Sort criterion: Flags: Flagged time */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Promoted Block */
+  $handler = $view->new_display('panel_pane', 'Promoted Block', 'panel_pane_promoted');
+  $handler->display->display_options['display_description'] = 'Show the user latest in spotlight.';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More top contributors';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_archive';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+
+  /* Display: Spotlight Archive */
+  $handler = $view->new_display('page', 'Spotlight Archive', 'page_archive');
+  $handler->display->display_options['display_description'] = 'List users in spotlight.';
+  $handler->display->display_options['path'] = 'should-be/spotlight';
+  $export['contributor_spotlight'] = $view;
+
+  $view = new view();
   $view->name = 'poll_block';
   $view->description = 'Show poll from the article.';
   $view->tag = 'poll, article';
