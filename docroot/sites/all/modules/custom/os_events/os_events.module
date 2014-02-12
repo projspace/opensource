@@ -30,23 +30,21 @@ function os_events_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
-  /**
-	 * Monthly view
-	 */
-	$items['admin/content/opensource-events/monthly'] = array(
-		'title' => 'Monthly View',
-		'page callback' => 'drupal_goto',
-		'page arguments' => array('resources/conferences-and-events-monthly'),
-		'access arguments' => array('administer site configuration'),
-		'type' => MENU_LOCAL_TASK,
-	);
-	$items['admin/content/opensource-events/monthly/page-title'] = array(
-		'title' => 'Page title',
-		'page callback' => 'drupal_goto',
-		'page arguments' => array('admin/structure/pages/nojs/operation/page-conferences_and_events/handlers/page_conferences_and_events_panel_context/content'),
-		'access arguments' => array('administer site configuration'),
-		'type' => MENU_LOCAL_TASK,
-	);
+  // Monthly view
+  $items['admin/content/opensource-events/monthly'] = array(
+    'title' => 'Monthly View',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('resources/conferences-and-events-monthly'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/content/opensource-events/monthly/intro'] = array(
+    'title' => 'Intro',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/structure/pages/nojs/operation/page-conferences_and_events/handlers/page_conferences_and_events_panel_context/content'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
 	$items['admin/content/opensource-events/monthly/intro'] = array(
     'title' => 'Intro',
     'page callback' => 'drupal_goto',
