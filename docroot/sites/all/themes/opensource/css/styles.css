@@ -2410,6 +2410,9 @@ a:hover {
 .event-listing .view-header .date-nav-wrapper .pager {
   display: none;
 }
+.event-listing .ui-accordion {
+  position: relative;
+}
 .event-listing .ui-accordion .views-row {
   border-bottom: 1px solid black;
   margin-bottom: 10px;
