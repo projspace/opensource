@@ -2471,21 +2471,26 @@ a:hover {
   display: none;
 }
 
+.event-listing .view-empty + .date-nav-wrapper .date-heading,
 .ui-accordion + .date-nav-wrapper .date-heading {
   display: none;
 }
+.event-listing .view-empty + .date-nav-wrapper .date-nav,
 .ui-accordion + .date-nav-wrapper .date-nav {
   height: auto;
   min-height: 100%;
   margin: 0;
 }
+.event-listing .view-empty + .date-nav-wrapper ul,
 .ui-accordion + .date-nav-wrapper ul {
   list-style: none;
 }
+.event-listing .view-empty + .date-nav-wrapper ul li,
 .ui-accordion + .date-nav-wrapper ul li {
   background: none !important;
   padding: 0 !important;
 }
+.event-listing .view-empty + .date-nav-wrapper ul li a,
 .ui-accordion + .date-nav-wrapper ul li a {
   margin: 0 !important;
   font-weight: bold;
@@ -2497,14 +2502,17 @@ a:hover {
   display: inline-block;
   line-height: 20px;
 }
+.event-listing .view-empty + .date-nav-wrapper .date-prev,
 .ui-accordion + .date-nav-wrapper .date-prev {
   left: 0;
   right: auto;
 }
+.event-listing .view-empty + .date-nav-wrapper .date-prev a,
 .ui-accordion + .date-nav-wrapper .date-prev a {
   padding-left: 32px !important;
   background: url("../images/arrow-previous.png") no-repeat left center !important;
 }
+.event-listing .view-empty + .date-nav-wrapper .date-next a,
 .ui-accordion + .date-nav-wrapper .date-next a {
   padding-right: 32px !important;
   background: url("../images/arrow-next.png") no-repeat right center !important;
