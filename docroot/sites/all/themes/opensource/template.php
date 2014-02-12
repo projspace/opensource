@@ -289,13 +289,23 @@ function opensource_preprocess_date_views_pager(&$vars) {
   $prev_month = new DateTime($dateString);
   $prev_month->modify('-1 month');
   $prev_pager_title = format_date($prev_month->getTimestamp(), 'custom', $format);
-  $vars['prev_title'] = $prev_pager_title . '.';
+  if($view->name == 'event_calendar_list') {
+    $vars['prev_title'] = 'Prev';
+  }
+  else {
+    $vars['prev_title'] = $prev_pager_title . '.';
+  }
 
   // Get the next month.
   $next_month = new DateTime($dateString);
   $next_month->modify('+1 month');
   $next_pager_title = format_date($next_month->getTimestamp(), 'custom', $format);
-  $vars['next_title'] = $next_pager_title . '.';
+  if($view->name == 'event_calendar_list') {
+    $vars['next_title'] = 'Next';
+  }
+  else {
+    $vars['next_title'] = $next_pager_title . '.';
+  }
 }
 
 /**
