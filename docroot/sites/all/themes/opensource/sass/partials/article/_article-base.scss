@@ -1,0 +1,110 @@
+.node-type-article {
+    .description,
+    .fivestar-widget {
+        float: left;
+    }
+
+    .pane-node-body {
+        p, h2, h3 {
+            margin: 12px 0;
+        }
+    }
+
+    ul {
+        padding-left: 24px;
+    }
+
+    .article-title {
+        line-height: 1.3;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .author-feed {
+        background-position: bottom;
+    }
+
+    .pane-node-field-lead-image {
+        margin-top: 10px;
+    }
+
+    .pane-file-field-file-image-caption {
+        color: #999;
+        font-size: 10px;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+
+    .pane-node-field-attachments {
+        .file {
+            img {
+                display: none;
+            }
+        }
+
+        th {
+            text-align: left;
+        }
+
+        tr.even {
+            background-color: #eee;
+        }
+    }
+
+    .pane-related-articles-panel-pane-1 {
+        margin-top: 10px;
+
+        .pane-title {
+            float: none;
+        }
+
+        .related-content {
+
+            .view-content {
+                clear: both;
+                overflow: hidden;
+            }
+
+            .views-row {
+                float: left;
+                width: 33.33%;
+            }
+        }
+    }
+
+    .pane-node-field-tags {
+        .field-item {
+            margin-top: 0 !important;
+        }
+    }
+
+    .pane-node-field-default-license {
+        text-align: right;
+    }
+
+    .pane-node-comment-form {
+        .pane-title {
+            font-size: 18px;
+            line-height: 1;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .comment-form {
+            clear: left;
+        }
+
+        .form-text {
+            font-size: 14px;
+            border: 1px solid #cdcbca;
+            height: 30px;
+            padding: 8px 8px 0;
+        }
+
+        .form-type-textarea label {
+            display: none;
+        }
+    }
+}

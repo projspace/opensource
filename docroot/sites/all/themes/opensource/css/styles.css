@@ -2573,3 +2573,79 @@ a:hover {
 .event-listing.event-status .pager a {
   color: #000;
 }
+
+.node-type-article .description,
+.node-type-article .fivestar-widget {
+  float: left;
+}
+.node-type-article .pane-node-body p, .node-type-article .pane-node-body h2, .node-type-article .pane-node-body h3 {
+  margin: 12px 0;
+}
+.node-type-article ul {
+  padding-left: 24px;
+}
+.node-type-article .article-title {
+  line-height: 1.3;
+}
+.node-type-article .article-title p {
+  margin: 0;
+}
+.node-type-article .author-feed {
+  background-position: bottom;
+}
+.node-type-article .pane-node-field-lead-image {
+  margin-top: 10px;
+}
+.node-type-article .pane-file-field-file-image-caption {
+  color: #999;
+  font-size: 10px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.node-type-article .pane-node-field-attachments .file img {
+  display: none;
+}
+.node-type-article .pane-node-field-attachments th {
+  text-align: left;
+}
+.node-type-article .pane-node-field-attachments tr.even {
+  background-color: #eee;
+}
+.node-type-article .pane-related-articles-panel-pane-1 {
+  margin-top: 10px;
+}
+.node-type-article .pane-related-articles-panel-pane-1 .pane-title {
+  float: none;
+}
+.node-type-article .pane-related-articles-panel-pane-1 .related-content .view-content {
+  clear: both;
+  overflow: hidden;
+}
+.node-type-article .pane-related-articles-panel-pane-1 .related-content .views-row {
+  float: left;
+  width: 33.33%;
+}
+.node-type-article .pane-node-field-tags .field-item {
+  margin-top: 0 !important;
+}
+.node-type-article .pane-node-field-default-license {
+  text-align: right;
+}
+.node-type-article .pane-node-comment-form .pane-title {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.node-type-article .pane-node-comment-form .comment-form {
+  clear: left;
+}
+.node-type-article .pane-node-comment-form .form-text {
+  font-size: 14px;
+  border: 1px solid #cdcbca;
+  height: 30px;
+  padding: 8px 8px 0;
+}
+.node-type-article .pane-node-comment-form .form-type-textarea label {
+  display: none;
+}
