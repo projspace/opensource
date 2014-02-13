@@ -1,14 +1,5 @@
 /**
  * @file
- * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
- *
- * When you turn on CSS aggregation at admin/config/development/performance, all
- * of these @include files will be combined into a single file.
- */
-/* Import Sass mixins, variables, Compass modules, etc. */
-/* HTML element (SMACSS base) rules */
-/**
- * @file
  * Normalize.css is intended to be used as an alternative to CSS resets.
  *
  * This file is a slight fork of these original sources:
@@ -527,7 +518,6 @@ table {
   margin-bottom: 1.5em;
 }
 
-/* Layout rules */
 /**
  * @file
  * Positioning for a responsive layout.
@@ -774,7 +764,6 @@ table {
     margin-right: -100%;
   }
 }
-/* Component (SMACSS module) rules */
 /**
  * @file
  * SMACSS Modules
