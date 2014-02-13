@@ -31,6 +31,7 @@ features[variable][] = node_options_resource
 features[variable][] = node_preview_resource
 features[variable][] = node_submitted_resource
 features[variable][] = panelizer_defaults_node_resource
+features[variable][] = pathauto_node_resource_pattern
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][file] = file
 features_exclude[dependencies][image] = image
