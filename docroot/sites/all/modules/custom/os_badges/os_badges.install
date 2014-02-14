@@ -37,7 +37,7 @@ function os_badges_install() {
   foreach ($list_badges as $name => $data) {
     $fid = os_base_file_create($path . $data['image']);
     $file = file_load($fid);
-    file_usage_add($file, 'os_badges', 'os_badge', $data['weight']);
+    file_usage_add($file, 'os_badges', 'os_badge', 0);
 
     // Build the form.
     $form_state = array(
@@ -54,7 +54,7 @@ function os_badges_install() {
       'triggering_element' => array('#parents' => array('upload_button')),
     );
     drupal_form_submit('user_badges_edit_form', $form_state);
-    file_usage_delete($file, 'os_badges', 'os_badge', $data['weight']);
+    file_usage_delete($file, 'os_badges', 'os_badge', 0);
   }
 
   // Insert all the old badges.
@@ -77,10 +77,32 @@ function os_badges_install() {
 }
 
 /**
+ * Implements hook_uninstall().
+ */
+function os_badges_uninstall() {
+  // We need functionality from user_badges.
+  module_load_include('inc', 'user_badges', 'user_badges.admin');
+
+  // Delete all our badges.
+  $result = db_select('user_badges_badges', 'ubb')
+    ->fields('ubb')
+    ->execute();
+
+  $list_badges = _os_badges_list_badges();
+  foreach ($result as $badge) {
+    if (isset($list_badges[$badge->name])) {
+      $form_state = array('values' => array('bid' => $badge->bid), 'build_info' => array('args' => array($badge)));
+      drupal_form_submit('user_badges_delete_form', $form_state);
+    }
+  }
+}
+
+/**
  * Returns a list of badges to be inserted by this module.
  */
 function _os_badges_list_badges() {
   $badges = array(
+    // Badges based on points.
     'Open Sourcerer' => array(
       'image' => 'osdc_role_opensorcerer_sm.png',
       'weight' => 192,
@@ -112,6 +134,66 @@ function _os_badges_list_badges() {
     'Newbie' => array(
       'image' => 'osdc_role_newbie_sm.png',
       'weight' => 199,
+    ),
+
+    // Regular Badges.
+    'Admin' => array(
+      'image' => 'osdc_badge_admin_sm.png',
+      'weight' => 0,
+    ),
+    'Author' => array(
+      'image' => 'osdc_badge_author_sm.png',
+      'weight' => 0,
+    ),
+    'Founding Member' => array(
+      'image' => 'osdc_badge_founding_sm.png',
+      'weight' => 0,
+    ),
+    'Comment Gardener' => array(
+      'image' => 'osdc_badge_gardener_sm.png',
+      'weight' => 0,
+    ),
+    'Moderator' => array(
+      'image' => 'osdc_badge_moderator_sm.png',
+      'weight' => 0,
+    ),
+    'Top Contributor' => array(
+      'image' => 'osdc_badge_topcontributor_sm.png',
+      'weight' => 0,
+    ),
+
+    // Award badges.
+    "Moderator's Choice Award" => array(
+      'image' => 'osdc_award_modchoice.png',
+      'weight' => -40,
+    ),
+    "People's Choice Award" => array(
+      'image' => 'osdc_award_peopleschoice.png',
+      'weight' => -40,
+    ),
+    "Moderator's Choice Award 2011" => array(
+      'image' => 'osdc_award_modchoice_2011.png',
+      'weight' => -40,
+    ),
+    "People's Choice Award 2011" => array(
+      'image' => 'osdc_award_peopleschoice_2011.png',
+      'weight' => -40,
+    ),
+    "Moderator's Choice Award 2013" => array(
+      'image' => 'osdc_award_modchoice_2013.png',
+      'weight' => -40,
+    ),
+    "People's Choice Award 2013" => array(
+      'image' => 'osdc_award_peopleschoice_2013.png',
+      'weight' => -40,
+    ),
+    "Conversation Starter Award 2013" => array(
+      'image' => 'osdc_award_convo_starter_2013.png',
+      'weight' => -40,
+    ),
+    "Social Sharer Award 2013" => array(
+      'image' => 'osdc_award_social_sharer_2013.png',
+      'weight' => -40,
     ),
   );
 
