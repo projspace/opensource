@@ -1,0 +1,119 @@
+<?php
+/**
+ * @file
+ * Create badges for OpenSource.com.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function os_badges_install() {
+  // We need functionality from user_badges.
+  module_load_include('inc', 'user_badges', 'user_badges.admin');
+
+  // These are the badges we define.
+  $list_badges = _os_badges_list_badges();
+
+  // I'm sorry but we have to start by deleting all existing badges.
+  // I know it sucks but I've got no choice. :(
+  $result = db_select('user_badges_badges', 'ubb')
+    ->fields('ubb')
+    ->execute();
+
+  $old_badges = array();
+  foreach ($result as $badge) {
+    if (empty($list_badges[$badge->name])) {
+      $old_badges[] = $badge;
+    }
+    $form_state = array('values' => array('bid' => $badge->bid), 'build_info' => array('args' => array($badge)));
+    drupal_form_submit('user_badges_delete_form', $form_state);
+  }
+
+  // Truncate the user_badges table so that we reset the ID's.
+  db_truncate('user_badges_badges')->execute();
+
+  // Start inserting all our badges.
+  $path = drupal_get_path('module', 'os_badges') . '/images/';
+  foreach ($list_badges as $name => $data) {
+    $fid = os_base_file_create($path . $data['image']);
+    $file = file_load($fid);
+    file_usage_add($file, 'os_badges', 'os_badge', $data['weight']);
+
+    // Build the form.
+    $form_state = array(
+      'values' => array(
+        'name' => $name,
+        'image_location' => 'upload',
+        'imagefile' => array('fid' => $fid),
+        'weight' => $data['weight'],
+        'href' => '',
+        'unhideable' => NULL,
+        'fixedweight' => NULL,
+        'doesnotcounttolimit' => NULL,
+      ),
+      'triggering_element' => array('#parents' => array('upload_button')),
+    );
+    drupal_form_submit('user_badges_edit_form', $form_state);
+    file_usage_delete($file, 'os_badges', 'os_badge', $data['weight']);
+  }
+
+  // Insert all the old badges.
+  foreach ($old_badges as $badge) {
+    // Build the form.
+    $form_state = array(
+      'values' => array(
+        'name' => $badge->name,
+        'image_location' => 'library',
+        'imagefromlibrary' => $badge->image,
+        'weight' => $badge->weight,
+        'href' => $badge->href,
+        'unhideable' => $badge->unhideable ? $badge->unhideable : NULL,
+        'fixedweight' => $badge->fixedweight ? $badge->fixedweight : NULL,
+        'doesnotcounttolimit' => $badge->doesnotcounttolimit ? $badge->doesnotcounttolimit : NULL,
+      ),
+    );
+    drupal_form_submit('user_badges_edit_form', $form_state);
+  }
+}
+
+/**
+ * Returns a list of badges to be inserted by this module.
+ */
+function _os_badges_list_badges() {
+  $badges = array(
+    'Open Sourcerer' => array(
+      'image' => 'osdc_role_opensorcerer_sm.png',
+      'weight' => 192,
+    ),
+    'Open Source Sensei' => array(
+      'image' => 'osdc_role_opensensei_sm.png',
+      'weight' => 193,
+    ),
+    'Open Source Champion' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 194,
+    ),
+    'Open Source Evangelist' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 195,
+    ),
+    'Open Minded' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 196,
+    ),
+    'Open Enthusiast' => array(
+      'image' => 'osdc_role_enthusiast_sm.png',
+      'weight' => 197,
+    ),
+    'Community Member' => array(
+      'image' => 'osdc_role_member_sm.png',
+      'weight' => 198,
+    ),
+    'Newbie' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 199,
+    ),
+  );
+
+  return $badges;
+}

@@ -1,0 +1,7 @@
+name = OpenSource Badges
+description = Creates user badges for OpenSource.com.
+core = 7.x
+package = OpenSource.com Custom
+
+dependencies[] = user_badges
+dependencies[] = os_base
