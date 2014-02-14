@@ -3,3 +3,106 @@
  * @file
  * Necessary .module file.
  */
+
+/**
+ * Returns a list of badges to be inserted by this module.
+ */
+function _os_badges_list_badges() {
+  $badges = array(
+    // Badges based on points.
+    'Open Sourcerer' => array(
+      'image' => 'osdc_role_opensorcerer_sm.png',
+      'weight' => 192,
+    ),
+    'Open Source Sensei' => array(
+      'image' => 'osdc_role_opensensei_sm.png',
+      'weight' => 193,
+    ),
+    'Open Source Champion' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 194,
+    ),
+    'Open Source Evangelist' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 195,
+    ),
+    'Open Minded' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 196,
+    ),
+    'Open Enthusiast' => array(
+      'image' => 'osdc_role_enthusiast_sm.png',
+      'weight' => 197,
+    ),
+    'Community Member' => array(
+      'image' => 'osdc_role_member_sm.png',
+      'weight' => 198,
+    ),
+    'Newbie' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 199,
+    ),
+
+    // Regular Badges.
+    'Admin' => array(
+      'image' => 'osdc_badge_admin_sm.png',
+      'weight' => 0,
+    ),
+    'Author' => array(
+      'image' => 'osdc_badge_author_sm.png',
+      'weight' => 0,
+    ),
+    'Founding Member' => array(
+      'image' => 'osdc_badge_founding_sm.png',
+      'weight' => 0,
+    ),
+    'Comment Gardener' => array(
+      'image' => 'osdc_badge_gardener_sm.png',
+      'weight' => 0,
+    ),
+    'Moderator' => array(
+      'image' => 'osdc_badge_moderator_sm.png',
+      'weight' => 0,
+    ),
+    'Top Contributor' => array(
+      'image' => 'osdc_badge_topcontributor_sm.png',
+      'weight' => 0,
+    ),
+
+    // Award badges.
+    "Moderator's Choice Award" => array(
+      'image' => 'osdc_award_modchoice.png',
+      'weight' => -40,
+    ),
+    "People's Choice Award" => array(
+      'image' => 'osdc_award_peopleschoice.png',
+      'weight' => -40,
+    ),
+    "Moderator's Choice Award 2011" => array(
+      'image' => 'osdc_award_modchoice_2011.png',
+      'weight' => -40,
+    ),
+    "People's Choice Award 2011" => array(
+      'image' => 'osdc_award_peopleschoice_2011.png',
+      'weight' => -40,
+    ),
+    "Moderator's Choice Award 2013" => array(
+      'image' => 'osdc_award_modchoice_2013.png',
+      'weight' => -40,
+    ),
+    "People's Choice Award 2013" => array(
+      'image' => 'osdc_award_peopleschoice_2013.png',
+      'weight' => -40,
+    ),
+    "Conversation Starter Award 2013" => array(
+      'image' => 'osdc_award_convo_starter_2013.png',
+      'weight' => -40,
+    ),
+    "Social Sharer Award 2013" => array(
+      'image' => 'osdc_award_social_sharer_2013.png',
+      'weight' => -40,
+    ),
+  );
+
+  return $badges;
+}
