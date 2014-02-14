@@ -29,6 +29,7 @@ function os_core_block_view($delta = '') {
         'subject' => '<none>',
         'content' => os_core_display_social_block(),
        );
+    break;
     case 'opensource-article-share':
       $block = array(
         'subject' => '<none>',
@@ -166,7 +167,7 @@ function os_core_display_social_share_icons() {
 
   $social_buttons = '<div class="addthis_toolbox addthis_default_style">';
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
-  $social_buttons = '<a class="addthis_button_tweet"></a>';
+  $social_buttons .= '<a class="addthis_button_tweet"></a>';
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $url_enc = urlencode($url);
