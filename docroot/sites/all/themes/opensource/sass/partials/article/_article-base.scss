@@ -1,7 +1,6 @@
 .node-type-article {
     .description,
-    .fivestar-widget {
-        float: left;
+    .fivestar-widget { float: left;
     }
 
     .pane-node-body {
@@ -106,5 +105,29 @@
         .form-type-textarea label {
             display: none;
         }
+    }
+
+    .pane-os-core-opensource-article-share {
+        .addthis_button_tweet {
+            position: relative;
+            top: 2px;
+            width: 80px;
+            display: inline-block;
+
+            & + a {
+                position: relative;
+                top: -4px;
+                width: 80px;
+                display: inline-block;
+            }
+        }
+
+        .addthis_button_google_plusone {
+            position: relative;
+            top: 2px;
+            margin-left: 5px;
+        }
+
+
     }
 }
