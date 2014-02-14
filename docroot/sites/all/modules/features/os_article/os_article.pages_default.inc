@@ -239,25 +239,26 @@ function os_article_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-5';
     $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'file:field_file_image_caption';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Image Caption',
-      'title' => '',
-      'body' => '<p><span>%file:field_file_image_caption</span></p>',
-      'format' => 'panopoly_html_text',
-      'substitute' => 1,
+      'label' => 'title',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => array(),
+      'override_title' => 1,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'image-credits',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
@@ -266,38 +267,13 @@ function os_article_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-6';
     $pane->panel = 'contentmain';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_add_this';
+    $pane->type = 'block';
+    $pane->subtype = 'os_core-opensource-article-share';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'addthis_basic_toolbox',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'share_services' => 'twitter,reddit,stumbleupon,facebook_like,google_plusone',
-        'buttons_size' => 'addthis_16x16_style',
-        'counter_orientation' => 'horizontal',
-        'extra_css' => '',
-      ),
-      'context' => array(),
       'override_title' => 0,
       'override_title_text' => '',
-      'view_mode' => NULL,
-      'widget_title' => NULL,
-      'items_per_page' => NULL,
-      'exposed' => array(
-        'sort_by' => NULL,
-        'sort_order' => NULL,
-      ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
-      'offset' => NULL,
-      'link_to_view' => NULL,
-      'more_link' => NULL,
-      'path' => NULL,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -353,47 +329,6 @@ function os_article_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-8';
     $pane->panel = 'contentmain';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_alternative_license';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => array(),
-      'override_title' => 0,
-      'override_title_text' => '',
-      'view_mode' => NULL,
-      'widget_title' => NULL,
-      'items_per_page' => NULL,
-      'exposed' => array(
-        'sort_by' => NULL,
-        'sort_order' => NULL,
-      ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
-      'offset' => NULL,
-      'link_to_view' => NULL,
-      'more_link' => NULL,
-      'path' => NULL,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 7;
-    $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['contentmain'][7] = 'new-8';
-    $pane = new stdClass();
-    $pane->pid = 'new-9';
-    $pane->panel = 'contentmain';
     $pane->type = 'node_terms';
     $pane->subtype = 'node_terms';
     $pane->shown = TRUE;
@@ -413,12 +348,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 8;
+    $pane->position = 7;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['contentmain'][8] = 'new-9';
+    $display->content['new-8'] = $pane;
+    $display->panels['contentmain'][7] = 'new-8';
     $pane = new stdClass();
-    $pane->pid = 'new-10';
+    $pane->pid = 'new-9';
     $pane->panel = 'contentmain';
     $pane->type = 'node_terms';
     $pane->subtype = 'node_terms';
@@ -439,23 +374,27 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 9;
+    $pane->position = 8;
     $pane->locks = array();
-    $display->content['new-10'] = $pane;
-    $display->panels['contentmain'][9] = 'new-10';
+    $display->content['new-9'] = $pane;
+    $display->panels['contentmain'][8] = 'new-9';
     $pane = new stdClass();
-    $pane->pid = 'new-11';
+    $pane->pid = 'new-10';
     $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_attachments';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Article Read Count',
-      'title' => '',
-      'body' => '<p><span>%node:total-count reads</span></p>',
-      'format' => 'panopoly_wysiwyg_text',
-      'substitute' => 1,
+      'label' => 'hidden',
+      'formatter' => 'file_table',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(),
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => 'Attachment',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -463,12 +402,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 10;
+    $pane->position = 9;
     $pane->locks = array();
-    $display->content['new-11'] = $pane;
-    $display->panels['contentmain'][10] = 'new-11';
+    $display->content['new-10'] = $pane;
+    $display->panels['contentmain'][9] = 'new-10';
     $pane = new stdClass();
-    $pane->pid = 'new-12';
+    $pane->pid = 'new-11';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'related_articles-panel_pane_1';
@@ -490,6 +429,30 @@ function os_article_default_page_manager_handlers() {
       'path' => NULL,
       'view_settings' => 'fields',
       'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 10;
+    $pane->locks = array();
+    $display->content['new-11'] = $pane;
+    $display->panels['contentmain'][10] = 'new-11';
+    $pane = new stdClass();
+    $pane->pid = 'new-12';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Article Read Count',
+      'title' => '',
+      'body' => '<p><span>%node:total-count reads</span></p>',
+      'format' => 'panopoly_wysiwyg_text',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -589,6 +552,94 @@ function os_article_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-15';
     $pane->panel = 'contentmain';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_default_license';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:article:field_default_license',
+          'settings' => array(
+            'field_default_license' => array(
+              'und' => array(
+                0 => array(
+                  'value' => 1,
+                ),
+              ),
+            ),
+            'field_default_license_value' => '1',
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'list_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 14;
+    $pane->locks = array();
+    $display->content['new-15'] = $pane;
+    $display->panels['contentmain'][14] = 'new-15';
+    $pane = new stdClass();
+    $pane->pid = 'new-16';
+    $pane->panel = 'contentmain';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_alternative_license';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'view_mode' => NULL,
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 15;
+    $pane->locks = array();
+    $display->content['new-16'] = $pane;
+    $display->panels['contentmain'][15] = 'new-16';
+    $pane = new stdClass();
+    $pane->pid = 'new-17';
+    $pane->panel = 'contentmain';
     $pane->type = 'node_comments';
     $pane->subtype = 'node_comments';
     $pane->shown = TRUE;
@@ -606,12 +657,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 14;
+    $pane->position = 16;
     $pane->locks = array();
-    $display->content['new-15'] = $pane;
-    $display->panels['contentmain'][14] = 'new-15';
+    $display->content['new-17'] = $pane;
+    $display->panels['contentmain'][16] = 'new-17';
     $pane = new stdClass();
-    $pane->pid = 'new-16';
+    $pane->pid = 'new-18';
     $pane->panel = 'contentmain';
     $pane->type = 'node_comment_form';
     $pane->subtype = 'node_comment_form';
@@ -629,12 +680,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 15;
+    $pane->position = 17;
     $pane->locks = array();
-    $display->content['new-16'] = $pane;
-    $display->panels['contentmain'][15] = 'new-16';
+    $display->content['new-18'] = $pane;
+    $display->panels['contentmain'][17] = 'new-18';
     $pane = new stdClass();
-    $pane->pid = 'new-17';
+    $pane->pid = 'new-19';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
     $pane->subtype = 'author_info-panel_pane_1';
@@ -668,10 +719,10 @@ function os_article_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-17'] = $pane;
-    $display->panels['sidebar'][0] = 'new-17';
+    $display->content['new-19'] = $pane;
+    $display->panels['sidebar'][0] = 'new-19';
     $pane = new stdClass();
-    $pane->pid = 'new-18';
+    $pane->pid = 'new-20';
     $pane->panel = 'sidebar';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -695,10 +746,10 @@ function os_article_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-18'] = $pane;
-    $display->panels['sidebar'][1] = 'new-18';
+    $display->content['new-20'] = $pane;
+    $display->panels['sidebar'][1] = 'new-20';
     $pane = new stdClass();
-    $pane->pid = 'new-19';
+    $pane->pid = 'new-21';
     $pane->panel = 'sidebar';
     $pane->type = 'panels_mini';
     $pane->subtype = 'common_1';
@@ -716,8 +767,8 @@ function os_article_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-19'] = $pane;
-    $display->panels['sidebar'][2] = 'new-19';
+    $display->content['new-21'] = $pane;
+    $display->panels['sidebar'][2] = 'new-21';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
