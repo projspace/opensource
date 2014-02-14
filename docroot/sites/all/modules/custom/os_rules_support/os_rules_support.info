@@ -1,0 +1,6 @@
+name = OpenSource Rules Support
+description = Provides rules support to add different events, conditions and event properties for use in rules.
+core = 7.x
+package = OpenSource.com Custom
+
+dependencies[] = rules
