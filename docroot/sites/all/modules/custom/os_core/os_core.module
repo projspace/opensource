@@ -165,7 +165,6 @@ function os_core_display_social_share_icons() {
   $node = node_load(filter_xss(arg(1)));
   $title = urlencode($node->title);
 
-  $social_buttons = '<div class="addthis_toolbox addthis_default_style">';
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $social_buttons .= '<a class="addthis_button_tweet"></a>';
 
@@ -185,7 +184,6 @@ function os_core_display_social_share_icons() {
 
   $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52fdaa9e37dcc3ed"></script>';
-  $social_buttons .= '</div>';
 
   return $social_buttons;
 }
