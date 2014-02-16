@@ -81,8 +81,8 @@ module.exports = function(grunt) {
         photobox: {
             task: {
                 options: {
-                    screenSizes : ['320', '600', '1000', '1200' ],
-                    urls        : [ 'http://opensource.dev.projspace.com/life/13/3/remixing-music'],
+                    screenSizes : ['240, 320', '600', '1000', '1200' ],
+                    urls        : [ 'http://opensource.dev.projspace.com/'],
                     template       : 'magic',
                 }
             }
@@ -99,5 +99,5 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('junk', ['uncss']);
     grunt.registerTask('dev', ['compass:dev', 'autoprefixer']);
-    grunt.registerTask('build', ['imagemin', 'compass:dist', 'autoprefixer', 'photobox']);
+    grunt.registerTask('build', ['imagemin', 'compass:dist', 'autoprefixer']);
 }
