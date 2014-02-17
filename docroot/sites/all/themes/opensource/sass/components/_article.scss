@@ -5,19 +5,23 @@
        display: block;
        line-height: 17px;
 }
+
 .box-wrapper {
-    border: 1px solid #cdcbca;
     background: #fff;
     padding: 1em;
-    box-shadow: 2px 2px 3px #cdcbca;
     margin-bottom: 1.5em;
+    // box-shadow: 2px 2px 3px #cdcbca;
+    // border: 1px solid #cdcbca;
 }
+
 .box-wrapper p {
-    margin: 0;
+    margin: 12px 0;
+
     br {
         display:  none;
     }
 }
+
 .article-title {
     font-size: 24px;
     font-weight: bold;
@@ -43,6 +47,7 @@
         span.author-feed {
             float:left;
             width: 15px;
+
             a {
                 background: url(../images/rss.jpg) no-repeat;
                 text-indent: -9999px;
@@ -101,7 +106,7 @@
     .pane-node-comments {
         .comment {
             @extend .box-wrapper;
-            .content {     
+            .content {
                 margin: 1em 0;
                 border-bottom: 2px dotted #ccc;
                 padding-bottom: 1em;

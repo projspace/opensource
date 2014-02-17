@@ -14,9 +14,9 @@
 
     .date-nav {
         margin-top: 1em;
-        margin-bottom: 12px;
+        margin-bottom: 0;
         background: #E6E7E8;
-        padding: 15px 0 0;
+        padding: 15px 0;
     }
 
     .pager {
@@ -107,6 +107,11 @@
         }
 
         .date-nav-wrapper {
+            .date-nav {
+                padding-bottom: 0;
+                margin-bottom: 12px;
+            }
+
             .date-heading  h3 {
                 font-size: 17px;
                 font-weight: bold;
@@ -120,6 +125,14 @@
             .pager {
                 display: none;
             }
+        }
+    }
+
+    .calendar-event-title {
+        color: #333;
+
+        &:hover {
+            color: #39f;
         }
     }
 
@@ -148,10 +161,6 @@
             a {
                 padding: 0;
                 font-weight: bold;
-
-                &:hover {
-                    color: #3399ff;
-                }
             }
         }
     }

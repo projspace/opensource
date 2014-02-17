@@ -36,21 +36,6 @@
         margin-bottom: 10px;
     }
 
-    .pane-node-field-attachments {
-        .file {
-            img {
-                display: none;
-            }
-        }
-
-        th {
-            text-align: left;
-        }
-
-        tr.even {
-            background-color: #eee;
-        }
-    }
 
     .pane-related-articles-panel-pane-1 {
         margin-top: 10px;
@@ -129,5 +114,20 @@
         }
 
 
+    }
+}
+.pane-node-field-attachments {
+    .file {
+        img {
+            display: none;
+        }
+    }
+
+    th {
+        text-align: left;
+    }
+
+    tr.even {
+        background-color: #eee;
     }
 }
