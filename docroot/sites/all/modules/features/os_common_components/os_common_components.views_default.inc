@@ -61,6 +61,14 @@ function os_common_components_views_default_views() {
     'image_style' => 'profile_pictures',
     'image_link' => 'content',
   );
+  /* Field: User Badges: Grouped User Badges */
+  $handler->display->display_options['fields']['user_badges_html']['id'] = 'user_badges_html';
+  $handler->display->display_options['fields']['user_badges_html']['table'] = 'users';
+  $handler->display->display_options['fields']['user_badges_html']['field'] = 'user_badges_html';
+  $handler->display->display_options['fields']['user_badges_html']['label'] = '';
+  $handler->display->display_options['fields']['user_badges_html']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['user_badges_html']['appearance'] = 'badges';
+  $handler->display->display_options['fields']['user_badges_html']['separator'] = '';
   /* Field: User: Display Name */
   $handler->display->display_options['fields']['field_display_name']['id'] = 'field_display_name';
   $handler->display->display_options['fields']['field_display_name']['table'] = 'field_data_field_display_name';
