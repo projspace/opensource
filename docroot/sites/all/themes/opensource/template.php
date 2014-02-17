@@ -136,10 +136,11 @@ function opensource_preprocess_block(&$variables, $hook) {
  * Override or insert variables into the username.
  */
 function opensource_preprocess_username(&$vars) {
-  $account = $vars['account'];
+  // $vars['account'] is not always the user account.
+  $account = user_load($vars['uid']);
   $mail = explode('@', $account->mail);
   if (count($mail) == 2 && strcasecmp($mail[1], 'redhat.com') == 0) {
-    $vars['name'] .= ' ' . t('(Red Hat)');
+    $vars['extra'] = ' ' . t('(Red Hat)');
   }
 }
 

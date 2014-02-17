@@ -1,0 +1,60 @@
+<?php
+/**
+ * @file
+ * Create badges for OpenSource.com.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function os_badges_install() {
+  // We need functionality from user_badges.
+  module_load_include('inc', 'user_badges', 'user_badges.admin');
+
+  // Start inserting all our badges.
+  $list_badges = _os_badges_list_badges();
+  $path = drupal_get_path('module', 'os_badges') . '/images/';
+  foreach ($list_badges as $name => $data) {
+    $fid = os_base_file_create($path . $data['image']);
+    $file = file_load($fid);
+    file_usage_add($file, 'os_badges', 'os_badge', 0);
+
+    // Build the form.
+    $form_state = array(
+      'values' => array(
+        'name' => $name,
+        'image_location' => 'upload',
+        'imagefile' => array('fid' => $fid),
+        'weight' => $data['weight'],
+        'href' => '',
+        'unhideable' => NULL,
+        'fixedweight' => NULL,
+        'doesnotcounttolimit' => NULL,
+      ),
+      'triggering_element' => array('#parents' => array('upload_button')),
+    );
+    drupal_form_submit('user_badges_edit_form', $form_state);
+    file_usage_delete($file, 'os_badges', 'os_badge', 0);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function os_badges_uninstall() {
+  // We need functionality from user_badges.
+  module_load_include('inc', 'user_badges', 'user_badges.admin');
+
+  // Delete all our badges.
+  $result = db_select('user_badges_badges', 'ubb')
+    ->fields('ubb')
+    ->execute();
+
+  $list_badges = _os_badges_list_badges();
+  foreach ($result as $badge) {
+    if (isset($list_badges[$badge->name])) {
+      $form_state = array('values' => array('bid' => $badge->bid), 'build_info' => array('args' => array($badge)));
+      drupal_form_submit('user_badges_delete_form', $form_state);
+    }
+  }
+}

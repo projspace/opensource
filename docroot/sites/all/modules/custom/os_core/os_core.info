@@ -1,5 +1,5 @@
 name = OpenSource Core
-description = This module generates the bean entitis for the footer block.
+description = Configures the system and adds/modifies various content for OpenSource.com.
 core = 7.x
 package = OpenSource.com Custom
 

@@ -1,0 +1,211 @@
+<?php
+/**
+ * @file
+ * Necessary .module file.
+ */
+
+/**
+ * Implements hook_userpoints().
+ */
+function os_badges_userpoints($op, &$params = array()) {
+  // We don't need any transactions without points.
+  if (!is_array($params) || !isset($params['points'])) {
+    return;
+  }
+
+  if ($op == 'points after') {
+    os_badges_award_role_badge($params['uid']);
+  }
+}
+
+/**
+ * Implements hook_user_insert().
+ */
+function os_badges_user_insert(&$edit, $account, $category) {
+  os_badges_award_role_badge($account->uid);
+}
+
+/**
+ * Award badge for a particular user based on our rules.
+ */
+function os_badges_award_role_badge($uid) {
+  $total_points = userpoints_get_current_points($uid, 'all');
+
+  // Get the intended role badge for the user.
+  $role = os_badges_determine_role($total_points);
+  $role_badge = reset(os_badges_get_badges($role));
+
+  // Get user's current badges and filter it to remove any role-based badges
+  // unless the user is supposed to have it.
+  $all_role_badges = os_badges_get_badges(array_keys(_os_badges_badge_rules()));
+  $badges = user_badges_get_badges($uid);
+  foreach ($badges as $bid => $badge) {
+    // If this badge is one of the role badges, but not the intended one,
+    // then remove it.
+    if (array_key_exists($bid, $all_role_badges) && $bid != $role_badge->bid) {
+      user_badges_user_remove_badge($uid, $bid);
+    }
+  }
+
+  // If the user doesn't have the intended badge, award it now.
+  if (!array_key_exists($role_badge->bid, $badges)) {
+    user_badges_user_add_badge($uid, $role_badge->bid, 'user');
+    drupal_set_message(t("Awarded badge %badge_name to user %uid.", array('%badge_name' => $role_badge->name, '%uid' => $uid)), 'status');
+  }
+}
+
+/**
+ * Determine the role badge based on specified points.
+ */
+function os_badges_determine_role($points) {
+  $badge_rules = _os_badges_badge_rules();
+  // Once it is sorted in reverse, all we need to do is loop through it
+  // and return the first name that satisfies minimum points.
+  arsort($badge_rules);
+  foreach ($badge_rules as $name => $min_points) {
+    if ($points >= $min_points) {
+      return $name;
+    }
+  }
+}
+
+/**
+ * Helper function to get a badge object from name.
+ */
+function os_badges_get_badges($names) {
+  $result = db_select('user_badges_badges', 'ubb')
+    ->fields('ubb')
+    ->condition('ubb.name', $names)
+    ->execute()
+    ->fetchAllAssoc('bid');
+
+  return $result;
+}
+
+/**
+ * Get point rules used to assigning role badges.
+ */
+function _os_badges_badge_rules() {
+  $rules = array(
+    'Newbie' => 0,
+    'Community Member' => 10,
+    'Open Enthusiast' => 30,
+    'Open Minded' => 100,
+    'Open Source Evangelist' => 500,
+    'Open Source Champion' => 1000,
+    'Open Source Sensei' => 2500,
+    'Open Sourcerer' => 5000,
+  );
+  return $rules;
+}
+
+/**
+ * Returns a list of badges to be inserted by this module.
+ */
+function _os_badges_list_badges() {
+  $badges = array(
+    // Badges based on points.
+    'Open Sourcerer' => array(
+      'image' => 'osdc_role_opensorcerer_sm.png',
+      'weight' => 192,
+      'role' => TRUE,
+    ),
+    'Open Source Sensei' => array(
+      'image' => 'osdc_role_opensensei_sm.png',
+      'weight' => 193,
+      'role' => TRUE,
+    ),
+    'Open Source Champion' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 194,
+      'role' => TRUE,
+    ),
+    'Open Source Evangelist' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 195,
+      'role' => TRUE,
+    ),
+    'Open Minded' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 196,
+      'role' => TRUE,
+    ),
+    'Open Enthusiast' => array(
+      'image' => 'osdc_role_enthusiast_sm.png',
+      'weight' => 197,
+      'role' => TRUE,
+    ),
+    'Community Member' => array(
+      'image' => 'osdc_role_member_sm.png',
+      'weight' => 198,
+      'role' => TRUE,
+    ),
+    'Newbie' => array(
+      'image' => 'osdc_role_newbie_sm.png',
+      'weight' => 199,
+      'role' => TRUE,
+    ),
+
+    // Regular Badges.
+    'Admin' => array(
+      'image' => 'osdc_badge_admin_sm.png',
+      'weight' => 0,
+    ),
+    'Author' => array(
+      'image' => 'osdc_badge_author_sm.png',
+      'weight' => 0,
+    ),
+    'Founding Member' => array(
+      'image' => 'osdc_badge_founding_sm.png',
+      'weight' => 0,
+    ),
+    'Comment Gardener' => array(
+      'image' => 'osdc_badge_gardener_sm.png',
+      'weight' => 0,
+    ),
+    'Moderator' => array(
+      'image' => 'osdc_badge_moderator_sm.png',
+      'weight' => 0,
+    ),
+    'Top Contributor' => array(
+      'image' => 'osdc_badge_topcontributor_sm.png',
+      'weight' => 0,
+    ),
+
+    // Award badges.
+    "Moderator's Choice Award" => array(
+      'image' => 'osdc_award_modchoice.png',
+      'weight' => -40,
+    ),
+    "People's Choice Award" => array(
+      'image' => 'osdc_award_peopleschoice.png',
+      'weight' => -40,
+    ),
+    "Moderator's Choice Award 2011" => array(
+      'image' => 'osdc_award_modchoice_2011.png',
+      'weight' => -40,
+    ),
+    "People's Choice Award 2011" => array(
+      'image' => 'osdc_award_peopleschoice_2011.png',
+      'weight' => -40,
+    ),
+    "Moderator's Choice Award 2013" => array(
+      'image' => 'osdc_award_modchoice_2013.png',
+      'weight' => -40,
+    ),
+    "People's Choice Award 2013" => array(
+      'image' => 'osdc_award_peopleschoice_2013.png',
+      'weight' => -40,
+    ),
+    "Conversation Starter Award 2013" => array(
+      'image' => 'osdc_award_convo_starter_2013.png',
+      'weight' => -40,
+    ),
+    "Social Sharer Award 2013" => array(
+      'image' => 'osdc_award_social_sharer_2013.png',
+      'weight' => -40,
+    ),
+  );
+
+  return $badges;
+}
