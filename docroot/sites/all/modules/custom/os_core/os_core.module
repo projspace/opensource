@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_block_info()
+ * Implements hook_block_info().
  */
 function os_core_block_info() {
   $blocks = array();
@@ -19,7 +19,7 @@ function os_core_block_info() {
 }
 
 /**
- *  Implements hook_block_view()
+ * Implements hook_block_view().
  */
 function os_core_block_view($delta = '') {
   // The $delta parameter tells us which block is being requested.
@@ -28,18 +28,22 @@ function os_core_block_view($delta = '') {
       $block = array(
         'subject' => '<none>',
         'content' => os_core_display_social_block(),
-       );
-    break;
+      );
+      break;
+
     case 'opensource-article-share':
       $block = array(
         'subject' => '<none>',
         'content' => os_core_display_social_share_icons(),
-       );
-    break;
+      );
+      break;
   }
   return $block;
 }
 
+/**
+ * Generate block for social links and email subscription.
+ */
 function os_core_display_social_block() {
   $links = array();
   $links['twitter'] = array(
@@ -66,19 +70,19 @@ function os_core_display_social_block() {
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
-   $links['youtube'] = array(
+  $links['youtube'] = array(
     'href' => 'http://www.youtube.com/opensourceway',
     'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/youtube.jpg')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
-   $links['pinterest'] = array(
+  $links['pinterest'] = array(
     'href' => 'http://pinterest.com/opensourceway/',
     'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/pinterest.png')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
-    $links['linkedin'] = array(
+  $links['linkedin'] = array(
     'href' => 'http://www.linkedin.com/groups/Open-Source-Professionals-Advocates-2769297?gid=2769297',
     'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/in.jpg')),
     'attributes' => array('target' => '_blank'),
@@ -96,13 +100,6 @@ function os_core_display_social_block() {
     )
   );
 
-  /*$output .= theme('image', array(
-      'path' => 'sites/all/themes/sitetheme/images/email-signup.png',
-      'alt' => 'Sign up for our newsletter',
-      'title' => 'Sign up for our newsletter',
-      'attributes' => array('class' => 'newsletter'),
-    )
-  );*/
   $output .= '<div class="signup-email-title">' . t('Sign-up for weekly email') . '</div>';
   $eloqua_form = drupal_get_form('os_core_eloqua_form');
   $output .= render($eloqua_form);
@@ -112,14 +109,17 @@ function os_core_display_social_block() {
 /**
  * Implements hook_init().
  */
-function os_core_init(){
-  if(array_key_exists('success', $_REQUEST)) {
+function os_core_init() {
+  if (array_key_exists('success', $_REQUEST)) {
     drupal_set_message('Thank you. You have been subscribed to our weekly email.');
   }
 }
 
-function os_core_eloqua_form($form, &$form_submit){
-  // Build the Redirect
+/**
+ * Build the form for Eloqua email subscription.
+ */
+function os_core_eloqua_form($form, &$form_submit) {
+  // Build the Redirect.
   $redirect = url('thank-you-subscription', array('absolute' => TRUE));
 
   $form['C_EmailAddress'] = array(
@@ -153,15 +153,20 @@ function os_core_eloqua_form($form, &$form_submit){
   return $form;
 }
 
+/**
+ * Validation for eloqua email subscription form.
+ */
 function os_core_eloqua_form_validate($form, &$form_state) {
   if ($form_state['values']['c_EmailAddress'] == '') {
     form_set_error('name', t('You must enter a valid email address.'));
   }
 }
 
+/**
+ * Generate the social share icons.
+ */
 function os_core_display_social_share_icons() {
   $social_buttons = '';
-  // urlencode title
   $node = node_load(filter_xss(arg(1)));
   $title = urlencode($node->title);
 
@@ -189,11 +194,10 @@ function os_core_display_social_share_icons() {
 }
 
 /**
- * This function will fetch the social share icons on the event list.
+ * Fetch the social share icons on the event list.
  */
 function os_core_display_social_share_icons_event_list($nid) {
   $social_buttons = '';
-  // urlencode title
   $node = node_load($nid);
   $title = urlencode($node->title);
 
