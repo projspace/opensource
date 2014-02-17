@@ -29,8 +29,7 @@
   <div class="<?php print $classes_array[$id]; ?>">
     <?php print $row; ?>
     <?php
-      $block = module_invoke('os_core', 'block_view', 'opensource-article-share');
-      print render($block['content']);
+      print os_core_display_social_share_icons_event_list($view->result[$id]->nid);
     ?>
   </div>
 <?php endforeach; ?>

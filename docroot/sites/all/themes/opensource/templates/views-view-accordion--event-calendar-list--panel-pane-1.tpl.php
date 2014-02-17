@@ -27,10 +27,9 @@
 <?php if ($use_group_header): ?><div><?php endif; ?>
 <?php foreach ($rows as $id => $row): ?>
   <div class="<?php print $classes_array[$id]; ?>">
-    <?php print $row; ?>
+    <?php print $row;?>
     <?php
-      $block = module_invoke('os_core', 'block_view', 'opensource-article-share');
-      print render($block['content']);
+      print os_core_display_social_share_icons_event_list($view->result[$id]->nid);
     ?>
   </div>
 <?php endforeach; ?>
