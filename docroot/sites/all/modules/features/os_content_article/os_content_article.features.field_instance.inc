@@ -341,6 +341,59 @@ function os_content_article_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-article-field_energy_level'
+  $field_instances['node-article-field_energy_level'] = array(
+    'bundle' => 'article',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 100,
+        'radioactivity_timestamp' => 1392375208,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 0,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 12,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_energy_level',
+    'label' => 'Energy Level',
+    'required' => FALSE,
+    'settings' => array(
+      'profile' => 'most_popular',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-article-field_lead_image'
   $field_instances['node-article-field_lead_image'] = array(
     'bundle' => 'article',
@@ -387,12 +440,20 @@ function os_content_article_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+        'allowed_types' => array(
+          0 => 'image',
+        ),
+        'browser_plugins' => array(),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 1,
     ),
   );
@@ -554,6 +615,7 @@ function os_content_article_field_default_field_instances() {
   t('Body');
   t('Channel');
   t('Default CC License');
+  t('Energy Level');
   t('Enter a comma-separated list of words to describe this article.');
   t('Lead Image');
   t('Rating');

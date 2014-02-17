@@ -209,6 +209,26 @@ function os_fields_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
+  // Exported field_base: 'field_energy_level'
+  $field_bases['field_energy_level'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_energy_level',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'energy' => array(
+        0 => 'radioactivity_energy',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'radioactivity',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'radioactivity',
+  );
+
   // Exported field_base: 'field_file_image_alt_text'
   $field_bases['field_file_image_alt_text'] = array(
     'active' => 1,
