@@ -2147,6 +2147,7 @@ h3 a:hover {
 
 .event-listing .ui-accordion-content {
   padding: 0;
+  min-height: 200px;
 }
 
 .event-listing .ui-accordion-content p {
