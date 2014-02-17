@@ -106,69 +106,69 @@ function _os_badges_list_badges() {
   $badges = array(
     // Badges based on points.
     'Open Sourcerer' => array(
-      'image' => 'osdc_role_opensorcerer_sm.png',
+      'image' => 'osdc_role_opensorcerer.png',
       'weight' => 192,
       'role' => TRUE,
     ),
     'Open Source Sensei' => array(
-      'image' => 'osdc_role_opensensei_sm.png',
+      'image' => 'osdc_role_opensensei.png',
       'weight' => 193,
       'role' => TRUE,
     ),
     'Open Source Champion' => array(
-      'image' => 'osdc_role_newbie_sm.png',
+      'image' => 'osdc_role_open_champion.png',
       'weight' => 194,
       'role' => TRUE,
     ),
     'Open Source Evangelist' => array(
-      'image' => 'osdc_role_newbie_sm.png',
+      'image' => 'osdc_role_open_evangelist.png',
       'weight' => 195,
       'role' => TRUE,
     ),
     'Open Minded' => array(
-      'image' => 'osdc_role_newbie_sm.png',
+      'image' => 'osdc_role_open_minded.png',
       'weight' => 196,
       'role' => TRUE,
     ),
     'Open Enthusiast' => array(
-      'image' => 'osdc_role_enthusiast_sm.png',
+      'image' => 'osdc_role_enthusiast.png',
       'weight' => 197,
       'role' => TRUE,
     ),
     'Community Member' => array(
-      'image' => 'osdc_role_member_sm.png',
+      'image' => 'osdc_role_member.png',
       'weight' => 198,
       'role' => TRUE,
     ),
     'Newbie' => array(
-      'image' => 'osdc_role_newbie_sm.png',
+      'image' => 'osdc_role_newbie.png',
       'weight' => 199,
       'role' => TRUE,
     ),
 
     // Regular Badges.
     'Admin' => array(
-      'image' => 'osdc_badge_admin_sm.png',
+      'image' => 'osdc_badge_admin.png',
       'weight' => 0,
     ),
     'Author' => array(
-      'image' => 'osdc_badge_author_sm.png',
+      'image' => 'osdc_badge_author.png',
       'weight' => 0,
     ),
     'Founding Member' => array(
-      'image' => 'osdc_badge_founding_sm.png',
+      'image' => 'osdc_badge_founding.png',
       'weight' => 0,
     ),
     'Comment Gardener' => array(
-      'image' => 'osdc_badge_gardener_sm.png',
+      'image' => 'osdc_badge_gardener.png',
       'weight' => 0,
     ),
     'Moderator' => array(
-      'image' => 'osdc_badge_moderator_sm.png',
+      'image' => 'osdc_badge_moderator.png',
       'weight' => 0,
     ),
     'Top Contributor' => array(
-      'image' => 'osdc_badge_topcontributor_sm.png',
+      'image' => 'osdc_badge_topcontributor.png',
       'weight' => 0,
     ),
 
