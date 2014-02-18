@@ -1,0 +1,47 @@
+.pane-contributor-spotlight-panel-pane-promoted {
+    .views-row {
+        clear: both;
+        overflow: hidden;
+     }
+
+    h2 {
+        background: url("../images/osdc_contributor_spotlight.png") no-repeat scroll center bottom transparent;
+        display: block;
+        font-size: 0;
+        height: 17px;
+        padding-bottom: 0px;
+        text-indent: -10000em;
+        width: 288px;
+    }
+
+    a {
+        color: #39f;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .views-field-user-badges-html {
+        float: left;
+
+        .badge-visual {
+
+            .user-pic {
+                margin-bottom: 5px;
+            }
+
+            img {
+                border: 1px solid #C2C0C1;
+                display: block;
+            }
+        }
+
+    }
+
+    .views-field-field-community-description {
+        float: right;
+        width: 65%;
+    }
+}
