@@ -1,6 +1,7 @@
 .node-type-article {
     .description,
-    .fivestar-widget { float: left;
+    .fivestar-widget {
+        float: left;
     }
 
     .author-feed {
@@ -10,9 +11,21 @@
     }
 
     .pane-node-body {
+        font-size: 16px;
+        color: black;
+
         p, h2, h3 {
             margin: 12px 0;
         }
+    }
+
+    .pane-os-core-opensource-article-share {
+        clear: left;
+        padding-top: 10px;
+    }
+
+    .comment-by-node-author {
+        clear: left;
     }
 
     ul {
