@@ -5,23 +5,28 @@
        display: block;
        line-height: 17px;
 }
+
 .box-wrapper {
-    border: 1px solid #cdcbca;
     background: #fff;
     padding: 1em;
-    box-shadow: 2px 2px 3px #cdcbca;
     margin-bottom: 1.5em;
+    // box-shadow: 2px 2px 3px #cdcbca;
+    // border: 1px solid #cdcbca;
 }
+
 .box-wrapper p {
-    margin: 0;
+    margin: 12px 0;
+
     br {
         display:  none;
     }
 }
+
 .article-title {
     font-size: 24px;
     font-weight: bold;
 }
+
 .node-type-article {
     .view-author-info {
         .views-field-field-user-picture {
@@ -43,6 +48,7 @@
         span.author-feed {
             float:left;
             width: 15px;
+
             a {
                 background: url(../images/rss.jpg) no-repeat;
                 text-indent: -9999px;
@@ -64,11 +70,33 @@
         font-style: italic;
     }
     #content .pane-related-articles-panel-pane-1 {
+        .view-content {
+            clear: both;
+            overflow: hidden;
+        }
+
         h2.pane-title {
             @extend .image-title;
             background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
             margin-bottom: 8px;
         }
+
+        .views-row {
+            float: left;
+            padding-right: 30px;
+            margin-bottom: 10px;
+
+            img {
+                margin-bottom: 5px;
+            }
+
+            .field-content a {
+                width: 140px;
+                display: block;
+            }
+
+        }
+
         .view-related-articles {
             .views-field-title {
                 margin-top: 5px;
@@ -101,7 +129,7 @@
     .pane-node-comments {
         .comment {
             @extend .box-wrapper;
-            .content {     
+            .content {
                 margin: 1em 0;
                 border-bottom: 2px dotted #ccc;
                 padding-bottom: 1em;
