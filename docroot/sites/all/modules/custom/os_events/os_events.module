@@ -3,22 +3,28 @@
  * @file
  * Code for the OS block functionality.
  */
-drupal_add_js(drupal_get_path('module', 'os_events') . '/os_events.js');
+
+/**
+ * Implements hook_init().
+ */
+function os_events_init() {
+  drupal_add_js(drupal_get_path('module', 'os_events') . '/os_events.js');
+}
 
 /**
  * Implements hook_form_alter().
  */
-function os_events_form_alter(&$form, &$form_state, $form_id){
+function os_events_form_alter(&$form, &$form_state, $form_id) {
   global $user;
-  if($form_id == 'event_node_form') {
+  if ($form_id == 'event_node_form') {
     drupal_set_title('Submit an event below');
-    $form['field_event_submitter_name'][LANGUAGE_NONE][0]['value']['#default_value']  = $user->name;
-    $form['field_event_submitter_email'][LANGUAGE_NONE][0]['email']['#default_value']  = $user->mail;
+    $form['field_event_submitter_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $user->name;
+    $form['field_event_submitter_email'][LANGUAGE_NONE][0]['email']['#default_value'] = $user->mail;
   }
 }
 
 /**
- *  Implements hook_menu().
+ * Implements hook_menu().
  */
 function os_events_menu() {
   $items = array();
@@ -30,7 +36,7 @@ function os_events_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
-  // Monthly view
+  // Monthly view.
   $items['admin/content/opensource-events/monthly'] = array(
     'title' => 'Monthly View',
     'page callback' => 'drupal_goto',
@@ -45,7 +51,7 @@ function os_events_menu() {
     'access arguments' => array('administer site configuration'),
     'type' => MENU_LOCAL_TASK,
   );
-	$items['admin/content/opensource-events/monthly/intro'] = array(
+  $items['admin/content/opensource-events/monthly/intro'] = array(
     'title' => 'Intro',
     'page callback' => 'drupal_goto',
     'page arguments' => array('admin/structure/views/nojs/config-item/event_calendar_list/panel_pane_1/header/area'),
@@ -60,10 +66,7 @@ function os_events_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
-	/**
-   * Alphabetical view
-   */
-
+  // Alphabetical view.
   $items['admin/content/opensource-events/alphabetical'] = array(
     'title' => 'Alphabetical View',
     'page callback' => 'drupal_goto',
@@ -93,9 +96,7 @@ function os_events_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
-  /**
-   * Other
-   */
+  // Other.
   $items['admin/content/opensource-events/moderation-queue'] = array(
     'title' => 'Moderation queue',
     'page callback' => 'drupal_goto',
@@ -105,10 +106,7 @@ function os_events_menu() {
     'weight' => 20,
   );
 
-  /**
-   * Notifications
-   */
-
+  // Notifications.
   $items['admin/content/opensource-events/admin-notification'] = array(
     'title' => 'Admin notification',
     'page callback' => 'drupal_goto',
