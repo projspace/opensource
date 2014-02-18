@@ -1,0 +1,29 @@
+.page-moderation-queue-events {
+    #page-title {
+       display: none;
+    }
+}
+
+.event-listing.event-status {
+    th a {
+        color: #333;
+    }
+
+    tr, tr.even {
+        background-color: #eee;
+    }
+
+    .views-field-title a {
+        color: #333;
+    }
+
+    .views-field-field-event-website a {
+        color: #333;
+    }
+
+    .pager {
+        a {
+            color: #000;
+        }
+    }
+}

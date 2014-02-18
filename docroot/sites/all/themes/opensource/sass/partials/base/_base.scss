@@ -2,10 +2,15 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 body {
     line-height: 1.4;
     font-size: 0.75em;
-    color: #333;
+    color: black;
+}
+
+hr {
+    height: 1px;
 }
 
 a {
@@ -13,6 +18,27 @@ a {
 
     &:hover {
         color:  #3399ff;
+    }
+}
+
+ul {
+    padding-left: 24px;
+    margin: 12px 0;
+}
+
+li {
+    margin: 4px 0;
+}
+
+h3 {
+
+    a {
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -33,4 +59,8 @@ a {
     padding: 5px;
     color: #fff;
     margin-right: 5px;
+}
+
+.pane-os-core-opensource-social-links {
+    ul { padding: 0 !Important; }
 }
