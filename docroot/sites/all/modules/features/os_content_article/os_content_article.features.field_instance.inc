@@ -161,7 +161,11 @@ function os_content_article_field_default_field_instances() {
   // Exported field_instance: 'node-article-field_article_type'
   $field_instances['node-article-field_article_type'] = array(
     'bundle' => 'article',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 7,
+      ),
+    ),
     'deleted' => 0,
     'description' => 'Specify the general type of this article.',
     'display' => array(

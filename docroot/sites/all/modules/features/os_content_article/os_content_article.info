@@ -2,7 +2,6 @@ name = OpenSource Content Type - Article
 description = Provides definition for Article content type.
 core = 7.x
 package = OpenSource.com Content
-php = 5.2.4
 dependencies[] = addthis
 dependencies[] = addthis_displays
 dependencies[] = ctools
