@@ -1,4 +1,6 @@
 .pane-contributor-spotlight-panel-pane-promoted {
+    @extend .box-wrapper;
+
     .views-row {
         clear: both;
         overflow: hidden;

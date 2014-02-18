@@ -1075,7 +1075,8 @@ tr.selected td {
 
 .box-wrapper,
 .node-type-article .pane-node-comments .comment,
-.burr-flipped-content {
+.burr-flipped-content,
+.pane-contributor-spotlight-panel-pane-promoted {
   background: #fff;
   padding: 1em;
   margin-bottom: 1.5em;
@@ -1083,13 +1084,15 @@ tr.selected td {
 
 .box-wrapper p,
 .node-type-article .pane-node-comments .comment p,
-.burr-flipped-content p {
+.burr-flipped-content p,
+.pane-contributor-spotlight-panel-pane-promoted p {
   margin: 12px 0;
 }
 
 .box-wrapper p br,
 .node-type-article .pane-node-comments .comment p br,
-.burr-flipped-content p br {
+.burr-flipped-content p br,
+.pane-contributor-spotlight-panel-pane-promoted p br {
   display: none;
 }
 
@@ -2379,6 +2382,10 @@ blockquote {
 .node-type-article .pane-node-body h2,
 .node-type-article .pane-node-body h3 {
   margin: 12px 0;
+}
+
+.node-type-article .pane-node-body a {
+  color: #5E6A71;
 }
 
 .node-type-article .pane-os-core-opensource-article-share {
