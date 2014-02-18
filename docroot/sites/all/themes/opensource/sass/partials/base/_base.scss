@@ -30,6 +30,13 @@ li {
     margin: 4px 0;
 }
 
+h2 {
+    font-size: 18px;
+    line-height: 1.3em;
+    margin-top: 0.667em;
+    margin-bottom: 0.667em;
+}
+
 h3 {
 
     a {
@@ -40,6 +47,12 @@ h3 {
             text-decoration: underline;
         }
     }
+}
+
+blockquote {
+    border-left: 1px solid #999;
+    margin: 1em 2em;
+    padding: 0 0 0 1em;
 }
 
 /* Some basic styling */
