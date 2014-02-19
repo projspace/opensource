@@ -363,3 +363,19 @@ function os_core_select_or_other_element_process($element, &$form_state) {
 
   return $element;
 }
+
+/**
+ * Implementation of hook_form_FORM_ID_alter()
+ * This adds a Login/Register link for anonymous users
+ */
+function os_core_form_comment_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  if(!$user->uid) {
+    unset($form['author']['homepage']);
+    $form['login-register'] = array(
+      '#type' => 'item',
+      '#markup' => l('Login or Register', 'user', array('query' => array('destination' => drupal_get_destination()))). ' ' . t('to earn points for your comments.'),
+      '#weight' => -10,
+    );
+  }
+}
