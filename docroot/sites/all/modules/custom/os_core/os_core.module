@@ -224,22 +224,4 @@ function os_core_display_social_share_icons_event_list($nid) {
   return $social_buttons;
 }
 
-/**
- * Implements hook_ctools_render_alter().
- */
-function os_core_ctools_render_alter(&$info, &$page, &$context) {
-  $node = node_load($context['args'][0]);
-  if(isset($node)) {
-    db_merge('node_counter')
-      ->key(array('nid' => $context['args'][0]))
-      ->fields(array(
-        'daycount' => 1,
-        'totalcount' => 1,
-        'timestamp' => REQUEST_TIME,
-      ))
-      ->expression('daycount', 'daycount + 1')
-      ->expression('totalcount', 'totalcount + 1')
-      ->execute();
-  }
-}
 
