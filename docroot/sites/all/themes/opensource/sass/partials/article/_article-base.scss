@@ -168,6 +168,7 @@
         width: 80px;
         display: inline-block;
         margin-right: 5px;
+        left: -3px;
     }
 }
 
@@ -175,9 +176,16 @@
     position: relative;
     top: 2px;
     margin-left: 5px;
+    left: -9px;
 }
 
-#iframe-stmblpn-widget-1,
-#iframe-stmblpn-widget-3 {
+[id^="iframe-stmblpn-widget-"] {
     margin-right: 5px !important;
+    left: -6px;
+    position: relative;
+}
+
+.addthis_button_facebook_like {
+    position: relative;
+    left: -9px;
 }
