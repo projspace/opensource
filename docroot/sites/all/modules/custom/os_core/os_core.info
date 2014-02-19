@@ -7,3 +7,4 @@ dependencies[] = legal
 dependencies[] = os_base
 dependencies[] = os_taxonomy_channel
 dependencies[] = os_taxonomy
+dependencies[] = os_common_components
