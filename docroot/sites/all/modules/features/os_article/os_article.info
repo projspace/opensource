@@ -47,6 +47,7 @@ features[variable][] = addthis_twitter_via
 features[variable][] = addthis_ui_delay
 features[variable][] = addthis_ui_header_background_color
 features[variable][] = addthis_ui_header_color
+features[variable][] = date_format_medium
 features[variable][] = vud_comment_dim_active
 features[variable][] = vud_comment_dim_threshold
 features[variable][] = vud_comment_node_types
