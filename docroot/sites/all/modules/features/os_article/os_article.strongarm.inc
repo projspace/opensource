@@ -28,7 +28,7 @@ function os_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'addthis_clickback_tracking_enabled';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['addthis_clickback_tracking_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -352,7 +352,7 @@ function os_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'addthis_facebook_like_count_support_enabled';
-  $strongarm->value = TRUE;
+  $strongarm->value = 1;
   $export['addthis_facebook_like_count_support_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -424,105 +424,6 @@ function os_article_strongarm() {
   $strongarm->name = 'addthis_ui_header_color';
   $strongarm->value = '';
   $export['addthis_ui_header_color'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_notify_available_alerts';
-  $strongarm->value = array(
-    1 => '1',
-    2 => 0,
-  );
-  $export['comment_notify_available_alerts'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_notify_comment_notify_default_mailtext';
-  $strongarm->value = 'Hi [comment-subscribed:author],
-
-[comment:author] has commented on: "[comment:node:title]"
-
-----
-[comment:title]
-[comment:body]
-----
-
-You can view the comment at the following url
-[comment:url]
-
-You can stop receiving emails when someone replies to this post,
-by going to [comment-subscribed:unsubscribe-url]
-
-You can set up auto-following feature for all future posts
-by creating your own user with a few clicks here [site:login-url]
-
--- [site:name] team
-[site:url]';
-  $export['comment_notify_comment_notify_default_mailtext'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_notify_default_anon_mailalert';
-  $strongarm->value = '1';
-  $export['comment_notify_default_anon_mailalert'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_notify_default_registered_mailalert';
-  $strongarm->value = '1';
-  $export['comment_notify_default_registered_mailalert'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_notify_node_notify_default_mailalert';
-  $strongarm->value = 1;
-  $export['comment_notify_node_notify_default_mailalert'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_notify_node_notify_default_mailtext';
-  $strongarm->value = 'Hi [comment:node:author],
-
-You have received a comment on: "[comment:node:title]"
-
-----
-[comment:title]
-[comment:body]
-----
-
-You can view the comment at the following url
-[comment:url]
-
-You will receive emails like this for all replies to your posts. You can
-disable this by logging in and changing the settings on your user account at
-[comment:node:author:edit-url].
-
--- [site:name] team
-[site:url]';
-  $export['comment_notify_node_notify_default_mailtext'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_notify_node_types';
-  $strongarm->value = array(
-    'article' => 'article',
-    'page' => 0,
-    'channel' => 0,
-    'panopoly_page' => 0,
-    'event' => 0,
-    'group_page' => 0,
-    'podcast' => 0,
-    'poll' => 0,
-    'reading' => 0,
-    'resource' => 0,
-  );
-  $export['comment_notify_node_types'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
