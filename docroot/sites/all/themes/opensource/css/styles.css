@@ -2883,12 +2883,16 @@ blockquote {
 .event-listing .ui-accordion-content .social__container {
   margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003179}}
+.event-listing .ui-accordion-content .social__container * {
+  margin-right: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003184}}
 .event-listing .ui-accordion-content a {
   color: #6f6acc;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003185}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003189}}
 .event-listing .ui-accordion-content .views-field-nothing {
   margin: 7px 0;
   text-transform: uppercase;
@@ -2896,55 +2900,55 @@ blockquote {
   font-size: 12px;
   font-family: helvetica,sans-serif;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003196}}
 .event-listing .ui-accordion-content .views-field-nothing .views-label {
   float: none !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003197}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003201}}
 .event-listing .ui-accordion-content .views-field {
   line-height: 1.5;
   font-size: 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003205}}
 .event-listing .ui-accordion-content .views-field .views-label {
   float: left;
   margin-right: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003215}}
 .event-listing .ui-state-focus,
 .event-listing .ui-state-active,
 .event-listing .ui-state-hover {
   border: none !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003219}}
 .event-listing .ui-icon {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003223}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003227}}
 .event-listing .view-empty + .date-nav-wrapper .date-heading,
 .ui-accordion + .date-nav-wrapper .date-heading {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003227}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003231}}
 .event-listing .view-empty + .date-nav-wrapper .date-nav,
 .ui-accordion + .date-nav-wrapper .date-nav {
   height: auto;
   min-height: 100%;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003237}}
 .event-listing .view-empty + .date-nav-wrapper ul,
 .ui-accordion + .date-nav-wrapper ul {
   list-style: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003236}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003240}}
 .event-listing .view-empty + .date-nav-wrapper ul li,
 .ui-accordion + .date-nav-wrapper ul li {
   background: none !important;
   padding: 0 !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003240}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003244}}
 .event-listing .view-empty + .date-nav-wrapper ul li a,
 .ui-accordion + .date-nav-wrapper ul li a {
   margin: 0 !important;
@@ -2957,19 +2961,19 @@ blockquote {
   display: inline-block;
   line-height: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003258}}
 .event-listing .view-empty + .date-nav-wrapper .date-prev,
 .ui-accordion + .date-nav-wrapper .date-prev {
   left: 0;
   right: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003257}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003261}}
 .event-listing .view-empty + .date-nav-wrapper .date-prev a,
 .ui-accordion + .date-nav-wrapper .date-prev a {
   padding-left: 32px !important;
   background: url("../images/arrow-previous.png") no-repeat left center !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003264}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss}line{font-family:\00003268}}
 .event-listing .view-empty + .date-nav-wrapper .date-next a,
 .ui-accordion + .date-nav-wrapper .date-next a {
   padding-right: 32px !important;

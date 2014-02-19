@@ -6698,7 +6698,21 @@ blockquote {
   }
 
   line {
-    font-family: \00003180;
+    font-family: \00003179;
+  }
+}
+
+.event-listing .ui-accordion-content .social__container * {
+  margin-right: 3px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss;
+  }
+
+  line {
+    font-family: \00003184;
   }
 }
 
@@ -6713,7 +6727,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003185;
+    font-family: \00003189;
   }
 }
 
@@ -6731,7 +6745,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003192;
+    font-family: \00003196;
   }
 }
 
@@ -6745,7 +6759,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003197;
+    font-family: \00003201;
   }
 }
 
@@ -6760,7 +6774,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003201;
+    font-family: \00003205;
   }
 }
 
@@ -6775,7 +6789,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003211;
+    font-family: \00003215;
   }
 }
 
@@ -6791,7 +6805,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003215;
+    font-family: \00003219;
   }
 }
 
@@ -6805,7 +6819,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003223;
+    font-family: \00003227;
   }
 }
 
@@ -6820,7 +6834,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003227;
+    font-family: \00003231;
   }
 }
 
@@ -6837,7 +6851,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003233;
+    font-family: \00003237;
   }
 }
 
@@ -6852,7 +6866,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003236;
+    font-family: \00003240;
   }
 }
 
@@ -6868,7 +6882,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003240;
+    font-family: \00003244;
   }
 }
 
@@ -6891,7 +6905,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003254;
+    font-family: \00003258;
   }
 }
 
@@ -6907,7 +6921,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003257;
+    font-family: \00003261;
   }
 }
 
@@ -6923,7 +6937,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003264;
+    font-family: \00003268;
   }
 }
 
