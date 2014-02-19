@@ -187,7 +187,7 @@ function os_core_display_social_share_icons() {
 
   $social_buttons .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
 
-  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52fdaa9e37dcc3ed"></script>';
 
   return $social_buttons;
@@ -218,8 +218,28 @@ function os_core_display_social_share_icons_event_list($nid) {
 
   $social_buttons .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
 
-  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52fdaa9e37dcc3ed"></script>';
 
   return $social_buttons;
 }
+
+/**
+ * Implements hook_ctools_render_alter().
+ */
+function os_core_ctools_render_alter(&$info, &$page, &$context) {
+  $node = node_load($context['args'][0]);
+  if(isset($node)) {
+    db_merge('node_counter')
+      ->key(array('nid' => $context['args'][0]))
+      ->fields(array(
+        'daycount' => 1,
+        'totalcount' => 1,
+        'timestamp' => REQUEST_TIME,
+      ))
+      ->expression('daycount', 'daycount + 1')
+      ->expression('totalcount', 'totalcount + 1')
+      ->execute();
+  }
+}
+
