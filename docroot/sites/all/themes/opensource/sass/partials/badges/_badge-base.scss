@@ -1,3 +1,4 @@
+.badge-wrapper,
 .pane-contributor-spotlight-panel-pane-promoted {
     @extend .box-wrapper;
 
@@ -46,5 +47,36 @@
     .views-field-field-community-description {
         float: right;
         width: 65%;
+    }
+}
+
+.view-contributor-spotlight,
+.badge-archive {
+    @extend .badge-wrapper;
+
+    .user-name {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 20px;
+
+        a {
+            color: black;
+
+            &:hover {
+                color: #39f;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .views-row {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding-bottom: 1.5em;
+        border-bottom: 2px dotted rgb(179, 179, 179)
+    }
+
+    .views-field-field-community-description {
+        width: 75%;
     }
 }
