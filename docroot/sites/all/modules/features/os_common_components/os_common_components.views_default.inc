@@ -55,6 +55,7 @@ function os_common_components_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
@@ -66,6 +67,10 @@ function os_common_components_views_default_views() {
   $handler->display->display_options['fields']['user_badges_html']['table'] = 'users';
   $handler->display->display_options['fields']['user_badges_html']['field'] = 'user_badges_html';
   $handler->display->display_options['fields']['user_badges_html']['label'] = '';
+  $handler->display->display_options['fields']['user_badges_html']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['user_badges_html']['alter']['text'] = '<div class="badge-visual"><div class="user-pic">[field_user_picture]</div><div class="user-badge">[user_badges_html] </div></div>';
+  $handler->display->display_options['fields']['user_badges_html']['element_type'] = 'div';
+  $handler->display->display_options['fields']['user_badges_html']['element_class'] = 'badge-visual-cont';
   $handler->display->display_options['fields']['user_badges_html']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['user_badges_html']['appearance'] = 'badges';
   $handler->display->display_options['fields']['user_badges_html']['separator'] = '';
@@ -74,6 +79,7 @@ function os_common_components_views_default_views() {
   $handler->display->display_options['fields']['field_display_name']['table'] = 'field_data_field_display_name';
   $handler->display->display_options['fields']['field_display_name']['field'] = 'field_display_name';
   $handler->display->display_options['fields']['field_display_name']['label'] = '';
+  $handler->display->display_options['fields']['field_display_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_display_name']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_display_name']['alter']['path'] = 'user/[uid]';
   $handler->display->display_options['fields']['field_display_name']['element_label_colon'] = FALSE;
@@ -82,6 +88,10 @@ function os_common_components_views_default_views() {
   $handler->display->display_options['fields']['field_community_description']['table'] = 'field_data_field_community_description';
   $handler->display->display_options['fields']['field_community_description']['field'] = 'field_community_description';
   $handler->display->display_options['fields']['field_community_description']['label'] = '';
+  $handler->display->display_options['fields']['field_community_description']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_community_description']['alter']['text'] = '<div class="badge-meta"><div class="user-name">[field_display_name]</div><div class="user-info">[field_community_description] </div></div>';
+  $handler->display->display_options['fields']['field_community_description']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_community_description']['element_class'] = 'badge-meta-cont';
   $handler->display->display_options['fields']['field_community_description']['element_label_colon'] = FALSE;
   /* Sort criterion: Flags: Flagged time */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
@@ -99,6 +109,8 @@ function os_common_components_views_default_views() {
 
   /* Display: Promoted Block */
   $handler = $view->new_display('panel_pane', 'Promoted Block', 'panel_pane_promoted');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Contributor Spotlight';
   $handler->display->display_options['display_description'] = 'Show the user latest in spotlight.';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
