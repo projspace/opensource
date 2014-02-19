@@ -1701,8 +1701,7 @@ tr.selected td {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_article\.scss}line{font-family:\000039}}
-.box-wrapper, .node-type-article .pane-node-comments .comment, .burr-flipped-content, .badge-wrapper, .view-contributor-spotlight,
-.badge-archive,
+.box-wrapper, .node-type-article .pane-node-comments .comment, .burr-flipped-content, .badge-wrapper,
 .pane-contributor-spotlight-panel-pane-promoted {
   background: #fff;
   padding: 1em;
@@ -1710,14 +1709,12 @@ tr.selected td {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_article\.scss}line{font-family:\0000317}}
-.box-wrapper p, .node-type-article .pane-node-comments .comment p, .burr-flipped-content p, .badge-wrapper p, .view-contributor-spotlight p,
-.badge-archive p,
+.box-wrapper p, .node-type-article .pane-node-comments .comment p, .burr-flipped-content p, .badge-wrapper p,
 .pane-contributor-spotlight-panel-pane-promoted p {
   margin: 12px 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_article\.scss}line{font-family:\0000320}}
-.box-wrapper p br, .node-type-article .pane-node-comments .comment p br, .burr-flipped-content p br, .badge-wrapper p br, .view-contributor-spotlight p br,
-.badge-archive p br,
+.box-wrapper p br, .node-type-article .pane-node-comments .comment p br, .burr-flipped-content p br, .badge-wrapper p br,
 .pane-contributor-spotlight-panel-pane-promoted p br {
   display: none;
 }
@@ -3256,16 +3253,8 @@ blockquote {
   padding: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\000035}}
-.badge-wrapper .views-row, .view-contributor-spotlight .views-row,
-.badge-archive .views-row,
-.pane-contributor-spotlight-panel-pane-promoted .views-row {
-  clear: both;
-  overflow: hidden;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000310}}
-.badge-wrapper h2, .view-contributor-spotlight h2,
-.badge-archive h2,
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\000036}}
+.badge-wrapper h2,
 .pane-contributor-spotlight-panel-pane-promoted h2 {
   background: url("../images/osdc_contributor_spotlight.png") no-repeat scroll center bottom transparent;
   display: block;
@@ -3276,74 +3265,103 @@ blockquote {
   width: 288px;
   margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000321}}
-.badge-wrapper a, .view-contributor-spotlight a,
-.badge-archive a,
-.pane-contributor-spotlight-panel-pane-promoted a {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000318}}
+.badge-wrapper .view-display-id-panel_pane_promoted .views-row,
+.pane-contributor-spotlight-panel-pane-promoted .view-display-id-panel_pane_promoted .views-row {
+  clear: both;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000323}}
+.badge-wrapper .view-display-id-panel_pane_promoted a,
+.pane-contributor-spotlight-panel-pane-promoted .view-display-id-panel_pane_promoted a {
   color: #39f;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000325}}
-.badge-wrapper a:hover, .view-contributor-spotlight a:hover,
-.badge-archive a:hover,
-.pane-contributor-spotlight-panel-pane-promoted a:hover {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000327}}
+.badge-wrapper .view-display-id-panel_pane_promoted a:hover,
+.pane-contributor-spotlight-panel-pane-promoted .view-display-id-panel_pane_promoted a:hover {
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000330}}
-.badge-wrapper .views-field-user-badges-html, .view-contributor-spotlight .views-field-user-badges-html,
-.badge-archive .views-field-user-badges-html,
-.pane-contributor-spotlight-panel-pane-promoted .views-field-user-badges-html {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000332}}
+.badge-wrapper .view-display-id-panel_pane_promoted .views-field-user-badges-html,
+.pane-contributor-spotlight-panel-pane-promoted .view-display-id-panel_pane_promoted .views-field-user-badges-html {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000335}}
-.badge-wrapper .views-field-user-badges-html .badge-visual .user-pic, .view-contributor-spotlight .views-field-user-badges-html .badge-visual .user-pic,
-.badge-archive .views-field-user-badges-html .badge-visual .user-pic,
-.pane-contributor-spotlight-panel-pane-promoted .views-field-user-badges-html .badge-visual .user-pic {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000337}}
+.badge-wrapper .view-display-id-panel_pane_promoted .views-field-user-badges-html .badge-visual .user-pic,
+.pane-contributor-spotlight-panel-pane-promoted .view-display-id-panel_pane_promoted .views-field-user-badges-html .badge-visual .user-pic {
   margin-bottom: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000339}}
-.badge-wrapper .views-field-user-badges-html .badge-visual img, .view-contributor-spotlight .views-field-user-badges-html .badge-visual img,
-.badge-archive .views-field-user-badges-html .badge-visual img,
-.pane-contributor-spotlight-panel-pane-promoted .views-field-user-badges-html .badge-visual img {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000341}}
+.badge-wrapper .view-display-id-panel_pane_promoted .views-field-user-badges-html .badge-visual img,
+.pane-contributor-spotlight-panel-pane-promoted .view-display-id-panel_pane_promoted .views-field-user-badges-html .badge-visual img {
   border: 1px solid #C2C0C1;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000347}}
-.badge-wrapper .views-field-field-community-description, .view-contributor-spotlight .views-field-field-community-description,
-.badge-archive .views-field-field-community-description,
-.pane-contributor-spotlight-panel-pane-promoted .views-field-field-community-description {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000349}}
+.badge-wrapper .view-display-id-panel_pane_promoted .views-field-field-community-description,
+.pane-contributor-spotlight-panel-pane-promoted .view-display-id-panel_pane_promoted .views-field-field-community-description {
   float: right;
   width: 65%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000357}}
-.view-contributor-spotlight .user-name,
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000358}}
+.view-display-id-page_archive .views-field-user-badges-html,
+.badge-archive .views-field-user-badges-html {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000363}}
+.view-display-id-page_archive .views-row,
+.badge-archive .views-row {
+  clear: both;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000368}}
+.view-display-id-page_archive .user-name,
 .badge-archive .user-name {
   font-size: 18px;
   font-weight: bold;
   line-height: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000362}}
-.view-contributor-spotlight .user-name a,
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000373}}
+.view-display-id-page_archive .user-name a,
 .badge-archive .user-name a {
   color: black;
+  text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000365}}
-.view-contributor-spotlight .user-name a:hover,
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000377}}
+.view-display-id-page_archive .user-name a:hover,
 .badge-archive .user-name a:hover {
   color: #39f;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000372}}
-.view-contributor-spotlight .views-row,
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000384}}
+.view-display-id-page_archive .views-row,
 .badge-archive .views-row {
   margin-top: 1em;
   margin-bottom: 1em;
   padding-bottom: 1.5em;
   border-bottom: 2px dotted #b3b3b3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000379}}
-.view-contributor-spotlight .views-field-field-community-description,
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000391}}
+.view-display-id-page_archive .views-field-field-community-description,
 .badge-archive .views-field-field-community-description {
   width: 75%;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\0000396}}
+.view-display-id-page_archive .views-field-user-badges-html,
+.badge-archive .views-field-user-badges-html {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\00003101}}
+.view-display-id-page_archive .views-field-user-badges-html .badge-visual .user-pic,
+.badge-archive .views-field-user-badges-html .badge-visual .user-pic {
+  margin-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/opens\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss}line{font-family:\00003105}}
+.view-display-id-page_archive .views-field-user-badges-html .badge-visual img,
+.badge-archive .views-field-user-badges-html .badge-visual img {
+  border: 1px solid #C2C0C1;
+  display: block;
 }
