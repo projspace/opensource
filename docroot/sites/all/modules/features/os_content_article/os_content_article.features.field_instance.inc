@@ -56,7 +56,7 @@ function os_content_article_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -104,7 +104,7 @@ function os_content_article_field_default_field_instances() {
       'module' => 'addthis',
       'settings' => array(),
       'type' => 'addthis_button_widget',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -154,7 +154,7 @@ function os_content_article_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -197,7 +197,7 @@ function os_content_article_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -234,18 +234,26 @@ function os_content_article_field_default_field_instances() {
     'settings' => array(
       'description_field' => 1,
       'file_directory' => 'articles',
-      'file_extensions' => 'txt pdf odp ogg epub odt',
+      'file_extensions' => 'txt pdf odp ogg epub odt mp3 m4a',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+        'allowed_types' => array(
+          0 => 'image',
+        ),
+        'browser_plugins' => array(),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
-      'weight' => 9,
+      'type' => 'media_generic',
+      'weight' => 10,
     ),
   );
 
@@ -288,27 +296,23 @@ function os_content_article_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
   // Exported field_instance: 'node-article-field_default_license'
   $field_instances['node-article-field_default_license'] = array(
     'bundle' => 'article',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
+        'type' => 'text_default',
+        'weight' => 13,
       ),
       'featured' => array(
         'label' => 'above',
@@ -328,16 +332,27 @@ function os_content_article_field_default_field_instances() {
     'label' => 'Default CC License',
     'required' => 0,
     'settings' => array(
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'select_or_other',
       'settings' => array(
-        'display_label' => 0,
+        'available_options' => 'CC-BY-SA 4.0|CC-BY-SA 4.0
+CC-BY-SA 3.0|CC-BY-SA 3.0
+CC-BY 4.0|CC-BY 4.0
+CC-BY 3.0|CC-BY 3.0',
+        'available_options_php' => '',
+        'markup_available_options_php' => '&lt;none&gt;',
+        'other' => 'Other',
+        'other_size' => 60,
+        'other_title' => '',
+        'other_unknown_defaults' => 'other',
+        'sort_options' => 0,
       ),
-      'type' => 'options_onoff',
-      'weight' => 7,
+      'type' => 'select_or_other',
+      'weight' => 8,
     ),
   );
 
@@ -387,12 +402,20 @@ function os_content_article_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+        'allowed_types' => array(
+          0 => 'image',
+        ),
+        'browser_plugins' => array(),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 1,
     ),
   );
@@ -446,7 +469,7 @@ function os_content_article_field_default_field_instances() {
       'module' => 'fivestar',
       'settings' => array(),
       'type' => 'exposed',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -495,7 +518,7 @@ function os_content_article_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -541,7 +564,7 @@ function os_content_article_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 

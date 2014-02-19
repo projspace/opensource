@@ -114,7 +114,10 @@ function os_content_article_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '5',
+        ),
+        'badges' => array(
+          'weight' => '14',
         ),
       ),
       'display' => array(),

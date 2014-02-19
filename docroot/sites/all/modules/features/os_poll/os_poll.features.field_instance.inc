@@ -142,11 +142,19 @@ function os_poll_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+        'allowed_types' => array(
+          0 => 'image',
+        ),
+        'browser_plugins' => array(),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 8,
     ),
   );
@@ -190,27 +198,23 @@ function os_poll_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
   // Exported field_instance: 'node-poll-field_default_license'
   $field_instances['node-poll-field_default_license'] = array(
     'bundle' => 'poll',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
+        'type' => 'text_default',
+        'weight' => 8,
       ),
       'featured' => array(
         'label' => 'above',
@@ -230,15 +234,26 @@ function os_poll_field_default_field_instances() {
     'label' => 'Default CC License',
     'required' => 0,
     'settings' => array(
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'select_or_other',
       'settings' => array(
-        'display_label' => 0,
+        'available_options' => 'CC-BY-SA 4.0|CC-BY-SA 4.0
+CC-BY-SA 3.0|CC-BY-SA 3.0
+CC-BY 4.0|CC-BY 4.0
+CC-BY 3.0|CC-BY 3.0',
+        'available_options_php' => '',
+        'markup_available_options_php' => '&lt;none&gt;',
+        'other' => 'Other',
+        'other_size' => 60,
+        'other_title' => '',
+        'other_unknown_defaults' => 'other',
+        'sort_options' => 0,
       ),
-      'type' => 'options_onoff',
+      'type' => 'select_or_other',
       'weight' => 6,
     ),
   );
@@ -289,13 +304,21 @@ function os_poll_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+        'allowed_types' => array(
+          0 => 'image',
+        ),
+        'browser_plugins' => array(),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
-      'weight' => 1,
+      'type' => 'media_generic',
+      'weight' => 3,
     ),
   );
 
@@ -394,7 +417,7 @@ function os_poll_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 

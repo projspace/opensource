@@ -125,6 +125,9 @@ function os_fields_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_attachments',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(
@@ -220,23 +223,29 @@ function os_fields_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_default_license',
-    'foreign keys' => array(),
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'format' => array(
+        0 => 'format',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'text',
     'settings' => array(
-      'allowed_values' => array(
-        0 => 'Use an alternative license.',
-        1 => 'Use the default CC license.',
-      ),
-      'allowed_values_function' => '',
+      'max_length' => 255,
     ),
     'translatable' => 0,
-    'type' => 'list_boolean',
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_display_name'
