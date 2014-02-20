@@ -435,3 +435,15 @@ function opensource_fivestar_summary($variables) {
   $output = '<div class="fivestar-summary fivestar-summary-'. $div_class . '">'. $output .'</div>';
   return $output;
 }
+
+function opensource_preprocess_panels_pane(&$vars) {
+  $content = &$vars['content'];
+  if(isset($content['#field_name']) && ($content['#field_name'] == 'field_file_image_caption')) {
+    if((strpos($content['#items'][0]['value'], 'opensource.com') !== false) || (strpos($content['#items'][0]['value'], 'Opensource.com') !== false)) {
+      $content['#title'] = t('Image by ');
+    }
+    else {
+      $content['#title'] = t('Image credits ');
+    }
+  }
+}

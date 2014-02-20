@@ -13,7 +13,12 @@ function os_article_field_default_field_instances() {
   // Exported field_instance: 'file-image-field_file_image_caption'
   $field_instances['file-image-field_file_image_caption'] = array(
     'bundle' => 'image',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '<p>opensource.com</p>',
+        'format' => 'panopoly_wysiwyg_text',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(

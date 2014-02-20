@@ -289,17 +289,19 @@ function os_article_default_page_manager_handlers() {
     $pane->type = 'entity_field';
     $pane->subtype = 'file:field_file_image_caption';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(),
+    );
     $pane->configuration = array(
-      'label' => 'title',
+      'label' => 'inline',
       'formatter' => 'text_default',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(),
       'context' => array(),
-      'override_title' => 1,
-      'override_title_text' => '',
+      'override_title' => 0,
+      'override_title_text' => 'Image By',
     );
     $pane->cache = array();
     $pane->style = array(
