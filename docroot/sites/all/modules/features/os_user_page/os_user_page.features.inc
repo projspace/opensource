@@ -19,3 +19,12 @@ function os_user_page_ctools_plugin_api($module = NULL, $api = NULL) {
 function os_user_page_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
+
+/**
+ * Implements hook_default_page_manager_handlers_alter().
+ */
+function os_user_page_default_page_manager_handlers_alter(&$data) {
+  if (isset($data['user_view_panelizer'])) {
+    $data['user_view_panelizer']->weight = 0; /* WAS: -100 */
+  }
+}
