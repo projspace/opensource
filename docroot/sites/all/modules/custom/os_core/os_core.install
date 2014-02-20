@@ -38,6 +38,9 @@ function os_core_install() {
 
   // Enable the pm_existing_pages-community_spotlight page.
   os_core_update_7102();
+
+  // Create resource menu items.
+  os_core_update_7103();
 }
 
 /**
@@ -84,6 +87,16 @@ function os_core_update_7102() {
   menu_rebuild();
 }
 
+/**
+ * Create the resource menu items.
+ */
+function os_core_update_7103() {
+  // Generate the homepage resource menu items.
+  os_core_generate_resource_homepage_menu_items();
+
+  // Generate resource page menu items.
+  os_core_generate_resource_resourcepage_menu_items();
+}
 /**
  * Generate terms for Channel and Article Type vocabularies.
  */
@@ -172,4 +185,114 @@ function os_core_generate_taxonomy_terms() {
   $term->name = 'Video';
   $term->description = '';
   taxonomy_term_save($term);
+}
+
+function os_core_generate_resource_homepage_menu_items() {
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'What is OpenSource',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources-homepa',
+      'parent' => 'menu-opensource-resources-homepa:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/whatisopensource.png',
+      'use_icon_logo' => 1,
+      'weight' => -50,
+    ),
+  );
+  drupal_form_submit('menu_edit_item', $form_state);
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Conferences and Events',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources-homepa',
+      'parent' => 'menu-opensource-resources-homepa:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/event.png',
+      'use_icon_logo' => 1,
+      'weight' => -30,
+    ),
+  );
+  drupal_form_submit('menu_edit_item', $form_state);
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'OpenSource Books',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources-homepa',
+      'parent' => 'menu-opensource-resources-homepa:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/book.png',
+      'use_icon_logo' => 1,
+      'weight' => -10,
+    ),
+  );
+  drupal_form_submit('menu_edit_item', $form_state);
+}
+
+function os_core_generate_resource_resourcepage_menu_items() {
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'What is OpenSource',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/whatisopensource.png',
+      'use_icon_logo' => 1,
+      'weight' => -50,
+    ),
+  );
+  drupal_form_submit('menu_edit_item', $form_state);
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Conferences and Events',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/event.png',
+      'use_icon_logo' => 1,
+      'weight' => -40,
+    ),
+  );
+  drupal_form_submit('menu_edit_item', $form_state);
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'OpenSource Books',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/book.png',
+      'use_icon_logo' => 1,
+      'weight' => -30,
+    ),
+  );
+  drupal_form_submit('menu_edit_item', $form_state);
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Project And Applications',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/projectandapplications.png',
+      'use_icon_logo' => 1,
+      'weight' => -20,
+    ),
+  );
+  drupal_form_submit('menu_edit_item', $form_state);
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Organizations',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/organizations.png',
+      'use_icon_logo' => 1,
+      'weight' => -10,
+    ),
+  );
+  drupal_form_submit('menu_edit_item', $form_state);
 }
