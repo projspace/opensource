@@ -58,7 +58,6 @@ features[variable][] = vud_comment_votes
 features[variable][] = vud_comment_widget
 features[variable][] = vud_comment_widget_display
 features[views_view][] = author_info
-features[views_view][] = content_feed
 features[views_view][] = related_articles
 features_exclude[dependencies][votingapi] = votingapi
 features_exclude[dependencies][vud] = vud
