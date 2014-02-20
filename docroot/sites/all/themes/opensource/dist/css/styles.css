@@ -8124,3 +8124,62 @@ blockquote {
   margin-top: 20px;
   float: none;
 }
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/polls\/_polls-base\.scss;
+  }
+
+  line {
+    font-family: \000031;
+  }
+}
+
+.m-polls .views-field-comment-count,
+.m-polls .views-field-nothing,
+.m-polls .views-field-edit-node {
+  position: relative;
+  top: -22px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/polls\/_polls-base\.scss;
+  }
+
+  line {
+    font-family: \000037;
+  }
+}
+
+.m-polls .views-field-comment-count {
+  float: left;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/polls\/_polls-base\.scss;
+  }
+
+  line {
+    font-family: \0000312;
+  }
+}
+
+.m-polls .views-field-nothing {
+  float: left;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/polls\/_polls-base\.scss;
+  }
+
+  line {
+    font-family: \0000317;
+  }
+}
+
+.m-polls .views-field-edit-node {
+  clear: left;
+}

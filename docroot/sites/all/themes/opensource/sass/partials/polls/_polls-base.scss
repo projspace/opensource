@@ -1,0 +1,21 @@
+%move-up-polls {
+    position: relative;
+    top: -22px;
+}
+
+.m-polls {
+    .views-field-comment-count {
+        @extend %move-up-polls;
+        float: left;
+    }
+
+    .views-field-nothing {
+        @extend %move-up-polls;
+        float: left;
+    }
+
+    .views-field-edit-node {
+        @extend %move-up-polls;
+        clear: left;
+    }
+}
