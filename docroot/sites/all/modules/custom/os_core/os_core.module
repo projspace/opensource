@@ -247,7 +247,6 @@ function os_core_select_or_other_element_process($element, &$form_state) {
   // Note that #title, #title_display, #default_value, #disabled, #multiple,
   // #required, #size, #options, and #attributes are passed to the select box
   // from the main element automatically.
-
   $element['select'] = array(
     '#type' => $element['#select_type'],
     '#title' => $element['#title'],
@@ -266,9 +265,11 @@ function os_core_select_or_other_element_process($element, &$form_state) {
     $element['select']['#empty_value'] = $element['#empty_value'];
   };
 
-  // Remove the default value on the container level so it doesn't get rendered there.
+  // Remove the default value on the container level so it doesn't get rendered
+  // there.
   $element['#value'] = NULL;
-  // Remove the required parameter so FAPI doesn't force us to fill in the textfield.
+  // Remove the required parameter so FAPI doesn't force us to fill in the
+  // textfield.
   $element['#required'] = NULL;
 
   // Now we must handle the default values.
@@ -301,14 +302,14 @@ function os_core_select_or_other_element_process($element, &$form_state) {
         unset($element['select']['#default_value'][$key]);
 
       }
-      // Also checks 'available' because if that setting is newly set, after data is already stored, it should behave like 'append'.
+      // Also checks 'available' because if that setting is newly set, after
+      // data is already stored, it should behave like 'append'.
       elseif ($element['#other_unknown_defaults'] == 'append' || $element['#other_unknown_defaults'] == 'available') {
         $element['select']['#options'][$val] = $val;
       }
 
     }
   }
-
   // If the expected default value is a string/integer, remove the array wrapper.
   if ($element['#select_type'] == 'radios' || ($element['#select_type'] == 'select' && !$element['#multiple'])) {
     $element['select']['#default_value'] = reset($element['select']['#default_value']);
@@ -343,9 +344,8 @@ function os_core_select_or_other_element_process($element, &$form_state) {
   $sub_elements = array('select', 'other');
   foreach ($sub_elements as $sub_element) {
     foreach ($element as $key => $value) {
-    if (strpos($key, '#' . $sub_element . '_') === 0) {
+      if (strpos($key, '#' . $sub_element . '_') === 0) {
         $element[$sub_element][str_replace('#' . $sub_element . '_', '#', $key)] = $value;
-
       }
     }
     // Also add in a custom class for each.
@@ -357,7 +357,6 @@ function os_core_select_or_other_element_process($element, &$form_state) {
   if (isset($element['#other_size'])) {
     $element['other']['#size'] = $element['#other_size'];
   }
-
   // Hide the title from the wrapper.
   $element['#title'] = NULL;
 
@@ -365,8 +364,8 @@ function os_core_select_or_other_element_process($element, &$form_state) {
 }
 
 /**
- * Implementation of hook_form_FORM_ID_alter()
- * This adds a Login/Register link for anonymous users
+ * Implements hook_form_FORM_ID_alter().
+ * This adds a Login/Register link for anonymous users.
  */
 function os_core_form_comment_form_alter(&$form, &$form_state, $form_id) {
   global $user;
@@ -374,7 +373,7 @@ function os_core_form_comment_form_alter(&$form, &$form_state, $form_id) {
     unset($form['author']['homepage']);
     $form['login-register'] = array(
       '#type' => 'item',
-      '#markup' => l('Login or Register', 'user', array('query' => array('destination' => drupal_get_destination()))). ' ' . t('to earn points for your comments.'),
+      '#markup' => l(t('Login or Register'), 'user', array('query' => array('destination' => drupal_get_destination()))) . ' ' . t('to earn points for your comments.'),
       '#weight' => -10,
     );
   }

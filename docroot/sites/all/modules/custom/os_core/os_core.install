@@ -187,6 +187,9 @@ function os_core_generate_taxonomy_terms() {
   taxonomy_term_save($term);
 }
 
+/**
+ * Generates the menu items for the home page resource menu.
+ */
 function os_core_generate_resource_homepage_menu_items() {
   $form_state = array(
     'values' => array(
@@ -229,6 +232,9 @@ function os_core_generate_resource_homepage_menu_items() {
   drupal_form_submit('menu_edit_item', $form_state);
 }
 
+/**
+ * Generates the menu items for the resource page resource menu.
+ */
 function os_core_generate_resource_resourcepage_menu_items() {
   $form_state = array(
     'values' => array(
