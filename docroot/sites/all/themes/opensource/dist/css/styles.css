@@ -3584,9 +3584,8 @@ tr.selected td {
   }
 }
 
-.node-type-article div.author-feed p:first-child {
+.node-type-article .author-feed {
   float: left;
-  margin-right: 3px;
 }
 
 @media -sass-debug-info {
@@ -3599,9 +3598,8 @@ tr.selected td {
   }
 }
 
-.node-type-article div.author-feed span.author-feed {
+.node-type-article .pane-node-author {
   float: left;
-  width: 15px;
 }
 
 @media -sass-debug-info {
@@ -3614,11 +3612,8 @@ tr.selected td {
   }
 }
 
-.node-type-article div.author-feed span.author-feed a {
-  background: url(../images/rss.jpg) no-repeat;
-  text-indent: -9999px;
-  overflow: hidden;
-  display: block;
+.node-type-article .pane-3 {
+  float: left;
 }
 
 @media -sass-debug-info {
@@ -3627,7 +3622,43 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000360;
+    font-family: \0000355;
+  }
+}
+
+.node-type-article .pane-3 p {
+  margin: 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_article\.scss;
+  }
+
+  line {
+    font-family: \0000361;
+  }
+}
+
+.node-type-article .pane-3 span a {
+  background: url(../images/rss.jpg) no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+  height: 12px;
+  width: 13px;
+  position: relative;
+  top: 2px;
+  right: -2px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_article\.scss;
+  }
+
+  line {
+    font-family: \0000375;
   }
 }
 
@@ -3641,7 +3672,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000363;
+    font-family: \0000378;
   }
 }
 
@@ -3655,7 +3686,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000366;
+    font-family: \0000381;
   }
 }
 
@@ -3672,7 +3703,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000373;
+    font-family: \0000388;
   }
 }
 
@@ -3687,7 +3718,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000378;
+    font-family: \0000393;
   }
 }
 
@@ -3702,7 +3733,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000384;
+    font-family: \0000399;
   }
 }
 
@@ -3718,7 +3749,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000389;
+    font-family: \00003104;
   }
 }
 
@@ -3732,7 +3763,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000393;
+    font-family: \00003108;
   }
 }
 
@@ -3747,7 +3778,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003101;
+    font-family: \00003116;
   }
 }
 
@@ -3761,7 +3792,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003103;
+    font-family: \00003118;
   }
 }
 
@@ -3776,7 +3807,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003106;
+    font-family: \00003121;
   }
 }
 
@@ -3791,7 +3822,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003114;
+    font-family: \00003129;
   }
 }
 
@@ -3805,7 +3836,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003116;
+    font-family: \00003131;
   }
 }
 
@@ -3823,7 +3854,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003123;
+    font-family: \00003138;
   }
 }
 
@@ -3839,7 +3870,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003132;
+    font-family: \00003147;
   }
 }
 
@@ -3855,7 +3886,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003137;
+    font-family: \00003152;
   }
 }
 
@@ -3870,7 +3901,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003141;
+    font-family: \00003156;
   }
 }
 
@@ -3884,7 +3915,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003144;
+    font-family: \00003159;
   }
 }
 
@@ -3898,7 +3929,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003147;
+    font-family: \00003162;
   }
 }
 
@@ -3914,7 +3945,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003150;
+    font-family: \00003165;
   }
 }
 
@@ -3929,7 +3960,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003154;
+    font-family: \00003169;
   }
 }
 
@@ -3944,7 +3975,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003157;
+    font-family: \00003172;
   }
 }
 
@@ -3958,7 +3989,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003161;
+    font-family: \00003176;
   }
 }
 
@@ -3973,7 +4004,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003166;
+    font-family: \00003181;
   }
 }
 
@@ -3987,7 +4018,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003168;
+    font-family: \00003183;
   }
 }
 
@@ -4001,7 +4032,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003174;
+    font-family: \00003189;
   }
 }
 
@@ -4018,7 +4049,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003180;
+    font-family: \00003195;
   }
 }
 
@@ -4032,7 +4063,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003183;
+    font-family: \00003198;
   }
 }
 
@@ -4050,7 +4081,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003189;
+    font-family: \00003204;
   }
 }
 
@@ -4064,7 +4095,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003193;
+    font-family: \00003208;
   }
 }
 
@@ -4078,7 +4109,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003195;
+    font-family: \00003210;
   }
 }
 
@@ -4092,7 +4123,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003201;
+    font-family: \00003216;
   }
 }
 
@@ -7306,6 +7337,7 @@ blockquote {
 
 .node-type-article .article-title {
   line-height: 1.3;
+  margin-bottom: 5px;
 }
 
 @media -sass-debug-info {
@@ -7314,7 +7346,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000342;
+    font-family: \0000343;
   }
 }
 
@@ -7328,7 +7360,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000347;
+    font-family: \0000348;
   }
 }
 
@@ -7342,7 +7374,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000351;
+    font-family: \0000352;
   }
 }
 
@@ -7356,7 +7388,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000355;
+    font-family: \0000356;
   }
 }
 
@@ -7373,7 +7405,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000363;
+    font-family: \0000364;
   }
 }
 
@@ -7387,7 +7419,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000366;
+    font-family: \0000367;
   }
 }
 
@@ -7401,7 +7433,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000372;
+    font-family: \0000373;
   }
 }
 
@@ -7416,7 +7448,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000377;
+    font-family: \0000378;
   }
 }
 
@@ -7431,7 +7463,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000385;
+    font-family: \0000386;
   }
 }
 
@@ -7445,7 +7477,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000390;
+    font-family: \0000391;
   }
 }
 
@@ -7459,7 +7491,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000395;
+    font-family: \0000396;
   }
 }
 
@@ -7476,7 +7508,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003102;
+    font-family: \00003103;
   }
 }
 
@@ -7490,7 +7522,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003106;
+    font-family: \00003107;
   }
 }
 
@@ -7507,7 +7539,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003113;
+    font-family: \00003114;
   }
 }
 
@@ -7521,7 +7553,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003119;
+    font-family: \00003120;
   }
 }
 
@@ -7538,7 +7570,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003125;
+    font-family: \00003126;
   }
 }
 
@@ -7555,7 +7587,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003133;
+    font-family: \00003134;
   }
 }
 
@@ -7571,7 +7603,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003144;
+    font-family: \00003145;
   }
 }
 
@@ -7585,7 +7617,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003149;
+    font-family: \00003150;
   }
 }
 
@@ -7599,7 +7631,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003153;
+    font-family: \00003154;
   }
 }
 
@@ -7613,7 +7645,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003158;
+    font-family: \00003159;
   }
 }
 
@@ -7631,7 +7663,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003165;
+    font-family: \00003166;
   }
 }
 
@@ -7650,7 +7682,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003175;
+    font-family: \00003176;
   }
 }
 
@@ -7667,7 +7699,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003182;
+    font-family: \00003183;
   }
 }
 
@@ -7683,7 +7715,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003188;
+    font-family: \00003189;
   }
 }
 
