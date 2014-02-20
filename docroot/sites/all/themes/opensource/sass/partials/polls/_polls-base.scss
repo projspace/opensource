@@ -18,4 +18,8 @@
         @extend %move-up-polls;
         clear: left;
     }
+
+    .poll-cancel-form {
+        float: right;
+    }
 }
