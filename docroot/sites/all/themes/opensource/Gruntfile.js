@@ -101,5 +101,5 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('junk', ['uncss']);
     grunt.registerTask('dev', ['compass:dev', 'autoprefixer']);
-    grunt.registerTask('build', ['imagemin', 'compass:dist', 'autoprefixer', 'photobox']);
+    grunt.registerTask('build', ['imagemin', 'compass:dist', 'autoprefixer']);
 }
