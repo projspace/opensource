@@ -5,6 +5,12 @@
         overflow: hidden;
     }
 
+    .ajax-progress-throbber {
+        position: absolute;
+        top: 4px;
+        right: 2px;
+    }
+
 }
 #quicktabs-homepage_tabs .item-list {
 
@@ -14,6 +20,7 @@
         width: 33.33%;
         float: left;
         display: block;
+        position: relative;
     }
 
     li.first {

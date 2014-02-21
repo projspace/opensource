@@ -1910,121 +1910,128 @@ tr.selected td {
   clear: both;
   overflow: hidden;
 }
+/* line 8, ../sass/components/_homepage.scss */
+#quicktabs-homepage_tabs .ajax-progress-throbber {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+}
 
-/* line 11, ../sass/components/_homepage.scss */
+/* line 17, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li {
   background-position: center !important;
   border-right: 1px solid #ccc;
   width: 33.33%;
   float: left;
   display: block;
+  position: relative;
 }
-/* line 19, ../sass/components/_homepage.scss */
+/* line 26, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li.first {
   background: url(../images/osdc_featured_active.png) no-repeat;
 }
-/* line 22, ../sass/components/_homepage.scss */
+/* line 29, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li.first.active {
   background: url(../images/osdc_featured_inactive.png) no-repeat;
 }
-/* line 26, ../sass/components/_homepage.scss */
+/* line 33, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li.last {
   background: url(../images/osdc_mostpopular_active.png) no-repeat;
   border-right: none;
 }
-/* line 30, ../sass/components/_homepage.scss */
+/* line 37, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li.last.active {
   background: url(../images/osdc_mostpopular_inactive.png) no-repeat;
 }
-/* line 34, ../sass/components/_homepage.scss */
+/* line 41, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li:nth-child(2) {
   background: url(../images/osdc_mostcomments_active.png) no-repeat;
 }
-/* line 37, ../sass/components/_homepage.scss */
+/* line 44, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li:nth-child(2).active {
   background: url(../images/osdc_mostcomments_inactive.png) no-repeat;
 }
-/* line 41, ../sass/components/_homepage.scss */
+/* line 48, ../sass/components/_homepage.scss */
 #quicktabs-homepage_tabs .item-list li a {
   color: transparent;
   padding: 0.25em 1em 0;
   display: block;
 }
 
-/* line 49, ../sass/components/_homepage.scss */
+/* line 56, ../sass/components/_homepage.scss */
 #quicktabs-container-homepage_tabs .view-homepage .views-row {
   border-bottom: 2px dotted #ccc;
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
-/* line 54, ../sass/components/_homepage.scss */
+/* line 61, ../sass/components/_homepage.scss */
 #quicktabs-container-homepage_tabs .view-homepage .views-field-field-lead-image {
   float: left;
   margin-right: 1em;
 }
-/* line 58, ../sass/components/_homepage.scss */
+/* line 65, ../sass/components/_homepage.scss */
 #quicktabs-container-homepage_tabs .view-homepage .views-field-nothing, #quicktabs-container-homepage_tabs .view-homepage .views-field-nothing a {
   color: #676768;
 }
-/* line 61, ../sass/components/_homepage.scss */
+/* line 68, ../sass/components/_homepage.scss */
 #quicktabs-container-homepage_tabs .view-homepage .views-field-title a {
   font-size: 18px;
   text-decoration: none;
   color: #000;
   font-weight: bold;
 }
-/* line 66, ../sass/components/_homepage.scss */
+/* line 73, ../sass/components/_homepage.scss */
 #quicktabs-container-homepage_tabs .view-homepage .views-field-title a:hover {
   color: #3399ff;
   text-decoration: underline;
 }
-/* line 71, ../sass/components/_homepage.scss */
+/* line 78, ../sass/components/_homepage.scss */
 #quicktabs-container-homepage_tabs .view-homepage .views-field-created {
   display: inline-block;
   width: 100%;
   margin-top: 1em;
 }
 
-/* line 79, ../sass/components/_homepage.scss */
+/* line 86, ../sass/components/_homepage.scss */
 .view-poll-homepage h2.node-title, .view-poll-block h2.node-title {
   font-size: 12px;
   font-weight: normal;
 }
-/* line 82, ../sass/components/_homepage.scss */
+/* line 89, ../sass/components/_homepage.scss */
 .view-poll-homepage h2.node-title a, .view-poll-block h2.node-title a {
   text-decoration: none;
   color: #000;
 }
-/* line 87, ../sass/components/_homepage.scss */
+/* line 94, ../sass/components/_homepage.scss */
 .view-poll-homepage .poll .vote-form, .view-poll-block .poll .vote-form {
   text-align: right;
 }
-/* line 90, ../sass/components/_homepage.scss */
+/* line 97, ../sass/components/_homepage.scss */
 .view-poll-homepage .poll .vote-form .choices, .view-poll-block .poll .vote-form .choices {
   margin: 1px;
 }
-/* line 93, ../sass/components/_homepage.scss */
+/* line 100, ../sass/components/_homepage.scss */
 .view-poll-homepage .form-item.form-type-radio.form-item-choice, .view-poll-block .form-item.form-type-radio.form-item-choice {
   margin: 9px 0;
 }
 
-/* line 99, ../sass/components/_homepage.scss */
+/* line 106, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa h2 {
   font-size: 22px;
   color: #DD3823;
   margin: 0;
   font-weight: normal;
 }
-/* line 105, ../sass/components/_homepage.scss */
+/* line 112, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul {
   padding-left: 8px;
 }
-/* line 107, ../sass/components/_homepage.scss */
+/* line 114, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul li {
   list-style-image: none !important;
   list-style-type: none !important;
 }
-/* line 111, ../sass/components/_homepage.scss */
+/* line 118, ../sass/components/_homepage.scss */
 .pane-menu-menu-opensource-resources-homepa ul a {
   margin-bottom: 0.75em;
   width: 100%;
@@ -2032,7 +2039,7 @@ tr.selected td {
   padding: 1em;
 }
 
-/* line 121, ../sass/components/_homepage.scss */
+/* line 128, ../sass/components/_homepage.scss */
 .teaser-info .teaser-comment {
   background: transparent url(../images/comment.jpg) no-repeat scroll left top;
   padding-left: 20px;
@@ -2040,29 +2047,29 @@ tr.selected td {
   margin-right: 10px;
   padding-right: 10px;
 }
-/* line 128, ../sass/components/_homepage.scss */
+/* line 135, ../sass/components/_homepage.scss */
 .teaser-info .teaser-date {
   color: #767677;
 }
-/* line 131, ../sass/components/_homepage.scss */
+/* line 138, ../sass/components/_homepage.scss */
 .teaser-info .teaser-author {
   display: inline-block;
   position: relative;
   top: 4px;
   margin-left: 1em;
 }
-/* line 136, ../sass/components/_homepage.scss */
+/* line 143, ../sass/components/_homepage.scss */
 .teaser-info .teaser-author .username {
   float: left;
   margin-right: 5px;
 }
-/* line 141, ../sass/components/_homepage.scss */
+/* line 148, ../sass/components/_homepage.scss */
 .teaser-info .author-feed {
   float: left;
   width: 15px;
   margin-top: 2px;
 }
-/* line 145, ../sass/components/_homepage.scss */
+/* line 152, ../sass/components/_homepage.scss */
 .teaser-info .author-feed a {
   background: url(../images/rss.jpg) no-repeat;
   text-indent: -9999px;
