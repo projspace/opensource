@@ -188,6 +188,12 @@ function os_channel_pages_views_default_views() {
   $handler->display->display_options['fields']['field_channel']['label'] = '';
   $handler->display->display_options['fields']['field_channel']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_channel']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Energy Level (field_energy_level:radioactivity_energy) */
+  $handler->display->display_options['sorts']['field_energy_level_radioactivity_energy']['id'] = 'field_energy_level_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_energy_level_radioactivity_energy']['table'] = 'field_data_field_energy_level';
+  $handler->display->display_options['sorts']['field_energy_level_radioactivity_energy']['field'] = 'field_energy_level_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_energy_level_radioactivity_energy']['order'] = 'DESC';
   $handler->display->display_options['pane_category']['name'] = 'Taxonomy view panes';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
