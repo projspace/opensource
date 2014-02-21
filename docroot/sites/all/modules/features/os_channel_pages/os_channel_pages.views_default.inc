@@ -158,6 +158,38 @@ function os_channel_pages_views_default_views() {
   /* Display: Channel/Tag Articles */
   $handler = $view->new_display('panel_pane', 'Channel/Tag Articles', 'panel_pane_articles');
   $handler->display->display_options['display_description'] = 'List articles under a channel or tag.';
+  $handler->display->display_options['pane_category']['name'] = 'Taxonomy view panes';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Popular Articles */
+  $handler = $view->new_display('panel_pane', 'Popular Articles', 'panel_pane_popular_articles');
+  $handler->display->display_options['display_description'] = 'Lists titles of articles under a channel.';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['label'] = 'Title Link';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '[field_channel]';
+  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Channel */
+  $handler->display->display_options['fields']['field_channel']['id'] = 'field_channel';
+  $handler->display->display_options['fields']['field_channel']['table'] = 'field_data_field_channel';
+  $handler->display->display_options['fields']['field_channel']['field'] = 'field_channel';
+  $handler->display->display_options['fields']['field_channel']['label'] = '';
+  $handler->display->display_options['fields']['field_channel']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_channel']['element_label_colon'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Taxonomy view panes';
+  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
