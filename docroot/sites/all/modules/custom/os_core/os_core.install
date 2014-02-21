@@ -191,6 +191,9 @@ function os_core_generate_taxonomy_terms() {
  * Generates the menu items for the home page resource menu.
  */
 function os_core_generate_resource_homepage_menu_items() {
+  module_load_include('inc', 'menu', 'menu.admin');
+  $args = array('build_info' => array('args' => array('add', array(), array())));
+
   $form_state = array(
     'values' => array(
       'link_title' => 'What is OpenSource',
@@ -202,8 +205,9 @@ function os_core_generate_resource_homepage_menu_items() {
       'use_icon_logo' => 1,
       'weight' => -50,
     ),
-  );
+  ) + $args;
   drupal_form_submit('menu_edit_item', $form_state);
+
   $form_state = array(
     'values' => array(
       'link_title' => 'Conferences and Events',
@@ -215,8 +219,9 @@ function os_core_generate_resource_homepage_menu_items() {
       'use_icon_logo' => 1,
       'weight' => -30,
     ),
-  );
+  ) + $args;
   drupal_form_submit('menu_edit_item', $form_state);
+
   $form_state = array(
     'values' => array(
       'link_title' => 'OpenSource Books',
@@ -228,7 +233,7 @@ function os_core_generate_resource_homepage_menu_items() {
       'use_icon_logo' => 1,
       'weight' => -10,
     ),
-  );
+  ) + $args;
   drupal_form_submit('menu_edit_item', $form_state);
 }
 
@@ -236,6 +241,9 @@ function os_core_generate_resource_homepage_menu_items() {
  * Generates the menu items for the resource page resource menu.
  */
 function os_core_generate_resource_resourcepage_menu_items() {
+  module_load_include('inc', 'menu', 'menu.admin');
+  $args = array('build_info' => array('args' => array('add', array(), array())));
+
   $form_state = array(
     'values' => array(
       'link_title' => 'What is OpenSource',
@@ -247,8 +255,9 @@ function os_core_generate_resource_resourcepage_menu_items() {
       'use_icon_logo' => 1,
       'weight' => -50,
     ),
-  );
+  ) + $args;
   drupal_form_submit('menu_edit_item', $form_state);
+
   $form_state = array(
     'values' => array(
       'link_title' => 'Conferences and Events',
@@ -260,8 +269,9 @@ function os_core_generate_resource_resourcepage_menu_items() {
       'use_icon_logo' => 1,
       'weight' => -40,
     ),
-  );
+  ) + $args;
   drupal_form_submit('menu_edit_item', $form_state);
+
   $form_state = array(
     'values' => array(
       'link_title' => 'OpenSource Books',
@@ -273,8 +283,9 @@ function os_core_generate_resource_resourcepage_menu_items() {
       'use_icon_logo' => 1,
       'weight' => -30,
     ),
-  );
+  ) + $args;
   drupal_form_submit('menu_edit_item', $form_state);
+
   $form_state = array(
     'values' => array(
       'link_title' => 'Project And Applications',
@@ -286,8 +297,9 @@ function os_core_generate_resource_resourcepage_menu_items() {
       'use_icon_logo' => 1,
       'weight' => -20,
     ),
-  );
+  ) + $args;
   drupal_form_submit('menu_edit_item', $form_state);
+
   $form_state = array(
     'values' => array(
       'link_title' => 'Organizations',
@@ -299,6 +311,6 @@ function os_core_generate_resource_resourcepage_menu_items() {
       'use_icon_logo' => 1,
       'weight' => -10,
     ),
-  );
+  ) + $args;
   drupal_form_submit('menu_edit_item', $form_state);
 }
