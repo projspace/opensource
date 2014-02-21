@@ -310,7 +310,8 @@ function os_core_select_or_other_element_process($element, &$form_state) {
 
     }
   }
-  // If the expected default value is a string/integer, remove the array wrapper.
+  // If the expected default value is a string/integer, remove the array
+  // wrapper.
   if ($element['#select_type'] == 'radios' || ($element['#select_type'] == 'select' && !$element['#multiple'])) {
     $element['select']['#default_value'] = reset($element['select']['#default_value']);
   }
@@ -365,11 +366,12 @@ function os_core_select_or_other_element_process($element, &$form_state) {
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ *
  * This adds a Login/Register link for anonymous users.
  */
 function os_core_form_comment_form_alter(&$form, &$form_state, $form_id) {
   global $user;
-  if(!$user->uid) {
+  if (!$user->uid) {
     unset($form['author']['homepage']);
     $form['login-register'] = array(
       '#type' => 'item',
