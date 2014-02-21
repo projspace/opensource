@@ -1511,7 +1511,7 @@ tr.selected td {
 }
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1392629568');
+  background-image: url('../images/progress.gif?1392664678');
 }
 
 .image-title, .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title, .burr-flipped-sidebar .pane-menu-monthly-favorites h2.pane-title, .burr-flipped-sidebar .signup-email .signup-email-title {
@@ -1575,9 +1575,25 @@ tr.selected td {
   margin: 1em 0;
   font-style: italic;
 }
+.node-type-article #content .pane-related-articles-panel-pane-1 .view-content {
+  clear: both;
+  overflow: hidden;
+}
 .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title {
   background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
   margin-bottom: 8px;
+}
+.node-type-article #content .pane-related-articles-panel-pane-1 .views-row {
+  float: left;
+  padding-right: 30px;
+  margin-bottom: 10px;
+}
+.node-type-article #content .pane-related-articles-panel-pane-1 .views-row img {
+  margin-bottom: 5px;
+}
+.node-type-article #content .pane-related-articles-panel-pane-1 .views-row .field-content a {
+  width: 140px;
+  display: block;
 }
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title {
   margin-top: 5px;
@@ -1674,14 +1690,25 @@ tr.selected td {
   display: none;
 }
 
-#quicktabs-homepage_tabs {
-  margin-top: 0.75em;
+#quicktabs-homepage_tabs ul {
+  padding: 0;
+  clear: both;
+  overflow: hidden;
 }
-#quicktabs-homepage_tabs .first a {
-  border-right: 1px solid #ccc;
-  margin-right: 7px;
+#quicktabs-homepage_tabs .ajax-progress-throbber {
+  position: absolute;
+  top: 4px;
+  right: 2px;
 }
 
+#quicktabs-homepage_tabs .item-list li {
+  background-position: center !important;
+  border-right: 1px solid #ccc;
+  width: 33.33%;
+  float: left;
+  display: block;
+  position: relative;
+}
 #quicktabs-homepage_tabs .item-list li.first {
   background: url(../images/osdc_featured_active.png) no-repeat;
 }
@@ -1690,6 +1717,7 @@ tr.selected td {
 }
 #quicktabs-homepage_tabs .item-list li.last {
   background: url(../images/osdc_mostpopular_active.png) no-repeat;
+  border-right: none;
 }
 #quicktabs-homepage_tabs .item-list li.last.active {
   background: url(../images/osdc_mostpopular_inactive.png) no-repeat;
@@ -1703,6 +1731,7 @@ tr.selected td {
 #quicktabs-homepage_tabs .item-list li a {
   color: transparent;
   padding: 0.25em 1em 0;
+  display: block;
 }
 
 #quicktabs-container-homepage_tabs .view-homepage .views-row {

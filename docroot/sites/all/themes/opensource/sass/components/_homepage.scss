@@ -1,37 +1,59 @@
 #quicktabs-homepage_tabs {
-    margin-top: 0.75em;
-    .first a {
-        border-right: 1px solid #ccc;
-        margin-right: 7px;
+    ul {
+        padding: 0;
+        clear: both;
+        overflow: hidden;
     }
+
+    .ajax-progress-throbber {
+        position: absolute;
+        top: 4px;
+        right: 2px;
+    }
+
 }
 #quicktabs-homepage_tabs .item-list {
+
+    li {
+        background-position: center !important;
+        border-right: 1px solid #ccc;
+        width: 33.33%;
+        float: left;
+        display: block;
+        position: relative;
+    }
+
     li.first {
         background: url(../images/osdc_featured_active.png)no-repeat;
+
         &.active {
              background: url(../images/osdc_featured_inactive.png)no-repeat;
         }
     }
      li.last{
         background: url(../images/osdc_mostpopular_active.png)no-repeat;
+        border-right: none;
+
         &.active {
              background: url(../images/osdc_mostpopular_inactive.png)no-repeat;
         }
     }
     li:nth-child(2){
         background: url(../images/osdc_mostcomments_active.png)no-repeat;
+
         &.active {
              background: url(../images/osdc_mostcomments_inactive.png)no-repeat;
         }
     }
-    li a{ 
+    li a{
             color: transparent;
             padding: 0.25em 1em 0;
+            display: block;
     }
 }
 
 #quicktabs-container-homepage_tabs  .view-homepage {
-        .views-row {    
+        .views-row {
             border-bottom: 2px dotted #ccc;
             padding-bottom: 1em;
             margin-bottom: 1em;
@@ -53,7 +75,7 @@
                 text-decoration: underline;
             }
         }
-        .views-field-created {         
+        .views-field-created {
         display: inline-block;
         width: 100%;
         margin-top: 1em;
