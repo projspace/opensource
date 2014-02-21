@@ -155,7 +155,7 @@ function os_fields_field_default_field_bases() {
   // Exported field_base: 'field_channel'
   $field_bases['field_channel'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_channel',
@@ -275,6 +275,26 @@ function os_fields_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_energy_level'
+  $field_bases['field_energy_level'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_energy_level',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'energy' => array(
+        0 => 'radioactivity_energy',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'radioactivity',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'radioactivity',
   );
 
   // Exported field_base: 'field_event_location'

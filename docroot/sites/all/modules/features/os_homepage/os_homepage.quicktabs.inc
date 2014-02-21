@@ -35,6 +35,14 @@ function os_homepage_quicktabs_default_quicktabs() {
       'weight' => '-99',
       'type' => 'view',
     ),
+    2 => array(
+      'vid' => 'homepage',
+      'display' => 'panel_pane_discussions',
+      'args' => '',
+      'title' => 'Most Popular',
+      'weight' => '-98',
+      'type' => 'view',
+    ),
   );
   $quicktabs->renderer = 'quicktabs';
   $quicktabs->style = 'nostyle';
@@ -45,6 +53,7 @@ function os_homepage_quicktabs_default_quicktabs() {
   t('Featured');
   t('Homepage Tabs');
   t('Most Comments');
+  t('Most Popular');
 
   $export['homepage_tabs'] = $quicktabs;
 
