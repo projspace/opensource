@@ -41,6 +41,9 @@ function os_core_install() {
 
   // Create resource menu items.
   os_core_update_7103();
+
+  // Enable the pm_existing_pages-user_content_pages page.
+  os_core_update_7104();
 }
 
 /**
@@ -97,6 +100,17 @@ function os_core_update_7103() {
   // Generate resource page menu items.
   os_core_generate_resource_resourcepage_menu_items();
 }
+
+/**
+ * Enable the pm_existing_pages-user_content_pages page.
+ */
+function os_core_update_7104() {
+  $page = page_manager_get_page_cache('pm_existing_pages-user_content_pages');
+  $function = ctools_plugin_get_function($page->subtask, 'enable callback');
+  $function($page, FALSE);
+  menu_rebuild();
+}
+
 /**
  * Generate terms for Channel and Article Type vocabularies.
  */
