@@ -1,0 +1,105 @@
+.page-user {
+    .views-field-user-badges-html {
+        float: left;
+
+        img {
+            display: block;
+        }
+
+        .profile-pictures {
+            margin-bottom: 5px;
+            background: red;
+        }
+    }
+
+    .views-field-field-user-about {
+        float: right;
+        width: 75%;
+    }
+
+    .views-field-points {
+        background-color: #1D2753;
+        border: 1px solid #0033FF;
+        color: white;
+        font-size: 16px;
+        padding: 5px;
+        position: absolute;
+        text-align: center;
+        width: 55px;
+        right: 0;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+    .pane-user-info-panel-pane-user-info {
+        float: left;
+        padding-bottom: 10px;
+    }
+
+    .pane-authored-content-panel-pane-content {
+        padding: 10px 0;
+
+        .views-row {
+            clear: both;
+            overflow: hidden;
+            margin-bottom: 10px;
+            padding-bottom: 45px;
+            border-bottom: 2px dotted lightgray
+        }
+
+        .pane-title {
+            float: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .view-id-authored_content {
+            margin-top: 15px;
+        }
+
+        .views-field-field-lead-image {
+            float: left;
+            height: 140px;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        .views-field-title {
+            a {
+                color: black;
+                text-decoration: none;
+
+                &:hover {
+                    color: #39f;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .views-more-link {
+            color: black;
+            font-weight: bold;
+        }
+
+        .views-field-created {
+            font-weight: bold;
+            color: #5A5A5A;
+        }
+
+
+        .views-field-comment-count {
+            float: left;
+            font-weight: bold;
+            color: #5A5A5A;
+            background: url('../images/comment.jpg') no-repeat left center;
+            padding-left: 20px;
+
+            &:after {
+                content: '|';
+                padding: 0 5px;
+            }
+        }
+    }
+}
