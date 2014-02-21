@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /**
  * @file
  * Normalize.css is intended to be used as an alternative to CSS resets.
@@ -8242,10 +8244,45 @@ blockquote {
   }
 
   line {
-    font-family: \000032;
+    font-family: \000034;
   }
 }
 
+.page-user-articles a,
+.page-user-comments a,
+.page-user a {
+  color: black;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \000037;
+  }
+}
+
+.page-user-articles a:hover,
+.page-user-comments a:hover,
+.page-user a:hover {
+  color: #39f;
+  text-decoration: underline;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \0000313;
+  }
+}
+
+.page-user-articles .views-field-user-badges-html,
+.page-user-comments .views-field-user-badges-html,
 .page-user .views-field-user-badges-html {
   float: left;
 }
@@ -8256,42 +8293,14 @@ blockquote {
   }
 
   line {
-    font-family: \000035;
+    font-family: \0000316;
   }
 }
 
+.page-user-articles .views-field-user-badges-html img,
+.page-user-comments .views-field-user-badges-html img,
 .page-user .views-field-user-badges-html img {
   display: block;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
-  }
-
-  line {
-    font-family: \000039;
-  }
-}
-
-.page-user .views-field-user-badges-html .profile-pictures {
-  margin-bottom: 5px;
-  background: red;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
-  }
-
-  line {
-    font-family: \0000315;
-  }
-}
-
-.page-user .views-field-field-user-about {
-  float: right;
-  width: 75%;
 }
 
 @media -sass-debug-info {
@@ -8304,13 +8313,49 @@ blockquote {
   }
 }
 
+.page-user-articles .views-field-user-badges-html .profile-pictures,
+.page-user-comments .views-field-user-badges-html .profile-pictures,
+.page-user .views-field-user-badges-html .profile-pictures {
+  margin-bottom: 5px;
+  background: red;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \0000326;
+  }
+}
+
+.page-user-articles .views-field-field-user-about,
+.page-user-comments .views-field-field-user-about,
+.page-user .views-field-field-user-about {
+  float: right;
+  width: 75%;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \0000331;
+  }
+}
+
+.page-user-articles .views-field-points,
+.page-user-comments .views-field-points,
 .page-user .views-field-points {
   background-color: #1D2753;
   border: 1px solid #0033FF;
   color: white;
   font-size: 16px;
   padding: 5px;
-  position: absolute;
+  float: right;
   text-align: center;
   width: 55px;
   right: 0;
@@ -8324,10 +8369,12 @@ blockquote {
   }
 
   line {
-    font-family: \0000335;
+    font-family: \0000346;
   }
 }
 
+.page-user-articles .pane-user-info-panel-pane-user-info,
+.page-user-comments .pane-user-info-panel-pane-user-info,
 .page-user .pane-user-info-panel-pane-user-info {
   float: left;
   padding-bottom: 10px;
@@ -8339,10 +8386,15 @@ blockquote {
   }
 
   line {
-    font-family: \0000340;
+    font-family: \0000352;
   }
 }
 
+.page-user-articles .view-id-authored_content,
+.page-user-articles .pane-authored-content-panel-pane-content,
+.page-user-comments .view-id-authored_content,
+.page-user-comments .pane-authored-content-panel-pane-content,
+.page-user .view-id-authored_content,
 .page-user .pane-authored-content-panel-pane-content {
   padding: 10px 0;
 }
@@ -8353,16 +8405,21 @@ blockquote {
   }
 
   line {
-    font-family: \0000343;
+    font-family: \0000355;
   }
 }
 
+.page-user-articles .view-id-authored_content .views-row,
+.page-user-articles .pane-authored-content-panel-pane-content .views-row,
+.page-user-comments .view-id-authored_content .views-row,
+.page-user-comments .pane-authored-content-panel-pane-content .views-row,
+.page-user .view-id-authored_content .views-row,
 .page-user .pane-authored-content-panel-pane-content .views-row {
   clear: both;
   overflow: hidden;
   margin-bottom: 10px;
   padding-bottom: 45px;
-  border-bottom: 2px dotted lightgrey;
+  border-bottom: 2px dotted #b4b4b4;
 }
 
 @media -sass-debug-info {
@@ -8371,10 +8428,34 @@ blockquote {
   }
 
   line {
-    font-family: \0000351;
+    font-family: \0000362;
   }
 }
 
+.page-user-articles .view-id-authored_content .views-row:last-child,
+.page-user-articles .pane-authored-content-panel-pane-content .views-row:last-child,
+.page-user-comments .view-id-authored_content .views-row:last-child,
+.page-user-comments .pane-authored-content-panel-pane-content .views-row:last-child,
+.page-user .view-id-authored_content .views-row:last-child,
+.page-user .pane-authored-content-panel-pane-content .views-row:last-child {
+  border-bottom: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \0000367;
+  }
+}
+
+.page-user-articles .view-id-authored_content .pane-title,
+.page-user-articles .pane-authored-content-panel-pane-content .pane-title,
+.page-user-comments .view-id-authored_content .pane-title,
+.page-user-comments .pane-authored-content-panel-pane-content .pane-title,
+.page-user .view-id-authored_content .pane-title,
 .page-user .pane-authored-content-panel-pane-content .pane-title {
   float: none;
   font-size: 18px;
@@ -8388,10 +8469,15 @@ blockquote {
   }
 
   line {
-    font-family: \0000358;
+    font-family: \0000374;
   }
 }
 
+.page-user-articles .view-id-authored_content .view-id-authored_content,
+.page-user-articles .pane-authored-content-panel-pane-content .view-id-authored_content,
+.page-user-comments .view-id-authored_content .view-id-authored_content,
+.page-user-comments .pane-authored-content-panel-pane-content .view-id-authored_content,
+.page-user .view-id-authored_content .view-id-authored_content,
 .page-user .pane-authored-content-panel-pane-content .view-id-authored_content {
   margin-top: 15px;
 }
@@ -8402,10 +8488,15 @@ blockquote {
   }
 
   line {
-    font-family: \0000362;
+    font-family: \0000378;
   }
 }
 
+.page-user-articles .view-id-authored_content .views-field-field-lead-image,
+.page-user-articles .pane-authored-content-panel-pane-content .views-field-field-lead-image,
+.page-user-comments .view-id-authored_content .views-field-field-lead-image,
+.page-user-comments .pane-authored-content-panel-pane-content .views-field-field-lead-image,
+.page-user .view-id-authored_content .views-field-field-lead-image,
 .page-user .pane-authored-content-panel-pane-content .views-field-field-lead-image {
   float: left;
   height: 140px;
@@ -8419,12 +8510,16 @@ blockquote {
   }
 
   line {
-    font-family: \0000370;
+    font-family: \0000386;
   }
 }
 
+.page-user-articles .view-id-authored_content .views-field-title a,
+.page-user-articles .pane-authored-content-panel-pane-content .views-field-title a,
+.page-user-comments .view-id-authored_content .views-field-title a,
+.page-user-comments .pane-authored-content-panel-pane-content .views-field-title a,
+.page-user .view-id-authored_content .views-field-title a,
 .page-user .pane-authored-content-panel-pane-content .views-field-title a {
-  color: black;
   text-decoration: none;
 }
 
@@ -8434,25 +8529,15 @@ blockquote {
   }
 
   line {
-    font-family: \0000374;
+    font-family: \0000391;
   }
 }
 
-.page-user .pane-authored-content-panel-pane-content .views-field-title a:hover {
-  color: #39f;
-  text-decoration: underline;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
-  }
-
-  line {
-    font-family: \0000381;
-  }
-}
-
+.page-user-articles .view-id-authored_content .views-more-link,
+.page-user-articles .pane-authored-content-panel-pane-content .views-more-link,
+.page-user-comments .view-id-authored_content .views-more-link,
+.page-user-comments .pane-authored-content-panel-pane-content .views-more-link,
+.page-user .view-id-authored_content .views-more-link,
 .page-user .pane-authored-content-panel-pane-content .views-more-link {
   color: black;
   font-weight: bold;
@@ -8464,10 +8549,34 @@ blockquote {
   }
 
   line {
-    font-family: \0000386;
+    font-family: \0000395;
   }
 }
 
+.page-user-articles .view-id-authored_content .views-more-link:before,
+.page-user-articles .pane-authored-content-panel-pane-content .views-more-link:before,
+.page-user-comments .view-id-authored_content .views-more-link:before,
+.page-user-comments .pane-authored-content-panel-pane-content .views-more-link:before,
+.page-user .view-id-authored_content .views-more-link:before,
+.page-user .pane-authored-content-panel-pane-content .views-more-link:before {
+  content: '» ';
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003100;
+  }
+}
+
+.page-user-articles .view-id-authored_content .views-field-created,
+.page-user-articles .pane-authored-content-panel-pane-content .views-field-created,
+.page-user-comments .view-id-authored_content .views-field-created,
+.page-user-comments .pane-authored-content-panel-pane-content .views-field-created,
+.page-user .view-id-authored_content .views-field-created,
 .page-user .pane-authored-content-panel-pane-content .views-field-created {
   font-weight: bold;
   color: #5A5A5A;
@@ -8479,10 +8588,15 @@ blockquote {
   }
 
   line {
-    font-family: \0000392;
+    font-family: \00003106;
   }
 }
 
+.page-user-articles .view-id-authored_content .views-field-comment-count,
+.page-user-articles .pane-authored-content-panel-pane-content .views-field-comment-count,
+.page-user-comments .view-id-authored_content .views-field-comment-count,
+.page-user-comments .pane-authored-content-panel-pane-content .views-field-comment-count,
+.page-user .view-id-authored_content .views-field-comment-count,
 .page-user .pane-authored-content-panel-pane-content .views-field-comment-count {
   float: left;
   font-weight: bold;
@@ -8497,11 +8611,265 @@ blockquote {
   }
 
   line {
-    font-family: \0000399;
+    font-family: \00003113;
   }
 }
 
+.page-user-articles .view-id-authored_content .views-field-comment-count:after,
+.page-user-articles .pane-authored-content-panel-pane-content .views-field-comment-count:after,
+.page-user-comments .view-id-authored_content .views-field-comment-count:after,
+.page-user-comments .pane-authored-content-panel-pane-content .views-field-comment-count:after,
+.page-user .view-id-authored_content .views-field-comment-count:after,
 .page-user .pane-authored-content-panel-pane-content .views-field-comment-count:after {
   content: '|';
   padding: 0 5px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003120;
+  }
+}
+
+.page-user-articles .view-id-authored_content .more-link:before,
+.page-user-articles .pane-authored-content-panel-pane-content .more-link:before,
+.page-user-comments .view-id-authored_content .more-link:before,
+.page-user-comments .pane-authored-content-panel-pane-content .more-link:before,
+.page-user .view-id-authored_content .more-link:before,
+.page-user .pane-authored-content-panel-pane-content .more-link:before {
+  content: '» ';
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003128;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .pane-title,
+.page-user-articles .pane-authored-comments-panel-pane-comments .pane-title,
+.page-user-comments .view-id-authored_comments .pane-title,
+.page-user-comments .pane-authored-comments-panel-pane-comments .pane-title,
+.page-user .view-id-authored_comments .pane-title,
+.page-user .pane-authored-comments-panel-pane-comments .pane-title {
+  font-size: 18px;
+  font-weight: bold;
+  float: none;
+  margin-bottom: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003136;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .more-link:before,
+.page-user-articles .pane-authored-comments-panel-pane-comments .more-link:before,
+.page-user-comments .view-id-authored_comments .more-link:before,
+.page-user-comments .pane-authored-comments-panel-pane-comments .more-link:before,
+.page-user .view-id-authored_comments .more-link:before,
+.page-user .pane-authored-comments-panel-pane-comments .more-link:before {
+  content: '» ';
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003141;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .views-row,
+.page-user-articles .pane-authored-comments-panel-pane-comments .views-row,
+.page-user-comments .view-id-authored_comments .views-row,
+.page-user-comments .pane-authored-comments-panel-pane-comments .views-row,
+.page-user .view-id-authored_comments .views-row,
+.page-user .pane-authored-comments-panel-pane-comments .views-row {
+  margin-bottom: 25px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003145;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .views-field-created,
+.page-user-articles .pane-authored-comments-panel-pane-comments .views-field-created,
+.page-user-comments .view-id-authored_comments .views-field-created,
+.page-user-comments .pane-authored-comments-panel-pane-comments .views-field-created,
+.page-user .view-id-authored_comments .views-field-created,
+.page-user .pane-authored-comments-panel-pane-comments .views-field-created {
+  font-weight: bold;
+  color: #5A5A5A;
+  font-size: 9px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003151;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .views-field-timestamp,
+.page-user-articles .pane-authored-comments-panel-pane-comments .views-field-timestamp,
+.page-user-comments .view-id-authored_comments .views-field-timestamp,
+.page-user-comments .pane-authored-comments-panel-pane-comments .views-field-timestamp,
+.page-user .view-id-authored_comments .views-field-timestamp,
+.page-user .pane-authored-comments-panel-pane-comments .views-field-timestamp {
+  color: #5A5A5A;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003157;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .views-field-title,
+.page-user-articles .pane-authored-comments-panel-pane-comments .views-field-title,
+.page-user-comments .view-id-authored_comments .views-field-title,
+.page-user-comments .pane-authored-comments-panel-pane-comments .views-field-title,
+.page-user .view-id-authored_comments .views-field-title,
+.page-user .pane-authored-comments-panel-pane-comments .views-field-title {
+  color: #292929;
+  font-size: 13px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003161;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .views-field-title a,
+.page-user-articles .pane-authored-comments-panel-pane-comments .views-field-title a,
+.page-user-comments .view-id-authored_comments .views-field-title a,
+.page-user-comments .pane-authored-comments-panel-pane-comments .views-field-title a,
+.page-user .view-id-authored_comments .views-field-title a,
+.page-user .pane-authored-comments-panel-pane-comments .views-field-title a {
+  color: black;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003164;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .views-field-title a:hover,
+.page-user-articles .pane-authored-comments-panel-pane-comments .views-field-title a:hover,
+.page-user-comments .view-id-authored_comments .views-field-title a:hover,
+.page-user-comments .pane-authored-comments-panel-pane-comments .views-field-title a:hover,
+.page-user .view-id-authored_comments .views-field-title a:hover,
+.page-user .pane-authored-comments-panel-pane-comments .views-field-title a:hover {
+  color: #39f;
+  text-decoration: underline;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003171;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .views-field-comment-body,
+.page-user-articles .pane-authored-comments-panel-pane-comments .views-field-comment-body,
+.page-user-comments .view-id-authored_comments .views-field-comment-body,
+.page-user-comments .pane-authored-comments-panel-pane-comments .views-field-comment-body,
+.page-user .view-id-authored_comments .views-field-comment-body,
+.page-user .pane-authored-comments-panel-pane-comments .views-field-comment-body {
+  background: #EDEDED;
+  color: #292929;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-bottom: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 1px;
+  line-height: 1.3;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003184;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .views-field-comment-body a,
+.page-user-articles .pane-authored-comments-panel-pane-comments .views-field-comment-body a,
+.page-user-comments .view-id-authored_comments .views-field-comment-body a,
+.page-user-comments .pane-authored-comments-panel-pane-comments .views-field-comment-body a,
+.page-user .view-id-authored_comments .views-field-comment-body a,
+.page-user .pane-authored-comments-panel-pane-comments .views-field-comment-body a {
+  color: black;
+  text-decoration: underline;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003188;
+  }
+}
+
+.page-user-articles .view-id-authored_comments .views-field-comment-body a:hover,
+.page-user-articles .pane-authored-comments-panel-pane-comments .views-field-comment-body a:hover,
+.page-user-comments .view-id-authored_comments .views-field-comment-body a:hover,
+.page-user-comments .pane-authored-comments-panel-pane-comments .views-field-comment-body a:hover,
+.page-user .view-id-authored_comments .views-field-comment-body a:hover,
+.page-user .pane-authored-comments-panel-pane-comments .views-field-comment-body a:hover {
+  color: #39f;
+  text-decoration: underline;
 }
