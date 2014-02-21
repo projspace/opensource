@@ -138,6 +138,7 @@ function os_channel_pages_views_default_views() {
   $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
     'channel' => 'channel',
+    'tags' => 'tags',
   );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -154,8 +155,9 @@ function os_channel_pages_views_default_views() {
     'article' => 'article',
   );
 
-  /* Display: Channel Articles */
-  $handler = $view->new_display('panel_pane', 'Channel Articles', 'panel_pane_articles');
+  /* Display: Channel/Tag Articles */
+  $handler = $view->new_display('panel_pane', 'Channel/Tag Articles', 'panel_pane_articles');
+  $handler->display->display_options['display_description'] = 'List articles under a channel or tag.';
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
