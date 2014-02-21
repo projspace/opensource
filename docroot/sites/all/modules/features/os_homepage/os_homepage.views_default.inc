@@ -13,7 +13,7 @@ function os_homepage_views_default_views() {
   $view = new view();
   $view->name = 'homepage';
   $view->description = 'Lists all articles for the homepage.';
-  $view->tag = 'home, articles';
+  $view->tag = 'home, article';
   $view->base_table = 'node';
   $view->human_name = 'Homepage';
   $view->core = 7;
