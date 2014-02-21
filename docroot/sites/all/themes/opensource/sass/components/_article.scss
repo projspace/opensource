@@ -5,6 +5,7 @@
        display: block;
        line-height: 17px;
 }
+
 .box-wrapper {
     border: 1px solid #cdcbca;
     background: #fff;
@@ -12,16 +13,19 @@
     box-shadow: 2px 2px 3px #cdcbca;
     margin-bottom: 1.5em;
 }
+
 .box-wrapper p {
     margin: 0;
     br {
         display:  none;
     }
 }
+
 .article-title {
     font-size: 24px;
     font-weight: bold;
 }
+
 .node-type-article {
     .view-author-info {
         .views-field-field-user-picture {
@@ -101,7 +105,7 @@
     .pane-node-comments {
         .comment {
             @extend .box-wrapper;
-            .content {     
+            .content {
                 margin: 1em 0;
                 border-bottom: 2px dotted #ccc;
                 padding-bottom: 1em;
