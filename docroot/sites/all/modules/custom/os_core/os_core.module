@@ -110,6 +110,7 @@ function os_core_display_social_block() {
  * Implements hook_init().
  */
 function os_core_init() {
+  drupal_add_js(drupal_get_path('module', 'os_core') . '/os_core.js');
   if (array_key_exists('success', $_REQUEST)) {
     drupal_set_message('Thank you. You have been subscribed to our weekly email.');
   }
