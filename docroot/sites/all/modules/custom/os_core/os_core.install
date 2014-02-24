@@ -119,6 +119,26 @@ function os_core_update_7104() {
  */
 function os_core_update_7105() {
   module_disable(array('save_draft'));
+
+  $values = array(
+    array(
+      'type' => 'article',
+      'wid' => 1,
+    ),
+    array(
+      'type' => 'event',
+      'wid' => 1,
+    ),
+    array(
+      'type' => 'page',
+      'wid' => 1,
+    ),
+  );
+  $query = db_insert('workflow_type_map')->fields(array('type', 'wid'));
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
 }
 
 /**
