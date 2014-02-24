@@ -3791,10 +3791,11 @@ blockquote {
 .section-government .pane-term-description .pane-title {
   background: url("../images/about_government.png") no-repeat;
   text-indent: -9999px;
+  margin-left: -0.5em;
   margin-bottom: 10px;
   line-height: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000315}}
 .section-government .pane-term-description p {
   margin-top: 4px;
   padding: 0 15px 13px 16px;

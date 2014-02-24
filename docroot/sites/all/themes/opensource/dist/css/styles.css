@@ -8944,6 +8944,7 @@ blockquote {
 .section-government .pane-term-description .pane-title {
   background: url("../images/about_government.png") no-repeat;
   text-indent: -9999px;
+  margin-left: -0.5em;
   margin-bottom: 10px;
   line-height: 1;
 }
@@ -8954,7 +8955,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000314;
+    font-family: \0000315;
   }
 }
 
