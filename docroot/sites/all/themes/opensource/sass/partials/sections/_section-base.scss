@@ -1,0 +1,61 @@
+body[class*='section-'] {
+    .view-channel-articles {
+        .views-row {
+            margin-bottom: 25px;
+        }
+
+        .views-field-title {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.25;
+            margin-bottom: 12px;
+
+            a {
+                color: #333;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: #39f;
+                }
+            }
+        }
+
+        .views-field-field-lead-image {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .views-field-created {
+            clear: both;
+        }
+
+        .teaser-date {
+            color: #333;
+        }
+
+        .teaser-author {
+            top: 0;
+            vertical-align: bottom;
+
+            a {
+                text-align: none;
+            }
+        }
+
+        .views-more-link {
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+
+            &:hover {
+                text-decoration: underline;
+                color: #39f;
+            }
+
+            &:before {
+                content: '» ';
+            }
+        }
+    }
+}
