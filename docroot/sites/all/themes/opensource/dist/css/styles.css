@@ -8923,7 +8923,7 @@ blockquote {
   }
 
   line {
-    font-family: \000033;
+    font-family: \000034;
   }
 }
 
@@ -8938,7 +8938,7 @@ body[class*='section-'] .view-channel-articles .views-row {
   }
 
   line {
-    font-family: \000038;
+    font-family: \000039;
   }
 }
 
@@ -8955,7 +8955,7 @@ body[class*='section-'] .view-channel-articles .views-field-title {
   }
 
   line {
-    font-family: \0000314;
+    font-family: \0000315;
   }
 }
 
@@ -8970,7 +8970,7 @@ body[class*='section-'] .view-channel-articles .views-field-title a {
   }
 
   line {
-    font-family: \0000318;
+    font-family: \0000319;
   }
 }
 
@@ -8985,7 +8985,7 @@ body[class*='section-'] .view-channel-articles .views-field-title a:hover {
   }
 
   line {
-    font-family: \0000326;
+    font-family: \0000327;
   }
 }
 
@@ -9000,7 +9000,7 @@ body[class*='section-'] .view-channel-articles .views-field-field-lead-image {
   }
 
   line {
-    font-family: \0000332;
+    font-family: \0000333;
   }
 }
 
@@ -9016,7 +9016,7 @@ body[class*='section-'] .view-channel-articles .username {
   }
 
   line {
-    font-family: \0000337;
+    font-family: \0000338;
   }
 }
 
@@ -9030,7 +9030,7 @@ body[class*='section-'] .view-channel-articles .views-field-created {
   }
 
   line {
-    font-family: \0000341;
+    font-family: \0000342;
   }
 }
 
@@ -9044,14 +9044,14 @@ body[class*='section-'] .view-channel-articles .teaser-date {
   }
 
   line {
-    font-family: \0000345;
+    font-family: \0000346;
   }
 }
 
 body[class*='section-'] .view-channel-articles .teaser-author {
   top: 0;
   vertical-align: bottom;
-  margin-right: 0;
+  margin-left: 0;
 }
 
 @media -sass-debug-info {
@@ -9060,7 +9060,7 @@ body[class*='section-'] .view-channel-articles .teaser-author {
   }
 
   line {
-    font-family: \0000350;
+    font-family: \0000351;
   }
 }
 
@@ -9074,7 +9074,7 @@ body[class*='section-'] .view-channel-articles .teaser-author a {
   }
 
   line {
-    font-family: \0000355;
+    font-family: \0000356;
   }
 }
 
@@ -9090,7 +9090,7 @@ body[class*='section-'] .view-channel-articles .views-more-link {
   }
 
   line {
-    font-family: \0000360;
+    font-family: \0000361;
   }
 }
 
@@ -9105,7 +9105,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:hover {
   }
 
   line {
-    font-family: \0000365;
+    font-family: \0000366;
   }
 }
 
