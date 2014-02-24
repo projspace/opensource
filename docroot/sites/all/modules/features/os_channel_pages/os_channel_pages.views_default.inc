@@ -114,7 +114,7 @@ function os_channel_pages_views_default_views() {
   $handler->display->display_options['fields']['created']['alter']['text'] = '<div class="teaser-info">
 <span class="teaser-comment">[comment_count]</span>
 <span class="teaser-date">Posted [created]</span>
-<span class="teaser-author">[name] 
+<span class="teaser-author">by [name] 
 <span class="author-feed"><a href="/user/[uid]/feed">Feed</a></span></span>
 </div>';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
