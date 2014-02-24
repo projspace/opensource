@@ -1,7 +1,8 @@
 body[class*='section-'] {
     .view-channel-articles {
         .views-row {
-            margin-bottom: 25px;
+            margin-bottom: 15px;
+            padding: 10px 0;
         }
 
         .views-field-title {
@@ -21,9 +22,16 @@ body[class*='section-'] {
             }
         }
 
+
         .views-field-field-lead-image {
             float: left;
             margin-right: 10px;
+        }
+
+        .author-feed,
+        .username {
+            display: inline-block;
+            float: none;
         }
 
         .views-field-created {
@@ -37,6 +45,7 @@ body[class*='section-'] {
         .teaser-author {
             top: 0;
             vertical-align: bottom;
+            margin-right: 0;
 
             a {
                 text-align: none;
