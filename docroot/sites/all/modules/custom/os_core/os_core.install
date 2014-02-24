@@ -44,6 +44,9 @@ function os_core_install() {
 
   // Enable the pm_existing_pages-user_content_pages page.
   os_core_update_7104();
+
+  // Disable save_draft module as it creates confusion with workflow.
+  os_core_update_7105();
 }
 
 /**
@@ -109,6 +112,13 @@ function os_core_update_7104() {
   $function = ctools_plugin_get_function($page->subtask, 'enable callback');
   $function($page, FALSE);
   menu_rebuild();
+}
+
+/**
+ * Disable save_draft module as it creates confusion with workflow.
+ */
+function os_core_update_7105() {
+  module_disable(array('save_draft'));
 }
 
 /**
