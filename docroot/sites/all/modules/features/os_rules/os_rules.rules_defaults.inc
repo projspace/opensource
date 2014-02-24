@@ -9,6 +9,37 @@
  */
 function os_rules_default_rules_configuration() {
   $items = array();
+  $items['rules_article_published'] = entity_import('rules_config', '{ "rules_article_published" : {
+      "LABEL" : "Award points for published article",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "article", "points", "workflow" ],
+      "REQUIRES" : [ "rules", "workflow_rules", "userpoints_rules" ],
+      "ON" : { "workflow_state_changed" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node" ],
+            "type" : "node",
+            "bundle" : { "value" : { "article" : "article" } }
+          }
+        },
+        { "workflow_check_state" : { "node" : [ "node" ], "workflow_state" : { "value" : { "3" : "3" } } } }
+      ],
+      "DO" : [
+        { "userpoints_action_grant_points" : {
+            "user" : [ "node:author" ],
+            "points" : "30",
+            "tid" : "0",
+            "entity" : [ "node" ],
+            "description" : "Published Article",
+            "operation" : "Publish",
+            "display" : 1,
+            "moderate" : "default"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_award_points_comment'] = entity_import('rules_config', '{ "rules_award_points_comment" : {
       "LABEL" : "Award points on comment",
       "PLUGIN" : "reaction rule",
@@ -145,6 +176,76 @@ function os_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_event_published'] = entity_import('rules_config', '{ "rules_event_published" : {
+      "LABEL" : "Award points and send notification on event getting published",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "event", "points", "workflow" ],
+      "REQUIRES" : [ "rules", "workflow_rules", "userpoints_rules" ],
+      "ON" : { "workflow_state_changed" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node" ],
+            "type" : "node",
+            "bundle" : { "value" : { "event" : "event" } }
+          }
+        },
+        { "workflow_check_state" : { "node" : [ "node" ], "workflow_state" : { "value" : { "3" : "3" } } } }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : [ "node:field-event-submitter-email" ],
+            "subject" : "Your event has been approved",
+            "message" : "We have approved your event: [node:title]\\r\\n\\r\\nPlease visit our calendar at http:\\/\\/opensource.com\\/resources\\/conferences-and-events-monthly to view your event listing.\\r\\n\\r\\nThanks,\\r\\nopensource.com team",
+            "from" : "osdc-admin@redhat.com",
+            "language" : [ "" ]
+          }
+        },
+        { "userpoints_action_grant_points" : {
+            "user" : [ "node:author" ],
+            "points" : "10",
+            "tid" : "0",
+            "entity" : [ "node" ],
+            "description" : "Publishing Event",
+            "operation" : "Publish",
+            "display" : 1,
+            "moderate" : "default"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_poll_published'] = entity_import('rules_config', '{ "rules_poll_published" : {
+      "LABEL" : "Award points for published poll",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "points", "poll", "workflow" ],
+      "REQUIRES" : [ "rules", "workflow_rules", "userpoints_rules" ],
+      "ON" : { "workflow_state_changed" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node" ],
+            "type" : "node",
+            "bundle" : { "value" : { "poll" : "poll" } }
+          }
+        },
+        { "workflow_check_state" : { "node" : [ "node" ], "workflow_state" : { "value" : { "3" : "3" } } } }
+      ],
+      "DO" : [
+        { "userpoints_action_grant_points" : {
+            "user" : [ "node:author" ],
+            "points" : "15",
+            "tid" : "0",
+            "entity" : [ "node" ],
+            "description" : "Published Poll",
+            "operation" : "Publish",
+            "display" : 1,
+            "moderate" : "default"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_redirect_user_after_registration'] = entity_import('rules_config', '{ "rules_redirect_user_after_registration" : {
       "LABEL" : "Redirect user after registration",
       "PLUGIN" : "reaction rule",
@@ -172,7 +273,7 @@ function os_rules_default_rules_configuration() {
           }
         },
         { "mail" : {
-            "to" : "[node:field-event-submitter-email]",
+            "to" : [ "node:field-event-submitter-email" ],
             "subject" : "Thanks for submitting your event",
             "message" : "Our admins will review your submission and approve your event if it fits within our guidelines. We will contact you if there are any questions.\\r\\n\\r\\nThanks,\\r\\nopensource.com team",
             "from" : "osdc-mail@redhat.com",
