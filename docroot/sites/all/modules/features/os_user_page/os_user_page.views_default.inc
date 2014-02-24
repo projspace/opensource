@@ -209,8 +209,10 @@ function os_user_page_views_default_views() {
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['created']['alter']['text'] = 'Posted [created]';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'j M Y';
   /* Sort criterion: Content: Post date */
