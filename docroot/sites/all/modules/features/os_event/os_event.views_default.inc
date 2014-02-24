@@ -478,23 +478,6 @@ function os_event_views_default_views() {
   $handler->display->display_options['sorts']['field_event_start_date_value']['id'] = 'field_event_start_date_value';
   $handler->display->display_options['sorts']['field_event_start_date_value']['table'] = 'field_data_field_event_start_date';
   $handler->display->display_options['sorts']['field_event_start_date_value']['field'] = 'field_event_start_date_value';
-  /* Contextual filter: Date: Date (node) */
-  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
-  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['date_argument']['year_range'] = '-0:+3';
-  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
-    'field_data_field_event_start_date.field_event_start_date_value' => 'field_data_field_event_start_date.field_event_start_date_value',
-  );
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 0;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -963,7 +946,7 @@ function os_event_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
-  $handler->display->display_options['path'] = 'moderation-queue/events';
+  $handler->display->display_options['path'] = 'moderation-queue';
 
   /* Display: Moderation Queue content pane */
   $handler = $view->new_display('panel_pane', 'Moderation Queue content pane', 'panel_pane_2');
@@ -1035,6 +1018,14 @@ function os_event_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<b>Events : </b><a href=\'/moderation-queue/events/all\'>All</a> | <a href=\'/moderation-queue/events/2\'>Review</a> | <a href=\'/moderation-queue/events/3\'>Published</a>';
+  $handler->display->display_options['header']['area']['format'] = 'panopoly_wysiwyg_text';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -1097,6 +1088,28 @@ function os_event_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Workflow current: Current state */
+  $handler->display->display_options['arguments']['sid']['id'] = 'sid';
+  $handler->display->display_options['arguments']['sid']['table'] = 'workflow_node_current';
+  $handler->display->display_options['arguments']['sid']['field'] = 'sid';
+  $handler->display->display_options['arguments']['sid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['sid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['sid']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['sid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['sid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['sid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['argument_input'] = array(
+    'sid' => array(
+      'type' => 'context',
+      'context' => 'string.raw',
+      'context_optional' => 1,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Workflow current: Current state',
+    ),
+  );
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $export['event_calendar_list'] = $view;
 
   $view = new view();

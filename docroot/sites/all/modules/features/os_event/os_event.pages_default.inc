@@ -370,7 +370,7 @@ function os_event_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_2'] = $handler;
+  $export['event'] = $handler;
 
   return $export;
 }
@@ -718,12 +718,19 @@ function os_event_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Moderation Queue and Events';
   $page->admin_description = 'Conferences and Event monthly listing for OpenSource.com';
-  $page->path = 'moderation-queue/events/all';
+  $page->path = 'moderation-queue/events/!letter';
   $page->access = array(
     'logic' => 'and',
   );
   $page->menu = array();
-  $page->arguments = array();
+  $page->arguments = array(
+    'letter' => array(
+      'id' => '',
+      'identifier' => '',
+      'argument' => '',
+      'settings' => array(),
+    ),
+  );
   $page->conf = array(
     'admin_paths' => FALSE,
   );
