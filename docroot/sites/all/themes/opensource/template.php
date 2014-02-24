@@ -388,7 +388,7 @@ function opensource_preprocess_field(&$vars) {
         break;
 
       default:
-        $vars['items']['0']['#markup'] = $vars['element']['#object']->field_licence[LANGUAGE_NONE][0]['value'];
+        $vars['items']['0']['#markup'] = $vars['element']['#object']->field_default_license[LANGUAGE_NONE][0]['value'];
         break;
     }
   }
