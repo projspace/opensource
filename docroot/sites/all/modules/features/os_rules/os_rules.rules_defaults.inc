@@ -155,5 +155,32 @@ function os_rules_default_rules_configuration() {
       "DO" : [ { "redirect" : { "url" : "user\\/thank-you" } } ]
     }
   }');
+  $items['rules_send_notifications_event_creation'] = entity_import('rules_config', '{ "rules_send_notifications_event_creation" : {
+      "LABEL" : "Send notifications on event creation",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "event" ],
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_insert--event" : { "bundle" : "event" } },
+      "DO" : [
+        { "mail" : {
+            "to" : "osdc-mail@redhat.com",
+            "subject" : "New event submitted",
+            "message" : "A new event has been submitted. Please visit http:\\/\\/opensource.com\\/moderation-queue\\/events\\/all to approve.\\r\\n\\r\\nEvent title: [node:title]\\r\\nBy: [node:author:user]",
+            "from" : "osdc-mail@redhat.com",
+            "language" : [ "" ]
+          }
+        },
+        { "mail" : {
+            "to" : "[node:field-event-submitter-email]",
+            "subject" : "Thanks for submitting your event",
+            "message" : "Our admins will review your submission and approve your event if it fits within our guidelines. We will contact you if there are any questions.\\r\\n\\r\\nThanks,\\r\\nopensource.com team",
+            "from" : "osdc-mail@redhat.com",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
   return $items;
 }
