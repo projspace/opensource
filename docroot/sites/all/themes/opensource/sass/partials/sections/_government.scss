@@ -1,0 +1,19 @@
+.section-government {
+    .page__title {
+        display: none;
+    }
+
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_government.png') no-repeat;
+            text-indent: -9999px;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        p {
+            margin-top: 4px;
+            padding: 0 15px 13px 16px;
+        }
+    }
+}
