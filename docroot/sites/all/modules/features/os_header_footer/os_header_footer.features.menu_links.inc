@@ -10,120 +10,6 @@
 function os_header_footer_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_business:<front>
-  $menu_links['main-menu_business:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Business',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Business',
-      ),
-      'identifier' => 'main-menu_business:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -49,
-  );
-  // Exported menu link: main-menu_education:<front>
-  $menu_links['main-menu_education:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Education',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Education',
-      ),
-      'identifier' => 'main-menu_education:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -48,
-  );
-  // Exported menu link: main-menu_government:<front>
-  $menu_links['main-menu_government:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Government',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Government',
-      ),
-      'identifier' => 'main-menu_government:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 1,
-    'expanded' => 0,
-    'weight' => -47,
-  );
-  // Exported menu link: main-menu_health:<front>
-  $menu_links['main-menu_health:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Health',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Health',
-      ),
-      'identifier' => 'main-menu_health:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 1,
-    'expanded' => 0,
-    'weight' => -46,
-  );
-  // Exported menu link: main-menu_law:<front>
-  $menu_links['main-menu_law:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Law',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Law',
-      ),
-      'identifier' => 'main-menu_law:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-  );
-  // Exported menu link: main-menu_life:<front>
-  $menu_links['main-menu_life:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Life',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Life',
-      ),
-      'identifier' => 'main-menu_life:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-  );
   // Exported menu link: main-menu_open:<front>
   $menu_links['main-menu_open:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -142,6 +28,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -50,
+    'customized' => 0,
   );
   // Exported menu link: menu-about-menu_about:<front>
   $menu_links['menu-about-menu_about:<front>'] = array(
@@ -161,6 +48,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -50,
+    'customized' => 0,
   );
   // Exported menu link: menu-about-menu_community:<front>
   $menu_links['menu-about-menu_community:<front>'] = array(
@@ -180,6 +68,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -48,
+    'customized' => 0,
   );
   // Exported menu link: menu-about-menu_participate:<front>
   $menu_links['menu-about-menu_participate:<front>'] = array(
@@ -199,6 +88,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -47,
+    'customized' => 0,
   );
   // Exported menu link: menu-about-menu_resources:<front>
   $menu_links['menu-about-menu_resources:<front>'] = array(
@@ -218,6 +108,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -49,
+    'customized' => 0,
   );
   // Exported menu link: menu-about-menu_submit-your-story:<front>
   $menu_links['menu-about-menu_submit-your-story:<front>'] = array(
@@ -237,6 +128,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -46,
+    'customized' => 0,
   );
   // Exported menu link: menu-about-menu_the-open-source-way:<front>
   $menu_links['menu-about-menu_the-open-source-way:<front>'] = array(
@@ -256,6 +148,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -45,
+    'customized' => 0,
   );
   // Exported menu link: menu-about-menu_visit-opensourceorg:<front>
   $menu_links['menu-about-menu_visit-opensourceorg:<front>'] = array(
@@ -275,6 +168,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -44,
+    'customized' => 0,
   );
   // Exported menu link: menu-footer_colophon:<front>
   $menu_links['menu-footer_colophon:<front>'] = array(
@@ -294,6 +188,27 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -45,
+    'customized' => 0,
+  );
+  // Exported menu link: menu-footer_contact:contact
+  $menu_links['menu-footer_contact:contact'] = array(
+    'menu_name' => 'menu-footer',
+    'link_path' => 'contact',
+    'router_path' => 'contact',
+    'link_title' => 'Contact',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Contact Us',
+      ),
+      'identifier' => 'menu-footer_contact:contact',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 0,
   );
   // Exported menu link: menu-footer_media-kit:<front>
   $menu_links['menu-footer_media-kit:<front>'] = array(
@@ -313,6 +228,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -46,
+    'customized' => 0,
   );
   // Exported menu link: menu-footer_meet-the-moderators:<front>
   $menu_links['menu-footer_meet-the-moderators:<front>'] = array(
@@ -332,6 +248,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -47,
+    'customized' => 0,
   );
   // Exported menu link: menu-footer_privacy-policy:<front>
   $menu_links['menu-footer_privacy-policy:<front>'] = array(
@@ -351,6 +268,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -50,
+    'customized' => 0,
   );
   // Exported menu link: menu-footer_terms-of-use:<front>
   $menu_links['menu-footer_terms-of-use:<front>'] = array(
@@ -370,6 +288,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -49,
+    'customized' => 0,
   );
   // Exported menu link: user-menu_feed:<front>
   $menu_links['user-menu_feed:<front>'] = array(
@@ -389,6 +308,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => 50,
+    'customized' => 0,
   );
   // Exported menu link: user-menu_log-in:user/login
   $menu_links['user-menu_log-in:user/login'] = array(
@@ -405,6 +325,7 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => 11,
+    'customized' => 0,
     'parent_identifier' => 'user-menu_my-account:user',
   );
   // Exported menu link: user-menu_sign-up:user/register
@@ -425,19 +346,15 @@ function os_header_footer_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => 30,
+    'customized' => 0,
   );
   // Translatables
   // Included for use with string extractors like potx.
   t('About');
-  t('Business');
   t('Colophon');
   t('Community');
-  t('Education');
+  t('Contact');
   t('Feed');
-  t('Government');
-  t('Health');
-  t('Law');
-  t('Life');
   t('Log in');
   t('Media Kit');
   t('Meet the Moderators');
