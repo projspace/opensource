@@ -23,7 +23,9 @@ function os_poll_flag_default_flags() {
     'entity_type' => 'node',
     'title' => 'Poll on Homepage',
     'global' => 1,
-    'types' => array(),
+    'types' => array(
+      0 => 'poll',
+    ),
     'flag_short' => 'Promote poll on homepage',
     'flag_long' => 'The latest promoted poll will be shown on homepage in the sidebar',
     'flag_message' => '',
@@ -39,7 +41,6 @@ function os_poll_flag_default_flags() {
       'rss' => 0,
       'search_index' => 0,
       'search_result' => 0,
-      'diff_standard' => 0,
       'featured' => 0,
       'token' => 0,
     ),

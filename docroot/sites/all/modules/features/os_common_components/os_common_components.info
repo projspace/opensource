@@ -18,6 +18,7 @@ features[ctools][] = pm_existing_pages:pm_existing_pages:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[page_manager_existing_pages][] = community_spotlight
+features[page_manager_handlers][] = node_generic_view_panel_context
 features[page_manager_handlers][] = pm_existing_pages_community_spotlight_panel_context
 features[panels_mini][] = common_1
 features[views_view][] = contributor_spotlight
