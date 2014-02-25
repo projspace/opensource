@@ -110,9 +110,8 @@ function os_core_display_social_block() {
  * Implements hook_init().
  */
 function os_core_init() {
-  drupal_add_js(drupal_get_path('module', 'os_core') . '/os_core.js');
   if (array_key_exists('success', $_REQUEST)) {
-    drupal_set_message('Thank you. You have been subscribed to our weekly email.');
+    drupal_set_message(t('Thank you. You have been subscribed to our weekly email.'));
   }
 }
 
@@ -379,5 +378,14 @@ function os_core_form_comment_form_alter(&$form, &$form_state, $form_id) {
       '#markup' => l(t('Login or Register'), 'user', array('query' => array('destination' => drupal_get_destination()))) . ' ' . t('to earn points for your comments.'),
       '#weight' => -10,
     );
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function os_core_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'article_node_form') {
+    drupal_add_js(drupal_get_path('module', 'os_core') . '/os_core.js');
   }
 }
