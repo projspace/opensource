@@ -35,6 +35,15 @@ body[class*='section-'] {
             float: none;
         }
 
+        .username {
+            margin-right: 0;
+        }
+
+        .author-feed {
+            position: relative;
+            top: 4px;
+        }
+
         .views-field-created {
             clear: both;
         }
@@ -49,7 +58,8 @@ body[class*='section-'] {
             margin-left: 0;
 
             a {
-                text-align: none;
+                text-decoration: none;
+                background-position: bottom;
             }
         }
 

@@ -1,7 +1,6 @@
 .page-user-articles,
 .page-user-comments,
 .page-user {
-
     a {
         color: black;
 
@@ -50,7 +49,7 @@
 
     .pane-user-info-panel-pane-user-info {
         float: left;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 
     .view-id-authored_content,
@@ -73,11 +72,7 @@
             float: none;
             font-size: 18px;
             font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .view-id-authored_content {
-            margin-top: 15px;
+            margin-bottom: 0;
         }
 
         .views-field-field-lead-image {

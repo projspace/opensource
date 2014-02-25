@@ -5224,6 +5224,360 @@ blockquote {
 
 @media -sass-debug-info {
   filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \000031;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud {
+  margin-bottom: 25px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \000034;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .pane-title {
+  font-size: 10px;
+  color: #999;
+  text-transform: uppercase;
+  border-bottom: 2px dotted #ccc;
+  display: inline-block;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000312;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud li {
+  display: inline-block !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000316;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud a {
+  text-decoration: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000319;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud a:hover {
+  text-decoration: underline;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000324;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level10 {
+  font-size: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000326;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level10 a {
+  color: #505050;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000330;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level8 {
+  font-size: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000332;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level8 a {
+  color: #505050;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000336;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level8 {
+  font-size: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000338;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level8 a {
+  color: #505050;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000342;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level7 {
+  font-size: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000344;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level7 a {
+  color: #606060;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000348;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level6 {
+  font-size: 16px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000350;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level6 a {
+  color: #000;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000354;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level5 {
+  font-size: 14px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000356;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level5 a {
+  color: #333;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000360;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level4 {
+  font-size: 12px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000362;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level4 a {
+  color: #666;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000366;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level3 {
+  font-size: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000368;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level3 a {
+  color: #999;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000372;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level2 {
+  font-size: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000374;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level2 a {
+  color: #808080;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000378;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level1 {
+  font-size: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_tags\.scss;
+  }
+
+  line {
+    font-family: \0000380;
+  }
+}
+
+.pane-channel-tags-cloud-panel-pane-cloud .level1 a {
+  color: #707070;
+}
+
+@media -sass-debug-info {
+  filename {
     font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_top-nav\.scss;
   }
 
@@ -8244,7 +8598,7 @@ blockquote {
   }
 
   line {
-    font-family: \000035;
+    font-family: \000034;
   }
 }
 
@@ -8260,7 +8614,7 @@ blockquote {
   }
 
   line {
-    font-family: \000038;
+    font-family: \000037;
   }
 }
 
@@ -8277,7 +8631,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000314;
+    font-family: \0000313;
   }
 }
 
@@ -8293,7 +8647,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000318;
+    font-family: \0000317;
   }
 }
 
@@ -8309,7 +8663,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000321;
+    font-family: \0000320;
   }
 }
 
@@ -8325,7 +8679,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000325;
+    font-family: \0000324;
   }
 }
 
@@ -8342,7 +8696,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000331;
+    font-family: \0000330;
   }
 }
 
@@ -8359,7 +8713,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000336;
+    font-family: \0000335;
   }
 }
 
@@ -8385,7 +8739,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000351;
+    font-family: \0000350;
   }
 }
 
@@ -8393,7 +8747,7 @@ blockquote {
 .page-user-comments .pane-user-info-panel-pane-user-info,
 .page-user .pane-user-info-panel-pane-user-info {
   float: left;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 @media -sass-debug-info {
@@ -8402,7 +8756,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000357;
+    font-family: \0000356;
   }
 }
 
@@ -8421,7 +8775,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000360;
+    font-family: \0000359;
   }
 }
 
@@ -8444,7 +8798,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000367;
+    font-family: \0000366;
   }
 }
 
@@ -8463,7 +8817,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000372;
+    font-family: \0000371;
   }
 }
 
@@ -8476,7 +8830,7 @@ blockquote {
   float: none;
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 @media -sass-debug-info {
@@ -8485,26 +8839,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000379;
-  }
-}
-
-.page-user-articles .view-id-authored_content .view-id-authored_content,
-.page-user-articles .pane-authored-content-panel-pane-content .view-id-authored_content,
-.page-user-comments .view-id-authored_content .view-id-authored_content,
-.page-user-comments .pane-authored-content-panel-pane-content .view-id-authored_content,
-.page-user .view-id-authored_content .view-id-authored_content,
-.page-user .pane-authored-content-panel-pane-content .view-id-authored_content {
-  margin-top: 15px;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
-  }
-
-  line {
-    font-family: \0000383;
+    font-family: \0000378;
   }
 }
 
@@ -8526,7 +8861,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000391;
+    font-family: \0000386;
   }
 }
 
@@ -8545,7 +8880,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000394;
+    font-family: \0000389;
   }
 }
 
@@ -8564,7 +8899,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003101;
+    font-family: \0000396;
   }
 }
 
@@ -8584,7 +8919,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003105;
+    font-family: \00003100;
   }
 }
 
@@ -8603,7 +8938,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003109;
+    font-family: \00003104;
   }
 }
 
@@ -8622,7 +8957,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003114;
+    font-family: \00003109;
   }
 }
 
@@ -8642,7 +8977,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003120;
+    font-family: \00003115;
   }
 }
 
@@ -8665,7 +9000,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003127;
+    font-family: \00003122;
   }
 }
 
@@ -8685,7 +9020,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003134;
+    font-family: \00003129;
   }
 }
 
@@ -8704,7 +9039,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003142;
+    font-family: \00003137;
   }
 }
 
@@ -8726,7 +9061,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003150;
+    font-family: \00003145;
   }
 }
 
@@ -8745,7 +9080,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003155;
+    font-family: \00003150;
   }
 }
 
@@ -8764,7 +9099,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003159;
+    font-family: \00003154;
   }
 }
 
@@ -8785,7 +9120,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003165;
+    font-family: \00003160;
   }
 }
 
@@ -8806,7 +9141,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003171;
+    font-family: \00003166;
   }
 }
 
@@ -8826,7 +9161,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003175;
+    font-family: \00003170;
   }
 }
 
@@ -8845,7 +9180,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003178;
+    font-family: \00003173;
   }
 }
 
@@ -8865,7 +9200,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003185;
+    font-family: \00003180;
   }
 }
 
@@ -8894,7 +9229,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003198;
+    font-family: \00003193;
   }
 }
 
@@ -8914,7 +9249,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003202;
+    font-family: \00003197;
   }
 }
 
@@ -9090,6 +9425,35 @@ body[class*='section-'] .view-channel-articles .username {
   }
 }
 
+body[class*='section-'] .view-channel-articles .username {
+  margin-right: 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss;
+  }
+
+  line {
+    font-family: \0000342;
+  }
+}
+
+body[class*='section-'] .view-channel-articles .author-feed {
+  position: relative;
+  top: 4px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss;
+  }
+
+  line {
+    font-family: \0000347;
+  }
+}
+
 body[class*='section-'] .view-channel-articles .views-field-created {
   clear: both;
 }
@@ -9100,7 +9464,7 @@ body[class*='section-'] .view-channel-articles .views-field-created {
   }
 
   line {
-    font-family: \0000342;
+    font-family: \0000351;
   }
 }
 
@@ -9114,7 +9478,7 @@ body[class*='section-'] .view-channel-articles .teaser-date {
   }
 
   line {
-    font-family: \0000346;
+    font-family: \0000355;
   }
 }
 
@@ -9130,12 +9494,13 @@ body[class*='section-'] .view-channel-articles .teaser-author {
   }
 
   line {
-    font-family: \0000351;
+    font-family: \0000360;
   }
 }
 
 body[class*='section-'] .view-channel-articles .teaser-author a {
-  text-align: none;
+  text-decoration: none;
+  background-position: bottom;
 }
 
 @media -sass-debug-info {
@@ -9144,7 +9509,7 @@ body[class*='section-'] .view-channel-articles .teaser-author a {
   }
 
   line {
-    font-family: \0000356;
+    font-family: \0000366;
   }
 }
 
@@ -9160,7 +9525,7 @@ body[class*='section-'] .view-channel-articles .views-more-link {
   }
 
   line {
-    font-family: \0000361;
+    font-family: \0000371;
   }
 }
 
@@ -9175,7 +9540,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:hover {
   }
 
   line {
-    font-family: \0000366;
+    font-family: \0000376;
   }
 }
 
