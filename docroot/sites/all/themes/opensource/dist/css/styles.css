@@ -8194,6 +8194,34 @@ blockquote {
 
 @media -sass-debug-info {
   filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_resource\.scss;
+  }
+
+  line {
+    font-family: \0000330;
+  }
+}
+
+.pane-menu-opensource-resources li {
+  list-style: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_resource\.scss;
+  }
+
+  line {
+    font-family: \0000333;
+  }
+}
+
+.pane-menu-opensource-resources li a {
+  display: block;
+}
+
+@media -sass-debug-info {
+  filename {
     font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_most-active\.scss;
   }
 
@@ -9390,7 +9418,7 @@ blockquote {
   }
 
   line {
-    font-family: \000032;
+    font-family: \000033;
   }
 }
 
@@ -9404,7 +9432,7 @@ body[class*='section-'] .page__title {
   }
 
   line {
-    font-family: \000038;
+    font-family: \000039;
   }
 }
 
@@ -9419,7 +9447,7 @@ body[class*='section-'] .view-channel-articles .views-row {
   }
 
   line {
-    font-family: \0000313;
+    font-family: \0000314;
   }
 }
 
@@ -9436,7 +9464,7 @@ body[class*='section-'] .view-channel-articles .views-field-title {
   }
 
   line {
-    font-family: \0000319;
+    font-family: \0000320;
   }
 }
 
@@ -9451,7 +9479,7 @@ body[class*='section-'] .view-channel-articles .views-field-title a {
   }
 
   line {
-    font-family: \0000323;
+    font-family: \0000324;
   }
 }
 
@@ -9466,7 +9494,7 @@ body[class*='section-'] .view-channel-articles .views-field-title a:hover {
   }
 
   line {
-    font-family: \0000331;
+    font-family: \0000332;
   }
 }
 
@@ -9481,7 +9509,7 @@ body[class*='section-'] .view-channel-articles .views-field-field-lead-image {
   }
 
   line {
-    font-family: \0000337;
+    font-family: \0000338;
   }
 }
 
@@ -9497,7 +9525,7 @@ body[class*='section-'] .view-channel-articles .username {
   }
 
   line {
-    font-family: \0000342;
+    font-family: \0000343;
   }
 }
 
@@ -9511,7 +9539,7 @@ body[class*='section-'] .view-channel-articles .username {
   }
 
   line {
-    font-family: \0000346;
+    font-family: \0000347;
   }
 }
 
@@ -9526,7 +9554,7 @@ body[class*='section-'] .view-channel-articles .author-feed {
   }
 
   line {
-    font-family: \0000351;
+    font-family: \0000352;
   }
 }
 
@@ -9540,7 +9568,7 @@ body[class*='section-'] .view-channel-articles .views-field-created {
   }
 
   line {
-    font-family: \0000355;
+    font-family: \0000356;
   }
 }
 
@@ -9554,7 +9582,7 @@ body[class*='section-'] .view-channel-articles .teaser-date {
   }
 
   line {
-    font-family: \0000359;
+    font-family: \0000360;
   }
 }
 
@@ -9570,7 +9598,7 @@ body[class*='section-'] .view-channel-articles .teaser-author {
   }
 
   line {
-    font-family: \0000364;
+    font-family: \0000365;
   }
 }
 
@@ -9585,7 +9613,7 @@ body[class*='section-'] .view-channel-articles .teaser-author a {
   }
 
   line {
-    font-family: \0000370;
+    font-family: \0000371;
   }
 }
 
@@ -9601,7 +9629,7 @@ body[class*='section-'] .view-channel-articles .views-more-link {
   }
 
   line {
-    font-family: \0000375;
+    font-family: \0000376;
   }
 }
 
@@ -9616,7 +9644,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:hover {
   }
 
   line {
-    font-family: \0000380;
+    font-family: \0000381;
   }
 }
 

@@ -3402,6 +3402,15 @@ blockquote {
   padding: 1em 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_resource\.scss}line{font-family:\0000330}}
+.pane-menu-opensource-resources li {
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_resource\.scss}line{font-family:\0000333}}
+.pane-menu-opensource-resources li a {
+  display: block;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_most-active\.scss}line{font-family:\000032}}
 .pane-channel-articles-panel-pane-popular-articles .pane-title {
   background: url("../images/osdc_nameplate_Mostactive.png") no-repeat;
@@ -3932,83 +3941,83 @@ blockquote {
   margin-bottom: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\000032}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\000033}}
 body[class*='section-'] .page__title {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\000038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\000039}}
 body[class*='section-'] .view-channel-articles .views-row {
   margin-bottom: 15px;
   padding: 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000314}}
 body[class*='section-'] .view-channel-articles .views-field-title {
   font-size: 18px;
   font-weight: bold;
   line-height: 1.25;
   margin-bottom: 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000320}}
 body[class*='section-'] .view-channel-articles .views-field-title a {
   color: #333;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000324}}
 body[class*='section-'] .view-channel-articles .views-field-title a:hover {
   text-decoration: underline;
   color: #39f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000332}}
 body[class*='section-'] .view-channel-articles .views-field-field-lead-image {
   float: left;
   margin-right: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000338}}
 body[class*='section-'] .view-channel-articles .author-feed,
 body[class*='section-'] .view-channel-articles .username {
   display: inline-block;
   float: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000343}}
 body[class*='section-'] .view-channel-articles .username {
   margin-right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000347}}
 body[class*='section-'] .view-channel-articles .author-feed {
   position: relative;
   top: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000352}}
 body[class*='section-'] .view-channel-articles .views-field-created {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000356}}
 body[class*='section-'] .view-channel-articles .teaser-date {
   color: #333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000360}}
 body[class*='section-'] .view-channel-articles .teaser-author {
   top: 0;
   vertical-align: bottom;
   margin-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000365}}
 body[class*='section-'] .view-channel-articles .teaser-author a {
   text-decoration: none;
   background-position: bottom;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000371}}
 body[class*='section-'] .view-channel-articles .views-more-link {
   text-decoration: none;
   font-weight: bold;
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000376}}
 body[class*='section-'] .view-channel-articles .views-more-link:hover {
   text-decoration: underline;
   color: #39f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-base\.scss}line{font-family:\0000381}}
 body[class*='section-'] .view-channel-articles .views-more-link:before {
   content: '» ';
 }
