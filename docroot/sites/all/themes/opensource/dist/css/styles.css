@@ -8244,7 +8244,7 @@ blockquote {
   }
 
   line {
-    font-family: \000034;
+    font-family: \000035;
   }
 }
 
@@ -8260,7 +8260,7 @@ blockquote {
   }
 
   line {
-    font-family: \000037;
+    font-family: \000038;
   }
 }
 
@@ -8277,7 +8277,23 @@ blockquote {
   }
 
   line {
-    font-family: \0000313;
+    font-family: \0000314;
+  }
+}
+
+.page-user-articles .pane-title:after,
+.page-user-comments .pane-title:after,
+.page-user .pane-title:after {
+  content: '';
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \0000318;
   }
 }
 
@@ -8293,7 +8309,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000316;
+    font-family: \0000321;
   }
 }
 
@@ -8309,7 +8325,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000320;
+    font-family: \0000325;
   }
 }
 
@@ -8326,7 +8342,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000326;
+    font-family: \0000331;
   }
 }
 
@@ -8343,7 +8359,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000331;
+    font-family: \0000336;
   }
 }
 
@@ -8369,7 +8385,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000346;
+    font-family: \0000351;
   }
 }
 
@@ -8386,7 +8402,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000352;
+    font-family: \0000357;
   }
 }
 
@@ -8405,7 +8421,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000355;
+    font-family: \0000360;
   }
 }
 
@@ -8428,7 +8444,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000362;
+    font-family: \0000367;
   }
 }
 
@@ -8447,7 +8463,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000367;
+    font-family: \0000372;
   }
 }
 
@@ -8469,7 +8485,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000374;
+    font-family: \0000379;
   }
 }
 
@@ -8488,7 +8504,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000378;
+    font-family: \0000383;
   }
 }
 
@@ -8510,7 +8526,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000386;
+    font-family: \0000391;
   }
 }
 
@@ -8529,7 +8545,26 @@ blockquote {
   }
 
   line {
-    font-family: \0000391;
+    font-family: \0000394;
+  }
+}
+
+.page-user-articles .view-id-authored_content .views-field-title a:hover,
+.page-user-articles .pane-authored-content-panel-pane-content .views-field-title a:hover,
+.page-user-comments .view-id-authored_content .views-field-title a:hover,
+.page-user-comments .pane-authored-content-panel-pane-content .views-field-title a:hover,
+.page-user .view-id-authored_content .views-field-title a:hover,
+.page-user .pane-authored-content-panel-pane-content .views-field-title a:hover {
+  text-decoration: underline;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003101;
   }
 }
 
@@ -8549,7 +8584,26 @@ blockquote {
   }
 
   line {
-    font-family: \0000395;
+    font-family: \00003105;
+  }
+}
+
+.page-user-articles .view-id-authored_content .views-more-link:hover,
+.page-user-articles .pane-authored-content-panel-pane-content .views-more-link:hover,
+.page-user-comments .view-id-authored_content .views-more-link:hover,
+.page-user-comments .pane-authored-content-panel-pane-content .views-more-link:hover,
+.page-user .view-id-authored_content .views-more-link:hover,
+.page-user .pane-authored-content-panel-pane-content .views-more-link:hover {
+  color: #39f;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \00003109;
   }
 }
 
@@ -8568,7 +8622,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003100;
+    font-family: \00003114;
   }
 }
 
@@ -8588,7 +8642,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003106;
+    font-family: \00003120;
   }
 }
 
@@ -8611,7 +8665,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003113;
+    font-family: \00003127;
   }
 }
 
@@ -8631,7 +8685,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003120;
+    font-family: \00003134;
   }
 }
 
@@ -8650,7 +8704,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003128;
+    font-family: \00003142;
   }
 }
 
@@ -8672,7 +8726,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003136;
+    font-family: \00003150;
   }
 }
 
@@ -8691,7 +8745,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003141;
+    font-family: \00003155;
   }
 }
 
@@ -8710,7 +8764,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003145;
+    font-family: \00003159;
   }
 }
 
@@ -8731,7 +8785,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003151;
+    font-family: \00003165;
   }
 }
 
@@ -8752,7 +8806,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003157;
+    font-family: \00003171;
   }
 }
 
@@ -8772,7 +8826,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003161;
+    font-family: \00003175;
   }
 }
 
@@ -8791,7 +8845,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003164;
+    font-family: \00003178;
   }
 }
 
@@ -8811,7 +8865,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003171;
+    font-family: \00003185;
   }
 }
 
@@ -8840,7 +8894,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003184;
+    font-family: \00003198;
   }
 }
 
@@ -8860,7 +8914,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003188;
+    font-family: \00003202;
   }
 }
 
@@ -8880,7 +8934,23 @@ blockquote {
   }
 
   line {
-    font-family: \000032;
+    font-family: \000033;
+  }
+}
+
+.pane-menu-menu-opensource-resources .pane-title {
+  color: #DD3823;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/projectApplication\/_projectApplication\.scss;
+  }
+
+  line {
+    font-family: \000039;
   }
 }
 
@@ -8894,7 +8964,7 @@ blockquote {
   }
 
   line {
-    font-family: \000036;
+    font-family: \0000313;
   }
 }
 
@@ -8908,7 +8978,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000310;
+    font-family: \0000317;
   }
 }
 

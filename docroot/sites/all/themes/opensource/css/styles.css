@@ -3451,46 +3451,52 @@ blockquote {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\000034}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\000035}}
 .page-user-articles a,
 .page-user-comments a,
 .page-user a {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\000038}}
 .page-user-articles a:hover,
 .page-user-comments a:hover,
 .page-user a:hover {
   color: #39f;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000314}}
+.page-user-articles .pane-title:after,
+.page-user-comments .pane-title:after,
+.page-user .pane-title:after {
+  content: '';
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000318}}
 .page-user-articles .views-field-user-badges-html,
 .page-user-comments .views-field-user-badges-html,
 .page-user .views-field-user-badges-html {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000321}}
 .page-user-articles .views-field-user-badges-html img,
 .page-user-comments .views-field-user-badges-html img,
 .page-user .views-field-user-badges-html img {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000325}}
 .page-user-articles .views-field-user-badges-html .profile-pictures,
 .page-user-comments .views-field-user-badges-html .profile-pictures,
 .page-user .views-field-user-badges-html .profile-pictures {
   margin-bottom: 5px;
   background: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000331}}
 .page-user-articles .views-field-field-user-about,
 .page-user-comments .views-field-field-user-about,
 .page-user .views-field-field-user-about {
   float: right;
   width: 75%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000336}}
 .page-user-articles .views-field-points,
 .page-user-comments .views-field-points,
 .page-user .views-field-points {
@@ -3507,14 +3513,14 @@ blockquote {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000351}}
 .page-user-articles .pane-user-info-panel-pane-user-info,
 .page-user-comments .pane-user-info-panel-pane-user-info,
 .page-user .pane-user-info-panel-pane-user-info {
   float: left;
   padding-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000357}}
 .page-user-articles .view-id-authored_content,
 .page-user-articles .pane-authored-content-panel-pane-content,
 .page-user-comments .view-id-authored_content,
@@ -3523,7 +3529,7 @@ blockquote {
 .page-user .pane-authored-content-panel-pane-content {
   padding: 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000360}}
 .page-user-articles .view-id-authored_content .views-row,
 .page-user-articles .pane-authored-content-panel-pane-content .views-row,
 .page-user-comments .view-id-authored_content .views-row,
@@ -3536,7 +3542,7 @@ blockquote {
   padding-bottom: 45px;
   border-bottom: 2px dotted #b4b4b4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000367}}
 .page-user-articles .view-id-authored_content .views-row:last-child,
 .page-user-articles .pane-authored-content-panel-pane-content .views-row:last-child,
 .page-user-comments .view-id-authored_content .views-row:last-child,
@@ -3545,7 +3551,7 @@ blockquote {
 .page-user .pane-authored-content-panel-pane-content .views-row:last-child {
   border-bottom: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000372}}
 .page-user-articles .view-id-authored_content .pane-title,
 .page-user-articles .pane-authored-content-panel-pane-content .pane-title,
 .page-user-comments .view-id-authored_content .pane-title,
@@ -3557,7 +3563,7 @@ blockquote {
   font-weight: bold;
   margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000379}}
 .page-user-articles .view-id-authored_content .view-id-authored_content,
 .page-user-articles .pane-authored-content-panel-pane-content .view-id-authored_content,
 .page-user-comments .view-id-authored_content .view-id-authored_content,
@@ -3566,7 +3572,7 @@ blockquote {
 .page-user .pane-authored-content-panel-pane-content .view-id-authored_content {
   margin-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000383}}
 .page-user-articles .view-id-authored_content .views-field-field-lead-image,
 .page-user-articles .pane-authored-content-panel-pane-content .views-field-field-lead-image,
 .page-user-comments .view-id-authored_content .views-field-field-lead-image,
@@ -3578,7 +3584,7 @@ blockquote {
   margin-right: 15px;
   margin-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000391}}
 .page-user-articles .view-id-authored_content .views-field-title a,
 .page-user-articles .pane-authored-content-panel-pane-content .views-field-title a,
 .page-user-comments .view-id-authored_content .views-field-title a,
@@ -3587,7 +3593,16 @@ blockquote {
 .page-user .pane-authored-content-panel-pane-content .views-field-title a {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000394}}
+.page-user-articles .view-id-authored_content .views-field-title a:hover,
+.page-user-articles .pane-authored-content-panel-pane-content .views-field-title a:hover,
+.page-user-comments .view-id-authored_content .views-field-title a:hover,
+.page-user-comments .pane-authored-content-panel-pane-content .views-field-title a:hover,
+.page-user .view-id-authored_content .views-field-title a:hover,
+.page-user .pane-authored-content-panel-pane-content .views-field-title a:hover {
+  text-decoration: underline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003101}}
 .page-user-articles .view-id-authored_content .views-more-link,
 .page-user-articles .pane-authored-content-panel-pane-content .views-more-link,
 .page-user-comments .view-id-authored_content .views-more-link,
@@ -3597,7 +3612,16 @@ blockquote {
   color: black;
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003105}}
+.page-user-articles .view-id-authored_content .views-more-link:hover,
+.page-user-articles .pane-authored-content-panel-pane-content .views-more-link:hover,
+.page-user-comments .view-id-authored_content .views-more-link:hover,
+.page-user-comments .pane-authored-content-panel-pane-content .views-more-link:hover,
+.page-user .view-id-authored_content .views-more-link:hover,
+.page-user .pane-authored-content-panel-pane-content .views-more-link:hover {
+  color: #39f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003109}}
 .page-user-articles .view-id-authored_content .views-more-link:before,
 .page-user-articles .pane-authored-content-panel-pane-content .views-more-link:before,
 .page-user-comments .view-id-authored_content .views-more-link:before,
@@ -3606,7 +3630,7 @@ blockquote {
 .page-user .pane-authored-content-panel-pane-content .views-more-link:before {
   content: '» ';
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003114}}
 .page-user-articles .view-id-authored_content .views-field-created,
 .page-user-articles .pane-authored-content-panel-pane-content .views-field-created,
 .page-user-comments .view-id-authored_content .views-field-created,
@@ -3616,7 +3640,7 @@ blockquote {
   font-weight: bold;
   color: #5A5A5A;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003120}}
 .page-user-articles .view-id-authored_content .views-field-comment-count,
 .page-user-articles .pane-authored-content-panel-pane-content .views-field-comment-count,
 .page-user-comments .view-id-authored_content .views-field-comment-count,
@@ -3629,7 +3653,7 @@ blockquote {
   background: url("../images/comment.jpg") no-repeat left center;
   padding-left: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003127}}
 .page-user-articles .view-id-authored_content .views-field-comment-count:after,
 .page-user-articles .pane-authored-content-panel-pane-content .views-field-comment-count:after,
 .page-user-comments .view-id-authored_content .views-field-comment-count:after,
@@ -3639,7 +3663,7 @@ blockquote {
   content: '|';
   padding: 0 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003134}}
 .page-user-articles .view-id-authored_content .more-link:before,
 .page-user-articles .pane-authored-content-panel-pane-content .more-link:before,
 .page-user-comments .view-id-authored_content .more-link:before,
@@ -3648,7 +3672,7 @@ blockquote {
 .page-user .pane-authored-content-panel-pane-content .more-link:before {
   content: '» ';
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003142}}
 .page-user-articles .view-id-authored_comments .pane-title,
 .page-user-articles .pane-authored-comments-panel-pane-comments .pane-title,
 .page-user-comments .view-id-authored_comments .pane-title,
@@ -3660,7 +3684,7 @@ blockquote {
   float: none;
   margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003150}}
 .page-user-articles .view-id-authored_comments .more-link:before,
 .page-user-articles .pane-authored-comments-panel-pane-comments .more-link:before,
 .page-user-comments .view-id-authored_comments .more-link:before,
@@ -3669,7 +3693,7 @@ blockquote {
 .page-user .pane-authored-comments-panel-pane-comments .more-link:before {
   content: '» ';
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003155}}
 .page-user-articles .view-id-authored_comments .views-row,
 .page-user-articles .pane-authored-comments-panel-pane-comments .views-row,
 .page-user-comments .view-id-authored_comments .views-row,
@@ -3678,7 +3702,7 @@ blockquote {
 .page-user .pane-authored-comments-panel-pane-comments .views-row {
   margin-bottom: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003159}}
 .page-user-articles .view-id-authored_comments .views-field-created,
 .page-user-articles .pane-authored-comments-panel-pane-comments .views-field-created,
 .page-user-comments .view-id-authored_comments .views-field-created,
@@ -3689,7 +3713,7 @@ blockquote {
   color: #5A5A5A;
   font-size: 9px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003165}}
 .page-user-articles .view-id-authored_comments .views-field-timestamp,
 .page-user-articles .pane-authored-comments-panel-pane-comments .views-field-timestamp,
 .page-user-comments .view-id-authored_comments .views-field-timestamp,
@@ -3700,7 +3724,7 @@ blockquote {
   font-size: 9px;
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003171}}
 .page-user-articles .view-id-authored_comments .views-field-title,
 .page-user-articles .pane-authored-comments-panel-pane-comments .views-field-title,
 .page-user-comments .view-id-authored_comments .views-field-title,
@@ -3710,7 +3734,7 @@ blockquote {
   color: #292929;
   font-size: 13px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003175}}
 .page-user-articles .view-id-authored_comments .views-field-title a,
 .page-user-articles .pane-authored-comments-panel-pane-comments .views-field-title a,
 .page-user-comments .view-id-authored_comments .views-field-title a,
@@ -3719,7 +3743,7 @@ blockquote {
 .page-user .pane-authored-comments-panel-pane-comments .views-field-title a {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003164}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003178}}
 .page-user-articles .view-id-authored_comments .views-field-title a:hover,
 .page-user-articles .pane-authored-comments-panel-pane-comments .views-field-title a:hover,
 .page-user-comments .view-id-authored_comments .views-field-title a:hover,
@@ -3729,7 +3753,7 @@ blockquote {
   color: #39f;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003171}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003185}}
 .page-user-articles .view-id-authored_comments .views-field-comment-body,
 .page-user-articles .pane-authored-comments-panel-pane-comments .views-field-comment-body,
 .page-user-comments .view-id-authored_comments .views-field-comment-body,
@@ -3748,7 +3772,7 @@ blockquote {
   padding-top: 1px;
   line-height: 1.3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003198}}
 .page-user-articles .view-id-authored_comments .views-field-comment-body a,
 .page-user-articles .pane-authored-comments-panel-pane-comments .views-field-comment-body a,
 .page-user-comments .view-id-authored_comments .views-field-comment-body a,
@@ -3758,7 +3782,7 @@ blockquote {
   color: black;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003188}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss}line{font-family:\00003202}}
 .page-user-articles .view-id-authored_comments .views-field-comment-body a:hover,
 .page-user-articles .pane-authored-comments-panel-pane-comments .views-field-comment-body a:hover,
 .page-user-comments .view-id-authored_comments .views-field-comment-body a:hover,
@@ -3769,15 +3793,21 @@ blockquote {
   text-decoration: underline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/projectApplication\/_projectApplication\.scss}line{font-family:\000032}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/projectApplication\/_projectApplication\.scss}line{font-family:\000033}}
+.pane-menu-menu-opensource-resources .pane-title {
+  color: #DD3823;
+  font-size: 22px;
+  font-weight: normal;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/projectApplication\/_projectApplication\.scss}line{font-family:\000039}}
 .pane-menu-menu-opensource-resources a {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/projectApplication\/_projectApplication\.scss}line{font-family:\000036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/projectApplication\/_projectApplication\.scss}line{font-family:\0000313}}
 .pane-menu-menu-opensource-resources ul {
   padding-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/projectApplication\/_projectApplication\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/projectApplication\/_projectApplication\.scss}line{font-family:\0000317}}
 .pane-menu-menu-opensource-resources li {
   list-style: none !important;
   margin-bottom: 10px;

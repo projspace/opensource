@@ -1,14 +1,19 @@
 .page-user-articles,
 .page-user-comments,
 .page-user {
-        a {
-            color: black;
 
-            &:hover {
-                color: #39f;
-                text-decoration: underline;
-            }
+    a {
+        color: black;
+
+        &:hover {
+            color: #39f;
+            text-decoration: underline;
         }
+    }
+
+    .pane-title:after {
+        content: '';
+    }
 
     .views-field-user-badges-html {
         float: left;
@@ -85,12 +90,21 @@
         .views-field-title {
             a {
                 text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
+
 
         .views-more-link {
             color: black;
             font-weight: bold;
+
+            &:hover {
+                color: #39f;
+            }
 
             &:before {
                 content: '» ';
