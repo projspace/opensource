@@ -28,7 +28,8 @@
 
 .pane-menu-opensource-resources {
     li {
-        list-style: none;
+        list-style: none !important;
+        margin-bottom: 10px;
 
         a {
             display: block;

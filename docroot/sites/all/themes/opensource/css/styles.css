@@ -3404,9 +3404,10 @@ blockquote {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_resource\.scss}line{font-family:\0000330}}
 .pane-menu-opensource-resources li {
-  list-style: none;
+  list-style: none !important;
+  margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_resource\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_resource\.scss}line{font-family:\0000334}}
 .pane-menu-opensource-resources li a {
   display: block;
 }
