@@ -8194,6 +8194,68 @@ blockquote {
 
 @media -sass-debug-info {
   filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_most-active\.scss;
+  }
+
+  line {
+    font-family: \000032;
+  }
+}
+
+.pane-channel-articles-panel-pane-popular-articles .pane-title {
+  background: url("../images/osdc_nameplate_Mostactive.png") no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+  line-height: 17px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_most-active\.scss;
+  }
+
+  line {
+    font-family: \0000310;
+  }
+}
+
+.pane-channel-articles-panel-pane-popular-articles ul {
+  padding-left: 18px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_most-active\.scss;
+  }
+
+  line {
+    font-family: \0000313;
+  }
+}
+
+.pane-channel-articles-panel-pane-popular-articles ul .views-field-title {
+  font-size: 12px !important;
+  margin-bottom: 0 !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_most-active\.scss;
+  }
+
+  line {
+    font-family: \0000318;
+  }
+}
+
+.pane-channel-articles-panel-pane-popular-articles ul .views-row {
+  padding: 0 !important;
+  margin: 4px 0 !important;
+}
+
+@media -sass-debug-info {
+  filename {
     font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/badges\/_badge-base\.scss;
   }
 
