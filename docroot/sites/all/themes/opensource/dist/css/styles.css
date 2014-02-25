@@ -8198,7 +8198,42 @@ blockquote {
   }
 
   line {
-    font-family: \0000330;
+    font-family: \0000331;
+  }
+}
+
+.pane-menu-opensource-resources .pane-title {
+  text-decoration: none;
+  border: none;
+  font-family: sans-serif;
+  font-size: 22px;
+  color: #DD3823;
+  text-transform: none;
+  font-weight: normal;
+  background: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_resource\.scss;
+  }
+
+  line {
+    font-family: \0000342;
+  }
+}
+
+.pane-menu-opensource-resources ul {
+  padding-left: 8px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/resource\/_resource\.scss;
+  }
+
+  line {
+    font-family: \0000346;
   }
 }
 
@@ -8213,7 +8248,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000334;
+    font-family: \0000350;
   }
 }
 
