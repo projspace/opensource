@@ -1,0 +1,12 @@
+name = OpenSource Common Configurations
+description = Common components and other variables exports
+core = 7.x
+package = OpenSource.com Config
+features[features_api][] = api:2
+features[features_overrides][] = filter.panopoly_html_text.filters|wysiwyg|settings|valid_elements
+features[features_overrides][] = filter.panopoly_wysiwyg_text.filters
+features[features_overrides][] = wysiwyg.panopoly_html_text.rdf_mapping
+features[features_overrides][] = wysiwyg.panopoly_wysiwyg_text.rdf_mapping
+features[features_overrides][] = wysiwyg.panopoly_wysiwyg_text.settings|buttons|advhr
+features[features_overrides][] = wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|hr
+features[features_overrides][] = wysiwyg.panopoly_wysiwyg_text.settings|buttons|media
