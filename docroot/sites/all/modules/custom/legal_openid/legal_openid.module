@@ -42,7 +42,11 @@ function legal_openid_form_alter(&$form, &$form_state, $form_id) {
  * OpenID login form validation callback.
  */
 function legal_openid_user_login_validate($form, &$form_state) {
-  if ($form_state['values']['legal_checkbox'] == 0 && isset($form_state['values']['openid_identifier'])) {
+  if (empty($form_state['values']['openid_identifier']) && isset($form_state['values']['name'])) {
+    //$form['legal_checkbox']['#required'] = FALSE;
+    unset($form['legal_checkbox']['#required']);
+  }
+  elseif ($form_state['values']['legal_checkbox'] == 0 && isset($form_state['values']['openid_identifier'])) {
     form_set_error('legal_checkbox', t('Please accept the terms of use before logging in.'));
   }
 }
