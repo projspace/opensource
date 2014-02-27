@@ -2135,42 +2135,46 @@ tr.selected td {
 .view-display-id-panel_pane_recent .teaser-channel a:hover {
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003208}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003207}}
+.view-display-id-panel_pane_recent .teaser-channel-article {
+  color: #676768;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003210}}
 .view-display-id-panel_pane_recent .teaser-channel-article a {
   color: #676768;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003214}}
 .view-display-id-panel_pane_recent .teaser-channel-article a:hover {
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003220}}
 .view-display-id-panel_pane_recent .teaser-title {
   font-size: 18px;
   line-height: 20px;
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003223}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003225}}
 .view-display-id-panel_pane_recent .teaser-title a {
   text-decoration: none;
   color: #333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003227}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003229}}
 .view-display-id-panel_pane_recent .teaser-title a:hover {
   color: #39f;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003235}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003237}}
 .view-display-id-panel_pane_recent .teaser-body p {
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003240}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003242}}
 .view-display-id-panel_pane_recent .views-more-link {
   font-weight: bold;
   color: #39f;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003245}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss}line{font-family:\00003247}}
 .view-display-id-panel_pane_recent .views-more-link:hover {
   text-decoration: underline;
 }
