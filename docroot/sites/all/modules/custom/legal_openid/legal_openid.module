@@ -43,7 +43,6 @@ function legal_openid_form_alter(&$form, &$form_state, $form_id) {
  */
 function legal_openid_user_login_validate($form, &$form_state) {
   if (empty($form_state['values']['openid_identifier']) && isset($form_state['values']['name'])) {
-    //$form['legal_checkbox']['#required'] = FALSE;
     unset($form['legal_checkbox']['#required']);
   }
   elseif ($form_state['values']['legal_checkbox'] == 0 && isset($form_state['values']['openid_identifier'])) {
