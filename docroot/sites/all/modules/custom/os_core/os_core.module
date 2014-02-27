@@ -22,6 +22,7 @@ function os_core_block_info() {
  * Implements hook_block_view().
  */
 function os_core_block_view($delta = '') {
+  $block = NULL;
   // The $delta parameter tells us which block is being requested.
   switch ($delta) {
     case 'opensource-social-links':

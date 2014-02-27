@@ -11,9 +11,10 @@
 function legal_openid_form_alter(&$form, &$form_state, $form_id) {
   global $user;
   if ($form_id == 'user_login') {
+    $required_value = (!empty($form_state['input']['openid_identifier']));
     $form['legal_checkbox'] = array(
       '#type' => 'checkbox',
-      '#required' => TRUE,
+      '#required' => $required_value,
       '#title' => t('Accept the !terms to continue.  You are licensing your contribution(s) as CC-BY-SA.', array('!terms' => l(t('Terms of Use'), 'legal'))),
       '#weight' => -0.9,
       '#prefix' => '<span class="openid-legal-checkbox">',
@@ -41,10 +42,7 @@ function legal_openid_form_alter(&$form, &$form_state, $form_id) {
  * OpenID login form validation callback.
  */
 function legal_openid_user_login_validate($form, &$form_state) {
-  if (empty($form_state['values']['openid_identifier'])) {
-    $form['legal_checkbox']['#required'] = FALSE;
-  }
-  elseif ($form_state['values']['legal_checkbox'] == 0) {
+  if ($form_state['values']['legal_checkbox'] == 0 && isset($form_state['values']['openid_identifier'])) {
     form_set_error('legal_checkbox', t('Please accept the terms of use before logging in.'));
   }
 }
