@@ -600,19 +600,6 @@ function os_homepage_views_default_views() {
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'j M Y';
-  /* Field: Content: Energy Level */
-  $handler->display->display_options['fields']['field_energy_level']['id'] = 'field_energy_level';
-  $handler->display->display_options['fields']['field_energy_level']['table'] = 'field_data_field_energy_level';
-  $handler->display->display_options['fields']['field_energy_level']['field'] = 'field_energy_level';
-  $handler->display->display_options['fields']['field_energy_level']['label'] = '';
-  $handler->display->display_options['fields']['field_energy_level']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_energy_level']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_energy_level']['click_sort_column'] = 'radioactivity_energy';
-  $handler->display->display_options['fields']['field_energy_level']['settings'] = array(
-    'energy' => '0',
-    'type' => 'energy',
-    'accuracy' => '100',
-  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Energy Level (field_energy_level:radioactivity_energy) */
   $handler->display->display_options['sorts']['field_energy_level_radioactivity_energy']['id'] = 'field_energy_level_radioactivity_energy';
