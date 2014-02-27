@@ -15,9 +15,6 @@ function os_core_block_info() {
   $blocks['opensource-article-share'] = array(
     'info' => 'opensource: Social Share link',
   );
-  $blocks['opensource-comment-section-link'] = array(
-    'info' => 'opensource: Comment Section link',
-  );
   return $blocks;
 }
 
@@ -38,13 +35,6 @@ function os_core_block_view($delta = '') {
       $block = array(
         'subject' => '<none>',
         'content' => os_core_display_social_share_icons(),
-      );
-      break;
-
-    case 'opensource-comment-section-link':
-      $block = array(
-        'subject' => '<none>',
-        'content' => '<a href="#comment" id="comment"></a>',
       );
       break;
   }
