@@ -77,9 +77,9 @@ li a{
         }
     }
 
-    .views-field-nothing-1 {
+    .views-field-nothing {
         float: right;
-        width: 60%;
+        width: 66%;
         margin-bottom: 18px;
     }
 
@@ -207,6 +207,11 @@ li a{
     .teaser-channel-article {
         a {
             color: #676768;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 

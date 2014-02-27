@@ -4373,9 +4373,9 @@ tr.selected td {
   }
 }
 
-#quicktabs-container-homepage_tabs .view-homepage .views-field-nothing-1 {
+#quicktabs-container-homepage_tabs .view-homepage .views-field-nothing {
   float: right;
-  width: 60%;
+  width: 66%;
   margin-bottom: 18px;
 }
 
@@ -4754,6 +4754,7 @@ tr.selected td {
 
 .view-display-id-panel_pane_recent .teaser-channel-article a {
   color: #676768;
+  text-decoration: none;
 }
 
 @media -sass-debug-info {
@@ -4762,7 +4763,21 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003213;
+    font-family: \00003212;
+  }
+}
+
+.view-display-id-panel_pane_recent .teaser-channel-article a:hover {
+  text-decoration: underline;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss;
+  }
+
+  line {
+    font-family: \00003218;
   }
 }
 
@@ -4778,7 +4793,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003218;
+    font-family: \00003223;
   }
 }
 
@@ -4793,7 +4808,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003222;
+    font-family: \00003227;
   }
 }
 
@@ -4808,7 +4823,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003230;
+    font-family: \00003235;
   }
 }
 
@@ -4822,7 +4837,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003235;
+    font-family: \00003240;
   }
 }
 
@@ -4838,7 +4853,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003240;
+    font-family: \00003245;
   }
 }
 
@@ -8872,6 +8887,20 @@ blockquote {
   font-weight: bold;
   margin-top: 20px;
   float: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss;
+  }
+
+  line {
+    font-family: \000039;
+  }
+}
+
+.pane-node-comments .pane-title:after {
+  content: '';
 }
 
 @media -sass-debug-info {

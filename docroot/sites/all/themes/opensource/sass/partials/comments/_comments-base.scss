@@ -5,5 +5,9 @@
         font-weight: bold;
         margin-top: 20px;
         float: none;
+
+        &:after {
+            content: '';
+        }
     }
 }
