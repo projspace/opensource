@@ -19,6 +19,7 @@ features[features_api][] = api:2
 features[image][] = homepage-thumb
 features[page_manager_pages][] = home
 features[quicktabs][] = homepage_tabs
+features[variable][] = panopoly_admin_front_page_and_sticky
 features[variable][] = site_frontpage
 features[views_view][] = homepage
 features[views_view][] = poll_homepage
