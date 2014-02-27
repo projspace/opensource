@@ -17,7 +17,7 @@ function os_article_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -99;
+  $handler->weight = -30;
   $handler->conf = array(
     'title' => 'Article',
     'no_blocks' => 0,
@@ -662,7 +662,10 @@ function os_article_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'comments',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 18;
     $pane->locks = array();

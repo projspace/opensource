@@ -119,7 +119,7 @@ function os_homepage_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['label'] = '';
   $handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]#comment';
+  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]#comments';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['format_plural'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
