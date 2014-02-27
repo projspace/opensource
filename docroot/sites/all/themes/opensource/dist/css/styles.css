@@ -4808,7 +4808,21 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003229;
+    font-family: \00003230;
+  }
+}
+
+.view-display-id-panel_pane_recent .teaser-body p {
+  display: inline;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/oss\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_homepage\.scss;
+  }
+
+  line {
+    font-family: \00003235;
   }
 }
 
@@ -4824,7 +4838,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003234;
+    font-family: \00003240;
   }
 }
 
