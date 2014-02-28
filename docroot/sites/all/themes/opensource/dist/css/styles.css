@@ -1369,11 +1369,6 @@ tr.selected td {
   margin-right: 1em;
 }
 
-#quicktabs-container-homepage_tabs .view-homepage .views-field-nothing,
-#quicktabs-container-homepage_tabs .view-homepage .views-field-nothing a {
-  color: #676768;
-}
-
 #quicktabs-container-homepage_tabs .view-homepage .views-field-title a {
   font-size: 18px;
   text-decoration: none;
