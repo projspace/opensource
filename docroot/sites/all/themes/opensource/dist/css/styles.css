@@ -1556,6 +1556,7 @@ tr.selected td {
 
 .view-id-homepage .views-more-link:hover {
   text-decoration: underline;
+  color: #39f;
 }
 
 @media print {
