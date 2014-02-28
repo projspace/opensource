@@ -17,7 +17,8 @@
     "grunt-contrib-imagemin": "~0.4.0",
     "grunt-autoprefixer": "~0.4.1",
     "grunt-uncss": "~0.1.5",
-    "grunt-photobox": "~0.7.1"
+    "grunt-photobox": "~0.7.1",
+    "grunt-shell": "~0.6.4"
   },
   "dir": {
     "js": "js",

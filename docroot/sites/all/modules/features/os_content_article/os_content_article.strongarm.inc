@@ -14,7 +14,7 @@ function os_content_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_article';
-  $strongarm->value = 0;
+  $strongarm->value = '2';
   $export['comment_anonymous_article'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -56,7 +56,7 @@ function os_content_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_article';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_subject_field_article'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -114,7 +114,10 @@ function os_content_article_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '5',
+        ),
+        'badges' => array(
+          'weight' => '14',
         ),
       ),
       'display' => array(),
@@ -176,37 +179,12 @@ function os_content_article_strongarm() {
         'default' => 0,
         'choice' => 0,
       ),
-      'full' => array(
-        'status' => 0,
-        'default' => 0,
-        'choice' => 0,
-      ),
       'teaser' => array(
         'status' => 0,
         'default' => 0,
         'choice' => 0,
       ),
-      'rss' => array(
-        'status' => 0,
-        'default' => 0,
-        'choice' => 0,
-      ),
-      'search_index' => array(
-        'status' => 0,
-        'default' => 0,
-        'choice' => 0,
-      ),
-      'search_result' => array(
-        'status' => 0,
-        'default' => 0,
-        'choice' => 0,
-      ),
       'featured' => array(
-        'status' => 0,
-        'default' => 0,
-        'choice' => 0,
-      ),
-      'token' => array(
         'status' => 0,
         'default' => 0,
         'choice' => 0,
@@ -219,7 +197,7 @@ function os_content_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_article_pattern';
-  $strongarm->value = '[node:field-channel:url:path]/[node:created:custom:y]/[node:created:custom:n]/[node:title]';
+  $strongarm->value = '[node:field-channel:1:url:path]/[node:created:custom:y]/[node:created:custom:n]/[node:title]';
   $export['pathauto_node_article_pattern'] = $strongarm;
 
   return $export;

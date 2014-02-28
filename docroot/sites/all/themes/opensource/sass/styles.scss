@@ -17,6 +17,7 @@
 
 @import "partials/base/base";
 @import "partials/base/layout";
+@import "partials/base/tags";
 
 @import "partials/header/top-nav";
 @import "partials/header/banner";
@@ -33,4 +34,18 @@
 
 @import "partials/article/_article-base";
 
-@import "partials/resource/_resource.scss";
+@import "partials/resource/_resource";
+@import "partials/resource/_most-active";
+
+@import "partials/badges/_badge-base";
+
+@import "partials/comments/_comments-base";
+
+@import "partials/polls/_polls-base";
+
+@import "partials/user/_user-base";
+
+@import "partials/projectApplication/_projectApplication";
+
+@import "partials/sections/_section-base";
+@import "partials/sections/_government";

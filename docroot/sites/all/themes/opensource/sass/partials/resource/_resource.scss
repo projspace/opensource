@@ -25,3 +25,31 @@
         padding: 1em 0;
     }
 }
+
+.pane-menu-opensource-resources {
+
+    .pane-title {
+        text-decoration: none;
+        border: none;
+        font-family: sans-serif;
+        font-size: 22px;
+        color: #DD3823;
+        text-transform: none;
+        font-weight: normal;
+        background: none;
+    }
+
+    ul {
+        padding-left: 8px;
+    }
+
+    li {
+        list-style: none !important;
+        margin-bottom: 10px;
+
+        a {
+            display: block;
+        }
+    }
+}
+

@@ -40,23 +40,38 @@
             }
         }
     }
-    div.author-feed {
-        p:first-child {
-            float: left;
-            margin-right: 3px;
+
+    .author-feed {
+        float: left;
+    }
+
+    .pane-node-author {
+        float: left;
+    }
+
+    .pane-3 {
+        float: left;
+
+        p {
+            margin: 0;
         }
-        span.author-feed {
-            float:left;
-            width: 15px;
+
+        span {
 
             a {
                 background: url(../images/rss.jpg) no-repeat;
                 text-indent: -9999px;
                 overflow: hidden;
                 display: block;
+                height: 12px;
+                width: 13px;
+                position: relative;
+                top: 2px;
+                right: -2px;
           }
         }
     }
+
     .pane-node-field-rating {
         float: right;
     }

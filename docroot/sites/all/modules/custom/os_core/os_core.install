@@ -6,7 +6,7 @@
 
 /**
  * Implements hook_install().
- **/
+ */
 function os_core_install() {
   db_update('menu_links')
     ->fields(array(
@@ -28,79 +28,130 @@ function os_core_install() {
 
   // Create all the terms.
   os_core_generate_taxonomy_terms();
+
+  // Run other updates.
+  // Add legal conditions for terms & conditions, only if there are none.
+  os_core_update_7100();
+
+  // Disable the node_edit page override.
+  os_core_update_7101();
+
+  // Enable the pm_existing_pages-community_spotlight page.
+  os_core_update_7102();
+
+  // Create resource menu items.
+  os_core_update_7103();
+
+  // Enable the pm_existing_pages-user_content_pages page.
+  os_core_update_7104();
+
+  // Disable save_draft module as it creates confusion with workflow.
+  os_core_update_7105();
+}
+
+/**
+ * Add legal conditions for terms & conditions, only if there are none.
+ */
+function os_core_update_7100() {
+  module_load_include('inc', 'legal', 'legal.admin');
+  $version = legal_version('version', 'en');
+
+  // Only insert, if there is not one already.
+  if ($version['version'] == 1) {
+    $conditions = "You have to accept these T&C's.";
+    db_insert('legal_conditions')
+      ->fields(array(
+        'version' => 1,
+        'revision' => 1,
+        'language' => 'en',
+        'conditions' => $conditions,
+        'date' => time(),
+        'extras' => serialize(array()),
+        'changes' => '',
+      ))
+      ->execute();
+  }
+}
+
+/**
+ * Disable the node_edit page override.
+ */
+function os_core_update_7101() {
+  $page = page_manager_get_page_cache('node_edit');
+  $function = ctools_plugin_get_function($page->subtask, 'enable callback');
+  $function($page, TRUE);
+  menu_rebuild();
+}
+
+/**
+ * Enable the pm_existing_pages-community_spotlight page.
+ */
+function os_core_update_7102() {
+  $page = page_manager_get_page_cache('pm_existing_pages-community_spotlight');
+  $function = ctools_plugin_get_function($page->subtask, 'enable callback');
+  $function($page, FALSE);
+  menu_rebuild();
+}
+
+/**
+ * Create the resource menu items.
+ */
+function os_core_update_7103() {
+  // Generate the homepage resource menu items.
+  os_core_generate_resource_homepage_menu_items();
+
+  // Generate resource page menu items.
+  os_core_generate_resource_resourcepage_menu_items();
+}
+
+/**
+ * Enable the pm_existing_pages-user_content_pages page.
+ */
+function os_core_update_7104() {
+  $page = page_manager_get_page_cache('pm_existing_pages-user_content_pages');
+  $function = ctools_plugin_get_function($page->subtask, 'enable callback');
+  $function($page, FALSE);
+  menu_rebuild();
+}
+
+/**
+ * Disable save_draft module as it creates confusion with workflow.
+ */
+function os_core_update_7105() {
+  module_disable(array('save_draft'));
+
+  $values = array(
+    array(
+      'type' => 'article',
+      'wid' => 1,
+    ),
+    array(
+      'type' => 'event',
+      'wid' => 1,
+    ),
+    array(
+      'type' => 'page',
+      'wid' => 1,
+    ),
+  );
+  $query = db_insert('workflow_type_map')->fields(array('type', 'wid'));
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
 }
 
 /**
  * Generate terms for Channel and Article Type vocabularies.
  */
 function os_core_generate_taxonomy_terms() {
-  $vocabularies = taxonomy_get_vocabularies('article');
-  foreach ($vocabularies as $vocab) {
-    if($vocab->machine_name == 'channel'){
-      $channel_vid = $vocab->vid;
-    }
-    elseif($vocab->machine_name == 'article_type'){
-      $article_type_vid = $vocab->vid;
-    }
+  $vocabularies = array();
+  foreach (taxonomy_get_vocabularies() as $vid => $vocab) {
+    $vocabularies[$vocab->machine_name] = $vid;
   }
 
-  // File path.
-  $filepath = drupal_get_path('module', 'os_core') . '/images/';
-
-  // Create various channel terms.
-  $fid = os_base_file_create($filepath . 'business.png', 'public://channels/');
-  $term = new stdClass();
-  $term->vid = $channel_vid;
-  $term->name = 'Business';
-  $term->description = 'Business';
-  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="http://opensource.com/business/14/1/drupal-history?sc_cid=70160000000c9pFAAQ">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
-  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
-  taxonomy_term_save($term);
-
-  $fid = os_base_file_create($filepath . 'education.png', 'public://channels/');
-  $term = new stdClass();
-  $term->vid = $channel_vid;
-  $term->name = 'Education';
-  $term->description = 'Education';
-  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/education/14/1/upgrade-to-open-source-in-schools?sc_cid=70160000000c9pPAAQ">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
-  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
-  taxonomy_term_save($term);
-
-  $fid = os_base_file_create($filepath . 'government.png', 'public://channels/');
-  $term = new stdClass();
-  $term->vid = $channel_vid;
-  $term->name = 'Government';
-  $term->description = 'Government';
-  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/government/13/12/government-year-in-review-2013?sc_cid=70160000000c9pZAAQ">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
-  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
-  taxonomy_term_save($term);
-
-  $fid = os_base_file_create($filepath . 'health.png', 'public://channels/');
-  $term = new stdClass();
-  $term->vid = $channel_vid;
-  $term->name = 'Health';
-  $term->description = 'Health';
-  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/health/13/12/health-science-year-in-review-2013?sc_cid=70160000000c9poAAA">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
-  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
-  taxonomy_term_save($term);
-
-  $fid = os_base_file_create($filepath . 'law.png', 'public://channels/');
-  $term = new stdClass();
-  $term->vid = $channel_vid;
-  $term->name = 'Law';
-  $term->description = 'Law';
-  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/law/13/12/year-in-review-law-2013?sc_cid=70160000000c9pyAAA">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
-  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
-  taxonomy_term_save($term);
-
-  $fid = os_base_file_create($filepath . 'life.png', 'public://channels/');
-  $term = new stdClass();
-  $term->vid = $channel_vid;
-  $term->name = 'Life';
-  $term->description = 'Life';
-  $term->field_readers_favourite['und'][0]['value'] = '<p><a href="https://opensource.com/life/13/12/top-open-source-projects-2013?sc_cid=70160000000c9ptAAA">[[{"fid":"'.$fid.'","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
-  $term->field_readers_favourite['und'][0]['format'] = 'panopoly_wysiwyg_text';
-  taxonomy_term_save($term);
+  $channel_vid = $vocabularies['channel'];
+  $article_type_vid = $vocabularies['article_type'];
 
   // Generate terms for Article Type.
   $term = new stdClass();
@@ -118,4 +169,215 @@ function os_core_generate_taxonomy_terms() {
   $term->name = 'Video';
   $term->description = '';
   taxonomy_term_save($term);
+
+  // File path.
+  $filepath = drupal_get_path('module', 'os_core') . '/images/';
+
+  // Create various channel terms.
+  $fid = os_base_file_create($filepath . 'business.png', 'public://channels/');
+  $term = new stdClass();
+  $term->vid = $channel_vid;
+  $term->name = 'Business';
+  $term->description = 'Business';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="http://opensource.com/business/14/1/drupal-history?sc_cid=70160000000c9pFAAQ">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+  _os_core_create_channel_link('Business', 'business', -39);
+
+  $fid = os_base_file_create($filepath . 'education.png', 'public://channels/');
+  $term = new stdClass();
+  $term->vid = $channel_vid;
+  $term->name = 'Education';
+  $term->description = 'Education';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/education/14/1/upgrade-to-open-source-in-schools?sc_cid=70160000000c9pPAAQ">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+  _os_core_create_channel_link('Education', 'education', -38);
+
+  $fid = os_base_file_create($filepath . 'government.png', 'public://channels/');
+  $term = new stdClass();
+  $term->vid = $channel_vid;
+  $term->name = 'Government';
+  $term->description = 'Government';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/government/13/12/government-year-in-review-2013?sc_cid=70160000000c9pZAAQ">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+  _os_core_create_channel_link('Government', 'government', -37);
+
+  $fid = os_base_file_create($filepath . 'health.png', 'public://channels/');
+  $term = new stdClass();
+  $term->vid = $channel_vid;
+  $term->name = 'Health';
+  $term->description = 'Health';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/health/13/12/health-science-year-in-review-2013?sc_cid=70160000000c9poAAA">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+  _os_core_create_channel_link('Health', 'health', -36);
+
+  $fid = os_base_file_create($filepath . 'law.png', 'public://channels/');
+  $term = new stdClass();
+  $term->vid = $channel_vid;
+  $term->name = 'Law';
+  $term->description = 'Law';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/law/13/12/year-in-review-law-2013?sc_cid=70160000000c9pyAAA">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+  _os_core_create_channel_link('Law', 'law', -35);
+
+  $fid = os_base_file_create($filepath . 'life.png', 'public://channels/');
+  $term = new stdClass();
+  $term->vid = $channel_vid;
+  $term->name = 'Life';
+  $term->description = 'Life';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/life/13/12/top-open-source-projects-2013?sc_cid=70160000000c9ptAAA">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
+  taxonomy_term_save($term);
+  _os_core_create_channel_link('Life', 'life', -34);
+}
+
+/**
+ * Generates the menu items for the home page resource menu.
+ */
+function os_core_generate_resource_homepage_menu_items() {
+  module_load_include('inc', 'menu', 'menu.admin');
+  $args = array('build_info' => array('args' => array('add', array(), array())));
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'What is OpenSource',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources-homepa',
+      'parent' => 'menu-opensource-resources-homepa:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/whatisopensource.png',
+      'use_icon_logo' => 1,
+      'weight' => -50,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Conferences and Events',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources-homepa',
+      'parent' => 'menu-opensource-resources-homepa:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/event.png',
+      'use_icon_logo' => 1,
+      'weight' => -30,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'OpenSource Books',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources-homepa',
+      'parent' => 'menu-opensource-resources-homepa:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/book.png',
+      'use_icon_logo' => 1,
+      'weight' => -10,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+}
+
+/**
+ * Generates the menu items for the resource page resource menu.
+ */
+function os_core_generate_resource_resourcepage_menu_items() {
+  module_load_include('inc', 'menu', 'menu.admin');
+  $args = array('build_info' => array('args' => array('add', array(), array())));
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'What is OpenSource',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/whatisopensource.png',
+      'use_icon_logo' => 1,
+      'weight' => -50,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Conferences and Events',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/event.png',
+      'use_icon_logo' => 1,
+      'weight' => -40,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'OpenSource Books',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/book.png',
+      'use_icon_logo' => 1,
+      'weight' => -30,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Project And Applications',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/projectandapplications.png',
+      'use_icon_logo' => 1,
+      'weight' => -20,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Organizations',
+      'link_path' => '<front>',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/organizations.png',
+      'use_icon_logo' => 1,
+      'weight' => -10,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+}
+
+/**
+ * Helper function to create menu for channel link.
+ */
+function _os_core_create_channel_link($title, $path, $weight = -50) {
+  module_load_include('inc', 'menu', 'menu.admin');
+  $form_state = array(
+    'values' => array(
+      'link_title' => $title,
+      'link_path' => $path,
+      'menu_name' => 'main-menu',
+      'parent' => 'main-menu:0',
+      'image_style' => '',
+      'weight' => $weight,
+    ),
+    'build_info' => array('args' => array('add', array(), array())),
+  );
+  drupal_form_submit('menu_edit_item', $form_state);
 }

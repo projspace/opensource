@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenSource User Page feature.
+ */
+
+include_once 'os_user_page.features.inc';

@@ -1,3 +1,4 @@
+
 <?php
 /**
  * @file
@@ -130,6 +131,18 @@ function opensource_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+/**
+ * Override or insert variables into the username.
+ */
+function opensource_preprocess_username(&$vars) {
+  // $vars['account'] is not always the user account.
+  $account = user_load($vars['uid']);
+  $mail = explode('@', $account->mail);
+  if (count($mail) == 2 && strcasecmp($mail[1], 'redhat.com') == 0) {
+    $vars['extra'] = ' ' . t('(Red Hat)');
+  }
+}
 
 function opensource_preprocess_comment(&$vars) {
   // If no image is present then show the default image.
@@ -356,9 +369,27 @@ function opensource_date_nav_title($params) {
 
 function opensource_preprocess_field(&$vars) {
   if($vars['element']['#field_name'] == 'field_default_license') {
-    if($vars['element']['#object']->field_default_license[LANGUAGE_NONE][0]['value'] == '1') {
-      $vars['items']['0']['#markup'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+    switch ($vars['element']['#object']->field_default_license[LANGUAGE_NONE][0]['value']) {
+      case 'CC-BY-SA 4.0':
+        $vars['items']['0']['#markup'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-4.png" title="This work is licensed under a Creative Commons Attribution-Share Alike 4.0 International License." /></a>';
+        break;
+      case 'CC-BY-SA 3.0':
+        $vars['items']['0']['#markup'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
         <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-3.png" title="This work is licensed under a Creative Commons Attribution-Share Alike 3.0 Unported License." /></a>';
+        break;
+      case 'CC-BY 4.0':
+        $vars['items']['0']['#markup'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-4.png" title="This work is licensed under a Creative Commons Attribution 4.0 International License." /></a>';
+        break;
+      case 'CC-BY 3.0':
+              $vars['items']['0']['#markup'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-3.png" title="This work is licensed under a Creative Commons Attribution 3.0 Unported License." /></a>';
+        break;
+
+      default:
+        $vars['items']['0']['#markup'] = $vars['element']['#object']->field_default_license[LANGUAGE_NONE][0]['value'];
+        break;
     }
   }
 }
@@ -403,4 +434,16 @@ function opensource_fivestar_summary($variables) {
 
   $output = '<div class="fivestar-summary fivestar-summary-'. $div_class . '">'. $output .'</div>';
   return $output;
+}
+
+function opensource_preprocess_panels_pane(&$vars) {
+  $content = &$vars['content'];
+  if(isset($content['#field_name']) && ($content['#field_name'] == 'field_file_image_caption')) {
+    if((strpos($content['#items'][0]['value'], 'opensource.com') !== false) || (strpos($content['#items'][0]['value'], 'Opensource.com') !== false)) {
+      $content['#title'] = t('Image by ');
+    }
+    else {
+      $content['#title'] = t('Image credits ');
+    }
+  }
 }

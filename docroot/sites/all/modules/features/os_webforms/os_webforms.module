@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenSource Webforms feature.
+ */
+
+include_once 'os_webforms.features.inc';

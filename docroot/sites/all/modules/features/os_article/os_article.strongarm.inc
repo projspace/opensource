@@ -28,7 +28,7 @@ function os_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'addthis_clickback_tracking_enabled';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['addthis_clickback_tracking_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -352,7 +352,7 @@ function os_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'addthis_facebook_like_count_support_enabled';
-  $strongarm->value = TRUE;
+  $strongarm->value = 1;
   $export['addthis_facebook_like_count_support_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -424,6 +424,20 @@ function os_article_strongarm() {
   $strongarm->name = 'addthis_ui_header_color';
   $strongarm->value = '';
   $export['addthis_ui_header_color'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_medium';
+  $strongarm->value = 'd M Y';
+  $export['date_format_medium'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panopoly_admin_advanced_plugins';
+  $strongarm->value = '1';
+  $export['panopoly_admin_advanced_plugins'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -1,0 +1,208 @@
+.page-user-articles,
+.page-user-comments,
+.page-user {
+    a {
+        color: black;
+
+        &:hover {
+            color: #39f;
+            text-decoration: underline;
+        }
+    }
+
+    .page__title {
+        display: block !important;
+    }
+
+    .pane-title:after {
+        content: '';
+    }
+
+    .views-field-user-badges-html {
+        float: left;
+
+        img {
+            display: block;
+        }
+
+        .profile-pictures {
+            margin-bottom: 5px;
+            background: red;
+        }
+    }
+
+    .views-field-field-user-about {
+        float: right;
+        width: 75%;
+    }
+
+    .views-field-points {
+        background-color: #1D2753;
+        border: 1px solid #0033FF;
+        color: white;
+        font-size: 16px;
+        padding: 5px;
+        float: right;
+        text-align: center;
+        width: 55px;
+        right: 0;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+    .pane-user-info-panel-pane-user-info {
+        float: left;
+        padding-bottom: 20px;
+    }
+
+    .view-id-authored_content,
+    .pane-authored-content-panel-pane-content {
+        padding: 10px 0;
+
+        .views-row {
+            clear: both;
+            overflow: hidden;
+            margin-bottom: 10px;
+            padding-bottom: 45px;
+            border-bottom: 2px dotted #b4b4b4;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .pane-title {
+            float: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .views-field-field-lead-image {
+            float: left;
+            height: 140px;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        .views-field-title {
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+
+        .views-more-link {
+            color: black;
+            font-weight: bold;
+
+            &:hover {
+                color: #39f;
+            }
+
+            &:before {
+                content: '» ';
+            }
+        }
+
+        .views-field-created {
+            font-weight: bold;
+            color: #5A5A5A;
+        }
+
+
+        .views-field-comment-count {
+            float: left;
+            font-weight: bold;
+            color: #5A5A5A;
+            background: url('../images/comment.jpg') no-repeat left center;
+            padding-left: 20px;
+
+            &:after {
+                content: '|';
+                padding: 0 5px;
+            }
+        }
+
+        .more-link {
+            &:before {
+                content: '» ';
+            }
+        }
+    }
+
+    .view-id-authored_comments,
+    .pane-authored-comments-panel-pane-comments {
+        .pane-title {
+            font-size: 18px;
+            font-weight: bold;
+            float: none;
+            margin-bottom: 10px;
+        }
+
+        .more-link {
+            &:before {
+                content: '» ';
+            }
+        }
+
+        .views-row {
+            margin-bottom: 25px;
+        }
+
+        .views-field-created {
+            font-weight: bold;
+            color: #5A5A5A;
+            font-size: 9px;
+        }
+
+        .views-field-timestamp {
+            color: #5A5A5A;
+            font-size: 9px;
+            font-weight: bold;
+        }
+
+        .views-field-title {
+            color: #292929;
+            font-size: 13px;
+
+            a {
+                color: black;
+
+                &:hover {
+                    color: #39f;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .views-field-comment-body {
+            background: #EDEDED;
+            color: #292929;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            padding-bottom: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 1px;
+            line-height: 1.3;
+
+            a {
+                color: black;
+                text-decoration: underline;
+
+                &:hover {
+                    color: #39f;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

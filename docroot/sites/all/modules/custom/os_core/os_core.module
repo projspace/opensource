@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_block_info()
+ * Implements hook_block_info().
  */
 function os_core_block_info() {
   $blocks = array();
@@ -19,27 +19,32 @@ function os_core_block_info() {
 }
 
 /**
- *  Implements hook_block_view()
+ * Implements hook_block_view().
  */
 function os_core_block_view($delta = '') {
+  $block = NULL;
   // The $delta parameter tells us which block is being requested.
   switch ($delta) {
     case 'opensource-social-links':
       $block = array(
         'subject' => '<none>',
         'content' => os_core_display_social_block(),
-       );
-    break;
+      );
+      break;
+
     case 'opensource-article-share':
       $block = array(
         'subject' => '<none>',
         'content' => os_core_display_social_share_icons(),
-       );
-    break;
+      );
+      break;
   }
   return $block;
 }
 
+/**
+ * Generate block for social links and email subscription.
+ */
 function os_core_display_social_block() {
   $links = array();
   $links['twitter'] = array(
@@ -66,19 +71,19 @@ function os_core_display_social_block() {
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
-   $links['youtube'] = array(
+  $links['youtube'] = array(
     'href' => 'http://www.youtube.com/opensourceway',
     'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/youtube.jpg')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
-   $links['pinterest'] = array(
+  $links['pinterest'] = array(
     'href' => 'http://pinterest.com/opensourceway/',
     'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/pinterest.png')),
     'attributes' => array('target' => '_blank'),
     'html' => TRUE,
   );
-    $links['linkedin'] = array(
+  $links['linkedin'] = array(
     'href' => 'http://www.linkedin.com/groups/Open-Source-Professionals-Advocates-2769297?gid=2769297',
     'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/in.jpg')),
     'attributes' => array('target' => '_blank'),
@@ -96,13 +101,6 @@ function os_core_display_social_block() {
     )
   );
 
-  /*$output .= theme('image', array(
-      'path' => 'sites/all/themes/sitetheme/images/email-signup.png',
-      'alt' => 'Sign up for our newsletter',
-      'title' => 'Sign up for our newsletter',
-      'attributes' => array('class' => 'newsletter'),
-    )
-  );*/
   $output .= '<div class="signup-email-title">' . t('Sign-up for weekly email') . '</div>';
   $eloqua_form = drupal_get_form('os_core_eloqua_form');
   $output .= render($eloqua_form);
@@ -112,14 +110,17 @@ function os_core_display_social_block() {
 /**
  * Implements hook_init().
  */
-function os_core_init(){
-  if(array_key_exists('success', $_REQUEST)) {
-    drupal_set_message('Thank you. You have been subscribed to our weekly email.');
+function os_core_init() {
+  if (array_key_exists('success', $_REQUEST)) {
+    drupal_set_message(t('Thank you. You have been subscribed to our weekly email.'));
   }
 }
 
-function os_core_eloqua_form($form, &$form_submit){
-  // Build the Redirect
+/**
+ * Build the form for Eloqua email subscription.
+ */
+function os_core_eloqua_form($form, &$form_submit) {
+  // Build the Redirect.
   $redirect = url('thank-you-subscription', array('absolute' => TRUE));
 
   $form['C_EmailAddress'] = array(
@@ -153,15 +154,20 @@ function os_core_eloqua_form($form, &$form_submit){
   return $form;
 }
 
+/**
+ * Validation for eloqua email subscription form.
+ */
 function os_core_eloqua_form_validate($form, &$form_state) {
   if ($form_state['values']['c_EmailAddress'] == '') {
     form_set_error('name', t('You must enter a valid email address.'));
   }
 }
 
+/**
+ * Generate the social share icons.
+ */
 function os_core_display_social_share_icons() {
   $social_buttons = '';
-  // urlencode title
   $node = node_load(filter_xss(arg(1)));
   $title = urlencode($node->title);
 
@@ -182,18 +188,17 @@ function os_core_display_social_share_icons() {
 
   $social_buttons .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
 
-  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52fdaa9e37dcc3ed"></script>';
 
   return $social_buttons;
 }
 
 /**
- * This function will fetch the social share icons on the event list.
+ * Fetch the social share icons on the event list.
  */
 function os_core_display_social_share_icons_event_list($nid) {
   $social_buttons = '';
-  // urlencode title
   $node = node_load($nid);
   $title = urlencode($node->title);
 
@@ -214,8 +219,174 @@ function os_core_display_social_share_icons_event_list($nid) {
 
   $social_buttons .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
 
-  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52fdaa9e37dcc3ed"></script>';
 
   return $social_buttons;
+}
+
+/**
+ * Implements hook_element_info().
+ */
+function os_core_element_info_alter(&$type) {
+  $type['select_or_other']['#process'][0] = 'os_core_select_or_other_element_process';
+}
+
+/**
+ * Process callback for a Select (or other) element.
+ */
+function os_core_select_or_other_element_process($element, &$form_state) {
+  $element['#tree'] = TRUE;
+  $element['#processed'] = TRUE;
+
+  unset($element['#type']);
+
+  // Load the JS file to hide/show the 'other' box when needed.
+  $element['#attached']['js'][] = drupal_get_path('module', 'select_or_other') . '/select_or_other.js';
+
+  // Create the main select box
+  // Note that #title, #title_display, #default_value, #disabled, #multiple,
+  // #required, #size, #options, and #attributes are passed to the select box
+  // from the main element automatically.
+  $element['select'] = array(
+    '#type' => $element['#select_type'],
+    '#title' => $element['#title'],
+    '#title_display' => $element['#title_display'],
+    '#default_value' => $element['#default_value'],
+    '#disabled' => $element['#disabled'],
+    '#multiple' => $element['#multiple'],
+    '#required' => $element['#required'],
+    '#size' => isset($element['#size']) ? $element['#size'] : NULL,
+    '#options' => $element['#options'],
+    '#attributes' => $element['#attributes'],
+    '#weight' => 10,
+  );
+
+  if (isset($element['#empty_value'])) {
+    $element['select']['#empty_value'] = $element['#empty_value'];
+  };
+
+  // Remove the default value on the container level so it doesn't get rendered
+  // there.
+  $element['#value'] = NULL;
+  // Remove the required parameter so FAPI doesn't force us to fill in the
+  // textfield.
+  $element['#required'] = NULL;
+
+  // Now we must handle the default values.
+  $other_default = array();
+
+  // Easier to work with the defaults if they are an array.
+  if (!is_array($element['select']['#default_value'])) {
+    $element['select']['#default_value'] = array(
+      $element['select']['#default_value'],
+    );
+  }
+  // Process the default value.
+  foreach ($element['select']['#default_value'] as $key => $val) {
+    if ($val
+      && isset($element['select']['#options'])
+      && is_array($element['select']['#options'])
+      && !select_or_other_multi_array_key_exists($val, $element['select']['#options'])
+      && !in_array($val, $element['select']['#options'])) {
+
+      // Not a valid option - add it to 'other'.
+      if ($element['#other_unknown_defaults'] == 'other') {
+
+        if ($element['#other_delimiter']) {
+          $other_default[] = $val;
+        }
+        else {
+          $other_default = array($val);
+        }
+        // Remove it from the select's default value.
+        unset($element['select']['#default_value'][$key]);
+
+      }
+      // Also checks 'available' because if that setting is newly set, after
+      // data is already stored, it should behave like 'append'.
+      elseif ($element['#other_unknown_defaults'] == 'append' || $element['#other_unknown_defaults'] == 'available') {
+        $element['select']['#options'][$val] = $val;
+      }
+
+    }
+  }
+  // If the expected default value is a string/integer, remove the array
+  // wrapper.
+  if ($element['#select_type'] == 'radios' || ($element['#select_type'] == 'select' && !$element['#multiple'])) {
+    $element['select']['#default_value'] = reset($element['select']['#default_value']);
+  }
+
+  $other_default_string = '';
+  if (!empty($other_default)) {
+    $other_default_string = implode($element['#other_delimiter'], $other_default);
+    if (is_array($element['select']['#default_value'])) {
+      $element['select']['#default_value'][] = 'select_or_other';
+    }
+    else {
+      $element['select']['#default_value'] = 'select_or_other';
+    }
+  }
+
+  // Add in the 'other' option.
+  $element['select']['#options']['select_or_other'] = $element['#other'];
+
+  // Create the 'other' textfield.
+  $element['other'] = array(
+    '#type' => 'textarea',
+    '#weight' => 20,
+    '#rows' => 5,
+    '#format' => 'panopoly_wysiwyg_text',
+    '#default_value' => $other_default_string,
+    '#disabled' => $element['#disabled'],
+    '#attributes' => $element['#attributes'],
+  );
+
+  // Populate properties set specifically as #select_property or #other_property
+  $sub_elements = array('select', 'other');
+  foreach ($sub_elements as $sub_element) {
+    foreach ($element as $key => $value) {
+      if (strpos($key, '#' . $sub_element . '_') === 0) {
+        $element[$sub_element][str_replace('#' . $sub_element . '_', '#', $key)] = $value;
+      }
+    }
+    // Also add in a custom class for each.
+    $element[$sub_element]['#attributes']['class'][] = 'select-or-other-' . $sub_element;
+  }
+  if (!empty($element['#maxlength'])) {
+    $element['other']['#maxlength'] = $element['#maxlength'];
+  }
+  if (isset($element['#other_size'])) {
+    $element['other']['#size'] = $element['#other_size'];
+  }
+  // Hide the title from the wrapper.
+  $element['#title'] = NULL;
+
+  return $element;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * This adds a Login/Register link for anonymous users.
+ */
+function os_core_form_comment_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  if (!$user->uid) {
+    unset($form['author']['homepage']);
+    $form['login-register'] = array(
+      '#type' => 'item',
+      '#markup' => l(t('Login or Register'), 'user', array('query' => array('destination' => drupal_get_destination()))) . ' ' . t('to earn points for your comments.'),
+      '#weight' => -10,
+    );
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function os_core_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'article_node_form') {
+    drupal_add_js(drupal_get_path('module', 'os_core') . '/os_core.js');
+  }
 }

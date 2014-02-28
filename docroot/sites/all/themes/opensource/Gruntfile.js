@@ -81,9 +81,11 @@ module.exports = function(grunt) {
         photobox: {
             task: {
                 options: {
-                    screenSizes : ['240, 320', '600', '1000', '1200' ],
-                    urls        : [ 'http://opensource.dev.projspace.com/'],
+                    screenSizes : ['1000'],
+                    urls        : [ 'http://os7.cont.projspace.com/business/14/2/five-ways-bring-more-social-open-development-environment-your-company'],
                     template       : 'magic',
+                    userName: 'os7',
+                    password: 'os7'
                 }
             }
         }

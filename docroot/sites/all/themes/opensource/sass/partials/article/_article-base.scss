@@ -1,6 +1,7 @@
 .node-type-article {
     .description,
-    .fivestar-widget { float: left;
+    .fivestar-widget {
+        float: left;
     }
 
     .author-feed {
@@ -10,9 +11,25 @@
     }
 
     .pane-node-body {
+        font-size: 16px;
+        color: black;
+
         p, h2, h3 {
             margin: 12px 0;
         }
+
+        a {
+            color: #5E6A71;
+        }
+    }
+
+    .pane-os-core-opensource-article-share {
+        clear: left;
+        padding-top: 10px;
+    }
+
+    .comment-by-node-author {
+        clear: left;
     }
 
     ul {
@@ -21,6 +38,7 @@
 
     .article-title {
         line-height: 1.3;
+        margin-bottom: 5px;
 
         p {
             margin: 0;
@@ -39,7 +57,11 @@
         color: #999;
         font-size: 10px;
         font-style: italic;
-        margin-bottom: 10px;
+        margin-top: 10px;
+
+        p {
+            margin: 0;
+        }
     }
 
 
@@ -151,6 +173,7 @@
         width: 80px;
         display: inline-block;
         margin-right: 5px;
+        left: -3px;
     }
 }
 
@@ -158,9 +181,16 @@
     position: relative;
     top: 2px;
     margin-left: 5px;
+    left: -9px;
 }
 
-#iframe-stmblpn-widget-1,
-#iframe-stmblpn-widget-3 {
+[id^="iframe-stmblpn-widget-"] {
     margin-right: 5px !important;
+    left: -6px;
+    position: relative;
+}
+
+.addthis_button_facebook_like {
+    position: relative;
+    left: -9px;
 }
