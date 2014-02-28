@@ -119,8 +119,8 @@ function os_homepage_views_default_views() {
 <div class="teaser-title">[title]</div>
 <div class="teaser-body">[body]</div>
 </div>';
-  $handler->display->display_options['fields']['nothing']['element_class'] = 'views-field-article-content';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'views-field-article-content';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
