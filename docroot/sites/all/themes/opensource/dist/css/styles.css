@@ -8553,7 +8553,7 @@ blockquote {
 }
 
 .pane-resource-event.active {
-  background: url("../images/resourcer/event-active.png") no-repeat;
+  background: url("../images/resources/event-active.png") no-repeat;
 }
 
 @media -sass-debug-info {
