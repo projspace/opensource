@@ -73,12 +73,12 @@ function os_badges_determine_role($points) {
 /**
  * Helper function to get a badge object from name.
  */
-function os_badges_get_badges($names) {
+function os_badges_get_badges($names, $key = 'bid') {
   $result = db_select('user_badges_badges', 'ubb')
     ->fields('ubb')
     ->condition('ubb.name', $names)
     ->execute()
-    ->fetchAllAssoc('bid');
+    ->fetchAllAssoc($key);
 
   return $result;
 }
