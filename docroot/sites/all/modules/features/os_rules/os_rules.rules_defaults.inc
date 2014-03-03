@@ -132,6 +132,28 @@ function os_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_award_points_top_contributor'] = entity_import('rules_config', '{ "rules_award_points_top_contributor" : {
+      "LABEL" : "Award points to top contributor",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "flag", "points", "spotlight", "user" ],
+      "REQUIRES" : [ "userpoints_rules", "flag" ],
+      "ON" : { "flag_flagged_spotlight" : [] },
+      "DO" : [
+        { "userpoints_action_grant_points" : {
+            "user" : [ "flagged-user" ],
+            "points" : "50",
+            "tid" : "0",
+            "entity" : [ "flagging" ],
+            "description" : "User Spotlighted",
+            "operation" : "Spotlighted",
+            "display" : 1,
+            "moderate" : "approved"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_award_points_user_login'] = entity_import('rules_config', '{ "rules_award_points_user_login" : {
       "LABEL" : "Award point on user login",
       "PLUGIN" : "reaction rule",
