@@ -463,3 +463,28 @@ function opensource_preprocess_panels_pane(&$vars) {
     }
   }
 }
+
+function opensource_preprocess_search_result(&$vars) {
+  $allowed_types = array('article', 'event', 'resource', 'poll');
+  $result_fields = $vars['result']['fields'];
+  if ($result_fields['entity_type'] == 'node' && in_array($result_fields['bundle'], $allowed_types)) {
+    $node = node_load($vars['result']['fields']['entity_id']);
+    $vars['date'] = format_date($node->changed, 'custom', 'm/d/Y - H:i');
+    $vars['comment_count'] = format_plural($node->comment_count, '1 Comment', '@count Comments', array('@count' => $node->comment_count));
+
+    // Find the attachment count.
+    $attachments = field_get_items('node', $node, 'field_attachments');
+    if($attachments == FALSE) {
+      $vars['attachment_count'] = '0' . t(' attachments');
+    }
+    else {
+      $vars['attachment_count'] = sizeof($attachments) . t(' attachments');
+    }
+
+
+    // Node author
+    $vars['author'] = l(user_load($node->uid)->name, 'user/' . $node->uid);
+
+    $vars['node_type'] = $node->type;
+  }
+}
