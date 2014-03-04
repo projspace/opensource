@@ -92,7 +92,7 @@ function os_workflow_workflow_default_workflows() {
       0 => 'article',
       1 => 'event',
       2 => 'page',
-      3 => 'panopoly_page',
+      3 => 'poll',
     ),
   );
 

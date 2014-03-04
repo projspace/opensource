@@ -59,11 +59,11 @@ function os_workflow_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'workflow_panopoly_page';
+  $strongarm->name = 'workflow_poll';
   $strongarm->value = array(
     0 => 'node',
   );
-  $export['workflow_panopoly_page'] = $strongarm;
+  $export['workflow_poll'] = $strongarm;
 
   return $export;
 }
