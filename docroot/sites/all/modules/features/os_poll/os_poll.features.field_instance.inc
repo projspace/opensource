@@ -10,6 +10,54 @@
 function os_poll_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-poll-body'
+  $field_instances['node-poll-body'] = array(
+    'bundle' => 'poll',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-poll-field_add_this'
   $field_instances['node-poll-field_add_this'] = array(
     'bundle' => 'poll',
@@ -49,7 +97,7 @@ function os_poll_field_default_field_instances() {
       'module' => 'addthis',
       'settings' => array(),
       'type' => 'addthis_button_widget',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -99,7 +147,7 @@ function os_poll_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -155,7 +203,7 @@ function os_poll_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -254,7 +302,7 @@ CC-BY 3.0|CC-BY 3.0',
         'sort_options' => 0,
       ),
       'type' => 'select_or_other',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -371,7 +419,7 @@ CC-BY 3.0|CC-BY 3.0',
       'module' => 'fivestar',
       'settings' => array(),
       'type' => 'exposed',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -417,7 +465,7 @@ CC-BY 3.0|CC-BY 3.0',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -426,6 +474,7 @@ CC-BY 3.0|CC-BY 3.0',
   t('Add This');
   t('Alternative License');
   t('Attachments');
+  t('Body');
   t('Channel');
   t('Default CC License');
   t('Lead Image');
