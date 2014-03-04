@@ -3453,6 +3453,7 @@ tr.selected td {
 }
 
 .image-title,
+.node-type-poll #content .pane-related-articles-panel-pane-1 h2.pane-title,
 .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title,
 .burr-flipped-sidebar .pane-menu-monthly-favorites h2.pane-title,
 .burr-flipped-sidebar .signup-email .signup-email-title {
@@ -3473,6 +3474,7 @@ tr.selected td {
 }
 
 .box-wrapper,
+.node-type-poll .pane-node-comments .comment,
 .node-type-article .pane-node-comments .comment,
 .burr-flipped-content,
 .badge-wrapper,
@@ -3493,6 +3495,7 @@ tr.selected td {
 }
 
 .box-wrapper p,
+.node-type-poll .pane-node-comments .comment p,
 .node-type-article .pane-node-comments .comment p,
 .burr-flipped-content p,
 .badge-wrapper p,
@@ -3511,6 +3514,7 @@ tr.selected td {
 }
 
 .box-wrapper p br,
+.node-type-poll .pane-node-comments .comment p br,
 .node-type-article .pane-node-comments .comment p br,
 .burr-flipped-content p br,
 .badge-wrapper p br,
@@ -3539,10 +3543,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000332;
+    font-family: \0000333;
   }
 }
 
+.node-type-poll .view-author-info .views-field-field-user-picture,
 .node-type-article .view-author-info .views-field-field-user-picture {
   float: left;
   margin-right: 1em;
@@ -3554,10 +3559,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000336;
+    font-family: \0000337;
   }
 }
 
+.node-type-poll .view-author-info .views-field-nothing,
 .node-type-article .view-author-info .views-field-nothing {
   text-align: right;
 }
@@ -3568,10 +3574,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000338;
+    font-family: \0000339;
   }
 }
 
+.node-type-poll .view-author-info .views-field-nothing a,
 .node-type-article .view-author-info .views-field-nothing a {
   text-decoration: none;
 }
@@ -3582,10 +3589,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000344;
+    font-family: \0000345;
   }
 }
 
+.node-type-poll .author-feed,
 .node-type-article .author-feed {
   float: left;
 }
@@ -3596,10 +3604,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000348;
+    font-family: \0000349;
   }
 }
 
+.node-type-poll .pane-node-author,
 .node-type-article .pane-node-author {
   float: left;
 }
@@ -3610,10 +3619,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000352;
+    font-family: \0000353;
   }
 }
 
+.node-type-poll .pane-3,
 .node-type-article .pane-3 {
   float: left;
 }
@@ -3624,10 +3634,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000355;
+    font-family: \0000356;
   }
 }
 
+.node-type-poll .pane-3 p,
 .node-type-article .pane-3 p {
   margin: 0;
 }
@@ -3638,10 +3649,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000361;
+    font-family: \0000362;
   }
 }
 
+.node-type-poll .pane-3 span a,
 .node-type-article .pane-3 span a {
   background: url(../images/rss.jpg) no-repeat;
   text-indent: -9999px;
@@ -3660,10 +3672,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000375;
+    font-family: \0000376;
   }
 }
 
+.node-type-poll .pane-node-field-rating,
 .node-type-article .pane-node-field-rating {
   float: right;
 }
@@ -3674,10 +3687,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000378;
+    font-family: \0000379;
   }
 }
 
+.node-type-poll .pane-node-field-lead-image,
 .node-type-article .pane-node-field-lead-image {
   display: inline-block;
 }
@@ -3688,10 +3702,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000381;
+    font-family: \0000382;
   }
 }
 
+.node-type-poll .image-credits,
 .node-type-article .image-credits {
   font-size: 10px;
   color: #999;
@@ -3705,10 +3720,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000388;
+    font-family: \0000389;
   }
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .view-content,
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-content {
   clear: both;
   overflow: hidden;
@@ -3720,10 +3736,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000393;
+    font-family: \0000394;
   }
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 h2.pane-title,
 .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title {
   background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
   margin-bottom: 8px;
@@ -3735,10 +3752,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \0000399;
+    font-family: \00003100;
   }
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .views-row,
 .node-type-article #content .pane-related-articles-panel-pane-1 .views-row {
   float: left;
   padding-right: 30px;
@@ -3751,10 +3769,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003104;
+    font-family: \00003105;
   }
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .views-row img,
 .node-type-article #content .pane-related-articles-panel-pane-1 .views-row img {
   margin-bottom: 5px;
 }
@@ -3765,10 +3784,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003108;
+    font-family: \00003109;
   }
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .views-row .field-content a,
 .node-type-article #content .pane-related-articles-panel-pane-1 .views-row .field-content a {
   width: 140px;
   display: block;
@@ -3780,10 +3800,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003116;
+    font-family: \00003117;
   }
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title,
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title {
   margin-top: 5px;
 }
@@ -3794,10 +3815,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003118;
+    font-family: \00003119;
   }
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a,
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a {
   text-decoration: none;
   color: #000;
@@ -3809,10 +3831,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003121;
+    font-family: \00003122;
   }
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a:hover,
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a:hover {
   text-decoration: underline;
   color: #3399ff;
@@ -3824,10 +3847,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003129;
+    font-family: \00003130;
   }
 }
 
+.node-type-poll #content .pane-node-field-tags,
 .node-type-article #content .pane-node-field-tags {
   margin: 1em 0;
 }
@@ -3838,10 +3862,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003131;
+    font-family: \00003132;
   }
 }
 
+.node-type-poll #content .pane-node-field-tags h2.pane-title,
 .node-type-article #content .pane-node-field-tags h2.pane-title {
   margin: 0;
   font-size: 12px;
@@ -3856,10 +3881,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003138;
+    font-family: \00003139;
   }
 }
 
+.node-type-poll #content .pane-node-field-tags .field-items .field-item,
 .node-type-article #content .pane-node-field-tags .field-items .field-item {
   display: inline-block;
   margin-top: 5px;
@@ -3872,10 +3898,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003147;
+    font-family: \00003148;
   }
 }
 
+.node-type-poll .pane-node-comments .comment .content,
 .node-type-article .pane-node-comments .comment .content {
   margin: 1em 0;
   border-bottom: 2px dotted #ccc;
@@ -3888,10 +3915,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003152;
+    font-family: \00003153;
   }
 }
 
+.node-type-poll .pane-node-comments .comment .submitted,
 .node-type-article .pane-node-comments .comment .submitted {
   margin-left: 1em;
   display: inline-block;
@@ -3903,10 +3931,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003156;
+    font-family: \00003157;
   }
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget,
 .node-type-article .pane-node-comments .comment .vud-widget {
   float: right;
 }
@@ -3917,10 +3946,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003159;
+    font-family: \00003160;
   }
 }
 
+.node-type-poll .pane-node-comments .comment .links a,
 .node-type-article .pane-node-comments .comment .links a {
   text-transform: capitalize;
 }
@@ -3931,10 +3961,12 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003162;
+    font-family: \00003163;
   }
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .up-active,
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .up-inactive,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-inactive {
   background: url(../images/icon-vote-up.png) no-repeat;
@@ -3947,10 +3979,12 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003165;
+    font-family: \00003166;
   }
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .up-active:hover,
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .up-inactive:hover,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active:hover,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-inactive:hover {
   background-position: 0 0;
@@ -3962,10 +3996,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003169;
+    font-family: \00003170;
   }
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .down-inactive,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-inactive {
   background: url(../images/icon-vote-down.png) no-repeat;
   background-position: 0 0;
@@ -3977,10 +4012,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003172;
+    font-family: \00003173;
   }
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .down-inactive:hover,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-inactive:hover {
   background-position: 0 0;
 }
@@ -3991,10 +4027,12 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003176;
+    font-family: \00003177;
   }
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .up-score .up-current-score,
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .down-score .down-current-score,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-score .up-current-score,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-score .down-current-score {
   font-size: 12px;
@@ -4006,10 +4044,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003181;
+    font-family: \00003182;
   }
 }
 
+.node-type-poll .addthis_toolbox.addthis_default_style,
 .node-type-article .addthis_toolbox.addthis_default_style {
   margin-bottom: 1em;
 }
@@ -4020,10 +4059,11 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003183;
+    font-family: \00003184;
   }
 }
 
+.node-type-poll .addthis_toolbox.addthis_default_style a,
 .node-type-article .addthis_toolbox.addthis_default_style a {
   margin-right: 1em;
 }
@@ -4034,7 +4074,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003189;
+    font-family: \00003190;
   }
 }
 
@@ -4051,7 +4091,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003195;
+    font-family: \00003196;
   }
 }
 
@@ -4065,7 +4105,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003198;
+    font-family: \00003199;
   }
 }
 
@@ -4083,7 +4123,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003204;
+    font-family: \00003205;
   }
 }
 
@@ -4097,7 +4137,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003208;
+    font-family: \00003209;
   }
 }
 
@@ -4111,7 +4151,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003210;
+    font-family: \00003211;
   }
 }
 
@@ -4125,7 +4165,7 @@ tr.selected td {
   }
 
   line {
-    font-family: \00003216;
+    font-family: \00003217;
   }
 }
 
@@ -7838,10 +7878,12 @@ blockquote {
   }
 
   line {
-    font-family: \000033;
+    font-family: \000034;
   }
 }
 
+.node-type-poll .description,
+.node-type-poll .fivestar-widget,
 .node-type-article .description,
 .node-type-article .fivestar-widget {
   float: left;
@@ -7857,8 +7899,9 @@ blockquote {
   }
 }
 
-.node-type-article .author-feed p {
-  margin: 0;
+.node-type-poll .fivestar-summary-average-count,
+.node-type-article .fivestar-summary-average-count {
+  font-size: 12px;
 }
 
 @media -sass-debug-info {
@@ -7871,6 +7914,22 @@ blockquote {
   }
 }
 
+.node-type-poll .author-feed p,
+.node-type-article .author-feed p {
+  margin: 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss;
+  }
+
+  line {
+    font-family: \0000318;
+  }
+}
+
+.node-type-poll .pane-node-body,
 .node-type-article .pane-node-body {
   font-size: 16px;
   color: black;
@@ -7882,10 +7941,13 @@ blockquote {
   }
 
   line {
-    font-family: \0000317;
+    font-family: \0000322;
   }
 }
 
+.node-type-poll .pane-node-body p,
+.node-type-poll .pane-node-body h2,
+.node-type-poll .pane-node-body h3,
 .node-type-article .pane-node-body p,
 .node-type-article .pane-node-body h2,
 .node-type-article .pane-node-body h3 {
@@ -7898,27 +7960,13 @@ blockquote {
   }
 
   line {
-    font-family: \0000321;
-  }
-}
-
-.node-type-article .pane-node-body a {
-  color: #5E6A71;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss;
-  }
-
-  line {
     font-family: \0000326;
   }
 }
 
-.node-type-article .pane-os-core-opensource-article-share {
-  clear: left;
-  padding-top: 10px;
+.node-type-poll .pane-node-body a,
+.node-type-article .pane-node-body a {
+  color: #5E6A71;
 }
 
 @media -sass-debug-info {
@@ -7931,6 +7979,23 @@ blockquote {
   }
 }
 
+.node-type-poll .pane-os-core-opensource-article-share,
+.node-type-article .pane-os-core-opensource-article-share {
+  clear: left;
+  padding-top: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss;
+  }
+
+  line {
+    font-family: \0000336;
+  }
+}
+
+.node-type-poll .comment-by-node-author,
 .node-type-article .comment-by-node-author {
   clear: left;
 }
@@ -7941,10 +8006,11 @@ blockquote {
   }
 
   line {
-    font-family: \0000335;
+    font-family: \0000340;
   }
 }
 
+.node-type-poll ul,
 .node-type-article ul {
   padding-left: 24px;
 }
@@ -7955,27 +8021,14 @@ blockquote {
   }
 
   line {
-    font-family: \0000339;
+    font-family: \0000344;
   }
 }
 
+.node-type-poll .article-title,
 .node-type-article .article-title {
   line-height: 1.3;
   margin-bottom: 5px;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss;
-  }
-
-  line {
-    font-family: \0000343;
-  }
-}
-
-.node-type-article .article-title p {
-  margin: 0;
 }
 
 @media -sass-debug-info {
@@ -7988,6 +8041,22 @@ blockquote {
   }
 }
 
+.node-type-poll .article-title p,
+.node-type-article .article-title p {
+  margin: 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss;
+  }
+
+  line {
+    font-family: \0000353;
+  }
+}
+
+.node-type-poll .author-feed,
 .node-type-article .author-feed {
   background-position: bottom;
 }
@@ -7998,10 +8067,11 @@ blockquote {
   }
 
   line {
-    font-family: \0000352;
+    font-family: \0000357;
   }
 }
 
+.node-type-poll .pane-node-field-lead-image,
 .node-type-article .pane-node-field-lead-image {
   margin-top: 10px;
 }
@@ -8012,10 +8082,11 @@ blockquote {
   }
 
   line {
-    font-family: \0000356;
+    font-family: \0000361;
   }
 }
 
+.node-type-poll .pane-file-field-file-image-caption,
 .node-type-article .pane-file-field-file-image-caption {
   color: #999;
   font-size: 10px;
@@ -8029,10 +8100,11 @@ blockquote {
   }
 
   line {
-    font-family: \0000362;
+    font-family: \0000367;
   }
 }
 
+.node-type-poll .pane-file-field-file-image-caption p,
 .node-type-article .pane-file-field-file-image-caption p {
   margin: 0;
 }
@@ -8043,10 +8115,11 @@ blockquote {
   }
 
   line {
-    font-family: \0000368;
+    font-family: \0000373;
   }
 }
 
+.node-type-poll .pane-related-articles-panel-pane-1,
 .node-type-article .pane-related-articles-panel-pane-1 {
   margin-top: 10px;
 }
@@ -8057,27 +8130,13 @@ blockquote {
   }
 
   line {
-    font-family: \0000371;
+    font-family: \0000376;
   }
 }
 
+.node-type-poll .pane-related-articles-panel-pane-1 .pane-title,
 .node-type-article .pane-related-articles-panel-pane-1 .pane-title {
   float: none;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss;
-  }
-
-  line {
-    font-family: \0000377;
-  }
-}
-
-.node-type-article .pane-related-articles-panel-pane-1 .related-content .view-content {
-  clear: both;
-  overflow: hidden;
 }
 
 @media -sass-debug-info {
@@ -8090,9 +8149,10 @@ blockquote {
   }
 }
 
-.node-type-article .pane-related-articles-panel-pane-1 .related-content .views-row {
-  float: left;
-  width: 33.33%;
+.node-type-poll .pane-related-articles-panel-pane-1 .related-content .view-content,
+.node-type-article .pane-related-articles-panel-pane-1 .related-content .view-content {
+  clear: both;
+  overflow: hidden;
 }
 
 @media -sass-debug-info {
@@ -8101,12 +8161,14 @@ blockquote {
   }
 
   line {
-    font-family: \0000390;
+    font-family: \0000387;
   }
 }
 
-.node-type-article .pane-node-field-tags .field-item {
-  margin-top: 0 !important;
+.node-type-poll .pane-related-articles-panel-pane-1 .related-content .views-row,
+.node-type-article .pane-related-articles-panel-pane-1 .related-content .views-row {
+  float: left;
+  width: 33.33%;
 }
 
 @media -sass-debug-info {
@@ -8119,8 +8181,9 @@ blockquote {
   }
 }
 
-.node-type-article .pane-node-field-default-license {
-  text-align: right;
+.node-type-poll .pane-node-field-tags .field-item,
+.node-type-article .pane-node-field-tags .field-item {
+  margin-top: 0 !important;
 }
 
 @media -sass-debug-info {
@@ -8133,6 +8196,22 @@ blockquote {
   }
 }
 
+.node-type-poll .pane-node-field-default-license,
+.node-type-article .pane-node-field-default-license {
+  text-align: right;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss;
+  }
+
+  line {
+    font-family: \00003105;
+  }
+}
+
+.node-type-poll .pane-node-comment-form .pane-title,
 .node-type-article .pane-node-comment-form .pane-title {
   font-size: 18px;
   line-height: 1;
@@ -8146,10 +8225,11 @@ blockquote {
   }
 
   line {
-    font-family: \00003107;
+    font-family: \00003112;
   }
 }
 
+.node-type-poll .pane-node-comment-form .comment-form,
 .node-type-article .pane-node-comment-form .comment-form {
   clear: left;
 }
@@ -8160,10 +8240,11 @@ blockquote {
   }
 
   line {
-    font-family: \00003111;
+    font-family: \00003116;
   }
 }
 
+.node-type-poll .pane-node-comment-form .form-text,
 .node-type-article .pane-node-comment-form .form-text {
   font-size: 14px;
   border: 1px solid #cdcbca;
@@ -8177,10 +8258,11 @@ blockquote {
   }
 
   line {
-    font-family: \00003118;
+    font-family: \00003123;
   }
 }
 
+.node-type-poll .pane-node-comment-form .form-type-textarea label,
 .node-type-article .pane-node-comment-form .form-type-textarea label {
   display: none;
 }
@@ -8191,10 +8273,11 @@ blockquote {
   }
 
   line {
-    font-family: \00003124;
+    font-family: \00003129;
   }
 }
 
+.node-type-poll .pane-os-core-opensource-article-share .addthis_button_tweet,
 .node-type-article .pane-os-core-opensource-article-share .addthis_button_tweet {
   position: relative;
   top: 2px;
@@ -8208,10 +8291,11 @@ blockquote {
   }
 
   line {
-    font-family: \00003130;
+    font-family: \00003135;
   }
 }
 
+.node-type-poll .pane-os-core-opensource-article-share .addthis_button_tweet + a,
 .node-type-article .pane-os-core-opensource-article-share .addthis_button_tweet + a {
   position: relative;
   top: -4px;
@@ -8225,10 +8309,11 @@ blockquote {
   }
 
   line {
-    font-family: \00003138;
+    font-family: \00003143;
   }
 }
 
+.node-type-poll .pane-os-core-opensource-article-share .addthis_button_google_plusone,
 .node-type-article .pane-os-core-opensource-article-share .addthis_button_google_plusone {
   position: relative;
   top: 2px;
@@ -8241,7 +8326,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003149;
+    font-family: \00003154;
   }
 }
 
@@ -8255,7 +8340,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003154;
+    font-family: \00003159;
   }
 }
 
@@ -8269,7 +8354,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003158;
+    font-family: \00003163;
   }
 }
 
@@ -8283,7 +8368,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003163;
+    font-family: \00003168;
   }
 }
 
@@ -8301,7 +8386,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003170;
+    font-family: \00003175;
   }
 }
 
@@ -8320,7 +8405,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003180;
+    font-family: \00003185;
   }
 }
 
@@ -8337,7 +8422,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003187;
+    font-family: \00003192;
   }
 }
 
@@ -8353,7 +8438,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003193;
+    font-family: \00003198;
   }
 }
 
@@ -9058,6 +9143,49 @@ blockquote {
 
 .m-polls #poll-cancel-form {
   float: right;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/polls\/_polls-base\.scss;
+  }
+
+  line {
+    font-family: \0000331;
+  }
+}
+
+.poll .vote-form {
+  text-align: left;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/polls\/_polls-base\.scss;
+  }
+
+  line {
+    font-family: \0000334;
+  }
+}
+
+.poll .vote-form .choices {
+  display: block;
+  padding-left: 1px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/polls\/_polls-base\.scss;
+  }
+
+  line {
+    font-family: \0000342;
+  }
+}
+
+.node-type-poll .pane-node-body {
+  font-size: 12px;
 }
 
 @media -sass-debug-info {

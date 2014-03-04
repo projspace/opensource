@@ -1,7 +1,12 @@
+.node-type-poll,
 .node-type-article {
     .description,
     .fivestar-widget {
         float: left;
+    }
+
+    .fivestar-summary-average-count {
+        font-size: 12px;
     }
 
     .author-feed {

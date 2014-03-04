@@ -23,3 +23,23 @@
         float: right;
     }
 }
+
+
+
+.poll  {
+
+    .vote-form {
+        text-align: left;
+
+        .choices {
+            display: block;
+            padding-left: 1px;
+        }
+    }
+}
+
+.node-type-poll {
+    .pane-node-body {
+        font-size: 12px;
+    }
+}
