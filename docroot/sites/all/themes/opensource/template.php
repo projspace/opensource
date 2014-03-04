@@ -156,6 +156,22 @@ function opensource_preprocess_comment(&$vars) {
   );
   $vars['picture'] = theme('image_style', $image_item);
 
+  $badges_all = user_badges_get_badges($vars['elements']['#comment']->uid, array('nolimit' => TRUE));
+  if (isset($commentauthor->badges) && count($commentauthor->badges)) {
+    $badgeimgs = array();
+    foreach ($commentauthor->badges as $badge) {
+      $badgeimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $account));
+    }
+
+    $badges['user_badges']['badges'] = array(
+      '#type' => 'user_profile_item',
+      '#title' => '',
+      '#markup' => theme('user_badge_group', array('badgeimages' => $badgeimgs)),
+      '#attributes' => array('class' => array('badges')),
+    );
+    $vars['picture'] .= render($badges);
+  }
+
   $commenttime = format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL);
   $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
 }
