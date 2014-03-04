@@ -361,7 +361,7 @@ function os_poll_page_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -459,7 +459,7 @@ function os_poll_page_default_page_manager_handlers() {
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'related_articles-panel_pane_1';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'view_mode' => 'teaser',
@@ -781,7 +781,7 @@ function os_poll_page_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_2'] = $handler;
+  $export['poll_page'] = $handler;
 
   return $export;
 }
