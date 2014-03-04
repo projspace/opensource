@@ -7933,6 +7933,7 @@ blockquote {
 .node-type-article .pane-node-body {
   font-size: 16px;
   color: black;
+  margin-bottom: 2em;
 }
 
 @media -sass-debug-info {
@@ -7941,7 +7942,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000322;
+    font-family: \0000323;
   }
 }
 
@@ -7960,7 +7961,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000326;
+    font-family: \0000327;
   }
 }
 
@@ -7975,7 +7976,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000331;
+    font-family: \0000332;
   }
 }
 
@@ -7991,7 +7992,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000336;
+    font-family: \0000337;
   }
 }
 
@@ -8006,7 +8007,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000340;
+    font-family: \0000341;
   }
 }
 
@@ -8021,7 +8022,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000344;
+    font-family: \0000345;
   }
 }
 
@@ -8037,7 +8038,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000348;
+    font-family: \0000349;
   }
 }
 
@@ -8052,7 +8053,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000353;
+    font-family: \0000354;
   }
 }
 
@@ -8067,7 +8068,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000357;
+    font-family: \0000358;
   }
 }
 
@@ -8082,7 +8083,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000361;
+    font-family: \0000362;
   }
 }
 
@@ -8100,7 +8101,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000367;
+    font-family: \0000368;
   }
 }
 
@@ -8115,7 +8116,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000373;
+    font-family: \0000374;
   }
 }
 
@@ -8130,7 +8131,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000376;
+    font-family: \0000377;
   }
 }
 
@@ -8145,7 +8146,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000382;
+    font-family: \0000383;
   }
 }
 
@@ -8161,7 +8162,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000387;
+    font-family: \0000388;
   }
 }
 
@@ -8177,7 +8178,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000395;
+    font-family: \0000396;
   }
 }
 
@@ -8192,7 +8193,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003100;
+    font-family: \00003101;
   }
 }
 
@@ -8207,7 +8208,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003105;
+    font-family: \00003106;
   }
 }
 
@@ -8225,7 +8226,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003112;
+    font-family: \00003113;
   }
 }
 
@@ -8240,7 +8241,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003116;
+    font-family: \00003117;
   }
 }
 
@@ -8258,7 +8259,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003123;
+    font-family: \00003124;
   }
 }
 
@@ -8273,7 +8274,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003129;
+    font-family: \00003130;
   }
 }
 
@@ -8291,7 +8292,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003135;
+    font-family: \00003136;
   }
 }
 
@@ -8309,7 +8310,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003143;
+    font-family: \00003144;
   }
 }
 
@@ -8326,7 +8327,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003154;
+    font-family: \00003155;
   }
 }
 
@@ -8340,7 +8341,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003159;
+    font-family: \00003160;
   }
 }
 
@@ -8354,7 +8355,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003163;
+    font-family: \00003164;
   }
 }
 
@@ -8368,7 +8369,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003168;
+    font-family: \00003169;
   }
 }
 
@@ -8386,7 +8387,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003175;
+    font-family: \00003176;
   }
 }
 
@@ -8405,7 +8406,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003185;
+    font-family: \00003186;
   }
 }
 
@@ -8422,7 +8423,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003192;
+    font-family: \00003193;
   }
 }
 
@@ -8438,7 +8439,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003198;
+    font-family: \00003199;
   }
 }
 
@@ -9070,6 +9071,20 @@ blockquote {
 
 .pane-node-comments .pane-title:after {
   content: '';
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss;
+  }
+
+  line {
+    font-family: \0000315;
+  }
+}
+
+.pane-node-comment-form {
+  margin-top: 2em;
 }
 
 @media -sass-debug-info {
