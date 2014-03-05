@@ -495,7 +495,7 @@ function opensource_preprocess_search_result(&$vars) {
 function opensource_user_badge($variables) {
   $badge = $variables['badge'];
 
-  if($variables['comment_page'] == TRUE) {
+  if(isset($variables['comment_page']) && $variables['comment_page'] == TRUE) {
     $image = _user_badges_build_image($badge);
     $image = preg_replace('/.png/', '_sm.png', $image);
     $image = preg_replace('/_2[0-9]{3}.png/', '_sm.png', $image);
