@@ -158,8 +158,19 @@ function opensource_preprocess_comment(&$vars) {
 
   if (isset($commentauthor->badges) && count($commentauthor->badges)) {
     $badgeimgs = array();
+    $display_badge = '';
     foreach ($commentauthor->badges as $badge) {
       $badgeimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE));
+      if($badge->weight > 190) {
+        if (isset($vars['badge_role'])) break; //seeing the next role badge. should only display the highest ordered.
+        $badgerollimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE));
+      } elseif($badge->weight == -20) {
+        $badgegreenimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE));
+      } elseif($badge->weight == -30) {
+        $badgeblueimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE));
+      } elseif($badge->weight == -40) {
+        $badgeblueimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE));
+      }
     }
 
     $badges['user_badges']['badges'] = array(
@@ -168,9 +179,35 @@ function opensource_preprocess_comment(&$vars) {
       '#markup' => theme('user_badge_group', array('badgeimages' => $badgeimgs)),
       '#attributes' => array('class' => array('badges')),
     );
-    $vars['picture'] .= render($badges);
+    if(isset($badgerollimgs)) {
+      $rollbadges['user_badges']['badges'] = array(
+        '#type' => 'user_profile_item',
+        '#title' => '',
+        '#markup' => theme('user_badge_group', array('badgeimages' => $badgerollimgs)),
+        '#attributes' => array('class' => array('roll_badges')),
+      );
+      $display_badge .= render($rollbadges);
+    }
+    elseif(isset($badgegreenimgs)) {
+      $greenbadges['user_badges']['badges'] = array(
+        '#type' => 'user_profile_item',
+        '#title' => '',
+        '#markup' => theme('user_badge_group', array('badgeimages' => $badgegreenimgs)),
+        '#attributes' => array('class' => array('green_badges')),
+      );
+      $display_badge .= render($greenbadges);
+    }
+    elseif(isset($badgeblueimgs)) {
+      $bluebadges['user_badges']['badges'] = array(
+        '#type' => 'user_profile_item',
+        '#title' => '',
+        '#markup' => theme('user_badge_group', array('badgeimages' => $badgeblueimgs)),
+        '#attributes' => array('class' => array('blue_badges')),
+      );
+      $display_badge .= render($bluebadges);
+    }
   }
-
+  $vars['badges'] = $display_badge;
   $commenttime = format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL);
   $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
 }
@@ -494,7 +531,6 @@ function opensource_preprocess_search_result(&$vars) {
  */
 function opensource_user_badge($variables) {
   $badge = $variables['badge'];
-
   if(isset($variables['comment_page']) && $variables['comment_page'] == TRUE) {
     $image = _user_badges_build_image($badge);
     $image = preg_replace('/.png/', '_sm.png', $image);

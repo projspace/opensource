@@ -62,6 +62,7 @@
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $picture ?>
 
+  <?php print render($badges); ?>
   <?php if ($new): ?>
     <span class="new"><?php print $new ?></span>
   <?php endif; ?>
