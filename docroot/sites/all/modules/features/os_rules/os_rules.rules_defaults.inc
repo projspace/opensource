@@ -305,5 +305,30 @@ function os_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_user_is_assigned_badge_via_role'] = entity_import('rules_config', '{ "rules_user_is_assigned_badge_via_role" : {
+      "LABEL" : "User is assigned badge via role",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "badge" ],
+      "REQUIRES" : [ "rules", "os_badges" ],
+      "ON" : { "user_badges_badge_given_via_role" : [] },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "site:current-user:field-profile-point-notification" ],
+            "value" : 1
+          }
+        }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : "[user:mail]",
+            "subject" : " opensource.com badge added.",
+            "message" : "[user:name],\\r\\n\\r\\nCongratulations! You\\u0027ve been promoted.\\r\\nYou\\u0027ve gained enough points by participating at opensource.com to move up and join a new role.\\r\\n\\r\\nAs a new !rolename, you\\u0027re now cooler than you were just five minutes ago. We extend our warmest thanks for your contributions and participation.\\r\\n\\r\\nBadge : [badge-name:value]\\r\\n\\r\\nQuestions about our roles and badges system? Get more details here:\\r\\nhttp:\\/\\/opensource.com\\/points-and-badges\\r\\n\\r\\nThank you,\\r\\nthe opensource.com team",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
   return $items;
 }
