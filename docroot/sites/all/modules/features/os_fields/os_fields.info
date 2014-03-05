@@ -42,6 +42,7 @@ features[field_base][] = field_file_image_caption
 features[field_base][] = field_file_image_title_text
 features[field_base][] = field_lead_image
 features[field_base][] = field_location
+features[field_base][] = field_profile_point_notification
 features[field_base][] = field_rating
 features[field_base][] = field_related_poll
 features[field_base][] = field_section
