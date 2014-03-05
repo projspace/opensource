@@ -163,7 +163,7 @@ function opensource_preprocess_comment(&$vars) {
       //$badgeimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE));
       if($badge->weight > 190) {
         if (isset($vars['badge_role'])) break; //seeing the next role badge. should only display the highest ordered.
-        $badgeimgs[] = '<div class="badge_role">' . theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE)) . '</div>';
+        $badgerollimgs[] = '<div class="badge_role">' . theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE)) . '</div>';
       } elseif($badge->weight == -20) {
         $badgeimgs[] = '<div class="badge_green">' . theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE)) . '</div>';
       } elseif($badge->weight == -30) {
@@ -179,7 +179,14 @@ function opensource_preprocess_comment(&$vars) {
       '#markup' => theme('user_badge_group', array('badgeimages' => $badgeimgs)),
       '#attributes' => array('class' => array('badges')),
     );
+    $badgerollimages['user_badges']['badges'] = array(
+      '#type' => 'user_profile_item',
+      '#title' => '',
+      '#markup' => theme('user_badge_group', array('badgeimages' => $badgerollimgs)),
+      '#attributes' => array('class' => array('badges')),
+    );
   }
+  $vars['picture'] .= render($badgerollimages);
   $vars['badges'] = render($badges);
   $commenttime = format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL);
   $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
