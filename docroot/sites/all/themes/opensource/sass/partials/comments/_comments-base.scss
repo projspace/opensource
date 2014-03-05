@@ -10,8 +10,34 @@
             content: '';
         }
     }
+
+    .permalink {
+        display: none;
+    }
+
+    dd {
+        margin: 0;
+    }
+
+    .links {
+        float: right;
+    }
+
+    .submitted {
+        margin: 0;
+    }
 }
 
 .pane-node-comment-form {
     margin-top: 2em;
+}
+
+.workflow-form-container {
+    .views-field-edit-node {
+        display: none;
+    }
+
+    .form-submit {
+        float: right;
+    }
 }
