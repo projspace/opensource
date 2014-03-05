@@ -156,11 +156,10 @@ function opensource_preprocess_comment(&$vars) {
   );
   $vars['picture'] = theme('image_style', $image_item);
 
-  $badges_all = user_badges_get_badges($vars['elements']['#comment']->uid, array('nolimit' => TRUE));
   if (isset($commentauthor->badges) && count($commentauthor->badges)) {
     $badgeimgs = array();
     foreach ($commentauthor->badges as $badge) {
-      $badgeimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $account));
+      $badgeimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE));
     }
 
     $badges['user_badges']['badges'] = array(
@@ -486,5 +485,56 @@ function opensource_preprocess_search_result(&$vars) {
     $vars['author'] = l(user_load($node->uid)->name, 'user/' . $node->uid);
 
     $vars['node_type'] = $node->type;
+  }
+}
+
+/**
+ * Return html representation of a badge image
+ * (note: theme_image does the check_plaining)
+ */
+function opensource_user_badge($variables) {
+  $badge = $variables['badge'];
+
+  if($variables['comment_page'] == TRUE) {
+    $image = _user_badges_build_image($badge);
+    $image = preg_replace('/.png/', '_sm.png', $image);
+    $image = preg_replace('/_2[0-9]{3}.png/', '_sm.png', $image);
+  }
+  else {
+    $image = _user_badges_build_image($badge);
+  }
+
+  // We don't link the badge if there is no link and no default,
+  // or if the default is overridden.
+  if (!isset($badge->href) || ($badge->href == '' && !variable_get('user_badges_defaulthref', ''))
+    || drupal_strtolower($badge->href) == '<none>'
+  ) {
+    return $image;
+  }
+  else {
+    $href = $badge->href ? $badge->href : variable_get('user_badges_defaulthref', '');
+
+    // Implement token replacement.
+    if (module_exists('token')) {
+      $vars = array('userbadge' => $badge);
+      if (isset($variables['account'])) {
+        $vars['user'] = $variables['account'];
+      }
+      $href = token_replace($href, $vars);
+    }
+
+    $pieces = parse_url($href);
+    $pieces['html'] = TRUE;
+    $pieces['path'] = isset($pieces['path']) ? $pieces['path'] : '';
+    if (isset($pieces['scheme'])) {
+      $pieces['path'] = $pieces['scheme'] . '://' . $pieces['host'] . $pieces['path'];
+    }
+
+    // We need to convert the query to an associative array before we pass it
+    // to the l() function.
+    if (isset($pieces['query'])) {
+      $pieces['query'] = drupal_get_query_array($pieces['query']);
+    }
+    return l($image, $pieces['path'], $pieces);
   }
 }
