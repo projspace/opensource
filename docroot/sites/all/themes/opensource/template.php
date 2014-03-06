@@ -419,11 +419,11 @@ function opensource_preprocess_field(&$vars) {
         break;
       case 'CC-BY 4.0':
         $vars['items']['0']['#markup'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-4.png" title="This work is licensed under a Creative Commons Attribution 4.0 International License." /></a>';
+        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-4.png" title="This work is licensed under a Creative Commons Attribution 4.0 International License." /></a>';
         break;
       case 'CC-BY 3.0':
               $vars['items']['0']['#markup'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
-        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-3.png" title="This work is licensed under a Creative Commons Attribution 3.0 Unported License." /></a>';
+        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-3.png" title="This work is licensed under a Creative Commons Attribution 3.0 Unported License." /></a>';
         break;
 
       default:
