@@ -1249,7 +1249,6 @@ tr.selected td {
 .node-type-article .pane-node-comments .comment .content {
   margin: 1em 0;
   border-bottom: 2px dotted #ccc;
-  padding-bottom: 1em;
 }
 
 .node-type-poll .pane-node-comments .comment .submitted,
@@ -3066,6 +3065,10 @@ blockquote {
 }
 
 .pane-node-comments .links {
+  padding-left: 0;
+}
+
+.pane-node-comments .links .comment-reply {
   float: right;
 }
 
@@ -3073,11 +3076,39 @@ blockquote {
   margin: 0;
 }
 
+.pane-node-comments .user-picture-badges {
+  float: left;
+}
+
+.pane-node-comments .submitted .user_badges div {
+  display: inline;
+  margin-top: 2px;
+  margin-right: 3px;
+  padding: 2px;
+}
+
+.pane-node-comments .content {
+  clear: both;
+}
+
+.pane-node-comments .reset-active {
+  display: none;
+}
+
+.vud-widget .up-score,
+.vud-widget .down-score {
+  display: inline-block;
+}
+
 .pane-node-comment-form {
   margin-top: 2em;
 }
 
 .workflow-form-container .views-field-edit-node {
+  display: none;
+}
+
+.workflow-form-container .views-field-edit-node .reset-active {
   display: none;
 }
 
