@@ -90,5 +90,6 @@
   </div>
 
   <?php print render($content['links']) ?>
+  <?php print $mark_as_inappropriate ?>
   <?php print render($comment->vud_comment_widget); ?>
 </div>

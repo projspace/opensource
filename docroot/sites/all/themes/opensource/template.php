@@ -190,6 +190,13 @@ function opensource_preprocess_comment(&$vars) {
   $vars['badges'] = render($badges);
   $commenttime = format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL);
   $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
+
+  if (user_access('administer comments')) {
+    $vars['mark_as_inappropriate'] = l(t('Mark as inappropriate'), 'mollom/report/comment/' . $vars['elements']['#comment']->cid);
+  }
+  else {
+    $vars['mark_as_inappropriate'] = '';
+  }
 }
 
 /**
