@@ -390,23 +390,23 @@ class DrupalVersion6 extends DrupalVersion {
       foreach ($result as $term_row) {
         $row->{$term_row->vid}[] = $term_row->tid;
       }
-    }
 
-    if (Database::getConnection('default',
-                                $this->arguments['source_connection'])
-          ->schema()->tableExists('upload')) {
-      $result =
-        Database::getConnection('default', $this->arguments['source_connection'])
-                   ->select('upload', 'u')
-                   ->fields('u', array('fid', 'description', 'list', 'weight'))
-                   ->condition('vid', $revision_id)
-                   ->orderBy('weight')
-                   ->execute();
-      foreach ($result as $upload_row) {
-        $row->upload[] = $upload_row->fid;
-        $row->{'upload:description'}[] = $upload_row->description;
-        $row->{'upload:list'}[] = $upload_row->list;
-        $row->{'upload:weight'}[] = $upload_row->weight;
+      if (Database::getConnection('default',
+                                  $this->arguments['source_connection'])
+            ->schema()->tableExists('upload')) {
+        $result =
+          Database::getConnection('default', $this->arguments['source_connection'])
+                     ->select('upload', 'u')
+                     ->fields('u', array('fid', 'description', 'list', 'weight'))
+                     ->condition('vid', $revision_id)
+                     ->orderBy('weight')
+                     ->execute();
+        foreach ($result as $upload_row) {
+          $row->upload[] = $upload_row->fid;
+          $row->{'upload:description'}[] = $upload_row->description;
+          $row->{'upload:list'}[] = $upload_row->list;
+          $row->{'upload:weight'}[] = $upload_row->weight;
+        }
       }
     }
   }
