@@ -3104,16 +3104,8 @@ blockquote {
   margin-top: 2em;
 }
 
-.workflow-form-container .views-field-edit-node {
+.workflow-form-container {
   display: none;
-}
-
-.workflow-form-container .views-field-edit-node .reset-active {
-  display: none;
-}
-
-.workflow-form-container .form-submit {
-  float: right;
 }
 
 .m-polls .views-field-comment-count,
