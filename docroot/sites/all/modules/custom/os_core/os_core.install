@@ -120,6 +120,7 @@ function os_core_update_7104() {
 function os_core_update_7105() {
   module_disable(array('save_draft'));
 
+  // Enable workflow (with wid=1) for some of the types.
   $values = array(
     array(
       'type' => 'article',
@@ -138,6 +139,7 @@ function os_core_update_7105() {
       'wid' => 1,
     ),
   );
+
   $query = db_insert('workflow_type_map')->fields(array('type', 'wid'));
   foreach ($values as $record) {
     $query->values($record);

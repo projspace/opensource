@@ -51,9 +51,7 @@ function os_badges_award_role_badge($uid) {
   // If the user doesn't have the intended badge, award it now.
   if (!array_key_exists($role_badge->bid, $badges)) {
     user_badges_user_add_badge($uid, $role_badge->bid, 'user');
-    global $user;
-    rules_invoke_event('user_badges_badge_given_via_role', $user,
-      $role_badge->bid, $role_badge->weight, $role_badge->name);
+    rules_invoke_event('user_badges_badge_given_via_role', user_load($uid), $role_badge->bid, $role_badge->weight, $role_badge->name);
     drupal_set_message(t("Awarded badge %badge_name to user %uid.", array('%badge_name' => $role_badge->name, '%uid' => $uid)), 'status');
   }
 }

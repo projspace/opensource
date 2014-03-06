@@ -19,10 +19,10 @@ function os_events_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'event_node_form' && $user->uid > 0) {
     drupal_set_title('Submit an event below');
     $node = node_load($form['nid']['#value']);
-    if(!$node->field_event_submitter_name[LANGUAGE_NONE][0]['value']) {
+    if (!$node->field_event_submitter_name[LANGUAGE_NONE][0]['value']) {
       $form['field_event_submitter_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $user->name;
     }
-    if(!$node->field_event_submitter_email[LANGUAGE_NONE][0]['email']) {
+    if (!$node->field_event_submitter_email[LANGUAGE_NONE][0]['email']) {
       $form['field_event_submitter_email'][LANGUAGE_NONE][0]['email']['#default_value'] = $user->mail;
     }
   }
