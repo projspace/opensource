@@ -192,7 +192,7 @@ function opensource_preprocess_comment(&$vars) {
   $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
 
   if (user_access('administer comments')) {
-    $vars['mark_as_inappropriate'] = l(t('Report to Mollom'), 'mollom/report/comment/' . $vars['elements']['#comment']->cid);
+    $vars['mark_as_inappropriate'] = l(t('Report to Mollom'), 'mollom/report/comment/' . $vars['elements']['#comment']->cid, array('query' => array('destination' => current_path())));
   }
   else {
     $vars['mark_as_inappropriate'] = '';
