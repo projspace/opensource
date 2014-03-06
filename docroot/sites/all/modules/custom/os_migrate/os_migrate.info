@@ -1,0 +1,15 @@
+name = "OpenSource D6 to D7 migration"
+description = "Migrate content from OS6 site to D7 version"
+package = "Development"
+core = 7.x
+
+; Migrate framework.
+dependencies[] = migrate
+dependencies[] = migrate_d2d
+
+; Features defining the entities, bundles and fields we are migrating.
+dependencies[] = os_user
+
+; Support files.
+files[] = user.inc
+files[] = node.inc
