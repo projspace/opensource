@@ -186,7 +186,7 @@ function opensource_preprocess_comment(&$vars) {
       '#attributes' => array('class' => array('badges')),
     );
   }
-  $vars['picture'] .= render($badgerollimages);
+  $vars['rollbadges'] = render($badgerollimages);
   $vars['badges'] = render($badges);
   $commenttime = format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL);
   $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
