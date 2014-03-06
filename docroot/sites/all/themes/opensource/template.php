@@ -1,4 +1,3 @@
-
 <?php
 /**
  * @file
@@ -520,8 +519,8 @@ function opensource_user_badge($variables) {
   $badge = $variables['badge'];
   if(isset($variables['comment_page']) && $variables['comment_page'] == TRUE) {
     $image = _user_badges_build_image($badge);
-    $image = preg_replace('/.png/', '_sm.png', $image);
-    $image = preg_replace('/_2[0-9]{3}.png/', '_sm.png', $image);
+    $image = str_replace('.png', '_sm.png', $image);
+    $image = preg_replace('/_2[0-9]{3}\.png/', '_sm.png', $image);
   }
   else {
     $image = _user_badges_build_image($badge);

@@ -305,13 +305,13 @@ function os_rules_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_user_is_assigned_badge_via_role'] = entity_import('rules_config', '{ "rules_user_is_assigned_badge_via_role" : {
-      "LABEL" : "User is assigned badge via role",
+  $items['rules_user_awarded_role_badge'] = entity_import('rules_config', '{ "rules_user_awarded_role_badge" : {
+      "LABEL" : "User is awarded a role badge",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "badge" ],
       "REQUIRES" : [ "rules", "os_badges" ],
-      "ON" : { "user_badges_badge_given_via_role" : [] },
+      "ON" : { "user_badges_role_badge_given" : [] },
       "IF" : [
         { "data_is" : {
             "data" : [ "site:current-user:field-profile-point-notification" ],

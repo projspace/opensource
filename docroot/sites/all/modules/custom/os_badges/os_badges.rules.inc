@@ -27,9 +27,9 @@ function os_badges_rules_event_info() {
     ),
   );
   $items = array(
-    'user_badges_badge_given_via_role' => array(
+    'user_badges_role_badge_given' => array(
       'group' => t('User'),
-      'label' => t('User was given a badge via role'),
+      'label' => t('User was awarded a role badge'),
       'variables' => $variables,
       'access callback' => 'user_badges_rules_integration_access',
     ),
