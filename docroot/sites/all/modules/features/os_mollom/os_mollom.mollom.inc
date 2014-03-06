@@ -1,24 +1,13 @@
 <?php
 /**
  * @file
- * os_mollom.features.defaultconfig.inc
+ * os_mollom.mollom.inc
  */
 
 /**
- * Implements hook_defaultconfig_features().
+ * Implements hook_default_mollom_form().
  */
-function os_mollom_defaultconfig_features() {
-  return array(
-    'os_mollom' => array(
-      'default_mollom_form' => 'default_mollom_form',
-    ),
-  );
-}
-
-/**
- * Implements hook_defaultconfig_default_mollom_form().
- */
-function os_mollom_defaultconfig_default_mollom_form() {
+function os_mollom_default_mollom_form() {
   $export = array();
 
   $mollom_form = new stdClass();
