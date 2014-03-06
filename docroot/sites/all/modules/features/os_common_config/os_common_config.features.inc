@@ -158,3 +158,44 @@ function os_common_config_wysiwyg_default_profiles_alter(&$data) {
     ); /* WAS: '' */
   }
 }
+
+/**
+ * Implements hook_flag_default_flags().
+ */
+function os_common_config_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Report As Spam".
+  $flags['comment_abuse'] = array(
+    'entity_type' => 'comment',
+    'title' => 'Report As Spam',
+    'global' => 1,
+    'types' => array(
+      0 => 'comment_node_article',
+      1 => 'comment_node_poll',
+    ),
+    'flag_short' => 'Report abuse or spam',
+    'flag_long' => 'Report Comment To Moderators',
+    'flag_message' => '',
+    'unflag_short' => 'Reported',
+    'unflag_long' => 'Withdraw Report To Moderators',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 'full',
+      'token' => 0,
+    ),
+    'show_as_field' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => FALSE,
+    'api_version' => 3,
+    'module' => 'os_common_config',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  return $flags;
+
+}

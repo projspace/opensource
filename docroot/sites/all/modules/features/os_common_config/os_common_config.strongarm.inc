@@ -324,7 +324,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_generated_last';
-  $strongarm->value = 1393819666;
+  $strongarm->value = 1393848550;
   $export['xmlsitemap_generated_last'] = $strongarm;
 
   $strongarm = new stdClass();
