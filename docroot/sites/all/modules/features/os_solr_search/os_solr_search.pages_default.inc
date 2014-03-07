@@ -19,7 +19,18 @@ function os_solr_search_default_page_manager_pages() {
   $page->access = array(
     'logic' => 'and',
   );
-  $page->menu = array();
+  $page->menu = array(
+    'type' => 'default tab',
+    'title' => 'Content',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
   $page->arguments = array(
     'input' => array(
       'id' => 1,
@@ -140,8 +151,8 @@ function os_solr_search_default_page_manager_pages() {
     $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-monthly-favorites';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'common_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -162,11 +173,11 @@ function os_solr_search_default_page_manager_pages() {
     $pane->pid = 'new-4';
     $pane->panel = 'sidebar';
     $pane->type = 'block';
-    $pane->subtype = 'bean-new-to-open-source';
+    $pane->subtype = 'facetapi-IRyHGFDa1FIGczNDu0Hh1cq30TCZMOkX';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -183,7 +194,7 @@ function os_solr_search_default_page_manager_pages() {
     $pane->pid = 'new-5';
     $pane->panel = 'sidebar';
     $pane->type = 'block';
-    $pane->subtype = 'facetapi-IRyHGFDa1FIGczNDu0Hh1cq30TCZMOkX';
+    $pane->subtype = 'facetapi-GiIy4zr9Gu0ZSa0bumw1Y9qIIpIDf1wu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -204,7 +215,7 @@ function os_solr_search_default_page_manager_pages() {
     $pane->pid = 'new-6';
     $pane->panel = 'sidebar';
     $pane->type = 'block';
-    $pane->subtype = 'facetapi-GiIy4zr9Gu0ZSa0bumw1Y9qIIpIDf1wu';
+    $pane->subtype = 'facetapi-wWWinJ0eOefOtAMbjo2yl86Mnf1rO12j';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -221,69 +232,6 @@ function os_solr_search_default_page_manager_pages() {
     $pane->locks = array();
     $display->content['new-6'] = $pane;
     $display->panels['sidebar'][3] = 'new-6';
-    $pane = new stdClass();
-    $pane->pid = 'new-7';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'facetapi-wWWinJ0eOefOtAMbjo2yl86Mnf1rO12j';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['sidebar'][4] = 'new-7';
-    $pane = new stdClass();
-    $pane->pid = 'new-8';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'bean-submit-an-article';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['sidebar'][5] = 'new-8';
-    $pane = new stdClass();
-    $pane->pid = 'new-9';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'os_core-opensource-social-links';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['sidebar'][6] = 'new-9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2';
   $handler->conf['display'] = $display;

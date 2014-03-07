@@ -60,20 +60,14 @@ function os_solr_search_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_solr_last_optimize';
-  $strongarm->value = 1393916592;
+  $strongarm->value = 1394094902;
   $export['search_api_solr_last_optimize'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_tasks';
-  $strongarm->value = array(
-    'solr_server' => array(
-      'node_index' => array(
-        0 => 'add',
-      ),
-    ),
-  );
+  $strongarm->value = array();
   $export['search_api_tasks'] = $strongarm;
 
   $strongarm = new stdClass();
