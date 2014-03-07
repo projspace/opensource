@@ -50,7 +50,9 @@ function os_badges_update_7100() {
   $path = drupal_get_path('module', 'os_badges') . '/images/';
   foreach ($list_badges as $data) {
     $image = str_replace('.png', '_sm.png', $data['image']);
-    $fid = os_base_file_create($path . $image, 'public://badges');
+    // Remove the year from image file name.
+    $image = preg_replace('/_2[0-9]{3}_sm\.png/', '_sm.png', $image);
+    $fid = os_base_file_create($path . $image, 'public://badges', FILE_EXISTS_REPLACE);
     $file = file_load($fid);
     file_usage_add($file, 'os_badges', 'os_badge', 0);
   }
@@ -75,6 +77,11 @@ function os_badges_uninstall() {
       drupal_form_submit('user_badges_delete_form', $form_state);
     }
   }
+
+  // Delete our file_usage entries.
+  db_delete('file_usage')
+    ->condition('module', 'os_badges')
+    ->execute();
 }
 
 /**
@@ -134,7 +141,7 @@ function _os_badges_list_badges() {
       'weight' => 0,
     ),
     'Founding Member' => array(
-      'image' => 'osdc_badge_founding.png',
+      'image' => 'osdc_badge_founding_member.png',
       'weight' => 0,
     ),
     'Comment Gardener' => array(
@@ -159,6 +166,10 @@ function _os_badges_list_badges() {
       'image' => 'osdc_award_peopleschoice.png',
       'weight' => -40,
     ),
+    "Awesome Author Award" => array(
+      'image' => 'osdc_award_author.png',
+      'weight' => -40,
+    ),
     "Moderator's Choice Award 2011" => array(
       'image' => 'osdc_award_modchoice_2011.png',
       'weight' => -40,
@@ -176,11 +187,31 @@ function _os_badges_list_badges() {
       'weight' => -40,
     ),
     "Conversation Starter Award 2013" => array(
-      'image' => 'osdc_award_convo_starter_2013.png',
+      'image' => 'osdc_award_conversation_starter_2013.png',
       'weight' => -40,
     ),
     "Social Sharer Award 2013" => array(
       'image' => 'osdc_award_social_sharer_2013.png',
+      'weight' => -40,
+    ),
+    "Moderator's Choice Award 2014" => array(
+      'image' => 'osdc_award_modchoice_2014.png',
+      'weight' => -40,
+    ),
+    "People's Choice Award 2014" => array(
+      'image' => 'osdc_award_peopleschoice_2014.png',
+      'weight' => -40,
+    ),
+    "Conversation Starter Award 2014" => array(
+      'image' => 'osdc_award_conversation_starter_2014.png',
+      'weight' => -40,
+    ),
+    "Social Sharer Award 2014" => array(
+      'image' => 'osdc_award_social_sharer_2014.png',
+      'weight' => -40,
+    ),
+    "Awesome Author Award 2014" => array(
+      'image' => 'osdc_award_author_2014.png',
       'weight' => -40,
     ),
   );
