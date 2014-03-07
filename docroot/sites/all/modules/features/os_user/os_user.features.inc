@@ -27,6 +27,15 @@ function os_user_field_group_info_alter(&$data) {
 }
 
 /**
+ * Implements hook_field_default_field_instances_alter().
+ */
+function os_user_field_default_field_instances_alter(&$data) {
+  if (isset($data['user-user-field_user_picture'])) {
+    $data['user-user-field_user_picture']['settings']['min_resolution'] = ''; /* WAS: '300x200' */
+  }
+}
+
+/**
  * Implements hook_flag_default_flags().
  */
 function os_user_flag_default_flags() {
