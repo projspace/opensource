@@ -27,7 +27,7 @@ function legal_openid_form_alter(&$form, &$form_state, $form_id) {
     drupal_add_js(drupal_get_path('module', 'legal_openid') . '/legal_openid.js');
   }
   // Only anonymous users on the comment form.
-  elseif ($form_id == 'comment_node_article_form' && $user->uid == 0) {
+  elseif (($form_id == 'comment_node_article_form' && $user->uid == 0) || $form_id == 'comment_node_poll_form' && $user->uid == 0 ) {
     $form['legal_checkbox'] = array(
       '#type' => 'checkbox',
       '#required' => TRUE,

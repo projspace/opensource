@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function os_common_config_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_filter_default_formats_alter().
  */
 function os_common_config_filter_default_formats_alter(&$data) {
@@ -63,13 +72,13 @@ function os_common_config_filter_default_formats_alter(&$data) {
     $data['panopoly_html_text']['filters']['wysiwyg']['settings']['style_text']['text-indent'] = 'text-indent'; /* WAS: 0 */
     $data['panopoly_html_text']['filters']['wysiwyg']['settings']['style_text']['text-transform'] = 'text-transform'; /* WAS: 0 */
     $data['panopoly_html_text']['filters']['wysiwyg']['settings']['valid_elements'] = 'a[!href|target<_blank|title|style|class],
-    div[style|class|align<center?justify?left?right],
-    br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,hr,
-    span[style],p[style|class],
-    h1[style|class],h2[style|class],h3[style|class],h4[style|class],h5[style|class],h6[style|class],
-    img[!src|title|alt|style|width|height|class|hspace|vspace],
-    dl[style|class|align<center?justify?left?right],
-    @[style|class]'; /* WAS: 'a[!href|target<_blank|title|style|class],
+        div[style|class|align<center?justify?left?right],
+        br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,hr,
+        span[style],p[style|class],
+        h1[style|class],h2[style|class],h3[style|class],h4[style|class],h5[style|class],h6[style|class],
+        img[!src|title|alt|style|width|height|class|hspace|vspace],
+        dl[style|class|align<center?justify?left?right],
+        @[style|class]'; /* WAS: 'a[!href|target<_blank|title|style|class],
     div[style|class|align<center?justify?left?right],
     br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,
     span[style],p[style|class],
@@ -115,13 +124,13 @@ function os_common_config_filter_default_formats_alter(&$data) {
       'zoom' => 'zoom',
     ); /* WAS: '' */
     $data['panopoly_wysiwyg_text']['filters']['wysiwyg']['settings']['valid_elements'] = 'a[!href|target<_blank|title|style|class],
-    div[style|class|align<center?justify?left?right],
-    br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,hr,
-    span[style],p[style|class],
-    h1[style|class],h2[style|class],h3[style|class],h4[style|class],h5[style|class],h6[style|class],
-    img[!src|title|alt|style|width|height|class|hspace|vspace],
-    dl[style|class|align<center?justify?left?right],
-    @[style|class]'; /* WAS: 'a[!href|target<_blank|title|style|class],
+        div[style|class|align<center?justify?left?right],
+        br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,hr,
+        span[style],p[style|class],
+        h1[style|class],h2[style|class],h3[style|class],h4[style|class],h5[style|class],h6[style|class],
+        img[!src|title|alt|style|width|height|class|hspace|vspace],
+        dl[style|class|align<center?justify?left?right],
+        @[style|class]'; /* WAS: 'a[!href|target<_blank|title|style|class],
     div[style|class|align<center?justify?left?right],
     br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,
     span[style],p[style|class],
@@ -148,4 +157,45 @@ function os_common_config_wysiwyg_default_profiles_alter(&$data) {
       'media' => 1,
     ); /* WAS: '' */
   }
+}
+
+/**
+ * Implements hook_flag_default_flags().
+ */
+function os_common_config_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Report As Spam".
+  $flags['comment_abuse'] = array(
+    'entity_type' => 'comment',
+    'title' => 'Report As Spam',
+    'global' => 1,
+    'types' => array(
+      0 => 'comment_node_article',
+      1 => 'comment_node_poll',
+    ),
+    'flag_short' => 'Report abuse or spam',
+    'flag_long' => 'Report Comment To Moderators',
+    'flag_message' => '',
+    'unflag_short' => 'Reported',
+    'unflag_long' => 'Withdraw Report To Moderators',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 'full',
+      'token' => 0,
+    ),
+    'show_as_field' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => FALSE,
+    'api_version' => 3,
+    'module' => 'os_common_config',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  return $flags;
+
 }

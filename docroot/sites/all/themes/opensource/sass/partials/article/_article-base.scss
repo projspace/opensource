@@ -1,7 +1,12 @@
+.node-type-poll,
 .node-type-article {
     .description,
     .fivestar-widget {
         float: left;
+    }
+
+    .fivestar-summary-average-count {
+        font-size: 12px;
     }
 
     .author-feed {
@@ -13,6 +18,7 @@
     .pane-node-body {
         font-size: 16px;
         color: black;
+        margin-bottom: 2em;
 
         p, h2, h3 {
             margin: 12px 0;

@@ -60,7 +60,11 @@
  */
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php print $picture ?>
+
+  <div class="user-picture-badges">
+    <?php print $picture ?>
+    <?php print $rollbadges ?>
+  </div>
 
   <?php if ($new): ?>
     <span class="new"><?php print $new ?></span>
@@ -69,6 +73,7 @@
   <div class="submitted">
     <?php print $permalink; ?>
     <?php print $submitted; ?>
+    <?php print render($badges); ?>
   </div>
 
   <div class="content"<?php print $content_attributes; ?>>
@@ -85,5 +90,6 @@
   </div>
 
   <?php print render($content['links']) ?>
+  <?php print $mark_as_inappropriate ?>
   <?php print render($comment->vud_comment_widget); ?>
 </div>

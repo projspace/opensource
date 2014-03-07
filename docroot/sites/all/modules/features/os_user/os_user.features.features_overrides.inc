@@ -16,6 +16,7 @@ function os_user_features_override_default_overrides() {
   $overrides["field_group.group_user_profile|user|user|form.data|children|2"] = 'field_location';
   $overrides["field_group.group_user_profile|user|user|form.data|children|3"] = 'field_website';
   $overrides["field_group.group_user_profile|user|user|form.data|children|4"] = 'field_community_description';
+  $overrides["field_group.group_user_profile|user|user|form.data|children|5"] = 'field_profile_point_notification';
 
  return $overrides;
 }

@@ -70,7 +70,7 @@ function os_workflow_workflow_default_workflows() {
       0 => array(
         'state_name' => '(creation)',
         'target_state_name' => 'Review',
-        'roles' => 'workflow_features_author_name',
+        'roles' => 'workflow_features_author_name,anonymous user',
       ),
       1 => array(
         'state_name' => '(creation)',
@@ -92,7 +92,7 @@ function os_workflow_workflow_default_workflows() {
       0 => 'article',
       1 => 'event',
       2 => 'page',
-      3 => 'panopoly_page',
+      3 => 'poll',
     ),
   );
 
