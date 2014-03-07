@@ -54,6 +54,17 @@
         display: none;
     }
 
+    .indented {
+        .indented {
+            .indented {
+                .indented {
+                    .indented {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .vud-widget {
