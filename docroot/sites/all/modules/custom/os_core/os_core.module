@@ -383,10 +383,35 @@ function os_core_form_comment_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Adds the required JS for Add Article page.
  */
-function os_core_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'article_node_form') {
-    drupal_add_js(drupal_get_path('module', 'os_core') . '/os_core.js');
+function os_core_form_article_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module', 'os_core') . '/os_core.js');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Adds a submit handler for search form.
+ */
+function os_core_form_search_block_form_alter(&$form, &$form_state) {
+  if (variable_get('search_default_module') == 'apachesolr_search') {
+    $form['#submit'][] = 'os_core_form_search_submit';
+  }
+}
+
+/**
+ * Added form submit function to retain filters.
+ *
+ * @see apachesolr_search_form_search_form_alter()
+ */
+function os_core_form_search_submit($form, &$form_state) {
+  $fv = $form_state['values'];
+  // Replace keys with their rawurlencoded value.
+  if (isset($fv['search_block_form'])) {
+    $raw_keys = str_replace('/', '%2f', $fv['search_block_form']);
+    $form_state['redirect'] = 'search/apachesolr_search/' . $raw_keys;
   }
 }

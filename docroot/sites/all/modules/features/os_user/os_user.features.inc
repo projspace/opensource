@@ -22,6 +22,7 @@ function os_user_field_group_info_alter(&$data) {
     $data['group_user_profile|user|user|form']->data['children']['2'] = 'field_location'; /* WAS: '' */
     $data['group_user_profile|user|user|form']->data['children']['3'] = 'field_website'; /* WAS: '' */
     $data['group_user_profile|user|user|form']->data['children']['4'] = 'field_community_description'; /* WAS: '' */
+    $data['group_user_profile|user|user|form']->data['children']['5'] = 'field_profile_point_notification'; /* WAS: '' */
   }
 }
 

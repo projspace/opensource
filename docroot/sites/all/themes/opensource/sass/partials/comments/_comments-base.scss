@@ -10,4 +10,64 @@
             content: '';
         }
     }
+
+    .permalink {
+        display: none;
+    }
+
+    dd {
+        margin: 0;
+    }
+
+    .links {
+        padding-left: 0;
+
+        .comment-reply {
+            float: right;
+        }
+    }
+
+    .submitted {
+        margin: 0;
+    }
+
+    .user-picture-badges {
+        float: left;
+    }
+
+    .submitted {
+        .user_badges {
+            div {
+                display: inline;
+                margin-top: 2px;
+                margin-right: 3px;
+                padding: 2px
+            }
+        }
+    }
+
+    .content {
+        clear: both;
+    }
+
+    .reset-active {
+        display: none;
+    }
+
+}
+
+.vud-widget {
+    .up-score,
+    .down-score {
+        display: inline-block;
+    }
+}
+
+
+.pane-node-comment-form {
+    margin-top: 2em;
+}
+
+.workflow-form-container {
+    display: none;
 }

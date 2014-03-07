@@ -132,6 +132,28 @@ function os_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_award_points_top_contributor'] = entity_import('rules_config', '{ "rules_award_points_top_contributor" : {
+      "LABEL" : "Award points to top contributor",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "flag", "points", "spotlight", "user" ],
+      "REQUIRES" : [ "userpoints_rules", "flag" ],
+      "ON" : { "flag_flagged_spotlight" : [] },
+      "DO" : [
+        { "userpoints_action_grant_points" : {
+            "user" : [ "flagged-user" ],
+            "points" : "50",
+            "tid" : "0",
+            "entity" : [ "flagging" ],
+            "description" : "User Spotlighted",
+            "operation" : "Spotlighted",
+            "display" : 1,
+            "moderate" : "approved"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_award_points_user_login'] = entity_import('rules_config', '{ "rules_award_points_user_login" : {
       "LABEL" : "Award point on user login",
       "PLUGIN" : "reaction rule",
@@ -277,6 +299,31 @@ function os_rules_default_rules_configuration() {
             "subject" : "Thanks for submitting your event",
             "message" : "Our admins will review your submission and approve your event if it fits within our guidelines. We will contact you if there are any questions.\\r\\n\\r\\nThanks,\\r\\nopensource.com team",
             "from" : "osdc-mail@redhat.com",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_user_awarded_role_badge'] = entity_import('rules_config', '{ "rules_user_awarded_role_badge" : {
+      "LABEL" : "User is awarded a role badge",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "badge" ],
+      "REQUIRES" : [ "rules", "os_badges" ],
+      "ON" : { "user_badges_role_badge_given" : [] },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "site:current-user:field-profile-point-notification" ],
+            "value" : 1
+          }
+        }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : "[user:mail]",
+            "subject" : " opensource.com badge added.",
+            "message" : "[user:name],\\r\\n\\r\\nCongratulations! You\\u0027ve been promoted.\\r\\nYou\\u0027ve gained enough points by participating at opensource.com to move up and join a new role.\\r\\n\\r\\nAs a new !rolename, you\\u0027re now cooler than you were just five minutes ago. We extend our warmest thanks for your contributions and participation.\\r\\n\\r\\nBadge : [badge-name:value]\\r\\n\\r\\nQuestions about our roles and badges system? Get more details here:\\r\\nhttp:\\/\\/opensource.com\\/points-and-badges\\r\\n\\r\\nThank you,\\r\\nthe opensource.com team",
             "language" : [ "" ]
           }
         }

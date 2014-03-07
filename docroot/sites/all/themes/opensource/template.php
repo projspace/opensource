@@ -1,4 +1,3 @@
-
 <?php
 /**
  * @file
@@ -156,8 +155,47 @@ function opensource_preprocess_comment(&$vars) {
   );
   $vars['picture'] = theme('image_style', $image_item);
 
+  if (isset($commentauthor->badges) && count($commentauthor->badges)) {
+    $badgeimgs = array();
+    $display_badge = '';
+    foreach ($commentauthor->badges as $badge) {
+      //$badgeimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE));
+      if($badge->weight > 190) {
+        if (isset($vars['badge_role'])) break; //seeing the next role badge. should only display the highest ordered.
+        $badgerollimgs[] = '<div class="badge_role">' . theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE)) . '</div>';
+      } elseif($badge->weight == -20) {
+        $badgeimgs[] = '<div class="badge_green">' . theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE)) . '</div>';
+      } elseif($badge->weight == -30) {
+        $badgeimgs[] = '<div class="badge_blue">' . theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE)) . '</div>';
+      } elseif($badge->weight == -40) {
+        $badgeimgs[] = '<div class="badge_blue">' . theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE)) . '</div>';
+      }
+    }
+
+    $badges['user_badges']['badges'] = array(
+      '#type' => 'user_profile_item',
+      '#title' => '',
+      '#markup' => theme('user_badge_group', array('badgeimages' => $badgeimgs)),
+      '#attributes' => array('class' => array('badges')),
+    );
+    $badgerollimages['user_badges']['badges'] = array(
+      '#type' => 'user_profile_item',
+      '#title' => '',
+      '#markup' => theme('user_badge_group', array('badgeimages' => $badgerollimgs)),
+      '#attributes' => array('class' => array('badges')),
+    );
+  }
+  $vars['rollbadges'] = render($badgerollimages);
+  $vars['badges'] = render($badges);
   $commenttime = format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL);
   $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
+
+  if (user_access('administer comments')) {
+    $vars['mark_as_inappropriate'] = l(t('Report to Mollom'), 'mollom/report/comment/' . $vars['elements']['#comment']->cid, array('query' => array('destination' => current_path())));
+  }
+  else {
+    $vars['mark_as_inappropriate'] = '';
+  }
 }
 
 /**
@@ -380,11 +418,11 @@ function opensource_preprocess_field(&$vars) {
         break;
       case 'CC-BY 4.0':
         $vars['items']['0']['#markup'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-4.png" title="This work is licensed under a Creative Commons Attribution 4.0 International License." /></a>';
+        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-4.png" title="This work is licensed under a Creative Commons Attribution 4.0 International License." /></a>';
         break;
       case 'CC-BY 3.0':
               $vars['items']['0']['#markup'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
-        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-sa-3.png" title="This work is licensed under a Creative Commons Attribution 3.0 Unported License." /></a>';
+        <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-3.png" title="This work is licensed under a Creative Commons Attribution 3.0 Unported License." /></a>';
         break;
 
       default:
@@ -445,5 +483,80 @@ function opensource_preprocess_panels_pane(&$vars) {
     else {
       $content['#title'] = t('Image credits ');
     }
+  }
+}
+
+function opensource_preprocess_search_result(&$vars) {
+  $allowed_types = array('article', 'event', 'resource', 'poll');
+  $result_fields = $vars['result']['fields'];
+  if ($result_fields['entity_type'] == 'node' && in_array($result_fields['bundle'], $allowed_types)) {
+    $node = node_load($vars['result']['fields']['entity_id']);
+    $vars['date'] = format_date($node->changed, 'custom', 'm/d/Y - H:i');
+    $vars['comment_count'] = format_plural($node->comment_count, '1 Comment', '@count Comments', array('@count' => $node->comment_count));
+
+    // Find the attachment count.
+    $attachments = field_get_items('node', $node, 'field_attachments');
+    if($attachments == FALSE) {
+      $vars['attachment_count'] = '0' . t(' attachments');
+    }
+    else {
+      $vars['attachment_count'] = sizeof($attachments) . t(' attachments');
+    }
+
+
+    // Node author
+    $vars['author'] = l(user_load($node->uid)->name, 'user/' . $node->uid);
+
+    $vars['node_type'] = $node->type;
+  }
+}
+
+/**
+ * Return html representation of a badge image
+ * (note: theme_image does the check_plaining)
+ */
+function opensource_user_badge($variables) {
+  $badge = $variables['badge'];
+  if(isset($variables['comment_page']) && $variables['comment_page'] == TRUE) {
+    $image = _user_badges_build_image($badge);
+    $image = str_replace('.png', '_sm.png', $image);
+    $image = preg_replace('/_2[0-9]{3}\.png/', '_sm.png', $image);
+  }
+  else {
+    $image = _user_badges_build_image($badge);
+  }
+
+  // We don't link the badge if there is no link and no default,
+  // or if the default is overridden.
+  if (!isset($badge->href) || ($badge->href == '' && !variable_get('user_badges_defaulthref', ''))
+    || drupal_strtolower($badge->href) == '<none>'
+  ) {
+    return $image;
+  }
+  else {
+    $href = $badge->href ? $badge->href : variable_get('user_badges_defaulthref', '');
+
+    // Implement token replacement.
+    if (module_exists('token')) {
+      $vars = array('userbadge' => $badge);
+      if (isset($variables['account'])) {
+        $vars['user'] = $variables['account'];
+      }
+      $href = token_replace($href, $vars);
+    }
+
+    $pieces = parse_url($href);
+    $pieces['html'] = TRUE;
+    $pieces['path'] = isset($pieces['path']) ? $pieces['path'] : '';
+    if (isset($pieces['scheme'])) {
+      $pieces['path'] = $pieces['scheme'] . '://' . $pieces['host'] . $pieces['path'];
+    }
+
+    // We need to convert the query to an associative array before we pass it
+    // to the l() function.
+    if (isset($pieces['query'])) {
+      $pieces['query'] = drupal_get_query_array($pieces['query']);
+    }
+    return l($image, $pieces['path'], $pieces);
   }
 }

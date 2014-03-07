@@ -36,6 +36,24 @@ function os_badges_install() {
     drupal_form_submit('user_badges_edit_form', $form_state);
     file_usage_delete($file, 'os_badges', 'os_badge', 0);
   }
+
+  // Upload the small badge images programmatically.
+  os_badges_update_7100();
+}
+
+/**
+ * Upload the small badge images programmatically.
+ */
+function os_badges_update_7100() {
+  // Start inserting all our badges.
+  $list_badges = _os_badges_list_badges();
+  $path = drupal_get_path('module', 'os_badges') . '/images/';
+  foreach ($list_badges as $data) {
+    $image = str_replace('.png', '_sm.png', $data['image']);
+    $fid = os_base_file_create($path . $image, 'public://badges');
+    $file = file_load($fid);
+    file_usage_add($file, 'os_badges', 'os_badge', 0);
+  }
 }
 
 /**

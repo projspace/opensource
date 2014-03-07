@@ -1062,10 +1062,11 @@ tr.selected td {
 
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1392979666');
+  background-image: url('../images/progress.gif?1393854118');
 }
 
 .image-title,
+.node-type-poll #content .pane-related-articles-panel-pane-1 h2.pane-title,
 .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title,
 .burr-flipped-sidebar .pane-menu-monthly-favorites h2.pane-title,
 .burr-flipped-sidebar .signup-email .signup-email-title {
@@ -1076,6 +1077,7 @@ tr.selected td {
 }
 
 .box-wrapper,
+.node-type-poll .pane-node-comments .comment,
 .node-type-article .pane-node-comments .comment,
 .burr-flipped-content,
 .badge-wrapper,
@@ -1086,6 +1088,7 @@ tr.selected td {
 }
 
 .box-wrapper p,
+.node-type-poll .pane-node-comments .comment p,
 .node-type-article .pane-node-comments .comment p,
 .burr-flipped-content p,
 .badge-wrapper p,
@@ -1094,6 +1097,7 @@ tr.selected td {
 }
 
 .box-wrapper p br,
+.node-type-poll .pane-node-comments .comment p br,
 .node-type-article .pane-node-comments .comment p br,
 .burr-flipped-content p br,
 .badge-wrapper p br,
@@ -1106,35 +1110,43 @@ tr.selected td {
   font-weight: bold;
 }
 
+.node-type-poll .view-author-info .views-field-field-user-picture,
 .node-type-article .view-author-info .views-field-field-user-picture {
   float: left;
   margin-right: 1em;
 }
 
+.node-type-poll .view-author-info .views-field-nothing,
 .node-type-article .view-author-info .views-field-nothing {
   text-align: right;
 }
 
+.node-type-poll .view-author-info .views-field-nothing a,
 .node-type-article .view-author-info .views-field-nothing a {
   text-decoration: none;
 }
 
+.node-type-poll .author-feed,
 .node-type-article .author-feed {
   float: left;
 }
 
+.node-type-poll .pane-node-author,
 .node-type-article .pane-node-author {
   float: left;
 }
 
+.node-type-poll .pane-3,
 .node-type-article .pane-3 {
   float: left;
 }
 
+.node-type-poll .pane-3 p,
 .node-type-article .pane-3 p {
   margin: 0;
 }
 
+.node-type-poll .pane-3 span a,
 .node-type-article .pane-3 span a {
   background: url(../images/rss.jpg) no-repeat;
   text-indent: -9999px;
@@ -1147,14 +1159,17 @@ tr.selected td {
   right: -2px;
 }
 
+.node-type-poll .pane-node-field-rating,
 .node-type-article .pane-node-field-rating {
   float: right;
 }
 
+.node-type-poll .pane-node-field-lead-image,
 .node-type-article .pane-node-field-lead-image {
   display: inline-block;
 }
 
+.node-type-poll .image-credits,
 .node-type-article .image-credits {
   font-size: 10px;
   color: #999;
@@ -1162,49 +1177,59 @@ tr.selected td {
   font-style: italic;
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .view-content,
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-content {
   clear: both;
   overflow: hidden;
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 h2.pane-title,
 .node-type-article #content .pane-related-articles-panel-pane-1 h2.pane-title {
   background: url(../images/osdc_nameplate_Relatedcontent.png) no-repeat;
   margin-bottom: 8px;
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .views-row,
 .node-type-article #content .pane-related-articles-panel-pane-1 .views-row {
   float: left;
   padding-right: 30px;
   margin-bottom: 10px;
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .views-row img,
 .node-type-article #content .pane-related-articles-panel-pane-1 .views-row img {
   margin-bottom: 5px;
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .views-row .field-content a,
 .node-type-article #content .pane-related-articles-panel-pane-1 .views-row .field-content a {
   width: 140px;
   display: block;
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title,
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title {
   margin-top: 5px;
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a,
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a {
   text-decoration: none;
   color: #000;
 }
 
+.node-type-poll #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a:hover,
 .node-type-article #content .pane-related-articles-panel-pane-1 .view-related-articles .views-field-title a:hover {
   text-decoration: underline;
   color: #3399ff;
 }
 
+.node-type-poll #content .pane-node-field-tags,
 .node-type-article #content .pane-node-field-tags {
   margin: 1em 0;
 }
 
+.node-type-poll #content .pane-node-field-tags h2.pane-title,
 .node-type-article #content .pane-node-field-tags h2.pane-title {
   margin: 0;
   font-size: 12px;
@@ -1213,60 +1238,74 @@ tr.selected td {
   float: left;
 }
 
+.node-type-poll #content .pane-node-field-tags .field-items .field-item,
 .node-type-article #content .pane-node-field-tags .field-items .field-item {
   display: inline-block;
   margin-top: 5px;
   margin-right: 1.5em;
 }
 
+.node-type-poll .pane-node-comments .comment .content,
 .node-type-article .pane-node-comments .comment .content {
   margin: 1em 0;
   border-bottom: 2px dotted #ccc;
-  padding-bottom: 1em;
 }
 
+.node-type-poll .pane-node-comments .comment .submitted,
 .node-type-article .pane-node-comments .comment .submitted {
   margin-left: 1em;
   display: inline-block;
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget,
 .node-type-article .pane-node-comments .comment .vud-widget {
   float: right;
 }
 
+.node-type-poll .pane-node-comments .comment .links a,
 .node-type-article .pane-node-comments .comment .links a {
   text-transform: capitalize;
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .up-active,
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .up-inactive,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-inactive {
   background: url(../images/icon-vote-up.png) no-repeat;
   background-position: 0 0;
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .up-active:hover,
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .up-inactive:hover,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-active:hover,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-inactive:hover {
   background-position: 0 0;
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .down-inactive,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-inactive {
   background: url(../images/icon-vote-down.png) no-repeat;
   background-position: 0 0;
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .down-inactive:hover,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-inactive:hover {
   background-position: 0 0;
 }
 
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .up-score .up-current-score,
+.node-type-poll .pane-node-comments .comment .vud-widget-upanddown .down-score .down-current-score,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .up-score .up-current-score,
 .node-type-article .pane-node-comments .comment .vud-widget-upanddown .down-score .down-current-score {
   font-size: 12px;
 }
 
+.node-type-poll .addthis_toolbox.addthis_default_style,
 .node-type-article .addthis_toolbox.addthis_default_style {
   margin-bottom: 1em;
 }
 
+.node-type-poll .addthis_toolbox.addthis_default_style a,
 .node-type-article .addthis_toolbox.addthis_default_style a {
   margin-right: 1em;
 }
@@ -2576,60 +2615,82 @@ blockquote {
   color: #000;
 }
 
+.node-type-poll .description,
+.node-type-poll .fivestar-widget,
 .node-type-article .description,
 .node-type-article .fivestar-widget {
   float: left;
 }
 
+.node-type-poll .fivestar-summary-average-count,
+.node-type-article .fivestar-summary-average-count {
+  font-size: 12px;
+}
+
+.node-type-poll .author-feed p,
 .node-type-article .author-feed p {
   margin: 0;
 }
 
+.node-type-poll .pane-node-body,
 .node-type-article .pane-node-body {
   font-size: 16px;
   color: black;
+  margin-bottom: 2em;
 }
 
+.node-type-poll .pane-node-body p,
+.node-type-poll .pane-node-body h2,
+.node-type-poll .pane-node-body h3,
 .node-type-article .pane-node-body p,
 .node-type-article .pane-node-body h2,
 .node-type-article .pane-node-body h3 {
   margin: 12px 0;
 }
 
+.node-type-poll .pane-node-body a,
 .node-type-article .pane-node-body a {
   color: #5E6A71;
 }
 
+.node-type-poll .pane-os-core-opensource-article-share,
 .node-type-article .pane-os-core-opensource-article-share {
   clear: left;
   padding-top: 10px;
 }
 
+.node-type-poll .comment-by-node-author,
 .node-type-article .comment-by-node-author {
   clear: left;
 }
 
+.node-type-poll ul,
 .node-type-article ul {
   padding-left: 24px;
 }
 
+.node-type-poll .article-title,
 .node-type-article .article-title {
   line-height: 1.3;
   margin-bottom: 5px;
 }
 
+.node-type-poll .article-title p,
 .node-type-article .article-title p {
   margin: 0;
 }
 
+.node-type-poll .author-feed,
 .node-type-article .author-feed {
   background-position: bottom;
 }
 
+.node-type-poll .pane-node-field-lead-image,
 .node-type-article .pane-node-field-lead-image {
   margin-top: 10px;
 }
 
+.node-type-poll .pane-file-field-file-image-caption,
 .node-type-article .pane-file-field-file-image-caption {
   color: #999;
   font-size: 10px;
@@ -2637,36 +2698,44 @@ blockquote {
   margin-top: 10px;
 }
 
+.node-type-poll .pane-file-field-file-image-caption p,
 .node-type-article .pane-file-field-file-image-caption p {
   margin: 0;
 }
 
+.node-type-poll .pane-related-articles-panel-pane-1,
 .node-type-article .pane-related-articles-panel-pane-1 {
   margin-top: 10px;
 }
 
+.node-type-poll .pane-related-articles-panel-pane-1 .pane-title,
 .node-type-article .pane-related-articles-panel-pane-1 .pane-title {
   float: none;
 }
 
+.node-type-poll .pane-related-articles-panel-pane-1 .related-content .view-content,
 .node-type-article .pane-related-articles-panel-pane-1 .related-content .view-content {
   clear: both;
   overflow: hidden;
 }
 
+.node-type-poll .pane-related-articles-panel-pane-1 .related-content .views-row,
 .node-type-article .pane-related-articles-panel-pane-1 .related-content .views-row {
   float: left;
   width: 33.33%;
 }
 
+.node-type-poll .pane-node-field-tags .field-item,
 .node-type-article .pane-node-field-tags .field-item {
   margin-top: 0 !important;
 }
 
+.node-type-poll .pane-node-field-default-license,
 .node-type-article .pane-node-field-default-license {
   text-align: right;
 }
 
+.node-type-poll .pane-node-comment-form .pane-title,
 .node-type-article .pane-node-comment-form .pane-title {
   font-size: 18px;
   line-height: 1;
@@ -2674,10 +2743,12 @@ blockquote {
   margin-bottom: 12px;
 }
 
+.node-type-poll .pane-node-comment-form .comment-form,
 .node-type-article .pane-node-comment-form .comment-form {
   clear: left;
 }
 
+.node-type-poll .pane-node-comment-form .form-text,
 .node-type-article .pane-node-comment-form .form-text {
   font-size: 14px;
   border: 1px solid #cdcbca;
@@ -2685,10 +2756,12 @@ blockquote {
   padding: 8px 8px 0;
 }
 
+.node-type-poll .pane-node-comment-form .form-type-textarea label,
 .node-type-article .pane-node-comment-form .form-type-textarea label {
   display: none;
 }
 
+.node-type-poll .pane-os-core-opensource-article-share .addthis_button_tweet,
 .node-type-article .pane-os-core-opensource-article-share .addthis_button_tweet {
   position: relative;
   top: 2px;
@@ -2696,6 +2769,7 @@ blockquote {
   display: inline-block;
 }
 
+.node-type-poll .pane-os-core-opensource-article-share .addthis_button_tweet+a,
 .node-type-article .pane-os-core-opensource-article-share .addthis_button_tweet+a {
   position: relative;
   top: -4px;
@@ -2703,6 +2777,7 @@ blockquote {
   display: inline-block;
 }
 
+.node-type-poll .pane-os-core-opensource-article-share .addthis_button_google_plusone,
 .node-type-article .pane-os-core-opensource-article-share .addthis_button_google_plusone {
   position: relative;
   top: 2px;
@@ -2802,6 +2877,30 @@ blockquote {
 
 .pane-menu-opensource-resources li a {
   display: block;
+}
+
+.pane-resource-book.active {
+  background: url("../images/resources/book-active.png") no-repeat;
+}
+
+.pane-resource-panda.active {
+  background: url("../images/resources/projectandapplications-active.png") no-repeat;
+}
+
+.pane-resource-organization.active {
+  background: url("../images/resources/organizations-active.png") no-repeat;
+}
+
+.pane-resource-event.active {
+  background: url("../images/resources/event-active.png") no-repeat;
+}
+
+.pane-resource-o-resources.active {
+  background: url("../images/resources/resources-active.png") no-repeat;
+}
+
+.pane-resource-what.active {
+  background: url("../images/resources/whatisopensource-active.png") no-repeat;
 }
 
 .pane-channel-articles-panel-pane-popular-articles .pane-title {
@@ -2957,6 +3056,58 @@ blockquote {
   content: '';
 }
 
+.pane-node-comments .permalink {
+  display: none;
+}
+
+.pane-node-comments dd {
+  margin: 0;
+}
+
+.pane-node-comments .links {
+  padding-left: 0;
+}
+
+.pane-node-comments .links .comment-reply {
+  float: right;
+}
+
+.pane-node-comments .submitted {
+  margin: 0;
+}
+
+.pane-node-comments .user-picture-badges {
+  float: left;
+}
+
+.pane-node-comments .submitted .user_badges div {
+  display: inline;
+  margin-top: 2px;
+  margin-right: 3px;
+  padding: 2px;
+}
+
+.pane-node-comments .content {
+  clear: both;
+}
+
+.pane-node-comments .reset-active {
+  display: none;
+}
+
+.vud-widget .up-score,
+.vud-widget .down-score {
+  display: inline-block;
+}
+
+.pane-node-comment-form {
+  margin-top: 2em;
+}
+
+.workflow-form-container {
+  display: none;
+}
+
 .m-polls .views-field-comment-count,
 .m-polls .views-field-nothing,
 .m-polls .views-field-edit-node {
@@ -2978,6 +3129,23 @@ blockquote {
 
 .m-polls #poll-cancel-form {
   float: right;
+}
+
+.m-polls .views-field-edit-node {
+  display: none;
+}
+
+.poll .vote-form {
+  text-align: left;
+}
+
+.poll .vote-form .choices {
+  display: block;
+  padding-left: 1px;
+}
+
+.node-type-poll .pane-node-body {
+  font-size: 12px;
 }
 
 .page-user-articles a,

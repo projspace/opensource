@@ -27,6 +27,7 @@
     font-weight: bold;
 }
 
+.node-type-poll,
 .node-type-article {
     .view-author-info {
         .views-field-field-user-picture {
@@ -147,7 +148,6 @@
             .content {
                 margin: 1em 0;
                 border-bottom: 2px dotted #ccc;
-                padding-bottom: 1em;
             }
             .submitted {
                 margin-left: 1em;
