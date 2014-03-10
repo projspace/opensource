@@ -2301,6 +2301,18 @@ tr.selected td {
     display: none;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_drupal-resets\.scss}line{font-family:\000032}}
+.ui-datepicker-calendar .ui-state-default {
+  border: 1px solid transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_drupal-resets\.scss}line{font-family:\000036}}
+.ui-datepicker-calendar .ui-state-hover {
+  border: 1px solid #999999;
+  background: #ffffff;
+  font-weight: normal;
+  color: #333333;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_base\.scss}line{font-family:\000031}}
 * {
   -moz-box-sizing: border-box;
@@ -2375,7 +2387,7 @@ blockquote {
   font-size: 14px;
   border: 1px solid #cdcbca;
   height: 22px;
-  padding: 8px 8px 0;
+  padding: 8px 8px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_base\.scss}line{font-family:\0000369}}
@@ -3445,7 +3457,7 @@ blockquote {
   font-size: 14px;
   border: 1px solid #cdcbca;
   height: 30px;
-  padding: 8px 8px 0;
+  padding: 8px 8px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss}line{font-family:\00003124}}
 .node-type-poll .pane-node-comment-form .form-type-textarea label,
