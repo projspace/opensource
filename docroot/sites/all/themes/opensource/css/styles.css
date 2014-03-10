@@ -3820,19 +3820,39 @@ blockquote {
 .pane-node-comments .indented .indented .indented .indented .indented {
   margin: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss}line{font-family:\0000369}}
+.pane-node-comments .ajax-progress.ajax-progress-throbber {
+  position: absolute;
+  left: 0px;
+  z-index: -1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss}line{font-family:\0000375}}
+.pane-node-comments .up-active {
+  background: url("../images/icon-vote-up.png") no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss}line{font-family:\0000380}}
+.pane-node-comments .vud-widget .down-active {
+  background: url("../images/icon-vote-down.png") no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss}line{font-family:\0000385}}
+.pane-node-comments .down-inactive,
+.pane-node-comments .down-active {
+  position: relative;
+  top: 5px;
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss}line{font-family:\0000394}}
 .vud-widget .up-score,
 .vud-widget .down-score {
   display: inline-block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss}line{font-family:\00003100}}
 .pane-node-comment-form {
   margin-top: 2em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss}line{font-family:\00003104}}
 .workflow-form-container {
   display: none;
 }
@@ -4335,4 +4355,77 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
 .section-government .pane-term-description p {
   margin-top: 4px;
   padding: 0 15px 13px 16px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\000031}}
+.page-search .pane-title {
+  float: none;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000313}}
+.page-search #apachesolr-panels-search-form {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000318}}
+.page-search #apachesolr-panels-search-form .form-text {
+  padding: 15px 20px 15px 5px;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000323}}
+.page-search #apachesolr-panels-search-form .form-item {
+  float: left;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000328}}
+.page-search #apachesolr-panels-search-form .form-actions {
+  float: left;
+  margin-top: 7px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000335}}
+.page-search .pane-apachesolr-result h2 {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000340}}
+.page-search .search-results {
+  padding-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000343}}
+.page-search .search-results .search-result {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000347}}
+.page-search .search-results p {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000352}}
+.page-search .search-results .title {
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000358}}
+.page-search .search-results .search-snippet-info {
+  padding-left: 0;
+  margin-left: 24px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000363}}
+.page-search .search-results .search-meta-info {
+  font-size: 10px;
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000369}}
+.page-search .search-results a {
+  color: #333;
+  text-decoration: underline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\0000373}}
+.page-search .search-results a:hover {
+  color: #39f;
 }
