@@ -418,6 +418,9 @@ function os_core_form_search_submit($form, &$form_state) {
 
 function os_core_views_query_alter(&$view, &$query) {
   if($view->name == 'admin_views_user' && $view->current_display == 'panel_pane_1') {
+    $query->where[0]['conditions'][0]['value'] = '%'. $query->where[0]['conditions'][0]['value'] .'%';
+    $query->where[0]['conditions'][0]['operator'] = 'LIKE';
+    /*
     foreach ($query->where as &$where) {
       foreach ($where['conditions'] as &$condition) {
         if (!empty($condition['value']) && is_scalar($condition['value'])) {
@@ -434,5 +437,6 @@ function os_core_views_query_alter(&$view, &$query) {
         }
       }
     }
+     */
   }
 }
