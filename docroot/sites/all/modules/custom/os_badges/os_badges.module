@@ -36,6 +36,11 @@ function os_badges_award_role_badge($uid) {
   $role_badges = os_badges_get_badges($role);
   $role_badge = reset($role_badges);
 
+  if (empty($role_badge->bid)) {
+    watchdog('OpenSource Badges', 'Cannot find badge for %role role for %points points.', array('%role' => $role, '%points' => $total_points), WATCHDOG_ERROR);
+    return;
+  }
+
   // Get user's current badges and filter it to remove any role-based badges
   // unless the user is supposed to have it.
   $all_role_badges = os_badges_get_badges(array_keys(_os_badges_badge_rules()));
