@@ -7,6 +7,10 @@ core = 7.x
 dependencies[] = migrate
 dependencies[] = migrate_d2d
 
+; Modules Support
+dependencies[] = userpoints
+dependencies[] = os_badges
+
 ; Features defining the entities, bundles and fields we are migrating.
 dependencies[] = os_user
 

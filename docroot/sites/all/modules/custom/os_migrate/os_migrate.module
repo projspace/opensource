@@ -49,6 +49,24 @@ function os_migrate_register_migrations() {
 
   Migration::registerMigration('OsMigrateUserMigration', $arguments['machine_name'], $arguments);
 
+  // Register User Points migration.
+  $arguments = $common_arguments + array(
+    'description' => t('Migration of user points from Drupal 6'),
+    'machine_name' => 'OsUserPoints',
+    'dependencies' => array('OsUser'),
+  );
+
+  Migration::registerMigration('OsMigrateUserPointsMigration', $arguments['machine_name'], $arguments);
+
+  // Register User Badges migration.
+  $arguments = $common_arguments + array(
+    'description' => t('Migration of user badges from Drupal 6'),
+    'machine_name' => 'OsUserBadges',
+    'dependencies' => array('OsUser'),
+  );
+
+  Migration::registerMigration('OsMigrateUserBadgesMigration', $arguments['machine_name'], $arguments);
+
   // Node migrations - each has its own class derived from the migrate_d2d class,
   // specifying its particular field mappings and transformations. source_type
   // and destination_type are required arguments.
@@ -103,6 +121,9 @@ function os_migrate_register_migrations() {
 function os_migrate_migrate_api() {
   $disable_hooks = array(
     'user_insert' => array(
+      'os_badges',
+    ),
+    'userpoints' => array(
       'os_badges',
     ),
   );

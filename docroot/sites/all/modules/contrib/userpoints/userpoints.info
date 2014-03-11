@@ -2,6 +2,7 @@ name = Userpoints
 description = Userpoints core: API module for recording points for other modules.
 package = Userpoints
 core = 7.x
+files[]=userpoints.migrate.inc
 files[]=userpoints.views.inc
 files[]=userpoints.module
 files[]=tests/userpoints_api.test
