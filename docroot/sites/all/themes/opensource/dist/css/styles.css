@@ -9157,6 +9157,8 @@ blockquote {
 
 .pane-node-comments .links .comment-reply {
   float: right;
+  margin: 0;
+  padding: 0;
 }
 
 @media -sass-debug-info {
@@ -9165,7 +9167,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000330;
+    font-family: \0000332;
   }
 }
 
@@ -9179,7 +9181,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000334;
+    font-family: \0000336;
   }
 }
 
@@ -9193,7 +9195,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000340;
+    font-family: \0000342;
   }
 }
 
@@ -9210,7 +9212,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000349;
+    font-family: \0000351;
   }
 }
 
@@ -9224,7 +9226,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000353;
+    font-family: \0000355;
   }
 }
 
@@ -9238,7 +9240,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000361;
+    font-family: \0000363;
   }
 }
 
@@ -9252,7 +9254,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000369;
+    font-family: \0000371;
   }
 }
 
@@ -9268,7 +9270,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000375;
+    font-family: \0000377;
   }
 }
 
@@ -9282,7 +9284,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000380;
+    font-family: \0000382;
   }
 }
 
@@ -9296,7 +9298,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000385;
+    font-family: \0000387;
   }
 }
 
@@ -9316,6 +9318,22 @@ blockquote {
   }
 }
 
+.vud-widget {
+  float: right;
+  clear: both;
+  margin: 12px 0 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss;
+  }
+
+  line {
+    font-family: \00003100;
+  }
+}
+
 .vud-widget .up-score,
 .vud-widget .down-score {
   display: inline-block;
@@ -9327,7 +9345,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003100;
+    font-family: \00003106;
   }
 }
 
@@ -9341,7 +9359,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003104;
+    font-family: \00003110;
   }
 }
 

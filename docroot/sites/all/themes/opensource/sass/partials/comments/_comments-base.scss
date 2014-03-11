@@ -24,6 +24,8 @@
 
         .comment-reply {
             float: right;
+            margin: 0;
+            padding: 0;
         }
     }
 
@@ -90,6 +92,10 @@
 }
 
 .vud-widget {
+    float: right;
+    clear: both;
+    margin: 12px 0 0;
+
     .up-score,
     .down-score {
         display: inline-block;
