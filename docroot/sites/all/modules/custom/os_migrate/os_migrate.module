@@ -67,34 +67,53 @@ function os_migrate_register_migrations() {
 
   Migration::registerMigration('OsMigrateUserBadgesMigration', $arguments['machine_name'], $arguments);
 
+  // Register File migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of all managed files'),
+    'machine_name' => 'OsFile',
+    'source_dir' => 'http://opensource.com/sites/default/files',
+  );
+
+  Migration::registerMigration('DrupalFile6Migration', $args['machine_name'], $args);
+
+  // Register File migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of IMCE Image field files'),
+    'machine_name' => 'OsImageFieldFile',
+    'source_dir' => 'http://opensource.com/sites/default/files',
+  );
+
+  Migration::registerMigration('OsMigrateFieldImceImageMigration', $args['machine_name'], $args);
+
   // Node migrations - each has its own class derived from the migrate_d2d class,
   // specifying its particular field mappings and transformations. source_type
   // and destination_type are required arguments.
   $node_arguments = array(
     array(
-      'class_name' => 'ExampleImageMigration',
-      'description' => t('Migration of image nodes from Drupal 6'),
-      'machine_name' => 'Image',
-      'source_type' => 'image',
-      'destination_type' => 'image',
+      'class_name' => 'OsMigratePollMigration',
+      'description' => t('Migration of article nodes (with poll) from Drupal 6'),
+      'machine_name' => 'OsPoll',
+      'dependencies' => array('OsFile'),
+      'source_type' => 'post',
+      'destination_type' => 'poll',
     ),
-    array(
-      'class_name' => 'ExampleArticleMigration',
-      'description' => t('Migration of article nodes from Drupal 6'),
-      'machine_name' => 'Article',
-      'source_type' => 'my_article',
-      'destination_type' => 'new_article',
-      'dependencies' => array('Image', 'Countries', 'Topics'),
-    ),
+    // array(
+    //   'class_name' => 'ExampleArticleMigration',
+    //   'description' => t('Migration of article nodes from Drupal 6'),
+    //   'machine_name' => 'Article',
+    //   'source_type' => 'my_article',
+    //   'destination_type' => 'new_article',
+    //   'dependencies' => array('Image', 'Countries', 'Topics'),
+    // ),
   );
   // Tell the node migrations where the users are coming from, so they can
   // set up the dependency and resolve D6->D7 uids.
   $common_node_arguments = $common_arguments + array(
-    'user_migration' => 'User',
+    'user_migration' => 'OsUser',
   );
   foreach ($node_arguments as $arguments) {
     $arguments = array_merge_recursive($arguments, $common_node_arguments);
-    //Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
+    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
   }
 
   // Menu migrations -- same requirements as users
