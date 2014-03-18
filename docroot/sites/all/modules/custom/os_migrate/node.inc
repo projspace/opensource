@@ -184,13 +184,12 @@ class OsContentPollMigration extends OsContentArticleMigration {
 /**
  * Common mappings for Resource content types.
  */
-class OsContentResourceMigration extends DrupalNode6Migration {
+abstract class OsContentResourceMigration extends DrupalNode6Migration {
 
   /**
    * Constructor.
    */
-  public function __construct($args) {
-    $this->args = $args;
+  public function __construct(array $args) {
     parent::__construct($args);
 
 
@@ -211,11 +210,11 @@ class OsContentResourceMigration extends DrupalNode6Migration {
     $this->addFieldMapping('metatag_revisit-after','meta_revisit-after');
     $this->addFieldMapping('metatag_robots','meta_robots');
     $this->addFieldMapping('metatag_canonical','meta_canonical');
-
-
   }
 
   public function prepareRow($row){
+    parent::prepareRow($row);
+
     $source_id = $row->nid;
 
     $query = Database::getConnection('default', $this->sourceConnection)
