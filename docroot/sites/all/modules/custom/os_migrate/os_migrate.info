@@ -17,3 +17,4 @@ dependencies[] = os_user
 ; Support files.
 files[] = user.inc
 files[] = node.inc
+files[] = file.inc
