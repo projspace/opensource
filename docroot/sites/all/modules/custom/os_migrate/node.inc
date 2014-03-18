@@ -229,13 +229,13 @@ class OsContentPageMigration extends DrupalNode6Migration {
 
     $query = Database::getConnection('default', $this->sourceConnection)
     ->select('workflow_node', 'n')
-    ->fields('n', array('sid', 'workflow_stamp'))
+    ->fields('n', array('sid', 'stamp'))
     ->condition('n.nid', $source_id, '=');
     $results = $query->execute();
 
     foreach ($results as $result) {
       $sid = $result->sid;
-      $row->workflow_stamp = $result->workflow_stamp;
+      $row->workflow_stamp = $result->stamp;
     }
 
     $array_sids = array(
