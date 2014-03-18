@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function os_migrate_install() {
+
+// Check existence of vocabulary Article Type
+  $vocab = taxonomy_vocabulary_machine_name_load("article_type");
+  if (!$vocab) {
+    // Create vocabulary Article Type.
+    $vocab = new stdClass();
+    $vocab->name = 'Article Type';
+    $vocab->machine_name = 'article_type';
+    $vocab->description = 'Used to classify what type of the article is this';
+    taxonomy_vocabulary_save($vocab);
+  }
+
+// Add terms to article Type
+  $art_arr  = array(
+    'Article',
+    'Podcast',
+    'Video',
+    );
+
+  foreach ($art_arr as $skill) {
+    if (!taxonomy_get_term_by_name($skill, $vocab->machine_name)) {
+      $term = new stdclass();
+      $term->vid = $vocab->vid;
+      $term->name = $skill;
+      taxonomy_term_save($term);
+    }
+  }
+
+// Check existence of vocabulary Channel
+  $vocab = taxonomy_vocabulary_machine_name_load("channel");
+  if (!$vocab) {
+    // Create vocabulary Article Type.
+    $vocab = new stdClass();
+    $vocab->name = 'Channel';
+    $vocab->machine_name = 'channel';
+    $vocab->description = 'Used to classification of articles';
+    taxonomy_vocabulary_save($vocab);
+  }
+
+
+
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function os_migrate_uninstall() {
+
+  $vocab = taxonomy_vocabulary_machine_name_load("article_type");
+  foreach (taxonomy_get_tree($vocab->vid) as $term) {
+    taxonomy_term_delete($term->tid);
+  }
+
+  $vocab = taxonomy_vocabulary_machine_name_load("channel");
+  foreach (taxonomy_get_tree($vocab->vid) as $term) {
+    taxonomy_term_delete($term->tid);
+  }
+}
