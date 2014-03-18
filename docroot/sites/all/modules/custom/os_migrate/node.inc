@@ -180,58 +180,6 @@ class OsContentPollMigration extends OsContentArticleMigration {
   }
 }
 
-
-/**
- * Common mappings for Resource content types.
- */
-class OsContentResourceMigration extends OsContentPageMigration {
-
-  public function __construct(array $args) {
-    parent::__construct($args);
-
-
-    $this->addFieldMapping('field_lead_image', 'field_lead_image')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
-
-    $this->addFieldMapping('field_attachments', 'field_attachments')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
-
-    if ($this->moduleExists('path')) {
-      $this->addFieldMapping('path', 'path')
-      ->description('Handled in prepareRow');
-    }
-
-    // metatags
-    $this->addFieldMapping('metatag_title','title');
-    $this->addFieldMapping('metatag_abstract','meta_abstract');
-    $this->addFieldMapping('metatag_copyright','meta_copyright');
-    $this->addFieldMapping('metatag_description','meta_description');
-    $this->addFieldMapping('metatag_keywords','meta_keywords');
-    $this->addFieldMapping('metatag_revisit-after','meta_revisit-after');
-    $this->addFieldMapping('metatag_robots','meta_robots');
-    $this->addFieldMapping('metatag_canonical','meta_canonical');
-  }
-
-  public function prepareRow($row){
-    parent::prepareRow($row);
-
-    $source_id = $row->nid;
-
-    $query = Database::getConnection('default', $this->sourceConnection)
-    ->select('nodewords', 'n')
-    ->fields('n', array('name', 'content'))
-    ->condition('n.id', $source_id, '=');
-    $results = $query->execute();
-
-    foreach ($results as $metaData) {
-      $row->meta_{$metaData->name} = $metaData->content;
-    }
-  }
-
-}
-
 class OsContentPageMigration extends DrupalNode6Migration {
   public function __construct(array $arguments) {
     parent::__construct($arguments);
@@ -298,4 +246,55 @@ class OsContentPageMigration extends DrupalNode6Migration {
 
     $row->workflow = $array_sids[$sid];
   }
+}
+
+/**
+ * Common mappings for Resource content types.
+ */
+class OsContentResourceMigration extends OsContentPageMigration {
+
+  public function __construct(array $args) {
+    parent::__construct($args);
+
+
+    $this->addFieldMapping('field_lead_image', 'field_lead_image')
+    ->arguments(array('preserve_files' => TRUE))
+    ->sourceMigration('OSFile');
+
+    $this->addFieldMapping('field_attachments', 'field_attachments')
+    ->arguments(array('preserve_files' => TRUE))
+    ->sourceMigration('OSFile');
+
+    if ($this->moduleExists('path')) {
+      $this->addFieldMapping('path', 'path')
+      ->description('Handled in prepareRow');
+    }
+
+    // metatags
+    $this->addFieldMapping('metatag_title','title');
+    $this->addFieldMapping('metatag_abstract','meta_abstract');
+    $this->addFieldMapping('metatag_copyright','meta_copyright');
+    $this->addFieldMapping('metatag_description','meta_description');
+    $this->addFieldMapping('metatag_keywords','meta_keywords');
+    $this->addFieldMapping('metatag_revisit-after','meta_revisit-after');
+    $this->addFieldMapping('metatag_robots','meta_robots');
+    $this->addFieldMapping('metatag_canonical','meta_canonical');
+  }
+
+  public function prepareRow($row){
+    parent::prepareRow($row);
+
+    $source_id = $row->nid;
+
+    $query = Database::getConnection('default', $this->sourceConnection)
+    ->select('nodewords', 'n')
+    ->fields('n', array('name', 'content'))
+    ->condition('n.id', $source_id, '=');
+    $results = $query->execute();
+
+    foreach ($results as $metaData) {
+      $row->meta_{$metaData->name} = $metaData->content;
+    }
+  }
+
 }
