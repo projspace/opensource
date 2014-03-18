@@ -315,5 +315,36 @@ class OsContentPodcastMigration extends OsContentPageMigration {
     $this->addFieldMapping('field_lead_image', 'field_image')
     ->arguments(array('preserve_files' => TRUE))
     ->sourceMigration('OSFile');
+  if ($this->moduleExists('path')) {
+      $this->addFieldMapping('path', 'path')
+      ->description('Handled in prepareRow');
+    }
+
+    // metatags
+    $this->addFieldMapping('metatag_title','title');
+    $this->addFieldMapping('metatag_abstract','meta_abstract');
+    $this->addFieldMapping('metatag_copyright','meta_copyright');
+    $this->addFieldMapping('metatag_description','meta_description');
+    $this->addFieldMapping('metatag_keywords','meta_keywords');
+    $this->addFieldMapping('metatag_revisit-after','meta_revisit-after');
+    $this->addFieldMapping('metatag_robots','meta_robots');
+    $this->addFieldMapping('metatag_canonical','meta_canonical');
   }
+
+  public function prepareRow($row){
+    parent::prepareRow($row);
+
+    $source_id = $row->nid;
+
+    $query = Database::getConnection('default', $this->sourceConnection)
+    ->select('nodewords', 'n')
+    ->fields('n', array('name', 'content'))
+    ->condition('n.id', $source_id, '=');
+    $results = $query->execute();
+
+    foreach ($results as $metaData) {
+      $row->meta_{$metaData->name} = $metaData->content;
+    }
+  }
+
 }
