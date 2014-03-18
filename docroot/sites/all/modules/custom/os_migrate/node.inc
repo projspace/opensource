@@ -233,5 +233,9 @@ class OsContentResourceMigration extends DrupalNode6Migration {
 class OsContentPageMigration extends DrupalNode6Migration {
   public function __construct(array $arguments) {
     parent::__construct($arguments);
+
+    $this->addFieldMapping('body:summary', 'teaser');
+    $this->addFieldMapping('body:format')->defaultValue('panopoly_wysiwyg_text');
+    $this->addFieldMapping('body:language');
   }
 }
