@@ -190,6 +190,7 @@ class OsContentResourceMigration extends DrupalNode6Migration {
    * Constructor.
    */
   public function __construct($args) {
+    $this->args = $args;
     parent::__construct($args);
 
 
