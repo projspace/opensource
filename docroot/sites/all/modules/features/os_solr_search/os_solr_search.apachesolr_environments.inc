@@ -21,12 +21,12 @@ function os_solr_search_apachesolr_environments() {
     'apachesolr_direct_commit' => 0,
     'apachesolr_index_last' => array(
       'node' => array(
-        'last_changed' => '1394165255',
-        'last_entity_id' => '9',
+        'last_changed' => '1394608017',
+        'last_entity_id' => '5',
       ),
     ),
-    'apachesolr_index_updated' => 1394165406,
-    'apachesolr_last_optimize' => 1394160000,
+    'apachesolr_index_updated' => 1395122122,
+    'apachesolr_last_optimize' => 1395122122,
     'apachesolr_read_only' => '0',
     'apachesolr_soft_commit' => 0,
   );
@@ -34,11 +34,10 @@ function os_solr_search_apachesolr_environments() {
     'node' => array(
       0 => 'article',
       1 => 'event',
-      2 => 'group_page',
-      3 => 'page',
-      4 => 'panopoly_page',
-      5 => 'poll',
-      6 => 'resource',
+      2 => 'page',
+      3 => 'panopoly_page',
+      4 => 'poll',
+      5 => 'resource',
     ),
   );
   $export['solr'] = $environment;
