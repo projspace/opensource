@@ -384,3 +384,20 @@ class OsContentVideoMigration extends OsContentPageMigration {
   }
 
 }
+
+/**
+ * Common mappings for Event content types.
+ */
+class OsContentEventMigration extends OsContentPageMigration {
+
+  public function __construct(array $args) {
+    parent::__construct($args);
+
+    $this->addFieldMapping('field_event_submitter_name', 'field_event_submitter_name');
+    $this->addFieldMapping('field_event_submitter_email', 'field_event_submitter_email');
+    $this->addFieldMapping('field_event_start_date', 'field_event_start_date');
+    $this->addFieldMapping('field_event_location', 'field_event_location');
+    $this->addFieldMapping('field_event_website', 'field_event_website');
+    $this->addFieldMapping('field_event_summary', 'field_event_summary');
+  }
+}
