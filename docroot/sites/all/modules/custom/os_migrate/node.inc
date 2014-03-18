@@ -348,3 +348,30 @@ class OsContentPodcastMigration extends OsContentPageMigration {
   }
 
 }
+
+/**
+ * Common mappings for Video content types.
+ */
+class OsContentVideoMigration extends OsContentPageMigration {
+
+  public function __construct(array $args) {
+    parent::__construct($args);
+
+
+    $this->addFieldMapping('field_lead_image', 'field_lead_image')
+    ->arguments(array('preserve_files' => TRUE))
+    ->sourceMigration('OSFile');
+
+    $this->addFieldMapping('field_lead_image', 'field_image')
+    ->arguments(array('preserve_files' => TRUE))
+    ->sourceMigration('OSFile');
+
+    $this->addFieldMapping('field_default_license', 'field_default_license');
+    $this->addFieldMapping('field_alternative_license', 'field_alternative_license');
+
+    $this->addFieldMapping('field_attachments', 'field_attachments')
+    ->arguments(array('preserve_files' => TRUE))
+    ->sourceMigration('OSFile');
+  }
+
+}
