@@ -243,11 +243,6 @@ class OsContentPageMigration extends DrupalNode6Migration {
       ->description('Handled in prepareRow');
     }
 
-    if (module_exists('pathauto')) {
-      $this->addFieldMapping('pathauto')
-      ->description('By default, disable in favor of migrated paths')
-      ->defaultValue(0);
-    }
   // metatags
     $this->addFieldMapping('metatag_title','title');
     $this->addFieldMapping('metatag_abstract','meta_abstract');
@@ -258,6 +253,10 @@ class OsContentPageMigration extends DrupalNode6Migration {
     $this->addFieldMapping('metatag_robots','meta_robots');
     $this->addFieldMapping('metatag_canonical','meta_canonical');
   }
+
+  public function prepare(&$row) {
+  $row->path['pathauto'] = 0;
+}
 
   public function prepareRow($row){
     parent::prepareRow($row);
