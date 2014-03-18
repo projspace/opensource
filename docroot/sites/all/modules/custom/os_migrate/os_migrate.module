@@ -115,7 +115,7 @@ function os_migrate_register_migrations() {
   // first, we want to make sure it's listed first so the vocubularies are
   // listed right ahead of the node migrations.
   $common_vocabulary_arguments = $common_arguments + array(
-      'class_name' => 'DrupalTermMigration'
+      'class_name' => 'DrupalTerm6Migration'
   );
 
   //Mapping of taxonomy terms
