@@ -88,7 +88,7 @@ function os_migrate_register_migrations() {
 
 // Taxonomy migration start
 // For vocabulary migrations, source_vocabulary and destination_vocabulary are
-// required arguments. Note that in MNN Drupal 6 vocabularies did not have machine
+// required arguments. Note that in Drupal 6 vocabularies did not have machine
 // names, so we use the vocabulary ID to uniquely identify them.
   $vocabulary_arguments = array(
      array(
