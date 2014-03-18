@@ -243,6 +243,7 @@ class OsContentPageMigration extends DrupalNode6Migration {
       ->description('Handled in prepareRow');
     }
 
+    //TBD - not working
     $this->addFieldMapping('workflow','workflow');
     $this->addFieldMapping('workflow_stamp','workflow_stamp');
 
