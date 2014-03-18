@@ -184,7 +184,7 @@ class OsContentPollMigration extends OsContentArticleMigration {
 /**
  * Common mappings for Resource content types.
  */
-abstract class OsContentResourceeMigration extends DrupalNode6Migration {
+class OsContentResourceeMigration extends DrupalNode6Migration {
 
   /**
    * Constructor.
