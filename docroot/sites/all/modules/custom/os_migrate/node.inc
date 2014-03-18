@@ -107,8 +107,8 @@ class OsContentArticleMigration extends DrupalNode6Migration {
     //select title from node n, og_ancestry oa where oa.nid = 5774 AND oa.group_nid = n.nid;
     $query = Database::getConnection('default', $this->sourceConnection)
     ->select('node', 'n')
-    ->fields('n', array('title'))
     ->join('og_ancestry', 'oa', 'oa.group_nid = n.nid')
+    ->fields('n', array('title'))
     ->condition('oa.nid', $source_id, '=');
     $results = $query->execute();
 
