@@ -298,3 +298,22 @@ class OsContentResourceMigration extends OsContentPageMigration {
   }
 
 }
+
+/**
+ * Common mappings for Podcast content types.
+ */
+class OsContentPodcastMigration extends OsContentPageMigration {
+
+  public function __construct(array $args) {
+    parent::__construct($args);
+
+
+    $this->addFieldMapping('field_lead_image', 'field_lead_image')
+    ->arguments(array('preserve_files' => TRUE))
+    ->sourceMigration('OSFile');
+
+    $this->addFieldMapping('field_lead_image', 'field_image')
+    ->arguments(array('preserve_files' => TRUE))
+    ->sourceMigration('OSFile');
+  }
+}
