@@ -5,7 +5,11 @@
     margin:0;
 }
 
-.page-search {
+body.page-search {
+    .page__title {
+        display: block;
+    }
+
     .pane-title {
         @extend %h2;
     }

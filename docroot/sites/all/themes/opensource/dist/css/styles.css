@@ -10566,7 +10566,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 }
 
-.page-search .pane-title {
+body.page-search .pane-title {
   float: none;
   font-size: 12px;
   font-weight: bold;
@@ -10579,11 +10579,25 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000313;
+    font-family: \000039;
   }
 }
 
-.page-search #apachesolr-panels-search-form {
+body.page-search .page__title {
+  display: block;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss;
+  }
+
+  line {
+    font-family: \0000317;
+  }
+}
+
+body.page-search #apachesolr-panels-search-form {
   clear: both;
   overflow: hidden;
   margin-bottom: 12px;
@@ -10595,11 +10609,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000318;
+    font-family: \0000322;
   }
 }
 
-.page-search #apachesolr-panels-search-form .form-text {
+body.page-search #apachesolr-panels-search-form .form-text {
   padding: 15px 20px 15px 5px;
   margin-right: 10px;
 }
@@ -10610,11 +10624,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000323;
+    font-family: \0000327;
   }
 }
 
-.page-search #apachesolr-panels-search-form .form-item {
+body.page-search #apachesolr-panels-search-form .form-item {
   float: left;
   margin: 0;
 }
@@ -10625,11 +10639,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000328;
+    font-family: \0000332;
   }
 }
 
-.page-search #apachesolr-panels-search-form .form-actions {
+body.page-search #apachesolr-panels-search-form .form-actions {
   float: left;
   margin-top: 7px;
 }
@@ -10640,11 +10654,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000335;
+    font-family: \0000339;
   }
 }
 
-.page-search .pane-apachesolr-result h2 {
+body.page-search .pane-apachesolr-result h2 {
   margin: 0;
 }
 
@@ -10654,26 +10668,12 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000340;
+    font-family: \0000344;
   }
 }
 
-.page-search .search-results {
+body.page-search .search-results {
   padding-left: 0;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss;
-  }
-
-  line {
-    font-family: \0000343;
-  }
-}
-
-.page-search .search-results .search-result {
-  margin: 0;
 }
 
 @media -sass-debug-info {
@@ -10686,7 +10686,21 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 }
 
-.page-search .search-results p {
+body.page-search .search-results .search-result {
+  margin: 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss;
+  }
+
+  line {
+    font-family: \0000351;
+  }
+}
+
+body.page-search .search-results p {
   margin-top: 0;
   margin-bottom: 12px;
 }
@@ -10697,11 +10711,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000352;
+    font-family: \0000356;
   }
 }
 
-.page-search .search-results .title {
+body.page-search .search-results .title {
   font-size: 13px;
   font-weight: normal;
   margin: 0;
@@ -10713,11 +10727,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000358;
+    font-family: \0000362;
   }
 }
 
-.page-search .search-results .search-snippet-info {
+body.page-search .search-results .search-snippet-info {
   padding-left: 0;
   margin-left: 24px;
 }
@@ -10728,29 +10742,14 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000363;
+    font-family: \0000367;
   }
 }
 
-.page-search .search-results .search-meta-info {
+body.page-search .search-results .search-meta-info {
   font-size: 10px;
   margin-left: 24px;
   margin-bottom: 12px;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss;
-  }
-
-  line {
-    font-family: \0000369;
-  }
-}
-
-.page-search .search-results a {
-  color: #333;
-  text-decoration: underline;
 }
 
 @media -sass-debug-info {
@@ -10763,6 +10762,21 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 }
 
-.page-search .search-results a:hover {
+body.page-search .search-results a {
+  color: #333;
+  text-decoration: underline;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss;
+  }
+
+  line {
+    font-family: \0000377;
+  }
+}
+
+body.page-search .search-results a:hover {
   color: #39f;
 }
