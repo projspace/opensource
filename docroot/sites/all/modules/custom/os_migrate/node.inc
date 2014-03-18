@@ -7,7 +7,7 @@
 /**
  * Common mappings for Article-type content types.
  */
-abstract class OsContentArticleMigration extends DrupalNode6Migration {
+class OsContentArticleMigration extends DrupalNode6Migration {
   /**
    * Constructor.
    */
