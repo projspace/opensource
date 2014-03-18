@@ -108,8 +108,8 @@ class OsContentArticleMigration extends DrupalNode6Migration {
     $query = Database::getConnection('default', $this->sourceConnection)
     ->select('node', 'n')
     ->fields('n', array('title'))
-    ->innerJoin('og_ancestry', 'oa', 'oa.group_nid = n.nid')
-    ->condition('oa.nid', $source_id, '=');
+    ->innerJoin('og_ancestry', 'oa', 'oa.group_nid = n.nid');
+    $query->condition('oa.nid', $source_id, '=');
     $results = $query->execute();
 
     foreach ($results as $metaData) {
