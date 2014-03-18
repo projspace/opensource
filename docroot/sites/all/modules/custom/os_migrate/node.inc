@@ -256,7 +256,7 @@ class OsContentPageMigration extends DrupalNode6Migration {
 
   public function prepare(&$row) {
   $row->path['pathauto'] = 0;
-}
+  }
 
   public function prepareRow($row){
     parent::prepareRow($row);
@@ -272,5 +272,23 @@ class OsContentPageMigration extends DrupalNode6Migration {
     foreach ($results as $metaData) {
       $row->meta_{$metaData->name} = $metaData->content;
     }
+
+    $query = Database::getConnection('default', $this->sourceConnection)
+    ->select('workflow_node', 'n')
+    ->fields('n', array('sid'))
+    ->condition('n.nid', $source_id, '=');
+    $results = $query->execute();
+
+    foreach ($results as $resut) {
+      $sid = $result->sid;
+    }
+
+    $array_sids = array(
+      1 => 1,
+      6 => 2,
+      11 => 3
+      );
+
+    $row->workflow = $array_sids[$sid];
   }
 }
