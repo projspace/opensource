@@ -243,6 +243,9 @@ class OsContentPageMigration extends DrupalNode6Migration {
       ->description('Handled in prepareRow');
     }
 
+    $this->addFieldMapping('workflow','workflow');
+    $this->addFieldMapping('workflow_stamp','workflow_stamp');
+
   // metatags
     $this->addFieldMapping('metatag_title','title');
     $this->addFieldMapping('metatag_abstract','meta_abstract');
@@ -275,12 +278,13 @@ class OsContentPageMigration extends DrupalNode6Migration {
 
     $query = Database::getConnection('default', $this->sourceConnection)
     ->select('workflow_node', 'n')
-    ->fields('n', array('sid'))
+    ->fields('n', array('sid', 'workflow_stamp'))
     ->condition('n.nid', $source_id, '=');
     $results = $query->execute();
 
-    foreach ($results as $resut) {
+    foreach ($results as $result) {
       $sid = $result->sid;
+      $row->workflow_stamp = $result->workflow_stamp;
     }
 
     $array_sids = array(
