@@ -237,5 +237,16 @@ class OsContentPageMigration extends DrupalNode6Migration {
     $this->addFieldMapping('body:summary', 'teaser');
     $this->addFieldMapping('body:format')->defaultValue('panopoly_wysiwyg_text');
     $this->addFieldMapping('body:language');
+
+    if ($this->moduleExists('path')) {
+      $this->addFieldMapping('path', 'path')
+      ->description('Handled in prepareRow');
+    }
+
+    if (module_exists('pathauto')) {
+      $this->addFieldMapping('pathauto')
+      ->description('By default, disable in favor of migrated paths')
+      ->defaultValue(0);
+    }
   }
 }
