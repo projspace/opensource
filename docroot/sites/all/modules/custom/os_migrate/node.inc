@@ -184,7 +184,7 @@ class OsContentPollMigration extends OsContentArticleMigration {
 /**
  * Common mappings for Resource content types.
  */
-abstract class OsContentResourceMigration extends DrupalNode6Migration {
+class OsContentResourceMigration extends DrupalNode6Migration {
 
   /**
    * Constructor.
@@ -228,4 +228,10 @@ abstract class OsContentResourceMigration extends DrupalNode6Migration {
     }
   }
 
+}
+
+class OsContentPageMigration extends DrupalNode6Migration {
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+  }
 }
