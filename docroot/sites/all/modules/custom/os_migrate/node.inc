@@ -96,8 +96,11 @@ class OsContentArticleMigration extends DrupalNode6Migration {
     $results = $query->execute();
 
     foreach ($results as $metaData) {
-      $row->meta_{$metaData->name} = $metaData->content;
+      $n = "meta_" . $metaData->name;
+      $value = (unserialize($metaData->content));
+      $row->{$n} = $value['value'];
     }
+
 
     // get the tid for article type
     $term = taxonomy_get_term_by_name('Article', 'article_type');
@@ -224,7 +227,9 @@ class OsContentPageMigration extends DrupalNode6Migration {
     $results = $query->execute();
 
     foreach ($results as $metaData) {
-      $row->meta_{$metaData->name} = $metaData->content;
+      $n = "meta_" . $metaData->name;
+      $value = (unserialize($metaData->content));
+      $row->{$n} = $value['value'];
     }
 
     $query = Database::getConnection('default', $this->sourceConnection)
@@ -293,7 +298,9 @@ class OsContentResourceMigration extends OsContentPageMigration {
     $results = $query->execute();
 
     foreach ($results as $metaData) {
-      $row->meta_{$metaData->name} = $metaData->content;
+      $n = "meta_" . $metaData->name;
+      $value = (unserialize($metaData->content));
+      $row->{$n} = $value['value'];
     }
   }
 
@@ -343,7 +350,9 @@ class OsContentPodcastMigration extends OsContentPageMigration {
     $results = $query->execute();
 
     foreach ($results as $metaData) {
-      $row->meta_{$metaData->name} = $metaData->content;
+      $n = "meta_" . $metaData->name;
+      $value = (unserialize($metaData->content));
+      $row->{$n} = $value['value'];
     }
   }
 
