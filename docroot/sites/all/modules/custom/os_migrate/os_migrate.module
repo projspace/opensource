@@ -47,6 +47,7 @@ function os_migrate_register_migrations() {
   $common_arguments = array(
       'source_connection' => 'legacy',
       'source_version' => 6,
+      'group_name' => 'opensource',
   );
 
   // Register User Picture migration.
