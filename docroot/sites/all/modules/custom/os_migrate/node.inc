@@ -184,11 +184,8 @@ class OsContentPollMigration extends OsContentArticleMigration {
 /**
  * Common mappings for Resource content types.
  */
-class OsContentResourceMigration extends DrupalNode6Migration {
+class OsContentResourceMigration extends OsContentPageMigration {
 
-  /**
-   * Constructor.
-   */
   public function __construct(array $args) {
     parent::__construct($args);
 
@@ -200,6 +197,11 @@ class OsContentResourceMigration extends DrupalNode6Migration {
     $this->addFieldMapping('field_attachments', 'field_attachments')
     ->arguments(array('preserve_files' => TRUE))
     ->sourceMigration('OSFile');
+
+    if ($this->moduleExists('path')) {
+      $this->addFieldMapping('path', 'path')
+      ->description('Handled in prepareRow');
+    }
 
     // metatags
     $this->addFieldMapping('metatag_title','title');
