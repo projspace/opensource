@@ -15,16 +15,27 @@ function os_migrate_flush_caches() {
  * Register all D6->D7 migrations.
  */
 function os_migrate_register_migrations() {
+  // Best practice: use a variable (defined by setting $conf in settings.php
+  // or with drush vset) for database details rather than in the code.
+  $db_name = variable_get('os_migrate_database');
+  $db_user = variable_get('os_migrate_username');
+  $db_pass = variable_get('os_migrate_password');
+  $source_dir = variable_get('os_migrate_files_source_dir', 'http://opensource.com/sites/default/files');
+
+  // Do not register migrations if we don't have the details.
+  if (empty($db_name)) {
+    drupal_set_message(t('OpenSouce.com migration source database information is not defined. Please set variables for os_migrate_database, os_migrate_username, os_migrate_password and optionally, os_migrate_files_source_dir.'), 'error', TRUE);
+    return;
+  }
+
   // These are our common arguments for all our migrations.
   $common_arguments = array(
     'source_connection' => 'legacy',
     'source_database' => array(
       'driver' => 'mysql',
-      'database' => 'os6',
-      'username' => 'hwdb',
-      // Best practice: use a variable (defined by setting $conf in settings.php
-      // or with drush vset) for the password rather than in the code.
-      'password' => variable_get('os_migrate_password', 'hussainweb'),
+      'database' => $db_name,
+      'username' => $db_user,
+      'password' => $db_pass,
       'host' => 'localhost',
     ),
     'source_version' => 6,
@@ -35,7 +46,7 @@ function os_migrate_register_migrations() {
   $args = $common_arguments + array(
     'description' => t('Migration of user pictures'),
     'machine_name' => 'OsUserPicture',
-    'source_dir' => 'http://opensource.com/sites/default/files',
+    'source_dir' => $source_dir,
   );
 
   Migration::registerMigration('DrupalPicture6Migration', $args['machine_name'], $args);
@@ -71,7 +82,7 @@ function os_migrate_register_migrations() {
   $args = $common_arguments + array(
     'description' => t('Migration of all managed files'),
     'machine_name' => 'OsFile',
-    'source_dir' => 'http://opensource.com/sites/default/files',
+    'source_dir' => $source_dir,
   );
 
   Migration::registerMigration('DrupalFile6Migration', $args['machine_name'], $args);
@@ -80,7 +91,7 @@ function os_migrate_register_migrations() {
   $args = $common_arguments + array(
     'description' => t('Migration of IMCE Image field files'),
     'machine_name' => 'OsImageFieldFile',
-    'source_dir' => 'http://opensource.com/sites/default/files',
+    'source_dir' => $source_dir,
   );
 
   Migration::registerMigration('OsMigrateFieldImceImageMigration', $args['machine_name'], $args);
