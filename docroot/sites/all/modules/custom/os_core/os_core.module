@@ -398,6 +398,9 @@ function os_core_form_article_node_form_alter(&$form, &$form_state, $form_id) {
  */
 function os_core_form_search_block_form_alter(&$form, &$form_state) {
   if (variable_get('search_default_module') == 'apachesolr_search') {
+    if(arg(2) != NULL) {
+      $form['search_block_form']['#default_value'] = filter_xss(arg(2));
+    }
     $form['#submit'][] = 'os_core_form_search_submit';
   }
 }
@@ -412,7 +415,12 @@ function os_core_form_search_submit($form, &$form_state) {
   // Replace keys with their rawurlencoded value.
   if (isset($fv['search_block_form'])) {
     $raw_keys = str_replace('/', '%2f', $fv['search_block_form']);
-    $form_state['redirect'] = 'search/apachesolr_search/' . $raw_keys;
+    if(filter_xss(arg(0)) == 'search' && filter_xss(arg(1)) == 'users') {
+      $form_state['redirect'] = 'search/users/' . $raw_keys;
+    }
+    else {
+      $form_state['redirect'] = 'search/apachesolr_search/' . $raw_keys;
+    }
   }
 }
 
@@ -438,5 +446,14 @@ function os_core_views_query_alter(&$view, &$query) {
       }
     }
      */
+  }
+}
+
+function os_core_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  if(arg(0) == 'search' && (arg(1) == 'users' || arg(1) == 'apachesolr_search') && arg(2) != NULL) {
+    unset($data['tabs'][0]['output'][1]);
+    unset($data['tabs'][0]['output'][2]);
+    $data['tabs'][0]['output'][0]['#link']['href'] = $data['tabs'][0]['output'][0]['#link']['href'] . '/' . filter_xss(arg(2));
+    $data['tabs'][0]['output'][3]['#link']['href'] = $data['tabs'][0]['output'][3]['#link']['href'] . '/' . filter_xss(arg(2));
   }
 }
