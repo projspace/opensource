@@ -112,7 +112,7 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'About Open* %term:name',
-      'body' => '<p><span><a href="taxonomy/term/%term:tid/feed">RSS</a></span></p><p><span>%term:description</span></p><p><span><a href="%term:url/about">» Read More</a></span></p>',
+      'body' => '<p><span class="term_feed"><a href="taxonomy/term/%term:tid/feed">RSS</a></span></p><p><span class="term_description">%term:description</span></p><p><span class="term_readmore"><a href="%term:url/about">» Read More</a></span></p>',
       'format' => 'panopoly_wysiwyg_text',
       'substitute' => 1,
     );
