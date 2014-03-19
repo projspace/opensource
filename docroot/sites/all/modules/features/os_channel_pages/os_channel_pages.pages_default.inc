@@ -112,15 +112,20 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'About Open* %term:name',
-      'body' => '<p><span class="term_feed"><a href="taxonomy/term/%term:tid/feed">RSS</a></span></p><p><span class="term_description">%term:description</span></p><p><span class="term_readmore"><a href="%term:url/about">» Read More</a></span></p>',
-      'format' => 'panopoly_wysiwyg_text',
+      'body' => '<p><span class="term_feed"><a href="taxonomy/term/%term:tid/feed">RSS</a></span></p>
+<p><span class="term_description">%term:description</span></p>
+<p><span class="term_readmore"><a href="%term:url/about">» Read More</a></span></p>',
+      'format' => 'panopoly_html_text',
       'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-term-description',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
