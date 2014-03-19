@@ -1691,6 +1691,16 @@ function userpoints_views_api() {
 }
 
 /**
+ * Implements hook_migrate_api().
+ */
+function userpoints_migrate_api() {
+  $api = array(
+    'api' => 2,
+  );
+  return $api;
+}
+
+/**
  * Invokes hook_userpoints() with params passed by references.
  *
  * @param $op
