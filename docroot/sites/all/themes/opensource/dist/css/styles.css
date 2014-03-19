@@ -10545,7 +10545,27 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \000039;
+    font-family: \000038;
+  }
+}
+
+.section-business .pane-term-description,
+.section-education .pane-term-description,
+.section-health .pane-term-description,
+.section-law .pane-term-description,
+.section-life .pane-term-description,
+.section-government .pane-term-description {
+  clear: both;
+  overflow: hidden;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss;
+  }
+
+  line {
+    font-family: \0000312;
   }
 }
 
@@ -10569,7 +10589,105 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000318;
+    font-family: \0000321;
+  }
+}
+
+.section-business .pane-term-description .term_feed,
+.section-education .pane-term-description .term_feed,
+.section-health .pane-term-description .term_feed,
+.section-law .pane-term-description .term_feed,
+.section-life .pane-term-description .term_feed,
+.section-government .pane-term-description .term_feed {
+  float: right;
+  text-indent: -9999px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss;
+  }
+
+  line {
+    font-family: \0000326;
+  }
+}
+
+.section-business .pane-term-description .term_description,
+.section-education .pane-term-description .term_description,
+.section-health .pane-term-description .term_description,
+.section-law .pane-term-description .term_description,
+.section-life .pane-term-description .term_description,
+.section-government .pane-term-description .term_description {
+  clear: both;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss;
+  }
+
+  line {
+    font-family: \0000330;
+  }
+}
+
+.section-business .pane-term-description .term_readmore,
+.section-education .pane-term-description .term_readmore,
+.section-health .pane-term-description .term_readmore,
+.section-law .pane-term-description .term_readmore,
+.section-life .pane-term-description .term_readmore,
+.section-government .pane-term-description .term_readmore {
+  text-align: right;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss;
+  }
+
+  line {
+    font-family: \0000333;
+  }
+}
+
+.section-business .pane-term-description .term_readmore a,
+.section-education .pane-term-description .term_readmore a,
+.section-health .pane-term-description .term_readmore a,
+.section-law .pane-term-description .term_readmore a,
+.section-life .pane-term-description .term_readmore a,
+.section-government .pane-term-description .term_readmore a {
+  color: #333;
+  text-decoration: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss;
+  }
+
+  line {
+    font-family: \0000337;
+  }
+}
+
+.section-business .pane-term-description .term_readmore a:hover,
+.section-education .pane-term-description .term_readmore a:hover,
+.section-health .pane-term-description .term_readmore a:hover,
+.section-law .pane-term-description .term_readmore a:hover,
+.section-life .pane-term-description .term_readmore a:hover,
+.section-government .pane-term-description .term_readmore a:hover {
+  text-decoration: underline;
+  color: #39f;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss;
+  }
+
+  line {
+    font-family: \0000344;
   }
 }
 
@@ -10588,7 +10706,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000326;
+    font-family: \0000352;
   }
 }
 
@@ -10602,7 +10720,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000335;
+    font-family: \0000361;
   }
 }
 
@@ -10616,7 +10734,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000344;
+    font-family: \0000370;
   }
 }
 
@@ -10630,7 +10748,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000353;
+    font-family: \0000379;
   }
 }
 
@@ -10644,7 +10762,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000362;
+    font-family: \0000388;
   }
 }
 
@@ -10658,7 +10776,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000371;
+    font-family: \0000397;
   }
 }
 

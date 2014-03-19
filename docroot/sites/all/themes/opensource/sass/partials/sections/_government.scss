@@ -6,6 +6,9 @@
 .section-government {
 
     .pane-term-description {
+        clear: both;
+        overflow: hidden;
+
         .pane-title {
             text-indent: -9999px;
             margin-left: -0.5em;
@@ -13,6 +16,29 @@
             line-height: 1;
             min-width: 200px;
             float: left;
+        }
+
+        .term_feed {
+            float: right;
+            text-indent: -9999px;
+        }
+
+        .term_description {
+            clear: both;
+        }
+
+        .term_readmore {
+            text-align: right;
+
+            a {
+                color: #333;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: #39f;
+                }
+            }
         }
 
         p {
