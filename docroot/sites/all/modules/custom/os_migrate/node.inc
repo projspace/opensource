@@ -252,6 +252,15 @@ class OsContentResourceMigration extends OsContentPageMigration {
 }
 
 /**
+ * Common mappings for Group Page content types.
+ */
+class OsContentGroupPageMigration extends OsContentPageMigration {
+
+  public function __construct(array $args) {
+    parent::__construct($args);
+  }
+}
+/**
  * Common mappings for Podcast content types.
  */
 class OsContentPodcastMigration extends OsContentPageMigration {

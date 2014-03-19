@@ -199,6 +199,14 @@ function os_migrate_register_migrations() {
       'destination_type' => 'resource',
     ),
     array(
+      'class_name' => 'OsContentGroupPageMigration',
+      'description' => t('Migration of group page nodes from Drupal 6'),
+      'machine_name' => 'OsContentGroupPage',
+      'dependencies' => array('OsFile'),
+      'source_type' => 'group_page',
+      'destination_type' => 'group_page',
+    ),
+    array(
       'class_name' => 'OsContentEventMigration',
       'description' => t('Migration of event nodes from Drupal 6'),
       'machine_name' => 'OsContentEvent',
