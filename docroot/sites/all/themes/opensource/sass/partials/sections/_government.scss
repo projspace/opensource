@@ -11,9 +11,12 @@
             margin-left: -0.5em;
             margin-bottom: 10px;
             line-height: 1;
+            min-width: 200px;
+            float: left;
         }
 
         p {
+            margin: 0;
         }
     }
 }
