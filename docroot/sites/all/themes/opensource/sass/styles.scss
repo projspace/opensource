@@ -15,6 +15,7 @@
 @import "components/homepage";
 @import "print";
 
+@import "partials/base/drupal-resets";
 @import "partials/base/base";
 @import "partials/base/layout";
 @import "partials/base/tags";
@@ -38,6 +39,8 @@
 @import "partials/resource/_links";
 @import "partials/resource/_most-active";
 
+@import "partials/basic-pages/_basic-page";
+
 @import "partials/badges/_badge-base";
 
 @import "partials/comments/_comments-base";
@@ -50,3 +53,5 @@
 
 @import "partials/sections/_section-base";
 @import "partials/sections/_government";
+
+@import "partials/search/_search-base";

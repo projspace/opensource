@@ -4,14 +4,13 @@
         line-height: 1.3;
         font-weight: bold;
         margin-bottom: 12px;
-        float: none;
+        float: none
     }
 }
 
 .badge-wrapper,
 .pane-contributor-spotlight-panel-pane-promoted {
     @extend .box-wrapper;
-
 
     h2 {
         background: url("../images/osdc_contributor_spotlight.png") no-repeat scroll center bottom transparent;

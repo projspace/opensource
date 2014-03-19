@@ -24,3 +24,10 @@ function os_solr_search_ctools_plugin_api($module = NULL, $api = NULL) {
     return array("version" => "1");
   }
 }
+
+/**
+ * Implements hook_views_api().
+ */
+function os_solr_search_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
