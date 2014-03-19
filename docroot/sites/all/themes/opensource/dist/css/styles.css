@@ -5080,6 +5080,8 @@ tr.selected td {
 
 @media -sass-debug-info {
   filename {
+<<<<<<< HEAD
+=======
     font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_drupal-resets\.scss;
   }
 
@@ -5111,6 +5113,7 @@ tr.selected td {
 
 @media -sass-debug-info {
   filename {
+>>>>>>> dev
     font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_base\.scss;
   }
 
@@ -5180,6 +5183,19 @@ a {
 
 a:hover {
   color: #3399ff;
+<<<<<<< HEAD
+=======
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_base\.scss;
+  }
+
+  line {
+    font-family: \0000324;
+  }
+>>>>>>> dev
 }
 
 @media -sass-debug-info {
@@ -5304,6 +5320,16 @@ blockquote {
   border: 1px solid #cdcbca;
   height: 22px;
   padding: 8px 8px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_base\.scss;
+  }
+
+  line {
+    font-family: \0000369;
+  }
 }
 
 @media -sass-debug-info {
@@ -6152,6 +6178,9 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \000036;
+=======
     font-family: \000035;
   }
 }
@@ -6167,6 +6196,7 @@ blockquote {
 
   line {
     font-family: \0000310;
+>>>>>>> dev
   }
 }
 
@@ -6181,6 +6211,9 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000311;
+=======
     font-family: \0000314;
   }
 }
@@ -6196,6 +6229,7 @@ blockquote {
 
   line {
     font-family: \0000319;
+>>>>>>> dev
   }
 }
 
@@ -6217,7 +6251,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000324;
+=======
     font-family: \0000331;
+>>>>>>> dev
   }
 }
 
@@ -6233,7 +6271,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000333;
+=======
     font-family: \0000339;
+>>>>>>> dev
   }
 }
 
@@ -6247,7 +6289,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000337;
+=======
     font-family: \0000343;
+>>>>>>> dev
   }
 }
 
@@ -6261,7 +6307,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000341;
+=======
     font-family: \0000347;
+>>>>>>> dev
   }
 }
 
@@ -6276,7 +6326,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000345;
+=======
     font-family: \0000351;
+>>>>>>> dev
   }
 }
 
@@ -6290,7 +6344,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000350;
+=======
     font-family: \0000356;
+>>>>>>> dev
   }
 }
 
@@ -6305,7 +6363,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000356;
+=======
     font-family: \0000362;
+>>>>>>> dev
   }
 }
 
@@ -6319,7 +6381,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000359;
+=======
     font-family: \0000365;
+>>>>>>> dev
   }
 }
 
@@ -6333,7 +6399,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000364;
+=======
     font-family: \0000370;
+>>>>>>> dev
   }
 }
 
@@ -6348,7 +6418,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000370;
+=======
     font-family: \0000376;
+>>>>>>> dev
   }
 }
 
@@ -6362,7 +6436,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000373;
+=======
     font-family: \0000379;
+>>>>>>> dev
   }
 }
 
@@ -6376,7 +6454,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000378;
+=======
     font-family: \0000384;
+>>>>>>> dev
   }
 }
 
@@ -6391,7 +6473,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000384;
+=======
     font-family: \0000390;
+>>>>>>> dev
   }
 }
 
@@ -6405,7 +6491,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000387;
+=======
     font-family: \0000393;
+>>>>>>> dev
   }
 }
 
@@ -6419,7 +6509,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000392;
+=======
     font-family: \0000398;
+>>>>>>> dev
   }
 }
 
@@ -6434,7 +6528,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000398;
+=======
     font-family: \00003104;
+>>>>>>> dev
   }
 }
 
@@ -6448,7 +6546,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003101;
+=======
     font-family: \00003107;
+>>>>>>> dev
   }
 }
 
@@ -6462,7 +6564,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003106;
+=======
     font-family: \00003112;
+>>>>>>> dev
   }
 }
 
@@ -6477,7 +6583,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003112;
+=======
     font-family: \00003118;
+>>>>>>> dev
   }
 }
 
@@ -6491,7 +6601,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003115;
+=======
     font-family: \00003121;
+>>>>>>> dev
   }
 }
 
@@ -6505,7 +6619,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003120;
+=======
     font-family: \00003126;
+>>>>>>> dev
   }
 }
 
@@ -6520,7 +6638,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003126;
+=======
     font-family: \00003132;
+>>>>>>> dev
   }
 }
 
@@ -6535,7 +6657,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003130;
+=======
     font-family: \00003136;
+>>>>>>> dev
   }
 }
 
@@ -6549,7 +6675,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003135;
+=======
     font-family: \00003141;
+>>>>>>> dev
   }
 }
 
@@ -6768,6 +6898,19 @@ blockquote {
 .footer-twitter {
   background: url(../images/footer-social/twitter.jpg);
 }
+<<<<<<< HEAD
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/footer\/_footer-social\.scss;
+  }
+
+  line {
+    font-family: \0000337;
+  }
+}
+=======
+>>>>>>> dev
 
 @media -sass-debug-info {
   filename {
@@ -7442,6 +7585,19 @@ blockquote {
 .event-listing .ui-accordion-content .social__container {
   margin-bottom: 10px;
 }
+<<<<<<< HEAD
+=======
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss;
+  }
+
+  line {
+    font-family: \00003179;
+  }
+}
+>>>>>>> dev
 
 @media -sass-debug-info {
   filename {
@@ -7533,6 +7689,19 @@ blockquote {
   float: left;
   margin-right: 5px;
 }
+<<<<<<< HEAD
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/events\/_calendar\.scss;
+  }
+
+  line {
+    font-family: \00003215;
+  }
+}
+=======
+>>>>>>> dev
 
 @media -sass-debug-info {
   filename {
@@ -8226,6 +8395,19 @@ blockquote {
 .node-type-article .pane-related-articles-panel-pane-1 .related-content .views-row {
   float: left;
   width: 33.33%;
+<<<<<<< HEAD
+=======
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss;
+  }
+
+  line {
+    font-family: \0000396;
+  }
+>>>>>>> dev
 }
 
 @media -sass-debug-info {
@@ -8307,6 +8489,16 @@ blockquote {
   border: 1px solid #cdcbca;
   height: 30px;
   padding: 8px 8px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss;
+  }
+
+  line {
+    font-family: \00003124;
+  }
 }
 
 @media -sass-debug-info {
@@ -8425,7 +8617,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003169;
+=======
     font-family: \00003170;
+>>>>>>> dev
   }
 }
 
@@ -8443,7 +8639,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003176;
+=======
     font-family: \00003177;
+>>>>>>> dev
   }
 }
 
@@ -8462,7 +8662,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003186;
+=======
     font-family: \00003187;
+>>>>>>> dev
   }
 }
 
@@ -8479,7 +8683,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003193;
+=======
     font-family: \00003194;
+>>>>>>> dev
   }
 }
 
@@ -8495,7 +8703,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003199;
+=======
     font-family: \00003200;
+>>>>>>> dev
   }
 }
 
@@ -8812,7 +9024,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000316;
+=======
     font-family: \0000315;
+>>>>>>> dev
   }
 }
 
@@ -8834,7 +9050,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000328;
+=======
     font-family: \0000327;
+>>>>>>> dev
   }
 }
 
@@ -8850,7 +9070,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000333;
+=======
     font-family: \0000332;
+>>>>>>> dev
   }
 }
 
@@ -8866,7 +9090,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000337;
+=======
     font-family: \0000336;
+>>>>>>> dev
   }
 }
 
@@ -8881,7 +9109,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000342;
+=======
     font-family: \0000341;
+>>>>>>> dev
   }
 }
 
@@ -8896,7 +9128,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000347;
+=======
     font-family: \0000346;
+>>>>>>> dev
   }
 }
 
@@ -8911,7 +9147,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000351;
+=======
     font-family: \0000350;
+>>>>>>> dev
   }
 }
 
@@ -8927,7 +9167,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000359;
+=======
     font-family: \0000358;
+>>>>>>> dev
   }
 }
 
@@ -8943,7 +9187,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000368;
+=======
     font-family: \0000367;
+>>>>>>> dev
   }
 }
 
@@ -8958,7 +9206,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000373;
+=======
     font-family: \0000372;
+>>>>>>> dev
   }
 }
 
@@ -8974,7 +9226,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000378;
+=======
     font-family: \0000377;
+>>>>>>> dev
   }
 }
 
@@ -8991,7 +9247,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000383;
+=======
     font-family: \0000382;
+>>>>>>> dev
   }
 }
 
@@ -9007,7 +9267,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000387;
+=======
     font-family: \0000386;
+>>>>>>> dev
   }
 }
 
@@ -9023,7 +9287,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000394;
+=======
     font-family: \0000393;
+>>>>>>> dev
   }
 }
 
@@ -9041,7 +9309,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003101;
+=======
     font-family: \00003100;
+>>>>>>> dev
   }
 }
 
@@ -9057,7 +9329,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003106;
+=======
     font-family: \00003105;
+>>>>>>> dev
   }
 }
 
@@ -9072,7 +9348,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003111;
+=======
     font-family: \00003110;
+>>>>>>> dev
   }
 }
 
@@ -9087,7 +9367,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003115;
+=======
     font-family: \00003114;
+>>>>>>> dev
   }
 }
 
@@ -9197,6 +9481,16 @@ blockquote {
   }
 }
 
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss;
+  }
+
+  line {
+    font-family: \0000330;
+  }
+}
+
 .pane-node-comments .submitted {
   margin: 0;
 }
@@ -9207,7 +9501,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000334;
+=======
     font-family: \0000336;
+>>>>>>> dev
   }
 }
 
@@ -9221,7 +9519,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000340;
+=======
     font-family: \0000342;
+>>>>>>> dev
   }
 }
 
@@ -9238,7 +9540,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000349;
+=======
     font-family: \0000351;
+>>>>>>> dev
   }
 }
 
@@ -9252,7 +9558,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000353;
+=======
     font-family: \0000355;
+>>>>>>> dev
   }
 }
 
@@ -9266,7 +9576,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000361;
+=======
     font-family: \0000363;
+>>>>>>> dev
   }
 }
 
@@ -9280,7 +9594,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000369;
+=======
     font-family: \0000371;
+>>>>>>> dev
   }
 }
 
@@ -9296,7 +9614,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000375;
+=======
     font-family: \0000377;
+>>>>>>> dev
   }
 }
 
@@ -9310,7 +9632,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000380;
+=======
     font-family: \0000382;
+>>>>>>> dev
   }
 }
 
@@ -9324,7 +9650,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000385;
+=======
     font-family: \0000387;
+>>>>>>> dev
   }
 }
 
@@ -9344,6 +9674,8 @@ blockquote {
   }
 }
 
+<<<<<<< HEAD
+=======
 .vud-widget {
   float: right;
   clear: both;
@@ -9360,6 +9692,7 @@ blockquote {
   }
 }
 
+>>>>>>> dev
 .vud-widget .up-score,
 .vud-widget .down-score {
   display: inline-block;
@@ -9371,7 +9704,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003100;
+=======
     font-family: \00003106;
+>>>>>>> dev
   }
 }
 
@@ -9385,7 +9722,11 @@ blockquote {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003104;
+=======
     font-family: \00003110;
+>>>>>>> dev
   }
 }
 
@@ -10593,10 +10934,18 @@ body.page-search .page__title {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000318;
+  }
+}
+
+body.page-search #search-block-form,
+=======
     font-family: \0000317;
   }
 }
 
+>>>>>>> dev
 body.page-search #apachesolr-panels-search-form {
   clear: both;
   overflow: hidden;
@@ -10609,10 +10958,18 @@ body.page-search #apachesolr-panels-search-form {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000323;
+  }
+}
+
+body.page-search #search-block-form .form-text,
+=======
     font-family: \0000322;
   }
 }
 
+>>>>>>> dev
 body.page-search #apachesolr-panels-search-form .form-text {
   padding: 15px 20px 15px 5px;
   margin-right: 10px;
@@ -10624,10 +10981,18 @@ body.page-search #apachesolr-panels-search-form .form-text {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000328;
+  }
+}
+
+body.page-search #search-block-form .form-item,
+=======
     font-family: \0000327;
   }
 }
 
+>>>>>>> dev
 body.page-search #apachesolr-panels-search-form .form-item {
   float: left;
   margin: 0;
@@ -10639,10 +11004,18 @@ body.page-search #apachesolr-panels-search-form .form-item {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000333;
+  }
+}
+
+body.page-search #search-block-form .form-actions,
+=======
     font-family: \0000332;
   }
 }
 
+>>>>>>> dev
 body.page-search #apachesolr-panels-search-form .form-actions {
   float: left;
   margin-top: 7px;
@@ -10654,12 +11027,13 @@ body.page-search #apachesolr-panels-search-form .form-actions {
   }
 
   line {
-    font-family: \0000339;
+<<<<<<< HEAD
+    font-family: \0000340;
   }
 }
 
-body.page-search .pane-apachesolr-result h2 {
-  margin: 0;
+body.page-search .view-admin-views-user {
+  margin: 12px 0;
 }
 
 @media -sass-debug-info {
@@ -10668,7 +11042,93 @@ body.page-search .pane-apachesolr-result h2 {
   }
 
   line {
+    font-family: \0000343;
+  }
+}
+
+body.page-search .view-admin-views-user .views-row {
+  margin-bottom: 12px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss;
+  }
+
+  line {
+    font-family: \0000346;
+  }
+}
+
+body.page-search .view-admin-views-user .views-row a {
+  color: black;
+  font-size: 13px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss;
+  }
+
+  line {
+    font-family: \0000350;
+  }
+}
+
+body.page-search .view-admin-views-user .views-row a:hover {
+  color: #39f;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss;
+  }
+
+  line {
+    font-family: \0000357;
+  }
+}
+
+body.page-search .view-admin-views-user .views-field-mail,
+body.page-search .view-admin-views-user .views-field-name {
+  display: inline;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss;
+  }
+
+  line {
+    font-family: \0000365;
+  }
+}
+
+body.page-search .pane-admin-views-user-panel-pane-1 h2,
+body.page-search .pane-apachesolr-result h2 {
+  margin: 0;
+  font-size: 18px;
+=======
+    font-family: \0000339;
+  }
+}
+
+body.page-search .pane-apachesolr-result h2 {
+  margin: 0;
+>>>>>>> dev
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss;
+  }
+
+  line {
+<<<<<<< HEAD
+    font-family: \0000371;
+=======
     font-family: \0000344;
+>>>>>>> dev
   }
 }
 
@@ -10682,7 +11142,11 @@ body.page-search .search-results {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000374;
+=======
     font-family: \0000347;
+>>>>>>> dev
   }
 }
 
@@ -10696,7 +11160,11 @@ body.page-search .search-results .search-result {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000378;
+=======
     font-family: \0000351;
+>>>>>>> dev
   }
 }
 
@@ -10711,7 +11179,11 @@ body.page-search .search-results p {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000383;
+=======
     font-family: \0000356;
+>>>>>>> dev
   }
 }
 
@@ -10727,7 +11199,11 @@ body.page-search .search-results .title {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000389;
+=======
     font-family: \0000362;
+>>>>>>> dev
   }
 }
 
@@ -10742,7 +11218,11 @@ body.page-search .search-results .search-snippet-info {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \0000394;
+=======
     font-family: \0000367;
+>>>>>>> dev
   }
 }
 
@@ -10758,7 +11238,11 @@ body.page-search .search-results .search-meta-info {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003100;
+=======
     font-family: \0000373;
+>>>>>>> dev
   }
 }
 
@@ -10773,12 +11257,18 @@ body.page-search .search-results a {
   }
 
   line {
+<<<<<<< HEAD
+    font-family: \00003104;
+=======
     font-family: \0000377;
+>>>>>>> dev
   }
 }
 
 body.page-search .search-results a:hover {
   color: #39f;
+<<<<<<< HEAD
+=======
 }
 
 @media -sass-debug-info {
@@ -10809,4 +11299,5 @@ body.page-search .search-results a:hover {
 
 .basic_title p {
   margin: 0;
+>>>>>>> dev
 }

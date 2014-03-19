@@ -14,6 +14,7 @@ body.page-search {
         @extend %h2;
     }
 
+    #search-block-form,
     #apachesolr-panels-search-form {
         clear: both;
         overflow: hidden;
@@ -33,11 +34,37 @@ body.page-search {
             float: left;
             margin-top: 7px;
         }
+
     }
 
+    .view-admin-views-user {
+        margin: 12px 0;
+
+        .views-row {
+            margin-bottom: 12px;
+
+            a {
+                color: black;
+                font-size: 13px;
+
+                &:hover {
+                    color: #39f;
+                }
+            }
+        }
+
+        .views-field-mail,
+        .views-field-name {
+            display: inline;
+        }
+    }
+
+
+    .pane-admin-views-user-panel-pane-1,
     .pane-apachesolr-result {
         h2 {
             margin: 0;
+            font-size: 18px;
         }
     }
 
