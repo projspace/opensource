@@ -18,5 +18,8 @@ function os_user_features_override_default_overrides() {
   $overrides["field_group.group_user_profile|user|user|form.data|children|4"] = 'field_community_description';
   $overrides["field_group.group_user_profile|user|user|form.data|children|5"] = 'field_profile_point_notification';
 
+  // Exported overrides for: field_instance
+  $overrides["field_instance.user-user-field_user_picture.settings|min_resolution"] = '';
+
  return $overrides;
 }
