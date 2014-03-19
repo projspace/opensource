@@ -1,0 +1,19 @@
+.fivestar-open.source {
+  /* Javascript Star Version */ }
+  .fivestar-open.source div.fivestar-widget-static .star {
+    width: 17px;
+    height: 16px;
+    background: url(osratings.gif) no-repeat 0 0px; }
+  .fivestar-open.source div.fivestar-widget-static .star span.on {
+    background: url(osratings.gif) no-repeat 0 -32px; }
+  .fivestar-open.source div.fivestar-widget-static .star span.off {
+    background: url(osratings.gif) no-repeat 0 0px; }
+  .fivestar-open.source div.fivestar-widget .cancel, .fivestar-open.source div.fivestar-widget .star {
+    width: 17px;
+    height: 16px; }
+  .fivestar-open.source div.fivestar-widget .star, .fivestar-open.source div.fivestar-widget .star a {
+    background: url(osratings.gif) no-repeat 0 0px; }
+  .fivestar-open.source div.fivestar-widget div.on a {
+    background-position: 0 -16px; }
+  .fivestar-open.source div.fivestar-widget div.hover a, .fivestar-open.source div.rating div a:hover {
+    background-position: 0 -32px; }

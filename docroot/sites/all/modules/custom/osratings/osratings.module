@@ -1,0 +1,9 @@
+<?php
+function osratings_fivestar_widgets() {
+// Letting Fivestar know about my custom stars.
+  $widgets = array(
+    drupal_get_path('module', 'osratings') . '/widgets/osratings/osratings.css' => 'Open Source Ratings',
+  );
+  return $widgets;
+}
+?>
