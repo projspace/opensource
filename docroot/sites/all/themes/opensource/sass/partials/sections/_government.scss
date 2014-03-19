@@ -21,6 +21,13 @@
         .term_feed {
             float: right;
             text-indent: -9999px;
+
+            a {
+                width: 12px;
+                height: 13px;
+                display: block;
+                background: url('../images/rss.jpg');
+            }
         }
 
         .term_description {
