@@ -4364,22 +4364,47 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   content: '» ';
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\000032}}
-.section-government .page__title {
-  display: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\000039}}
+.section-business .pane-term-description .pane-title,
+.section-education .pane-term-description .pane-title,
+.section-health .pane-term-description .pane-title,
+.section-law .pane-term-description .pane-title,
+.section-life .pane-term-description .pane-title,
 .section-government .pane-term-description .pane-title {
-  background: url("../images/about_government.png") no-repeat;
   text-indent: -9999px;
   margin-left: -0.5em;
   margin-bottom: 10px;
   line-height: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000315}}
-.section-government .pane-term-description p {
-  margin-top: 4px;
-  padding: 0 15px 13px 16px;
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000323}}
+.section-business .pane-term-description .pane-title {
+  background: url("../images/about_business.png") no-repeat;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000332}}
+.section-education .pane-term-description .pane-title {
+  background: url("../images/about_education.png") no-repeat;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000341}}
+.section-health .pane-term-description .pane-title {
+  background: url("../images/about_health.png") no-repeat;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000350}}
+.section-law .pane-term-description .pane-title {
+  background: url("../images/about_law.png") no-repeat;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000359}}
+.section-life .pane-term-description .pane-title {
+  background: url("../images/about_life.png") no-repeat;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000368}}
+.section-government .pane-term-description .pane-title {
+  background: url("../images/about_government.png") no-repeat;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\000031}}

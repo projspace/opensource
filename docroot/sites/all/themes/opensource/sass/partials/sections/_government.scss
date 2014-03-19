@@ -1,11 +1,12 @@
+.section-business,
+.section-education,
+.section-health,
+.section-law,
+.section-life,
 .section-government {
-    .page__title {
-        display: none;
-    }
 
     .pane-term-description {
         .pane-title {
-            background: url('../images/about_government.png') no-repeat;
             text-indent: -9999px;
             margin-left: -0.5em;
             margin-bottom: 10px;
@@ -13,8 +14,61 @@
         }
 
         p {
-            margin-top: 4px;
-            padding: 0 15px 13px 16px;
         }
     }
 }
+
+.section-business {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_business.png') no-repeat;
+        }
+    }
+
+}
+
+.section-education {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_education.png') no-repeat;
+        }
+    }
+
+}
+
+.section-health {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_health.png') no-repeat;
+        }
+    }
+
+}
+
+.section-law {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_law.png') no-repeat;
+        }
+    }
+
+}
+
+.section-life {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_life.png') no-repeat;
+        }
+    }
+
+}
+
+.section-government {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_government.png') no-repeat;
+        }
+    }
+
+}
+
