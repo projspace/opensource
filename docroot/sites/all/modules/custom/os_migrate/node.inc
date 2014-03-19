@@ -4,6 +4,9 @@
  * Migration support for nodes.
  */
 
+/**
+ * Common mappings for Page content types.
+ */
 class OsContentPageMigration extends DrupalNode6Migration {
   public function __construct(array $arguments) {
     parent::__construct($arguments);
@@ -32,19 +35,30 @@ class OsContentPageMigration extends DrupalNode6Migration {
     $this->addFieldMapping('metatag_canonical','meta_canonical');
   }
 
-  public function prepare(&$row) {
-  $row->path['pathauto'] = 0;
+  public function prepare($row) {
+    $row->path['pathauto'] = 0;
   }
 
+  /**
+   * Review a data row after fetch, returning FALSE to skip it.
+   *
+   * @param object $row
+   *   Data Row to prepare.
+   *
+   * @return bool
+   *   FALSE to skip this row.
+   */
   public function prepareRow($row){
-    parent::prepareRow($row);
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
 
     $source_id = $row->nid;
 
     $query = Database::getConnection('default', $this->sourceConnection)
-    ->select('nodewords', 'n')
-    ->fields('n', array('name', 'content'))
-    ->condition('n.id', $source_id, '=');
+      ->select('nodewords', 'n')
+      ->fields('n', array('name', 'content'))
+      ->condition('n.id', $source_id, '=');
     $results = $query->execute();
 
     foreach ($results as $metaData) {
@@ -68,9 +82,9 @@ class OsContentPageMigration extends DrupalNode6Migration {
       1 => 1,
       6 => 2,
       11 => 3
-      );
-
+    );
     $row->workflow = $array_sids[$sid];
+    return TRUE;
   }
 }
 
@@ -136,7 +150,6 @@ class OsContentArticleMigration extends OsContentPageMigration {
       $row->image_alt = $row->{'field_image:alt'};
       $row->image_title = '';
     }
-
     return TRUE;
   }
 
@@ -157,7 +170,7 @@ class OsContentArticleMigration extends OsContentPageMigration {
     if ($this->prepareRowFieldImages($row) === FALSE) {
       return FALSE;
     }
-    
+
     $source_id = $row->nid;
 
     $query = Database::getConnection('default', $this->sourceConnection)
@@ -191,7 +204,7 @@ class OsContentArticleMigration extends OsContentPageMigration {
     // get the tid
     $term2 = taxonomy_get_term_by_name($field_channel_name, 'channel');
     $row->field_channel = $term2->tid;
-    
+
     return TRUE;
   }
 
@@ -200,26 +213,12 @@ class OsContentArticleMigration extends OsContentPageMigration {
 /**
  * Mappings for Article -> Poll content type.
  */
-class OsContentPollMigration extends OsContentArticleMigration {
+class OsContentPollMigration extends OsContentPageMigration {
   /**
    * Constructor.
    */
   public function __construct($args) {
     parent::__construct($args);
-    $this->addImageMappings();
-  }
-
-  /**
-   * Setup mappings for image fields.
-   */
-  protected function addImageMappings() {
-    $this->addFieldMapping('field_lead_image', 'image')
-      ->arguments(array('preserve_files' => TRUE))
-      ->sourceMigration(array('OsFile', 'OsImageFieldFile'));
-    $this->addFieldMapping('field_lead_image:alt', 'image_alt');
-    $this->addFieldMapping('field_lead_image:title', 'image_title');
-    $this->dependencies[] = 'OsFile';
-    $this->dependencies[] = 'OsImageFieldFile';
   }
 
   /**
@@ -242,14 +241,13 @@ class OsContentResourceMigration extends OsContentPageMigration {
   public function __construct(array $args) {
     parent::__construct($args);
 
-
     $this->addFieldMapping('field_lead_image', 'field_lead_image')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
+      ->arguments(array('preserve_files' => TRUE))
+      ->sourceMigration('OSFile');
 
     $this->addFieldMapping('field_attachments', 'field_attachments')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
+      ->arguments(array('preserve_files' => TRUE))
+      ->sourceMigration('OSFile');
   }
 }
 
@@ -261,14 +259,13 @@ class OsContentPodcastMigration extends OsContentPageMigration {
   public function __construct(array $args) {
     parent::__construct($args);
 
-
     $this->addFieldMapping('field_lead_image', 'field_lead_image')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
+      ->arguments(array('preserve_files' => TRUE))
+      ->sourceMigration('OSFile');
 
     $this->addFieldMapping('field_lead_image', 'field_image')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
+      ->arguments(array('preserve_files' => TRUE))
+      ->sourceMigration('OSFile');
   }
 
 }
@@ -281,23 +278,21 @@ class OsContentVideoMigration extends OsContentPageMigration {
   public function __construct(array $args) {
     parent::__construct($args);
 
-
     $this->addFieldMapping('field_lead_image', 'field_lead_image')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
+      ->arguments(array('preserve_files' => TRUE))
+      ->sourceMigration('OSFile');
 
     $this->addFieldMapping('field_lead_image', 'field_image')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
+      ->arguments(array('preserve_files' => TRUE))
+      ->sourceMigration('OSFile');
 
     $this->addFieldMapping('field_default_license', 'field_default_license');
     $this->addFieldMapping('field_alternative_license', 'field_alternative_license');
 
     $this->addFieldMapping('field_attachments', 'field_attachments')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
+      ->arguments(array('preserve_files' => TRUE))
+      ->sourceMigration('OSFile');
   }
-
 }
 
 /**
