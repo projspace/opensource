@@ -24,6 +24,8 @@
 
         .comment-reply {
             float: right;
+            margin: 0;
+            padding: 0;
         }
     }
 
@@ -54,9 +56,46 @@
         display: none;
     }
 
+    .indented {
+        .indented {
+            .indented {
+                .indented {
+                    .indented {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .ajax-progress.ajax-progress-throbber {
+        position: absolute;
+        left: 0px;
+        z-index: -1;
+    }
+
+    .up-active {
+    background: url("../images/icon-vote-up.png") no-repeat;
+    }
+
+
+    .vud-widget .down-active {
+    background: url("../images/icon-vote-down.png") no-repeat
+    }
+
+    .down-inactive,
+    .down-active {
+        position: relative;
+        top: 5px;
+    }
+
 }
 
 .vud-widget {
+    float: right;
+    clear: both;
+    margin: 12px 0 0;
+
     .up-score,
     .down-score {
         display: inline-block;
