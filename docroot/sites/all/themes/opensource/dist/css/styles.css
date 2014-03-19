@@ -10556,6 +10556,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
 .section-life .pane-term-description,
 .section-government .pane-term-description {
   clear: both;
+  margin-bottom: 12px;
 }
 
 @media -sass-debug-info {
@@ -10564,7 +10565,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000311;
+    font-family: \0000312;
   }
 }
 
@@ -10588,7 +10589,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000320;
+    font-family: \0000321;
   }
 }
 
@@ -10608,7 +10609,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000324;
+    font-family: \0000325;
   }
 }
 
@@ -10630,7 +10631,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000332;
+    font-family: \0000333;
   }
 }
 
@@ -10649,7 +10650,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000336;
+    font-family: \0000337;
   }
 }
 
@@ -10668,7 +10669,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000339;
+    font-family: \0000340;
   }
 }
 
@@ -10688,7 +10689,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000343;
+    font-family: \0000344;
   }
 }
 
@@ -10708,7 +10709,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000350;
+    font-family: \0000351;
   }
 }
 
@@ -10727,7 +10728,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000358;
+    font-family: \0000359;
   }
 }
 
@@ -10741,7 +10742,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000367;
+    font-family: \0000368;
   }
 }
 
@@ -10755,7 +10756,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000376;
+    font-family: \0000377;
   }
 }
 
@@ -10769,7 +10770,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000385;
+    font-family: \0000386;
   }
 }
 
@@ -10783,7 +10784,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000394;
+    font-family: \0000395;
   }
 }
 
@@ -10797,7 +10798,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \00003103;
+    font-family: \00003104;
   }
 }
 
