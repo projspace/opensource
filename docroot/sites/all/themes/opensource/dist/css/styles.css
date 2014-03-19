@@ -10780,3 +10780,33 @@ body.page-search .search-results a {
 body.page-search .search-results a:hover {
   color: #39f;
 }
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/basic-pages\/_basic-page\.scss;
+  }
+
+  line {
+    font-family: \000031;
+  }
+}
+
+.basic_title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/basic-pages\/_basic-page\.scss;
+  }
+
+  line {
+    font-family: \000036;
+  }
+}
+
+.basic_title p {
+  margin: 0;
+}
