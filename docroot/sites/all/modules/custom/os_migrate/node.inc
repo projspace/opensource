@@ -387,8 +387,36 @@ class OsContentPodcastMigration extends OsContentPageMigration {
     $this->addFieldMapping('field_lead_image', 'field_image')
       ->arguments(array('preserve_files' => TRUE))
       ->sourceMigration('OSFile');
+
+    $this->addFieldMapping('field_article_type', 'field_article_type');
+    $this->addFieldMapping('field_channel', 'field_channel');
   }
 
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+    $term = taxonomy_get_term_by_name('Podcast', 'article_type');
+    $row->field_article_type = $term->tid;
+
+    // get the tid for channel - based on the OG audience
+    //select title from node n, og_ancestry oa where oa.nid = 5774 AND oa.group_nid = n.nid;
+    $query = Database::getConnection('default', $this->sourceConnection)
+    ->select('node', 'n');
+    $query->join('og_ancestry', 'oa', 'oa.group_nid = n.nid');
+    $query->fields('n', array('title'))
+    ->condition('oa.nid', $source_id, '=');
+    $results = $query->execute();
+
+    foreach ($results as $metaData) {
+      $field_channel_name = $metaData->title;
+    }
+    // get the tid
+    $term2 = taxonomy_get_term_by_name($field_channel_name, 'channel');
+    $row->field_channel = $term2->tid;
+
+    return TRUE;
+  }
 }
 
 /**
@@ -413,6 +441,35 @@ class OsContentVideoMigration extends OsContentPageMigration {
     $this->addFieldMapping('field_attachments', 'field_attachments')
       ->arguments(array('preserve_files' => TRUE))
       ->sourceMigration('OSFile');
+
+    $this->addFieldMapping('field_article_type', 'field_article_type');
+    $this->addFieldMapping('field_channel', 'field_channel');
+  }
+
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+    $term = taxonomy_get_term_by_name('Video', 'article_type');
+    $row->field_article_type = $term->tid;
+
+    // get the tid for channel - based on the OG audience
+    //select title from node n, og_ancestry oa where oa.nid = 5774 AND oa.group_nid = n.nid;
+    $query = Database::getConnection('default', $this->sourceConnection)
+    ->select('node', 'n');
+    $query->join('og_ancestry', 'oa', 'oa.group_nid = n.nid');
+    $query->fields('n', array('title'))
+    ->condition('oa.nid', $source_id, '=');
+    $results = $query->execute();
+
+    foreach ($results as $metaData) {
+      $field_channel_name = $metaData->title;
+    }
+    // get the tid
+    $term2 = taxonomy_get_term_by_name($field_channel_name, 'channel');
+    $row->field_channel = $term2->tid;
+
+    return TRUE;
   }
 }
 
