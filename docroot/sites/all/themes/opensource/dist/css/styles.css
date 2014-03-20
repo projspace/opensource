@@ -11291,3 +11291,37 @@ body.page-search .search-results a:hover {
   color: #39f;
   text-decoration: underline;
 }
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/unpublished\/_unpublished\.scss;
+  }
+
+  line {
+    font-family: \000032;
+  }
+}
+
+.node_unpublished .burr-flipped-content {
+  background: #FFF4F4;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/unpublished\/_unpublished\.scss;
+  }
+
+  line {
+    font-family: \000036;
+  }
+}
+
+.node_unpublished .article-title:after {
+  content: '**UNPUBLISHED**';
+  font-weight: bold;
+  color: #C00;
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+}

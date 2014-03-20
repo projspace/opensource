@@ -1,0 +1,15 @@
+.node_unpublished {
+    .burr-flipped-content {
+        background: #FFF4F4;
+    }
+
+    .article-title:after {
+        content: '**UNPUBLISHED**';
+        font-weight: bold;
+        color: #C00;
+        font-size: 18px;
+        text-align: center;
+        display: block;
+        margin-top: 10px;
+    }
+}
