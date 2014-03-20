@@ -24,6 +24,7 @@
             <?php if ($site_name): ?>
               <h1 class="header__site-name" id="site-name">
                 <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="header__site-link" rel="home"><span><?php print $site_name; ?></span></a>
+<a href="http://www.redhat.com" title="Home" class="red__site-link" rel="home" style=" "><span>redhat.com</span></a>"
               </h1>
             <?php endif; ?>
 

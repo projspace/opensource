@@ -6047,7 +6047,44 @@ blockquote {
   }
 }
 
+.header__site-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_banner\.scss;
+  }
+
+  line {
+    font-family: \000039;
+  }
+}
+
+.red__site-link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 135px;
+  height: 70px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_banner\.scss;
+  }
+
+  line {
+    font-family: \0000317;
+  }
+}
+
 .header-banner {
+  position: relative;
   height: 128px;
   background: url("../images/banner.png") no-repeat bottom center;
 }
@@ -6058,7 +6095,7 @@ blockquote {
   }
 
   line {
-    font-family: \000035;
+    font-family: \0000322;
   }
 }
 
@@ -6073,7 +6110,7 @@ blockquote {
   }
 
   line {
-    font-family: \000039;
+    font-family: \0000326;
   }
 }
 
@@ -6087,12 +6124,12 @@ blockquote {
   }
 
   line {
-    font-family: \0000315;
+    font-family: \0000332;
   }
 }
 
 .header-banner .form-item-search-block-form {
-  float: right;
+  float: right !important;
   margin: 0;
 }
 
@@ -6102,7 +6139,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000320;
+    font-family: \0000337;
   }
 }
 
@@ -6116,7 +6153,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000324;
+    font-family: \0000341;
   }
 }
 
@@ -6127,6 +6164,8 @@ blockquote {
   width: 120px;
   color: #999;
   font-size: 14px;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 @media -sass-debug-info {
@@ -6135,7 +6174,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000333;
+    font-family: \0000352;
   }
 }
 
@@ -6155,7 +6194,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000343;
+    font-family: \0000362;
   }
 }
 

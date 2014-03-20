@@ -1,4 +1,21 @@
+.header__site-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.red__site-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 135px;
+    height: 70px;
+}
+
 .header-banner {
+    position: relative;
     height: 128px;
     background: url('../images/banner.png') no-repeat bottom center;
 
@@ -13,7 +30,7 @@
     }
 
     .form-item-search-block-form {
-        float: right;
+        float: right !important;
         margin: 0;
     }
 
@@ -28,6 +45,8 @@
         width: 120px;
         color: #999;
         font-size: 14px;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     input[type="submit"] {
