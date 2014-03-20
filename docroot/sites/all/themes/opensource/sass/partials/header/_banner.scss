@@ -7,16 +7,25 @@
         float: right;
 
         #block-search-form {
-            margin-top: 10px;
+            margin-top: 13px;
 
         }
     }
 
+    .form-item-search-block-form {
+        float: right;
+        margin: 0;
+    }
+
+    .form-action {
+        float: left;
+    }
+
     input[type="text"] {
         border: none;
-        line-height: 28px;
-        height: 31px;
-        width: 238px;
+        line-height: 21px;
+        height: 24px;
+        width: 120px;
         color: #999;
         font-size: 14px;
     }
@@ -24,9 +33,11 @@
     input[type="submit"] {
         border: none;
         text-indent: -9999px;
-        background: url('../images/search.png') no-repeat center;
-        line-height: 29px;
-        width: 40px;
+        background: transparent;
+        width: 30px;
+        line-height: 21px;
+        height: 24px;
+        margin: 0;
     }
 
     .header__name-and-slogan {

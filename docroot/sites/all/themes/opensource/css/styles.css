@@ -2646,26 +2646,37 @@ blockquote {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_banner\.scss}line{font-family:\000039}}
 .header-banner .region-header #block-search-form {
-  margin-top: 10px;
+  margin-top: 13px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_banner\.scss}line{font-family:\0000315}}
+.header-banner .form-item-search-block-form {
+  float: right;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_banner\.scss}line{font-family:\0000320}}
+.header-banner .form-action {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_banner\.scss}line{font-family:\0000324}}
 .header-banner input[type="text"] {
   border: none;
-  line-height: 28px;
-  height: 31px;
-  width: 238px;
+  line-height: 21px;
+  height: 24px;
+  width: 120px;
   color: #999;
   font-size: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_banner\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_banner\.scss}line{font-family:\0000333}}
 .header-banner input[type="submit"] {
   border: none;
   text-indent: -9999px;
-  background: url("../images/search.png") no-repeat center;
-  line-height: 29px;
-  width: 40px;
+  background: transparent;
+  width: 30px;
+  line-height: 21px;
+  height: 24px;
+  margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_banner\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_banner\.scss}line{font-family:\0000343}}
 .header-banner .header__name-and-slogan {
   text-indent: -9999px;
 }
