@@ -21,8 +21,8 @@ class OsContentPageMigration extends DrupalNode6Migration {
     }
 
     //TBD - not working
-    $this->addFieldMapping('workflow','workflow');
-    $this->addFieldMapping('workflow_stamp','workflow_stamp');
+    //$this->addFieldMapping('workflow','workflow');
+    //$this->addFieldMapping('workflow_stamp','workflow_stamp');
 
   // metatags
     $this->addFieldMapping('metatag_title','title');
