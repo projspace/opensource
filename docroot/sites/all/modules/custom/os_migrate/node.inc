@@ -98,7 +98,7 @@ class OsContentArticleMigration extends OsContentPageMigration {
   public function __construct($args) {
     parent::__construct($args);
 
-    $this->addFieldMapping('field_lead_image', 'field_image')
+    $this->addFieldMapping('field_lead_image', 'field_lead_image')
       ->arguments(array('preserve_files' => TRUE))
       ->sourceMigration(array('OsFile', 'OsImageFieldFile'));
     $this->addFieldMapping('field_lead_image:alt', 'field_lead_image:alt');
@@ -121,7 +121,7 @@ class OsContentArticleMigration extends OsContentPageMigration {
     $this->addFieldMapping('field_channel', 'field_channel');
 
     //poll
-    //$this->addFieldMapping('field_related_poll', 'nid')->sourceMigration('OsContentPoll');
+    $this->addFieldMapping('field_related_poll', 'nid')->sourceMigration('OsContentPoll');
   }
 
   /**
@@ -188,7 +188,6 @@ class OsContentArticleMigration extends OsContentPageMigration {
 
     return TRUE;
   }
-
 }
 
 /**
