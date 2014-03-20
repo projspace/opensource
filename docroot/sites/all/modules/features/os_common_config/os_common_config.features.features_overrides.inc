@@ -12,67 +12,86 @@ function os_common_config_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: filter
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-1|border"] = 'border';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-1|border-bottom"] = 'border-bottom';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-1|border-bottom-width"] = 'border-bottom-width';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-1|border-left"] = 'border-left';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-1|border-left-width"] = 'border-left-width';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-1|border-right"] = 'border-right';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-1|border-right-width"] = 'border-right-width';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-1|border-top"] = 'border-top';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-1|border-top-width"] = 'border-top-width';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-1|border-width"] = 'border-width';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-2|border-bottom-color"] = 'border-bottom-color';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-2|border-bottom-style"] = 'border-bottom-style';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-2|border-color"] = 'border-color';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-2|border-left-color"] = 'border-left-color';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-2|border-left-style"] = 'border-left-style';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-2|border-right-color"] = 'border-right-color';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-2|border-right-style"] = 'border-right-style';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-2|border-style"] = 'border-style';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-2|border-top-color"] = 'border-top-color';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_border-2|border-top-style"] = 'border-top-style';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_box|margin"] = 'margin';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_box|margin-bottom"] = 'margin-bottom';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_box|margin-left"] = 'margin-left';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_box|margin-right"] = 'margin-right';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_box|margin-top"] = 'margin-top';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_box|padding"] = 'padding';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_box|padding-top"] = 'padding-top';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_color|background"] = 'background';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_color|background-attachment"] = 'background-attachment';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_color|background-color"] = 'background-color';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_color|background-image"] = 'background-image';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_color|background-position"] = 'background-position';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_color|background-repeat"] = 'background-repeat';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_dimension|height"] = 'height';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_dimension|line-height"] = 'line-height';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_dimension|max-height"] = 'max-height';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_dimension|max-width"] = 'max-width';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_dimension|min-height"] = 'min-height';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_dimension|min-width"] = 'min-width';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_dimension|width"] = 'width';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_font|font"] = 'font';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_layout|clear"] = 'clear';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_layout|display"] = 'display';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_positioning|bottom"] = 'bottom';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_positioning|clip"] = 'clip';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_positioning|left"] = 'left';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_positioning|overflow"] = 'overflow';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_positioning|right"] = 'right';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_positioning|top"] = 'top';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_positioning|vertical-align"] = 'vertical-align';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_text|letter-spacing"] = 'letter-spacing';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_text|text-indent"] = 'text-indent';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|style_text|text-transform"] = 'text-transform';
-  $overrides["filter.panopoly_html_text.filters|wysiwyg|settings|valid_elements"] = 'a[!href|target<_blank|title|style|class],
-      div[style|class|align<center?justify?left?right],
-      br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,hr,
-      span[style],p[style|class],
-      h1[style|class],h2[style|class],h3[style|class],h4[style|class],h5[style|class],h6[style|class],
-      img[!src|title|alt|style|width|height|class|hspace|vspace],
-      dl[style|class|align<center?justify?left?right],
-      @[style|class]';
+  $overrides["filter.panopoly_html_text.filters|wysiwyg"]["DELETED"] = TRUE;
+  $overrides["filter.panopoly_html_text.name"] = 'Full HTML';
+  $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|rule_valid_classes"] = array(
+    0 => 'a*',
+    2 => 'b*',
+    4 => 'c*',
+    6 => 'd*',
+    8 => 'e*',
+    10 => 'f*',
+    12 => 'g*',
+    14 => 'h*',
+    16 => 'i*',
+    18 => 'j*',
+    20 => 'k*',
+    22 => 'l*',
+    24 => 'm*',
+    26 => 'n*',
+    28 => 'o*',
+    30 => 'p*',
+    32 => 'q*',
+    34 => 'r*',
+    36 => 's*',
+    38 => 't*',
+    40 => 'u*',
+    42 => 'v*',
+    44 => 'w*',
+    46 => 'x*',
+    48 => 'y*',
+    50 => 'z*',
+    52 => 'A*',
+    54 => 'B*',
+    56 => 'C*',
+    58 => 'D*',
+    60 => 'E*',
+    62 => 'F*',
+    64 => 'G*',
+    66 => 'H*',
+    68 => 'I*',
+    70 => 'J*',
+    72 => 'K*',
+    74 => 'L*',
+    76 => 'M*',
+    78 => 'N*',
+    80 => 'O*',
+    82 => 'P*',
+    84 => 'Q*',
+    86 => 'R*',
+    88 => 'S*',
+    90 => 'T*',
+    92 => 'U*',
+    94 => 'V*',
+    96 => 'W*',
+    98 => 'X*',
+    100 => 'Y*',
+    102 => 'Z*',
+  );
+  $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_border-1"] = array(
+    'border' => 0,
+    'border-bottom' => 0,
+    'border-bottom-width' => 0,
+    'border-left' => 0,
+    'border-left-width' => 0,
+    'border-right' => 0,
+    'border-right-width' => 0,
+    'border-top' => 0,
+    'border-top-width' => 0,
+    'border-width' => 0,
+  );
+  $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_border-2"] = array(
+    'border-bottom-color' => 0,
+    'border-bottom-style' => 0,
+    'border-color' => 0,
+    'border-left-color' => 0,
+    'border-left-style' => 0,
+    'border-right-color' => 0,
+    'border-right-style' => 0,
+    'border-style' => 0,
+    'border-top-color' => 0,
+    'border-top-style' => 0,
+  );
   $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_box"] = array(
     'margin' => 'margin',
     'margin-bottom' => 'margin-bottom',
@@ -85,6 +104,15 @@ function os_common_config_features_override_default_overrides() {
     'padding-right' => 'padding-right',
     'padding-top' => 'padding-top',
   );
+  $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_color"] = array(
+    'background' => 0,
+    'background-attachment' => 0,
+    'background-color' => 0,
+    'background-image' => 0,
+    'background-position' => 0,
+    'background-repeat' => 0,
+    'color' => 'color',
+  );
   $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_dimension"] = array(
     'height' => 'height',
     'line-height' => 'line-height',
@@ -94,12 +122,56 @@ function os_common_config_features_override_default_overrides() {
     'min-width' => 'min-width',
     'width' => 'width',
   );
+  $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_font"] = array(
+    'font' => 0,
+    'font-family' => 0,
+    'font-size' => 0,
+    'font-size-adjust' => 0,
+    'font-stretch' => 0,
+    'font-style' => 0,
+    'font-variant' => 0,
+    'font-weight' => 0,
+  );
   $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_layout"] = array(
     'clear' => 0,
     'display' => 0,
     'float' => 'float',
     'position' => 0,
     'visibility' => 0,
+  );
+  $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_list"] = array(
+    'list-style' => 0,
+    'list-style-image' => 0,
+    'list-style-position' => 0,
+    'list-style-type' => 0,
+  );
+  $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_positioning"] = array(
+    'bottom' => 0,
+    'clip' => 0,
+    'left' => 0,
+    'overflow' => 0,
+    'right' => 0,
+    'top' => 0,
+    'vertical-align' => 0,
+    'z-index' => 0,
+  );
+  $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_table"] = array(
+    'border-collapse' => 0,
+    'border-spacing' => 0,
+    'caption-side' => 0,
+    'empty-cells' => 0,
+    'table-layout' => 0,
+  );
+  $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_text"] = array(
+    'direction' => 0,
+    'letter-spacing' => 0,
+    'text-align' => 'text-align',
+    'text-decoration' => 'text-decoration',
+    'text-indent' => 0,
+    'text-transform' => 0,
+    'unicode-bidi' => 0,
+    'white-space' => 0,
+    'word-spacing' => 0,
   );
   $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|style_user"] = array(
     'cursor' => 'cursor',
