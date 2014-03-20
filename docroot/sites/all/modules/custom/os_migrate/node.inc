@@ -35,9 +35,44 @@ class OsContentPageMigration extends DrupalNode6Migration {
     $this->addFieldMapping('metatag_canonical','meta_canonical');
   }
 
-  public function prepare($row) {
-    $row->path['pathauto'] = 0;
+  public function prepare($entity, $row) {
+    $entity->path['pathauto'] = 0;
   }
+
+public function complete(stdClass $entity, stdClass $row) {
+  $node = node_load($entity->nid);
+
+  // Check if this type has workflow association
+  $type = $node->type;
+  // Skip if there are no workflows.
+  if ($workflow = workflow_get_workflow_type_map_by_type($node->type)) {
+
+    $old_sid = 1;
+    $data = array(
+      'nid' => $node->nid,
+      'sid' => $row->workflow,
+      'uid' => 1,
+      'stamp' => REQUEST_TIME,
+    );
+
+    workflow_update_workflow_node($data, $old_sid, $comment);
+
+
+    $data2 = array(
+      'entity_type' => 'node',
+      'nid' => $node->nid,
+      'field_name' => '',
+      'language' => 'und',
+      'delta' => '',
+      'old_sid' => $old_sid,
+      'sid' => $row->workflow,
+      'uid' => 1,
+      'stamp' => REQUEST_TIME,
+      'comment' => '',
+    );
+    drupal_write_record('workflow_node_history', $data2);
+  }
+}
 
   /**
    * Review a data row after fetch, returning FALSE to skip it.
