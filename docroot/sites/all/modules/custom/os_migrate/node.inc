@@ -158,8 +158,8 @@ class OsContentArticleMigration extends OsContentPageMigration {
     ->sourceMigration('OsVocabTags')
     ->arguments(array('source_type' => 'tid'));
 
-    $this->addFieldMapping('field_article_type', 'field_article_type');
-    $this->addFieldMapping('field_channel', 'field_channel');
+    $this->addFieldMapping('tmp_field_article_type', 'field_article_type');
+    $this->addFieldMapping('tmp_field_channel', 'field_channel');
 
     //poll
     //$this->addFieldMapping('field_related_poll', 'nid')->sourceMigration('OsContentPoll');
@@ -197,19 +197,11 @@ class OsContentArticleMigration extends OsContentPageMigration {
   public function prepareRow($row) {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
-    }
-
-    /*
-    if ($this->prepareRowFieldImages($row) === FALSE) {
-      return FALSE;
-    }
-    */
 
     $source_id = $row->nid;
-
-    // get the tid for article type
     $term = taxonomy_get_term_by_name('Article', 'article_type');
-    $row->field_article_type = $term->tid;
+    $term_type = array_keys($term);
+    $row->field_article_type = $term_type[0];
 
     // get the tid for channel - based on the OG audience
     //select title from node n, og_ancestry oa where oa.nid = 5774 AND oa.group_nid = n.nid;
@@ -225,9 +217,17 @@ class OsContentArticleMigration extends OsContentPageMigration {
     }
     // get the tid
     $term2 = taxonomy_get_term_by_name($field_channel_name, 'channel');
-    $row->field_channel = $term2->tid;
+    $term_type = array_keys($term2);
+    $row->field_channel = $term_type[0];
+    }
 
     return TRUE;
+  }
+
+  public function prepare ($node, $row) {
+
+    if (isset($node->tmp_field_channel)) $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
+    if (isset($node->tmp_field_article_type)) $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
   }
 }
 
@@ -265,7 +265,7 @@ class OsContentPollMigration extends OsContentPageMigration {
     ->sourceMigration('OsVocabTags')
     ->arguments(array('source_type' => 'tid'));
 
-    $this->addFieldMapping('field_channel', 'field_channel');
+    $this->addFieldMapping('tmp_field_channel', 'tmp_field_channel');
 
     // Vote field mappings
     $this->addFieldMapping('active', 'field_poll:active');
@@ -299,8 +299,12 @@ class OsContentPollMigration extends OsContentPageMigration {
     }
 
     $source_id = $row->nid;
+    $term = taxonomy_get_term_by_name('Video', 'article_type');
+    $term_type = array_keys($term);
+    $row->field_article_type = $term_type[0];
 
     // get the tid for channel - based on the OG audience
+    //select title from node n, og_ancestry oa where oa.nid = 5774 AND oa.group_nid = n.nid;
     $query = Database::getConnection('default', $this->sourceConnection)
     ->select('node', 'n');
     $query->join('og_ancestry', 'oa', 'oa.group_nid = n.nid');
@@ -313,7 +317,8 @@ class OsContentPollMigration extends OsContentPageMigration {
     }
     // get the tid
     $term2 = taxonomy_get_term_by_name($field_channel_name, 'channel');
-    $row->field_channel = $term2->tid;
+    $term_type = array_keys($term2);
+    $row->field_channel = $term_type[0];
 
     return TRUE;
   }
@@ -342,6 +347,9 @@ class OsContentPollMigration extends OsContentPageMigration {
       }
     }
     $node->choice = $choices;
+
+    if (isset($node->tmp_field_channel)) $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
+    if (isset($node->tmp_field_article_type)) $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
   }
 }
 
@@ -388,16 +396,18 @@ class OsContentPodcastMigration extends OsContentPageMigration {
       ->arguments(array('preserve_files' => TRUE))
       ->sourceMigration('OSFile');
 
-    $this->addFieldMapping('field_article_type', 'field_article_type');
-    $this->addFieldMapping('field_channel', 'field_channel');
+    $this->addFieldMapping('tmp_field_article_type', 'field_article_type');
+    $this->addFieldMapping('tmp_field_channel', 'field_channel');
   }
 
   public function prepareRow($row) {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
+    $source_id = $row->nid;
     $term = taxonomy_get_term_by_name('Podcast', 'article_type');
-    $row->field_article_type = $term->tid;
+    $term_type = array_keys($term);
+    $row->field_article_type = $term_type[0];
 
     // get the tid for channel - based on the OG audience
     //select title from node n, og_ancestry oa where oa.nid = 5774 AND oa.group_nid = n.nid;
@@ -413,9 +423,15 @@ class OsContentPodcastMigration extends OsContentPageMigration {
     }
     // get the tid
     $term2 = taxonomy_get_term_by_name($field_channel_name, 'channel');
-    $row->field_channel = $term2->tid;
+    $term_type = array_keys($term2);
+    $row->field_channel = $term_type[0];
 
     return TRUE;
+  }
+
+  public function prepare ($node, $row) {
+    if (isset($node->tmp_field_channel)) $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
+    if (isset($node->tmp_field_article_type)) $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
   }
 }
 
@@ -442,16 +458,18 @@ class OsContentVideoMigration extends OsContentPageMigration {
       ->arguments(array('preserve_files' => TRUE))
       ->sourceMigration('OSFile');
 
-    $this->addFieldMapping('field_article_type', 'field_article_type');
-    $this->addFieldMapping('field_channel', 'field_channel');
+    $this->addFieldMapping('tmp_field_article_type', 'field_article_type');
+    $this->addFieldMapping('tmp_field_channel', 'field_channel');
   }
 
   public function prepareRow($row) {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
+    $source_id = $row->nid;
     $term = taxonomy_get_term_by_name('Video', 'article_type');
-    $row->field_article_type = $term->tid;
+    $term_type = array_keys($term);
+    $row->field_article_type = $term_type[0];
 
     // get the tid for channel - based on the OG audience
     //select title from node n, og_ancestry oa where oa.nid = 5774 AND oa.group_nid = n.nid;
@@ -467,9 +485,15 @@ class OsContentVideoMigration extends OsContentPageMigration {
     }
     // get the tid
     $term2 = taxonomy_get_term_by_name($field_channel_name, 'channel');
-    $row->field_channel = $term2->tid;
+    $term_type = array_keys($term2);
+    $row->field_channel = $term_type[0];
 
     return TRUE;
+  }
+
+  public function prepare ($node, $row) {
+    if (isset($node->tmp_field_channel)) $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
+    if (isset($node->tmp_field_article_type)) $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
   }
 }
 
