@@ -12,7 +12,7 @@ class OsContentPageMigration extends DrupalNode6Migration {
     parent::__construct($arguments);
 
     $this->addFieldMapping('body:summary', 'teaser');
-    $this->addFieldMapping('body:format')->defaultValue('panopoly_wysiwyg_text');
+    $this->addFieldMapping('body:format')->defaultValue('panopoly_html_text');
     $this->addFieldMapping('body:language');
 
     if ($this->moduleExists('path')) {
