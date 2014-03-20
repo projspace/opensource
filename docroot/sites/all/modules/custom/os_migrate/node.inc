@@ -118,7 +118,13 @@ public function complete(stdClass $entity, stdClass $row) {
       6 => 2,
       11 => 3
     );
-    $row->workflow = $array_sids[$sid];
+    if (isset($sid)) {
+      $row->workflow = $array_sids[$sid];
+    }
+    else {
+      $row->workflow = 3;
+      $row->workflow_stamp = time();
+    }
     return TRUE;
   }
 }
