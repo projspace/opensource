@@ -1170,6 +1170,7 @@ table {
     /* Move the navbar up inside #main's padding. */
     position: absolute;
     top: 0;
+    left: 0;
     height: 3em;
     width: 100%;
   }
@@ -1190,7 +1191,7 @@ table {
     }
 
     line {
-      font-family: \0000386;
+      font-family: \0000387;
     }
 }
 
@@ -1205,7 +1206,7 @@ table {
     }
 
     line {
-      font-family: \0000388;
+      font-family: \0000389;
     }
 }
 
@@ -1222,7 +1223,7 @@ table {
     }
 
     line {
-      font-family: \0000393;
+      font-family: \0000394;
     }
 }
 
@@ -1243,7 +1244,7 @@ table {
     }
 
     line {
-      font-family: \00003101;
+      font-family: \00003102;
     }
 }
 
@@ -1258,7 +1259,7 @@ table {
     }
 
     line {
-      font-family: \00003103;
+      font-family: \00003104;
     }
 }
 
@@ -1275,7 +1276,7 @@ table {
     }
 
     line {
-      font-family: \00003108;
+      font-family: \00003109;
     }
 }
 
@@ -1296,7 +1297,7 @@ table {
     }
 
     line {
-      font-family: \00003116;
+      font-family: \00003117;
     }
 }
 
@@ -1312,7 +1313,7 @@ table {
     }
 
     line {
-      font-family: \00003118;
+      font-family: \00003119;
     }
 }
 
@@ -1329,7 +1330,7 @@ table {
     }
 
     line {
-      font-family: \00003123;
+      font-family: \00003124;
     }
 }
 
@@ -1346,7 +1347,7 @@ table {
     }
 
     line {
-      font-family: \00003128;
+      font-family: \00003129;
     }
 }
 
@@ -1370,7 +1371,7 @@ table {
     }
 
     line {
-      font-family: \00003134;
+      font-family: \00003135;
     }
 }
 
@@ -1389,7 +1390,7 @@ table {
     }
 
     line {
-      font-family: \00003138;
+      font-family: \00003139;
     }
 }
 
@@ -1407,7 +1408,7 @@ table {
     }
 
     line {
-      font-family: \00003143;
+      font-family: \00003144;
     }
 }
 
@@ -1424,7 +1425,7 @@ table {
     }
 
     line {
-      font-family: \00003147;
+      font-family: \00003148;
     }
 }
 
@@ -1451,7 +1452,7 @@ table {
     }
 
     line {
-      font-family: \00003164;
+      font-family: \00003165;
     }
 }
 
@@ -1466,7 +1467,7 @@ table {
     }
 
     line {
-      font-family: \00003166;
+      font-family: \00003167;
     }
 }
 
@@ -1483,7 +1484,7 @@ table {
     }
 
     line {
-      font-family: \00003171;
+      font-family: \00003172;
     }
 }
 
@@ -1504,7 +1505,7 @@ table {
     }
 
     line {
-      font-family: \00003179;
+      font-family: \00003180;
     }
 }
 
@@ -1519,7 +1520,7 @@ table {
     }
 
     line {
-      font-family: \00003181;
+      font-family: \00003182;
     }
 }
 
@@ -1536,7 +1537,7 @@ table {
     }
 
     line {
-      font-family: \00003186;
+      font-family: \00003187;
     }
 }
 
@@ -1557,7 +1558,7 @@ table {
     }
 
     line {
-      font-family: \00003194;
+      font-family: \00003195;
     }
 }
 
@@ -1573,7 +1574,7 @@ table {
     }
 
     line {
-      font-family: \00003196;
+      font-family: \00003197;
     }
 }
 
@@ -1590,7 +1591,7 @@ table {
     }
 
     line {
-      font-family: \00003201;
+      font-family: \00003202;
     }
 }
 
@@ -1607,7 +1608,7 @@ table {
     }
 
     line {
-      font-family: \00003206;
+      font-family: \00003207;
     }
 }
 
@@ -7981,7 +7982,22 @@ blockquote {
   }
 
   line {
-    font-family: \0000318;
+    font-family: \0000319;
+  }
+}
+
+.node-type-poll .pane-node-field-rating .ajax-progress-throbber,
+.node-type-article .pane-node-field-rating .ajax-progress-throbber {
+  float: right;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/article\/_article-base\.scss;
+  }
+
+  line {
+    font-family: \0000324;
   }
 }
 
@@ -7998,7 +8014,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000323;
+    font-family: \0000329;
   }
 }
 
@@ -8017,7 +8033,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000327;
+    font-family: \0000333;
   }
 }
 
@@ -8032,13 +8048,13 @@ blockquote {
   }
 
   line {
-    font-family: \0000332;
+    font-family: \0000338;
   }
 }
 
 .node-type-poll .pane-os-core-opensource-article-share,
 .node-type-article .pane-os-core-opensource-article-share {
-  clear: left;
+  clear: both;
   padding-top: 10px;
 }
 
@@ -8048,7 +8064,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000337;
+    font-family: \0000343;
   }
 }
 
@@ -8063,7 +8079,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000341;
+    font-family: \0000347;
   }
 }
 
@@ -8078,7 +8094,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000345;
+    font-family: \0000351;
   }
 }
 
@@ -8094,7 +8110,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000349;
+    font-family: \0000355;
   }
 }
 
@@ -8109,7 +8125,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000354;
+    font-family: \0000360;
   }
 }
 
@@ -8124,7 +8140,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000358;
+    font-family: \0000364;
   }
 }
 
@@ -8139,7 +8155,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000362;
+    font-family: \0000368;
   }
 }
 
@@ -8157,7 +8173,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000368;
+    font-family: \0000374;
   }
 }
 
@@ -8172,7 +8188,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000374;
+    font-family: \0000380;
   }
 }
 
@@ -8187,7 +8203,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000377;
+    font-family: \0000383;
   }
 }
 
@@ -8202,7 +8218,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000383;
+    font-family: \0000389;
   }
 }
 
@@ -8218,7 +8234,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000388;
+    font-family: \0000394;
   }
 }
 
@@ -8234,7 +8250,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000396;
+    font-family: \00003102;
   }
 }
 
@@ -8249,7 +8265,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003101;
+    font-family: \00003107;
   }
 }
 
@@ -8264,7 +8280,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003106;
+    font-family: \00003112;
   }
 }
 
@@ -8282,7 +8298,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003113;
+    font-family: \00003119;
   }
 }
 
@@ -8297,7 +8313,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003117;
+    font-family: \00003123;
   }
 }
 
@@ -8315,7 +8331,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003124;
+    font-family: \00003130;
   }
 }
 
@@ -8330,7 +8346,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003130;
+    font-family: \00003136;
   }
 }
 
@@ -8348,7 +8364,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003136;
+    font-family: \00003142;
   }
 }
 
@@ -8366,7 +8382,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003144;
+    font-family: \00003150;
   }
 }
 
@@ -8383,7 +8399,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003155;
+    font-family: \00003161;
   }
 }
 
@@ -8397,7 +8413,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003160;
+    font-family: \00003166;
   }
 }
 
@@ -8411,7 +8427,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003164;
+    font-family: \00003170;
   }
 }
 
@@ -8425,7 +8441,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003170;
+    font-family: \00003176;
   }
 }
 
@@ -8443,7 +8459,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003177;
+    font-family: \00003183;
   }
 }
 
@@ -8462,7 +8478,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003187;
+    font-family: \00003193;
   }
 }
 
@@ -8479,7 +8495,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003194;
+    font-family: \00003200;
   }
 }
 
@@ -8495,7 +8511,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003200;
+    font-family: \00003206;
   }
 }
 
@@ -9673,12 +9689,18 @@ blockquote {
   }
 
   line {
-    font-family: \0000334;
+    font-family: \0000336;
   }
 }
 
+.page-user-articles .views-field-field-location,
+.page-user-articles .views-field-field-website,
 .page-user-articles .views-field-field-user-about,
+.page-user-comments .views-field-field-location,
+.page-user-comments .views-field-field-website,
 .page-user-comments .views-field-field-user-about,
+.page-user .views-field-field-location,
+.page-user .views-field-field-website,
 .page-user .views-field-field-user-about {
   float: right;
   width: 75%;
@@ -9690,7 +9712,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000339;
+    font-family: \0000341;
   }
 }
 
@@ -9716,14 +9738,13 @@ blockquote {
   }
 
   line {
-    font-family: \0000354;
+    font-family: \0000356;
   }
 }
 
 .page-user-articles .pane-user-info-panel-pane-user-info,
 .page-user-comments .pane-user-info-panel-pane-user-info,
 .page-user .pane-user-info-panel-pane-user-info {
-  float: left;
   padding-bottom: 20px;
 }
 
@@ -9734,6 +9755,22 @@ blockquote {
 
   line {
     font-family: \0000360;
+  }
+}
+
+.page-user-articles .pane-user-flag-spotlight,
+.page-user-comments .pane-user-flag-spotlight,
+.page-user .pane-user-flag-spotlight {
+  clear: both;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/user\/_user-base\.scss;
+  }
+
+  line {
+    font-family: \0000365;
   }
 }
 
@@ -9752,7 +9789,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000363;
+    font-family: \0000368;
   }
 }
 
@@ -9775,7 +9812,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000370;
+    font-family: \0000375;
   }
 }
 
@@ -9794,7 +9831,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000375;
+    font-family: \0000380;
   }
 }
 
@@ -9816,7 +9853,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000382;
+    font-family: \0000387;
   }
 }
 
@@ -9838,7 +9875,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000390;
+    font-family: \0000395;
   }
 }
 
@@ -9857,7 +9894,7 @@ blockquote {
   }
 
   line {
-    font-family: \0000393;
+    font-family: \0000398;
   }
 }
 
@@ -9876,7 +9913,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003100;
+    font-family: \00003105;
   }
 }
 
@@ -9896,7 +9933,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003104;
+    font-family: \00003109;
   }
 }
 
@@ -9915,7 +9952,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003108;
+    font-family: \00003113;
   }
 }
 
@@ -9934,7 +9971,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003113;
+    font-family: \00003118;
   }
 }
 
@@ -9954,7 +9991,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003119;
+    font-family: \00003124;
   }
 }
 
@@ -9977,7 +10014,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003126;
+    font-family: \00003131;
   }
 }
 
@@ -9997,7 +10034,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003133;
+    font-family: \00003138;
   }
 }
 
@@ -10016,7 +10053,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003141;
+    font-family: \00003146;
   }
 }
 
@@ -10038,7 +10075,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003149;
+    font-family: \00003154;
   }
 }
 
@@ -10057,7 +10094,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003154;
+    font-family: \00003159;
   }
 }
 
@@ -10076,7 +10113,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003158;
+    font-family: \00003163;
   }
 }
 
@@ -10097,7 +10134,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003164;
+    font-family: \00003169;
   }
 }
 
@@ -10118,7 +10155,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003170;
+    font-family: \00003175;
   }
 }
 
@@ -10138,7 +10175,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003174;
+    font-family: \00003179;
   }
 }
 
@@ -10157,7 +10194,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003177;
+    font-family: \00003182;
   }
 }
 
@@ -10177,7 +10214,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003184;
+    font-family: \00003189;
   }
 }
 
@@ -10206,7 +10243,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003197;
+    font-family: \00003202;
   }
 }
 
@@ -10226,7 +10263,7 @@ blockquote {
   }
 
   line {
-    font-family: \00003201;
+    font-family: \00003206;
   }
 }
 

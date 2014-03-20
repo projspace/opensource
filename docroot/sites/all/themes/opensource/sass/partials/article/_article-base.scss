@@ -15,6 +15,12 @@
         }
     }
 
+    .pane-node-field-rating {
+        .ajax-progress-throbber {
+            float: right;
+        }
+    }
+
     .pane-node-body {
         font-size: 16px;
         color: black;
@@ -30,7 +36,7 @@
     }
 
     .pane-os-core-opensource-article-share {
-        clear: left;
+        clear: both;
         padding-top: 10px;
     }
 
