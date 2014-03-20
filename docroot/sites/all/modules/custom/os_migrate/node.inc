@@ -121,7 +121,7 @@ class OsContentArticleMigration extends OsContentPageMigration {
     $this->addFieldMapping('field_channel', 'field_channel');
 
     //poll
-    $this->addFieldMapping('field_related_poll', 'nid')->sourceMigration('OsContentPoll');
+    //$this->addFieldMapping('field_related_poll', 'nid')->sourceMigration('OsContentPoll');
   }
 
   /**
