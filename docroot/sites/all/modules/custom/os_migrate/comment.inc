@@ -22,7 +22,8 @@ class OSCommentMigration extends DrupalComment6Migration {
     if (!isset($comment->notified) || $comment->notified) {
       comment_notify_mark_comment_as_notified($comment);
     }
-}
+  }
+
 
   /**
    * Implementation of DrupalCommentMigration::query().
