@@ -206,7 +206,7 @@ function os_article_default_page_manager_handlers() {
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
         'widget' => array(
-          'fivestar_widget' => 'default',
+          'fivestar_widget' => 'sites/all/modules/custom/osratings/widgets/osratings/osratings.css',
         ),
         'style' => 'average',
         'text' => 'average',
@@ -458,6 +458,34 @@ function os_article_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-13';
     $pane->panel = 'contentmain';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_default_license';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'select_or_other_formatter',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 12;
+    $pane->locks = array();
+    $display->content['new-13'] = $pane;
+    $display->panels['contentmain'][12] = 'new-13';
+    $pane = new stdClass();
+    $pane->pid = 'new-14';
+    $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'related_articles-panel_pane_1';
     $pane->shown = TRUE;
@@ -485,12 +513,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 12;
+    $pane->position = 13;
     $pane->locks = array();
-    $display->content['new-13'] = $pane;
-    $display->panels['contentmain'][12] = 'new-13';
+    $display->content['new-14'] = $pane;
+    $display->panels['contentmain'][13] = 'new-14';
     $pane = new stdClass();
-    $pane->pid = 'new-14';
+    $pane->pid = 'new-15';
     $pane->panel = 'contentmain';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -509,12 +537,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 13;
+    $pane->position = 14;
     $pane->locks = array();
-    $display->content['new-14'] = $pane;
-    $display->panels['contentmain'][13] = 'new-14';
+    $display->content['new-15'] = $pane;
+    $display->panels['contentmain'][14] = 'new-15';
     $pane = new stdClass();
-    $pane->pid = 'new-15';
+    $pane->pid = 'new-16';
     $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_tags';
@@ -543,34 +571,6 @@ function os_article_default_page_manager_handlers() {
       'link_to_view' => NULL,
       'more_link' => NULL,
       'path' => NULL,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 14;
-    $pane->locks = array();
-    $display->content['new-15'] = $pane;
-    $display->panels['contentmain'][14] = 'new-15';
-    $pane = new stdClass();
-    $pane->pid = 'new-16';
-    $pane->panel = 'contentmain';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_default_license';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'select_or_other_formatter',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => array(),
-      'override_title' => 0,
-      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
