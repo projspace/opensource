@@ -18,3 +18,4 @@ dependencies[] = os_user
 files[] = user.inc
 files[] = node.inc
 files[] = file.inc
+files[] = comment.inc
