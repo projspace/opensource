@@ -12,7 +12,7 @@ class OSCommentMigration extends DrupalComment6Migration {
     parent::__construct($arguments);
 
     $this->addFieldMapping('comment_body:format')
-      ->defaultValue('filtered_html');
+      ->defaultValue('plain_text');
     $this->addFieldMapping('notify', 'notify');
     $this->addFieldMapping('notify_hash', 'notify_hash');
     $this->addFieldMapping('notified', 'notified');
