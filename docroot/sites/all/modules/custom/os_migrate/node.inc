@@ -13,7 +13,6 @@ class OsContentPageMigration extends DrupalNode6Migration {
 
     $this->addFieldMapping('body:summary', 'teaser');
     $this->addFieldMapping('body:format')->defaultValue('panopoly_html_text');
-    $this->addFieldMapping('body:language');
 
     if ($this->moduleExists('path')) {
       $this->addFieldMapping('path', 'path')
@@ -36,7 +35,17 @@ class OsContentPageMigration extends DrupalNode6Migration {
   }
 
   public function prepare($entity, $row) {
+
     $entity->path['pathauto'] = 0;
+    if (isset($row->field_default_license[0])) {
+      if ($row->field_default_license[0] == 'Use the default CC license.') {
+        $entity->field_default_license[LANGUAGE_NONE][0]['value'] = 'CC-BY-SA 3.0';
+      } elseif ($row->field_default_license[0] == 'Use the alternative license'
+        && !empty($row->field_alternative_license[0])) {
+        $entity->field_default_license[LANGUAGE_NONE][0]['value'] =
+          check_markup($row->field_alternative_license, 7, FALSE);
+      }
+    }
   }
 
   public function complete(stdClass $entity, stdClass $row) {
@@ -56,7 +65,6 @@ class OsContentPageMigration extends DrupalNode6Migration {
       );
 
       workflow_update_workflow_node($data, $old_sid, $comment);
-
 
       $data2 = array(
         'entity_type' => 'node',
@@ -139,24 +147,23 @@ class OsContentArticleMigration extends OsContentPageMigration {
   public function __construct($args) {
     parent::__construct($args);
 
-    $this->addFieldMapping('field_lead_image', 'field_lead_image')
+    // field mappings
+    $this->addImageMappings();
+
+    $this->addFieldMapping('field_lead_image', 'field_image')
       ->arguments(array('preserve_files' => TRUE))
       ->sourceMigration(array('OsFile', 'OsImageFieldFile'));
-    $this->addFieldMapping('field_lead_image:alt', 'field_lead_image:alt');
-    $this->addFieldMapping('field_lead_image:title', 'field_lead_image:title');
+
     $this->dependencies[] = 'OsFile';
     $this->dependencies[] = 'OsImageFieldFile';
 
-    $this->addFieldMapping('field_default_license', 'field_default_license');
-    $this->addFieldMapping('field_alternative_license', 'field_alternative_license');
-
     $this->addFieldMapping('field_attachments', 'field_attachments')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
+      ->arguments(array('preserve_files' => TRUE))
+      ->sourceMigration('OSFile');
 
     $this->addFieldMapping('field_tags', '6')
-    ->sourceMigration('OsVocabTags')
-    ->arguments(array('source_type' => 'tid'));
+      ->sourceMigration('OsVocabTags')
+      ->arguments(array('source_type' => 'tid'));
 
     $this->addFieldMapping('tmp_field_article_type', 'field_article_type');
     $this->addFieldMapping('tmp_field_channel', 'field_channel');
@@ -166,10 +173,23 @@ class OsContentArticleMigration extends OsContentPageMigration {
   }
 
   /**
+   * Setup mappings for image fields.
+   */
+  protected function addImageMappings() {
+
+    $this->addFieldMapping('field_lead_image', 'image')
+      ->arguments(array('preserve_files' => TRUE))
+      ->sourceMigration(array('OsFile', 'OsImageFieldFile'));
+
+    $this->addFieldMapping('field_lead_image:alt', 'image_alt');
+    $this->addFieldMapping('field_lead_image:title', 'image_title');
+    $this->dependencies[] = 'OsFile';
+    $this->dependencies[] = 'OsImageFieldFile';
+  }
+
+  /**
    * Process data row to retrieve the appropriate image to use.
    */
-
-  /* AG: not sure if we need this..
   protected function prepareRowFieldImages($row) {
     if (!empty($row->field_lead_image)) {
       $row->image = $row->field_lead_image;
@@ -183,7 +203,6 @@ class OsContentArticleMigration extends OsContentPageMigration {
     }
     return TRUE;
   }
-  */
 
  /**
    * Review a data row after fetch, returning FALSE to skip it.
@@ -197,6 +216,11 @@ class OsContentArticleMigration extends OsContentPageMigration {
   public function prepareRow($row) {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
+    }
+
+    if ($this->prepareRowFieldImages($row) === FALSE) {
+      return FALSE;
+    }
 
     $source_id = $row->nid;
     $term = taxonomy_get_term_by_name('Article', 'article_type');
@@ -206,28 +230,34 @@ class OsContentArticleMigration extends OsContentPageMigration {
     // get the tid for channel - based on the OG audience
     //select title from node n, og_ancestry oa where oa.nid = 5774 AND oa.group_nid = n.nid;
     $query = Database::getConnection('default', $this->sourceConnection)
-    ->select('node', 'n');
+      ->select('node', 'n');
     $query->join('og_ancestry', 'oa', 'oa.group_nid = n.nid');
     $query->fields('n', array('title'))
-    ->condition('oa.nid', $source_id, '=');
+     ->condition('oa.nid', $source_id, '=');
     $results = $query->execute();
 
     foreach ($results as $metaData) {
       $field_channel_name = $metaData->title;
     }
+
     // get the tid
     $term2 = taxonomy_get_term_by_name($field_channel_name, 'channel');
     $term_type = array_keys($term2);
     $row->field_channel = $term_type[0];
-    }
 
     return TRUE;
   }
 
-  public function prepare ($node, $row) {
+  public function prepare($node, $row) {
 
-    if (isset($node->tmp_field_channel)) $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
-    if (isset($node->tmp_field_article_type)) $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
+    parent::prepare($node,$row);
+
+    if (isset($node->tmp_field_channel)){
+      $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
+    }
+    if (isset($node->tmp_field_article_type)) {
+      $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
+    }
   }
 }
 
@@ -241,21 +271,6 @@ class OsContentPollMigration extends OsContentPageMigration {
    */
   public function __construct($args) {
     parent::__construct($args);
-
-    // Article field mappings.
-
-    /*
-    $this->addFieldMapping('field_lead_image', 'field_image')
-      ->arguments(array('preserve_files' => TRUE))
-      ->sourceMigration(array('OsFile', 'OsImageFieldFile'));
-    $this->addFieldMapping('field_lead_image:alt', 'field_lead_image:alt');
-    $this->addFieldMapping('field_lead_image:title', 'field_lead_image:title');
-    $this->dependencies[] = 'OsFile';
-    $this->dependencies[] = 'OsImageFieldFile';
-    */
-
-    $this->addFieldMapping('field_default_license', 'field_default_license');
-    $this->addFieldMapping('field_alternative_license', 'field_alternative_license');
 
     $this->addFieldMapping('field_attachments', 'field_attachments')
     ->arguments(array('preserve_files' => TRUE))
@@ -333,6 +348,9 @@ class OsContentPollMigration extends OsContentPageMigration {
    *   The source row.
    */
   public function prepare($node, $row) {
+
+    parent::prepare($node,$row);
+
     $node->title = $row->field_poll[0];
 
     $choices = array();
@@ -348,8 +366,12 @@ class OsContentPollMigration extends OsContentPageMigration {
     }
     $node->choice = $choices;
 
-    if (isset($node->tmp_field_channel)) $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
-    if (isset($node->tmp_field_article_type)) $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
+    if (isset($node->tmp_field_channel)) {
+      $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
+    }
+    if (isset($node->tmp_field_article_type)) {
+      $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
+    }
   }
 }
 
@@ -430,8 +452,15 @@ class OsContentPodcastMigration extends OsContentPageMigration {
   }
 
   public function prepare ($node, $row) {
-    if (isset($node->tmp_field_channel)) $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
-    if (isset($node->tmp_field_article_type)) $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
+
+    if (isset($node->tmp_field_channel)) {
+      $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
+    }
+
+    if (isset($node->tmp_field_article_type)) {
+      $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
+    }
+
   }
 }
 
@@ -450,9 +479,6 @@ class OsContentVideoMigration extends OsContentPageMigration {
     $this->addFieldMapping('field_lead_image', 'field_image')
       ->arguments(array('preserve_files' => TRUE))
       ->sourceMigration('OSFile');
-
-    $this->addFieldMapping('field_default_license', 'field_default_license');
-    $this->addFieldMapping('field_alternative_license', 'field_alternative_license');
 
     $this->addFieldMapping('field_attachments', 'field_attachments')
       ->arguments(array('preserve_files' => TRUE))
@@ -492,8 +518,15 @@ class OsContentVideoMigration extends OsContentPageMigration {
   }
 
   public function prepare ($node, $row) {
-    if (isset($node->tmp_field_channel)) $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
-    if (isset($node->tmp_field_article_type)) $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
+    parent::prepare($node,$row);
+    if (isset($node->tmp_field_channel)) {
+
+    }
+    $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
+
+    if (isset($node->tmp_field_article_type)) {
+      $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
+    }
   }
 }
 
@@ -513,4 +546,5 @@ class OsContentEventMigration extends OsContentPageMigration {
     $this->addFieldMapping('field_event_summary', 'field_event_summary');
   }
 }
+
 
