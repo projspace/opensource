@@ -15,5 +15,6 @@ features[features_api][] = api:2
 features[features_overrides][] = page_manager_handlers.term_view_panelizer.weight
 features[page_manager_handlers][] = term_channel_view_panel_context
 features[page_manager_handlers][] = term_tags_view_panel_context
+features[page_manager_pages][] = moderation_articles
 features[views_view][] = channel_articles
 features[views_view][] = channel_tags_cloud
