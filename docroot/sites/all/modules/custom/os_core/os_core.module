@@ -398,7 +398,7 @@ function os_core_form_article_node_form_alter(&$form, &$form_state, $form_id) {
  */
 function os_core_form_search_block_form_alter(&$form, &$form_state) {
   if (variable_get('search_default_module') == 'apachesolr_search') {
-    if(arg(2) != NULL) {
+    if(arg(0) == 'search' && arg(2) != NULL) {
       $form['search_block_form']['#default_value'] = filter_xss(arg(2));
     }
     $form['#submit'][] = 'os_core_form_search_submit';
