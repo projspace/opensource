@@ -567,3 +567,12 @@ function opensource_preprocess_html(&$variables, $hook) {
     $variables['classes_array'][] = 'node_unpublished';
   }
 }
+
+function opensource_user_badge_group($variables) {
+  $badgeimages = $variables['badgeimages'];
+  if (!empty($badgeimages)) {
+    $role_badge = array_pop($badgeimages);
+    array_unshift($badgeimages,$role_badge);
+    return '<div class="user_badges">'. implode('', $badgeimages) .'</div>';
+  }
+}
