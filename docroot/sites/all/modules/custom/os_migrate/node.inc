@@ -294,7 +294,8 @@ class OsContentPollMigration extends OsContentPageMigration {
    */
   protected function query() {
     $query = parent::query();
-    $query->leftJoin('content_field_poll', 'p', 'p.vid = n.vid');
+    $query->innerJoin('content_field_poll', 'p', 'p.vid = n.vid');
+    $query->isNotNull('p.field_poll_question');
     $query->condition('p.field_poll_question', "' '", '<>');
     return $query;
   }
@@ -359,12 +360,31 @@ class OsContentPollMigration extends OsContentPageMigration {
       $choice_unser = unserialize($choice_ser);
       foreach ($choice_unser as $choice) {
         if (!empty($choice['choice'])) {
-          $choices[] = array('chtext' => $choice['choice'], 'chvotes' => $choice['votes'], 'weight' => $weight);
+          $chvotes = 0;
+          if (!empty($choice['votes']) && is_int($choice['votes'])) {
+	    $chvotes = $choice['votes'];
+          }
+          $choices[] = array('chtext' => $choice['choice'], 'chvotes' => $chvotes, 'weight' => $weight);
           $weight++;
         }
       }
     }
     $node->choice = $choices;
+    $row->choice = $choices;
+
+    $query = Database::getConnection('default', $this->sourceConnection)
+      ->select('pollfield_votes', 'pv');
+    $query->fields('pv', array('hostname', 'uid', 'delta', 'cookie'))
+      ->condition('pv.nid', $row->nid, '=');
+    $results = $query->execute();
+
+    $votes = array();
+    foreach ($results as $vote) {
+      $votes[] = array('chid' => $vote->delta, 'uid' => $vote->uid,
+        'hostname' => $vote->hostname, 'timestamp' => '1335939007');
+    }
+    $row->votes = $votes;
+
 
     if (isset($node->tmp_field_channel)) {
       $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
