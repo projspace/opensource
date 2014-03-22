@@ -188,6 +188,10 @@ function opensource_preprocess_comment(&$vars) {
   $vars['rollbadges'] = render($badgerollimages);
   $vars['badges'] = render($badges);
   $commenttime = format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL);
+
+  // Display field_display_name instead of username, if field_display_name is
+  // written.
+  $vars['author'] = isset($commentauthor->field_display_name[LANGUAGE_NONE][0]['value']) ? l($commentauthor->field_display_name[LANGUAGE_NONE][0]['value'], 'user/' . $commentauthor->uid, array('attributes' => array('class' => array('username')))) : $vars['author'];
   $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
 
   if (user_access('administer comments')) {
