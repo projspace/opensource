@@ -380,11 +380,11 @@ class OsContentPollMigration extends OsContentPageMigration {
 
     $votes = array();
     foreach ($results as $vote) {
-      $votes[] = array('chid' => $vote->delta, 'uid' => $vote->uid,
-        'hostname' => $vote->hostname, 'timestamp' => '1335939007');
+      $votes[] = array('chtext' => $choices[$vote->delta], 'uid' => $vote->uid,
+        'hostname' => "{$vote->hostname}", 'timestamp' => time());
     }
     $row->votes = $votes;
-
+    $node->votes = $votes;
 
     if (isset($node->tmp_field_channel)) {
       $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
