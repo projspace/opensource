@@ -23,7 +23,6 @@ dependencies[] = text
 features[features_api][] = api:2
 features[field_base][] = comment_body
 features[field_base][] = field_add_this
-features[field_base][] = field_alternative_license
 features[field_base][] = field_article_type
 features[field_base][] = field_attachments
 features[field_base][] = field_channel
