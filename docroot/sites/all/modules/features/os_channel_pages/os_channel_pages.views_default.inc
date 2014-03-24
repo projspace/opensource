@@ -232,22 +232,16 @@ function os_channel_pages_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'Currently no unpublished articles found.';
   $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Has taxonomy term ID */
-  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['tid']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
-    'channel' => 'channel',
-  );
-  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'empty';
+  /* Contextual filter: Content: Channel (field_channel) */
+  $handler->display->display_options['arguments']['field_channel_tid']['id'] = 'field_channel_tid';
+  $handler->display->display_options['arguments']['field_channel_tid']['table'] = 'field_data_field_channel';
+  $handler->display->display_options['arguments']['field_channel_tid']['field'] = 'field_channel_tid';
+  $handler->display->display_options['arguments']['field_channel_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_channel_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_channel_tid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_channel_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_channel_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_channel_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
