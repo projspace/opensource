@@ -17,31 +17,9 @@ function os_migrate_flush_caches() {
 function os_migrate_register_migrations() {
   // Best practice: use a variable (defined by setting $conf in settings.php
   // or with drush vset) for database details rather than in the code.
-  $db_name = variable_get('os_migrate_database');
-  $db_user = variable_get('os_migrate_username');
-  $db_pass = variable_get('os_migrate_password');
   $source_dir = variable_get('os_migrate_files_source_dir', 'http://opensource.com/sites/default/files');
 
-  // Do not register migrations if we don't have the details.
-  if (empty($db_name)) {
-    drupal_set_message(t('OpenSouce.com migration source database information is not defined. Please set variables for os_migrate_database, os_migrate_username, os_migrate_password and optionally, os_migrate_files_source_dir.'), 'error', TRUE);
-    return;
-  }
-
   // These are our common arguments for all our migrations.
-  // $common_arguments = array(
-  //   'source_connection' => 'legacy',
-  //   'source_database' => array(
-  //     'driver' => 'mysql',
-  //     'database' => $db_name,
-  //     'username' => $db_user,
-  //     'password' => $db_pass,
-  //     'host' => 'localhost',
-  //   ),
-  //   'source_version' => 6,
-  //   'group_name' => 'opensource',
-  // );
-
   $common_arguments = array(
     'source_connection' => 'legacy',
     'source_version' => 6,
@@ -136,7 +114,7 @@ function os_migrate_register_migrations() {
 
   Migration::registerMigration('OsMigrateFieldImceImageMigration', $args['machine_name'], $args);
 
-  // Node migrations - each has its own class derived from the migrate_d2d class,
+  // Node migrations - each has its own class derived from the migrate_d2d class
   // specifying its particular field mappings and transformations. source_type
   // and destination_type are required arguments.
   $node_arguments = array(
@@ -192,7 +170,6 @@ function os_migrate_register_migrations() {
       'class_name' => 'OsMigrateGroupPageMigration',
       'description' => t('Migration of group page nodes from Drupal 6'),
       'machine_name' => 'OsContentGroupPage',
-      'dependencies' => array('OsFile'),
       'source_type' => 'group_page',
       'destination_type' => 'group_page',
     ),
@@ -200,26 +177,9 @@ function os_migrate_register_migrations() {
       'class_name' => 'OsMigrateEventMigration',
       'description' => t('Migration of event nodes from Drupal 6'),
       'machine_name' => 'OsContentEvent',
-      'dependencies' => array('OsFile'),
       'source_type' => 'event',
       'destination_type' => 'event',
     ),
-    // array(
-    //   'class_name' => 'OsContentWebformMigration',
-    //   'description' => t('Migration of webform nodes from Drupal 6'),
-    //   'machine_name' => 'OsContentWebform',
-    //   'dependencies' => array('OsFile'),
-    //   'source_type' => 'webform',
-    //   'destination_type' => 'webform',
-    // ),
-    // array(
-    //   'class_name' => 'ExampleArticleMigration',
-    //   'description' => t('Migration of article nodes from Drupal 6'),
-    //   'machine_name' => 'Article',
-    //   'source_type' => 'my_article',
-    //   'destination_type' => 'new_article',
-    //   'dependencies' => array('Image', 'Countries', 'Topics'),
-    // ),
   );
   // Tell the node migrations where the users are coming from, so they can
   // set up the dependency and resolve D6->D7 uids.
@@ -273,25 +233,25 @@ function os_migrate_register_migrations() {
 
   foreach ($comment_arguments as $arguments) {
     $arguments = array_merge_recursive($arguments, $common_arguments);
-    Migration::registerMigration('OSCommentMigration', $arguments['machine_name'], $arguments);
+    Migration::registerMigration('OsMigrateCommentMigration', $arguments['machine_name'], $arguments);
   }
 
-  // Menu migrations -- same requirements as users
+  // Menu migrations -- same requirements as users.
   $menu_arguments = $common_arguments + array(
     'description' => t('Migration of menus from Drupal 6'),
     'machine_name' => 'Menu',
   );
 
   // We just use the migrate_d2d D6 migration class as-is.
-  //Migration::registerMigration('DrupalMenu6Migration', $menu_arguments['machine_name'], $menu_arguments);
+  // Migration::registerMigration('DrupalMenu6Migration', $menu_arguments['machine_name'], $menu_arguments);
 
-  // Menu links migrations -- basic requirements, plus must set up menu dependency
+  // Menu links migrations -- must set up menu dependency.
   $menu_links_arguments = $common_arguments + array(
     'description' => t('Migration of menu links from Drupal 6'),
     'machine_name' => 'MenuLinks',
     'menu_migration' => $menu_arguments['machine_name'],
   );
-  //Migration::registerMigration('DrupalMenuLinks6Migration', $menu_links_arguments['machine_name'], $menu_links_arguments);
+  // Migration::registerMigration('DrupalMenuLinks6Migration', $menu_links_arguments['machine_name'], $menu_links_arguments);
 }
 
 /**
