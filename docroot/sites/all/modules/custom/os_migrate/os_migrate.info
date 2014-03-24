@@ -19,6 +19,7 @@ dependencies[] = os_content_event
 dependencies[] = os_content_group_page
 dependencies[] = os_content_page
 dependencies[] = os_content_resource
+dependencies[] = os_poll
 
 ; Support files.
 files[] = user.inc

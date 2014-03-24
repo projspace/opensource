@@ -93,6 +93,7 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
     if (in_array($args['destination_type'], $types)) {
       $this->addFieldMapping('field_lead_image', 'image')
         ->sourceMigration(array('OsFile', 'OsImageFieldFile'));
+      $this->addFieldMapping('field_lead_image:file_class')->defaultValue('MigrateFileFid');
 
       $this->addFieldMapping('field_lead_image:alt', 'image_alt');
       $this->addFieldMapping('field_lead_image:title', 'image_title');
@@ -396,11 +397,24 @@ class OsMigratePollMigration extends OsMigrateContentBase {
 
     $votes = array();
     foreach ($results as $vote) {
+      if ($vote->cookie) {
+        $cookie = unserialize($vote->cookie);
+        $timestamp = substr($cookie['cookie_value'], 2);
+        $hostname = $vote->hostname . '#' . uniqid() . $timestamp;
+      }
+      else {
+        // We don't have any information for votes by registered users
+        // or in same cases, even for anonymous users.
+        // Assume sensible or random defaults.
+        $hostname = '#os-migrate-random-' . uniqid();
+        $timestamp = $row->changed;
+      }
+
       $votes[] = array(
         'chtext' => $choices[$vote->delta],
         'uid' => $vote->uid,
-        'hostname' => "{$vote->hostname}",
-        'timestamp' => time(),
+        'hostname' => $hostname,
+        'timestamp' => (int) $timestamp,
       );
     }
     $row->votes = $votes;
