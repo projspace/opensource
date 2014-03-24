@@ -13,6 +13,127 @@ function os_common_config_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_api_version';
+  $strongarm->value = '7.2';
+  $export['date_api_version'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_default_timezone';
+  $strongarm->value = 'America/New_York';
+  $export['date_default_timezone'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_first_day';
+  $strongarm->value = '0';
+  $export['date_first_day'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_long';
+  $strongarm->value = 'l, F j, Y - g:ia';
+  $export['date_format_long'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_panopoly_day';
+  $strongarm->value = 'F j, Y';
+  $export['date_format_panopoly_day'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_panopoly_time';
+  $strongarm->value = 'g:ia';
+  $export['date_format_panopoly_time'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_short';
+  $strongarm->value = 'M j Y - g:ia';
+  $export['date_format_short'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_alert_interval';
+  $strongarm->value = '60';
+  $export['elysia_cron_alert_interval'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_debug_messages';
+  $strongarm->value = '1';
+  $export['elysia_cron_debug_messages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_default_rules';
+  $strongarm->value = array(
+    '*/5 * * * *' => 'Every 5 minutes',
+    '*/15 * * * *' => 'Every 15 minutes',
+    '*/30 * * * *' => 'Every 30 minutes',
+    '0 * * * *' => 'Every hour',
+    '0 */6 * * *' => 'Every 6 hours',
+    '4 0 * * *' => 'Once a day',
+    '4 0 * * 0' => 'Once a week',
+    '4 0 1 * *' => 'Once a month',
+  );
+  $export['elysia_cron_default_rules'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_disabled';
+  $strongarm->value = '1';
+  $export['elysia_cron_disabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_last_context';
+  $strongarm->value = 'default';
+  $export['elysia_cron_last_context'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_last_run';
+  $strongarm->value = 1395651008;
+  $export['elysia_cron_last_run'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_stuck_time';
+  $strongarm->value = '3600';
+  $export['elysia_cron_stuck_time'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_time_limit';
+  $strongarm->value = '240';
+  $export['elysia_cron_time_limit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_version';
+  $strongarm->value = 20111020;
+  $export['elysia_cron_version'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'globalredirect_settings';
   $strongarm->value = array(
     'canonical' => 1,
@@ -323,8 +444,29 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'site_default_country';
+  $strongarm->value = 'US';
+  $export['site_default_country'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'statistics_count_content_views';
+  $strongarm->value = 1;
+  $export['statistics_count_content_views'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'statistics_enable_access_log';
+  $strongarm->value = 1;
+  $export['statistics_enable_access_log'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_generated_last';
-  $strongarm->value = 1393848550;
+  $strongarm->value = 1395643265;
   $export['xmlsitemap_generated_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -333,20 +475,6 @@ user/*/*';
   $strongarm->name = 'xmlsitemap_regenerate_needed';
   $strongarm->value = FALSE;
   $export['xmlsitemap_regenerate_needed'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_default_timezone';
-  $strongarm->value = 'America/New_York';
-  $export['date_default_timezone'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'site_default_country';
-  $strongarm->value = 'US';
-  $export['site_default_country'] = $strongarm;
 
   return $export;
 }

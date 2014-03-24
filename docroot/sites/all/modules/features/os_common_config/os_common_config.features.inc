@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function os_common_config_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "elysia_cron" && $api == "default_elysia_cron_rules") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -190,11 +193,11 @@ function os_common_config_flag_default_flags() {
     'show_on_form' => 0,
     'access_author' => '',
     'show_contextual_link' => FALSE,
-    'api_version' => 3,
     'module' => 'os_common_config',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 
