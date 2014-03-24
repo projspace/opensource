@@ -23,7 +23,6 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_instance][] = node-poll-body
 features[field_instance][] = node-poll-field_add_this
-features[field_instance][] = node-poll-field_alternative_license
 features[field_instance][] = node-poll-field_attachments
 features[field_instance][] = node-poll-field_channel
 features[field_instance][] = node-poll-field_default_license

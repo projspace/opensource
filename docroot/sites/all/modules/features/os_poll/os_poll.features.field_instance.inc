@@ -101,56 +101,6 @@ function os_poll_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-poll-field_alternative_license'
-  $field_instances['node-poll-field_alternative_license'] = array(
-    'bundle' => 'poll',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_alternative_license',
-    'label' => 'Alternative License',
-    'required' => 0,
-    'settings' => array(
-      'linkit' => array(
-        'enable' => 0,
-        'insert_plugin' => '',
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 3,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'node-poll-field_attachments'
   $field_instances['node-poll-field_attachments'] = array(
     'bundle' => 'poll',
@@ -472,7 +422,6 @@ CC-BY 3.0|CC-BY 3.0',
   // Translatables
   // Included for use with string extractors like potx.
   t('Add This');
-  t('Alternative License');
   t('Attachments');
   t('Body');
   t('Channel');
