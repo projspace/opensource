@@ -139,7 +139,12 @@ function opensource_preprocess_username(&$vars) {
   $account = user_load($vars['uid']);
   $mail = explode('@', $account->mail);
   if (count($mail) == 2 && strcasecmp($mail[1], 'redhat.com') == 0) {
-    $vars['extra'] = ' ' . t('(Red Hat)');
+    $username = isset($account->field_display_name[LANGUAGE_NONE][0]['value']) ? l($account->field_display_name[LANGUAGE_NONE][0]['value'], 'user/' . $account->uid, array('attributes' => array('class' => array('username')))) : l($vars['name'], $vars['link_path']);;
+    $vars['name'] = $username . ' <span class="redhat-employee">('. t('Red Hat') .')</span>';
+  }
+  else {
+    $username = isset($account->field_display_name[LANGUAGE_NONE][0]['value']) ? l($account->field_display_name[LANGUAGE_NONE][0]['value'], 'user/' . $account->uid, array('attributes' => array('class' => array('username')))) : l($vars['name'], $vars['link_path']);;
+    $vars['name'] = $username;
   }
 }
 
