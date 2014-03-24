@@ -10,9 +10,15 @@ dependencies[] = migrate_d2d
 ; Modules Support
 dependencies[] = userpoints
 dependencies[] = os_badges
+dependencies[] = os_core
 
 ; Features defining the entities, bundles and fields we are migrating.
 dependencies[] = os_user
+dependencies[] = os_content_article
+dependencies[] = os_content_event
+dependencies[] = os_content_group_page
+dependencies[] = os_content_page
+dependencies[] = os_content_resource
 
 ; Support files.
 files[] = user.inc

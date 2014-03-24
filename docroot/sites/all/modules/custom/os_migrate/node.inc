@@ -19,8 +19,7 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
     $this->addFieldMapping('body:format', NULL, FALSE)->defaultValue('panopoly_html_text');
 
     // Metatags mappings.
-    // TODO: Fix the metatag_title mapping.
-    $this->addFieldMapping('metatag_title', 'title');
+    $this->addFieldMapping('metatag_title', 'page_title');
     $this->addFieldMapping('metatag_abstract', 'meta_abstract');
     $this->addFieldMapping('metatag_copyright', 'meta_copyright');
     $this->addFieldMapping('metatag_description', 'meta_description');
@@ -59,32 +58,29 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
       $row->{$n} = $value['value'];
     }
 
+    // Retrieve page title.
+    $query = Database::getConnection('default', $this->sourceConnection)
+      ->select('page_title', 't')
+      ->fields('t', array('page_title'))
+      ->condition('t.id', $source_id)
+      ->condition('t.type', 'node');
+    $row->page_title = $query->execute()->fetchField;
+
     // Retrieve workflow settings for the node.
-    // TODO: This block can be probably removed.
     $query = Database::getConnection('default', $this->sourceConnection)
       ->select('workflow_node', 'n')
       ->fields('n', array('sid', 'stamp'))
       ->condition('n.nid', $source_id, '=');
-    $results = $query->execute();
-
-    foreach ($results as $result) {
-      $sid = $result->sid;
-      $row->workflow_stamp = $result->stamp;
-    }
-
-    $sid_map = array(
-      1 => 1,
-      6 => 2,
-      11 => 3,
-    );
-    if (!empty($sid)) {
-      $row->workflow = $sid_map[$sid];
+    $result = $query->execute()->fetchAssoc();
+    if (!empty($result)) {
+      $sid_map = array(1 => 1, 6 => 2, 11 => 3);
+      $row->workflow = $sid_map[$result['sid']];
+      $row->workflow_stamp = $result['stamp'];
     }
     else {
       $row->workflow = 3;
       $row->workflow_stamp = time();
     }
-    // TODO: End block which can probably be removed.
 
     return TRUE;
   }
@@ -92,14 +88,34 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
   /**
    * Setup mappings for image fields.
    */
-  protected function addImageMappings() {
-    $this->addFieldMapping('field_lead_image', 'image')
-      ->sourceMigration(array('OsFile', 'OsImageFieldFile'));
+  protected function addFileMappings($args) {
+    $types = array('article', 'poll', 'resource');
+    if (in_array($args['destination_type'], $types)) {
+      $this->addFieldMapping('field_lead_image', 'image')
+        ->sourceMigration(array('OsFile', 'OsImageFieldFile'));
 
-    $this->addFieldMapping('field_lead_image:alt', 'image_alt');
-    $this->addFieldMapping('field_lead_image:title', 'image_title');
+      $this->addFieldMapping('field_lead_image:alt', 'image_alt');
+      $this->addFieldMapping('field_lead_image:title', 'image_title');
+    }
+
+    $types = array('article', 'page', 'poll', 'resource');
+    if (in_array($args['destination_type'], $types)) {
+      $this->addFieldMapping('field_attachments', 'field_attachments')
+        ->sourceMigration('OsFile');
+      $this->addFieldMapping('field_attachments:preserve_files')->defaultValue(TRUE);
+      $this->addFieldMapping('field_attachments:file_class')->defaultValue('MigrateFileFid');
+    }
+
     $this->dependencies[] = 'OsFile';
     $this->dependencies[] = 'OsImageFieldFile';
+  }
+
+  /**
+   * Setup mappings for channel.
+   */
+  protected function addChannelMappings() {
+    $this->addFieldMapping('field_channel', 'field_channel');
+    $this->addFieldMapping('field_channel:source_type')->defaultValue('tid');
   }
 
   /**
@@ -111,7 +127,7 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
       $row->image_alt = $row->{'field_lead_image:alt'};
       $row->image_title = $row->{'field_lead_image:title'};
     }
-    else {
+    elseif (!empty($row->field_image)) {
       $row->image = $row->field_image;
       $row->image_alt = $row->{'field_image:alt'};
       $row->image_title = '';
@@ -120,20 +136,28 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
   }
 
   /**
+   * Process data row to set the channel tid.
+   */
+  protected function prepareRowChannel($row) {
+    // Get the channel - based on the OG audience.
+    // SELECT title FROM node n, og_ancestry oa where oa.nid = 5774
+    // AND oa.group_nid = n.nid;
+    $query = Database::getConnection('default', $this->sourceConnection)
+      ->select('node', 'n')
+      ->fields('n', array('title'))
+      ->condition('oa.nid', $row->nid, '=');
+    $query->join('og_ancestry', 'oa', 'oa.group_nid = n.nid');
+    $field_channel_name = $query->execute()->fetchField();
+
+    $row->field_channel = $this->getTid($field_channel_name, 'channel');
+    return TRUE;
+  }
+
+  /**
    * Prepare the destination before save.
    */
   public function prepare($entity, stdClass $row) {
     $entity->path['pathauto'] = 0;
-    // TODO: Move this block to prepareRow, where it can be handled better.
-    if (!empty($row->field_default_license[0])) {
-      if ($row->field_default_license[0] == 'Use the default CC license.') {
-        $entity->field_default_license[LANGUAGE_NONE][0]['value'] = 'CC-BY-SA 3.0';
-      }
-      elseif ($row->field_default_license[0] == 'Use the alternative license.'
-        && !empty($row->field_alternative_license[0])) {
-        $entity->field_default_license[LANGUAGE_NONE][0]['value'] = $row->field_alternative_license;
-      }
-    }
   }
 
   /**
@@ -189,10 +213,17 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
  * Mappings for migration of Page content.
  */
 class OsMigratePageMigration extends OsMigrateContentBase {
+  /**
+   * Constructor.
+   */
+  public function __construct($args) {
+    parent::__construct($args);
+    $this->addFileMappings($args);
+  }
 }
 
 /**
- * Common mappings for Article-type content types.
+ * Mappings for migration of Article-type content types.
  */
 class OsMigrateArticleMigration extends OsMigrateContentBase {
   /**
@@ -200,19 +231,16 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
    */
   public function __construct($args) {
     parent::__construct($args);
+    $this->addFileMappings($args);
+    $this->addChannelMappings();
 
-    $this->addImageMappings();
+    $this->addFieldMapping('field_tags', '6')->sourceMigration('OsVocabTags');
+    $this->addFieldMapping('field_tags:source_type')->defaultValue('tid');
 
-    $this->addFieldMapping('field_attachments', 'field_attachments')
-      ->arguments(array('preserve_files' => TRUE))
-      ->sourceMigration('OSFile');
+    $this->addFieldMapping('field_article_type', 'field_article_type');
+    $this->addFieldMapping('field_article_type:source_type')->defaultValue('tid');
 
-    $this->addFieldMapping('field_tags', '6')
-      ->sourceMigration('OsVocabTags')
-      ->arguments(array('source_type' => 'tid'));
-
-    $this->addFieldMapping('tmp_field_article_type', 'field_article_type');
-    $this->addFieldMapping('tmp_field_channel', 'field_channel');
+    $this->addFieldMapping('field_default_license', 'field_default_license');
 
     // Mapping to set the related poll field to a poll migrated in
     // OsContentPoll migration.
@@ -237,36 +265,25 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
       return FALSE;
     }
 
+    if ($this->prepareRowChannel($row) === FALSE) {
+      return FALSE;
+    }
+
+    // Handle license.
+    if (!empty($row->field_default_license[0])) {
+      if ($row->field_default_license[0] == 'Use the default CC license.') {
+        $row->field_default_license[0] = 'CC-BY-SA 3.0';
+      }
+      elseif ($row->field_default_license[0] == 'Use the alternative license.'
+        && !empty($row->field_alternative_license[0])) {
+        $row->field_default_license = $row->field_alternative_license;
+      }
+    }
+
+    // Set the correct article type.
     $row->field_article_type = $this->getArticleTypeTid($row->type);
 
-    // Get the channel - based on the OG audience.
-    // SELECT title FROM node n, og_ancestry oa where oa.nid = 5774
-    // AND oa.group_nid = n.nid;
-    $query = Database::getConnection('default', $this->sourceConnection)
-      ->select('node', 'n')
-      ->fields('n', array('title'))
-      ->condition('oa.nid', $row->nid, '=');
-    $query->join('og_ancestry', 'oa', 'oa.group_nid = n.nid');
-    $field_channel_name = $query->execute()->fetchField();
-
-    $row->field_channel = $this->getTid($field_channel_name, 'channel');
-
     return TRUE;
-  }
-
-  /**
-   * Prepare the node before save.
-   */
-  public function prepare($node, stdClass $row) {
-    parent::prepare($node, $row);
-
-    // TODO: This should be done in prepareRow and via field mappings.
-    if (isset($node->tmp_field_channel)) {
-      $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
-    }
-    if (isset($node->tmp_field_article_type)) {
-      $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
-    }
   }
 
   /**
@@ -291,16 +308,11 @@ class OsMigratePollMigration extends OsMigrateContentBase {
    */
   public function __construct($args) {
     parent::__construct($args);
+    $this->addFileMappings($args);
+    $this->addChannelMappings();
 
-    $this->addFieldMapping('field_attachments', 'field_attachments')
-    ->arguments(array('preserve_files' => TRUE))
-    ->sourceMigration('OSFile');
-
-    $this->addFieldMapping('field_tags', '6')
-    ->sourceMigration('OsVocabTags')
-    ->arguments(array('source_type' => 'tid'));
-
-    $this->addFieldMapping('tmp_field_channel', 'tmp_field_channel');
+    $this->addFieldMapping('field_tags', '6')->sourceMigration('OsVocabTags');
+    $this->addFieldMapping('field_tags:source_type')->defaultValue('tid');
 
     // Vote field mappings.
     $this->addFieldMapping('active', 'field_poll:active');
@@ -334,28 +346,13 @@ class OsMigratePollMigration extends OsMigrateContentBase {
       return FALSE;
     }
 
-    $source_id = $row->nid;
-    $term = taxonomy_get_term_by_name('Video', 'article_type');
-    $term_type = array_keys($term);
-    $row->field_article_type = $term_type[0];
-
-    // TODO: Refactor the following in a base class common to all og nodes.
-    // Get the tid for channel - based on the OG audience
-    // Select title from node n, og_ancestry oa where oa.nid = 5774
-    // AND oa.group_nid = n.nid;
-    $query = Database::getConnection('default', $this->sourceConnection)
-    ->select('node', 'n');
-    $query->join('og_ancestry', 'oa', 'oa.group_nid = n.nid');
-    $query->fields('n', array('title'))
-    ->condition('oa.nid', $source_id, '=');
-    $results = $query->execute();
-
-    foreach ($results as $metadata) {
-      $field_channel_name = $metadata->title;
+    if ($this->prepareRowFieldImages($row) === FALSE) {
+      return FALSE;
     }
-    $term2 = taxonomy_get_term_by_name($field_channel_name, 'channel');
-    $term_type = array_keys($term2);
-    $row->field_channel = $term_type[0];
+
+    if ($this->prepareRowChannel($row) === FALSE) {
+      return FALSE;
+    }
 
     return TRUE;
   }
@@ -408,13 +405,6 @@ class OsMigratePollMigration extends OsMigrateContentBase {
     }
     $row->votes = $votes;
     $node->votes = $votes;
-
-    if (isset($node->tmp_field_channel)) {
-      $node->field_channel[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_channel;
-    }
-    if (isset($node->tmp_field_article_type)) {
-      $node->field_article_type[LANGUAGE_NONE][0]['tid'] = $node->tmp_field_article_type;
-    }
   }
 }
 
@@ -422,31 +412,64 @@ class OsMigratePollMigration extends OsMigrateContentBase {
  * Mappings for migration of Group Page content.
  */
 class OsMigrateGroupPageMigration extends OsMigrateContentBase {
+  /**
+   * Constructor.
+   */
+  public function __construct($args) {
+    parent::__construct($args);
+    $this->addChannelMappings();
+  }
+
+  /**
+   * Review a data row after fetch, returning FALSE to skip it.
+   */
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+
+    if ($this->prepareRowChannel($row) === FALSE) {
+      return FALSE;
+    }
+  }
 }
 
 /**
- * Common mappings for Resource content types.
+ * Mappings for migration of Resource content.
  */
 class OsMigrateResourceMigration extends OsMigrateContentBase {
-
   /**
    * Constructor.
    */
   public function __construct(array $args) {
     parent::__construct($args);
+    $this->addFileMappings($args);
+  }
 
-    $this->addFieldMapping('field_lead_image', 'field_lead_image')
-      ->arguments(array('preserve_files' => TRUE))
-      ->sourceMigration('OSFile');
+  /**
+   * Review a data row after fetch, returning FALSE to skip it.
+   *
+   * @param object $row
+   *   Data Row to prepare.
+   *
+   * @return bool
+   *   FALSE to skip this row.
+   */
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
 
-    $this->addFieldMapping('field_attachments', 'field_attachments')
-      ->arguments(array('preserve_files' => TRUE))
-      ->sourceMigration('OSFile');
+    if ($this->prepareRowFieldImages($row) === FALSE) {
+      return FALSE;
+    }
+
+    return TRUE;
   }
 }
 
 /**
- * Common mappings for Event content types.
+ * Mappings for migration of Event content.
  */
 class OsMigrateEventMigration extends OsMigrateContentBase {
   /**
