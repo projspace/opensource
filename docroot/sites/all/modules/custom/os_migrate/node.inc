@@ -245,7 +245,7 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
 
     // Mapping to set the related poll field to a poll migrated in
     // OsContentPoll migration.
-    // $this->addFieldMapping('field_related_poll', 'nid')->sourceMigration('OsContentPoll');
+    $this->addFieldMapping('field_related_poll', 'related_poll')->sourceMigration('OsContentPoll');
   }
 
   /**
@@ -279,6 +279,11 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
         && !empty($row->field_alternative_license[0])) {
         $row->field_default_license = $row->field_alternative_license;
       }
+    }
+
+    // Handle mapping for poll field.
+    if (!empty($row->field_poll[0]) && $row->field_poll[0] != "' '") {
+      $row->related_poll = array($row->nid);
     }
 
     // Set the correct article type.
