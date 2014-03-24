@@ -108,56 +108,6 @@ function os_content_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_alternative_license'
-  $field_instances['node-article-field_alternative_license'] = array(
-    'bundle' => 'article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_alternative_license',
-    'label' => 'Alternative License',
-    'required' => 0,
-    'settings' => array(
-      'linkit' => array(
-        'enable' => 0,
-        'insert_plugin' => '',
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 3,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 9,
-    ),
-  );
-
   // Exported field_instance: 'node-article-field_article_type'
   $field_instances['node-article-field_article_type'] = array(
     'bundle' => 'article',
@@ -488,11 +438,11 @@ CC-BY 3.0|CC-BY 3.0',
         'label' => 'above',
         'module' => 'fivestar',
         'settings' => array(
-          'expose' => TRUE,
+          'expose' => 1,
           'style' => 'average',
           'text' => 'average',
           'widget' => array(
-            'fivestar_widget' => NULL,
+            'fivestar_widget' => 'sites/all/modules/contrib/fivestar/widgets/craft/craft.css',
           ),
         ),
         'type' => 'fivestar_formatter_default',
@@ -628,7 +578,6 @@ CC-BY 3.0|CC-BY 3.0',
   // Translatables
   // Included for use with string extractors like potx.
   t('Add This');
-  t('Alternative License');
   t('Article Type');
   t('Attachments');
   t('Body');
