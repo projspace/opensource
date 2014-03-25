@@ -30,6 +30,7 @@ class OsMigrateFieldImceImageMigration extends DrupalPicture6Migration {
              ->select('content_field_image', 'f');
     // Return the field name the file migration expects.
     $query->addField('f', 'field_image_imceimage_path', 'filepath');
+    $query->distinct();
     $query->condition('f.field_image_imceimage_path', '', '<>');
     return $query;
   }
