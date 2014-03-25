@@ -224,6 +224,9 @@ class OsMigratePageMigration extends OsMigrateContentBase {
   public function __construct($args) {
     parent::__construct($args);
     $this->addFileMappings($args);
+
+    $this->addFieldMapping('field_section', '7')->sourceMigration('OsVocabSections');
+    $this->addFieldMapping('field_section:source_type')->defaultValue('tid');
   }
 
   /**
