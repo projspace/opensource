@@ -457,3 +457,32 @@ function os_core_menu_local_tasks_alter(&$data, $router_item, $root_path) {
     $data['tabs'][0]['output'][3]['#link']['href'] = $data['tabs'][0]['output'][3]['#link']['href'] . '/' . filter_xss(arg(2));
   }
 }
+/**
+ * Implements hook_module_implements_alter().
+ */
+function os_core_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter') {
+    $group = $implementations['os_core'];
+    unset($implementations['os_core']);
+    $implementations['os_core'] = $group;
+  }
+}
+/**
+ * Implements hook_form_alter().
+ */
+function os_core_form_alter(&$form, &$form_state, $form_id) {
+  $node_types = array('article_node_form', 'poll_node_form', 'resource_node_form', 'event_node_form');
+  if(in_array($form_id, $node_types)) {
+    $form['workflow_tab'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Article Workflow'),
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+      '#group' => 'additional_settings',
+      '#weight' => 7,
+      '#description' => t('Workflow state settings')
+    );
+    $form['workflow_tab'][LANGUAGE_NONE][0] = $form['workflow'];
+    unset($form['workflow']);
+  }
+}
