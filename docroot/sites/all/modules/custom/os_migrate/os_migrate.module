@@ -101,6 +101,8 @@ function os_migrate_register_migrations() {
     'description' => t('Migration of all managed files'),
     'machine_name' => 'OsFile',
     'source_dir' => $source_dir,
+    'user_migration' => 'OsUser',
+    'dependencies' => array('OsUser'),
   );
 
   Migration::registerMigration('DrupalFile6Migration', $args['machine_name'], $args);
@@ -110,6 +112,8 @@ function os_migrate_register_migrations() {
     'description' => t('Migration of IMCE Image field files'),
     'machine_name' => 'OsImageFieldFile',
     'source_dir' => $source_dir,
+    'user_migration' => 'OsUser',
+    'dependencies' => array('OsUser'),
   );
 
   Migration::registerMigration('OsMigrateFieldImceImageMigration', $args['machine_name'], $args);
@@ -185,6 +189,7 @@ function os_migrate_register_migrations() {
   // set up the dependency and resolve D6->D7 uids.
   $common_node_arguments = $common_arguments + array(
     'user_migration' => 'OsUser',
+    'dependencies' => array('OsUser'),
   );
   foreach ($node_arguments as $arguments) {
     $arguments = array_merge_recursive($arguments, $common_node_arguments);
@@ -201,24 +206,27 @@ function os_migrate_register_migrations() {
       'node_migration' => 'OsContentArticle',
       'user_migration' => 'OsUser',
       'default_uid' => 0,
+      'dependencies' => array('OsContentArticle'),
     ),
     array(
       'description' => t('Migration of Podcast comments from Drupal 6'),
       'machine_name' => 'OsPodcastComments',
       'source_type' => 'podcast',
       'destination_type' => 'article',
-      'node_migration' => 'OsContentArticle',
+      'node_migration' => 'OsContentPodcast',
       'user_migration' => 'OsUser',
       'default_uid' => 0,
+      'dependencies' => array('OsContentPodcast'),
     ),
     array(
       'description' => t('Migration of Video comments from Drupal 6'),
       'machine_name' => 'OsVideoComments',
       'source_type' => 'video',
       'destination_type' => 'article',
-      'node_migration' => 'OsContentArticle',
+      'node_migration' => 'OsContentVideo',
       'user_migration' => 'OsUser',
       'default_uid' => 0,
+      'dependencies' => array('OsContentVideo'),
     ),
     array(
       'description' => t('Migration of Event comments from Drupal 6'),
@@ -228,6 +236,7 @@ function os_migrate_register_migrations() {
       'node_migration' => 'OsContentEvent',
       'user_migration' => 'OsUser',
       'default_uid' => 0,
+      'dependencies' => array('OsContentEvent'),
     ),
   );
 
