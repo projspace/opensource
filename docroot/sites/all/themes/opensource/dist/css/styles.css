@@ -1254,7 +1254,7 @@ tr.selected td {
 
 .node-type-poll .pane-node-comments .comment .submitted,
 .node-type-article .pane-node-comments .comment .submitted {
-  margin-left: 1em;
+  margin-left: .5em;
   display: inline-block;
 }
 
@@ -3138,11 +3138,14 @@ blockquote {
 }
 
 .pane-node-comments .submitted {
+  display: inline-table !important;
+  vertical-align: bottom;
   margin: 0;
+  max-width: 80%;
 }
 
 .pane-node-comments .user-picture-badges {
-  float: left;
+  display: inline-table;
 }
 
 .pane-node-comments .submitted .user_badges div {
@@ -3182,6 +3185,10 @@ blockquote {
 .pane-node-comments .down-active {
   position: relative;
   top: 5px;
+}
+
+.pane-node-comments .badge_role {
+  margin-top: 5px;
 }
 
 .vud-widget {
