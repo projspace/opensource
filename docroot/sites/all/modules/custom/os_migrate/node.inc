@@ -101,8 +101,9 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
 
     $types = array('article', 'page', 'poll', 'resource');
     if (in_array($args['destination_type'], $types)) {
-      $this->addFieldMapping('field_attachments', 'field_attachments')
+      $this->addFieldMapping('field_attachments', 'files')
         ->sourceMigration('OsFile');
+      $this->addFieldMapping('field_attachments:description', 'file_description');
       $this->addFieldMapping('field_attachments:preserve_files')->defaultValue(TRUE);
       $this->addFieldMapping('field_attachments:file_class')->defaultValue('MigrateFileFid');
     }
@@ -122,7 +123,7 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
   /**
    * Process data row to retrieve the appropriate image to use.
    */
-  protected function prepareRowFieldImages($row) {
+  protected function prepareRowFiles($row) {
     if (!empty($row->field_lead_image)) {
       $row->image = $row->field_lead_image;
       $row->image_alt = $row->{'field_lead_image:alt'};
@@ -133,6 +134,9 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
       $row->image_alt = $row->{'field_image:alt'};
       $row->image_title = '';
     }
+
+    $row->files = array_merge((array) $row->field_attachments, (array) $row->upload);
+    $row->file_description = array_merge((array) $row->{'field_attachments:description'}, (array) $row->{'upload:description'});
     return TRUE;
   }
 
@@ -221,6 +225,21 @@ class OsMigratePageMigration extends OsMigrateContentBase {
     parent::__construct($args);
     $this->addFileMappings($args);
   }
+
+  /**
+   * Review a data row after fetch, returning FALSE to skip it.
+   */
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+
+    if ($this->prepareRowFiles($row) === FALSE) {
+      return FALSE;
+    }
+
+    return TRUE;
+  }
 }
 
 /**
@@ -262,7 +281,7 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
       return FALSE;
     }
 
-    if ($this->prepareRowFieldImages($row) === FALSE) {
+    if ($this->prepareRowFiles($row) === FALSE) {
       return FALSE;
     }
 
@@ -352,7 +371,7 @@ class OsMigratePollMigration extends OsMigrateContentBase {
       return FALSE;
     }
 
-    if ($this->prepareRowFieldImages($row) === FALSE) {
+    if ($this->prepareRowFiles($row) === FALSE) {
       return FALSE;
     }
 
@@ -479,7 +498,7 @@ class OsMigrateResourceMigration extends OsMigrateContentBase {
       return FALSE;
     }
 
-    if ($this->prepareRowFieldImages($row) === FALSE) {
+    if ($this->prepareRowFiles($row) === FALSE) {
       return FALSE;
     }
 
