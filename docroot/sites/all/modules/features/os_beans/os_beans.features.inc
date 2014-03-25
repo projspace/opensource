@@ -7,8 +7,7 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function os_beans_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function os_beans_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "bean_admin_ui" && $api == "bean") {
     return array("version" => "5");
   }
