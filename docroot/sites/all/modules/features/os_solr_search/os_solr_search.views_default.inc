@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * os_article.views_default.inc
+ * os_solr_search.views_default.inc
  */
 
 /**
@@ -11,11 +11,11 @@ function os_solr_search_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'admin_views_user';
+  $view->name = 'users_search';
   $view->description = 'List, add, and edit users.';
   $view->tag = 'admin';
   $view->base_table = 'users';
-  $view->human_name = 'Administration: Users';
+  $view->human_name = 'Users Search';
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -311,6 +311,7 @@ function os_solr_search_views_default_views() {
 
   /* Display: System */
   $handler = $view->new_display('system', 'System', 'system_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['hide_admin_links'] = TRUE;
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -319,7 +320,7 @@ function os_solr_search_views_default_views() {
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Search results';
+  $handler->display->display_options['title'] = 'Search result';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -364,28 +365,7 @@ function os_solr_search_views_default_views() {
   $handler->display->display_options['arguments']['name']['limit'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['items_per_page'] = 0;
-  $handler->display->display_options['allow']['offset'] = 0;
-  $handler->display->display_options['allow']['link_to_view'] = 'link_to_view';
-  $handler->display->display_options['allow']['more_link'] = 0;
-  $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
-  $handler->display->display_options['allow']['exposed_form'] = 0;
-  $handler->display->display_options['allow']['fields_override'] = 0;
-  $handler->display->display_options['argument_input'] = array(
-    'name' => array(
-      'type' => 'panel',
-      'context' => 'string.raw',
-      'context_optional' => 1,
-      'panel' => '2',
-      'fixed' => '',
-      'label' => 'User: Name',
-    ),
-  );
-  $handler->display->display_options['link_to_view'] = '1';
-
-  $export['admin_views_user'] = $view;
+  $export['users_search'] = $view;
 
   return $export;
 }

@@ -1,20 +1,110 @@
+.section-business,
+.section-education,
+.section-health,
+.section-law,
+.section-life,
 .section-government {
-    .page__title {
-        display: none;
-    }
 
     .pane-term-description {
+        clear: both;
+        margin-bottom: 12px;
+
         .pane-title {
-            background: url('../images/about_government.png') no-repeat;
             text-indent: -9999px;
             margin-left: -0.5em;
             margin-bottom: 10px;
             line-height: 1;
+            min-width: 200px;
+            float: left;
+        }
+
+        .term_feed {
+            float: right;
+            text-indent: -9999px;
+
+            a {
+                width: 12px;
+                height: 13px;
+                display: block;
+                background: url('../images/rss.jpg');
+            }
+        }
+
+        .term_description {
+            clear: both;
+        }
+
+        .term_readmore {
+            text-align: right;
+
+            a {
+                color: #333;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: #39f;
+                }
+            }
         }
 
         p {
-            margin-top: 4px;
-            padding: 0 15px 13px 16px;
+            margin: 0;
         }
     }
 }
+
+.section-business {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_business.png') no-repeat;
+        }
+    }
+
+}
+
+.section-education {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_education.png') no-repeat;
+        }
+    }
+
+}
+
+.section-health {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_health.png') no-repeat;
+        }
+    }
+
+}
+
+.section-law {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_law.png') no-repeat;
+        }
+    }
+
+}
+
+.section-life {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_life.png') no-repeat;
+        }
+    }
+
+}
+
+.section-government {
+    .pane-term-description {
+        .pane-title {
+            background: url('../images/about_government.png') no-repeat;
+        }
+    }
+
+}
+

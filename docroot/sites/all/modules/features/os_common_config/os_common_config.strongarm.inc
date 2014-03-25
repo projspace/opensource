@@ -13,9 +13,123 @@ function os_common_config_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_api_version';
+  $strongarm->value = '7.2';
+  $export['date_api_version'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_default_timezone';
   $strongarm->value = 'America/New_York';
   $export['date_default_timezone'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_first_day';
+  $strongarm->value = '0';
+  $export['date_first_day'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_long';
+  $strongarm->value = 'l, F j, Y - g:ia';
+  $export['date_format_long'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_panopoly_day';
+  $strongarm->value = 'F j, Y';
+  $export['date_format_panopoly_day'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_panopoly_time';
+  $strongarm->value = 'g:ia';
+  $export['date_format_panopoly_time'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_short';
+  $strongarm->value = 'M j Y - g:ia';
+  $export['date_format_short'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_alert_interval';
+  $strongarm->value = '60';
+  $export['elysia_cron_alert_interval'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_debug_messages';
+  $strongarm->value = '1';
+  $export['elysia_cron_debug_messages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_default_rules';
+  $strongarm->value = array(
+    '*/5 * * * *' => 'Every 5 minutes',
+    '*/15 * * * *' => 'Every 15 minutes',
+    '*/30 * * * *' => 'Every 30 minutes',
+    '0 * * * *' => 'Every hour',
+    '0 */6 * * *' => 'Every 6 hours',
+    '4 0 * * *' => 'Once a day',
+    '4 0 * * 0' => 'Once a week',
+    '4 0 1 * *' => 'Once a month',
+  );
+  $export['elysia_cron_default_rules'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_disabled';
+  $strongarm->value = '1';
+  $export['elysia_cron_disabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_last_context';
+  $strongarm->value = 'default';
+  $export['elysia_cron_last_context'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_last_run';
+  $strongarm->value = 1395651008;
+  $export['elysia_cron_last_run'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_stuck_time';
+  $strongarm->value = '3600';
+  $export['elysia_cron_stuck_time'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_time_limit';
+  $strongarm->value = '240';
+  $export['elysia_cron_time_limit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'elysia_cron_version';
+  $strongarm->value = 20111020;
+  $export['elysia_cron_version'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -337,8 +451,256 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'statistics_count_content_views';
+  $strongarm->value = 1;
+  $export['statistics_count_content_views'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'statistics_enable_access_log';
+  $strongarm->value = 1;
+  $export['statistics_enable_access_log'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_email_verification';
+  $strongarm->value = 1;
+  $export['user_email_verification'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_cancel_confirm_body';
+  $strongarm->value = '[user:name],
+
+A request to cancel your account has been made at [site:name].
+
+You may now cancel your account on [site:url-brief] by clicking this link or copying and pasting it into your browser:
+
+[user:cancel-url]
+
+NOTE: The cancellation of your account is not reversible.
+
+This link expires in one day and nothing will happen if it is not used.
+
+--  [site:name] team';
+  $export['user_mail_cancel_confirm_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_cancel_confirm_subject';
+  $strongarm->value = 'Account cancellation request for [user:name] at [site:name]';
+  $export['user_mail_cancel_confirm_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_password_reset_body';
+  $strongarm->value = '[user:name],
+
+A request to reset the password for your account has been made at [site:name].
+
+You may now log in by clicking this link or copying and pasting it to your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password. It expires after one day and nothing will happen if it\'s not used.
+
+--  [site:name] team';
+  $export['user_mail_password_reset_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_password_reset_subject';
+  $strongarm->value = 'Replacement login information for [user:name] at [site:name]';
+  $export['user_mail_password_reset_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_admin_created_body';
+  $strongarm->value = '[user:name],
+
+A site administrator at [site:name] has created an account for you. You may now log in by clicking this link or copying and pasting it to your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:name]
+password: Your password
+
+--  [site:name] team';
+  $export['user_mail_register_admin_created_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_admin_created_subject';
+  $strongarm->value = 'An administrator created an account for you at [site:name]';
+  $export['user_mail_register_admin_created_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_no_approval_required_body';
+  $strongarm->value = '[user:name],
+
+Thank you for registering at [site:name]. You may now log in by clicking this link or copying and pasting it to your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:name]
+password: Your password
+
+There are also a few other ways you can keep up with opensource.com:
+    * Sign up for our newsletter at http://opensource.com/email-newsletter
+    * Subscribe via RSS at http://opensource.com/feed
+
+    * Follow us on Twitter: https://twitter.com/opensourceway
+    * Join us on Facebook: http://www.facebook.com/#!/opensourceway
+    * Check us out on Google+: https://plus.google.com/108750398488318674353
+
+If you have any questions or problems, feel free to contact us.
+
+Welcome to the community,
+-- The [site:name] team';
+  $export['user_mail_register_no_approval_required_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_no_approval_required_subject';
+  $strongarm->value = 'Account details for [user:name] at [site:name]';
+  $export['user_mail_register_no_approval_required_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_pending_approval_body';
+  $strongarm->value = '[user:name],
+
+Thank you for registering at [site:name]. Your application for an account is currently pending approval. Once it has been approved, you will receive another e-mail containing information about how to log in, set your password, and other details.
+
+
+--  [site:name] team';
+  $export['user_mail_register_pending_approval_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_pending_approval_subject';
+  $strongarm->value = 'Account details for [user:name] at [site:name] (pending admin approval)';
+  $export['user_mail_register_pending_approval_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_activated_body';
+  $strongarm->value = '[user:name],
+
+Your account at [site:name] has been activated.
+
+You may now log in by clicking this link or copying and pasting it into your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:name]
+password: Your password
+
+--  [site:name] team';
+  $export['user_mail_status_activated_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_activated_notify';
+  $strongarm->value = 1;
+  $export['user_mail_status_activated_notify'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_activated_subject';
+  $strongarm->value = 'Account details for [user:name] at [site:name] (approved)';
+  $export['user_mail_status_activated_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_blocked_body';
+  $strongarm->value = '[user:name],
+
+Your account on [site:name] has been blocked.
+
+--  [site:name] team';
+  $export['user_mail_status_blocked_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_blocked_notify';
+  $strongarm->value = 0;
+  $export['user_mail_status_blocked_notify'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_blocked_subject';
+  $strongarm->value = 'Account details for [user:name] at [site:name] (blocked)';
+  $export['user_mail_status_blocked_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_canceled_body';
+  $strongarm->value = '[user:name],
+
+Your account on [site:name] has been canceled.
+
+--  [site:name] team';
+  $export['user_mail_status_canceled_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_canceled_notify';
+  $strongarm->value = 0;
+  $export['user_mail_status_canceled_notify'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_canceled_subject';
+  $strongarm->value = 'Account details for [user:name] at [site:name] (canceled)';
+  $export['user_mail_status_canceled_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_signatures';
+  $strongarm->value = 0;
+  $export['user_signatures'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_generated_last';
-  $strongarm->value = 1395159638;
+  $strongarm->value = 1395643265;
   $export['xmlsitemap_generated_last'] = $strongarm;
 
   $strongarm = new stdClass();

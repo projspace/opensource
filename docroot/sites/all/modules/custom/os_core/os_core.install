@@ -47,6 +47,9 @@ function os_core_install() {
 
   // Disable save_draft module as it creates confusion with workflow.
   os_core_update_7105();
+
+  // Disable save_draft module as it creates confusion with workflow.
+  os_core_update_7106();
 }
 
 /**
@@ -386,4 +389,12 @@ function _os_core_create_channel_link($title, $path, $weight = -50) {
     'build_info' => array('args' => array('add', array(), array())),
   );
   drupal_form_submit('menu_edit_item', $form_state);
+}
+
+/**
+ * Upload the default image for the user profile.
+ */
+function os_core_update_7106() {
+  $filepath = drupal_get_path('module', 'os_core') . '/images/';
+  os_base_file_create($filepath . 'osdc_default_avatar.png', 'public://');
 }

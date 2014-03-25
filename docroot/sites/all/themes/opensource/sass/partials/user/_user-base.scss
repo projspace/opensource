@@ -31,6 +31,8 @@
         }
     }
 
+    .views-field-field-location,
+    .views-field-field-website,
     .views-field-field-user-about {
         float: right;
         width: 75%;
@@ -52,8 +54,11 @@
     }
 
     .pane-user-info-panel-pane-user-info {
-        float: left;
         padding-bottom: 20px;
+    }
+
+    .pane-user-flag-spotlight {
+        clear: both;
     }
 
     .view-id-authored_content,

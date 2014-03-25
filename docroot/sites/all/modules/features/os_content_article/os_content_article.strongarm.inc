@@ -120,7 +120,20 @@ function os_content_article_strongarm() {
           'weight' => '14',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'workflow_current_state' => array(
+          'default' => array(
+            'weight' => '-99',
+            'visible' => TRUE,
+          ),
+        ),
+        'workflow' => array(
+          'default' => array(
+            'weight' => '99',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__article'] = $strongarm;
@@ -197,7 +210,7 @@ function os_content_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_article_pattern';
-  $strongarm->value = '[node:field-channel:1:url:path]/[node:created:custom:y]/[node:created:custom:n]/[node:title]';
+  $strongarm->value = '[node:field-channel:0:name]/[node:created:custom:y]/[node:created:custom:n]/[node:title]';
   $export['pathauto_node_article_pattern'] = $strongarm;
 
   return $export;

@@ -139,7 +139,12 @@ function opensource_preprocess_username(&$vars) {
   $account = user_load($vars['uid']);
   $mail = explode('@', $account->mail);
   if (count($mail) == 2 && strcasecmp($mail[1], 'redhat.com') == 0) {
-    $vars['extra'] = ' ' . t('(Red Hat)');
+    $username = isset($account->field_display_name[LANGUAGE_NONE][0]['value']) ? l($account->field_display_name[LANGUAGE_NONE][0]['value'], 'user/' . $account->uid, array('attributes' => array('class' => array('username')))) : l($vars['name'], $vars['link_path']);;
+    $vars['name'] = $username . ' <span class="redhat-employee">('. t('Red Hat') .')</span>';
+  }
+  else {
+    $username = isset($account->field_display_name[LANGUAGE_NONE][0]['value']) ? l($account->field_display_name[LANGUAGE_NONE][0]['value'], 'user/' . $account->uid, array('attributes' => array('class' => array('username')))) : l($vars['name'], $vars['link_path']);;
+    $vars['name'] = $username;
   }
 }
 
@@ -188,6 +193,10 @@ function opensource_preprocess_comment(&$vars) {
   $vars['rollbadges'] = render($badgerollimages);
   $vars['badges'] = render($badges);
   $commenttime = format_date($vars['elements']['#comment']->created, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL);
+
+  // Display field_display_name instead of username, if field_display_name is
+  // written.
+  $vars['author'] = isset($commentauthor->field_display_name[LANGUAGE_NONE][0]['value']) ? l($commentauthor->field_display_name[LANGUAGE_NONE][0]['value'], 'user/' . $commentauthor->uid, array('attributes' => array('class' => array('username')))) : $vars['author'];
   $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
 
   if (user_access('administer comments')) {
@@ -558,5 +567,21 @@ function opensource_user_badge($variables) {
       $pieces['query'] = drupal_get_query_array($pieces['query']);
     }
     return l($image, $pieces['path'], $pieces);
+  }
+}
+
+function opensource_preprocess_html(&$variables, $hook) {
+  $node = node_load(filter_xss(arg(1)));
+  if(arg(0) == 'node' && isset($node) && $node->status != 1) {
+    $variables['classes_array'][] = 'node_unpublished';
+  }
+}
+
+function opensource_user_badge_group($variables) {
+  $badgeimages = $variables['badgeimages'];
+  if (!empty($badgeimages)) {
+    $role_badge = array_pop($badgeimages);
+    array_unshift($badgeimages,$role_badge);
+    return '<div class="user_badges">'. implode('', $badgeimages) .'</div>';
   }
 }

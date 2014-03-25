@@ -451,7 +451,7 @@ function os_solr_search_default_page_manager_pages() {
     $pane->pid = 'new-8';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'admin_views_user-panel_pane_1';
+    $pane->subtype = 'users_search-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -491,7 +491,7 @@ function os_solr_search_default_page_manager_pages() {
     $display->content['new-9'] = $pane;
     $display->panels['sidebar'][0] = 'new-9';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-8';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['user_search'] = $page;

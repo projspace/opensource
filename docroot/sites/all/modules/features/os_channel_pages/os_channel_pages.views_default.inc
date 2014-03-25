@@ -24,6 +24,7 @@ function os_channel_pages_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'administer nodes';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -210,6 +211,60 @@ function os_channel_pages_views_default_views() {
   $handler->display->display_options['displays'] = array(
     'default' => 0,
     'panel_pane_articles' => 0,
+  );
+
+  /* Display: Unpublished Articles */
+  $handler = $view->new_display('panel_pane', 'Unpublished Articles', 'panel_pane_1');
+  $handler->display->display_options['display_description'] = 'Unpublished articles in each channel.';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    5 => '5',
+    4 => '4',
+  );
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Currently no unpublished articles found.';
+  $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Channel (field_channel) */
+  $handler->display->display_options['arguments']['field_channel_tid']['id'] = 'field_channel_tid';
+  $handler->display->display_options['arguments']['field_channel_tid']['table'] = 'field_data_field_channel';
+  $handler->display->display_options['arguments']['field_channel_tid']['field'] = 'field_channel_tid';
+  $handler->display->display_options['arguments']['field_channel_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_channel_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_channel_tid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_channel_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_channel_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_channel_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'tid' => array(
+      'type' => 'context',
+      'context' => 'string.raw',
+      'context_optional' => 0,
+      'panel' => '1',
+      'fixed' => '',
+      'label' => 'Content: Has taxonomy term ID',
+    ),
   );
   $export['channel_articles'] = $view;
 

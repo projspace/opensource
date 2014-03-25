@@ -30,11 +30,14 @@
     }
 
     .submitted {
+        display: inline-table !important;
+        vertical-align: bottom;
         margin: 0;
+        max-width: 80%;
     }
 
     .user-picture-badges {
-        float: left;
+        display: inline-table;
     }
 
     .submitted {
@@ -89,6 +92,9 @@
         top: 5px;
     }
 
+    .badge_role {
+        margin-top: 5px;
+    }
 }
 
 .vud-widget {
@@ -107,6 +113,8 @@
     margin-top: 2em;
 }
 
-.workflow-form-container {
-    display: none;
+.view-content {
+    .workflow-form-container {
+        display: none;
+    }
 }
