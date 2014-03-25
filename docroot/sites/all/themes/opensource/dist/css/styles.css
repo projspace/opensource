@@ -2717,6 +2717,11 @@ blockquote {
   clear: left;
 }
 
+.node-type-poll .tabs-primary,
+.node-type-article .tabs-primary {
+  padding-left: 0;
+}
+
 .node-type-poll ul,
 .node-type-article ul {
   padding-left: 24px;
