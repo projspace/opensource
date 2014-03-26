@@ -265,6 +265,11 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
 
     $this->addFieldMapping('field_default_license', 'field_default_license');
 
+    $this->addFieldMapping('field_rating', 'rating')
+      ->defaultValue('50')
+      ->description('Not used, actual rating is migrated in complete handler.');
+    $this->addFieldMapping('field_rating:target')->defaultValue('');
+
     // Mapping to set the related poll field to a poll migrated in
     // OsContentPoll migration.
     $this->addFieldMapping('field_related_poll', 'related_poll')->sourceMigration('OsContentPoll');

@@ -6,6 +6,7 @@ core = 7.x
 ; Migrate framework.
 dependencies[] = migrate
 dependencies[] = migrate_d2d
+dependencies[] = migrate_extras
 
 ; Modules Support
 dependencies[] = userpoints
@@ -26,3 +27,4 @@ files[] = user.inc
 files[] = node.inc
 files[] = file.inc
 files[] = comment.inc
+files[] = extra.inc
