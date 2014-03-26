@@ -18,9 +18,11 @@ class OsMigrateCommentMigration extends DrupalComment6Migration {
 
     $this->addFieldMapping('comment_body:format', NULL, FALSE)
       ->defaultValue('plain_text');
-    $this->addFieldMapping('notify', 'notify');
-    $this->addFieldMapping('notify_hash', 'notify_hash');
-    $this->addFieldMapping('notified', 'notified');
+    $this->addSimpleMappings(array(
+      'notify',
+      'notify_hash',
+      'notified',
+    ));
   }
 
   /**
@@ -39,16 +41,9 @@ class OsMigrateCommentMigration extends DrupalComment6Migration {
    * for each associated node type.
    */
   protected function query() {
-    $query = Database::getConnection('default', $this->sourceConnection)
-             ->select('comments', 'c')
-             ->fields('c', array('cid', 'pid', 'nid', 'uid', 'subject',
-               'comment', 'hostname', 'timestamp', 'status', 'thread', 'name',
-               'mail', 'homepage', 'format'));
-    $query->join('node', 'n', 'c.nid = n.nid');
-    $query->condition('n.type', $this->sourceType);
+    $query = parent::query();
     $query->leftJoin('comment_notify', 'cn', 'cn.cid = c.cid');
     $query->fields('cn', array('notify', 'notify_hash', 'notified'));
-
     return $query;
   }
 }

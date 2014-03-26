@@ -305,6 +305,10 @@ function os_migrate_migrate_api() {
     'userpoints' => array(
       'os_badges',
     ),
+    'entity_insert' => array(
+      'comment_notify',
+      'rules',
+    ),
   );
 
   $api = array(
