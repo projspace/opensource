@@ -245,6 +245,37 @@ function os_migrate_register_migrations() {
     Migration::registerMigration('OsMigrateCommentMigration', $arguments['machine_name'], $arguments);
   }
 
+  // VotingAPI migrations.
+  $votingapi_arguments = array(
+    array(
+      'machine_name' => 'OsArticleRating',
+      'class_name' => 'OsMigrateNodeRatingMigration',
+      'description' => t('Migration of votes for Articles from Drupal 6'),
+      'dependencies' => array(
+        'OsContentArticle',
+        'OsContentPodcast',
+        'OsContentVideo',
+      ),
+    ),
+    array(
+      'machine_name' => 'OsCommentRating',
+      'class_name' => 'OsMigrateCommentRatingMigration',
+      'description' => t('Migration of votes for comments from Drupal 6'),
+      'dependencies' => array(
+        'OsArticleComments',
+        'OsPodcastComments',
+        'OsVideoComments',
+        'OsEventComments',
+      ),
+    ),
+  );
+
+  // Mapping of votingapi.
+  foreach ($votingapi_arguments as $arguments) {
+    $arguments += $common_arguments;
+    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
+  }
+
   // Menu migrations -- same requirements as users.
   $menu_arguments = $common_arguments + array(
     'description' => t('Migration of menus from Drupal 6'),
