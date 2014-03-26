@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function os_user_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -18,11 +21,13 @@ function os_user_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function os_user_field_group_info_alter(&$data) {
   if (isset($data['group_user_profile|user|user|form'])) {
-    $data['group_user_profile|user|user|form']->data['children']['1'] = 'field_display_name'; /* WAS: '' */
-    $data['group_user_profile|user|user|form']->data['children']['2'] = 'field_location'; /* WAS: '' */
-    $data['group_user_profile|user|user|form']->data['children']['3'] = 'field_website'; /* WAS: '' */
-    $data['group_user_profile|user|user|form']->data['children']['4'] = 'field_community_description'; /* WAS: '' */
+    $data['group_user_profile|user|user|form']->data['children']['1'] = 'field_community_description'; /* WAS: '' */
+    $data['group_user_profile|user|user|form']->data['children']['2'] = 'field_display_name'; /* WAS: '' */
+    $data['group_user_profile|user|user|form']->data['children']['3'] = 'field_location'; /* WAS: '' */
+    $data['group_user_profile|user|user|form']->data['children']['4'] = 'field_website'; /* WAS: '' */
     $data['group_user_profile|user|user|form']->data['children']['5'] = 'field_profile_point_notification'; /* WAS: '' */
+    $data['group_user_profile|user|user|form']->data['format_settings']['formatter'] = 'open'; /* WAS: 'collapsible' */
+    $data['group_user_profile|user|user|form']->data['format_settings']['label'] = 'User Profile'; /* WAS: '' */
   }
 }
 
