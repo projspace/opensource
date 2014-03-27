@@ -283,6 +283,7 @@ function os_migrate_register_migrations() {
     'user_migration' => 'OsUser',
     'dependencies' => array('OsUser'),
     'source_type' => 'spotlighted_user',
+    'destination_type' => '',
   );
 
   Migration::registerMigration('OsMigrateSpotlightedUserMigration', $args['machine_name'], $args);

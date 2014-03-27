@@ -9,6 +9,7 @@ dependencies[] = migrate_d2d
 dependencies[] = migrate_extras
 
 ; Modules Support
+dependencies[] = flag
 dependencies[] = userpoints
 dependencies[] = os_badges
 dependencies[] = os_core

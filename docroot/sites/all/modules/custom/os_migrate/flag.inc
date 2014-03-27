@@ -25,18 +25,45 @@ class OsMigrateSpotlightedUserMigration extends DrupalNode6Migration {
           'alias' => 'n',
         ),
       ),
-      MigrateDestinationFlagSimple::getKeySchema()
+      MigrateDestinationFlagging::getKeySchema()
     );
 
-    $this->destination = new MigrateDestinationFlagSimple();
+    $flag = flag_get_flag('spotlight');
+    $this->destination = new MigrateDestinationFlagging('spotlight');
 
-    $this->addFieldMapping('entity_type', 'content_type');
-    $this->addSimpleMappings(array(
-      'value',
-      'value_type',
-      'tag',
-      'timestamp',
-      'vote_source',
-    ));
+    $this->addFieldMapping('fid')->defaultValue($flag->fid);
+    $this->addFieldMapping('entity_type')->defaultValue('user');
+    $this->addFieldMapping('entity_id', 'field_user')->sourceMigration('OsUser');
+    $this->addFieldMapping('timestamp', 'changed', FALSE);
+
+    $this->removeFieldMapping('changed');
+    $this->removeFieldMapping('comment');
+    $this->removeFieldMapping('created');
+    $this->removeFieldMapping('daycount');
+    $this->removeFieldMapping('is_new');
+    $this->removeFieldMapping('language');
+    $this->removeFieldMapping('log');
+    $this->removeFieldMapping('path');
+    $this->removeFieldMapping('pathauto');
+    $this->removeFieldMapping('promote');
+    $this->removeFieldMapping('revision');
+    $this->removeFieldMapping('revision_uid');
+    $this->removeFieldMapping('status');
+    $this->removeFieldMapping('sticky');
+    $this->removeFieldMapping('title');
+    $this->removeFieldMapping('tnid');
+    $this->removeFieldMapping('totalcount');
+    $this->removeFieldMapping('translate');
+  }
+
+  /**
+   * Perform post-save operations.
+   */
+  public function complete(stdClass $flag, stdClass $row) {
+    // Add community description to the user.
+    $target_user = user_load($flag->entity_id);
+    $target_user->field_community_description[LANGUAGE_NONE][0]['value'] = $row->body;
+    $target_user->field_community_description[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
+    user_save($target_user);
   }
 }
