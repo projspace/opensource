@@ -1,0 +1,23 @@
+<?php
+/**
+ * @file
+ * Installation support for os_migrate.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function os_migrate_install() {
+  $var = variable_get('migrate_disabled_handlers', serialize(array()));
+  $disabled = unserialize($var);
+  $disabled[] = 'MigrateExtrasNodeFlagHandler';
+  $disabled[] = 'MigrateExtrasUserFlagHandler';
+  variable_set('migrate_disabled_handlers', serialize($disabled));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function os_migrate_uninstall() {
+  variable_del('os_migrate_files_source_dir');
+}
