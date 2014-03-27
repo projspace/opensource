@@ -2489,12 +2489,14 @@ label {
   color: #B2B2B2;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000312}}
+.menu-name-menu-user-registration-links,
 .pane-menu-menu-user-registration-links {
   border-bottom: 1px solid #D6D5D3;
   margin-top: -48px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000316}}
+.menu-name-menu-user-registration-links ul,
 .pane-menu-menu-user-registration-links ul {
   list-style: none;
   text-align: right;
@@ -2504,7 +2506,8 @@ label {
   position: relative;
   top: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000325}}
+.menu-name-menu-user-registration-links ul li,
 .pane-menu-menu-user-registration-links ul li {
   list-style: none !important;
   display: inline-block;
@@ -2513,19 +2516,23 @@ label {
   font-size: 10px;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000333}}
+.menu-name-menu-user-registration-links ul li.first,
 .pane-menu-menu-user-registration-links ul li.first {
   border-right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000337}}
+.menu-name-menu-user-registration-links ul li.last,
 .pane-menu-menu-user-registration-links ul li.last {
   border-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000341}}
+.menu-name-menu-user-registration-links ul li.active-trail,
 .pane-menu-menu-user-registration-links ul li.active-trail {
   border-bottom: 1px solid white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/base\/_form\.scss}line{font-family:\0000345}}
+.menu-name-menu-user-registration-links ul li a,
 .pane-menu-menu-user-registration-links ul li a {
   display: block;
   text-decoration: none;
