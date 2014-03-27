@@ -11,7 +11,6 @@
 
         .pane-title {
             text-indent: -9999px;
-            margin-left: -0.5em;
             margin-bottom: 10px;
             line-height: 1;
             min-width: 200px;
@@ -23,6 +22,7 @@
             text-indent: -9999px;
 
             a {
+                margin-top: 12px;
                 width: 12px;
                 height: 13px;
                 display: block;

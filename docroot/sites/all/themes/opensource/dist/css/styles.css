@@ -3719,7 +3719,6 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
 .section-life .pane-term-description .pane-title,
 .section-government .pane-term-description .pane-title {
   text-indent: -9999px;
-  margin-left: -0.5em;
   margin-bottom: 10px;
   line-height: 1;
   min-width: 200px;
@@ -3742,6 +3741,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
 .section-law .pane-term-description .term_feed a,
 .section-life .pane-term-description .term_feed a,
 .section-government .pane-term-description .term_feed a {
+  margin-top: 12px;
   width: 12px;
   height: 13px;
   display: block;
