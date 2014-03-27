@@ -27,4 +27,5 @@ files[] = user.inc
 files[] = node.inc
 files[] = file.inc
 files[] = comment.inc
+files[] = flag.inc
 files[] = extra.inc

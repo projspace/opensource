@@ -275,6 +275,17 @@ function os_migrate_register_migrations() {
     $arguments += $common_arguments;
     Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
   }
+
+  // Register spotlighted user migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of Spotlighted User content type to flags'),
+    'machine_name' => 'OsSpotlightedUser',
+    'user_migration' => 'OsUser',
+    'dependencies' => array('OsUser'),
+    'source_type' => 'spotlighted_user',
+  );
+
+  Migration::registerMigration('OsMigrateSpotlightedUserMigration', $args['machine_name'], $args);
 }
 
 /**
