@@ -1,0 +1,235 @@
+diff --git a/flag.info b/flag.info
+index 426fc47..d97fe74 100644
+--- a/flag.info
++++ b/flag.info
+@@ -18,6 +18,7 @@ files[] = includes/flag.cookie_storage.inc
+ 
+ files[] = includes/flag.entity.inc
+ files[] = flag.rules.inc
++files[] = flag.migrate.inc
+ 
+ ; Views
+ files[] = includes/views/flag_handler_argument_entity_id.inc
+diff --git a/flag.migrate.inc b/flag.migrate.inc
+new file mode 100644
+index 0000000..22eaae6
+--- /dev/null
++++ b/flag.migrate.inc
+@@ -0,0 +1,217 @@
++<?php
++
++/**
++ * @file
++ * Migrate integration for flag module
++ */
++
++
++/*
++ * Implementation of hook_migrate_api().
++ */
++function flag_migrate_api() {
++  $api = array(
++    'api' => 2,
++    'destination handlers' => array(
++      'MigrateNodeFlaggingHandler',
++      'MigrateUserFlaggingHandler',
++    ),
++  );
++  return $api;
++}
++
++/**
++ * Destination class implementing when you want just an insert into flagging table.
++ */
++class MigrateDestinationFlagging extends MigrateDestinationEntity {
++  protected $flag;
++
++  /**
++   * Constructor.
++   */
++  public function __construct($flag_name) {
++    parent::__construct('flagging', $flag_name);
++    $this->flag = flag_get_flag($flag_name);
++  }
++
++  /**
++   * Return string representation for the object.
++   */
++  public function __toString() {
++    return t('flag (!flag)', array('!flag' => $this->flag->name));
++  }
++
++  /**
++   * Return the schema for the key to be used in destination.
++   */
++  static public function getKeySchema() {
++    return array(
++      'flagging_id' => array(
++        'type' => 'int',
++        'not null' => TRUE,
++      ),
++    );
++  }
++
++  /**
++   * Delete flaggings.
++   *
++   * @param array $id
++   *   IDs to be deleted.
++   */
++  public function bulkRollback(array $ids) {
++    migrate_instrument_start(__METHOD__);
++
++    db_delete('flagging')->condition('flagging_id', $ids, 'IN')->execute();
++
++    migrate_instrument_stop(__METHOD__);
++  }
++
++  /**
++   * Import a single flagging.
++   *
++   * @param $entity
++   *   Object object to build. Prefilled with any fields mapped in the Migration.
++   * @param $row
++   *   Raw source data object - passed through to prepare/complete handlers.
++   *
++   * @return array
++   *   Array of key fields of the object that was saved if
++   *   successful. FALSE on failure.
++   */
++  public function import(stdClass $flagging, stdClass $row) {
++    // If updating previously-migrated content.
++    if (isset($row->migrate_map_destid1)) {
++      $updating = TRUE;
++      if (isset($flagging->flagging_id)) {
++        if ($flagging->flagging_id != $row->migrate_map_destid1) {
++          throw new MigrateException(t("Incoming id !id and map destination id !destid don't match.",
++              array('!id' => $flagging->flagging_id, '!destid' => $row->migrate_map_destid1)
++            ));
++        }
++      }
++      else {
++        $flagging->flagging_id = $row->migrate_map_destid1;
++      }
++    }
++    else {
++      $updating = FALSE;
++      // Clear out the flagging_id, just to be safe.
++      unset($flagging->flagging_id);
++    }
++
++    if (isset($flagging->timestamp)) {
++      $timestamp = Migration::timestamp($flagging->timestamp);
++    }
++
++    // No point to resetting $flagging->changed here, $flag->save() will overwrite it.
++    $flagging->fid = $this->flag->fid;
++
++    try {
++      flagging_save($flagging);
++    }
++    catch (Exception $ex) {
++      throw new MigrateException($ex->getMessage());
++    }
++
++    // Update timestamp.
++    db_update('flagging')
++      ->fields(array('timestamp' => $timestamp))
++      ->condition('flagging_id', $flagging->flagging_id)
++      ->execute();
++    $flagging->timestamp = $timestamp;
++
++    // Increment the number of updated or inserted records by checking the
++    // result of drupal_write_record.
++    if ($updating) {
++      $this->numUpdated++;
++    }
++    else {
++      $this->numCreated++;
++    }
++
++    $this->complete($flagging, $row);
++    return array($flagging->flagging_id);
++  }
++
++  /**
++   * Returns a list of fields available to be mapped for a flag.
++   *
++   * @return array
++   *   Keys: machine names of the fields (to be passed to addFieldMapping)
++   *   Values: Human-friendly descriptions of the fields.
++   */
++  public function fields() {
++    return array(
++      'flagging_id' => 'Flag content ID',
++      'fid' => 'Flag ID',
++      'entity_type' => 'Entity Type',
++      'entity_id' => 'Entity ID',
++      'uid' => 'User ID',
++      'timestamp' => 'Flagging timestamp',
++    );
++  }
++}
++
++/**
++ * Field handler - this will expose flags as fields on the object they're
++ * attached to, and set the flag to the value mapped in addFieldMapping().
++ */
++abstract class MigrateFlaggingHandler extends MigrateDestinationHandler {
++
++  /**
++   * Make the flags assigned to this object visible.
++   */
++  public function fields($entity_type, $bundle) {
++    $fields = array();
++    if (module_exists('flag')) {
++      $flags = flag_get_flags($entity_type, $bundle);
++      foreach ($flags as $flag_name => $flag) {
++        $fields[$flag_name] = $flag->title;
++      }
++    }
++    return $fields;
++  }
++}
++
++/**
++ * Because we can't identify what kind of entity is passed to complete, we
++ * implement a separate handler for each type.
++ */
++class MigrateNodeFlaggingHandler extends MigrateFlaggingHandler {
++  public function __construct() {
++    $this->registerTypes(array('node'));
++  }
++
++  public function complete($node, stdClass$row) {
++    if (!module_exists('flag')) {
++      return;
++    }
++
++    $flags = flag_get_flags('node', $node->type);
++    foreach ($flags as $flag_name => $flag) {
++      if (!empty($node->$flag_name)) {
++        flag('flag', $flag_name, $node->nid);
++      }
++    }
++  }
++}
++
++class MigrateUserFlaggingHandler extends MigrateFlaggingHandler {
++  public function __construct() {
++    $this->registerTypes(array('user'));
++  }
++
++  public function complete($user, stdClass$row) {
++    if (!module_exists('flag')) {
++      return;
++    }
++
++    $flags = flag_get_flags('user', 'user');
++    foreach ($flags as $flag_name => $flag) {
++      if (!empty($user->$flag_name)) {
++        flag('flag', $flag_name, $user->uid);
++      }
++    }
++  }
++}

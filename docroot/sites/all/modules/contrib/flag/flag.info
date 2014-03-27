@@ -18,6 +18,7 @@ files[] = includes/flag.cookie_storage.inc
 
 files[] = includes/flag.entity.inc
 files[] = flag.rules.inc
+files[] = flag.migrate.inc
 
 ; Views
 files[] = includes/views/flag_handler_argument_entity_id.inc
