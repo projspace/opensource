@@ -87,6 +87,7 @@ function os_user_default_page_manager_handlers_alter(&$data) {
     $data['pm_existing_pages_user_login_panel_context']->conf['display']->panels['sidebar'] = array(
       0 => 'new-3',
     ); /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->title = 'User account'; /* WAS: 'Log in' */
     unset($data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['0']);
     unset($data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['task_id']);
   }
@@ -143,6 +144,7 @@ function os_user_default_page_manager_handlers_alter(&$data) {
           'subtype' => 'common_1',
           'shown' => TRUE,
           'access' => array(),
+          'configuration' => '',
           'cache' => array(),
           'css' => array(),
           'extras' => array(),
@@ -197,6 +199,7 @@ function os_user_default_page_manager_handlers_alter(&$data) {
           'subtype' => 'common_1',
           'shown' => TRUE,
           'access' => array(),
+          'configuration' => '',
           'cache' => array(),
           'css' => array(),
           'extras' => array(),

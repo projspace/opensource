@@ -68,6 +68,7 @@ function os_user_features_override_default_overrides() {
   $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|panels|sidebar"] = array(
     0 => 'new-3',
   );
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|title"] = 'User account';
   $overrides["page_manager_handlers.pm_existing_pages_user_password_panel_context.conf|display|content|new-2"]["DELETED"] = TRUE;
   $overrides["page_manager_handlers.pm_existing_pages_user_password_panel_context.conf|display|content|new-4"] = (object) array(
       'pid' => 'new-4',
@@ -121,6 +122,7 @@ function os_user_features_override_default_overrides() {
       'subtype' => 'common_1',
       'shown' => TRUE,
       'access' => array(),
+      'configuration' => '',
       'cache' => array(),
       'css' => array(),
       'extras' => array(),
@@ -173,6 +175,7 @@ function os_user_features_override_default_overrides() {
       'subtype' => 'common_1',
       'shown' => TRUE,
       'access' => array(),
+      'configuration' => '',
       'cache' => array(),
       'css' => array(),
       'extras' => array(),
