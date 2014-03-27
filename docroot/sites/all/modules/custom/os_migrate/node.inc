@@ -314,7 +314,7 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
     }
 
     // Set the correct article type.
-    $row->field_article_type = array($this->getArticleTypeTid($row->type));
+    $row->field_article_type = $this->getArticleTypeTid($this->sourceType);
 
     return TRUE;
   }
