@@ -270,6 +270,8 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
       ->description('Not used, actual rating is migrated in complete handler.');
     $this->addFieldMapping('field_rating:target')->defaultValue('');
 
+    $this->addFieldMapping('promote', 'homepage_listing_timestamp', FALSE)->defaultValue(0);
+
     // Mapping to set the related poll field to a poll migrated in
     // OsContentPoll migration.
     $this->addFieldMapping('field_related_poll', 'related_poll')->sourceMigration('OsContentPoll');
@@ -316,6 +318,9 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
     // Set the correct article type.
     $row->field_article_type = $this->getArticleTypeTid($this->sourceType);
 
+    // Handle homepage_listing flag.
+    $row->homepage_listing_timestamp = $row->homepage_listing_timestamp ? 1 : 0;
+
     return TRUE;
   }
 
@@ -329,6 +334,20 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
       'podcast' => 'Podcast',
     );
     return $this->getTid($type_map[$type], 'article_type');
+  }
+
+  /**
+   * Query.
+   */
+  protected function query() {
+    $query = parent::query();
+    // Flag ID for homepage_listing in source is 6.
+    $query->leftJoin('flag_content', 'flag', 'flag.content_id = n.nid AND flag.content_type = :flag_content_type AND flag.fid = :flag_fid', array(
+        ':flag_content_type' => 'node',
+        ':flag_fid' => 6,
+      ));
+    $query->addField('flag', 'timestamp', 'homepage_listing_timestamp');
+    return $query;
   }
 }
 
