@@ -5,6 +5,98 @@
  */
 
 /**
+ * Migrate support for Flags.
+ */
+class OsMigrateFlagMigration extends DrupalMigration {
+  /**
+   * Source Flag ID.
+   */
+  protected $sourceFlagId;
+
+  /**
+   * Destination Flag ID.
+   */
+  protected $destinationFlagId;
+
+  /**
+   * Constructor.
+   */
+  public function __construct($arguments) {
+    $source_flag_name = $arguments['source_flag_name'];
+    $destination_flag_name = $arguments['destination_flag_name'];
+    if (!empty($arguments['user_migration'])) {
+      $user_migration = $arguments['user_migration'];
+      $this->dependencies[] = $user_migration;
+    }
+    if (!empty($arguments['content_migration'])) {
+      $content_migration = $arguments['content_migration'];
+      $this->dependencies[] = $content_migration;
+    }
+    parent::__construct($arguments);
+
+    $this->sourceFlagId = Database::getConnection('default', $this->sourceConnection)
+      ->select('flags', 'f')
+      ->fields('f', array('fid'))
+      ->condition('name', $source_flag_name)
+      ->execute()
+      ->fetchField();
+    if (!$this->sourceFlagId) {
+      throw new MigrateException('Flag @flag was not found in source.', array('@flag' => $source_flag_name));
+    }
+
+    $this->source = new MigrateSourceSQL($this->query(), $this->sourceFields,
+      NULL, $this->sourceOptions);
+
+    $this->map = new MigrateSQLMap($this->machineName,
+      array(
+        'fcid' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'description' => 'Flag Content ID',
+          'alias' => 'f',
+        ),
+      ),
+      MigrateDestinationFlagging::getKeySchema()
+    );
+
+    $this->destination = new MigrateDestinationFlagging($destination_flag_name);
+
+    if (!$this->newOnly) {
+      $this->highwaterField = array(
+        'name' => 'timestamp',
+        'alias' => 'f',
+        'type' => 'int',
+      );
+    }
+
+    $this->addFieldMapping('uid', 'uid')
+         ->sourceMigration($user_migration);
+    $this->addFieldMapping('entity_id', 'content_id')
+         ->sourceMigration($content_migration);
+    $this->addFieldMapping('entity_type', 'content_type');
+    $this->addFieldMapping('timestamp', 'timestamp');
+    $this->addUnmigratedSources(array('sid', 'fid'), t('DNM'));
+    $this->addUnmigratedDestinations(array('fid'), t('DNM'));
+  }
+
+  /**
+   * Query for the user points data.
+   *
+   * @return QueryConditionInterface
+   *   Query to use for the source of migration.
+   */
+  protected function query() {
+    $query = Database::getConnection('default', $this->sourceConnection)
+             ->select('flag_content', 'f')
+             ->fields('f')
+             ->condition('f.fid', $this->sourceFlagId)
+             ->orderBy('f.timestamp');
+    return $query;
+  }
+}
+
+/**
  * Migrate Spotlighted User content type to flag.
  */
 class OsMigrateSpotlightedUserMigration extends DrupalNode6Migration {

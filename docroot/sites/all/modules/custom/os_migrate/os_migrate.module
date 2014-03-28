@@ -287,6 +287,19 @@ function os_migrate_register_migrations() {
   );
 
   Migration::registerMigration('OsMigrateSpotlightedUserMigration', $args['machine_name'], $args);
+
+  // Register comment_abuse flag migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of Comment Abuse Flag'),
+    'machine_name' => 'OsCommentAbuseFlag',
+    'user_migration' => 'OsUser',
+    'content_migration' => 'OsArticleComments',
+    'dependencies' => array('OsUser'),
+    'source_flag_name' => 'comment_abuse',
+    'destination_flag_name' => 'comment_abuse',
+  );
+
+  Migration::registerMigration('OsMigrateFlagMigration', $args['machine_name'], $args);
 }
 
 /**
