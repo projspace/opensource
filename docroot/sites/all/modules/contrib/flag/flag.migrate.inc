@@ -191,7 +191,7 @@ class MigrateNodeFlaggingHandler extends MigrateFlaggingHandler {
     $flags = flag_get_flags('node', $node->type);
     foreach ($flags as $flag_name => $flag) {
       if (!empty($node->$flag_name)) {
-        flag('flag', $flag_name, $node->nid);
+        flag('flag', $flag_name, $node->nid, NULL, TRUE);
       }
     }
   }
@@ -210,7 +210,7 @@ class MigrateUserFlaggingHandler extends MigrateFlaggingHandler {
     $flags = flag_get_flags('user', 'user');
     foreach ($flags as $flag_name => $flag) {
       if (!empty($user->$flag_name)) {
-        flag('flag', $flag_name, $user->uid);
+        flag('flag', $flag_name, $user->uid, NULL, TRUE);
       }
     }
   }
