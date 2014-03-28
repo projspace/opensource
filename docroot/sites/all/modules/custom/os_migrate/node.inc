@@ -366,6 +366,8 @@ class OsMigratePollMigration extends OsMigrateContentBase {
     $this->addFieldMapping('field_tags', '6')->sourceMigration('OsVocabTags');
     $this->addFieldMapping('field_tags:source_type')->defaultValue('tid');
 
+    $this->addFieldMapping('poll_homepage', 'homepage_poll_timestamp')->defaultValue(0);
+
     // Vote field mappings.
     $this->addFieldMapping('active', 'field_poll:active');
     $this->addFieldMapping('runtime', 'field_poll:runtime');
@@ -381,6 +383,14 @@ class OsMigratePollMigration extends OsMigrateContentBase {
     $query->innerJoin('content_field_poll', 'p', 'p.vid = n.vid');
     $query->isNotNull('p.field_poll_question');
     $query->condition('p.field_poll_question', "' '", '<>');
+
+    // Flag ID for homepage_poll in source is 31.
+    $query->leftJoin('flag_content', 'flag', 'flag.content_id = n.nid AND flag.content_type = :flag_content_type AND flag.fid = :flag_fid', array(
+        ':flag_content_type' => 'node',
+        ':flag_fid' => 31,
+      ));
+    $query->addField('flag', 'timestamp', 'homepage_poll_timestamp');
+
     return $query;
   }
 
