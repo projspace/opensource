@@ -135,6 +135,13 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
       $row->image_title = '';
     }
 
+    foreach (array('field_attachments', 'upload') as $field) {
+      if (count($row->$field) == 1 && $row->$field[0] == NULL) {
+        $row->$field = array();
+        $row->{$field . ':description'} = array();
+      }
+    }
+
     $row->files = array_merge((array) $row->field_attachments, (array) $row->upload);
     $row->file_description = array_merge((array) $row->{'field_attachments:description'}, (array) $row->{'upload:description'});
     return TRUE;
