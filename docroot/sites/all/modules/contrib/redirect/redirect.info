@@ -4,6 +4,7 @@ core = 7.x
 files[] = redirect.module
 files[] = redirect.admin.inc
 files[] = redirect.install
+files[] = redirect.migrate.inc
 files[] = redirect.test
 files[] = views/redirect.views.inc
 ;files[] = views/redirect_handler_field_redirect_type.inc

@@ -300,6 +300,25 @@ function os_migrate_register_migrations() {
   );
 
   Migration::registerMigration('OsMigrateFlagMigration', $args['machine_name'], $args);
+
+  // Register redirect migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of Redirects'),
+    'machine_name' => 'OsRedirect',
+    // Poll is a new content type and hence, we don't need to mark
+    // OsContentPoll as dependency.
+    'dependencies' => array(
+      'OsContentArticle',
+      'OsContentPodcast',
+      'OsContentVideo',
+      'OsContentPage',
+      'OsContentGroupPage',
+      'OsContentResource',
+      'OsContentEvent',
+    ),
+  );
+
+  Migration::registerMigration('OsMigrateRedirectMigration', $args['machine_name'], $args);
 }
 
 /**
