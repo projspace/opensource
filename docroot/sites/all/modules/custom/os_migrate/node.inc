@@ -64,7 +64,9 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
       ->fields('t', array('page_title'))
       ->condition('t.id', $source_id)
       ->condition('t.type', 'node');
-    $row->page_title = $query->execute()->fetchField;
+    if ($page_title = $query->execute()->fetchField()) {
+      $row->page_title = $page_title;
+    }
 
     // Retrieve workflow settings for the node.
     $query = Database::getConnection('default', $this->sourceConnection)
