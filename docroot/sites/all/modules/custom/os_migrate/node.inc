@@ -465,6 +465,10 @@ class OsMigratePollMigration extends OsMigrateContentBase {
 
     $votes = array();
     foreach ($results as $vote) {
+      if ($vote->delta == -1) {
+        continue;
+      }
+
       if ($vote->cookie) {
         $cookie = unserialize($vote->cookie);
         $timestamp = substr($cookie['cookie_value'], 2);
