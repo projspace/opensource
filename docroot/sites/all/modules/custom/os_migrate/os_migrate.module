@@ -326,6 +326,9 @@ function os_migrate_register_migrations() {
  */
 function os_migrate_migrate_api() {
   $disable_hooks = array(
+    'comment_insert' => array(
+      'comment_notify',
+    ),
     'entity_insert' => array(
       'comment_notify',
       'rules',
@@ -351,4 +354,27 @@ function os_migrate_migrate_api() {
     ),
   );
   return $api;
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function os_migrate_module_implements_alter(&$implementation, $hook) {
+  // Ensure that the Migration class exists, as different bootstrap phases may
+  // not have included migration.inc yet.
+  if (class_exists('Migration') && $migration = Migration::currentMigration()) {
+    // Disable hooks only when a migration from opensource group is running.
+    $group = $migration->getGroup();
+    if ($group->getName() == 'opensource') {
+      // Be very careful in disabling hooks this way. It is always a better idea
+      // to disable specific hooks in a module.
+      unset($implementation['apachesolr']);
+      unset($implementation['apachesolr_access']);
+      unset($implementation['mollom']);
+      unset($implementation['rules']);
+      unset($implementation['search_api']);
+      unset($implementation['search_api_db']);
+      unset($implementation['os_badges']);
+    }
+  }
 }
