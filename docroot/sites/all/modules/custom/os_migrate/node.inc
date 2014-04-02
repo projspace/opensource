@@ -284,6 +284,10 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
     // Mapping to set the related poll field to a poll migrated in
     // OsContentPoll migration.
     $this->addFieldMapping('field_related_poll', 'related_poll')->sourceMigration('OsContentPoll');
+
+    // Radioactivity mappings.
+    $this->addFieldMapping('field_energy_level', 'radioactivity_energy');
+    $this->addFieldMapping('field_energy_level:radioactivity_timestamp', 'radioactivity_timestamp');
   }
 
   /**
@@ -350,12 +354,21 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
    */
   protected function query() {
     $query = parent::query();
+
     // Flag ID for homepage_listing in source is 6.
     $query->leftJoin('flag_content', 'flag', 'flag.content_id = n.nid AND flag.content_type = :flag_content_type AND flag.fid = :flag_fid', array(
         ':flag_content_type' => 'node',
         ':flag_fid' => 6,
       ));
     $query->addField('flag', 'timestamp', 'homepage_listing_timestamp');
+
+    // Radioactivity levels.
+    $query->leftJoin('radioactivity', 'rad', 'rad.id = n.nid AND rad.class = :radioactivity_content_type', array(
+        ':radioactivity_content_type' => 'node',
+      ));
+    $query->addField('rad', 'energy', 'radioactivity_energy');
+    $query->addField('rad', 'last_emission_timestamp', 'radioactivity_timestamp');
+
     return $query;
   }
 }
@@ -576,6 +589,7 @@ class OsMigrateEventMigration extends OsMigrateContentBase {
     $this->addFieldMapping('field_event_submitter_name', 'field_event_submitter_name');
     $this->addFieldMapping('field_event_submitter_email', 'field_event_submitter_email');
     $this->addFieldMapping('field_event_start_date', 'field_event_start_date');
+    $this->addFieldMapping('field_event_start_date:value2', 'field_event_start_date:value2');
     $this->addFieldMapping('field_event_location', 'field_event_location');
     $this->addFieldMapping('field_event_website', 'field_event_website');
     $this->addFieldMapping('field_event_summary', 'field_event_summary');
