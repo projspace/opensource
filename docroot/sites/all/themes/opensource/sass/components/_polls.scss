@@ -12,4 +12,14 @@
             background-image: url('../images/comment.jpg') no-repeat left center;
         }
     }
+
+    .total {
+        padding-top: 2em;
+        position: relative;
+        top: -2em;
+    }
+
+    .submit {
+        float: left;
+    }
 }
