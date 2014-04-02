@@ -26,15 +26,6 @@ class OsMigrateCommentMigration extends DrupalComment6Migration {
   }
 
   /**
-   * Perform tasks post-save of comments.
-   */
-  public function complete(stdClass $comment, stdClass $row) {
-    if (!isset($comment->notified) || $comment->notified) {
-      comment_notify_mark_comment_as_notified($comment);
-    }
-  }
-
-  /**
    * Implementation of DrupalCommentMigration::query().
    *
    * We join to {node} so that we can use separate comment migration classes
