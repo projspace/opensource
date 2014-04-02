@@ -38,6 +38,12 @@ class OsMigrateUserMigration extends DrupalUser6Migration {
 
     // Make sure the picture does not get migrated to the native object.
     $this->addFieldMapping('picture', NULL, FALSE);
+
+    // Comment Notify User Settings Migration.
+    $this->addSimpleMappings(array(
+      'node_notify',
+      'comment_notify',
+    ));
   }
 
   /**
@@ -80,6 +86,16 @@ class OsMigrateUserMigration extends DrupalUser6Migration {
     }
 
     return TRUE;
+  }
+
+  /**
+   * Query.
+   */
+  protected function query() {
+    $query = parent::query();
+    $query->leftJoin('comment_notify_user_settings', 'cnu', 'cnu.uid = u.uid');
+    $query->fields('cnu', array('node_notify', 'comment_notify'));
+    return $query;
   }
 }
 

@@ -9,6 +9,7 @@ dependencies[] = migrate_d2d
 dependencies[] = migrate_extras
 
 ; Modules Support
+dependencies[] = comment_notify
 dependencies[] = flag
 dependencies[] = redirect
 dependencies[] = userpoints
