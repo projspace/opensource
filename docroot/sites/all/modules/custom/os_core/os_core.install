@@ -53,27 +53,12 @@ function os_core_install() {
 }
 
 /**
- * Add legal conditions for terms & conditions, only if there are none.
+ * REMOVED - Add legal conditions for terms & conditions.
  */
 function os_core_update_7100() {
-  module_load_include('inc', 'legal', 'legal.admin');
-  $version = legal_version('version', 'en');
-
-  // Only insert, if there is not one already.
-  if ($version['version'] == 1) {
-    $conditions = "You have to accept these T&C's.";
-    db_insert('legal_conditions')
-      ->fields(array(
-        'version' => 1,
-        'revision' => 1,
-        'language' => 'en',
-        'conditions' => $conditions,
-        'date' => time(),
-        'extras' => serialize(array()),
-        'changes' => '',
-      ))
-      ->execute();
-  }
+  // Removed code for inserting legal conditions data as migration
+  // takes care of it. Leaving this function to maintain the
+  // sequence.
 }
 
 /**

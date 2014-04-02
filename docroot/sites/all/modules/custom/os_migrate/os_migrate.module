@@ -35,14 +35,31 @@ function os_migrate_register_migrations() {
 
   Migration::registerMigration('DrupalPicture6Migration', $args['machine_name'], $args);
 
+  // Register Legal data migration.
+  $arguments = $common_arguments + array(
+    'description' => t('Migration of legal data from Drupal 6'),
+    'machine_name' => 'OsLegal',
+  );
+
+  Migration::registerMigration('OsMigrateLegalConditionsMigration', $arguments['machine_name'], $arguments);
+
   // Register User migration.
   $arguments = $common_arguments + array(
     'description' => t('Migration of users from Drupal 6'),
     'machine_name' => 'OsUser',
-    'dependencies' => array('OsUserPicture'),
+    'dependencies' => array('OsUserPicture', 'OsLegal'),
   );
 
   Migration::registerMigration('OsMigrateUserMigration', $arguments['machine_name'], $arguments);
+
+  // Register Legal accepted data migration.
+  $arguments = $common_arguments + array(
+    'description' => t('Migration of legal accepted data from Drupal 6'),
+    'machine_name' => 'OsLegalAccepted',
+    'dependencies' => array('OsLegal', 'OsUser'),
+  );
+
+  Migration::registerMigration('OsMigrateLegalAcceptedMigration', $arguments['machine_name'], $arguments);
 
   // Register User Points migration.
   $arguments = $common_arguments + array(

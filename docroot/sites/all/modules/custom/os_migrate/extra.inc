@@ -5,6 +5,114 @@
  */
 
 /**
+ * Migrate legal conditions.
+ */
+class OsMigrateLegalConditionsMigration extends DrupalMigration {
+  /**
+   * Constructor.
+   */
+  public function __construct($args) {
+    parent::__construct($args);
+
+    $this->source = new MigrateSourceSQL($this->query(), $this->sourceFields,
+      NULL, $this->sourceOptions);
+
+    $this->map = new MigrateSQLMap($this->machineName,
+      array(
+        'tc_id' => array(
+          'type' => 'int',
+          'unsigned' => FALSE,
+          'not null' => TRUE,
+          'description' => 'Source legal condition ID',
+          'alias' => 'r',
+        ),
+      ),
+      MigrateDestinationTable::getKeySchema('legal_conditions')
+    );
+
+    $this->destination = new MigrateDestinationTable('legal_conditions');
+
+    $this->addSimpleMappings(array(
+      'version',
+      'revision',
+      'language',
+      'conditions',
+      'date',
+      'extras',
+      'changes',
+    ));
+    $this->addUnmigratedSources(array('tc_id'), t('DNM'));
+    $this->addUnmigratedDestinations(array('tc_id'), t('DNM'));
+  }
+
+  /**
+   * Query for the user points data.
+   *
+   * @return QueryConditionInterface
+   *   Query to use for the source of migration.
+   */
+  protected function query() {
+    $query = Database::getConnection('default', $this->sourceConnection)
+      ->select('legal_conditions', 'l')
+      ->fields('l');
+    return $query;
+  }
+}
+
+/**
+ * Migrate legal accepted records.
+ */
+class OsMigrateLegalAcceptedMigration extends DrupalMigration {
+  /**
+   * Constructor.
+   */
+  public function __construct($args) {
+    parent::__construct($args);
+
+    $this->source = new MigrateSourceSQL($this->query(), $this->sourceFields,
+      NULL, $this->sourceOptions);
+
+    $this->map = new MigrateSQLMap($this->machineName,
+      array(
+        'legal_id' => array(
+          'type' => 'int',
+          'unsigned' => FALSE,
+          'not null' => TRUE,
+          'description' => 'Source legal accepted ID',
+          'alias' => 'r',
+        ),
+      ),
+      MigrateDestinationTable::getKeySchema('legal_accepted')
+    );
+
+    $this->destination = new MigrateDestinationTable('legal_accepted');
+
+    $this->addFieldMapping('uid', 'uid')->sourceMigration('OsUser');
+    $this->addSimpleMappings(array(
+      'version',
+      'revision',
+      'language',
+      'accepted',
+    ));
+    $this->addUnmigratedSources(array('legal_id'), t('DNM'));
+    $this->addUnmigratedDestinations(array('legal_id'), t('DNM'));
+  }
+
+  /**
+   * Query for the user points data.
+   *
+   * @return QueryConditionInterface
+   *   Query to use for the source of migration.
+   */
+  protected function query() {
+    $query = Database::getConnection('default', $this->sourceConnection)
+      ->select('legal_accepted', 'l')
+      ->fields('l');
+    return $query;
+  }
+}
+
+/**
  * Handling specific to a Drupal 6 source for votingapi.
  */
 abstract class OsMigrateVotingapiMigration extends DrupalMigration {
