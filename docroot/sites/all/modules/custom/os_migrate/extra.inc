@@ -66,7 +66,7 @@ abstract class OsMigrateVotingapiMigration extends DrupalMigration {
 }
 
 /**
- * Handling specific to a Drupal 6 source for votingapi.
+ * Migration for ratings for nodes.
  */
 class OsMigrateNodeRatingMigration extends OsMigrateVotingapiMigration {
   /**
@@ -152,6 +152,11 @@ class OsMigrateRedirectMigration extends DrupalMigration {
   public function __construct($args) {
     parent::__construct($args);
 
+    $this->sourceFields += array(
+      'source_options' => 'Placeholder field for source options (query)',
+      'redirect_options' => 'Placeholder field for redirect options (query)',
+    );
+
     $this->source = new MigrateSourceSQL($this->query(), $this->sourceFields,
       NULL, $this->sourceOptions);
 
@@ -169,11 +174,6 @@ class OsMigrateRedirectMigration extends DrupalMigration {
     );
 
     $this->destination = new MigrateDestinationRedirect();
-
-    $this->sourceFields += array(
-      'source_options' => 'Placeholder field for source options (query)',
-      'redirect_options' => 'Placeholder field for redirect options (query)',
-    );
 
     $this->addFieldMapping('status_code', 'type');
     $this->addFieldMapping('access', 'last_used');

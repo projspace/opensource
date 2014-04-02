@@ -491,7 +491,7 @@ class OsMigratePollMigration extends OsMigrateContentBase {
   /**
    * Runs after the node is saved.
    */
-  public function complete($entity, stdClass $row) {
+  public function complete(stdClass $entity, stdClass $row) {
     parent::complete($entity, $row);
 
     // Poll module sets active to 1 if the migration is running under
