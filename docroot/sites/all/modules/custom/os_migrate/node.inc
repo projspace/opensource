@@ -377,7 +377,7 @@ class OsMigratePollMigration extends OsMigrateContentBase {
 
     $this->addFieldMapping('poll_homepage', 'homepage_poll_timestamp')->defaultValue(0);
 
-    // Vote field mappings.
+    // Poll field mappings.
     $this->addFieldMapping('active', 'field_poll:active');
     $this->addFieldMapping('runtime', 'field_poll:runtime');
     $this->addFieldMapping('choice', 'field_poll:choice');
@@ -425,17 +425,8 @@ class OsMigratePollMigration extends OsMigrateContentBase {
       return FALSE;
     }
 
-    return TRUE;
-  }
-
-  /**
-   * Runs just before node is saved and after prepareRow.
-   */
-  public function prepare($node, stdClass $row) {
-
-    parent::prepare($node, $row);
-
-    $node->title = $row->field_poll[0];
+    // Retrieve the title from the poll, instead of the post.
+    $row->title = $row->field_poll[0];
 
     $choices = array();
     $weight = 0;
@@ -443,21 +434,16 @@ class OsMigratePollMigration extends OsMigrateContentBase {
       $choice_unser = unserialize($choice_ser);
       foreach ($choice_unser as $choice) {
         if (!empty($choice['choice'])) {
-          $chvotes = 0;
-          if (!empty($choice['votes']) && is_int($choice['votes'])) {
-            $chvotes = $choice['votes'];
-          }
           $choices[] = array(
             'chtext' => $choice['choice'],
-            'chvotes' => $chvotes,
+            // We'll calculate the number of votes later.
+            'chvotes' => 0,
             'weight' => $weight,
           );
           $weight++;
         }
       }
     }
-    $node->choice = $choices;
-    $row->choice = $choices;
 
     $query = Database::getConnection('default', $this->sourceConnection)
       ->select('pollfield_votes', 'pv');
@@ -484,6 +470,7 @@ class OsMigratePollMigration extends OsMigrateContentBase {
         $timestamp = $row->changed;
       }
 
+      $choices[$vote->delta]['chvotes']++;
       $votes[] = array(
         'chtext' => $choices[$vote->delta],
         'uid' => $vote->uid,
@@ -491,8 +478,28 @@ class OsMigratePollMigration extends OsMigrateContentBase {
         'timestamp' => (int) $timestamp,
       );
     }
-    $row->votes = $votes;
-    $node->votes = $votes;
+    $row->{'field_poll:choice'} = $row->choice = $choices;
+    $row->{'field_poll:votes'} = $row->votes = $votes;
+
+    // Simplify the active and runtime flag.
+    $row->{'field_poll:active'} = $row->{'field_poll:active'}[0];
+    $row->{'field_poll:runtime'} = $row->{'field_poll:runtime'}[0];
+
+    return TRUE;
+  }
+
+  /**
+   * Runs after the node is saved.
+   */
+  public function complete($entity, stdClass $row) {
+    parent::complete($entity, $row);
+
+    // Poll module sets active to 1 if the migration is running under
+    // no user. Make sure we set the active flag correctly.
+    db_update('poll')
+      ->fields(array('active' => $row->{'field_poll:active'}))
+      ->condition('nid', $entity->nid)
+      ->execute();
   }
 }
 

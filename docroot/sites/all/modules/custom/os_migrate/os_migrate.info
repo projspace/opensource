@@ -10,6 +10,7 @@ dependencies[] = migrate_extras
 
 ; Modules Support
 dependencies[] = flag
+dependencies[] = redirect
 dependencies[] = userpoints
 dependencies[] = os_badges
 dependencies[] = os_core
