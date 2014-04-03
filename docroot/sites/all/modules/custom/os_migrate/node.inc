@@ -363,8 +363,10 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
     $query->addField('flag', 'timestamp', 'homepage_listing_timestamp');
 
     // Radioactivity levels.
-    $query->leftJoin('radioactivity', 'rad', 'rad.id = n.nid AND rad.class = :radioactivity_content_type', array(
+    // We are only interested in decay profile = 3 (most popular).
+    $query->leftJoin('radioactivity', 'rad', 'rad.id = n.nid AND rad.class = :radioactivity_content_type AND rad.decay_profile = :radioactivity_decay_profile', array(
         ':radioactivity_content_type' => 'node',
+        ':radioactivity_decay_profile' => 3,
       ));
     $query->addField('rad', 'energy', 'radioactivity_energy');
     $query->addField('rad', 'last_emission_timestamp', 'radioactivity_timestamp');
