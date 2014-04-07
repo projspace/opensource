@@ -1,4 +1,4 @@
-name = Omniture OpenSource.com Integration
+name = OpenSource Omniture Integration
 description = Add custom variables to Omniture for OpenSource.com.
 core = 7.x
 package = OpenSource.com Custom
