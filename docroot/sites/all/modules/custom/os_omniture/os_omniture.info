@@ -1,0 +1,11 @@
+name = Omniture OpenSource.com Integration
+description = Add custom variables to Omniture for OpenSource.com.
+core = 7.x
+package = OpenSource.com Custom
+
+dependencies[] = sitecatalyst
+dependencies[] = os_content_article
+dependencies[] = os_content_page
+dependencies[] = os_content_group_page
+dependencies[] = os_taxonomy_channel
+dependencies[] = os_solr_search
