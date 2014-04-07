@@ -571,7 +571,7 @@ function opensource_user_badge($variables) {
 }
 
 function opensource_preprocess_html(&$variables, $hook) {
-  if(arg(0) == 'node' && !empty(arg(1))) {
+  if(arg(0) == 'node' && !arg(1)) {
     $node = node_load(filter_xss(arg(1)));
     if ($node->type == 'article' && !$node->status) {
       $variables['classes_array'][] = 'node_unpublished';
