@@ -1,0 +1,52 @@
+fieldset {
+    border: 2px groove threedface;
+    margin: 12px 0;
+    padding: 6px;
+}
+
+label {
+    color: #B2B2B2;
+}
+
+.menu-name-menu-user-registration-links,
+.pane-menu-menu-user-registration-links {
+    border-bottom: 1px solid #D6D5D3;
+    margin-top: -48px;
+
+    ul {
+        list-style: none;
+        text-align: right;
+        padding: 0;
+        margin: 0;
+        font-size: 0;
+        position: relative;
+        top: 1px;
+
+        li {
+            list-style: none !important;
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #D6D5D3;
+            font-size: 10px;
+            margin: 0;
+
+            &.first {
+                border-right: 0;
+            }
+
+            &.last {
+                border-left: 0;
+            }
+
+            &.active-trail {
+                border-bottom: 1px solid white;
+            }
+
+            a {
+                display: block;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

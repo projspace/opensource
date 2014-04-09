@@ -467,6 +467,8 @@ CC-BY 3.0|CC-BY 3.0',
     'required' => 0,
     'settings' => array(
       'allow_clear' => 0,
+      'allow_ownvote' => 1,
+      'allow_revote' => 1,
       'stars' => 5,
       'target' => 'none',
       'user_register_form' => FALSE,
