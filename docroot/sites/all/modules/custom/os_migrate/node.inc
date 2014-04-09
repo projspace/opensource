@@ -18,6 +18,10 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
 
     $this->addFieldMapping('body:format', NULL, FALSE)->defaultValue('panopoly_html_text');
 
+    // Keep old NID's.
+    $this->addFieldMapping('nid', 'nid')->description("Let's reuse the old nid's");
+    $this->addFieldMapping('is_new', NULL, FALSE)->defaultvalue(TRUE);
+
     // Metatags mappings.
     $this->addFieldMapping('metatag_title', 'page_title');
     $this->addFieldMapping('metatag_abstract', 'meta_abstract');
