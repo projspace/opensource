@@ -74,6 +74,9 @@ class WebformComponents extends Migration {
     // from token.install, returns array('old' => 'new') without % prefix.
     if (strpos($row->value, '%') === 0) {
       switch($row->value) {
+        case '%username':
+          $row->value = '[current-user:name]';
+          break;
         case '%useremail':
           $row->value = '[current-user:mail]';
           break;
