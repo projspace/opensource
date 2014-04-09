@@ -1811,6 +1811,65 @@ blockquote {
   margin-top: 1.3em;
 }
 
+fieldset {
+  border: 2px groove threedface;
+  margin: 12px 0;
+  padding: 6px;
+}
+
+label {
+  color: #B2B2B2;
+}
+
+.menu-name-menu-user-registration-links,
+.pane-menu-menu-user-registration-links {
+  border-bottom: 1px solid #D6D5D3;
+  margin-top: -48px;
+}
+
+.menu-name-menu-user-registration-links ul,
+.pane-menu-menu-user-registration-links ul {
+  list-style: none;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  position: relative;
+  top: 1px;
+}
+
+.menu-name-menu-user-registration-links ul li,
+.pane-menu-menu-user-registration-links ul li {
+  list-style: none !important;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid #D6D5D3;
+  font-size: 10px;
+  margin: 0;
+}
+
+.menu-name-menu-user-registration-links ul li.first,
+.pane-menu-menu-user-registration-links ul li.first {
+  border-right: 0;
+}
+
+.menu-name-menu-user-registration-links ul li.last,
+.pane-menu-menu-user-registration-links ul li.last {
+  border-left: 0;
+}
+
+.menu-name-menu-user-registration-links ul li.active-trail,
+.pane-menu-menu-user-registration-links ul li.active-trail {
+  border-bottom: 1px solid white;
+}
+
+.menu-name-menu-user-registration-links ul li a,
+.pane-menu-menu-user-registration-links ul li a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .pane-channel-tags-cloud-panel-pane-cloud {
   margin-bottom: 25px;
 }
@@ -3242,6 +3301,16 @@ blockquote {
   display: none;
 }
 
+.m-polls .total {
+  padding-top: 2em;
+  position: relative;
+  top: -2em;
+}
+
+.m-polls .form-submit {
+  float: right;
+}
+
 .poll .vote-form {
   text-align: left;
 }
@@ -3603,6 +3672,14 @@ blockquote {
   text-decoration: underline;
 }
 
+.page-user .page__title {
+  padding-left: 12px;
+}
+
+.fivestar-open.source {
+  float: left;
+}
+
 .pane-menu-menu-opensource-resources .pane-title {
   color: #DD3823;
   font-size: 22px;
@@ -3719,7 +3796,6 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
 .section-life .pane-term-description .pane-title,
 .section-government .pane-term-description .pane-title {
   text-indent: -9999px;
-  margin-left: -0.5em;
   margin-bottom: 10px;
   line-height: 1;
   min-width: 200px;
@@ -3742,6 +3818,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
 .section-law .pane-term-description .term_feed a,
 .section-life .pane-term-description .term_feed a,
 .section-government .pane-term-description .term_feed a {
+  margin-top: 12px;
   width: 12px;
   height: 13px;
   display: block;

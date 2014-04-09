@@ -159,7 +159,7 @@ function os_homepage_views_default_views() {
   $handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['created']['alter']['text'] = '<div class="teaser-info">
 <span class="teaser-comment">[comment_count]</span>
-<span class="teaser-date">Posted[created]</span>
+<span class="teaser-date">Posted [created]</span>
 <span class="teaser-author">[name] 
 <span class="author-feed"><a href="/user/[uid]/feed">Feed</a></span></span>
 </div>';

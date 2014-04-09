@@ -368,7 +368,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'redirect_auto_redirect';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['redirect_auto_redirect'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -440,6 +440,90 @@ user/*/*';
   $strongarm->name = 'redirect_warning';
   $strongarm->value = FALSE;
   $export['redirect_warning'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_codesnippet';
+  $strongarm->value = '';
+  $export['sitecatalyst_codesnippet'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_image_file_location';
+  $strongarm->value = 'https://smtrcs.redhat.com/b/ss/redhatopensourcecom,redhatglobal/1/H.21--NS/0?[AQB]&amp;amp;amp;amp;cdp=3&amp;amp;amp;amp;[AQE]';
+  $export['sitecatalyst_image_file_location'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_js_file_location';
+  $strongarm->value = '/sites/all/libraries/sitecatalyst/s_code.js?20100731';
+  $export['sitecatalyst_js_file_location'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_role_tracking_type';
+  $strongarm->value = 'inclusive';
+  $export['sitecatalyst_role_tracking_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_track_administrator';
+  $strongarm->value = 1;
+  $export['sitecatalyst_track_administrator'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_track_anonymous_user';
+  $strongarm->value = 1;
+  $export['sitecatalyst_track_anonymous_user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_track_authenticated_user';
+  $strongarm->value = 1;
+  $export['sitecatalyst_track_authenticated_user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_track_community_moderator';
+  $strongarm->value = 1;
+  $export['sitecatalyst_track_community_moderator'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_track_editor';
+  $strongarm->value = 1;
+  $export['sitecatalyst_track_editor'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_track_mollom_admin';
+  $strongarm->value = 1;
+  $export['sitecatalyst_track_mollom_admin'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_variables';
+  $strongarm->value = array();
+  $export['sitecatalyst_variables'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sitecatalyst_version';
+  $strongarm->value = 'H.20.3.';
+  $export['sitecatalyst_version'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -707,7 +791,7 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_regenerate_needed';
-  $strongarm->value = FALSE;
+  $strongarm->value = TRUE;
   $export['xmlsitemap_regenerate_needed'] = $strongarm;
 
   return $export;
