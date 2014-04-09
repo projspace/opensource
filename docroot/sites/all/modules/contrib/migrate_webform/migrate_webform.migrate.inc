@@ -23,12 +23,14 @@ function migrate_webform_migrate_api() {
       '1' => 'filtered_html',
     ),
     'node_migrations' => explode(' ', variable_get('migrate_webform_node_migration_class', "WebformNode")),
+    'default_format' => variable_get('migrate_webform_default_filter_format', 'plain_text'),
   );
 
   /**
    * Node migration
    */
   if (variable_get('migrate_webform_node_map_ok', TRUE)) {
+    $common_arguments['node_migrations'] = array('WebformNode');
     $roles = migrate_webform_get_roles();
     $node_arguments = array(
       array(
@@ -55,6 +57,7 @@ function migrate_webform_migrate_api() {
       'class_name' => 'WebformSettings',
       'machine_name' => 'WebformSettings',
       'description' => t('Migration of settings for webforms from Drupal 6'),
+      'dependencies' => $common_arguments['node_migrations'],
   );
   $components_arguments = $common_arguments + array(
       'class_name' => 'WebformComponents',

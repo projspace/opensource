@@ -1,0 +1,27 @@
+diff --git a/migrate_webform.migrate.inc b/migrate_webform.migrate.inc
+index 8188015..518ac33 100644
+--- a/migrate_webform.migrate.inc
++++ b/migrate_webform.migrate.inc
+@@ -23,6 +23,7 @@ function migrate_webform_migrate_api() {
+       '1' => 'filtered_html',
+     ),
+     'node_migrations' => explode(' ', variable_get('migrate_webform_node_migration_class', "WebformNode")),
++    'default_format' => variable_get('migrate_webform_default_filter_format', 'plain_text'),
+   );
+ 
+   /**
+diff --git a/settings.inc b/settings.inc
+index 7639a67..c9beedb 100644
+--- a/settings.inc
++++ b/settings.inc
+@@ -35,6 +35,10 @@ class WebformSettings extends Migration {
+ 
+     $this->addFieldMapping('confirmation_format', 'confirmation_format')
+            ->callbacks(array($this, 'mapFormat'));
++
++    $this->addFieldMapping('preview_message')->defaultValue('');
++    $this->addFieldMapping('preview_message_format')->defaultValue($arguments['default_format']);
++    $this->addFieldMapping('preview_excluded_components')->defaultValue('');
+   }
+ 
+   protected function query($fields) {

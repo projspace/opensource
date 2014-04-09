@@ -35,6 +35,10 @@ class WebformSettings extends Migration {
 
     $this->addFieldMapping('confirmation_format', 'confirmation_format')
            ->callbacks(array($this, 'mapFormat'));
+
+    $this->addFieldMapping('preview_message')->defaultValue('');
+    $this->addFieldMapping('preview_message_format')->defaultValue($arguments['default_format']);
+    $this->addFieldMapping('preview_excluded_components')->defaultValue('');
   }
 
   protected function query($fields) {
