@@ -13,6 +13,17 @@ function os_migrate_install() {
   $disabled[] = 'MigrateExtrasNodeFlagHandler';
   $disabled[] = 'MigrateExtrasUserFlagHandler';
   variable_set('migrate_disabled_handlers', serialize($disabled));
+
+  // Migrate Webform settings.
+  variable_set('migrate_webform_source_database', 'legacy');
+  variable_set('migrate_webform_source_database_api_version', 'd6');
+  variable_set('migrate_webform_default_filter_format', 'panopoly_wysiwyg_text');
+  variable_set('migrate_webform_user_map_ok', TRUE);
+  variable_set('migrate_webform_user_migration_class', 'OsUser');
+  variable_set('migrate_webform_file_map_ok', TRUE);
+  variable_set('migrate_webform_file_migration_class', 'OsFile OsImageFieldFile');
+  variable_set('migrate_webform_node_map_ok', TRUE);
+  variable_set('migrate_webform_node_migration_class', 'WebformNode');
 }
 
 /**
