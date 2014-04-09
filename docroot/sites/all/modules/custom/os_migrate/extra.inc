@@ -356,3 +356,22 @@ class OsMigrateRedirectMigration extends DrupalMigration {
     return $query;
   }
 }
+
+/**
+ * Migrate selected menu links.
+ */
+class OsMigrateMenuLinksMigration extends DrupalMenuLinks6Migration {
+  /**
+   * Query only for the menus we are interested in.
+   */
+  protected function query() {
+    $menus = array(
+      'menu-about-menu',
+      'menu-footer',
+    );
+
+    $query = parent::query();
+    $query->condition('m.menu_name', $menus);
+    return $query;
+  }
+}
