@@ -240,14 +240,14 @@ class OsMigrateUserBadgesMigration extends DrupalMigration {
 
     $this->map = new MigrateSQLMap($this->machineName,
       array(
-        'uid' => array(
-          'description' => 'User ID',
+        'bid' => array(
+          'description' => 'Badge ID',
           'type' => 'int',
           'unsigned' => TRUE,
           'not null' => TRUE,
         ),
-        'bid' => array(
-          'description' => 'Badge ID',
+        'uid' => array(
+          'description' => 'User ID',
           'type' => 'int',
           'unsigned' => TRUE,
           'not null' => TRUE,
