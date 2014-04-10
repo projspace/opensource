@@ -143,6 +143,8 @@ class OsMigrateUserPointsMigration extends DrupalMigration {
       'points',
       'moderate',
       'time_stamp',
+      'changed',
+      'status',
       'operation',
       'expirydate',
       'description',
@@ -151,6 +153,59 @@ class OsMigrateUserPointsMigration extends DrupalMigration {
       'entity_id',
       'entity_type',
     ));
+  }
+
+  /**
+   * Review a data row after fetch, returning FALSE to skip it.
+   */
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+
+    $migrations = array(
+      'node' => array(
+        'post' => 'OsContentArticle',
+        'podcast' => 'OsContentPodcast',
+        'video' => 'OsContentVideo',
+        'page' => 'OsContentPage',
+        'group_page' => 'OsContentGroupPage',
+        'resource' => 'OsContentResource',
+        'event' => 'OsContentEvent',
+      ),
+      'comment' => array(
+        'post' => 'OsArticleComments',
+        'podcast' => 'OsPodcastComments',
+        'video' => 'OsVideoComments',
+        'event' => 'OsEventComments',
+      ),
+    );
+
+    if (!empty($migrations[$row->entity_type])) {
+      // Find the node type and use the appropriate migration.
+      $query = Database::getConnection('default', $this->sourceConnection)
+        ->select('node', 'n')
+        ->fields('n', array('type'));
+
+      if ($row->entity_type == 'comment') {
+        $query->join('comments', 'c', 'c.nid = n.nid');
+        $query->condition('c.cid', $row->entity_id);
+      }
+      elseif ($row->entity_type == 'node') {
+        $query->condition('n.nid', $row->entity_id);
+      }
+      else {
+        // We shouldn't reach here, but just in case...
+        return FALSE;
+      }
+
+      $node_type = $query->execute()->fetchField();
+
+      // This will create a stub if the node/comment is not already present.
+      $row->entity_id = $this->handleSourceMigration($migrations[$row->entity_type][$node_type], $row->entity_id, NULL, $this);
+    }
+
+    return TRUE;
   }
 
   /**

@@ -92,6 +92,7 @@ class OsMigrateFlagMigration extends DrupalMigration {
              ->fields('f')
              ->condition('f.fid', $this->sourceFlagId)
              ->orderBy('f.timestamp');
+    $query->join('comments', 'c', 'c.cid = f.content_id');
     return $query;
   }
 }

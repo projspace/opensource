@@ -61,15 +61,6 @@ function os_migrate_register_migrations() {
 
   Migration::registerMigration('OsMigrateLegalAcceptedMigration', $arguments['machine_name'], $arguments);
 
-  // Register User Points migration.
-  $arguments = $common_arguments + array(
-    'description' => t('Migration of user points from Drupal 6'),
-    'machine_name' => 'OsUserPoints',
-    'dependencies' => array('OsUser'),
-  );
-
-  Migration::registerMigration('OsMigrateUserPointsMigration', $arguments['machine_name'], $arguments);
-
   // Register User Badges migration.
   $arguments = $common_arguments + array(
     'description' => t('Migration of user badges from Drupal 6'),
@@ -336,6 +327,28 @@ function os_migrate_register_migrations() {
   );
 
   Migration::registerMigration('OsMigrateRedirectMigration', $args['machine_name'], $args);
+
+  // Register User Points migration.
+  $arguments = $common_arguments + array(
+    'description' => t('Migration of user points from Drupal 6'),
+    'machine_name' => 'OsUserPoints',
+    'dependencies' => array(
+      'OsUser',
+      'OsContentArticle',
+      'OsContentPodcast',
+      'OsContentVideo',
+      'OsContentPage',
+      'OsContentGroupPage',
+      'OsContentResource',
+      'OsContentEvent',
+      'OsArticleComments',
+      'OsPodcastComments',
+      'OsVideoComments',
+      'OsEventComments',
+    ),
+  );
+
+  Migration::registerMigration('OsMigrateUserPointsMigration', $arguments['machine_name'], $arguments);
 
   // Register Menu links migrations.
   $args = $common_arguments + array(

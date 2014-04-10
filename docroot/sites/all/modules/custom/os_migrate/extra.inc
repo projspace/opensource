@@ -333,7 +333,7 @@ class OsMigrateRedirectMigration extends DrupalMigration {
         ->select('node', 'n')
         ->fields('n', array('type'))
         ->condition('n.nid', $nid);
-      $node_type = $query->execute()->fetchField;
+      $node_type = $query->execute()->fetchField();
 
       // This will create a stub if the node is not already present.
       $nid = $this->handleSourceMigration($content_migrations[$node_type], $nid, NULL, $this);
