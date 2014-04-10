@@ -13,6 +13,13 @@ function os_common_config_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'admin_theme';
+  $strongarm->value = 'seven';
+  $export['admin_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_api_version';
   $strongarm->value = '7.2';
   $export['date_api_version'] = $strongarm;
@@ -367,6 +374,13 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_admin_theme';
+  $strongarm->value = 1;
+  $export['node_admin_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'redirect_auto_redirect';
   $strongarm->value = 0;
   $export['redirect_auto_redirect'] = $strongarm;
@@ -473,42 +487,42 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sitecatalyst_track_administrator';
-  $strongarm->value = 1;
+  $strongarm->value = TRUE;
   $export['sitecatalyst_track_administrator'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sitecatalyst_track_anonymous_user';
-  $strongarm->value = 1;
+  $strongarm->value = TRUE;
   $export['sitecatalyst_track_anonymous_user'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sitecatalyst_track_authenticated_user';
-  $strongarm->value = 1;
+  $strongarm->value = TRUE;
   $export['sitecatalyst_track_authenticated_user'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sitecatalyst_track_community_moderator';
-  $strongarm->value = 1;
+  $strongarm->value = TRUE;
   $export['sitecatalyst_track_community_moderator'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sitecatalyst_track_editor';
-  $strongarm->value = 1;
+  $strongarm->value = TRUE;
   $export['sitecatalyst_track_editor'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sitecatalyst_track_mollom_admin';
-  $strongarm->value = 1;
+  $strongarm->value = TRUE;
   $export['sitecatalyst_track_mollom_admin'] = $strongarm;
 
   $strongarm = new stdClass();

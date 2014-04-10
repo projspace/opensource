@@ -10,6 +10,31 @@
 function os_header_footer_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: main-menu_open:<front>
+  $menu_links['main-menu_open:<front>'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'Open*',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'menu_icon' => array(
+        'enable' => 0,
+        'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
+        'image_style' => 'menu_icon',
+      ),
+      'identifier' => 'main-menu_open:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+  );
   // Exported menu link: user-menu_feed:<front>
   $menu_links['user-menu_feed:<front>'] = array(
     'menu_name' => 'user-menu',
@@ -72,6 +97,7 @@ function os_header_footer_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('Feed');
   t('Log in');
+  t('Open*');
   t('Sign Up');
 
 

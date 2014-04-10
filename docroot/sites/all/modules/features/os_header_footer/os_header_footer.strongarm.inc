@@ -97,7 +97,7 @@ function os_header_footer_strongarm() {
       'html5' => 'html5',
       'meta' => 'meta',
     ),
-    'zen_rebuild_registry' => 1,
+    'zen_rebuild_registry' => 0,
     'zen_wireframes' => 0,
   );
   $export['theme_opensource_settings'] = $strongarm;
