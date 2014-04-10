@@ -37,6 +37,15 @@ function os_common_config_user_default_permissions() {
     'module' => 'vud_comment',
   );
 
+  // Exported permission: 'flag comment_abuse'.
+  $permissions['flag comment_abuse'] = array(
+    'name' => 'flag comment_abuse',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: 'reset vote up/down votes'.
   $permissions['reset vote up/down votes'] = array(
     'name' => 'reset vote up/down votes',
@@ -44,6 +53,15 @@ function os_common_config_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'vud',
+  );
+
+  // Exported permission: 'unflag comment_abuse'.
+  $permissions['unflag comment_abuse'] = array(
+    'name' => 'unflag comment_abuse',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
   );
 
   // Exported permission: 'use vote up/down'.
