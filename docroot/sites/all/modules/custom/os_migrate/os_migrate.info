@@ -25,6 +25,7 @@ dependencies[] = os_content_group_page
 dependencies[] = os_content_page
 dependencies[] = os_content_resource
 dependencies[] = os_poll
+dependencies[] = os_webforms
 
 ; Support files.
 files[] = user.inc
