@@ -608,6 +608,6 @@ class OsMigrateWebformMigration extends WebformNode {
   public function __construct(array $args) {
     parent::__construct($args);
 
-    $this->addFieldMapping('body:format', 'panopoly_wysiwyg_text', FALSE);
+    $this->addFieldMapping('body:format', NULL, FALSE)->defaultValue('panopoly_wysiwyg_text');
   }
 }
