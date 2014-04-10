@@ -131,6 +131,14 @@ function os_migrate_register_migrations() {
   // and destination_type are required arguments.
   $node_arguments = array(
     array(
+      'class_name' => 'OsMigrateWebformMigration',
+      'description' => t('Migration of webform nodes from Drupal 6'),
+      'machine_name' => 'OsContentWebform',
+      'dependencies' => array(),
+      'source_type' => 'webform',
+      'destination_type' => 'webform',
+    ),
+    array(
       'class_name' => 'OsMigratePollMigration',
       'description' => t('Migration of article nodes (with poll field) from Drupal 6'),
       'machine_name' => 'OsContentPoll',
@@ -201,6 +209,10 @@ function os_migrate_register_migrations() {
   );
   foreach ($node_arguments as $arguments) {
     $arguments = array_merge_recursive($arguments, $common_node_arguments);
+    // Add OsContentWebform as dependency to every other content migration.
+    if ($arguments['machine_name'] != 'OsContentWebform') {
+      $arguments['dependencies'][] = 'OsContentWebform';
+    }
     Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
   }
 

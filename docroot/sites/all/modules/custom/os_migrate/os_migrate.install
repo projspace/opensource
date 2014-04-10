@@ -22,8 +22,8 @@ function os_migrate_install() {
   variable_set('migrate_webform_user_migration_class', 'OsUser');
   variable_set('migrate_webform_file_map_ok', TRUE);
   variable_set('migrate_webform_file_migration_class', 'OsFile OsImageFieldFile');
-  variable_set('migrate_webform_node_map_ok', TRUE);
-  variable_set('migrate_webform_node_migration_class', 'WebformNode');
+  variable_set('migrate_webform_node_map_ok', FALSE);
+  variable_set('migrate_webform_node_migration_class', 'OsContentWebform');
 }
 
 /**

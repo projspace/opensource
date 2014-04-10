@@ -597,3 +597,17 @@ class OsMigrateEventMigration extends OsMigrateContentBase {
     $this->addFieldMapping('field_event_summary', 'field_event_summary');
   }
 }
+
+/**
+ * Override migration for webform nodes.
+ */
+class OsMigrateWebformMigration extends WebformNode {
+  /**
+   * Constructor.
+   */
+  public function __construct(array $args) {
+    parent::__construct($args);
+
+    $this->addFieldMapping('body:format', 'panopoly_wysiwyg_text', FALSE);
+  }
+}
