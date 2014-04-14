@@ -126,12 +126,12 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
    * Process data row to retrieve the appropriate image to use.
    */
   protected function prepareRowFiles($row) {
-    if (!empty($row->field_lead_image)) {
+    if (!empty($row->field_lead_image) && !empty($row->field_lead_image[0])) {
       $row->image = $row->field_lead_image;
       $row->image_alt = $row->{'field_lead_image:alt'};
       $row->image_title = $row->{'field_lead_image:title'};
     }
-    elseif (!empty($row->field_image)) {
+    elseif (!empty($row->field_image) && !empty($row->field_image[0])) {
       $row->image = $row->field_image;
       $row->image_alt = $row->{'field_image:alt'};
       $row->image_title = '';
