@@ -222,6 +222,7 @@ class OsMigrateCommentRatingMigration extends OsMigrateVotingapiMigration {
     parent::__construct($args);
 
     $content_migrations = array(
+      'OsPollComments',
       'OsArticleComments',
       'OsPodcastComments',
       'OsVideoComments',

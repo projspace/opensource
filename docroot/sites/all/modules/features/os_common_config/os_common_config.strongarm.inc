@@ -804,6 +804,64 @@ Your account on [site:name] has been canceled.
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_dim_active';
+  $strongarm->value = '0';
+  $export['vud_comment_dim_active'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_dim_threshold';
+  $strongarm->value = '0';
+  $export['vud_comment_dim_threshold'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_node_types';
+  $strongarm->value = array(
+    'article' => 'article',
+    'poll' => 'poll',
+    'page' => 0,
+    'panopoly_page' => 0,
+    'event' => 0,
+    'group_page' => 0,
+    'resource' => 0,
+    'webform' => 0,
+  );
+  $export['vud_comment_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_reset';
+  $strongarm->value = '0';
+  $export['vud_comment_reset'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_votes';
+  $strongarm->value = '1';
+  $export['vud_comment_votes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_widget';
+  $strongarm->value = 'upanddown';
+  $export['vud_comment_widget'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_widget_display';
+  $strongarm->value = '0';
+  $export['vud_comment_widget_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_generated_last';
   $strongarm->value = 1395643265;
   $export['xmlsitemap_generated_last'] = $strongarm;
