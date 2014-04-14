@@ -1731,6 +1731,10 @@ blockquote {
   padding: 8px 8px;
 }
 
+.page-user-login .form-text {
+  height: auto;
+}
+
 .form-submit {
   border: none;
   background: #1D2754;
@@ -3052,12 +3056,6 @@ label {
   margin: 0;
 }
 
-.section-title {
-  font-size: 24px;
-  line-height: 1.3em;
-  font-weight: bold;
-}
-
 .page-should-be-spotlight .pane-title {
   font-size: 24px;
   line-height: 1.3;
@@ -3783,6 +3781,58 @@ body[class*='section-'] .view-channel-articles .views-more-link:hover {
 
 body[class*='section-'] .view-channel-articles .views-more-link:before {
   content: '» ';
+}
+
+.section-category a {
+  font-style: normal;
+  color: #39f;
+}
+
+.section-category .section-title {
+  font-size: 24px;
+  line-height: 1.3em;
+  font-weight: bold;
+}
+
+.section-category .section-title p {
+  margin-bottom: 0;
+}
+
+.section-category .views-row {
+  margin-bottom: 12px;
+}
+
+.section-category .views-field {
+  margin: 3px 0 8px;
+}
+
+.section-category .views-field-title {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.section-category .views-field-title a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-category .views-field-title a:hover {
+  color: #39f;
+  text-decoration: underline;
+}
+
+.section-category .views-field-field-section span {
+  float: left;
+  margin-right: 10px;
+}
+
+.section-category .views-field-field-section a {
+  margin-right: 5px;
+}
+
+.section-category .links .inline {
+  padding-left: 6px;
 }
 
 .section-business .pane-term-description,
