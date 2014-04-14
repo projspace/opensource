@@ -12,6 +12,7 @@ dependencies[] = panels_mini
 dependencies[] = pm_existing_pages
 dependencies[] = views
 dependencies[] = views_content
+dependencies[] = os_section_pages
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = panels_mini:panels_default:1
 features[ctools][] = pm_existing_pages:pm_existing_pages:1

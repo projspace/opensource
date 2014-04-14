@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenSource Section Pages feature.
+ */
+
+include_once 'os_section_pages.features.inc';
