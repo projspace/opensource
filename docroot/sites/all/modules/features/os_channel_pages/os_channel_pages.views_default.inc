@@ -156,6 +156,7 @@ function os_channel_pages_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
+    'poll' => 'poll',
   );
 
   /* Display: Channel/Tag Articles */
