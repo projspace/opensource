@@ -17,7 +17,7 @@ function os_common_components_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 30;
+  $handler->weight = 50;
   $handler->conf = array(
     'title' => 'Generic Node',
     'no_blocks' => 0,
@@ -36,9 +36,10 @@ function os_common_components_default_page_manager_handlers() {
             'type' => array(
               'article' => 'article',
               'event' => 'event',
+              'group_page' => 'group_page',
               'poll' => 'poll',
               'resource' => 'resource',
-              'group_page' => 'group_page',
+              'webform' => 'webform',
             ),
           ),
           'context' => 'argument_entity_id:node_1',
