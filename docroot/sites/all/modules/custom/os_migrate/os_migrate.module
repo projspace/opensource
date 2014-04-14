@@ -416,6 +416,9 @@ function os_migrate_migrate_api() {
       'comment_notify',
       'rules',
     ),
+    'entity_update' => array(
+      'rules',
+    ),
     'user_insert' => array(
       'os_badges',
     ),
@@ -454,7 +457,6 @@ function os_migrate_module_implements_alter(&$implementation, $hook) {
       unset($implementation['apachesolr']);
       unset($implementation['apachesolr_access']);
       unset($implementation['mollom']);
-      unset($implementation['rules']);
       unset($implementation['search_api']);
       unset($implementation['search_api_db']);
       unset($implementation['os_badges']);
