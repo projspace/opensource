@@ -24,8 +24,16 @@ function os_core_install() {
     'weight' => 20,
   );
   $item['options']['attributes']['title'] = 'Sign Up';
-  menu_link_save($item);
-
+  $register_menu = db_select('menu_links', 'ml')
+    ->fields('ml')
+    ->condition('link_path', 'user/register', '=')
+    ->condition('link_title', 'Sign Up', '=')
+    ->condition('menu_name', 'user-menu', '=')
+    ->execute()
+    ->fetchAssoc();
+  if(!$register_menu) {
+    menu_link_save($item);
+  }
   // Create all the terms.
   os_core_generate_taxonomy_terms();
 
