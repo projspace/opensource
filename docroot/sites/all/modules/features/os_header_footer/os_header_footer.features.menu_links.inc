@@ -35,25 +35,30 @@ function os_header_footer_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: user-menu_feed:<front>
-  $menu_links['user-menu_feed:<front>'] = array(
+  // Exported menu link: user-menu_feed:rss.xml
+  $menu_links['user-menu_feed:rss.xml'] = array(
     'menu_name' => 'user-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'rss.xml',
+    'router_path' => 'rss.xml',
     'link_title' => 'Feed',
     'options' => array(
       'attributes' => array(
         'title' => 'Feeds',
       ),
-      'identifier' => 'user-menu_feed:<front>',
+      'identifier' => 'user-menu_feed:rss.xml',
+      'menu_icon' => array(
+        'enable' => 0,
+        'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
+        'image_style' => 'menu_icon',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => 50,
-    'customized' => 0,
+    'customized' => 1,
   );
   // Exported menu link: user-menu_log-in:user/login
   $menu_links['user-menu_log-in:user/login'] = array(
