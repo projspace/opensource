@@ -429,7 +429,7 @@ function os_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_medium';
-  $strongarm->value = 'd M Y';
+  $strongarm->value = 'F j, Y - g:ia';
   $export['date_format_medium'] = $strongarm;
 
   $strongarm = new stdClass();
