@@ -198,8 +198,7 @@ function os_section_pages_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
-  $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '500';
   $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'Read more';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
@@ -207,6 +206,13 @@ function os_section_pages_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = '» Read more';
   /* Field: User: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
@@ -224,13 +230,6 @@ function os_section_pages_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Content statistics: Total views */
-  $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
-  $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
-  $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
-  $handler->display->display_options['fields']['totalcount']['label'] = '';
-  $handler->display->display_options['fields']['totalcount']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['totalcount']['suffix'] = ' reads';
   /* Field: Content: Add comment link */
   $handler->display->display_options['fields']['comments_link']['id'] = 'comments_link';
   $handler->display->display_options['fields']['comments_link']['table'] = 'node';
@@ -239,12 +238,20 @@ function os_section_pages_views_default_views() {
   $handler->display->display_options['fields']['comments_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comments_link']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['comments_link']['teaser'] = TRUE;
+  /* Field: Content statistics: Total views */
+  $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
+  $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['label'] = '';
+  $handler->display->display_options['fields']['totalcount']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['totalcount']['suffix'] = ' reads';
   /* Field: Content: Section */
   $handler->display->display_options['fields']['field_section']['id'] = 'field_section';
   $handler->display->display_options['fields']['field_section']['table'] = 'field_data_field_section';
   $handler->display->display_options['fields']['field_section']['field'] = 'field_section';
   $handler->display->display_options['fields']['field_section']['label'] = 'Tags';
   $handler->display->display_options['fields']['field_section']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_section']['separator'] = '&nbsp; &nbsp;';
   $export['section_content'] = $view;
 
   return $export;
