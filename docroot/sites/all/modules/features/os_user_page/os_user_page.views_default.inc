@@ -364,12 +364,6 @@ function os_user_page_views_default_views() {
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['label'] = '';
   $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
-  /* Field: User: About */
-  $handler->display->display_options['fields']['field_user_about']['id'] = 'field_user_about';
-  $handler->display->display_options['fields']['field_user_about']['table'] = 'field_data_field_user_about';
-  $handler->display->display_options['fields']['field_user_about']['field'] = 'field_user_about';
-  $handler->display->display_options['fields']['field_user_about']['label'] = '';
-  $handler->display->display_options['fields']['field_user_about']['element_label_colon'] = FALSE;
   /* Field: User: Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
@@ -377,6 +371,12 @@ function os_user_page_views_default_views() {
   $handler->display->display_options['fields']['field_website']['label'] = '';
   $handler->display->display_options['fields']['field_website']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_website']['click_sort_column'] = 'url';
+  /* Field: User: About */
+  $handler->display->display_options['fields']['field_user_about']['id'] = 'field_user_about';
+  $handler->display->display_options['fields']['field_user_about']['table'] = 'field_data_field_user_about';
+  $handler->display->display_options['fields']['field_user_about']['field'] = 'field_user_about';
+  $handler->display->display_options['fields']['field_user_about']['label'] = '';
+  $handler->display->display_options['fields']['field_user_about']['element_label_colon'] = FALSE;
   /* Contextual filter: User: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
