@@ -12,10 +12,10 @@ function os_user_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: field_group
-  $overrides["field_group.group_user_profile|user|user|form.data|children|1"] = 'field_display_name';
-  $overrides["field_group.group_user_profile|user|user|form.data|children|2"] = 'field_location';
-  $overrides["field_group.group_user_profile|user|user|form.data|children|3"] = 'field_website';
-  $overrides["field_group.group_user_profile|user|user|form.data|children|4"] = 'field_community_description';
+  $overrides["field_group.group_user_profile|user|user|form.data|children|1"] = 'field_community_description';
+  $overrides["field_group.group_user_profile|user|user|form.data|children|2"] = 'field_display_name';
+  $overrides["field_group.group_user_profile|user|user|form.data|children|3"] = 'field_location';
+  $overrides["field_group.group_user_profile|user|user|form.data|children|4"] = 'field_website';
   $overrides["field_group.group_user_profile|user|user|form.data|children|5"] = 'field_profile_point_notification';
   $overrides["field_group.group_user_profile|user|user|form.data|format_settings|formatter"] = 'open';
   $overrides["field_group.group_user_profile|user|user|form.data|format_settings|label"] = 'User Profile';
@@ -25,9 +25,18 @@ function os_user_features_override_default_overrides() {
 
   // Exported overrides for: page_manager_handlers
   $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|0"]["DELETED"] = TRUE;
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|admin_title"] = '';
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|depth"] = 0;
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|expanded"] = 0;
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|follow"] = 0;
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|level"] = 1;
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|menu_name"] = 'menu-user-registration-links';
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|parent_mlid"] = 'menu-user-registration-links:0';
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|sort"] = 0;
   $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|task_id"]["DELETED"] = TRUE;
-  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|subtype"] = 'menu-menu-user-registration-links';
-  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|type"] = 'block';
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|title_link"] = 0;
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|subtype"] = 'menu-user-registration-links';
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|type"] = 'menu_tree';
   $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-2"] = (object) array(
       'pid' => 'new-2',
       'panel' => 'contentmain',
@@ -91,6 +100,7 @@ function os_user_features_override_default_overrides() {
         'override_title_text' => '',
       ),
       'cache' => array(),
+      'style' => '',
       'css' => array(),
       'extras' => array(),
       'position' => 0,
@@ -110,6 +120,7 @@ function os_user_features_override_default_overrides() {
         'override_title_text' => '',
       ),
       'cache' => array(),
+      'style' => '',
       'css' => array(),
       'extras' => array(),
       'position' => 1,
@@ -124,6 +135,7 @@ function os_user_features_override_default_overrides() {
       'access' => array(),
       'configuration' => '',
       'cache' => array(),
+      'style' => '',
       'css' => array(),
       'extras' => array(),
       'position' => 0,
@@ -139,8 +151,8 @@ function os_user_features_override_default_overrides() {
   $overrides["page_manager_handlers.pm_existing_pages_user_register_panel_context.conf|display|content|new-7"] = (object) array(
       'pid' => 'new-7',
       'panel' => 'contentmain',
-      'type' => 'block',
-      'subtype' => 'menu-menu-user-registration-links',
+      'type' => 'menu_tree',
+      'subtype' => 'menu-user-registration-links',
       'shown' => TRUE,
       'access' => array(),
       'cache' => array(),

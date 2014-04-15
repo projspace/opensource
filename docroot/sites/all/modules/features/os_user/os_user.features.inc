@@ -45,8 +45,17 @@ function os_user_field_default_field_instances_alter(&$data) {
  */
 function os_user_default_page_manager_handlers_alter(&$data) {
   if (isset($data['pm_existing_pages_user_login_panel_context'])) {
-    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->subtype = 'menu-menu-user-registration-links'; /* WAS: 'pm_existing_pages' */
-    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->type = 'block'; /* WAS: 'pm_existing_pages' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['admin_title'] = ''; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['depth'] = 0; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['expanded'] = 0; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['follow'] = 0; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['level'] = 1; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['menu_name'] = 'menu-user-registration-links'; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['parent_mlid'] = 'menu-user-registration-links:0'; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['sort'] = 0; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['title_link'] = 0; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->subtype = 'menu-user-registration-links'; /* WAS: 'pm_existing_pages' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->type = 'menu_tree'; /* WAS: 'pm_existing_pages' */
     $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-2'] = (object) array(
           'pid' => 'new-2',
           'panel' => 'contentmain',
@@ -113,6 +122,7 @@ function os_user_default_page_manager_handlers_alter(&$data) {
             'override_title_text' => '',
           ),
           'cache' => array(),
+          'style' => '',
           'css' => array(),
           'extras' => array(),
           'position' => 0,
@@ -132,6 +142,7 @@ function os_user_default_page_manager_handlers_alter(&$data) {
             'override_title_text' => '',
           ),
           'cache' => array(),
+          'style' => '',
           'css' => array(),
           'extras' => array(),
           'position' => 1,
@@ -146,6 +157,7 @@ function os_user_default_page_manager_handlers_alter(&$data) {
           'access' => array(),
           'configuration' => '',
           'cache' => array(),
+          'style' => '',
           'css' => array(),
           'extras' => array(),
           'position' => 0,
@@ -163,8 +175,8 @@ function os_user_default_page_manager_handlers_alter(&$data) {
     $data['pm_existing_pages_user_register_panel_context']->conf['display']->content['new-7'] = (object) array(
           'pid' => 'new-7',
           'panel' => 'contentmain',
-          'type' => 'block',
-          'subtype' => 'menu-menu-user-registration-links',
+          'type' => 'menu_tree',
+          'subtype' => 'menu-user-registration-links',
           'shown' => TRUE,
           'access' => array(),
           'cache' => array(),
