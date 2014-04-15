@@ -523,7 +523,21 @@ function os_poll_page_default_page_manager_handlers() {
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 5,
+              1 => 3,
+            ),
+          ),
+          'context' => 'relationship_entity_from_schema:uid-node-user_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'admin_title' => 'Article Read Count',
       'title' => '',
