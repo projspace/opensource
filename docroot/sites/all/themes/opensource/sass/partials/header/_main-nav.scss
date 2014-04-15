@@ -4,12 +4,15 @@
 
     ul {
         display: block;
+        font-size: 0;
     }
 }
 
 #main-menu li {
     padding: 0 !important;
     margin: 0;
+    float: none;
+    display: inline-block;
 
     &.active a.active{
         border: none;
