@@ -499,6 +499,9 @@ function os_core_form_alter(&$form, &$form_state, $form_id) {
     $form['legal']['#weight'] = 10;
     $form['mollom']['#weight'] = 200;
   }
+  if ($form_id == 'user_login') {
+    $form['name']['#description'] = str_replace("an username", "a username", $form['name']['#description']);
+  }
 }
 
 /**
