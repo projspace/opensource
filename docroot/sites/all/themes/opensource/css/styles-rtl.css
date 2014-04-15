@@ -11,13 +11,13 @@
 /**
  * Lists
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/_normalize-rtl\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/_normalize-rtl\.scss}line{font-family:\000039}}
 dd {
   margin: 0 30px 0 0;
 }
 
 /* Address paddings set differently in IE 6/7. */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/_normalize-rtl\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/_normalize-rtl\.scss}line{font-family:\0000316}}
 menu,
 ol,
 ul {
@@ -45,19 +45,19 @@ ul {
   /**
    * The layout when there is only one sidebar, the left one.
    */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\0000387}}
   .sidebar-first {
     /* Span 2 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\0000389}}
   .sidebar-first #content {
     float: right;
     width: 66.66667%;
     margin-right: 33.33333%;
     margin-left: -100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\0000394}}
   .sidebar-first .region-sidebar-first {
     float: right;
     width: 33.33333%;
@@ -68,19 +68,19 @@ ul {
   /**
    * The layout when there is only one sidebar, the right one.
    */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003102}}
   .sidebar-second {
     /* Span 2 columns, starting in 1st column from left. */
     /* Span 1 column, starting in 3rd column from left. */
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003104}}
   .sidebar-second #content {
     float: right;
     width: 66.66667%;
     margin-right: 0%;
     margin-left: -66.66667%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003109}}
   .sidebar-second .region-sidebar-second {
     float: right;
     width: 33.33333%;
@@ -91,27 +91,27 @@ ul {
   /**
    * The layout when there are two sidebars.
    */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003117}}
   .two-sidebars {
     /* Span 2 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
     /* Start a new row and span all 3 columns. */
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003119}}
   .two-sidebars #content {
     float: right;
     width: 66.66667%;
     margin-right: 33.33333%;
     margin-left: -100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003124}}
   .two-sidebars .region-sidebar-first {
     float: right;
     width: 33.33333%;
     margin-right: 0%;
     margin-left: -33.33333%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003129}}
   .two-sidebars .region-sidebar-second {
     float: right;
     width: 100%;
@@ -125,7 +125,7 @@ ul {
     /* Span 1 column, starting in the 2nd column from left. */
     /* Span 1 column, starting in the 3rd column from left. */
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003135}}
   .two-sidebars .region-sidebar-second .block {
     padding-left: 10px;
     padding-right: 10px;
@@ -135,7 +135,7 @@ ul {
     box-sizing: border-box;
     word-wrap: break-word;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003139}}
   .two-sidebars .region-sidebar-second .block:nth-child(3n+1) {
     float: right;
     width: 33.33333%;
@@ -143,14 +143,14 @@ ul {
     margin-left: -33.33333%;
     clear: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003144}}
   .two-sidebars .region-sidebar-second .block:nth-child(3n+2) {
     float: right;
     width: 33.33333%;
     margin-right: 33.33333%;
     margin-left: -66.66667%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003148}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003148}}
   .two-sidebars .region-sidebar-second .block:nth-child(3n) {
     float: right;
     width: 33.33333%;
@@ -165,19 +165,19 @@ ul {
   /**
    * The layout when there is only one sidebar, the left one.
    */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003165}}
   .sidebar-first {
     /* Span 4 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003167}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003167}}
   .sidebar-first #content {
     float: right;
     width: 80%;
     margin-right: 20%;
     margin-left: -100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003172}}
   .sidebar-first .region-sidebar-first {
     float: right;
     width: 20%;
@@ -188,19 +188,19 @@ ul {
   /**
    * The layout when there is only one sidebar, the right one.
    */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003180}}
   .sidebar-second {
     /* Span 4 columns, starting in 1st column from left. */
     /* Span 1 column, starting in 5th column from left. */
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003182}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003182}}
   .sidebar-second #content {
     float: right;
     width: 80%;
     margin-right: 0%;
     margin-left: -80%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003187}}
   .sidebar-second .region-sidebar-second {
     float: right;
     width: 20%;
@@ -211,27 +211,27 @@ ul {
   /**
    * The layout when there are two sidebars.
    */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003195}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003195}}
   .two-sidebars {
     /* Span 3 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
     /* Span 1 column, starting in 5th column from left. */
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003197}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003197}}
   .two-sidebars #content {
     float: right;
     width: 60%;
     margin-right: 20%;
     margin-left: -80%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003202}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003202}}
   .two-sidebars .region-sidebar-first {
     float: right;
     width: 20%;
     margin-right: 0%;
     margin-left: -20%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/layouts\/_responsive\.scss}line{font-family:\00003207}}
   .two-sidebars .region-sidebar-second {
     float: right;
     width: 20%;
@@ -248,13 +248,13 @@ ul {
  * Branding header.
  */
 /* Wrapping link for logo. */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000311}}
 .header__logo {
   float: right;
 }
 
 /* The secondary menu (login, etc.) */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000316}}
 .header__secondary-menu {
   float: left;
 }
@@ -263,12 +263,12 @@ ul {
  * Navigation bar.
  */
 /* Main menu and secondary menu links and menu block links. */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000327}}
 #navigation .links,
 #navigation .menu {
   text-align: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000330}}
 #navigation .links li,
 #navigation .menu li {
   /* A simple method to get navigation links to appear in one line. */
@@ -279,7 +279,7 @@ ul {
 /**
  * Messages.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000341}}
 .messages, .messages--status, .messages--warning, .messages--error {
   padding: 10px 50px 10px 10px;
   background-position: 99% 8px;
@@ -288,7 +288,7 @@ ul {
 /**
  * Tabs.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000358}}
 .tabs-primary__tab, .tabs-primary__tab.is-active, .tabs-secondary__tab,
 .tabs-secondary__tab.is-active {
   float: right;
@@ -298,7 +298,7 @@ ul {
  * Inline styles.
  */
 /* List of links */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000377}}
 .inline li {
   /* Bug in Safari causes display: inline to fail. */
   display: inline-block;
@@ -306,7 +306,7 @@ ul {
 }
 
 /* The inline field label used by the Fences.module */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000384}}
 span.field-label {
   padding: 0 0 0 1em;
 }
@@ -314,17 +314,17 @@ span.field-label {
 /**
  * "More" links.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000391}}
 .more-link {
   text-align: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000394}}
 .more-help-link {
   text-align: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\0000397}}
 .more-help-link a {
   background-position: 100% 50%;
   padding: 1px 20px 1px 0;
@@ -333,7 +333,7 @@ span.field-label {
 /**
  * Menus.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003105}}
 .menu__item.is-collapsed {
   list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABNJREFUCB1j4GASYFJgcmD+A4IADUIDfIUMT4wAAAAASUVORK5CYII=');
 }
@@ -342,7 +342,7 @@ span.field-label {
  * Comments.
  */
 /* Nested comments are indented. */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003117}}
 .indented {
   margin-left: 0;
   margin-right: 30px;
@@ -352,12 +352,12 @@ span.field-label {
  * Forms.
  */
 /* Drupal's default login form block */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003127}}
 #user-login-form {
   text-align: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003132}}
 html.js #user-login-form li.openid-link,
 #user-login-form li.openid-link {
   /* Un-do some of the padding on the ul list. */
@@ -368,7 +368,7 @@ html.js #user-login-form li.openid-link,
 /*
  * Drupal admin tables.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003142}}
 form th {
   text-align: right;
   padding-left: 1em;
@@ -380,13 +380,13 @@ form th {
  *
  * @see collapse.js
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003155}}
 html.js .collapsible .fieldset-legend {
   background-position: 98% 75%;
   padding-left: 0;
   padding-right: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_misc-rtl\.scss}line{font-family:\00003160}}
 html.js .collapsed .fieldset-legend {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABNJREFUCB1j4GASYFJgcmD+A4IADUIDfIUMT4wAAAAASUVORK5CYII=');
   background-position: 98% 50%;
