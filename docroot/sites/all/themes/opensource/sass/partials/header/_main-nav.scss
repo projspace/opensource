@@ -5,6 +5,10 @@
     ul {
         display: block;
         font-size: 0;
+
+        .links {
+            content: "";
+        }
     }
 }
 
