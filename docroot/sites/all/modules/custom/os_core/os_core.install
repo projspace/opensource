@@ -34,6 +34,7 @@ function os_core_install() {
   if(!$register_menu) {
     menu_link_save($item);
   }
+
   // Create all the terms.
   os_core_generate_taxonomy_terms();
 
@@ -180,7 +181,7 @@ function os_core_generate_taxonomy_terms() {
   $term = new stdClass();
   $term->vid = $channel_vid;
   $term->name = 'Business';
-  $term->description = 'Business';
+  $term->description = 'When the open source way intersects with the future of business, we cover it here.';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="http://opensource.com/business/14/1/drupal-history?sc_cid=70160000000c9pFAAQ">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
@@ -190,7 +191,7 @@ function os_core_generate_taxonomy_terms() {
   $term = new stdClass();
   $term->vid = $channel_vid;
   $term->name = 'Education';
-  $term->description = 'Education';
+  $term->description = 'Open source methodologies have a lot to offer in the world of education. This is a forum for discussing how.';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/education/14/1/upgrade-to-open-source-in-schools?sc_cid=70160000000c9pPAAQ">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
@@ -200,7 +201,7 @@ function os_core_generate_taxonomy_terms() {
   $term = new stdClass();
   $term->vid = $channel_vid;
   $term->name = 'Government';
-  $term->description = 'Government';
+  $term->description = 'We\'re looking at the intersection of open source and government with a focus on how government can cultivate communities.';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/government/13/12/government-year-in-review-2013?sc_cid=70160000000c9pZAAQ">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
@@ -210,7 +211,7 @@ function os_core_generate_taxonomy_terms() {
   $term = new stdClass();
   $term->vid = $channel_vid;
   $term->name = 'Health';
-  $term->description = 'Health';
+  $term->description = 'The stories we share here are inspired by health innovation from around the globe. We bring to life how technology, transparency, ...';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/health/13/12/health-science-year-in-review-2013?sc_cid=70160000000c9poAAA">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
@@ -220,7 +221,7 @@ function os_core_generate_taxonomy_terms() {
   $term = new stdClass();
   $term->vid = $channel_vid;
   $term->name = 'Law';
-  $term->description = 'Law';
+  $term->description = 'The Law channel is concerned with all forms of interaction between open source and the legal system.';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/law/13/12/year-in-review-law-2013?sc_cid=70160000000c9pyAAA">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
@@ -230,7 +231,7 @@ function os_core_generate_taxonomy_terms() {
   $term = new stdClass();
   $term->vid = $channel_vid;
   $term->name = 'Life';
-  $term->description = 'Life';
+  $term->description = 'The life channel covers all the places open source touches our lives.';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/life/13/12/top-open-source-projects-2013?sc_cid=70160000000c9ptAAA">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
@@ -247,7 +248,7 @@ function os_core_generate_resource_homepage_menu_items() {
   $form_state = array(
     'values' => array(
       'link_title' => 'What is OpenSource',
-      'link_path' => '<front>',
+      'link_path' => 'resources/what-open-source',
       'menu_name' => 'menu-opensource-resources-homepa',
       'parent' => 'menu-opensource-resources-homepa:0',
       'image_style' => 'resource_menu_image',
@@ -261,7 +262,7 @@ function os_core_generate_resource_homepage_menu_items() {
   $form_state = array(
     'values' => array(
       'link_title' => 'Conferences and Events',
-      'link_path' => '<front>',
+      'link_path' => 'resources/conferences-and-events-monthly',
       'menu_name' => 'menu-opensource-resources-homepa',
       'parent' => 'menu-opensource-resources-homepa:0',
       'image_style' => 'resource_menu_image',
@@ -275,7 +276,7 @@ function os_core_generate_resource_homepage_menu_items() {
   $form_state = array(
     'values' => array(
       'link_title' => 'OpenSource Books',
-      'link_path' => '<front>',
+      'link_path' => 'resources/ebooks',
       'menu_name' => 'menu-opensource-resources-homepa',
       'parent' => 'menu-opensource-resources-homepa:0',
       'image_style' => 'resource_menu_image',
@@ -297,7 +298,7 @@ function os_core_generate_resource_resourcepage_menu_items() {
   $form_state = array(
     'values' => array(
       'link_title' => 'What is OpenSource',
-      'link_path' => '<front>',
+      'link_path' => 'resources/what-open-source',
       'menu_name' => 'menu-opensource-resources',
       'parent' => 'menu-opensource-resources:0',
       'image_style' => 'resource_menu_image',
@@ -311,7 +312,7 @@ function os_core_generate_resource_resourcepage_menu_items() {
   $form_state = array(
     'values' => array(
       'link_title' => 'Conferences and Events',
-      'link_path' => '<front>',
+      'link_path' => 'resources/conferences-and-events-monthly',
       'menu_name' => 'menu-opensource-resources',
       'parent' => 'menu-opensource-resources:0',
       'image_style' => 'resource_menu_image',
@@ -325,7 +326,7 @@ function os_core_generate_resource_resourcepage_menu_items() {
   $form_state = array(
     'values' => array(
       'link_title' => 'OpenSource Books',
-      'link_path' => '<front>',
+      'link_path' => 'resources/ebooks',
       'menu_name' => 'menu-opensource-resources',
       'parent' => 'menu-opensource-resources:0',
       'image_style' => 'resource_menu_image',
@@ -339,7 +340,7 @@ function os_core_generate_resource_resourcepage_menu_items() {
   $form_state = array(
     'values' => array(
       'link_title' => 'Project And Applications',
-      'link_path' => '<front>',
+      'link_path' => 'resources/projects-and-applications',
       'menu_name' => 'menu-opensource-resources',
       'parent' => 'menu-opensource-resources:0',
       'image_style' => 'resource_menu_image',
@@ -353,7 +354,7 @@ function os_core_generate_resource_resourcepage_menu_items() {
   $form_state = array(
     'values' => array(
       'link_title' => 'Organizations',
-      'link_path' => '<front>',
+      'link_path' => 'resources/organizations',
       'menu_name' => 'menu-opensource-resources',
       'parent' => 'menu-opensource-resources:0',
       'image_style' => 'resource_menu_image',
