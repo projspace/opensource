@@ -59,6 +59,9 @@ function os_core_install() {
 
   // Disable save_draft module as it creates confusion with workflow.
   os_core_update_7106();
+
+  // Disable save_draft module as it creates confusion with workflow.
+  os_core_update_7107();
 }
 
 /**
@@ -247,9 +250,11 @@ function os_core_generate_taxonomy_terms() {
   $term->description = 'Our community is dynamic and growing. Here we list stories that share information about our members and our site.';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
-  $term->path['alias']['#default_value'] = 'should-be';
-  $term->path['pathauto']['#default_value'] = '0';
   taxonomy_term_save($term);
+  // Setting the path alias now.
+  $path['source'] = 'taxonomy/term/'.$term->tid;
+  $path['alias'] = 'should-be';
+  path_save($path);
 }
 
 /**
@@ -405,4 +410,24 @@ function _os_core_create_channel_link($title, $path, $weight = -50) {
 function os_core_update_7106() {
   $filepath = drupal_get_path('module', 'os_core') . '/images/';
   os_base_file_create($filepath . 'osdc_default_avatar.png', 'public://');
+}
+
+/**
+ * Create redirect for the rss feed programmatically.
+ */
+function os_core_update_7107() {
+  $redirect = new stdClass();
+  module_invoke(
+    'redirect',
+    'object_prepare',
+    $redirect,
+    array(
+      'source' => 'feed',
+      'source_options' => array(),
+      'redirect' => 'rss.xml',
+      'redirect_options' => array(),
+      'language' => LANGUAGE_NONE,
+    )
+  );
+  module_invoke('redirect', 'save', $redirect);
 }
