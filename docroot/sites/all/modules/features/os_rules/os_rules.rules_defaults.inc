@@ -45,8 +45,15 @@ function os_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "comment", "points" ],
-      "REQUIRES" : [ "userpoints_rules", "comment" ],
+      "REQUIRES" : [ "rules", "userpoints_rules", "comment" ],
       "ON" : { "comment_insert" : [] },
+      "IF" : [
+        { "NOT user_has_role" : {
+            "account" : [ "site:current-user" ],
+            "roles" : { "value" : { "1" : "1" } }
+          }
+        }
+      ],
       "DO" : [
         { "userpoints_action_grant_points" : {
             "user" : [ "comment:author" ],
