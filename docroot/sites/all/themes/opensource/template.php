@@ -511,7 +511,7 @@ function opensource_preprocess_panels_pane(&$vars) {
 }
 
 function opensource_preprocess_search_result(&$vars) {
-  $allowed_types = array('article', 'event', 'resource', 'poll');
+  $allowed_types = array('article', 'event', 'resource', 'poll', 'page');
   $result_fields = $vars['result']['fields'];
   if ($result_fields['entity_type'] == 'node' && in_array($result_fields['bundle'], $allowed_types)) {
     $node = node_load($vars['result']['fields']['entity_id']);
