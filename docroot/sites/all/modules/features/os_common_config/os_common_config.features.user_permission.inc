@@ -69,6 +69,8 @@ function os_common_config_user_default_permissions() {
     'name' => 'use vote up/down',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'vud',
   );
@@ -78,6 +80,8 @@ function os_common_config_user_default_permissions() {
     'name' => 'use vote up/down on comments',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'vud_comment',
   );
