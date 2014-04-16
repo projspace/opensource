@@ -379,9 +379,10 @@ function os_core_form_comment_form_alter(&$form, &$form_state, $form_id) {
       '#markup' => l(t('Login or Register'), 'user', array('query' => array('destination' => drupal_get_destination()))) . ' ' . t('to earn points for your comments.'),
       '#weight' => -10,
     );
+    // Calling custom validate function. snippet copied from comment.module
+    $form['#validate'][0] = 'os_core_comment_validate';
   }
 }
-
 /**
  * Implements hook_form_FORM_ID_alter().
  *
@@ -539,5 +540,49 @@ function os_core_mollom_report_submit($form, &$form_state) {
       }
     }
     $form_state['redirect'] = '<front>';
+  }
+}
+
+/**
+ * Custom validator function for the comment form.
+ * This snippet is taken from comment.module line 2120.
+ * This snippet will avoid homepage validation from validation function.
+ */
+function os_core_comment_validate(&$form, &$form_state) {
+  global $user;
+
+  entity_form_field_validate('comment', $form, $form_state);
+
+  if (!empty($form_state['values']['cid'])) {
+    // Verify the name in case it is being changed from being anonymous.
+    $account = user_load_by_name($form_state['values']['name']);
+    $form_state['values']['uid'] = $account ? $account->uid : 0;
+
+    if ($form_state['values']['date'] && strtotime($form_state['values']['date']) === FALSE) {
+      form_set_error('date', t('You have to specify a valid date.'));
+    }
+    if ($form_state['values']['name'] && !$form_state['values']['is_anonymous'] && !$account) {
+      form_set_error('name', t('You have to specify a valid author.'));
+    }
+  }
+  elseif ($form_state['values']['is_anonymous']) {
+    // Validate anonymous comment author fields (if given). If the (original)
+    // author of this comment was an anonymous user, verify that no registered
+    // user with this name exists.
+    if ($form_state['values']['name']) {
+      $query = db_select('users', 'u');
+      $query->addField('u', 'uid', 'uid');
+      $taken = $query
+        ->condition('name', db_like($form_state['values']['name']), 'LIKE')
+        ->countQuery()
+        ->execute()
+        ->fetchField();
+      if ($taken) {
+        form_set_error('name', t('The name you used belongs to a registered user.'));
+      }
+    }
+  }
+  if ($form_state['values']['mail'] && !valid_email_address($form_state['values']['mail'])) {
+    form_set_error('mail', t('The e-mail address you specified is not valid.'));
   }
 }
