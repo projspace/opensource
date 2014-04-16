@@ -24,7 +24,7 @@ function os_omniture_sitecatalyst_variables($main) {
   elseif (arg(0) == 'user') {
     // Viewing a user page.
     if (is_numeric(arg(1))) {
-      $account = user_load(array('uid' => arg(1)));
+      $account = user_load(filter_xss(arg(1)));
       $page_name .= '|users|' . os_omniture_clean($account->name);
     }
     // On the registration form.
