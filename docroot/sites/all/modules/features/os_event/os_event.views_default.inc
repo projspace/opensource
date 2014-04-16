@@ -817,6 +817,16 @@ function os_event_views_default_views() {
   $handler->display->display_options['fields']['field_event_website']['label'] = 'Link';
   $handler->display->display_options['fields']['field_event_website']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_event_website']['type'] = 'link_url';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Date: Date (node) */
+  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
+  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
+  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+    'field_data_field_event_start_date.field_event_start_date_value' => 'field_data_field_event_start_date.field_event_start_date_value',
+  );
   $handler->display->display_options['argument_input'] = array(
     'date_argument' => array(
       'type' => 'none',
