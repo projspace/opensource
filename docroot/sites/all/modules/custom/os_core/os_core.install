@@ -236,6 +236,20 @@ function os_core_generate_taxonomy_terms() {
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
   _os_core_create_channel_link('Life', 'life', -34);
+
+  // Creating the channel for community.
+  // We have removed _os_core_create_channel_link() function, as "community"
+  // channel is not supposed to show in main menu. There is no reader favouite
+  // image for this term.
+  $term = new stdClass();
+  $term->vid = $channel_vid;
+  $term->name = 'Community';
+  $term->description = 'Our community is dynamic and growing. Here we list stories that share information about our members and our site.';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '';
+  $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
+  $term->path['alias']['#default_value'] = 'should-be';
+  $term->path['pathauto']['#default_value'] = '0';
+  taxonomy_term_save($term);
 }
 
 /**
