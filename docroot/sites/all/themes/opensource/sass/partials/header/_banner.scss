@@ -22,6 +22,8 @@
     .region-header {
         clear: none;
         float: right;
+        position: relative;
+        z-index: 9;
 
         #block-search-form {
             margin-top: 13px;
