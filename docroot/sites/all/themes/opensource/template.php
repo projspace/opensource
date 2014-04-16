@@ -196,12 +196,14 @@ function opensource_preprocess_comment(&$vars) {
       '#markup' => theme('user_badge_group', array('badgeimages' => $badgeimgs)),
       '#attributes' => array('class' => array('badges')),
     );
-    $badgerollimages['user_badges']['badges'] = array(
-      '#type' => 'user_profile_item',
-      '#title' => '',
-      '#markup' => theme('user_badge_group', array('badgeimages' => $badgerollimgs)),
-      '#attributes' => array('class' => array('badges')),
-    );
+    if(isset($badgerollimgs)) {
+      $badgerollimages['user_badges']['badges'] = array(
+        '#type' => 'user_profile_item',
+        '#title' => '',
+        '#markup' => theme('user_badge_group', array('badgeimages' => $badgerollimgs)),
+        '#attributes' => array('class' => array('badges')),
+      );
+    }
   }
   $vars['rollbadges'] = render($badgerollimages);
   $vars['badges'] = render($badges);
