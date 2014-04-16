@@ -515,7 +515,7 @@ function opensource_preprocess_search_result(&$vars) {
   $result_fields = $vars['result']['fields'];
   if ($result_fields['entity_type'] == 'node' && in_array($result_fields['bundle'], $allowed_types)) {
     $node = node_load($vars['result']['fields']['entity_id']);
-    $vars['date'] = format_date(intval($node->changed), 'custom', 'm/d/Y - H:i', variable_get('date_default_timezone', date_default_timezone_get()));
+    $vars['date'] = format_date(intval($node->created), 'custom', 'm/d/Y - H:i', variable_get('date_default_timezone', date_default_timezone_get()));
     $vars['comment_count'] = format_plural($node->comment_count, '1 Comment', '@count Comments', array('@count' => $node->comment_count));
 
     // Find the attachment count.
