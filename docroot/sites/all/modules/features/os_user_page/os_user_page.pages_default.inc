@@ -122,7 +122,7 @@ function os_user_page_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%user:field_display_name';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
