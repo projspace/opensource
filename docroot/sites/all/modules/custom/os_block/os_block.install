@@ -95,6 +95,30 @@ function os_block_install() {
   );
   os_block_bean_save($data);
 
+  // Contact page information block.
+  $data = array(
+    'delta' => 'contact-block',
+    'title' => '<none>',
+    'label' => 'Contact Block',
+    'body' => '<p>To get started in our community, visit our <a href="http://opensource.com/participate" title="how to participate">participation page</a> to see how you can begin contributing.</p>
+
+      <p>By submitting work, you agree to let us use it with a <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons">Creative Commons BY-SA license</a>.</p>
+
+      <p>For other questions, story ideas, article pitches, etc. fill out our contact form below or email us at <a href="mailto:osdc-admin@redhat.com" title="contact email">osdc-admin at redhat dot com</a>.</p>
+
+      <p>Please choose the most appropriate category for your message. Due to traffic volume, we may not be able to respond to every comment, but we\'ll do our best to respond quickly when we can.</p>
+
+      <h4>Contact details</h4>
+      <blockquote>
+      Red Hat, Inc.</br>
+      <p>Attention: opensource.com, Jason Hibbets</p></br>
+      <p>100 East Davie Street, Raleigh, NC 27601</p></br>
+      <p>phone: +1 919-754-3700</p></br>
+      email: <a href="mailto:osdc-admin@redhat.com" title="contact email">osdc-admin at redhat dot com</a> or <a href="mailto:jhibbets@redhat.com" title="contact email">jhibbets at redhat dot com</a>
+      </blockquote>',
+  );
+  os_block_bean_save($data);
+
   _os_block_place_blocks();
 }
 
