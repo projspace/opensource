@@ -108,7 +108,26 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '5',
+            2 => array(),
+            1 => array(),
+            5 => array(
+              9217 => '9217',
+            ),
+            3 => array(),
+            4 => array(),
+            6 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'About Open* %term:name',
@@ -134,6 +153,51 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-4';
     $pane->panel = 'sidebar';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '5',
+            2 => array(),
+            1 => array(),
+            5 => array(
+              9217 => '9217',
+            ),
+            3 => array(),
+            4 => array(),
+            6 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'About Open %term:name',
+      'body' => '<p class="term_feed"><a href="taxonomy/term/%term:tid/feed">RSS</a></p>
+<p class="term_description">%term:description</p>
+<p class="term_readmore"><a href="%term:url/about">» Read More</a></p>',
+      'format' => 'panopoly_html_text',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-4'] = $pane;
+    $display->panels['sidebar'][2] = 'new-4';
+    $pane = new stdClass();
+    $pane->pid = 'new-5';
+    $pane->panel = 'sidebar';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-opensource-resources-homepa';
     $pane->shown = TRUE;
@@ -148,12 +212,12 @@ function os_channel_pages_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['sidebar'][2] = 'new-4';
+    $display->content['new-5'] = $pane;
+    $display->panels['sidebar'][3] = 'new-5';
     $pane = new stdClass();
-    $pane->pid = 'new-5';
+    $pane->pid = 'new-6';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
     $pane->subtype = 'taxonomy_term:field_readers_favourite';
@@ -176,12 +240,12 @@ function os_channel_pages_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['sidebar'][3] = 'new-5';
+    $display->content['new-6'] = $pane;
+    $display->panels['sidebar'][4] = 'new-6';
     $pane = new stdClass();
-    $pane->pid = 'new-6';
+    $pane->pid = 'new-7';
     $pane->panel = 'sidebar';
     $pane->type = 'panels_mini';
     $pane->subtype = 'common_1';
@@ -197,28 +261,6 @@ function os_channel_pages_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['sidebar'][4] = 'new-6';
-    $pane = new stdClass();
-    $pane->pid = 'new-7';
-    $pane->panel = 'sidebar';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'channel_tags_cloud-panel_pane_cloud';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-      'view_mode' => 'teaser',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
     $display->content['new-7'] = $pane;
@@ -227,7 +269,7 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->pid = 'new-8';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
-    $pane->subtype = 'channel_articles-panel_pane_popular_articles';
+    $pane->subtype = 'channel_tags_cloud-panel_pane_cloud';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -245,6 +287,28 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-8'] = $pane;
     $display->panels['sidebar'][6] = 'new-8';
+    $pane = new stdClass();
+    $pane->pid = 'new-9';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'channel_articles-panel_pane_popular_articles';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $display->content['new-9'] = $pane;
+    $display->panels['sidebar'][7] = 'new-9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -299,7 +363,7 @@ function os_channel_pages_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-9';
+    $pane->pid = 'new-10';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'channel_articles-panel_pane_articles';
@@ -318,10 +382,10 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['contentmain'][0] = 'new-9';
+    $display->content['new-10'] = $pane;
+    $display->panels['contentmain'][0] = 'new-10';
     $pane = new stdClass();
-    $pane->pid = 'new-10';
+    $pane->pid = 'new-11';
     $pane->panel = 'sidebar';
     $pane->type = 'panels_mini';
     $pane->subtype = 'common_1';
@@ -339,8 +403,8 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-10'] = $pane;
-    $display->panels['sidebar'][0] = 'new-10';
+    $display->content['new-11'] = $pane;
+    $display->panels['sidebar'][0] = 'new-11';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
