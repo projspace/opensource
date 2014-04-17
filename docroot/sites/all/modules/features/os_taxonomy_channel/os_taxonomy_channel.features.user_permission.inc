@@ -24,7 +24,6 @@ function os_taxonomy_channel_user_default_permissions() {
     'name' => 'edit terms in channel',
     'roles' => array(
       'administrator' => 'administrator',
-      'mollom admin' => 'mollom admin',
     ),
     'module' => 'taxonomy',
   );
