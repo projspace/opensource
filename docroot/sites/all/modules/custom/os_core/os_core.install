@@ -38,6 +38,9 @@ function os_core_install() {
   // Create all the terms.
   os_core_generate_taxonomy_terms();
 
+  // Generate the categories for the contact form.
+  os_core_generate_contact_categories();
+
   // Run other updates.
   // Add legal conditions for terms & conditions, only if there are none.
   os_core_update_7100();
@@ -434,4 +437,48 @@ function os_core_update_7107() {
   // Setting 'medium' date format. It is used to display article create date on
   // article and poll display page.
   variable_set('date_format_medium', 'd M Y');
+}
+
+/**
+ * Generate the contact form categories.
+ */
+function os_core_generate_contact_categories() {
+
+  // Update the default contact category. Change name, email, selected and
+  // weiht.
+  db_update('contact')
+  ->fields(array(
+    'category' => 'General contact',
+    'recipients' => 'osdc-admin@redhat.com',
+    'reply' => '',
+    'weight' => 10,
+    'selected' => 0,
+  ))
+  ->condition('cid', 1, '=')
+  ->execute();
+
+  $record = array (
+    "category" => 'Submit your open source story',
+    "recipients" => 'osdc-admin@redhat.com',
+    "reply" => '',
+    "weight" => -10,
+    "selected" => 1,
+  );
+  drupal_write_record('contact', $record);
+  $record = array (
+    "category" => 'Site suggestion or correction',
+    "recipients" => 'osdc-admin@redhat.com',
+    "reply" => '',
+    "weight" => 0,
+    "selected" => 0,
+  );
+  drupal_write_record('contact', $record);
+  $record = array (
+    "category" => 'Speaker and media requests',
+    "recipients" => 'osdc-admin@redhat.com,estancil@redhat.com',
+    "reply" => '',
+    "weight" => 0,
+    "selected" => 0,
+  );
+  drupal_write_record('contact', $record);
 }
