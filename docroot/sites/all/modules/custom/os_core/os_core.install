@@ -430,4 +430,8 @@ function os_core_update_7107() {
     )
   );
   module_invoke('redirect', 'save', $redirect);
+
+  // Setting 'medium' date format. It is used to display article create date on
+  // article and poll display page.
+  variable_set('date_format_medium', 'd M Y');
 }
