@@ -40,7 +40,8 @@ function pollpane_render($subtype, $conf, $args, $context) {
   // Checks if we are allowed to vote and we didn't already vote. Else show
   // the result.
   if (!empty($node->allowvotes) && empty($node->show_results)) {
-    $blockcontent = drupal_render(drupal_get_form('poll_view_voting', $node));
+    $form = drupal_get_form('poll_view_voting', $node);
+    $blockcontent = drupal_render($form);
   }
   else {
     $blockcontent = array('#markup' => poll_view_results($node, 'full'));
