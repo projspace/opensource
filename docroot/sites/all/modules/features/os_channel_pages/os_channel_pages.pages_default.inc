@@ -131,7 +131,7 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'About Open* %term:name',
-      'body' => '<p class="term_feed"><a href="taxonomy/term/%term:tid/feed">RSS</a></p>
+      'body' => '<p class="term_feed"><a href="%term:url/feed">RSS</a></p>
 <p class="term_description">%term:description</p>
 <p class="term_readmore"><a href="%term:url/about">» Read More</a></p>',
       'format' => 'panopoly_html_text',
@@ -179,7 +179,7 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'About Open %term:name',
-      'body' => '<p class="term_feed"><a href="taxonomy/term/%term:tid/feed">RSS</a></p>
+      'body' => '<p class="term_feed"><a href="%term:url/feed">RSS</a></p>
 <p class="term_description">%term:description</p>
 <p class="term_readmore"><a href="%term:url/about">» Read More</a></p>',
       'format' => 'panopoly_html_text',

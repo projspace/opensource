@@ -191,6 +191,13 @@ function os_core_generate_taxonomy_terms() {
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="http://opensource.com/business/14/1/drupal-history?sc_cid=70160000000c9pFAAQ">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
+
+  // Setting the path alias for feed.
+  $path['source'] = 'taxonomy/term/'.$term->tid . '/feed';
+  $term_alias = drupal_lookup_path('alias', 'taxonomy/term/' . $term->tid);
+  $path['alias'] =  $term_alias . '/feed';
+  path_save($path);
+
   _os_core_create_channel_link('Business', 'business', -39);
 
   $fid = os_base_file_create($filepath . 'education.png', 'public://channels/');
@@ -201,6 +208,13 @@ function os_core_generate_taxonomy_terms() {
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/education/14/1/upgrade-to-open-source-in-schools?sc_cid=70160000000c9pPAAQ">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
+
+  // Setting the path alias for feed.
+  $path['source'] = 'taxonomy/term/'.$term->tid . '/feed';
+  $term_alias = drupal_lookup_path('alias', 'taxonomy/term/' . $term->tid);
+  $path['alias'] =  $term_alias . '/feed';
+  path_save($path);
+
   _os_core_create_channel_link('Education', 'education', -38);
 
   $fid = os_base_file_create($filepath . 'government.png', 'public://channels/');
@@ -211,6 +225,12 @@ function os_core_generate_taxonomy_terms() {
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/government/13/12/government-year-in-review-2013?sc_cid=70160000000c9pZAAQ">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
+
+   // Setting the path alias for feed.
+  $path['source'] = 'taxonomy/term/'.$term->tid . '/feed';
+  $term_alias = drupal_lookup_path('alias', 'taxonomy/term/' . $term->tid);
+  $path['alias'] =  $term_alias . '/feed';
+  path_save($path);
   _os_core_create_channel_link('Government', 'government', -37);
 
   $fid = os_base_file_create($filepath . 'health.png', 'public://channels/');
@@ -221,6 +241,12 @@ function os_core_generate_taxonomy_terms() {
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/health/13/12/health-science-year-in-review-2013?sc_cid=70160000000c9poAAA">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
+
+   // Setting the path alias for feed.
+  $path['source'] = 'taxonomy/term/'.$term->tid . '/feed';
+  $term_alias = drupal_lookup_path('alias', 'taxonomy/term/' . $term->tid);
+  $path['alias'] =  $term_alias . '/feed';
+  path_save($path);
   _os_core_create_channel_link('Health', 'health', -36);
 
   $fid = os_base_file_create($filepath . 'law.png', 'public://channels/');
@@ -231,6 +257,12 @@ function os_core_generate_taxonomy_terms() {
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/law/13/12/year-in-review-law-2013?sc_cid=70160000000c9pyAAA">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
+
+   // Setting the path alias for feed.
+  $path['source'] = 'taxonomy/term/'.$term->tid . '/feed';
+  $term_alias = drupal_lookup_path('alias', 'taxonomy/term/' . $term->tid);
+  $path['alias'] =  $term_alias . '/feed';
+  path_save($path);
   _os_core_create_channel_link('Law', 'law', -35);
 
   $fid = os_base_file_create($filepath . 'life.png', 'public://channels/');
@@ -241,6 +273,12 @@ function os_core_generate_taxonomy_terms() {
   $term->field_readers_favourite[LANGUAGE_NONE][0]['value'] = '<p><a href="https://opensource.com/life/13/12/top-open-source-projects-2013?sc_cid=70160000000c9ptAAA">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Reader\'s Favourite","field_file_image_title_text[und][0][value]":"","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","attributes":{"height":"135","width":"325","class":"media-element file-default"},"link_text":null}]]</a></p>';
   $term->field_readers_favourite[LANGUAGE_NONE][0]['format'] = 'panopoly_wysiwyg_text';
   taxonomy_term_save($term);
+
+   // Setting the path alias for feed.
+  $path['source'] = 'taxonomy/term/'.$term->tid . '/feed';
+  $term_alias = drupal_lookup_path('alias', 'taxonomy/term/' . $term->tid);
+  $path['alias'] =  $term_alias . '/feed';
+  path_save($path);
   _os_core_create_channel_link('Life', 'life', -34);
 
   // Creating the channel for community.
@@ -257,6 +295,11 @@ function os_core_generate_taxonomy_terms() {
   // Setting the path alias now.
   $path['source'] = 'taxonomy/term/'.$term->tid;
   $path['alias'] = 'should-be';
+  path_save($path);
+
+  // Setting the path alias for feed.
+  $path['source'] = 'taxonomy/term/'.$term->tid . '/feed';
+  $path['alias'] =  'should-be/feed';
   path_save($path);
 }
 
