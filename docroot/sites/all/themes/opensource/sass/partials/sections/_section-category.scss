@@ -54,5 +54,26 @@
             padding-left: 6px;
         }
     }
+
+    .views-field-view-node {
+        a {
+            font-weight: bold;
+            color: black;
+        }
+    }
+
+    .views-field-comments-link,
+    .views-field-totalcount {
+        padding-left: 6px;
+    }
+
+    .views-field-totalcount,
+    .views-field-comments-link {
+        float: left;
+    }
+
+    .views-field-field-section {
+        clear: both;
+    }
 }
 
