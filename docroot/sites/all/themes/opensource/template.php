@@ -211,7 +211,12 @@ function opensource_preprocess_comment(&$vars) {
 
   // Display field_display_name instead of username, if field_display_name is
   // written.
-  $vars['author'] = isset($commentauthor->field_display_name[LANGUAGE_NONE][0]['value']) ? l($commentauthor->field_display_name[LANGUAGE_NONE][0]['value'], 'user/' . $commentauthor->uid, array('attributes' => array('class' => array('username')))) : $vars['author'];
+  if($commentauthor->uid > 0) {
+    $vars['author'] = isset($commentauthor->field_display_name[LANGUAGE_NONE][0]['value']) ? l($commentauthor->field_display_name[LANGUAGE_NONE][0]['value'], 'user/' . $commentauthor->uid, array('attributes' => array('class' => array('username')))) : $vars['author'];
+  }
+  else {
+    $vars['author'] = $vars['elements']['#comment']->name;
+  }
   $vars['submitted'] = $vars['author'] .t(' on '). $commenttime;
 
   if (user_access('administer comments')) {
