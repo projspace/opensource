@@ -550,9 +550,9 @@ function poll_insert($node) {
     ))
     ->execute();
 
-  foreach ($node->choice as $choice) {
+  foreach ($node->choice as &$choice) {
     if ($choice['chtext'] != '') {
-      db_insert('poll_choice')
+      $choice['chid'] = db_insert('poll_choice')
         ->fields(array(
           'nid' => $node->nid,
           'chtext' => $choice['chtext'],
