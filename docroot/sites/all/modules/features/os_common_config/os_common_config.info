@@ -15,6 +15,7 @@ dependencies[] = legal
 dependencies[] = metatag
 dependencies[] = metatag_panels
 dependencies[] = osratings
+dependencies[] = os_contact_page
 dependencies[] = panopoly_wysiwyg
 dependencies[] = redirect
 dependencies[] = sitecatalyst
