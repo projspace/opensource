@@ -4752,8 +4752,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   color: #E7321F;
   text-indent: 0;
   font-weight: normal;
+  width: 100%;
+  border-bottom: 2px dotted #AAA;
+  padding-bottom: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\00003124}}
 .section-should-be .pane-term-description .term_feed {
   position: absolute;
   top: 0;

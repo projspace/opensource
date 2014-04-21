@@ -11500,6 +11500,9 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   color: #E7321F;
   text-indent: 0;
   font-weight: normal;
+  width: 100%;
+  border-bottom: 2px dotted #AAA;
+  padding-bottom: 5px;
 }
 
 @media -sass-debug-info {
@@ -11508,7 +11511,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \00003121;
+    font-family: \00003124;
   }
 }
 
