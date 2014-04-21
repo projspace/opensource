@@ -11158,10 +11158,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000365;
+    font-family: \0000366;
   }
 }
 
+.section-category .views-field-comments-link,
 .section-category .views-field-totalcount {
   padding-left: 6px;
 }
@@ -11172,7 +11173,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000370;
+    font-family: \0000371;
   }
 }
 
@@ -11187,7 +11188,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000374;
+    font-family: \0000375;
   }
 }
 
@@ -11201,10 +11202,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \000038;
+    font-family: \000039;
   }
 }
 
+.section-should-be .pane-term-description,
 .section-business .pane-term-description,
 .section-education .pane-term-description,
 .section-health .pane-term-description,
@@ -11221,10 +11223,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000312;
+    font-family: \0000313;
   }
 }
 
+.section-should-be .pane-term-description .pane-title,
 .section-business .pane-term-description .pane-title,
 .section-education .pane-term-description .pane-title,
 .section-health .pane-term-description .pane-title,
@@ -11244,10 +11247,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000320;
+    font-family: \0000321;
   }
 }
 
+.section-should-be .pane-term-description .term_feed,
 .section-business .pane-term-description .term_feed,
 .section-education .pane-term-description .term_feed,
 .section-health .pane-term-description .term_feed,
@@ -11264,10 +11268,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000324;
+    font-family: \0000325;
   }
 }
 
+.section-should-be .pane-term-description .term_feed a,
 .section-business .pane-term-description .term_feed a,
 .section-education .pane-term-description .term_feed a,
 .section-health .pane-term-description .term_feed a,
@@ -11287,10 +11292,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000333;
+    font-family: \0000334;
   }
 }
 
+.section-should-be .pane-term-description .term_description,
 .section-business .pane-term-description .term_description,
 .section-education .pane-term-description .term_description,
 .section-health .pane-term-description .term_description,
@@ -11306,10 +11312,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000337;
+    font-family: \0000338;
   }
 }
 
+.section-should-be .pane-term-description .term_readmore,
 .section-business .pane-term-description .term_readmore,
 .section-education .pane-term-description .term_readmore,
 .section-health .pane-term-description .term_readmore,
@@ -11325,10 +11332,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000340;
+    font-family: \0000341;
   }
 }
 
+.section-should-be .pane-term-description .term_readmore a,
 .section-business .pane-term-description .term_readmore a,
 .section-education .pane-term-description .term_readmore a,
 .section-health .pane-term-description .term_readmore a,
@@ -11345,10 +11353,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000344;
+    font-family: \0000345;
   }
 }
 
+.section-should-be .pane-term-description .term_readmore a:hover,
 .section-business .pane-term-description .term_readmore a:hover,
 .section-education .pane-term-description .term_readmore a:hover,
 .section-health .pane-term-description .term_readmore a:hover,
@@ -11365,10 +11374,11 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000351;
+    font-family: \0000352;
   }
 }
 
+.section-should-be .pane-term-description p,
 .section-business .pane-term-description p,
 .section-education .pane-term-description p,
 .section-health .pane-term-description p,
@@ -11384,7 +11394,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000359;
+    font-family: \0000360;
   }
 }
 
@@ -11398,7 +11408,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000368;
+    font-family: \0000369;
   }
 }
 
@@ -11412,7 +11422,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000377;
+    font-family: \0000378;
   }
 }
 
@@ -11426,7 +11436,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000386;
+    font-family: \0000387;
   }
 }
 
@@ -11440,7 +11450,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   }
 
   line {
-    font-family: \0000395;
+    font-family: \0000396;
   }
 }
 
@@ -11460,6 +11470,52 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
 
 .section-government .pane-term-description .pane-title {
   background: url("../images/about_government.png") no-repeat;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss;
+  }
+
+  line {
+    font-family: \00003112;
+  }
+}
+
+.section-should-be .pane-term-description {
+  position: relative;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss;
+  }
+
+  line {
+    font-family: \00003115;
+  }
+}
+
+.section-should-be .pane-term-description .pane-title {
+  color: #E7321F;
+  text-indent: 0;
+  font-weight: normal;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss;
+  }
+
+  line {
+    font-family: \00003121;
+  }
+}
+
+.section-should-be .pane-term-description .term_feed {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 @media -sass-debug-info {

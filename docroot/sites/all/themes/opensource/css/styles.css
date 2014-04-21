@@ -4595,21 +4595,23 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   font-weight: bold;
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-category\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-category\.scss}line{font-family:\0000366}}
+.section-category .views-field-comments-link,
 .section-category .views-field-totalcount {
   padding-left: 6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-category\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-category\.scss}line{font-family:\0000371}}
 .section-category .views-field-totalcount,
 .section-category .views-field-comments-link {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-category\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_section-category\.scss}line{font-family:\0000375}}
 .section-category .views-field-field-section {
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\000038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\000039}}
+.section-should-be .pane-term-description,
 .section-business .pane-term-description,
 .section-education .pane-term-description,
 .section-health .pane-term-description,
@@ -4619,7 +4621,8 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   clear: both;
   margin-bottom: 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000313}}
+.section-should-be .pane-term-description .pane-title,
 .section-business .pane-term-description .pane-title,
 .section-education .pane-term-description .pane-title,
 .section-health .pane-term-description .pane-title,
@@ -4632,7 +4635,8 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   min-width: 200px;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000321}}
+.section-should-be .pane-term-description .term_feed,
 .section-business .pane-term-description .term_feed,
 .section-education .pane-term-description .term_feed,
 .section-health .pane-term-description .term_feed,
@@ -4642,7 +4646,8 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   float: right;
   text-indent: -9999px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000325}}
+.section-should-be .pane-term-description .term_feed a,
 .section-business .pane-term-description .term_feed a,
 .section-education .pane-term-description .term_feed a,
 .section-health .pane-term-description .term_feed a,
@@ -4655,7 +4660,8 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   display: block;
   background: url("../images/rss.jpg");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000334}}
+.section-should-be .pane-term-description .term_description,
 .section-business .pane-term-description .term_description,
 .section-education .pane-term-description .term_description,
 .section-health .pane-term-description .term_description,
@@ -4664,7 +4670,8 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
 .section-government .pane-term-description .term_description {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000338}}
+.section-should-be .pane-term-description .term_readmore,
 .section-business .pane-term-description .term_readmore,
 .section-education .pane-term-description .term_readmore,
 .section-health .pane-term-description .term_readmore,
@@ -4673,7 +4680,8 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
 .section-government .pane-term-description .term_readmore {
   text-align: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000341}}
+.section-should-be .pane-term-description .term_readmore a,
 .section-business .pane-term-description .term_readmore a,
 .section-education .pane-term-description .term_readmore a,
 .section-health .pane-term-description .term_readmore a,
@@ -4683,7 +4691,8 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   color: #333;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000345}}
+.section-should-be .pane-term-description .term_readmore a:hover,
 .section-business .pane-term-description .term_readmore a:hover,
 .section-education .pane-term-description .term_readmore a:hover,
 .section-health .pane-term-description .term_readmore a:hover,
@@ -4693,7 +4702,8 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   text-decoration: underline;
   color: #39f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000352}}
+.section-should-be .pane-term-description p,
 .section-business .pane-term-description p,
 .section-education .pane-term-description p,
 .section-health .pane-term-description p,
@@ -4703,27 +4713,27 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000360}}
 .section-business .pane-term-description .pane-title {
   background: url("../images/about_business.png") no-repeat;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000369}}
 .section-education .pane-term-description .pane-title {
   background: url("../images/about_education.png") no-repeat;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000378}}
 .section-health .pane-term-description .pane-title {
   background: url("../images/about_health.png") no-repeat;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000387}}
 .section-law .pane-term-description .pane-title {
   background: url("../images/about_law.png") no-repeat;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\0000396}}
 .section-life .pane-term-description .pane-title {
   background: url("../images/about_life.png") no-repeat;
 }
@@ -4731,6 +4741,23 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\00003104}}
 .section-government .pane-term-description .pane-title {
   background: url("../images/about_government.png") no-repeat;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\00003112}}
+.section-should-be .pane-term-description {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\00003115}}
+.section-should-be .pane-term-description .pane-title {
+  color: #E7321F;
+  text-indent: 0;
+  font-weight: normal;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/sections\/_government\.scss}line{font-family:\00003121}}
+.section-should-be .pane-term-description .term_feed {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/search\/_search-base\.scss}line{font-family:\000031}}

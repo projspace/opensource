@@ -1,3 +1,4 @@
+.section-should-be,
 .section-business,
 .section-education,
 .section-health,
@@ -96,7 +97,6 @@
             background: url('../images/about_life.png') no-repeat;
         }
     }
-
 }
 
 .section-government {
@@ -108,3 +108,23 @@
 
 }
 
+.section-should-be {
+    .pane-term-description {
+        position: relative;
+
+        .pane-title {
+            color: #E7321F;
+            text-indent: 0;
+            font-weight: normal;
+            width: 100%;
+            border-bottom: 2px dotted #AAA;
+            padding-bottom: 5px;
+        }
+
+        .term_feed {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
