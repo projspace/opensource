@@ -95,6 +95,7 @@ abstract class OsMigrateContentBase extends DrupalNode6Migration {
     if (in_array($args['destination_type'], $types)) {
       $this->addFieldMapping('field_lead_image', 'image')
         ->sourceMigration(array('OsFile', 'OsImageFieldFile'));
+      $this->addFieldMapping('field_lead_image:preserve_files')->defaultValue(TRUE);
       $this->addFieldMapping('field_lead_image:file_class')->defaultValue('MigrateFileFid');
 
       $this->addFieldMapping('field_lead_image:alt', 'image_alt');
