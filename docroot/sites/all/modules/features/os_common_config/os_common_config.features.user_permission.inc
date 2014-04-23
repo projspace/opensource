@@ -64,6 +64,27 @@ function os_common_config_user_default_permissions() {
     'module' => 'flag',
   );
 
+  // Exported permission: 'use text format panopoly_html_text'.
+  $permissions['use text format panopoly_html_text'] = array(
+    'name' => 'use text format panopoly_html_text',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: 'use text format panopoly_wysiwyg_text'.
+  $permissions['use text format panopoly_wysiwyg_text'] = array(
+    'name' => 'use text format panopoly_wysiwyg_text',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'community moderator' => 'community moderator',
+      'editor' => 'editor',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: 'use vote up/down'.
   $permissions['use vote up/down'] = array(
     'name' => 'use vote up/down',
