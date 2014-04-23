@@ -478,6 +478,7 @@ function os_core_module_implements_alter(&$implementations, $hook) {
  * Implements hook_form_alter().
  */
 function os_core_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
   $node_types = array('article_node_form', 'poll_node_form',
     'resource_node_form', 'event_node_form');
   if (in_array($form_id, $node_types)) {
@@ -491,6 +492,10 @@ function os_core_form_alter(&$form, &$form_state, $form_id) {
       '#description' => t('Workflow state settings'),
     );
     $form['workflow_tab'][LANGUAGE_NONE][0] = $form['workflow'];
+
+    if (!user_access('access workflow summary views')) {
+      $form['workflow_tab']['#access'] = FALSE;
+    }
     unset($form['workflow']);
   }
   if ($form_id == 'mollom_report_form') {
