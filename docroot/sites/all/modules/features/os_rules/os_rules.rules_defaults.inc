@@ -9,6 +9,31 @@
  */
 function os_rules_default_rules_configuration() {
   $items = array();
+  $items['os_rules_award_points_on_rating_poll'] = entity_import('rules_config', '{ "os_rules_award_points_on_rating_poll" : {
+      "LABEL" : "Award points on rating poll",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "points", "rate" ],
+      "REQUIRES" : [ "rules", "userpoints_rules", "voting_rules" ],
+      "ON" : { "voting_rules_insert_node" : [] },
+      "IF" : [
+        { "node_is_of_type" : { "node" : [ "node" ], "type" : { "value" : { "poll" : "poll" } } } }
+      ],
+      "DO" : [
+        { "userpoints_action_grant_points" : {
+            "user" : [ "vote:user" ],
+            "points" : "1",
+            "tid" : "0",
+            "entity" : [ "node" ],
+            "description" : "Rated an article.",
+            "operation" : "Vote",
+            "display" : 0,
+            "moderate" : "approved"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_article_published'] = entity_import('rules_config', '{ "rules_article_published" : {
       "LABEL" : "Award points for published article",
       "PLUGIN" : "reaction rule",
