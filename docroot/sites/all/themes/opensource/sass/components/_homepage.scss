@@ -106,6 +106,7 @@ li a{
     }
 }
 
+.pane-menu-opensource-resources-homepa,
 .pane-menu-menu-opensource-resources-homepa  {
     h2 {
        font-size: 22px;
@@ -114,18 +115,18 @@ li a{
        font-weight: normal;
    }
    ul {
-    padding-left: 8px;
-    li {
-        list-style-image: none !important;
-        list-style-type: none !important;
+        padding-left: 8px;
+        li {
+            list-style-image: none !important;
+            list-style-type: none !important;
+        }
+        a {
+            margin-bottom: 0.75em;
+            width: 100%;
+            display: inline-block;
+            padding: 1em;
+        }
     }
-    a {
-        margin-bottom: 0.75em;
-        width: 100%;
-        display: inline-block;
-        padding: 1em;
-    }
-}
 }
 
 .teaser-info {

@@ -22,7 +22,6 @@
     }
 
     .pane-node-body {
-        font-size: 16px;
         color: black;
         margin-bottom: 2em;
 
@@ -210,4 +209,10 @@
 .addthis_button_facebook_like {
     position: relative;
     left: -9px;
+}
+
+.node-type-poll {
+    .pane-node-body {
+        font-size: 16px;
+    }
 }
