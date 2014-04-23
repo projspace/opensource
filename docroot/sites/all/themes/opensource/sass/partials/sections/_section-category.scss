@@ -75,5 +75,16 @@
     .views-field-field-section {
         clear: both;
     }
+
+    .views-field-body {
+        p:last-of-type {
+            display: inline;
+
+            & + a {
+                color: black;
+                font-weight: bold;
+            }
+        }
+    }
 }
 
