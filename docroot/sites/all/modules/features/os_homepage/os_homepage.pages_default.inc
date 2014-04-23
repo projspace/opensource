@@ -52,6 +52,14 @@ function os_homepage_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => 'Open source is changing the world: join the movement | [site:name]',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'burr_flipped';
