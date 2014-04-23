@@ -9581,7 +9581,36 @@ label {
   }
 
   line {
-    font-family: \0000339;
+    font-family: \0000338;
+  }
+}
+
+.pane-node-comments .submitted span {
+  display: block;
+  line-height: 1;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss;
+  }
+
+  line {
+    font-family: \0000343;
+  }
+}
+
+.pane-node-comments .submitted dd {
+  margin-top: 11px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/skippednote\/work\/os7\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/comments\/_comments-base\.scss;
+  }
+
+  line {
+    font-family: \0000348;
   }
 }
 
@@ -9595,7 +9624,7 @@ label {
   }
 
   line {
-    font-family: \0000345;
+    font-family: \0000354;
   }
 }
 
@@ -9612,7 +9641,7 @@ label {
   }
 
   line {
-    font-family: \0000354;
+    font-family: \0000363;
   }
 }
 
@@ -9626,7 +9655,7 @@ label {
   }
 
   line {
-    font-family: \0000358;
+    font-family: \0000367;
   }
 }
 
@@ -9640,7 +9669,7 @@ label {
   }
 
   line {
-    font-family: \0000366;
+    font-family: \0000375;
   }
 }
 
@@ -9654,7 +9683,7 @@ label {
   }
 
   line {
-    font-family: \0000374;
+    font-family: \0000383;
   }
 }
 
@@ -9670,7 +9699,7 @@ label {
   }
 
   line {
-    font-family: \0000380;
+    font-family: \0000389;
   }
 }
 
@@ -9684,7 +9713,7 @@ label {
   }
 
   line {
-    font-family: \0000385;
+    font-family: \0000394;
   }
 }
 
@@ -9698,7 +9727,7 @@ label {
   }
 
   line {
-    font-family: \0000390;
+    font-family: \0000399;
   }
 }
 
@@ -9714,7 +9743,7 @@ label {
   }
 
   line {
-    font-family: \0000395;
+    font-family: \00003104;
   }
 }
 
@@ -9728,7 +9757,7 @@ label {
   }
 
   line {
-    font-family: \00003100;
+    font-family: \00003109;
   }
 }
 
@@ -9744,7 +9773,7 @@ label {
   }
 
   line {
-    font-family: \00003106;
+    font-family: \00003115;
   }
 }
 
@@ -9759,7 +9788,7 @@ label {
   }
 
   line {
-    font-family: \00003112;
+    font-family: \00003121;
   }
 }
 
@@ -9773,7 +9802,7 @@ label {
   }
 
   line {
-    font-family: \00003117;
+    font-family: \00003126;
   }
 }
 
