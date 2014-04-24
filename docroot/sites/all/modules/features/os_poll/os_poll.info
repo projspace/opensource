@@ -21,6 +21,7 @@ dependencies[] = taxonomy
 dependencies[] = text
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
+features[field_instance][] = comment-comment_node_poll-comment_body
 features[field_instance][] = node-poll-body
 features[field_instance][] = node-poll-field_add_this
 features[field_instance][] = node-poll-field_attachments
