@@ -9,6 +9,7 @@ dependencies[] = strongarm
 dependencies[] = text
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
+features[field_instance][] = comment-comment_node_resource-comment_body
 features[field_instance][] = node-resource-body
 features[field_instance][] = node-resource-field_attachments
 features[field_instance][] = node-resource-field_lead_image

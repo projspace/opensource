@@ -10,6 +10,44 @@
 function os_content_event_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'comment-comment_node_event-comment_body'
+  $field_instances['comment-comment_node_event-comment_body'] = array(
+    'bundle' => 'comment_node_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'comment_body',
+    'label' => 'Comment',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_event_location'
   $field_instances['node-event-field_event_location'] = array(
     'bundle' => 'event',
@@ -335,6 +373,7 @@ function os_content_event_field_default_field_instances() {
   t('<ul><li>Web page addresses and e-mail addresses turn into links automatically.</li>
 <li>Allowed HTML tags: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt; &lt;h3&gt; &lt;h4&gt; &lt;u&gt; </li>
 <li>Lines and paragraphs break automatically.</li></ul>');
+  t('Comment');
   t('Event Summary');
   t('Event location (city, state/country)');
   t('Event start date');
