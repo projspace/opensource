@@ -1722,15 +1722,7 @@ blockquote {
   font-size: 14px;
   border: 1px solid #cdcbca;
   height: 22px;
-  padding: 8px 8px;
-}
-
-.page-user-login .form-text {
-  height: auto;
-}
-
-.page-user-register .form-text {
-  height: auto;
+  padding: 0 8px;
 }
 
 .form-submit {
@@ -2881,7 +2873,7 @@ label {
   font-size: 14px;
   border: 1px solid #cdcbca;
   height: 30px;
-  padding: 8px 8px;
+  padding: 0 8px;
 }
 
 .node-type-poll .pane-node-comment-form .form-type-textarea label,
