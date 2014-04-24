@@ -35,7 +35,12 @@
     .views-field-field-website,
     .views-field-field-user-about {
         float: right;
+        clear: right;
         width: 75%;
+    }
+
+    .views-field-nothing {
+        clear: both;
     }
 
     .views-field-points {
