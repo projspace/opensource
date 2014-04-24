@@ -37,6 +37,18 @@ function os_common_config_user_default_permissions() {
     'module' => 'vud_comment',
   );
 
+  // Exported permission: 'create files'.
+  $permissions['create files'] = array(
+    'name' => 'create files',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'community moderator' => 'community moderator',
+      'editor' => 'editor',
+      'mollom admin' => 'mollom admin',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'flag comment_abuse'.
   $permissions['flag comment_abuse'] = array(
     'name' => 'flag comment_abuse',
