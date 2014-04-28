@@ -54,5 +54,6 @@ features[variable][] = node_preview_article
 features[variable][] = node_submitted_article
 features[variable][] = panelizer_defaults_node_article
 features[variable][] = pathauto_node_article_pattern
+features[variable][] = xmlsitemap_settings_node_article
 features_exclude[field_base][field_energy_level] = field_energy_level
 features_exclude[field_instance][node-article-field_alternative_license] = node-article-field_alternative_license
