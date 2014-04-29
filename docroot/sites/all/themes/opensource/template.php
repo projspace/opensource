@@ -176,6 +176,7 @@ function opensource_preprocess_comment(&$vars) {
   if (isset($commentauthor->badges) && count($commentauthor->badges)) {
     $badgeimgs = array();
     $display_badge = '';
+    $badgerollimgs = array();
     foreach ($commentauthor->badges as $badge) {
       //$badgeimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE));
       if($badge->weight > 190 || $badge->weight == 0) {
