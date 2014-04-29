@@ -73,7 +73,8 @@
   <div class="submitted">
     <?php print $permalink; ?>
     <?php print $submitted; ?>
-    <?php print render($badges); ?>
+    <?php print render($rollbadges); ?>
+    <?php //print render($badges); ?>
   </div>
 
   <div class="content"<?php print $content_attributes; ?>>
