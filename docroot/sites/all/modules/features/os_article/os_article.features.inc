@@ -80,8 +80,9 @@ function os_article_image_default_styles() {
   // Exported image style: profile_pictures.
   $styles['profile_pictures'] = array(
     'name' => 'profile_pictures',
+    'label' => 'profile_pictures',
     'effects' => array(
-      2 => array(
+      1 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -95,9 +96,38 @@ function os_article_image_default_styles() {
           'height' => 100,
           'upscale' => 1,
         ),
-        'weight' => 1,
+        'weight' => -10,
       ),
-      6 => array(
+      3 => array(
+        'label' => 'Define canvas',
+        'help' => 'Define the size of the working canvas and background color, this controls the dimensions of the output image.',
+        'effect callback' => 'canvasactions_definecanvas_effect',
+        'dimensions callback' => 'canvasactions_definecanvas_dimensions',
+        'form callback' => 'canvasactions_definecanvas_form',
+        'summary theme' => 'canvasactions_definecanvas_summary',
+        'module' => 'imagecache_canvasactions',
+        'name' => 'canvasactions_definecanvas',
+        'data' => array(
+          'RGB' => array(
+            'HEX' => '#ffffff',
+          ),
+          'under' => 1,
+          'exact' => array(
+            'width' => 100,
+            'height' => 100,
+            'xpos' => 'center',
+            'ypos' => 'center',
+          ),
+          'relative' => array(
+            'leftdiff' => '',
+            'rightdiff' => '',
+            'topdiff' => '',
+            'bottomdiff' => '',
+          ),
+        ),
+        'weight' => -9,
+      ),
+      2 => array(
         'label' => 'Crop',
         'help' => 'Cropping will remove portions of an image to make it the specified dimensions.',
         'effect callback' => 'image_crop_effect',
@@ -111,10 +141,9 @@ function os_article_image_default_styles() {
           'height' => 100,
           'anchor' => 'center-top',
         ),
-        'weight' => 2,
+        'weight' => -8,
       ),
     ),
-    'label' => 'profile_pictures',
   );
 
   // Exported image style: related-content-lead-thumbnail.

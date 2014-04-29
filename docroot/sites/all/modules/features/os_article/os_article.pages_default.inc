@@ -533,7 +533,7 @@ function os_article_default_page_manager_handlers() {
               1 => 3,
             ),
           ),
-          'context' => 'relationship_entity_from_schema:uid-node-user_1',
+          'context' => 'logged-in-user',
           'not' => FALSE,
         ),
       ),
