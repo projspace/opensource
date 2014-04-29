@@ -300,6 +300,16 @@ function os_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_redirect_to_front_page_after_logout'] = entity_import('rules_config', '{ "rules_redirect_to_front_page_after_logout" : {
+      "LABEL" : "Redirect to front page after logout",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "user" ],
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_logout" : [] },
+      "DO" : [ { "redirect" : { "url" : "[site:url]" } } ]
+    }
+  }');
   $items['rules_redirect_user_after_registration'] = entity_import('rules_config', '{ "rules_redirect_user_after_registration" : {
       "LABEL" : "Redirect user after registration",
       "PLUGIN" : "reaction rule",
