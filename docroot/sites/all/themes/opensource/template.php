@@ -607,3 +607,18 @@ function opensource_user_badge_group($variables) {
     return '<div class="user_badges">'. implode('', $badgeimages) .'</div>';
   }
 }
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function opensource_preprocess_page(&$variables, $hook) {
+  global $base_url;
+  $element = array(
+    '#tag' => 'link',
+    '#attributes' => array(
+      'href' => $base_url . '/rss.xml',
+      'rel' => 'alternate',
+    ),
+  );
+  drupal_add_html_head($element, 'opensource');
+}

@@ -462,20 +462,10 @@ function os_core_update_7106() {
  * Create redirect for the rss feed programmatically.
  */
 function os_core_update_7107() {
-  $redirect = new stdClass();
-  module_invoke(
-    'redirect',
-    'object_prepare',
-    $redirect,
-    array(
-      'source' => 'feed',
-      'source_options' => array(),
-      'redirect' => 'rss.xml',
-      'redirect_options' => array(),
-      'language' => LANGUAGE_NONE,
-    )
-  );
-  module_invoke('redirect', 'save', $redirect);
+  // Setting the path alias for feed.
+  $path['source'] = 'rss.xml';
+  $path['alias'] =  'rss';
+  path_save($path);
 
   // Setting 'medium' date format. It is used to display article create date on
   // article and poll display page.
