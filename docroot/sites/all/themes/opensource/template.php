@@ -618,6 +618,7 @@ function opensource_preprocess_page(&$variables, $hook) {
     '#attributes' => array(
       'href' => $base_url . '/rss.xml',
       'rel' => 'alternate',
+      'title' => 'Opensource.com RSS',
     ),
   );
   drupal_add_html_head($element, 'opensource');
