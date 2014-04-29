@@ -151,7 +151,7 @@ function os_content_article_field_default_field_instances() {
     'bundle' => 'article',
     'default_value' => array(
       0 => array(
-        'tid' => 7,
+        'tid' => 1,
       ),
     ),
     'deleted' => 0,
