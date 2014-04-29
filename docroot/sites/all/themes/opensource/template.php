@@ -179,7 +179,7 @@ function opensource_preprocess_comment(&$vars) {
     foreach ($commentauthor->badges as $badge) {
       //$badgeimgs[] = theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE));
       if($badge->weight > 190 && $badge->weight == 0) {
-        if (isset($vars['badge_role'])) break; //seeing the next role badge. should only display the highest ordered.
+        //if (isset($vars['badge_role'])) break; //seeing the next role badge. should only display the highest ordered.
         $badgerollimgs[] = '<div class="badge_role">' . theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE)) . '</div>';
       } elseif($badge->weight == -20) {
         $badgeimgs[] = '<div class="badge_green">' . theme('user_badge', array('badge' => $badge, 'account' => $commentauthor, 'comment_page' => TRUE)) . '</div>';
