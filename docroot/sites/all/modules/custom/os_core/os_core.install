@@ -464,7 +464,7 @@ function os_core_update_7106() {
 function os_core_update_7107() {
   // Setting the path alias for feed.
   $path['source'] = 'rss.xml';
-  $path['alias'] =  'rss';
+  $path['alias'] =  'feed';
   path_save($path);
 
   // Setting 'medium' date format. It is used to display article create date on
