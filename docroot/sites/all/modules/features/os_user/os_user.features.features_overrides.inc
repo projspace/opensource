@@ -11,6 +11,11 @@ function os_user_features_override_default_overrides() {
   // This code is only used for UI in features. Exported alters hooks do the magic.
   $overrides = array();
 
+  // Exported overrides for: field_base
+  $overrides["field_base.field_user_about.field_permissions"] = array(
+    'type' => 0,
+  );
+
   // Exported overrides for: field_group
   $overrides["field_group.group_user_profile|user|user|form.data|children|1"] = 'field_community_description';
   $overrides["field_group.group_user_profile|user|user|form.data|children|2"] = 'field_display_name';
@@ -21,6 +26,7 @@ function os_user_features_override_default_overrides() {
   $overrides["field_group.group_user_profile|user|user|form.data|format_settings|label"] = 'User Profile';
 
   // Exported overrides for: field_instance
+  $overrides["field_instance.user-user-field_user_about.settings|text_processing"] = 0;
   $overrides["field_instance.user-user-field_user_picture.settings|min_resolution"] = '';
 
   // Exported overrides for: page_manager_handlers

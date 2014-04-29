@@ -17,6 +17,17 @@ function os_user_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_field_default_field_bases_alter().
+ */
+function os_user_field_default_field_bases_alter(&$data) {
+  if (isset($data['field_user_about'])) {
+    $data['field_user_about']['field_permissions'] = array(
+      'type' => 0,
+    ); /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_field_group_info_alter().
  */
 function os_user_field_group_info_alter(&$data) {
@@ -35,6 +46,9 @@ function os_user_field_group_info_alter(&$data) {
  * Implements hook_field_default_field_instances_alter().
  */
 function os_user_field_default_field_instances_alter(&$data) {
+  if (isset($data['user-user-field_user_about'])) {
+    $data['user-user-field_user_about']['settings']['text_processing'] = 0; /* WAS: 1 */
+  }
   if (isset($data['user-user-field_user_picture'])) {
     $data['user-user-field_user_picture']['settings']['min_resolution'] = ''; /* WAS: '300x200' */
   }
