@@ -601,7 +601,6 @@ function os_core_views_pre_render(&$view) {
     case 'user_points_report':
       $link_text = $base_url . $view->field['uid']->options['alter']['text'];
       $view->field['uid']->options['alter']['text'] = $link_text;
-      var_dump($view->field['uid']->options['alter']['text']);
       break;
   }
 }
