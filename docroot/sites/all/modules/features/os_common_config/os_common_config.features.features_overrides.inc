@@ -182,13 +182,13 @@ function os_common_config_features_override_default_overrides() {
     'zoom' => 'zoom',
   );
   $overrides["filter.panopoly_wysiwyg_text.filters|wysiwyg|settings|valid_elements"] = 'a[!href|target<_blank|title|style|class],
-      div[style|class|align<center?justify?left?right],
-      br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,hr,
-      span[style],p[style|class],
-      h1[style|class],h2[style|class],h3[style|class],h4[style|class],h5[style|class],h6[style|class],
-      img[!src|title|alt|style|width|height|class|hspace|vspace],
-      dl[style|class|align<center?justify?left?right],
-      @[style|class]';
+          div[style|class|align<center?justify?left?right],
+          br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,hr,
+          span[style],p[style|class],
+          h1[style|class],h2[style|class],h3[style|class],h4[style|class],h5[style|class],h6[style|class],
+          img[!src|title|alt|style|width|height|class|hspace|vspace],
+          dl[style|class|align<center?justify?left?right],
+          @[style|class]';
 
   // Exported overrides for: wysiwyg
   $overrides["wysiwyg.panopoly_html_text.rdf_mapping"] = array();
@@ -196,7 +196,12 @@ function os_common_config_features_override_default_overrides() {
   $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|advhr"] = array(
     'advhr' => 1,
   );
+  $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|copy"] = 1;
+  $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|cut"] = 1;
   $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|hr"] = 1;
+  $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|paste"] = 1;
+  $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|sub"] = 1;
+  $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|sup"] = 1;
   $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|media"] = array(
     'media' => 1,
   );

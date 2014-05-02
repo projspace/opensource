@@ -193,13 +193,13 @@ function os_common_config_filter_default_formats_alter(&$data) {
       'zoom' => 'zoom',
     ); /* WAS: '' */
     $data['panopoly_wysiwyg_text']['filters']['wysiwyg']['settings']['valid_elements'] = 'a[!href|target<_blank|title|style|class],
-        div[style|class|align<center?justify?left?right],
-        br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,hr,
-        span[style],p[style|class],
-        h1[style|class],h2[style|class],h3[style|class],h4[style|class],h5[style|class],h6[style|class],
-        img[!src|title|alt|style|width|height|class|hspace|vspace],
-        dl[style|class|align<center?justify?left?right],
-        @[style|class]'; /* WAS: 'a[!href|target<_blank|title|style|class],
+            div[style|class|align<center?justify?left?right],
+            br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,hr,
+            span[style],p[style|class],
+            h1[style|class],h2[style|class],h3[style|class],h4[style|class],h5[style|class],h6[style|class],
+            img[!src|title|alt|style|width|height|class|hspace|vspace],
+            dl[style|class|align<center?justify?left?right],
+            @[style|class]'; /* WAS: 'a[!href|target<_blank|title|style|class],
     div[style|class|align<center?justify?left?right],
     br,em,i,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,
     span[style],p[style|class],
@@ -221,7 +221,12 @@ function os_common_config_wysiwyg_default_profiles_alter(&$data) {
     $data['panopoly_wysiwyg_text']['settings']['buttons']['advhr'] = array(
       'advhr' => 1,
     ); /* WAS: '' */
+    $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['copy'] = 1; /* WAS: '' */
+    $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['cut'] = 1; /* WAS: '' */
     $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['hr'] = 1; /* WAS: '' */
+    $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['paste'] = 1; /* WAS: '' */
+    $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['sub'] = 1; /* WAS: '' */
+    $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['sup'] = 1; /* WAS: '' */
     $data['panopoly_wysiwyg_text']['settings']['buttons']['media'] = array(
       'media' => 1,
     ); /* WAS: '' */
