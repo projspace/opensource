@@ -305,7 +305,11 @@ function os_content_article_field_default_field_instances() {
   // Exported field_instance: 'node-article-field_default_license'
   $field_instances['node-article-field_default_license'] = array(
     'bundle' => 'article',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'CC-BY-SA 4.0',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
