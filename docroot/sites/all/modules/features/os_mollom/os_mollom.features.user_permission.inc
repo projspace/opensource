@@ -15,6 +15,8 @@ function os_mollom_user_default_permissions() {
     'name' => 'administer mollom',
     'roles' => array(
       'administrator' => 'administrator',
+      'community moderator' => 'community moderator',
+      'mollom admin' => 'mollom admin',
     ),
     'module' => 'mollom',
   );
@@ -24,6 +26,8 @@ function os_mollom_user_default_permissions() {
     'name' => 'bypass mollom protection',
     'roles' => array(
       'administrator' => 'administrator',
+      'community moderator' => 'community moderator',
+      'mollom admin' => 'mollom admin',
     ),
     'module' => 'mollom',
   );
