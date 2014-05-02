@@ -41,7 +41,7 @@ function os_block_install() {
     'delta' => 'weekly-spotlight',
     'title' => '<none>',
     'label' => 'Weekly spotlight',
-    'body' => '<p>[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"","field_file_image_title_text[und][0][value]":"Weekly spotlight","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"135","width":"325","class":"media-element file-default"}}]]</p>',
+    'body' => '<p><a href="/community/14/1/youth-in-open-source-week?sc_cid=70160000000c9pAAAQ">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"","field_file_image_title_text[und][0][value]":"Weekly spotlight","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"135","width":"325","class":"media-element file-default"}}]]</a></p>',
   );
   os_block_bean_save($data);
 
@@ -51,7 +51,7 @@ function os_block_install() {
     'delta' => 'new-to-open-source',
     'title' => '<none>',
     'label' => 'New to Opensource',
-    'body' => '<p>[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"New to OpenSource","field_file_image_title_text[und][0][value]":"New to OpenSource","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"135","width":"325","class":"media-element file-default"}}]]</p>',
+    'body' => '<p><a href="/resources/what-open-source">[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"New to OpenSource","field_file_image_title_text[und][0][value]":"New to OpenSource","field_file_image_caption[und][0][value]":"","field_file_image_caption[und][0][format]":"panopoly_wysiwyg_text"},"type":"media","link_text":null,"attributes":{"height":"135","width":"325","class":"media-element file-default"}}]]</a></p>',
   );
   os_block_bean_save($data);
 
