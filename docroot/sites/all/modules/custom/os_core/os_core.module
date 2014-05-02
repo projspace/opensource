@@ -508,6 +508,10 @@ function os_core_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'user_login') {
     $form['name']['#description'] = str_replace("an username", "a username", $form['name']['#description']);
   }
+  if($form_id == 'user_register_form' && user_access('administer users')) {
+    $form['legal']['legal_accept']['#default_value'] = 1;
+    unset($form['legal']['legal_accept']['#attributes']['disabled']);
+  }
 }
 
 /**
@@ -603,4 +607,13 @@ function os_core_views_pre_render(&$view) {
       $view->field['uid']->options['alter']['text'] = $link_text;
       break;
   }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function os_core_user_insert(&$edit, $account, $category) {
+  global $user;
+  print $user->uid;
+  var_dump($account);
 }
