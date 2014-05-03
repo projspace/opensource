@@ -610,10 +610,33 @@ function os_core_views_pre_render(&$view) {
 }
 
 /**
- * Implements hook_node_update().
+ * Implementation of hook_user_insert().
  */
 function os_core_user_insert(&$edit, $account, $category) {
   global $user;
-  print $user->uid;
-  var_dump($account);
+  global $language;
+
+  if(user_access('administer users')) {
+    $conditions = legal_get_conditions($language->language);
+    if (empty($conditions['conditions'])) {
+      return;
+    }
+    // Record the accepted state before removing legal_accept from $edit.
+    $accepted             = TRUE;
+    $edit['legal_accept'] = NULL;
+    $edit['conditions']   = NULL;
+
+    foreach ($conditions['extras'] as $key => $label) {
+      $edit[$key] = NULL;
+    }
+    db_insert('legal_accepted')
+      ->fields(array(
+        'version'  => $conditions['version'],
+        'revision' => $conditions['revision'],
+        'language' => $conditions['language'],
+        'uid'      => $account->uid,
+        'accepted' => time(),
+      ))
+      ->execute();
+  }
 }
