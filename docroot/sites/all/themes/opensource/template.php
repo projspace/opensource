@@ -599,6 +599,14 @@ function opensource_preprocess_html(&$variables, $hook) {
       $variables['classes_array'][] = 'node_unpublished';
     }
   }
+  $term = menu_get_object('taxonomy_term', 2);
+  if(isset($term)) {
+    $variables['head_title'] = _opensource_generate_taxonomy_term_title($term);
+  }
+  $node = menu_get_object('node', 1);
+  if(isset($node)) {
+    $variables['head_title'] = _opensource_generate_node_title($node);
+  }
 }
 
 function opensource_user_badge_group($variables) {
@@ -624,4 +632,39 @@ function opensource_preprocess_page(&$variables, $hook) {
     ),
   );
   drupal_add_html_head($element, 'opensource');
+  $variables['head_title'] = t("The new HTML title.");
+}
+
+/**
+ * This function will generate the page title for taxonomy terms.
+ */
+function _opensource_generate_taxonomy_term_title($term) {
+  if(isset($term->metatags[LANGUAGE_NONE]['title'])) {
+    if($_REQUEST['page'] >=1) {
+      $pagenumber = ' - Page number ' . ($_REQUEST['page'] + 1);
+    }
+    else {
+      $pagenumber = '';
+    }
+    $pagetitle = str_replace('| [site:name]', $pagenumber . ' | ' . variable_get('site_name'), $term->metatags[LANGUAGE_NONE]['title']);
+    $title = $pagetitle['value'];
+  }
+  else {
+    if($_REQUEST['page'] >=1) {
+      $pagenumber = ' - Page number ' . ($_REQUEST['page'] + 1);
+    }
+    else {
+      $pagenumber = '';
+    }
+   $title = token_replace('[term:name]' . $pagenumber . ' | [site:name]' , array('term' => $term));
+  }
+  return $title;
+}
+
+/**
+ * This function will generate the page title for nodes.
+ */
+function _opensource_generate_node_title($node) {
+  $title = $node->metatags[LANGUAGE_NONE]['title']['value'] . ' | ' . variable_get('site_name');
+  return $title;
 }
