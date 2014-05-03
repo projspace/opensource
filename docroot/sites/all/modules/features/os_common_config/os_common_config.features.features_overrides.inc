@@ -196,9 +196,13 @@ function os_common_config_features_override_default_overrides() {
   $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|advhr"] = array(
     'advhr' => 1,
   );
+  $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|advlink"] = array(
+    'advlink' => 1,
+  );
   $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|copy"] = 1;
   $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|cut"] = 1;
   $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|hr"] = 1;
+  $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|link"] = 1;
   $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|paste"] = 1;
   $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|sub"] = 1;
   $overrides["wysiwyg.panopoly_wysiwyg_text.settings|buttons|default|sup"] = 1;

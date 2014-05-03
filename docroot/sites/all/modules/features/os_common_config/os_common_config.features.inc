@@ -221,9 +221,13 @@ function os_common_config_wysiwyg_default_profiles_alter(&$data) {
     $data['panopoly_wysiwyg_text']['settings']['buttons']['advhr'] = array(
       'advhr' => 1,
     ); /* WAS: '' */
+    $data['panopoly_wysiwyg_text']['settings']['buttons']['advlink'] = array(
+      'advlink' => 1,
+    ); /* WAS: '' */
     $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['copy'] = 1; /* WAS: '' */
     $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['cut'] = 1; /* WAS: '' */
     $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['hr'] = 1; /* WAS: '' */
+    $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['link'] = 1; /* WAS: '' */
     $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['paste'] = 1; /* WAS: '' */
     $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['sub'] = 1; /* WAS: '' */
     $data['panopoly_wysiwyg_text']['settings']['buttons']['default']['sup'] = 1; /* WAS: '' */
