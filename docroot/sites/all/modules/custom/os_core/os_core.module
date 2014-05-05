@@ -640,3 +640,24 @@ function os_core_user_insert(&$edit, $account, $category) {
       ->execute();
   }
 }
+
+function os_core_change_resource_lead_image() {
+  $filepath = drupal_get_path('module', 'os_core') . '/images/';
+  $resource_nodes = array('resources/what-open-source', 'resources/ebooks', 'resources/projects-and-applications', 'resources/organizations');
+  $result = db_query(
+    "SELECT n.nid
+      FROM {node} n
+      WHERE n.type = 'resource' AND n.status = 1"
+  );
+  $dataset = array();
+  foreach ($result as $row) {
+    $alias = drupal_get_path_alias('node/'. $row->nid);
+    if(in_array($alias, $resource_nodes)) {
+      $node = node_load($row->nid);
+      $filename = str_replace('/', '-', $alias) . '.png';
+      $fid = os_base_file_create($filepath . $filename, 'public://resources/');
+      $node->field_lead_image[LANGUAGE_NONE]['0']['fid'] = $fid;
+      field_attach_update('node', $node);
+    }
+  }
+}
