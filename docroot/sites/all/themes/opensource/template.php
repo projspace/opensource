@@ -665,6 +665,11 @@ function _opensource_generate_taxonomy_term_title($term) {
  * This function will generate the page title for nodes.
  */
 function _opensource_generate_node_title($node) {
-  $title = $node->metatags[LANGUAGE_NONE]['title']['value'] . ' | ' . variable_get('site_name');
+  if(isset($node->metatags[LANGUAGE_NONE]['title'])) {
+    $title = $node->metatags[LANGUAGE_NONE]['title']['value'] . ' | ' . variable_get('site_name');
+  }
+  else {
+    $title = $node->title . ' | ' . variable_get('site_name');
+  }
   return $title;
 }
