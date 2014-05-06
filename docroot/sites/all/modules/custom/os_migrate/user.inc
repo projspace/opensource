@@ -104,6 +104,11 @@ class OsMigrateUserMigration extends DrupalUser6Migration {
  */
 class OsMigrateUserPointsMigration extends DrupalMigration {
   /**
+   * Keep track of all UID's imported.
+   */
+  protected $uids = array();
+
+  /**
    * Constructor.
    */
   public function __construct($args) {
@@ -206,6 +211,26 @@ class OsMigrateUserPointsMigration extends DrupalMigration {
     }
 
     return TRUE;
+  }
+
+  /**
+   * Execute after each user has been imported.
+   */
+  public function complete($entity, stdClass $row) {
+    // Track all users whose points we have imported.
+    $this->uids[$entity->uid] = TRUE;
+  }
+
+  /**
+   * Execute after the last row has been imported.
+   */
+  public function postImport() {
+    parent::postImport();
+
+    // Process role badges for all users imported in this batch.
+    foreach (array_keys($this->uids) as $uid) {
+      os_badges_award_role_badge($uid);
+    }
   }
 
   /**

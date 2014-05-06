@@ -24,20 +24,19 @@ class MigrateDestinationUserpoints extends MigrateDestination {
   }
 
   /**
-   * Importing given item as userpoints transaction.
+   * Import a single userpoints transaction.
    *
-   * @param stdClass $entity
+   * @param stdClass $userpoints
    * @param stdClass $row
    * @return array|bool
    */
-  function import(stdClass $entity, stdClass $row) {
-
+  function import(stdClass $userpoints, stdClass $row) {
     // Build params.
     $params = array();
     $fields = $this->fields();
     foreach (array_keys($fields) as $key) {
-      if (isset($entity->$key)) {
-        $params[$key] = $entity->$key;
+      if (isset($userpoints->$key)) {
+        $params[$key] = $userpoints->$key;
       }
     }
 
@@ -45,8 +44,13 @@ class MigrateDestinationUserpoints extends MigrateDestination {
     $result = userpoints_userpointsapi($params);
     if ($result['status'] == TRUE && isset($result['transaction'])) {
       $txn_id = $result['transaction']['txn_id'];
+
+      // Call any complete handlers.
+      $this->complete($userpoints, $row);
+
       return array($txn_id);
     }
+
     if (isset($result['reason'])) {
       watchdog('userpoints_migrate', $result['reason'], array(), WATCHDOG_WARNING);
     }
@@ -66,11 +70,13 @@ class MigrateDestinationUserpoints extends MigrateDestination {
     $txn_id = reset($id);
     $txn = userpoints_transaction_load($txn_id);
 
-    // We set txn to expired and send it to the recache, before we delete
-    // the entry.
+    // We set txn to expired and status to declined and send it to the recache,
+    // before we delete the entry.
+    // This is necessary to decrease the user's total points.
     $del_txn = (array) $txn;
     $del_txn['expired'] = 1;
-    _userpoints_update_cache($del_txn,  (array) $txn);
+    $del_txn['status'] = USERPOINTS_TXN_STATUS_DECLINED;
+    _userpoints_update_cache($del_txn, (array) $txn);
 
     // As there is no API function to delete, we must delete the row ourselves.
     db_delete('userpoints_txn')

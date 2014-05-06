@@ -1,5 +1,5 @@
 diff --git a/userpoints.info b/userpoints.info
-index 8d99f41..98a3438 100644
+index c6dae4f..57e8909 100644
 --- a/userpoints.info
 +++ b/userpoints.info
 @@ -2,6 +2,7 @@ name = Userpoints
@@ -12,10 +12,10 @@ index 8d99f41..98a3438 100644
  files[]=tests/userpoints_api.test
 diff --git a/userpoints.migrate.inc b/userpoints.migrate.inc
 new file mode 100644
-index 0000000..56c459c
+index 0000000..018645e
 --- /dev/null
 +++ b/userpoints.migrate.inc
-@@ -0,0 +1,145 @@
+@@ -0,0 +1,151 @@
 +<?php
 +
 +/**
@@ -42,20 +42,19 @@ index 0000000..56c459c
 +  }
 +
 +  /**
-+   * Importing given item as userpoints transaction.
++   * Import a single userpoints transaction.
 +   *
-+   * @param stdClass $entity
++   * @param stdClass $userpoints
 +   * @param stdClass $row
 +   * @return array|bool
 +   */
-+  function import(stdClass $entity, stdClass $row) {
-+
++  function import(stdClass $userpoints, stdClass $row) {
 +    // Build params.
 +    $params = array();
 +    $fields = $this->fields();
 +    foreach (array_keys($fields) as $key) {
-+      if (isset($entity->$key)) {
-+        $params[$key] = $entity->$key;
++      if (isset($userpoints->$key)) {
++        $params[$key] = $userpoints->$key;
 +      }
 +    }
 +
@@ -63,8 +62,13 @@ index 0000000..56c459c
 +    $result = userpoints_userpointsapi($params);
 +    if ($result['status'] == TRUE && isset($result['transaction'])) {
 +      $txn_id = $result['transaction']['txn_id'];
++
++      // Call any complete handlers.
++      $this->complete($userpoints, $row);
++
 +      return array($txn_id);
 +    }
++
 +    if (isset($result['reason'])) {
 +      watchdog('userpoints_migrate', $result['reason'], array(), WATCHDOG_WARNING);
 +    }
@@ -84,11 +88,13 @@ index 0000000..56c459c
 +    $txn_id = reset($id);
 +    $txn = userpoints_transaction_load($txn_id);
 +
-+    // We set txn to expired and send it to the recache, before we delete
-+    // the entry.
++    // We set txn to expired and status to declined and send it to the recache,
++    // before we delete the entry.
++    // This is necessary to decrease the user's total points.
 +    $del_txn = (array) $txn;
 +    $del_txn['expired'] = 1;
-+    _userpoints_update_cache($del_txn,  (array) $txn);
++    $del_txn['status'] = USERPOINTS_TXN_STATUS_DECLINED;
++    _userpoints_update_cache($del_txn, (array) $txn);
 +
 +    // As there is no API function to delete, we must delete the row ourselves.
 +    db_delete('userpoints_txn')
@@ -162,10 +168,10 @@ index 0000000..56c459c
 +  }
 +}
 diff --git a/userpoints.module b/userpoints.module
-index 0f22d8f..6ff4774 100644
+index 0f51b96..15f6de3 100644
 --- a/userpoints.module
 +++ b/userpoints.module
-@@ -1691,6 +1691,16 @@ function userpoints_views_api() {
+@@ -1692,6 +1692,16 @@ function userpoints_views_api() {
  }
  
  /**
