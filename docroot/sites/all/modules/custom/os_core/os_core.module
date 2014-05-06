@@ -492,6 +492,7 @@ function os_core_form_alter(&$form, &$form_state, $form_id) {
       '#description' => t('Workflow state settings'),
     );
     $form['workflow_tab'][LANGUAGE_NONE][0] = $form['workflow'];
+    $form['#submit'][] = 'os_core_node_workflow_submit';
 
     if (!user_access('access workflow summary views')) {
       $form['workflow_tab']['#access'] = FALSE;
@@ -660,4 +661,66 @@ function os_core_change_resource_lead_image() {
       field_attach_update('node', $node);
     }
   }
+}
+
+/**
+ * Process workflow state for new nodes.
+ */
+function os_core_node_workflow_submit($form, &$form_state) {
+  $values = $form_state['values'];
+  if (empty($values['nid'])) {
+    $status = os_core_get_node_status_workflow($values['workflow_sid']);
+    $form_state['input']['status'] = $form_state['values']['status'] = $status;
+  }
+}
+
+/**
+ * Implements hook_workflow().
+ */
+function os_core_workflow($op, $old_sid, $new_sid, $entity, $force = FALSE, $entity_type = '', $field_name = '') {
+  if ($op == 'transition post') {
+    $node_status = os_core_get_node_status_workflow($entity->workflow);
+    $is_new = !empty($entity->is_new);
+
+    // Skip processing new nodes. We are handling them in form submit anyway.
+    if (!$is_new && $entity->status != $node_status) {
+      // Change state and save.
+      $entity->status = $node_status;
+      node_save($entity);
+    }
+  }
+}
+
+/**
+ * Get the label for workflow state from sid.
+ *
+ * @param int $workflow_sid
+ *   Workflow State ID for which the node status is to be determined.
+ */
+function os_core_get_node_workflow_state($workflow_sid) {
+  static $article_workflow_states = array();
+
+  if (empty($article_workflow_states)) {
+    $article_workflow = workflow_load_by_name('Article Workflow');
+    foreach ($article_workflow->getStates(FALSE) as $sid => $state) {
+      $article_workflow_states[$sid] = $state->label();
+    }
+  }
+
+  return $article_workflow_states[$workflow_sid];
+}
+
+/**
+ * Determine the node status depending on the entity's workflow state.
+ *
+ * @param int $workflow_sid
+ *   Workflow State ID for which the node status is to be determined.
+ */
+function os_core_get_node_status_workflow($workflow_sid) {
+  $states = array(
+    'Review' => 0,
+    'Published' => 1,
+  );
+
+  return $states[os_core_get_node_workflow_state($workflow_sid)];
 }
