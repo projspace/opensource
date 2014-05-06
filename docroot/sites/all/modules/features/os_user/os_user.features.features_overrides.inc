@@ -26,7 +26,6 @@ function os_user_features_override_default_overrides() {
   $overrides["field_group.group_user_profile|user|user|form.data|format_settings|label"] = 'User Profile';
 
   // Exported overrides for: field_instance
-  $overrides["field_instance.user-user-field_user_about.settings|text_processing"] = 0;
   $overrides["field_instance.user-user-field_user_picture.settings|min_resolution"] = '';
 
   // Exported overrides for: page_manager_handlers

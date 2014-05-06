@@ -99,13 +99,6 @@ function os_common_config_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'elysia_cron_disabled';
-  $strongarm->value = '1';
-  $export['elysia_cron_disabled'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'elysia_cron_last_context';
   $strongarm->value = 'default';
   $export['elysia_cron_last_context'] = $strongarm;
@@ -114,7 +107,7 @@ function os_common_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'elysia_cron_last_run';
-  $strongarm->value = 1395651008;
+  $strongarm->value = 1399357501;
   $export['elysia_cron_last_run'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -863,14 +856,14 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_generated_last';
-  $strongarm->value = 1395643265;
+  $strongarm->value = 1399272601;
   $export['xmlsitemap_generated_last'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_regenerate_needed';
-  $strongarm->value = TRUE;
+  $strongarm->value = FALSE;
   $export['xmlsitemap_regenerate_needed'] = $strongarm;
 
   return $export;

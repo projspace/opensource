@@ -26,7 +26,6 @@ features[features_overrides][] = field_group.group_user_profile|user|user|form.d
 features[features_overrides][] = field_group.group_user_profile|user|user|form.data|children|5
 features[features_overrides][] = field_group.group_user_profile|user|user|form.data|format_settings|formatter
 features[features_overrides][] = field_group.group_user_profile|user|user|form.data|format_settings|label
-features[features_overrides][] = field_instance.user-user-field_user_about.settings|text_processing
 features[features_overrides][] = field_instance.user-user-field_user_picture.settings|min_resolution
 features[features_overrides][] = page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|0
 features[features_overrides][] = page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-1|configuration|admin_title
