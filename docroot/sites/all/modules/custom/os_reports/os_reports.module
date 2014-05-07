@@ -34,6 +34,7 @@ function _os_user_activity_row() {
 }
 
 function _os_user_activity_view() {
+  $output = '';
   $result = db_query(
     "SELECT n.uid, u.name, COUNT( n.nid ) AS articles
       FROM {node} n LEFT JOIN {users} u ON n.uid = u.uid
@@ -131,6 +132,7 @@ function _os_user_activity_view() {
  **/
 
 function _os_user_activity_csv() {
+  $output = '';
   $result = db_query(
     "SELECT n.uid, u.name, COUNT( n.nid ) AS articles
       FROM {node} n LEFT JOIN {users} u ON n.uid = u.uid

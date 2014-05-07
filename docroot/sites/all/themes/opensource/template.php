@@ -632,7 +632,6 @@ function opensource_preprocess_page(&$variables, $hook) {
     ),
   );
   drupal_add_html_head($element, 'opensource');
-  $variables['head_title'] = t("The new HTML title.");
 }
 
 /**
