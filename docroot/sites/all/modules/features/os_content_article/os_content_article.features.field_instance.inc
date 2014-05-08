@@ -226,7 +226,7 @@ function os_content_article_field_default_field_instances() {
     'settings' => array(
       'description_field' => 1,
       'file_directory' => 'articles',
-      'file_extensions' => 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp ogg mp3 mp4 epub',
+      'file_extensions' => 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp ogg mp3 mp4 epub docx',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -348,7 +348,8 @@ function os_content_article_field_default_field_instances() {
         'available_options' => 'CC-BY-SA 4.0|CC-BY-SA 4.0
 CC-BY-SA 3.0|CC-BY-SA 3.0
 CC-BY 4.0|CC-BY 4.0
-CC-BY 3.0|CC-BY 3.0',
+CC-BY 3.0|CC-BY 3.0
+None|None',
         'available_options_php' => '',
         'markup_available_options_php' => '&lt;none&gt;',
         'other' => 'Other',

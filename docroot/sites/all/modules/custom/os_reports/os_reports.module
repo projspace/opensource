@@ -216,7 +216,8 @@ function _os_user_activity_csv() {
       $dataset[$row->uid] = _os_user_activity_row();
     }
 
-    $dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    //$dataset[$row->uid]['Name'] = l($row->name, "user/$row->uid");
+    $dataset[$row->uid]['Name'] = $row->name;
     $dataset[$row->uid]['Points'] += $row->points;
   }
 
