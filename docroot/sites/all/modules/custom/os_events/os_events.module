@@ -25,6 +25,9 @@ function os_events_form_alter(&$form, &$form_state, $form_id) {
     if (!$node->field_event_submitter_email[LANGUAGE_NONE][0]['email']) {
       $form['field_event_submitter_email'][LANGUAGE_NONE][0]['email']['#default_value'] = $user->mail;
     }
+    if (!in_array('administrator', $user->roles)) {
+      unset($form['comment_settings']);
+    }
   }
 }
 
