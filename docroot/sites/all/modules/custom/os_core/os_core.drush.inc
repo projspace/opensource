@@ -19,6 +19,14 @@ function os_core_drush_command() {
     'aliases' => array('mgt'),
     'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_FULL, // Initialize Drupal fully
   );
+  $items['mbp-iterate-folders'] = array(
+    'description' => "Generate the folders for media terms.",
+    'arguments' => array(
+      'filling' => '',
+    ),
+    'aliases' => array('mif'),
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_FULL, // Initialize Drupal fully
+  );
   return $items;
 }
 
@@ -26,6 +34,14 @@ function os_core_drush_command() {
  * Implements drush_hook_COMMAND_validate().
  */
 function drush_os_core_mbp_generate_term_validate() {
+  if(!module_exists('media_browser_plus')) {
+    return drush_set_error(dt('Media browser module is not enabled. Please enable it and try again.'));
+  }
+}
+/**
+ * Implements drush_hook_COMMAND_validate().
+ */
+function drush_os_core_mbp_iterate_folders_validate() {
   if(!module_exists('media_browser_plus')) {
     return drush_set_error(dt('Media browser module is not enabled. Please enable it and try again.'));
   }
@@ -61,4 +77,131 @@ function drush_os_core_mbp_generate_term($filling = 'ascii') {
     $term->description = $term_item['description'];
     taxonomy_term_save($term);
   }
+
+}
+
+/**
+ * Implements drush_HOOK_command().
+ */
+function drush_os_core_mbp_iterate_folders($filling = 'ascii') {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'file')
+    ->propertyCondition('status', 1)
+    ->addMetaData('account', user_load(1)); // Run the query as user 1.
+  $result = $query->execute();
+  foreach ($result['file'] as $file) {
+    $file_entity = file_load($file->fid);
+    $prefix = 'public://';
+    $file_uri = $file_entity->uri;
+    $file_name = basename($file_uri); //Find file name
+    $file_uri = explode($file_name, $file_uri);
+    if (substr($file_uri[0], 0, strlen($prefix)) == $prefix) {
+      $str = substr($file_uri[0], strlen($prefix));
+      $a = strstr($str, '//');
+      if($a == '//') {
+        $folder_heirarchical_name = explode('/', substr($str, 0, -2));
+      }
+      else {
+        $folder_heirarchical_name = explode('/', $str);
+      }
+      $folder_names = array_filter($folder_heirarchical_name);
+
+      /*$vid = taxonomy_vocabulary_machine_name_load('media_folders')->vid;
+      $parent_term =  taxonomy_get_term_by_name('Media Root', 'media_folders');
+      $term = taxonomy_get_term_by_name($folder_name[0], 'media_folders');
+      if(empty($term) && sizeof($folder_name[0] > 1)) {
+        $term = new stdClass();
+        $term->vid = $vid;
+        $term->name = $folder_name[0];
+        $term->description = $folder_name[0];
+        $term->parent = $parent_term->tid;
+        taxonomy_term_save($term);
+      }*/
+      if(sizeof($folder_names) == 1) {
+        $vid = taxonomy_vocabulary_machine_name_load('media_folders')->vid;
+        $parent_term =  taxonomy_get_term_by_name('Media Root', 'media_folders');
+        if (!empty($parent_term)) {
+          $parent_term = array_shift($parent_term);
+        }
+        $folderterm = taxonomy_get_term_by_name($folder_names[0], 'media_folders');
+        if(empty($folderterm) && (strlen($folder_names[0]) > 1)) {
+          $term = new stdClass();
+          $term->vid = $vid;
+          $term->name = $folder_names[0];
+          $term->description = $folder_names[0];
+          $term->parent = $parent_term->tid;
+          taxonomy_term_save($term);
+          os_core_drush_move_file_entity($term->tid, $file_entity);
+        }
+        else {
+          $folderterm = taxonomy_get_term_by_name($folder_names[0], 'media_folders');
+          if (!empty($folderterm)) {
+            $first_term = array_shift($folderterm);
+          }
+          os_core_drush_move_file_entity($first_term->tid, $file_entity);
+        }
+      }
+      else {
+        for($i = 0; $i < sizeof($folder_names); $i++) {
+          if($i == 0) {
+            $vid = taxonomy_vocabulary_machine_name_load('media_folders')->vid;
+            $parent_term =  taxonomy_get_term_by_name('Media Root', 'media_folders');
+            if (!empty($parent_term)) {
+              $parent_term = array_shift($parent_term);
+            }
+            $folderterm = taxonomy_get_term_by_name($folder_names[$i], 'media_folders');
+            if(empty($folderterm) && (strlen($folder_names[$i]) > 1)) {
+              $term = new stdClass();
+              $term->vid = $vid;
+              $term->name = $folder_names[0];
+              $term->description = $folder_names[0];
+              $term->parent = $parent_term->tid;
+              taxonomy_term_save($term);
+              os_core_drush_move_file_entity($term->tid, $file_entity);
+            }
+            else {
+              $folderterm = taxonomy_get_term_by_name($folder_names[0], 'media_folders');
+              if (!empty($folderterm)) {
+                $first_term = array_shift($folderterm);
+              }
+              os_core_drush_move_file_entity($first_term->tid, $file_entity);
+            }
+          }
+          else {
+            $vid = taxonomy_vocabulary_machine_name_load('media_folders')->vid;
+            $parent_term =  taxonomy_get_term_by_name($folder_names[0], 'media_folders');
+            if (!empty($parent_term)) {
+              $parent_term = array_shift($parent_term);
+            }
+            $folderterm = taxonomy_get_term_by_name($folder_names[$i], 'media_folders');
+            if(empty($folderterm) && (strlen($folder_names[$i]) > 1)) {
+              $term = new stdClass();
+              $term->vid = $vid;
+              $term->name = $folder_names[$i];
+              $term->description = $folder_names[$i];
+              $term->parent = $parent_term->tid;
+              taxonomy_term_save($term);
+              os_core_drush_move_file_entity($term->tid, $file_entity);
+            }
+            else {
+              $folderterm = taxonomy_get_term_by_name($folder_names[$i], 'media_folders');
+              if (!empty($folderterm)) {
+                $first_term = array_shift($folderterm);
+              }
+              os_core_drush_move_file_entity($first_term->tid, $file_entity);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Attach the term id of the folder with file.
+ */
+function os_core_drush_move_file_entity($tid, $entity) {
+  $entity->field_folder[LANGUAGE_NONE] = array(array('tid' => $tid));
+  $entity->field_folder[LANGUAGE_NONE][0]['tid'] = $tid;
+  file_save($entity);
 }
