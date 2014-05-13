@@ -448,6 +448,7 @@ function _os_core_create_channel_link($title, $path, $weight = -50) {
     'values' => array(
       'link_title' => $title,
       'link_path' => $path,
+      'description' => 'Open ' . $title,
       'menu_name' => 'main-menu',
       'parent' => 'main-menu:0',
       'image_style' => '',

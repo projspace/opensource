@@ -27,7 +27,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['apachesolr_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -37,7 +37,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['apps_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -47,7 +47,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['ctools_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -57,7 +57,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['dblog_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -67,7 +67,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['defaultcontent_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -77,7 +77,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['field_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -87,7 +87,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['googleanalytics_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -97,7 +97,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['mollom_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -107,7 +107,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['node_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -117,7 +117,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['openid_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -127,7 +127,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['pollanon_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -137,7 +137,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['poll_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -147,7 +147,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['radioactivity_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -157,7 +157,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['redirect_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -167,7 +167,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['rules_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -177,7 +177,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['search_api_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -187,7 +187,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['search_api_solr_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -197,7 +197,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['search_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -207,7 +207,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['statistics_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -217,7 +217,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = -60;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['system_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -227,7 +227,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['update_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -237,7 +237,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['userpoints_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -247,7 +247,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['views_bulk_operations_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -257,7 +257,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['votingapi_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -267,7 +267,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = '*/5 * * * *';
   $cron_rule->weight = -50;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['workflow_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -277,7 +277,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['xmlsitemap_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -287,7 +287,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['xmlsitemap_node_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
@@ -297,7 +297,7 @@ function os_common_config_default_elysia_cron_rules() {
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
   $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
+  $cron_rule->context = 'default';
   $cron_rules['xmlsitemap_taxonomy_cron'] = $cron_rule;
 
   return $cron_rules;
