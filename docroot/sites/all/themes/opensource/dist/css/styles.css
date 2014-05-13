@@ -4187,6 +4187,12 @@ body.page-search .search-results a:hover {
   text-decoration: underline;
 }
 
+.burr-flipped-sidebar .pane-block {
+  background: #FFF;
+  padding: 1em;
+  margin-bottom: 1.5em;
+}
+
 .node_unpublished .burr-flipped-content {
   background: #FFF4F4;
 }
