@@ -65,9 +65,6 @@ function os_core_install() {
 
   // Disable save_draft module as it creates confusion with workflow.
   os_core_update_7107();
-
-  // Disable save_draft module as it creates confusion with workflow.
-  os_core_update_7108();
 }
 
 /**
