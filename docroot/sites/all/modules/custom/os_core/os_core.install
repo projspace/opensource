@@ -65,6 +65,9 @@ function os_core_install() {
 
   // Disable save_draft module as it creates confusion with workflow.
   os_core_update_7107();
+
+  // Disable save_draft module as it creates confusion with workflow.
+  os_core_update_7108();
 }
 
 /**
@@ -523,4 +526,17 @@ function os_core_generate_contact_categories() {
     "selected" => 0,
   );
   drupal_write_record('contact', $record);
+}
+
+/**
+ * Change xml site map links frequencey.
+ */
+function os_core_update_7108() {
+   module_load_include('generate.inc', 'xmlsitemap');
+  $form_state['values']['entities'] = array(
+    'node',
+  );
+  $form_state['values']['save_custom'] = 1;
+  $batch = xmlsitemap_rebuild_batch($form_state['values']['entities'], $form_state['values']['save_custom']);
+  batch_set($batch);
 }

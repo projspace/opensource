@@ -724,3 +724,19 @@ function os_core_get_node_status_workflow($workflow_sid) {
 
   return $states[os_core_get_node_workflow_state($workflow_sid)];
 }
+
+/**
+ * Implements hook_xmlsitemap_link_alter().
+ */
+function os_core_xmlsitemap_link_alter(&$link) {
+  $content_types = array(
+    'article',
+    'event',
+    'poll'
+  );
+  if (in_array($link['subtype'], $content_types)) {
+    if($link['changefreq'] == 0) {
+      $link['changefreq'] = XMLSITEMAP_FREQUENCY_YEARLY;
+    }
+  }
+}
