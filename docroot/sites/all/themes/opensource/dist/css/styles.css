@@ -1331,8 +1331,8 @@ tr.selected td {
   display: none;
 }
 
-.pane-os-core-opensource-article-share .burr-flipped-content img {
-  border: none;
+.pane-os-core-opensource-article-share img {
+  border: none !important;
 }
 
 #quicktabs-homepage_tabs ul {
