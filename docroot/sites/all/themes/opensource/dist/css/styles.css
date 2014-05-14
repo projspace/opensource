@@ -2028,6 +2028,10 @@ label {
   color: transparent;
 }
 
+#navbar-administration {
+  display: none;
+}
+
 .header__site-link {
   position: absolute;
   top: 0;
