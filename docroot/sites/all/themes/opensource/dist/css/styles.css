@@ -1,25 +1,4 @@
-/**
- * @file
- * Normalize.css is intended to be used as an alternative to CSS resets.
- *
- * This file is a slight fork of these original sources:
- * - normalize.css v2.1.2 | MIT License | git.io/normalize
- * - normalize.scss v2.1.2 | MIT/GPLv2 License | bit.ly/normalize-with-compass
- *
- * It's suggested that you read the normalize.scss file and customise it to meet
- * your needs, rather then including the file in your project and overriding the
- * defaults later in your CSS.
- * @see http://nicolasgallagher.com/about-normalize-css/
- *
- * Also: @see http://meiert.com/en/blog/20080419/reset-style-sheets-are-bad/
- *       @see http://snook.ca/archives/html_and_css/no_css_reset/
- */
-
-/**
- * HTML5 display definitions
- */
-
-/* Correct `block` display not defined in IE 8/9. */
+@charset "UTF-8";
 
 article,
 aside,
@@ -35,109 +14,38 @@ summary {
   display: block;
 }
 
-/* Correct `inline-block` display not defined in IE 8/9. */
-
 audio,
 canvas,
 video {
   display: inline-block;
 }
 
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/* Address styling not present in IE 8/9. */
-
 [hidden] {
   display: none;
 }
 
-/**
- * Base
- *
- * Instead of relying on the fonts that are available on a user's computer, you
- * can use web fonts which, like images, are resources downloaded to the user's
- * browser. Because of the bandwidth and rendering resources required, web fonts
- * should be used with care.
- *
- * Numerous resources for web fonts can be found on Google. Here are a few
- * websites where you can find Open Source fonts to download:
- * - http://www.fontsquirrel.com/fontface
- * - http://www.theleagueofmoveabletype.com
- *
- * In order to use these fonts, you will need to convert them into formats
- * suitable for web fonts. We recommend the free-to-use Font Squirrel's
- * Font-Face Generator:
- *   http://www.fontsquirrel.com/fontface/generator
- *
- * The following is an example @font-face declaration. This font can then be
- * used in any ruleset using a property like this:  font-family: Example, serif;
- *
- * Since we're using Sass, you'll need to declare your font faces here, then you
- * can add them to the font variables in the _base.scss partial.
- */
-
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- * 3. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
- *    `em` units.
- */
-
 html {
-  font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
-  /* 1 */
+  font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
   font-size: 100%;
-  /* 3 */
   -ms-text-size-adjust: 100%;
-  /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
   line-height: 1.5em;
 }
-
-/* Remove default margin. */
 
 body {
   margin: 0;
   padding: 0;
 }
 
-/**
- * Links
- *
- * The order of link states are based on Eric Meyer's article:
- * http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
- */
-
-/* Address `outline` inconsistency between Chrome and other browsers. */
-
-/* Improve readability when focused and also mouse hovered in all browsers. */
-
 a:active,
 a:hover {
   outline: 0;
 }
-
-/**
- * Typography
- *
- * To achieve a pleasant vertical rhythm, we use Compass' Vertical Rhythm mixins
- * so that the line height of our base font becomes the basic unit of vertical
- * measurement. We use multiples of that unit to set the top and bottom margins
- * for our block level elements and to set the line heights of any fonts.
- * For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
- */
-
-/* Set 1 unit of vertical rhythm on the top and bottom margin. */
 
 p,
 pre {
@@ -145,20 +53,12 @@ pre {
 }
 
 blockquote {
-  /* Also indent the quote on both sides. */
   margin: 1.5em 30px;
 }
 
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
- */
-
 h1 {
-  /* Set the font-size and line-height while keeping a proper vertical rhythm. */
   font-size: 2em;
   line-height: 1.5em;
-  /* Set 1 unit of vertical rhythm on the top and bottom margins. */
   margin-top: 0.75em;
   margin-bottom: 0.75em;
 }
@@ -198,26 +98,18 @@ h6 {
   margin-bottom: 2.23881em;
 }
 
-/* Address styling not present in IE 8/9, Safari 5, and Chrome. */
-
 abbr[title] {
   border-bottom: 1px dotted;
 }
-
-/* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
 
 b,
 strong {
   font-weight: bold;
 }
 
-/* Address styling not present in Safari 5 and Chrome. */
-
 dfn {
   font-style: italic;
 }
-
-/* Address differences between Firefox and other browsers. */
 
 hr {
   -moz-box-sizing: content-box;
@@ -228,14 +120,10 @@ hr {
   margin: 1.5em 0;
 }
 
-/* Address styling not present in IE 8/9. */
-
 mark {
   background: #ff0;
   color: #000;
 }
-
-/* Correct font family set oddly in Safari 5 and Chrome. */
 
 code,
 kbd,
@@ -243,30 +131,22 @@ pre,
 samp,
 tt,
 var {
-  font-family: "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+  font-family: "Courier New","DejaVu Sans Mono",monospace,sans-serif;
   font-size: 1em;
   line-height: 1.5em;
 }
-
-/* Improve readability of pre-formatted text in all browsers. */
 
 pre {
   white-space: pre-wrap;
 }
 
-/* Set consistent quote types. */
-
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
-/* Address inconsistent and variable font size in all browsers. */
-
 small {
   font-size: 80%;
 }
-
-/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
 
 sub,
 sup {
@@ -284,15 +164,10 @@ sub {
   bottom: -0.25em;
 }
 
-/**
- * Lists
- */
-
 dl,
 menu,
 ol,
 ul {
-  /* Address margins set differently in IE 6/7. */
   margin: 1.5em 0;
 }
 
@@ -300,63 +175,36 @@ ol ol,
 ol ul,
 ul ol,
 ul ul {
-  /* Turn off margins on nested lists. */
   margin: 0;
 }
 
 dd {
   margin: 0 0 0 30px;
-  /* LTR */
 }
-
-/* Address paddings set differently in IE 6/7. */
 
 menu,
 ol,
 ul {
   padding: 0 0 0 30px;
-  /* LTR */
 }
-
-/**
- * Embedded content and figures
- *
- * @todo Look into adding responsive embedded video.
- */
 
 img {
-  /* Remove border when inside `a` element in IE 8/9. */
   border: 0;
-  /* Suppress the space beneath the baseline */
-  /* vertical-align: bottom; */
-  /* Responsive images */
   max-width: 100%;
   height: auto;
-  /* Correct IE 8 not scaling image height when resized. */
   width: auto;
 }
-
-/* Correct overflow displayed oddly in IE 9. */
 
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* Address margin not present in IE 8/9 and Safari 5. */
-
 figure {
   margin: 0;
 }
 
-/**
- * Forms
- */
-
-/* Define consistent border, margin, and padding. */
-
 fieldset {
   margin: 0 2px;
-  /* Apply borders and padding that keep the vertical rhythm. */
   border-color: #c0c0c0;
   border-top-style: solid;
   border-top-width: 0.0625em;
@@ -372,136 +220,63 @@ fieldset {
   padding-right: 0.9125em;
 }
 
-/**
- * 1. Correct `color` not being inherited in IE 8/9.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- * 3. Correct alignment displayed oddly in IE 6/7.
- */
-
 legend {
   border: 0;
-  /* 1 */
   padding: 0;
-  /* 2 */
 }
-
-/**
- * 1. Correct font family not being inherited in all browsers.
- * 2. Correct font size not being inherited in all browsers.
- * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
- * 4. Improve appearance and consistency with IE 6/7.
- * 5. Keep form elements constrained in their containers.
- */
 
 button,
 input,
 select,
 textarea {
   font-family: inherit;
-  /* 1 */
   font-size: 100%;
-  /* 2 */
   margin: 0;
-  /* 3 */
   max-width: 100%;
-  /* 5 */
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  /* 5 */
 }
-
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
 
 button,
 input {
   line-height: normal;
 }
 
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
- * Correct `select` style inheritance in Firefox 4+ and Opera.
- */
-
 button,
 select {
   text-transform: none;
 }
-
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
- *    Known issue: inner spacing remains in IE 6.
- */
 
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
-  /* 2 */
   cursor: pointer;
-  /* 3 */
 }
-
-/**
- * Re-set default cursor for disabled elements.
- */
 
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
 
-/**
- * 1. Address box sizing set to `content-box` in IE 8/9.
- * 2. Remove excess padding in IE 8/9.
- * 3. Remove excess padding in IE 7.
- *    Known issue: excess padding remains in IE 6.
- */
-
 input[type="checkbox"],
 input[type="radio"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  /* 1 */
   padding: 0;
-  /* 2 */
 }
-
-/**
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
- */
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  /* 1 */
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  /* 2 */
 }
-
-/**
- * Remove inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-
-/* Remove inner padding and border in Firefox 4+. */
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -509,56 +284,22 @@ input::-moz-focus-inner {
   padding: 0;
 }
 
-/**
- * 1. Remove default vertical scrollbar in IE 8/9.
- * 2. Improve readability and alignment in all browsers.
- */
-
 textarea {
   overflow: auto;
-  /* 1 */
   vertical-align: top;
-  /* 2 */
 }
-
-/* Drupal-style form labels. */
 
 label {
   display: block;
   font-weight: bold;
 }
 
-/**
- * Tables
- */
-
 table {
-  /* Remove most spacing between table cells. */
   border-collapse: collapse;
   border-spacing: 0;
-  /* Prevent cramped-looking tables */
-  /* width: 100%; */
-  /* Add vertical rhythm margins. */
   margin-top: 1.5em;
   margin-bottom: 1.5em;
 }
-
-/**
- * @file
- * Positioning for a responsive layout.
- *
- * Define CSS classes to create a fluid grid layout with optional sidebars
- * depending on whether blocks are placed in the left or right sidebars.
- *
- * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
- */
-
-/**
- * Center the page.
- *
- * For screen sizes larger than 1200px, prevent excessively long lines of text
- * by setting a max-width.
- */
 
 #page,
 .region-bottom {
@@ -566,8 +307,6 @@ table {
   margin-right: auto;
   max-width: 980px;
 }
-
-/* Apply the shared properties of grid items in a single, efficient ruleset. */
 
 #header,
 #content,
@@ -582,8 +321,6 @@ table {
   box-sizing: border-box;
   word-wrap: break-word;
 }
-
-/* Containers for grid items and flow items. */
 
 #header:before,
 #header:after,
@@ -601,17 +338,13 @@ table {
   clear: both;
 }
 
-/* Navigation bar */
-
 @media all and (min-width: 480px) {
   #main {
-    /* Move all the children of #main down to make room. */
     padding-top: 3em;
     position: relative;
   }
 
   #navigation {
-    /* Move the navbar up inside #main's padding. */
     position: absolute;
     top: 0;
     left: 0;
@@ -620,20 +353,7 @@ table {
   }
 }
 
-/**
- * Use 3 grid columns for smaller screens.
- */
-
 @media all and (min-width: 480px) and (max-width: 959px) {
-  /**
-   * The layout when there is only one sidebar, the left one.
-   */
-
-  .sidebar-first {
-    /* Span 2 columns, starting in 2nd column from left. */
-    /* Span 1 column, starting in 1st column from left. */
-  }
-
   .sidebar-first #content {
     float: left;
     width: 66.66667%;
@@ -648,15 +368,6 @@ table {
     margin-right: -33.33333%;
   }
 
-  /**
-   * The layout when there is only one sidebar, the right one.
-   */
-
-  .sidebar-second {
-    /* Span 2 columns, starting in 1st column from left. */
-    /* Span 1 column, starting in 3rd column from left. */
-  }
-
   .sidebar-second #content {
     float: left;
     width: 66.66667%;
@@ -669,16 +380,6 @@ table {
     width: 33.33333%;
     margin-left: 66.66667%;
     margin-right: -100%;
-  }
-
-  /**
-   * The layout when there are two sidebars.
-   */
-
-  .two-sidebars {
-    /* Span 2 columns, starting in 2nd column from left. */
-    /* Span 1 column, starting in 1st column from left. */
-    /* Start a new row and span all 3 columns. */
   }
 
   .two-sidebars #content {
@@ -703,10 +404,6 @@ table {
     padding-left: 0;
     padding-right: 0;
     clear: left;
-    /* Apply the shared properties of grid items in a single, efficient ruleset. */
-    /* Span 1 column, starting in the 1st column from left. */
-    /* Span 1 column, starting in the 2nd column from left. */
-    /* Span 1 column, starting in the 3rd column from left. */
   }
 
   .two-sidebars .region-sidebar-second .block {
@@ -741,20 +438,7 @@ table {
   }
 }
 
-/**
- * Use 5 grid columns for larger screens.
- */
-
 @media all and (min-width: 960px) {
-  /**
-   * The layout when there is only one sidebar, the left one.
-   */
-
-  .sidebar-first {
-    /* Span 4 columns, starting in 2nd column from left. */
-    /* Span 1 column, starting in 1st column from left. */
-  }
-
   .sidebar-first #content {
     float: left;
     width: 80%;
@@ -769,15 +453,6 @@ table {
     margin-right: -20%;
   }
 
-  /**
-   * The layout when there is only one sidebar, the right one.
-   */
-
-  .sidebar-second {
-    /* Span 4 columns, starting in 1st column from left. */
-    /* Span 1 column, starting in 5th column from left. */
-  }
-
   .sidebar-second #content {
     float: left;
     width: 80%;
@@ -790,16 +465,6 @@ table {
     width: 20%;
     margin-left: 80%;
     margin-right: -100%;
-  }
-
-  /**
-   * The layout when there are two sidebars.
-   */
-
-  .two-sidebars {
-    /* Span 3 columns, starting in 2nd column from left. */
-    /* Span 1 column, starting in 1st column from left. */
-    /* Span 1 column, starting in 5th column from left. */
   }
 
   .two-sidebars #content {
@@ -824,26 +489,6 @@ table {
   }
 }
 
-/**
- * @file
- * SMACSS Modules
- *
- * Adds modular sets of styles.
- *
- * Additional useful selectors can be found in Zen's online documentation.
- * https://drupal.org/node/1707736
- */
-
-/**
- * Wireframes.
- */
-
-/**
- * Accessibility features.
- */
-
-/* element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
-
 .element-invisible,
 .element-focusable,
 #navigation .block-menu .block__title,
@@ -855,8 +500,6 @@ table {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* Turns off the element-invisible effect. */
-
 .element-focusable:active,
 .element-focusable:focus {
   position: static !important;
@@ -865,10 +508,6 @@ table {
   width: auto;
   overflow: auto;
 }
-
-/*
- * The skip-link link will be completely hidden until a user tabs to the link.
- */
 
 #skip-link {
   margin: 0;
@@ -884,40 +523,25 @@ table {
   color: #fff;
 }
 
-/**
- * Branding header.
- */
-
-/* Wrapping link for logo. */
-
 .header__logo {
   float: left;
-  /* LTR */
   margin: 0;
   padding: 0;
 }
-
-/* Logo image. */
 
 .header__logo-image {
   vertical-align: bottom;
 }
 
-/* Wrapper for website name and slogan. */
-
 .header__name-and-slogan {
   float: left;
 }
-
-/* The name of the website. */
 
 .header__site-name {
   margin: 0;
   font-size: 2em;
   line-height: 1.5em;
 }
-
-/* The link around the name of the website. */
 
 .header__site-link:link,
 .header__site-link:visited {
@@ -930,34 +554,16 @@ table {
   text-decoration: underline;
 }
 
-/* The slogan (or tagline) of a website. */
-
 .header__site-slogan {
   margin: 0;
 }
 
-/* The secondary menu (login, etc.) */
-
 .header__secondary-menu {
   float: right;
-  /* LTR */
 }
-
-/* Wrapper for any blocks placed in the header region. */
 
 .header__region {
-  /* Clear the logo. */
   clear: both;
-}
-
-/**
- * Navigation bar.
- */
-
-#navigation {
-  /* Sometimes you want to prevent overlapping with main div. */
-  /* overflow: hidden; */
-  /* Main menu and secondary menu links and menu block links. */
 }
 
 #navigation .block {
@@ -969,23 +575,15 @@ table {
   margin: 0;
   padding: 0;
   text-align: left;
-  /* LTR */
 }
 
 #navigation .links li,
 #navigation .menu li {
-  /* A simple method to get navigation links to appear in one line. */
   float: left;
-  /* LTR */
   padding: 0 10px 0 0;
-  /* LTR */
   list-style-type: none;
   list-style-image: none;
 }
-
-/**
- * Breadcrumb navigation.
- */
 
 .breadcrumb ol {
   margin: 0;
@@ -999,23 +597,14 @@ table {
   padding: 0;
 }
 
-/**
- * Titles.
- */
-
 .page__title,
 .node__title,
 .block__title,
 .comments__title,
 .comments__form-title,
 .comment__title {
-  /* Comment title. */
   margin: 0;
 }
-
-/**
- * Messages.
- */
 
 .messages,
 .messages--status,
@@ -1023,10 +612,8 @@ table {
 .messages--error {
   margin: 1.5em 0;
   padding: 10px 10px 10px 50px;
-  /* LTR */
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAD6UlEQVR42s2WX0xbVRzH3YwmC4k+GF/0ZS/S267/bmnX9nL7bwstZlnbjTDYyoC5GCbB0ZW5pdJCe6swbLFA6bpWIGuRMWVjKGP+21QW3SZBSAjGh4XEaTZTH82Cm/3ztS2xs7mw4KLRk3xyzj33/H6fe5Pz7zEA/yr/vUDukj9FH6drqTaqT8EoPs/UV+nX6TD1BlUh9AqLHlmgPKLcRHmoCOWmElK/FOKTYpS8UwLJkASiUyLI3pKhlClN0g46qj+qL/pbArlbrlO1q25JeiSgR2iYJ8ywXLSg/qP6LNl2ro8+Q4MMkKCd9K2t3q3KdQnkXXIF5aISkgEJzONm1F2qW52pDJN1MI2bUBIuAdVOJWSMTPNQgX6/vkjVpvpREpag6oMqWCYta1IzbsHh9ga0RJtzY8URMdRO9U/KSuWmNQUqh2pY3CtG+fvlqJyofMAFNrZAE+7e/RWR4X4cD9tgOGsA2U2CdtMDqwqyMyIzQ5KKqAKmcyaYxkzYd3YvjGNGFtXRPRj58DT+LOemRrFnrBLyITmUDmUyO/NYgu2d26ukHVJo3tXAMGpAs+cQmh0NeClan30uwN7TgnQ6nRd4r3thOGOAJqYB2UVC79AfZAnKHGUxQa8A2tNaNLW/jKvXv8Dyb8s4yryKA4O10A3roIvpUB+swTdz1/LJZ27PQBvT5lBH1RD4BChzlQ2wBNtc22aE/ULQgzRCl4P5BPcT93GMOYz9wb2QhCRgAq35d8u/L2PXe7tADVGgBlcQ+AXQtmlvsP/gzbJZvp8PMkJCFBYh8m0knyiVSsHe0YIGZz1+/uVOvt8z7QGvnwf+ST5EIRHIUyR4fh50rbp5lsDcYR4ReAXgBrng9q/Qfa0bfy035r7Ot2dvz4IX4IEIEAXwvDzscOw4zxJUd1YfEXlE4Aa4BQHMlwzSSBeI7iXvoTxWDqKPYCFsFaKmr+YVliB0JfS89DVpiuhlB9k/tSOZTuYFvq98yI7L0/MAsVWcGp0bfW61hbahwltxSeARsIKyWKesSKQSWIwvYkvvllwfx88pgOvhwthu/AzAxlVX8vz385tLbaVxwpcLZtEw0QDjsBGctzksiE4CimZFfHp++oWHbnbuUfdB0komMgHsRN1r0MWBsEmYODF5onY92/UTwcvBxuzXcN1ccHycVSn2FaPYWwzCQUDWKIt7z3utAJ5c74Hz+OLSomynY+cVfiM/xW3JiDyZpB3FuZrj4oCwE+Ad4qWMjPHjpTtL0mzMoxyZz9yM39Q7Y85Ok930icqm+k59TL2wm9l90dZv8y/8sPAigGf/iUN/Q4anM2zOsdLe+L+4VfwBVVjDs2rTYx0AAAAASUVORK5CYII=');
   background-position: 8px 8px;
-  /* LTR */
   background-repeat: no-repeat;
   border: 1px solid #be7;
 }
@@ -1049,13 +636,9 @@ table {
   list-style-image: none;
 }
 
-/* Core/module installation error messages. */
-
 .messages--error p.error {
   color: #333;
 }
-
-/* System status report. */
 
 .ok,
 .messages--status {
@@ -1075,21 +658,15 @@ table {
   color: #8c2e0b;
 }
 
-/**
- * Tabs.
- */
-
-/* Basic positioning styles shared by primary and secondary tabs. */
-
 .tabs-primary,
 .tabs-secondary {
   overflow: hidden;
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(100%, #bbbbbb), color-stop(100%, transparent));
+  background-image: -webkit-linear-gradient(bottom, #bbbbbb 1px,transparent 1px);
   background-image: -webkit-linear-gradient(bottom, #bbbbbb 1px, transparent 1px);
-  background-image: linear-gradient(bottom, #bbbbbb 1px, transparent 1px);
-  /* IE 9 and earlier don't understand gradients. */
+  background-image: linear-gradient(bottom, #bbbbbb 1px,transparent 1px);
   list-style: none;
-  border-bottom: 1px solid #bbbbbb \0/ie;
+  border-bottom: 1px solid #bbb \0/ie;
   margin: 1.5em 0;
   padding: 0 2px;
   white-space: nowrap;
@@ -1100,7 +677,6 @@ table {
 .tabs-secondary__tab,
 .tabs-secondary__tab.is-active {
   float: left;
-  /* LTR */
   margin: 0 3px;
 }
 
@@ -1116,21 +692,18 @@ a.tabs-secondary__tab-link.is-active {
   text-decoration: none;
 }
 
-/* Primary tabs. */
-
 .tabs-primary__tab,
 .tabs-primary__tab.is-active {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  text-shadow: 1px 1px 0 white;
-  border: 1px solid #bbbbbb;
+  text-shadow: 1px 1px 0 #fff;
+  border: 1px solid #bbb;
   border-bottom-color: transparent;
-  /* IE 9 and earlier don't understand gradients. */
   border-bottom: 0 \0/ie;
 }
 
 .is-active.tabs-primary__tab {
-  border-bottom-color: white;
+  border-bottom-color: #fff;
 }
 
 a.tabs-primary__tab-link,
@@ -1156,17 +729,15 @@ a.tabs-primary__tab-link:active,
 a.tabs-primary__tab-link.is-active {
   background-color: transparent;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE9E9E9', endColorstr='#00E9E9E9');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e9e9e9), color-stop(100%, rgba(233, 233, 233, 0)));
-  background-image: -webkit-linear-gradient(#e9e9e9, rgba(233, 233, 233, 0));
-  background-image: linear-gradient(#e9e9e9, rgba(233, 233, 233, 0));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e9e9e9), color-stop(100%, rgba(233,233,233,0)));
+  background-image: -webkit-linear-gradient(#e9e9e9,rgba(233,233,233,0));
+  background-image: -webkit-linear-gradient(#e9e9e9, rgba(233,233,233,0));
+  background-image: linear-gradient(#e9e9e9,rgba(233,233,233,0));
   border-color: #fff;
 }
 
-/* Secondary tabs. */
-
 .tabs-secondary {
   font-size: .9em;
-  /* Collapse bottom margin of ul.primary. */
   margin-top: -1.5em;
 }
 
@@ -1181,7 +752,7 @@ a.tabs-secondary__tab-link.is-active {
   border-radius: 0.75em;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
-  text-shadow: 1px 1px 0 white;
+  text-shadow: 1px 1px 0 #fff;
   background-color: #f2f2f2;
   color: #666;
   padding: 0 .5em;
@@ -1196,17 +767,11 @@ a.tabs-secondary__tab-link:focus {
 
 a.tabs-secondary__tab-link:active,
 a.tabs-secondary__tab-link.is-active {
-  text-shadow: 1px 1px 0 #333333;
+  text-shadow: 1px 1px 0 #333;
   background-color: #666;
   border-color: #000;
   color: #fff;
 }
-
-/**
- * Inline styles.
- */
-
-/* List of links generated by theme_links(). */
 
 .inline {
   display: inline;
@@ -1217,44 +782,26 @@ a.tabs-secondary__tab-link.is-active {
   display: inline;
   list-style-type: none;
   padding: 0 1em 0 0;
-  /* LTR */
 }
-
-/* The inline field label used by the Fences module. */
 
 span.field-label {
   padding: 0 1em 0 0;
-  /* LTR */
 }
-
-/**
- * "More" links.
- */
 
 .more-link {
   text-align: right;
-  /* LTR */
 }
 
 .more-help-link {
   text-align: right;
-  /* LTR */
 }
 
 .more-help-link a {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA7UlEQVR42qWTPQqDQBCFcwSPkCNITpAj5AjeIm1uYpkyR7Cy2Mot7OwsBAsRwUKwmOwLGRle3EIy8PyBfZ/z3J2TiPylz8VWWZZpUB40BonRKyizaxkA88MYYiqCEgv4MTvnZJom0VqWRbz3FlJZgLYtqmEY1Lg9r+sKsIXcLSC3AC019H0vqLquLeC5AfiHYSGkcdAJimKIBQiJ4+CO92OAtm0FNc8zOjkMwE5Q63FAtbeg6zpAYvG8BWR7i5qmQYwY4MIHqYhE2DOPQWcGJBQF2XU72ZzyUeZ5GCNt5/hybJgYdAXsq5sOEE/jG6dC5IOqCXTmAAAAAElFTkSuQmCC');
   background-position: 0 50%;
-  /* LTR */
   background-repeat: no-repeat;
   padding: 1px 0 1px 20px;
-  /* LTR */
 }
-
-/**
- * Pager.
- */
-
-/* A list of page numbers when more than 1 page of content is available. */
 
 .pager {
   clear: both;
@@ -1275,34 +822,13 @@ span.field-label {
   background-image: none;
 }
 
-.pager-item,
-.pager-first,
-.pager-previous,
-.pager-next,
-.pager-last,
-.pager-ellipsis {
-  /* A concatenation of several list items using an ellipsis. */
-}
-
-/* The current page's list item. */
-
 .pager-current {
   font-weight: bold;
 }
 
-/**
- * Blocks.
- */
-
-/* Block wrapper. */
-
 .block {
   margin-bottom: 1.5em;
 }
-
-/**
- * Menus.
- */
 
 .menu__item.is-leaf {
   list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHBAMAAAA2fErgAAAAD1BMVEX///+/v7+Li4sAAADAwMBFvsw8AAAAAXRSTlMAQObYZgAAAB1JREFUCFtjYAADYwMGBmYVZSDhKAwkFJWhYiAAAB2+Aa/9ugeaAAAAAElFTkSuQmCC');
@@ -1316,39 +842,22 @@ span.field-label {
 
 .menu__item.is-collapsed {
   list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABFJREFUCB1jVmCGQClmEWYOAAZ8AMy3HPLXAAAAAElFTkSuQmCC');
-  /* LTR */
   list-style-type: disc;
 }
-
-/* The active item in a Drupal menu. */
 
 .menu a.active {
   color: #000;
 }
 
-/**
- * Marker.
- */
-
-/* The "new" or "updated" marker. */
-
 .new,
 .update {
   color: #c00;
-  /* Remove background highlighting from <mark> in normalize. */
   background-color: transparent;
 }
-
-/**
- * Unpublished note.
- */
-
-/* The word "Unpublished" displayed underneath the content. */
 
 .unpublished {
   height: 0;
   overflow: visible;
-  /* Remove background highlighting from <mark> in normalize. */
   background-color: transparent;
   color: #d8d8d8;
   font-size: 75px;
@@ -1357,31 +866,15 @@ span.field-label {
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-  /* A very nice CSS3 property. */
   word-wrap: break-word;
 }
-
-/**
- * Comments.
- */
-
-/* Wrapper for the list of comments and its title. */
 
 .comments {
   margin: 1.5em 0;
 }
 
-/* Preview of the comment before submitting new or updated comment. */
-
 .comment-preview {
-  /* Drupal core will use a #ffffea background. See #1110842. */
   background-color: #ffffea;
-}
-
-/* Wrapper for a single comment. */
-
-.comment {
-  /* Comment's permalink wrapper. */
 }
 
 .comment .permalink {
@@ -1389,31 +882,16 @@ span.field-label {
   font-size: 75%;
 }
 
-/* Nested comments are indented. */
-
 .indented {
-  /* Drupal core uses a 25px left margin. */
   margin-left: 30px;
-  /* LTR */
 }
-
-/**
- * Forms.
- */
-
-/* Wrapper for a form element (or group of form elements) and its label. */
 
 .form-item {
   margin: 1.5em 0;
-  /* Pack groups of checkboxes and radio buttons closer together. */
-  /* Form items in a table. */
-  /* Highlight the form elements that caused a form submission error. */
-  /* The descriptive help text (separate from the label). */
 }
 
 .form-checkboxes .form-item,
 .form-radios .form-item {
-  /* Drupal core uses "0.4em 0". */
   margin: 0;
 }
 
@@ -1437,20 +915,14 @@ tr.even .form-item {
   margin-left: 2.4em;
 }
 
-/* The part of the label that indicates a required field. */
-
 .form-required {
   color: #c00;
 }
-
-/* Labels for radios and checkboxes. */
 
 label.option {
   display: inline;
   font-weight: normal;
 }
-
-/* Buttons used by contrib modules like Media. */
 
 a.button {
   -webkit-appearance: button;
@@ -1458,35 +930,18 @@ a.button {
   appearance: button;
 }
 
-/* Password confirmation. */
-
 .password-parent,
 .confirm-parent {
   margin: 0;
 }
 
-/* Drupal's default login form block. */
-
 #user-login-form {
   text-align: left;
-  /* LTR */
 }
-
-/**
- * OpenID
- *
- * The default styling for the OpenID login link seems to assume Garland's
- * styling of list items.
- */
-
-/* OpenID creates a new ul above the login form's links. */
 
 .openid-links {
-  /* Position OpenID's ul next to the rest of the links. */
   margin-bottom: 0;
 }
-
-/* The "Log in using OpenID" and "Cancel OpenID login" links. */
 
 .openid-link,
 .user-link {
@@ -1495,24 +950,16 @@ a.button {
 
 html.js #user-login-form li.openid-link,
 #user-login-form li.openid-link {
-  /* Un-do some of the padding on the ul list. */
   margin-left: -20px;
-  /* LTR */
 }
 
 #user-login ul {
   margin: 1.5em 0;
 }
 
-/**
- * Drupal admin tables.
- */
-
 form th {
   text-align: left;
-  /* LTR */
   padding-right: 1em;
-  /* LTR */
   border-bottom: 3px solid #ccc;
 }
 
@@ -1535,58 +982,34 @@ tr.even {
   background-color: #fff;
 }
 
-/* Markup generated by theme_tablesort_indicator(). */
-
 td.active {
   background-color: #ddd;
 }
-
-/* Center checkboxes inside table cell. */
 
 td.checkbox,
 th.checkbox {
   text-align: center;
 }
 
-/* Drupal core wrongly puts this in system.menus.css. Since we override that, add it back. */
-
 td.menu-disabled {
   background: #ccc;
 }
-
-/**
- * Autocomplete.
- *
- * @see autocomplete.js
- */
-
-/* Suggestion list. */
 
 #autocomplete .selected {
   background: #0072b9;
   color: #fff;
 }
 
-/**
- * Collapsible fieldsets.
- *
- * @see collapse.js
- */
-
 html.js .collapsible .fieldset-legend {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABJJREFUeJxj+MdQw2DBIMAABgAUsAHD3c3BpwAAAABJRU5ErkJggg==');
   background-position: 5px 65%;
-  /* LTR */
   background-repeat: no-repeat;
   padding-left: 15px;
-  /* LTR */
 }
 
 html.js .collapsed .fieldset-legend {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABFJREFUCB1jVmCGQClmEWYOAAZ8AMy3HPLXAAAAAElFTkSuQmCC');
-  /* LTR */
   background-position: 5px 50%;
-  /* LTR */
 }
 
 .fieldset-legend .summary {
@@ -1594,12 +1017,6 @@ html.js .collapsed .fieldset-legend {
   font-size: 0.9em;
   margin-left: 0.5em;
 }
-
-/**
- * TableDrag behavior.
- *
- * @see tabledrag.js
- */
 
 tr.drag {
   background-color: #fffff0;
@@ -1613,21 +1030,9 @@ tr.drag-previous {
   font-size: 0.9em;
 }
 
-/**
- * TableSelect behavior.
- *
- * @see tableselect.js
- */
-
 tr.selected td {
   background: #ffc;
 }
-
-/**
- * Progress bar.
- *
- * @see progress.js
- */
 
 .progress {
   font-weight: bold;
@@ -1643,7 +1048,7 @@ tr.selected td {
 
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('progress.gif?1391141943');
+  background-image: url('../images/progress.gif?1393854118');
 }
 
 .image-title,
@@ -2182,36 +1587,15 @@ tr.selected td {
   color: #39f;
 }
 
-/**
- * @file
- * Print styling
- *
- * We provide some sane print styling for Drupal using Zen's layout method.
- */
-
-/**
- * By importing this CSS file as media "all", we allow this print file to be
- * aggregated with other stylesheets, for improved front-end performance.
- */
-
 @media print {
-  /* Underline all links. */
-
   a:link,
   a:visited {
     text-decoration: underline !important;
-    /* Don't underline header. */
   }
 
   a:link.header__site-link,
   a:visited.header__site-link {
     text-decoration: none !important;
-  }
-
-  #content {
-    /* Add visible URL after links. */
-    /* Only display useful links. */
-    /* Add visible title after abbreviations. */
   }
 
   #content a[href]:after {
@@ -2229,16 +1613,12 @@ tr.selected td {
     content: " (" attr(title) ")";
   }
 
-  /* Un-float the content. */
-
   #content {
     float: none !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-
-  /* Turn off any background colors or images. */
 
   body,
   #page,
@@ -2248,8 +1628,6 @@ tr.selected td {
     background-color: transparent !important;
     background-image: none !important;
   }
-
-  /* Hide sidebars and nav elements. */
 
   #skip-link,
   #toolbar,
@@ -2339,8 +1717,6 @@ blockquote {
   margin: 1em 2em;
   padding: 0 0 0 1em;
 }
-
-/* Some basic styling */
 
 #content .burr-flipped-content img {
   border: 1px solid #C2C0C1;
@@ -3220,31 +2596,31 @@ label {
   display: none;
 }
 
-.event-listing .view-empty + .date-nav-wrapper .date-heading,
-.ui-accordion + .date-nav-wrapper .date-heading {
+.event-listing .view-empty+.date-nav-wrapper .date-heading,
+.ui-accordion+.date-nav-wrapper .date-heading {
   display: none;
 }
 
-.event-listing .view-empty + .date-nav-wrapper .date-nav,
-.ui-accordion + .date-nav-wrapper .date-nav {
+.event-listing .view-empty+.date-nav-wrapper .date-nav,
+.ui-accordion+.date-nav-wrapper .date-nav {
   height: auto;
   min-height: 100%;
   margin: 0;
 }
 
-.event-listing .view-empty + .date-nav-wrapper ul,
-.ui-accordion + .date-nav-wrapper ul {
+.event-listing .view-empty+.date-nav-wrapper ul,
+.ui-accordion+.date-nav-wrapper ul {
   list-style: none;
 }
 
-.event-listing .view-empty + .date-nav-wrapper ul li,
-.ui-accordion + .date-nav-wrapper ul li {
+.event-listing .view-empty+.date-nav-wrapper ul li,
+.ui-accordion+.date-nav-wrapper ul li {
   background: none !important;
   padding: 0 !important;
 }
 
-.event-listing .view-empty + .date-nav-wrapper ul li a,
-.ui-accordion + .date-nav-wrapper ul li a {
+.event-listing .view-empty+.date-nav-wrapper ul li a,
+.ui-accordion+.date-nav-wrapper ul li a {
   margin: 0 !important;
   font-weight: bold;
   color: #292929 !important;
@@ -3256,20 +2632,20 @@ label {
   line-height: 20px;
 }
 
-.event-listing .view-empty + .date-nav-wrapper .date-prev,
-.ui-accordion + .date-nav-wrapper .date-prev {
+.event-listing .view-empty+.date-nav-wrapper .date-prev,
+.ui-accordion+.date-nav-wrapper .date-prev {
   left: 0;
   right: auto;
 }
 
-.event-listing .view-empty + .date-nav-wrapper .date-prev a,
-.ui-accordion + .date-nav-wrapper .date-prev a {
+.event-listing .view-empty+.date-nav-wrapper .date-prev a,
+.ui-accordion+.date-nav-wrapper .date-prev a {
   padding-left: 32px !important;
   background: url("../images/arrow-previous.png") no-repeat left center !important;
 }
 
-.event-listing .view-empty + .date-nav-wrapper .date-next a,
-.ui-accordion + .date-nav-wrapper .date-next a {
+.event-listing .view-empty+.date-nav-wrapper .date-next a,
+.ui-accordion+.date-nav-wrapper .date-next a {
   padding-right: 32px !important;
   background: url("../images/arrow-next.png") no-repeat right center !important;
 }
@@ -3517,8 +2893,8 @@ label {
   display: inline-block;
 }
 
-.node-type-poll .pane-os-core-opensource-article-share .addthis_button_tweet + a,
-.node-type-article .pane-os-core-opensource-article-share .addthis_button_tweet + a {
+.node-type-poll .pane-os-core-opensource-article-share .addthis_button_tweet+a,
+.node-type-article .pane-os-core-opensource-article-share .addthis_button_tweet+a {
   position: relative;
   top: -4px;
   width: 80px;
@@ -3552,7 +2928,7 @@ label {
   margin-right: 5px;
 }
 
-.addthis_button_tweet + a {
+.addthis_button_tweet+a {
   position: relative;
   top: -4px;
   width: 80px;
@@ -3602,9 +2978,13 @@ label {
   margin-bottom: 0.769em;
 }
 
-.node-type-resource .pane-os-core-opensource-article-share {
+.node-type-resource #content .pane-os-core-opensource-article-share {
   text-align: center;
   padding: 1em 0;
+}
+
+.node-type-resource #content .pane-os-core-opensource-article-share img {
+  border: none;
 }
 
 .pane-menu-opensource-resources .pane-title {
@@ -4528,7 +3908,7 @@ body[class*='section-'] .view-channel-articles .views-more-link:before {
   display: inline;
 }
 
-.section-category .views-field-body p:last-of-type + a {
+.section-category .views-field-body p:last-of-type+a {
   color: black;
   font-weight: bold;
 }
@@ -4805,6 +4185,12 @@ body.page-search .search-results a:hover {
 [class*="pane-facetapi-"] a:hover {
   color: #39f;
   text-decoration: underline;
+}
+
+.burr-flipped-sidebar .pane-block {
+  background: #FFF;
+  padding: 1em;
+  margin-bottom: 1.5em;
 }
 
 .node_unpublished .burr-flipped-content {
