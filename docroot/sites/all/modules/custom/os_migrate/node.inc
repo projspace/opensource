@@ -501,6 +501,9 @@ class OsMigratePollMigration extends OsMigrateContentBase {
     $row->{'field_poll:active'} = $row->{'field_poll:active'}[0];
     $row->{'field_poll:runtime'} = $row->{'field_poll:runtime'}[0];
 
+    // unset the path
+    unset($row->path);
+
     return TRUE;
   }
 
