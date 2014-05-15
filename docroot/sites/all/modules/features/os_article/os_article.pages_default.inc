@@ -75,6 +75,14 @@ function os_article_default_page_manager_handlers() {
       ),
       'logic' => 'and',
     ),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => '[node:metatag:title]',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'burr_flipped';
@@ -87,7 +95,7 @@ function os_article_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%node:metatag:title';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -337,6 +345,24 @@ function os_article_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-9';
     $pane->panel = 'contentmain';
+    $pane->type = 'articlepollpane';
+    $pane->subtype = 'articlepollpane';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 8;
+    $pane->locks = array();
+    $display->content['new-9'] = $pane;
+    $display->panels['contentmain'][8] = 'new-9';
+    $pane = new stdClass();
+    $pane->pid = 'new-10';
+    $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:body';
     $pane->shown = TRUE;
@@ -371,12 +397,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 8;
+    $pane->position = 9;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['contentmain'][8] = 'new-9';
+    $display->content['new-10'] = $pane;
+    $display->panels['contentmain'][9] = 'new-10';
     $pane = new stdClass();
-    $pane->pid = 'new-10';
+    $pane->pid = 'new-11';
     $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_default_license';
@@ -399,12 +425,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 9;
+    $pane->position = 10;
     $pane->locks = array();
-    $display->content['new-10'] = $pane;
-    $display->panels['contentmain'][9] = 'new-10';
+    $display->content['new-11'] = $pane;
+    $display->panels['contentmain'][10] = 'new-11';
     $pane = new stdClass();
-    $pane->pid = 'new-11';
+    $pane->pid = 'new-12';
     $pane->panel = 'contentmain';
     $pane->type = 'node_terms';
     $pane->subtype = 'node_terms';
@@ -425,12 +451,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 10;
+    $pane->position = 11;
     $pane->locks = array();
-    $display->content['new-11'] = $pane;
-    $display->panels['contentmain'][10] = 'new-11';
+    $display->content['new-12'] = $pane;
+    $display->panels['contentmain'][11] = 'new-12';
     $pane = new stdClass();
-    $pane->pid = 'new-12';
+    $pane->pid = 'new-13';
     $pane->panel = 'contentmain';
     $pane->type = 'node_terms';
     $pane->subtype = 'node_terms';
@@ -451,12 +477,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 11;
+    $pane->position = 12;
     $pane->locks = array();
-    $display->content['new-12'] = $pane;
-    $display->panels['contentmain'][11] = 'new-12';
+    $display->content['new-13'] = $pane;
+    $display->panels['contentmain'][12] = 'new-13';
     $pane = new stdClass();
-    $pane->pid = 'new-13';
+    $pane->pid = 'new-14';
     $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_attachments';
@@ -479,12 +505,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 12;
+    $pane->position = 13;
     $pane->locks = array();
-    $display->content['new-13'] = $pane;
-    $display->panels['contentmain'][12] = 'new-13';
+    $display->content['new-14'] = $pane;
+    $display->panels['contentmain'][13] = 'new-14';
     $pane = new stdClass();
-    $pane->pid = 'new-14';
+    $pane->pid = 'new-15';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'related_articles-panel_pane_1';
@@ -513,12 +539,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 13;
+    $pane->position = 14;
     $pane->locks = array();
-    $display->content['new-14'] = $pane;
-    $display->panels['contentmain'][13] = 'new-14';
+    $display->content['new-15'] = $pane;
+    $display->panels['contentmain'][14] = 'new-15';
     $pane = new stdClass();
-    $pane->pid = 'new-15';
+    $pane->pid = 'new-16';
     $pane->panel = 'contentmain';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -551,12 +577,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 14;
+    $pane->position = 15;
     $pane->locks = array();
-    $display->content['new-15'] = $pane;
-    $display->panels['contentmain'][14] = 'new-15';
+    $display->content['new-16'] = $pane;
+    $display->panels['contentmain'][15] = 'new-16';
     $pane = new stdClass();
-    $pane->pid = 'new-16';
+    $pane->pid = 'new-17';
     $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_tags';
@@ -592,12 +618,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 15;
+    $pane->position = 16;
     $pane->locks = array();
-    $display->content['new-16'] = $pane;
-    $display->panels['contentmain'][15] = 'new-16';
+    $display->content['new-17'] = $pane;
+    $display->panels['contentmain'][16] = 'new-17';
     $pane = new stdClass();
-    $pane->pid = 'new-17';
+    $pane->pid = 'new-18';
     $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_alternative_license';
@@ -633,12 +659,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 16;
+    $pane->position = 17;
     $pane->locks = array();
-    $display->content['new-17'] = $pane;
-    $display->panels['contentmain'][16] = 'new-17';
+    $display->content['new-18'] = $pane;
+    $display->panels['contentmain'][17] = 'new-18';
     $pane = new stdClass();
-    $pane->pid = 'new-18';
+    $pane->pid = 'new-19';
     $pane->panel = 'contentmain';
     $pane->type = 'block';
     $pane->subtype = 'os_core-opensource-article-share';
@@ -654,12 +680,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 17;
+    $pane->position = 18;
     $pane->locks = array();
-    $display->content['new-18'] = $pane;
-    $display->panels['contentmain'][17] = 'new-18';
+    $display->content['new-19'] = $pane;
+    $display->panels['contentmain'][18] = 'new-19';
     $pane = new stdClass();
-    $pane->pid = 'new-19';
+    $pane->pid = 'new-20';
     $pane->panel = 'contentmain';
     $pane->type = 'node_comments';
     $pane->subtype = 'node_comments';
@@ -681,12 +707,12 @@ function os_article_default_page_manager_handlers() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 18;
+    $pane->position = 19;
     $pane->locks = array();
-    $display->content['new-19'] = $pane;
-    $display->panels['contentmain'][18] = 'new-19';
+    $display->content['new-20'] = $pane;
+    $display->panels['contentmain'][19] = 'new-20';
     $pane = new stdClass();
-    $pane->pid = 'new-20';
+    $pane->pid = 'new-21';
     $pane->panel = 'contentmain';
     $pane->type = 'node_comment_form';
     $pane->subtype = 'node_comment_form';
@@ -704,12 +730,12 @@ function os_article_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 19;
+    $pane->position = 20;
     $pane->locks = array();
-    $display->content['new-20'] = $pane;
-    $display->panels['contentmain'][19] = 'new-20';
+    $display->content['new-21'] = $pane;
+    $display->panels['contentmain'][20] = 'new-21';
     $pane = new stdClass();
-    $pane->pid = 'new-21';
+    $pane->pid = 'new-22';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
     $pane->subtype = 'author_info-panel_pane_1';
@@ -743,10 +769,10 @@ function os_article_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-21'] = $pane;
-    $display->panels['sidebar'][0] = 'new-21';
+    $display->content['new-22'] = $pane;
+    $display->panels['sidebar'][0] = 'new-22';
     $pane = new stdClass();
-    $pane->pid = 'new-22';
+    $pane->pid = 'new-23';
     $pane->panel = 'sidebar';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -770,10 +796,10 @@ function os_article_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-22'] = $pane;
-    $display->panels['sidebar'][1] = 'new-22';
+    $display->content['new-23'] = $pane;
+    $display->panels['sidebar'][1] = 'new-23';
     $pane = new stdClass();
-    $pane->pid = 'new-23';
+    $pane->pid = 'new-24';
     $pane->panel = 'sidebar';
     $pane->type = 'panels_mini';
     $pane->subtype = 'common_1';
@@ -791,9 +817,9 @@ function os_article_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-23'] = $pane;
-    $display->panels['sidebar'][2] = 'new-23';
-  $display->hide_title = PANELS_TITLE_PANE;
+    $display->content['new-24'] = $pane;
+    $display->panels['sidebar'][2] = 'new-24';
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context'] = $handler;

@@ -4,6 +4,7 @@ core = 7.x
 package = OpenSource.com Components
 dependencies[] = addthis
 dependencies[] = addthis_displays
+dependencies[] = article_poll_panels
 dependencies[] = bean
 dependencies[] = comment_notify
 dependencies[] = ctools

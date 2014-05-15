@@ -92,7 +92,7 @@ function os_article_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '',
+          'width' => 100,
           'height' => 100,
           'upscale' => 1,
         ),
