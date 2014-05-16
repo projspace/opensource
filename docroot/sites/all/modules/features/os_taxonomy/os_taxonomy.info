@@ -1,0 +1,11 @@
+name = OpenSource Taxonomy
+description = Provides vocabularies for OpenSource.com
+core = 7.x
+package = OpenSource.com Content
+dependencies[] = features
+dependencies[] = taxonomy
+dependencies[] = taxonomy_manager
+features[features_api][] = api:2
+features[taxonomy][] = article_type
+features[taxonomy][] = sections
+features[taxonomy][] = tags

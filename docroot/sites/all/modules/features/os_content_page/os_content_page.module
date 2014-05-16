@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenSource Content Type - Basic Page feature.
+ */
+
+include_once 'os_content_page.features.inc';

@@ -1,0 +1,48 @@
+This is the stock repository you get for using projspace's development cloud.
+There are several web applications and development practices, directory structures
+and deployment guidelines, etc. Prosjapce's stock repo tries to simplify starting a 
+new site by having the most common directory structures and files already included 
+and set up. This apart from providing easy automation techniques for Projspace helps
+in providing a skeleton structure to develop any web application.
+
+* Getting Started
+
+You can start by cloning your project's repo from http://code.projspace.com and you
+get this folder structure in it. You will find readme's in each of the directory.
+
+However to introduce you with some basics here is the introduction to each of the
+folder and what needs to go into them.
+
+docroot
+~~~~~~~
+
+This is the current folder. Your web application's source code should go into this folder.
+Remember to have .htaccess in this folder. Your web application's source code might contain 
+a .gitignore and please move this to the parent dir of the repo i.e. out of docroot and also
+remember to change the entries in .gitignore to reflect the actual path keeping docroot in
+mind.
+
+library
+~~~~~~~
+
+This is the folder where you need to keep in the external libraries if used. For example
+you might want to use mathjax for writing some mathematical expressions, you are encouraged
+to download it and placed in this directory and use it.
+
+patches
+~~~~~~~
+
+Should yo uhave any modifications to the core of the third party web apps, say drupal, it 
+is highly discouraged to edit them directly in the source code. Instead please write a pacth
+to it in this directory and apply the patch.
+
+projspace-utils
+~~~~~~~~~~~~~~~
+
+Finally you will have this directory to keep all projspace related automation scripts. hooks
+and execute them
+
+NOTE: .gitignore is not provided with this repo keeping in mind several webapps and their own
+native .gitignore files. Please get it and use it here in the parent directory
+
+

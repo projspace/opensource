@@ -1,0 +1,11 @@
+name = OpenSource Poll Page
+description = Poll page and other configuration for the Opensource.com
+core = 7.x
+package = OpenSource.com Components
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = poll_panels
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = poll_page
+project path = sites/all/modules/features

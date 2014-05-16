@@ -1,0 +1,55 @@
+.pane-resource-book {
+    &.active {
+        background: url('../images/resources/book-active.png') no-repeat;
+    }
+}
+
+.pane-resource-panda {
+    &.active {
+        background: url('../images/resources/projectandapplications-active.png') no-repeat;
+    }
+}
+
+.pane-resource-organization {
+    &.active {
+        background: url('../images/resources/organizations-active.png') no-repeat;
+    }
+}
+
+.pane-resource-event {
+    &.active {
+        background: url('../images/resources/event-active.png') no-repeat;
+    }
+}
+
+.pane-resource-o-resources {
+    &.active {
+        background: url('../images/resources/resources-active.png') no-repeat;
+    }
+}
+
+.pane-resource-what {
+    &.active {
+        background: url('../images/resources/whatisopensource-active.png') no-repeat;
+    }
+}
+
+
+
+.pane-node-terms {
+    h2 {
+        line-height: 1 !important;
+    }
+
+    .links {
+        list-style: none;
+        line-height: 1;
+
+        li {
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0 5px;
+        }
+    }
+}

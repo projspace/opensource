@@ -1,0 +1,820 @@
+<?php
+/**
+ * @file
+ * Code for the OS core functionality.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function os_core_block_info() {
+  $blocks = array();
+  $blocks['opensource-social-links'] = array(
+    'info' => 'opensource: Social Links and subscription',
+  );
+  $blocks['opensource-article-share'] = array(
+    'info' => 'opensource: Social Share link',
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function os_core_block_view($delta = '') {
+  $block = NULL;
+  // The $delta parameter tells us which block is being requested.
+  switch ($delta) {
+    case 'opensource-social-links':
+      $block = array(
+        'subject' => '<none>',
+        'content' => os_core_display_social_block(),
+      );
+      break;
+
+    case 'opensource-article-share':
+      $block = array(
+        'subject' => '<none>',
+        'content' => os_core_display_social_share_icons(),
+      );
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Generate block for social links and email subscription.
+ */
+function os_core_display_social_block() {
+  $links = array();
+  $links['twitter'] = array(
+    'href' => 'http://twitter.com/opensourceway',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/twitter.jpg')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['facebook'] = array(
+    'href' => 'http://facebook.com/pages/opensourcecom/162962298056',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/facebook.jpg')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['gplus'] = array(
+    'href' => 'https://plus.google.com/108750398488318674353',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/gplus.png')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['flickr'] = array(
+    'href' => 'http://www.flickr.com/photos/opensourceway',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/flickr_24x24.jpg')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['youtube'] = array(
+    'href' => 'http://www.youtube.com/opensourceway',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/youtube.jpg')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['pinterest'] = array(
+    'href' => 'http://pinterest.com/opensourceway/',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/pinterest.png')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['linkedin'] = array(
+    'href' => 'http://www.linkedin.com/groups/Open-Source-Professionals-Advocates-2769297?gid=2769297',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/in.jpg')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $links['rss'] = array(
+    'href' => 'http://opensource.com/feed',
+    'title' => theme('image', array('path' => 'sites/all/themes/opensource/images/footer-social/osdc_rss_24x24.png')),
+    'attributes' => array('target' => '_blank'),
+    'html' => TRUE,
+  );
+  $output = theme('links', array(
+      'links' => $links,
+      'attributes' => array('class' => array('social-links', 'inline')),
+    )
+  );
+
+  $output .= '<div class="signup-email-title">' . t('Sign-up for weekly email') . '</div>';
+  $eloqua_form = drupal_get_form('os_core_eloqua_form');
+  $output .= render($eloqua_form);
+  return $output;
+}
+
+/**
+ * Implements hook_init().
+ */
+function os_core_init() {
+  if (array_key_exists('success', $_REQUEST)) {
+    drupal_set_message(t('Thank you. You have been subscribed to our weekly email.'));
+  }
+}
+
+/**
+ * Build the form for Eloqua email subscription.
+ */
+function os_core_eloqua_form($form, &$form_submit) {
+  // Build the Redirect.
+  $redirect = url('thank-you-subscription', array('absolute' => TRUE));
+
+  $form['C_EmailAddress'] = array(
+    '#type' => 'textfield',
+    '#default_value' => '',
+    '#size' => 24,
+    '#maxlength' => 96,
+  );
+  $form['elqFormName'] = array(
+    '#type' => 'hidden',
+    '#value' => 'opensourcedotcom-subscription',
+  );
+
+  $form['elqSiteID'] = array(
+    '#type' => 'hidden',
+    '#value' => 1795,
+  );
+
+  $form['sendToURL'] = array(
+    '#type' => 'hidden',
+    '#value' => check_url($redirect),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Sign Up'),
+  );
+  $form['#action'] = 'https://secure.eloqua.com/e/f2.aspx';
+  $form['#id'] = 'opensourcedotcom-subscription';
+
+  return $form;
+}
+
+/**
+ * Validation for eloqua email subscription form.
+ */
+function os_core_eloqua_form_validate($form, &$form_state) {
+  if ($form_state['values']['c_EmailAddress'] == '') {
+    form_set_error('name', t('You must enter a valid email address.'));
+  }
+}
+
+/**
+ * Generate the social share icons.
+ */
+function os_core_display_social_share_icons() {
+  $social_buttons = '';
+  $node = node_load(filter_xss(arg(1)));
+  $title = urlencode($node->title);
+
+  $url = url("node/" . $node->nid, array("absolute" => TRUE));
+  $social_buttons .= '<a class="addthis_button_tweet"></a>';
+
+  $url = url("node/" . $node->nid, array("absolute" => TRUE));
+  $url_enc = urlencode($url);
+
+  $url = url("node/" . $node->nid, array("absolute" => TRUE));
+  $url_enc = urlencode($url);
+  $social_buttons .= ' <a href="http://reddit.com/submit?url=' . $url_enc . '&title=' . $title . '" onclick="window.location = \'http://reddit.com/submit?url=' . $url_enc . '&title=' . $title . '\'; return false"><img src="http://reddit.com/static/spreddit7.gif" alt="submit to reddit" border="0" /></a>';
+
+  $url = url("node/" . $node->nid, array("absolute" => TRUE));
+  $social_buttons .= ' <script src="http://www.stumbleupon.com/hostedbadge.php?s=1&r=' . $url . '"></script>';
+
+  $social_buttons .= '<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>';
+
+  $social_buttons .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
+
+  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52fdaa9e37dcc3ed"></script>';
+
+  return $social_buttons;
+}
+
+/**
+ * Fetch the social share icons on the event list.
+ */
+function os_core_display_social_share_icons_event_list($nid) {
+  $social_buttons = '';
+  $node = node_load($nid);
+  $title = urlencode($node->title);
+
+  $url = url("node/" . $node->nid, array("absolute" => TRUE));
+  $social_buttons .= '<a class="addthis_button_tweet"></a>';
+
+  $url = url("node/" . $node->nid, array("absolute" => TRUE));
+  $url_enc = urlencode($url);
+
+  $url = url("node/" . $node->nid, array("absolute" => TRUE));
+  $url_enc = urlencode($url);
+  $social_buttons .= ' <a href="http://reddit.com/submit?url=' . $url_enc . '&title=' . $title . '" onclick="window.location = \'http://reddit.com/submit?url=' . $url_enc . '&title=' . $title . '\'; return false"><img src="http://reddit.com/static/spreddit7.gif" alt="submit to reddit" border="0" /></a>';
+
+  $url = url("node/" . $node->nid, array("absolute" => TRUE));
+  $social_buttons .= ' <script src="http://www.stumbleupon.com/hostedbadge.php?s=1&r=' . $url . '"></script>';
+
+  $social_buttons .= '<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>';
+
+  $social_buttons .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
+
+  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52fdaa9e37dcc3ed"></script>';
+
+  return $social_buttons;
+}
+
+/**
+ * Implements hook_element_info().
+ */
+function os_core_element_info_alter(&$type) {
+  $type['select_or_other']['#process'][0] = 'os_core_select_or_other_element_process';
+}
+
+/**
+ * Process callback for a Select (or other) element.
+ */
+function os_core_select_or_other_element_process($element, &$form_state) {
+  $element['#tree'] = TRUE;
+  $element['#processed'] = TRUE;
+
+  unset($element['#type']);
+
+  // Load the JS file to hide/show the 'other' box when needed.
+  $element['#attached']['js'][] = drupal_get_path('module', 'select_or_other') . '/select_or_other.js';
+
+  // Create the main select box
+  // Note that #title, #title_display, #default_value, #disabled, #multiple,
+  // #required, #size, #options, and #attributes are passed to the select box
+  // from the main element automatically.
+  $element['select'] = array(
+    '#type' => $element['#select_type'],
+    '#title' => $element['#title'],
+    '#title_display' => $element['#title_display'],
+    '#default_value' => $element['#default_value'],
+    '#disabled' => $element['#disabled'],
+    '#multiple' => $element['#multiple'],
+    '#required' => $element['#required'],
+    '#size' => isset($element['#size']) ? $element['#size'] : NULL,
+    '#options' => $element['#options'],
+    '#attributes' => $element['#attributes'],
+    '#weight' => 10,
+  );
+
+  if (isset($element['#empty_value'])) {
+    $element['select']['#empty_value'] = $element['#empty_value'];
+  };
+
+  // Remove the default value on the container level so it doesn't get rendered
+  // there.
+  $element['#value'] = NULL;
+  // Remove the required parameter so FAPI doesn't force us to fill in the
+  // textfield.
+  $element['#required'] = NULL;
+
+  // Now we must handle the default values.
+  $other_default = array();
+
+  // Easier to work with the defaults if they are an array.
+  if (!is_array($element['select']['#default_value'])) {
+    $element['select']['#default_value'] = array(
+      $element['select']['#default_value'],
+    );
+  }
+  // Process the default value.
+  foreach ($element['select']['#default_value'] as $key => $val) {
+    if ($val
+      && isset($element['select']['#options'])
+      && is_array($element['select']['#options'])
+      && !select_or_other_multi_array_key_exists($val, $element['select']['#options'])
+      && !in_array($val, $element['select']['#options'])) {
+
+      // Not a valid option - add it to 'other'.
+      if ($element['#other_unknown_defaults'] == 'other') {
+
+        if ($element['#other_delimiter']) {
+          $other_default[] = $val;
+        }
+        else {
+          $other_default = array($val);
+        }
+        // Remove it from the select's default value.
+        unset($element['select']['#default_value'][$key]);
+
+      }
+      // Also checks 'available' because if that setting is newly set, after
+      // data is already stored, it should behave like 'append'.
+      elseif ($element['#other_unknown_defaults'] == 'append' || $element['#other_unknown_defaults'] == 'available') {
+        $element['select']['#options'][$val] = $val;
+      }
+
+    }
+  }
+  // If the expected default value is a string/integer, remove the array
+  // wrapper.
+  if ($element['#select_type'] == 'radios' || ($element['#select_type'] == 'select' && !$element['#multiple'])) {
+    $element['select']['#default_value'] = reset($element['select']['#default_value']);
+  }
+
+  $other_default_string = '';
+  if (!empty($other_default)) {
+    $other_default_string = implode($element['#other_delimiter'], $other_default);
+    if (is_array($element['select']['#default_value'])) {
+      $element['select']['#default_value'][] = 'select_or_other';
+    }
+    else {
+      $element['select']['#default_value'] = 'select_or_other';
+    }
+  }
+
+  // Add in the 'other' option.
+  $element['select']['#options']['select_or_other'] = $element['#other'];
+
+  // Create the 'other' textfield.
+  $element['other'] = array(
+    '#type' => 'textarea',
+    '#weight' => 20,
+    '#rows' => 5,
+    '#format' => 'panopoly_wysiwyg_text',
+    '#default_value' => $other_default_string,
+    '#disabled' => $element['#disabled'],
+    '#attributes' => $element['#attributes'],
+  );
+
+  // Populate properties set specifically as #select_property or #other_property
+  $sub_elements = array('select', 'other');
+  foreach ($sub_elements as $sub_element) {
+    foreach ($element as $key => $value) {
+      if (strpos($key, '#' . $sub_element . '_') === 0) {
+        $element[$sub_element][str_replace('#' . $sub_element . '_', '#', $key)] = $value;
+      }
+    }
+    // Also add in a custom class for each.
+    $element[$sub_element]['#attributes']['class'][] = 'select-or-other-' . $sub_element;
+  }
+  if (!empty($element['#maxlength'])) {
+    $element['other']['#maxlength'] = $element['#maxlength'];
+  }
+  if (isset($element['#other_size'])) {
+    $element['other']['#size'] = $element['#other_size'];
+  }
+  // Hide the title from the wrapper.
+  $element['#title'] = NULL;
+
+  return $element;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * This adds a Login/Register link for anonymous users.
+ */
+function os_core_form_comment_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  if (!$user->uid) {
+    unset($form['author']['homepage']);
+    $form['login-register'] = array(
+      '#type' => 'item',
+      '#markup' => l(t('Login or Register'), 'user', array('query' => array('destination' => drupal_get_destination()))) . ' ' . t('to earn points for your comments.'),
+      '#weight' => -10,
+    );
+    // Calling custom validate function. snippet copied from comment.module
+    $form['#validate'][0] = 'os_core_comment_validate';
+  }
+}
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Adds the required JS for Add Article page.
+ */
+function os_core_form_article_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module', 'os_core') . '/os_core.js');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Adds a submit handler for search form.
+ */
+function os_core_form_search_block_form_alter(&$form, &$form_state) {
+  if (variable_get('search_default_module') == 'apachesolr_search') {
+    if (arg(0) == 'search' && arg(2) != NULL) {
+      $form['search_block_form']['#default_value'] = filter_xss(arg(2));
+    }
+    $form['#submit'][] = 'os_core_form_search_submit';
+  }
+}
+
+/**
+ * Added form submit function to retain filters.
+ *
+ * @see apachesolr_search_form_search_form_alter()
+ */
+function os_core_form_search_submit($form, &$form_state) {
+  $fv = $form_state['values'];
+  // Replace keys with their rawurlencoded value.
+  if (isset($fv['search_block_form'])) {
+    $raw_keys = str_replace('/', '%2f', $fv['search_block_form']);
+    if (filter_xss(arg(0)) == 'search' && filter_xss(arg(1)) == 'users') {
+      $form_state['redirect'] = 'search/users/' . $raw_keys;
+    }
+    else {
+      $form_state['redirect'] = 'search/apachesolr_search/' . $raw_keys;
+    }
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function os_core_views_query_alter(&$view, &$query) {
+  if ($view->name == 'admin_views_user' && $view->current_display == 'panel_pane_1') {
+    $query->where[0]['conditions'][0]['value'] = '%' . $query->where[0]['conditions'][0]['value'] . '%';
+    $query->where[0]['conditions'][0]['operator'] = 'LIKE';
+    /*
+    foreach ($query->where as &$where) {
+      foreach ($where['conditions'] as &$condition) {
+        if (!empty($condition['value']) && is_scalar($condition['value'])) {
+          $value = $condition['value'];
+          $arg_key = drupal_substr($value,1);
+          if (drupal_substr($value, 0,1) == '!' && is_numeric($arg_key)) {
+            if (!empty($view->args[$arg_key-1])) {
+              $condition['value'] = $view->args[$arg_key-1];
+            }
+            else {
+              $condition['operator'] = 'IS NULL';
+            }
+          }
+        }
+      }
+    }
+    */
+  }
+}
+
+/**
+ * Implements hook_menu_local_task_alter().
+ */
+function os_core_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  if (arg(0) == 'search' && (arg(1) == 'users' || arg(1) == 'apachesolr_search') && arg(2) != NULL) {
+    unset($data['tabs'][0]['output'][1]);
+    unset($data['tabs'][0]['output'][2]);
+    $data['tabs'][0]['output'][0]['#link']['href'] = $data['tabs'][0]['output'][0]['#link']['href'] . '/' . filter_xss(arg(2));
+    $data['tabs'][0]['output'][3]['#link']['href'] = $data['tabs'][0]['output'][3]['#link']['href'] . '/' . filter_xss(arg(2));
+  }
+}
+/**
+ * Implements hook_module_implements_alter().
+ */
+function os_core_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter') {
+    $group = $implementations['os_core'];
+    unset($implementations['os_core']);
+    $implementations['os_core'] = $group;
+  }
+}
+/**
+ * Implements hook_form_alter().
+ */
+function os_core_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  $node_types = array('article_node_form', 'poll_node_form',
+    'resource_node_form', 'event_node_form');
+  if (in_array($form_id, $node_types)) {
+    $form['workflow_tab'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Article Workflow'),
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+      '#group' => 'additional_settings',
+      '#weight' => 7,
+      '#description' => t('Workflow state settings'),
+    );
+    $form['workflow_tab'][LANGUAGE_NONE][0] = $form['workflow'];
+    $form['#submit'][] = 'os_core_node_workflow_submit';
+
+    if (!user_access('access workflow summary views')) {
+      $form['workflow_tab']['#access'] = FALSE;
+    }
+    unset($form['workflow']);
+  }
+  if ($form_id == 'mollom_report_form') {
+    $form['#submit'][1] = 'os_core_mollom_report_submit';
+  }
+  if ($form_id == 'user_register_form') {
+    $form['legal']['#weight'] = 10;
+    $form['mollom']['#weight'] = 200;
+  }
+  if ($form_id == 'user_login') {
+    $form['name']['#description'] = str_replace("an username", "a username", $form['name']['#description']);
+  }
+  if($form_id == 'user_register_form' && user_access('administer users')) {
+    $form['legal']['legal_accept']['#default_value'] = 1;
+    unset($form['legal']['legal_accept']['#attributes']['disabled']);
+  }
+}
+
+/**
+ * Custom submit handler for report to mollom form.
+ */
+function os_core_mollom_report_submit($form, &$form_state) {
+  if ($form_state['values']['confirm']) {
+    $entity = $form_state['values']['entity'];
+    $id = $form_state['values']['id'];
+
+    // Load the Mollom session data.
+    $data = mollom_data_load($entity, $id);
+
+    // Send feedback to Mollom, if we have session data.
+    if ((!empty($data->contentId) || !empty($data->captchaId)) && !empty($form_state['values']['mollom']['feedback'])) {
+      if (_mollom_send_feedback($data, $form_state['values']['mollom']['feedback'])) {
+        drupal_set_message(t('The content was successfully reported as inappropriate.'));
+      }
+    }
+
+    // Delete the content. The callback should take care of proper deletion and
+    // cache clearing on its own.
+    foreach (mollom_form_list() as $form_id => $info) {
+      if (!isset($info['entity']) || $info['entity'] != $entity) {
+        continue;
+      }
+      if (($info['entity'] == 'comment') && ($entity == $info['entity'])) {
+        comment_delete($id);
+      }
+      // If there is a 'report delete callback', invoke it.
+      if (isset($info['report delete callback']) && function_exists($info['report delete callback'])) {
+        $function = $info['report delete callback'];
+        $function($entity, $id);
+        break;
+      }
+    }
+    $form_state['redirect'] = '<front>';
+  }
+}
+
+/**
+ * Custom validator function for the comment form.
+ * This snippet is taken from comment.module line 2120.
+ * This snippet will avoid homepage validation from validation function.
+ */
+function os_core_comment_validate(&$form, &$form_state) {
+  global $user;
+
+  entity_form_field_validate('comment', $form, $form_state);
+
+  if (!empty($form_state['values']['cid'])) {
+    // Verify the name in case it is being changed from being anonymous.
+    $account = user_load_by_name($form_state['values']['name']);
+    $form_state['values']['uid'] = $account ? $account->uid : 0;
+
+    if ($form_state['values']['date'] && strtotime($form_state['values']['date']) === FALSE) {
+      form_set_error('date', t('You have to specify a valid date.'));
+    }
+    if ($form_state['values']['name'] && !$form_state['values']['is_anonymous'] && !$account) {
+      form_set_error('name', t('You have to specify a valid author.'));
+    }
+  }
+  elseif ($form_state['values']['is_anonymous']) {
+    // Validate anonymous comment author fields (if given). If the (original)
+    // author of this comment was an anonymous user, verify that no registered
+    // user with this name exists.
+    if ($form_state['values']['name']) {
+      $query = db_select('users', 'u');
+      $query->addField('u', 'uid', 'uid');
+      $taken = $query
+        ->condition('name', db_like($form_state['values']['name']), 'LIKE')
+        ->countQuery()
+        ->execute()
+        ->fetchField();
+      if ($taken) {
+        form_set_error('name', t('The name you used belongs to a registered user.'));
+      }
+    }
+  }
+  if ($form_state['values']['mail'] && !valid_email_address($form_state['values']['mail'])) {
+    form_set_error('mail', t('The e-mail address you specified is not valid.'));
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function os_core_views_pre_render(&$view) {
+  global $base_url;
+  switch ($view->name) {
+    case 'user_points_report':
+      $link_text = $base_url . $view->field['uid']->options['alter']['text'];
+      $view->field['uid']->options['alter']['text'] = $link_text;
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_user_insert().
+ */
+function os_core_user_insert(&$edit, $account, $category) {
+  global $user;
+  global $language;
+
+  if(user_access('administer users')) {
+    $conditions = legal_get_conditions($language->language);
+    if (empty($conditions['conditions'])) {
+      return;
+    }
+    // Record the accepted state before removing legal_accept from $edit.
+    $accepted             = TRUE;
+    $edit['legal_accept'] = NULL;
+    $edit['conditions']   = NULL;
+
+    foreach ($conditions['extras'] as $key => $label) {
+      $edit[$key] = NULL;
+    }
+    db_insert('legal_accepted')
+      ->fields(array(
+        'version'  => $conditions['version'],
+        'revision' => $conditions['revision'],
+        'language' => $conditions['language'],
+        'uid'      => $account->uid,
+        'accepted' => time(),
+      ))
+      ->execute();
+  }
+}
+
+function os_core_change_resource_lead_image() {
+  $filepath = drupal_get_path('module', 'os_core') . '/images/';
+  $resource_nodes = array('resources/what-open-source', 'resources/ebooks', 'resources/projects-and-applications', 'resources/organizations');
+  $result = db_query(
+    "SELECT n.nid
+      FROM {node} n
+      WHERE n.type = 'resource' AND n.status = 1"
+  );
+  $dataset = array();
+  foreach ($result as $row) {
+    $alias = drupal_get_path_alias('node/'. $row->nid);
+    if(in_array($alias, $resource_nodes)) {
+      $node = node_load($row->nid);
+      $filename = str_replace('/', '-', $alias) . '.png';
+      $fid = os_base_file_create($filepath . $filename, 'public://resources/');
+      $node->field_lead_image[LANGUAGE_NONE]['0']['fid'] = $fid;
+      field_attach_update('node', $node);
+    }
+  }
+}
+
+/**
+ * Process workflow state for new nodes.
+ */
+function os_core_node_workflow_submit($form, &$form_state) {
+  $values = $form_state['values'];
+  if (empty($values['nid'])) {
+    $status = os_core_get_node_status_workflow($values['workflow_sid']);
+    $form_state['input']['status'] = $form_state['values']['status'] = $status;
+  }
+}
+
+/**
+ * Implements hook_workflow().
+ */
+function os_core_workflow($op, $old_sid, $new_sid, $entity, $force = FALSE, $entity_type = '', $field_name = '') {
+  if ($op == 'transition post') {
+    $node_status = os_core_get_node_status_workflow($entity->workflow);
+    $is_new = !empty($entity->is_new);
+
+    // Skip processing new nodes. We are handling them in form submit anyway.
+    if (!$is_new && $entity->status != $node_status) {
+      // Change state and save.
+      $entity->status = $node_status;
+      node_save($entity);
+    }
+  }
+}
+
+/**
+ * Get the label for workflow state from sid.
+ *
+ * @param int $workflow_sid
+ *   Workflow State ID for which the node status is to be determined.
+ */
+function os_core_get_node_workflow_state($workflow_sid) {
+  static $article_workflow_states = array();
+
+  if (empty($article_workflow_states)) {
+    $article_workflow = workflow_load_by_name('Article Workflow');
+    foreach ($article_workflow->getStates(FALSE) as $sid => $state) {
+      $article_workflow_states[$sid] = $state->label();
+    }
+  }
+
+  return $article_workflow_states[$workflow_sid];
+}
+
+/**
+ * Determine the node status depending on the entity's workflow state.
+ *
+ * @param int $workflow_sid
+ *   Workflow State ID for which the node status is to be determined.
+ */
+function os_core_get_node_status_workflow($workflow_sid) {
+  $states = array(
+    'Review' => 0,
+    'Published' => 1,
+  );
+
+  return $states[os_core_get_node_workflow_state($workflow_sid)];
+}
+
+/**
+ * Implements hook_xmlsitemap_link_alter().
+ */
+function os_core_xmlsitemap_link_alter(&$link) {
+  $content_types = array(
+    'article',
+    'event',
+    'poll'
+  );
+  if (in_array($link['subtype'], $content_types)) {
+    if($link['changefreq'] == 0) {
+      $link['changefreq'] = XMLSITEMAP_FREQUENCY_YEARLY;
+    }
+  }
+}
+
+/**
+ * Generates the menu items for the resource page resource menu.
+ */
+function os_core_generate_resource_resource_page_menu_items() {
+  module_load_include('inc', 'menu', 'menu.admin');
+  $args = array('build_info' => array('args' => array('add', array(), array())));
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'What is OpenSource',
+      'link_path' => 'resources/what-open-source',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/whatisopensource.png',
+      'use_icon_logo' => 1,
+      'weight' => -50,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Conferences and Events',
+      'link_path' => 'resources/conferences-and-events-monthly',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/event.png',
+      'use_icon_logo' => 1,
+      'weight' => -40,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'OpenSource Books',
+      'link_path' => 'resources/ebooks',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/book.png',
+      'use_icon_logo' => 1,
+      'weight' => -30,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Project And Applications',
+      'link_path' => 'resources/projects-and-applications',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/projectandapplications.png',
+      'use_icon_logo' => 1,
+      'weight' => -20,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+
+  $form_state = array(
+    'values' => array(
+      'link_title' => 'Organizations',
+      'link_path' => 'resources/organizations',
+      'menu_name' => 'menu-opensource-resources',
+      'parent' => 'menu-opensource-resources:0',
+      'image_style' => 'resource_menu_image',
+      'icon_path' => 'sites/all/modules/custom/os_core/images/organizations.png',
+      'use_icon_logo' => 1,
+      'weight' => -10,
+    ),
+  ) + $args;
+  drupal_form_submit('menu_edit_item', $form_state);
+}

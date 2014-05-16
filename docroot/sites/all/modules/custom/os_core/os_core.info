@@ -1,0 +1,17 @@
+name = OpenSource Core
+description = Configures the system and adds/modifies various content for OpenSource.com.
+core = 7.x
+package = OpenSource.com Custom
+
+dependencies[] = menu
+dependencies[] = metatag
+dependencies[] = taxonomy
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = legal
+dependencies[] = os_base
+dependencies[] = os_taxonomy_channel
+dependencies[] = os_taxonomy
+dependencies[] = os_common_components
+dependencies[] = os_user_page
+dependencies[] = os_workflow

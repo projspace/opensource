@@ -1,0 +1,12 @@
+#!/bin/bash
+#Use this script for executing operations on the dev instance after 
+#the code is deployed via projspace. This does not combine with
+#git's deployhook. This only gets executed while you choose a version
+#via projspace's UI.
+
+#Put all of your actions before #EOF.
+
+
+
+#EOF
+

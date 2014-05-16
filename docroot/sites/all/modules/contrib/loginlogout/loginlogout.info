@@ -1,0 +1,14 @@
+name = loginlogout
+description = Replaces any link to just user/login with user/login?destination=destination so user returns from whence they came. Verifies user has access to logout place, else returns then to homepage. Nice with lightbox login! 
+core = 7.x
+
+files[] = loginlogout.admin.inc
+files[] = loginlogout.install
+files[] = loginlogout.module
+
+; Information added by drupal.org packaging script on 2013-09-30
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "loginlogout"
+datestamp = "1380585313"
+

@@ -1,0 +1,9 @@
+name = OpenSource Group Page
+description = Panel display for the Group page content type.
+core = 7.x
+package = OpenSource.com Components
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = group_page
+features_exclude[dependencies][ctools] = ctools
+features_exclude[dependencies][page_manager] = page_manager

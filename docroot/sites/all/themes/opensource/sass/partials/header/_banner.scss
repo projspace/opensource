@@ -1,0 +1,67 @@
+.header__site-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.red__site-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 135px;
+    height: 70px;
+}
+
+.header-banner {
+    position: relative;
+    height: 128px;
+    background: url('../images/banner.png') no-repeat bottom center;
+
+    .region-header {
+        clear: none;
+        float: right;
+        position: relative;
+        z-index: 9;
+
+        #block-search-form {
+            margin-top: 13px;
+
+        }
+    }
+
+    .form-item-search-block-form {
+        float: right !important;
+        margin: 0;
+    }
+
+    .form-action {
+        float: left;
+    }
+
+    input[type="text"] {
+        border: none;
+        line-height: 21px;
+        height: 24px;
+        width: 120px;
+        color: #999;
+        font-size: 14px;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    input[type="submit"] {
+        border: none;
+        text-indent: -9999px;
+        background: transparent;
+        width: 30px;
+        line-height: 21px;
+        height: 24px;
+        margin: 0;
+    }
+
+    .header__name-and-slogan {
+        text-indent: -9999px;
+    }
+}

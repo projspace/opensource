@@ -1,0 +1,41 @@
+diff --git a/legal.module b/legal.module
+index c541df7..25acb9b 100644
+--- a/legal.module
++++ b/legal.module
+@@ -141,6 +141,18 @@ function legal_display_fields($conditions) {
+
+   switch (variable_get('legal_display', '0')) {
+     case 1: // Scroll box (CSS).
++      $form['legal']['conditions'] = array(
++        '#markup' => filter_xss_admin($conditions['conditions']),
++        '#attached' => array(
++          'css' => array(
++            drupal_get_path('module', 'legal') . '/legal.css',
++          ),
++        ),
++        '#prefix' => '<div class="legal-terms">',
++        '#suffix' => '</div>',
++      );
++      break;
++
+     case 2: // HTML.
+       $form['legal']['conditions'] = array(
+         '#markup' => check_markup($conditions['conditions'], $conditions['format']),
+@@ -269,8 +281,6 @@ function legal_form_user_register_form_alter(&$form, &$form_state) {
+       }
+     }
+   }
+-
+-  return theme('legal_display', array('form' => $form));
+ }
+
+ /**
+@@ -381,8 +391,6 @@ function legal_form_user_profile_form_alter(&$form, $form_state) {
+       }
+     }
+   }
+-
+-  return theme('legal_display', array('form' => $form));
+ }
+
+ /**

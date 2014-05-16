@@ -1,0 +1,12 @@
+diff --git a/migrate_webform.migrate.inc b/migrate_webform.migrate.inc
+index 8015d74..d7fd202 100644
+--- a/migrate_webform.migrate.inc
++++ b/migrate_webform.migrate.inc
+@@ -29,6 +29,7 @@ function migrate_webform_migrate_api() {
+    * Node migration
+    */
+   if (variable_get('migrate_webform_node_map_ok', TRUE)) {
++    $common_arguments['node_migrations'] = array('WebformNode');
+     $roles = migrate_webform_get_roles();
+     $node_arguments = array(
+       array(

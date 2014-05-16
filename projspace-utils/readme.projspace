@@ -1,0 +1,32 @@
+Projspace Utils is a collection of scripts which can be run on demand or configured
+as hooks. 
+
+Contents and description:
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+deploy.php:
+~~~~~~~~~~~
+
+This is not executed as a hook for projspace but a git hook. This is not
+needed to be inside docroot. It is given just as an example.
+
+dev-postDeployHook:
+~~~~~~~~~~~~~~~~~~~
+
+This is a projspace's post deploy hook for dev environment. This hook is
+run after the desired branch/tag of code is deployed onto the dev env.
+You can find examples as comments inside the script.
+
+test-postDeployHook:
+~~~~~~~~~~~~~~~~~~~~
+
+This is a projspace's post deploy hook for test environment. This hook is
+run after the desired branch/tag of code is deployed onto the test env.
+You can find examples as comments inside the script.
+
+prod-postDeployHook:
+~~~~~~~~~~~~~~~~~~~~
+
+This is a projspace's post deploy hook for prod environment. This hook is
+run after the desired branch/tag of code is deployed onto the prod env.
+You can find examples as comments inside the script.

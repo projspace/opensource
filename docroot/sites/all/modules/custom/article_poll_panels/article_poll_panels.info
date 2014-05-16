@@ -1,0 +1,6 @@
+name = Article Poll Panels
+description = Provides a better integration of poll and panels.
+core = 7.x
+dependencies[] = poll
+dependencies[] = panels
+dependencies[] = ctools

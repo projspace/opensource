@@ -1,0 +1,21 @@
+#block-menu-menu-footer {
+    float: left;
+
+    ul {
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+        clear: both;
+        overflow: hidden;
+    }
+
+    li {
+        list-style: none;
+        float: left;
+        padding-right: 10px;
+        border-right: 1px solid #797979;
+        margin-right: 10px;
+        line-height: 12px;
+    }
+}
+
