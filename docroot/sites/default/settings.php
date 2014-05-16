@@ -499,28 +499,28 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * the Drupal system log.
  *
  * You can choose to return a fast 404 page earlier for missing pages (as soon
- * as settings.php is loaded) by uncommenting the line below. This speeds up
- * server response time when loading 404 error pages and prevents the 404 error
- * from being logged in the Drupal system log. In order to prevent valid pages
- * such as image styles and other generated content that may match the
- * '404_fast_html' regular expression from returning 404 errors, it is necessary
- * to add them to the '404_fast_paths_exclude' regular expression above. Make
- * sure that you understand the effects of this feature before uncommenting the
- * line below.
- */
+* as settings.php is loaded) by uncommenting the line below. This speeds up
+* server response time when loading 404 error pages and prevents the 404 error
+* from being logged in the Drupal system log. In order to prevent valid pages
+* such as image styles and other generated content that may match the
+* '404_fast_html' regular expression from returning 404 errors, it is necessary
+* to add them to the '404_fast_paths_exclude' regular expression above. Make
+* sure that you understand the effects of this feature before uncommenting the
+* line below.
+*/
 # drupal_fast_404();
 
 /**
- * External access proxy settings:
- *
- * If your site must access the Internet via a web proxy then you can enter
- * the proxy settings here. Currently only basic authentication is supported
- * by using the username and password variables. The proxy_user_agent variable
- * can be set to NULL for proxies that require no User-Agent header or to a
- * non-empty string for proxies that limit requests to a specific agent. The
- * proxy_exceptions variable is an array of host names to be accessed directly,
- * not via proxy.
- */
+* External access proxy settings:
+*
+* If your site must access the Internet via a web proxy then you can enter
+* the proxy settings here. Currently only basic authentication is supported
+* by using the username and password variables. The proxy_user_agent variable
+* can be set to NULL for proxies that require no User-Agent header or to a
+* non-empty string for proxies that limit requests to a specific agent. The
+* proxy_exceptions variable is an array of host names to be accessed directly,
+* not via proxy.
+*/
 # $conf['proxy_server'] = '';
 # $conf['proxy_port'] = 8080;
 # $conf['proxy_username'] = '';
@@ -529,31 +529,71 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 # $conf['proxy_exceptions'] = array('127.0.0.1', 'localhost');
 
 /**
- * Authorized file system operations:
- *
- * The Update manager module included with Drupal provides a mechanism for
- * site administrators to securely install missing updates for the site
- * directly through the web user interface. On securely-configured servers,
- * the Update manager will require the administrator to provide SSH or FTP
- * credentials before allowing the installation to proceed; this allows the
- * site to update the new files as the user who owns all the Drupal files,
- * instead of as the user the webserver is running as. On servers where the
- * webserver user is itself the owner of the Drupal files, the administrator
- * will not be prompted for SSH or FTP credentials (note that these server
- * setups are common on shared hosting, but are inherently insecure).
- *
- * Some sites might wish to disable the above functionality, and only update
- * the code directly via SSH or FTP themselves. This setting completely
- * disables all functionality related to these authorized file operations.
- *
- * @see http://drupal.org/node/244924
- *
- * Remove the leading hash signs to disable.
- */
+* Authorized file system operations:
+*
+* The Update manager module included with Drupal provides a mechanism for
+* site administrators to securely install missing updates for the site
+* directly through the web user interface. On securely-configured servers,
+* the Update manager will require the administrator to provide SSH or FTP
+* credentials before allowing the installation to proceed; this allows the
+* site to update the new files as the user who owns all the Drupal files,
+* instead of as the user the webserver is running as. On servers where the
+* webserver user is itself the owner of the Drupal files, the administrator
+* will not be prompted for SSH or FTP credentials (note that these server
+* setups are common on shared hosting, but are inherently insecure).
+*
+* Some sites might wish to disable the above functionality, and only update
+* the code directly via SSH or FTP themselves. This setting completely
+* disables all functionality related to these authorized file operations.
+*
+* @see http://drupal.org/node/244924
+*
+* Remove the leading hash signs to disable.
+*/
 # $conf['allow_authorize_operations'] = FALSE;
-$extracts = explode("/",__FILE__);
+if (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) {
+// this is AXL server
+  $extracts = explode("/",__FILE__);
 
-$project = $extracts[2];
-$env = $extracts[4];
+    $project = $extracts[2];
+    $env = $extracts[4];
 
-include "/home/$project/includes/$env.inc";
+      include "/home/$project/includes/$env.inc";
+}
+else {
+
+$databases = array (
+  'default' =>
+  array (
+    'default' =>
+   array (
+      'database' => 'os7',
+      'username' => 'root',
+      'password' => '',
+      'host' => 'localhost',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
+);
+$databases['legacy'] = array (
+  'default' =>
+   array (
+      'database' => 'os6',
+      'username' => 'root',
+      'password' => '',
+      'host' => 'localhost',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+);
+
+$conf['os_migrate_database'] = 'os6';
+$conf['os_migrate_username'] = 'root';
+$conf['os_migrate_password'] = '';
+$conf['os_migrate_files_source_dir'] = '/mnt/www/drupal7dev/docroot/sites/default/filesd6';
+
+}
+
