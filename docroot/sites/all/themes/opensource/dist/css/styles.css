@@ -3734,6 +3734,11 @@ label {
   padding-left: 12px;
 }
 
+.page-user .view-authored-content .views-field-view-node {
+  float: left;
+  margin-right: 10px;
+}
+
 .fivestar-open.source {
   float: left;
 }
