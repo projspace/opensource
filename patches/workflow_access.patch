@@ -1,0 +1,35 @@
+diff --git a/docroot/sites/all/modules/contrib/workflow/workflow_access/workflow_access.module b/docroot/sites/all/modules/contrib/workflow/workflow_access/workflow_access.module
+index de7967c..00497d6 100644
+--- a/docroot/sites/all/modules/contrib/workflow/workflow_access/workflow_access.module
++++ b/docroot/sites/all/modules/contrib/workflow/workflow_access/workflow_access.module
+@@ -51,13 +51,27 @@ function workflow_access_node_access_records($node) {
+     $uid = isset($node->uid) ? $node->uid : 0;
+ 
+     foreach (workflow_access_get_workflow_access_by_sid($current_sid) as $grant) {
++
++      $realm = ($uid > 0 && $grant->rid == WORKFLOW_ROLE_AUTHOR_RID) ? 'workflow_access_owner' : 'workflow_access';
++      $gid = ($uid > 0 && $grant->rid == WORKFLOW_ROLE_AUTHOR_RID) ? $uid : $grant->rid;
++
++      // Anonymous ($uid == 0) author is not allowed for role 'author' (== -1).
++      // Both logically (Anonymous having more rights then authenticated)
++      // and technically: $gid must be a positive int. 
++      if ($gid < 0) { // if ($uid == 0 && $grant->rid == WORKFLOW_ROLE_AUTHOR_RID) {
++        continue;
++      }
++
+       $grants[] = array(
+-        'realm' => ($uid > 0 && $grant->rid == WORKFLOW_ROLE_AUTHOR_RID) ? 'workflow_access_owner' : 'workflow_access',
+-        'gid' => ($uid > 0 && $grant->rid == WORKFLOW_ROLE_AUTHOR_RID) ? $node->uid : $grant->rid,
++       // 'realm' => ($uid > 0 && $grant->rid == WORKFLOW_ROLE_AUTHOR_RID) ? 'workflow_access_owner' : 'workflow_access',
++        //'gid' => ($uid > 0 && $grant->rid == WORKFLOW_ROLE_AUTHOR_RID) ? $node->uid : $grant->rid,
++        'realm' => $realm,
++        'gid' => $gid,
+         'grant_view' => $grant->grant_view,
+         'grant_update' => $grant->grant_update,
+         'grant_delete' => $grant->grant_delete,
+-        'priority' => variable_get('workflow_access_priority', 0),
++        'priority' => $priority,
++        //'priority' => variable_get('workflow_access_priority', 0),
+       );
+     }
+   }
