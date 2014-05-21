@@ -593,7 +593,7 @@ $databases['legacy'] = array (
 $conf['os_migrate_database'] = 'os6';
 $conf['os_migrate_username'] = 'root';
 $conf['os_migrate_password'] = '';
-$conf['os_migrate_files_source_dir'] = '/mnt/www/drupal7dev/docroot/sites/default/filesd6';
+$conf['os_migrate_files_source_dir'] = '/mnt/www/filesD6';
 
 }
 
