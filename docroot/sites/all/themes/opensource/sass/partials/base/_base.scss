@@ -60,10 +60,14 @@ blockquote {
 
 /* Some basic styling */
 
-#content {
+#main {
     background: #FFF;
     max-width: 960px;
     margin: auto;
+}
+
+#navigation {
+    padding: 0;
 }
 
 #content .burr-flipped-content  img {
@@ -84,5 +88,5 @@ blockquote {
 }
 
 .pane-os-core-opensource-social-links {
-    ul { padding: 0 !Important; }
+    ul { padding: 0 !Important }
 }

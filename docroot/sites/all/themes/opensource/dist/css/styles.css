@@ -1719,10 +1719,14 @@ blockquote {
   padding: 0 0 0 1em;
 }
 
-#content {
+#main {
   background: #FFF;
   max-width: 960px;
   margin: auto;
+}
+
+#navigation {
+  padding: 0;
 }
 
 #content .burr-flipped-content img {
@@ -1745,7 +1749,7 @@ blockquote {
 }
 
 .pane-os-core-opensource-social-links ul {
-  padding: 0 !Important;
+  padding: 0 !important;
 }
 
 #content {
@@ -1754,7 +1758,6 @@ blockquote {
 
 .burr-flipped-content {
   width: 545px;
-  margin-right: 1em;
 }
 
 .burr-flipped-content-inner {
@@ -1762,8 +1765,7 @@ blockquote {
 }
 
 .burr-flipped-sidebar {
-  width: 375px;
-  padding-left: 1.8em;
+  width: 355px;
 }
 
 .burr-flipped-sidebar .pane-menu-monthly-favorites h2.pane-title {
@@ -4206,6 +4208,7 @@ body.page-search .search-results a:hover {
 .burr-flipped-sidebar .pane-block {
   background: #FFF;
   padding: 1em;
+  padding-right: 0;
   margin-bottom: 1.5em;
 }
 
