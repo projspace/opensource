@@ -1752,6 +1752,12 @@ blockquote {
   padding: 0 !important;
 }
 
+#footer {
+  background: white;
+  max-width: 960px;
+  margin: auto;
+}
+
 #content {
   padding: 2em;
 }
@@ -1765,7 +1771,8 @@ blockquote {
 }
 
 .burr-flipped-sidebar {
-  width: 355px;
+  width: 340px;
+  float: right;
 }
 
 .burr-flipped-sidebar .pane-menu-monthly-favorites h2.pane-title {
@@ -2009,14 +2016,14 @@ label {
 .region-navigation-top #block-menu-menu-about-menu a,
 .region-navigation-top #block-system-user-menu a {
   font-size: 12px;
-  color: #1D2754;
+  color: #5BC6E8;
   padding: 0 6px;
   text-decoration: none;
 }
 
 .region-navigation-top #block-menu-menu-about-menu a:hover,
 .region-navigation-top #block-system-user-menu a:hover {
-  color: #39f;
+  color: #fff;
   text-decoration: none;
 }
 
