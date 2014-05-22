@@ -7,6 +7,7 @@ body {
     line-height: 1.4;
     font-size: 0.75em;
     color: #333;;
+    background: #5E6A71;
 }
 
 hr {
@@ -58,6 +59,12 @@ blockquote {
 }
 
 /* Some basic styling */
+
+#content {
+    background: #FFF;
+    max-width: 960px;
+    margin: auto;
+}
 
 #content .burr-flipped-content  img {
     border: 1px solid #C2C0C1;
