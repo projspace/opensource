@@ -65,6 +65,9 @@ function os_core_install() {
 
   // Disable save_draft module as it creates confusion with workflow.
   os_core_update_7107();
+
+  // Enable the logintoboggan module.
+  os_core_update_7109();
 }
 
 /**
@@ -536,4 +539,13 @@ function os_core_update_7108() {
   $form_state['values']['save_custom'] = 1;
   $batch = xmlsitemap_rebuild_batch($form_state['values']['entities'], $form_state['values']['save_custom']);
   batch_set($batch);
+}
+
+/**
+ * Enable the logintoboggan function and set the appropriate variable.
+ * Revert the other feature.
+ */
+function os_core_update_7109() {
+  module_enable(array('logintoboggan'));
+  variable_set('logintoboggan_login_with_email', 1);
 }
