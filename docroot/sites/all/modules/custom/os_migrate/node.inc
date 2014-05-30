@@ -318,7 +318,7 @@ class OsMigrateArticleMigration extends OsMigrateContentBase {
       if ($row->field_default_license[0] == 'Use the default CC license.') {
         $row->field_default_license[0] = 'CC-BY-SA 3.0';
       }
-      elseif ($row->field_default_license[0] == 'Use the alternative license.'
+      elseif ($row->field_default_license[0] == 'Use an alternative license.'
         && !empty($row->field_alternative_license[0])) {
         $row->field_default_license = $row->field_alternative_license;
       }
