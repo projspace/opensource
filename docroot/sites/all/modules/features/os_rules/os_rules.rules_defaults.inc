@@ -303,6 +303,7 @@ function os_rules_default_rules_configuration() {
   $items['rules_redirect_to_front_page_after_logout'] = entity_import('rules_config', '{ "rules_redirect_to_front_page_after_logout" : {
       "LABEL" : "Redirect to front page after logout",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "TAGS" : [ "user" ],
       "REQUIRES" : [ "rules" ],
@@ -331,7 +332,7 @@ function os_rules_default_rules_configuration() {
         { "mail" : {
             "to" : "osdc-mail@redhat.com",
             "subject" : "New event submitted",
-            "message" : "A new event has been submitted. Please visit http:\\/\\/opensource.com\\/moderation-queue\\/events\\/all to approve.\\r\\n\\r\\nEvent title: [node:title]\\r\\nBy: [node:author:user]",
+            "message" : "A new event has been submitted. Please visit http:\\/\\/opensource.com\\/moderation-queue\\/events\\/all to approve.\\r\\n\\r\\nEvent title: [node:title]\\r\\nBy: [node:field_event_submitter_name]",
             "from" : "osdc-mail@redhat.com",
             "language" : [ "" ]
           }
