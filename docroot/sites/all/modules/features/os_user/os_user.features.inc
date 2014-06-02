@@ -47,6 +47,7 @@ function os_user_field_group_info_alter(&$data) {
  */
 function os_user_field_default_field_instances_alter(&$data) {
   if (isset($data['user-user-field_user_picture'])) {
+    $data['user-user-field_user_picture']['settings']['default_image'] = 15738; /* WAS: 0 */
     $data['user-user-field_user_picture']['settings']['min_resolution'] = ''; /* WAS: '300x200' */
   }
 }
