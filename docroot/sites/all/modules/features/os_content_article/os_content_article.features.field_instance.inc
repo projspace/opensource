@@ -349,6 +349,7 @@ function os_content_article_field_default_field_instances() {
 CC-BY-SA 3.0|CC-BY-SA 3.0
 CC-BY 4.0|CC-BY 4.0
 CC-BY 3.0|CC-BY 3.0
+CC0|CC0
 None|None',
         'available_options_php' => '',
         'markup_available_options_php' => '&lt;none&gt;',

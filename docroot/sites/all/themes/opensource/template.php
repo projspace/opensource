@@ -455,6 +455,9 @@ function opensource_preprocess_field(&$vars) {
               $vars['items']['0']['#markup'] = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
         <img alt="Creative Commons License" style="border-width:0" src="'. base_path() . path_to_theme() .'/images/cc-by-3.png" title="This work is licensed under a Creative Commons Attribution 3.0 Unported License." /></a>';
         break;
+      case 'CC0':
+              $vars['items']['0']['#markup'] = 'n/a';
+        break;
       case 'None':
               $vars['items']['0']['#markup'] = '';
         break;
