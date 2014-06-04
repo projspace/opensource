@@ -290,7 +290,8 @@ function os_poll_field_default_field_instances() {
         'available_options' => 'CC-BY-SA 4.0|CC-BY-SA 4.0
 CC-BY-SA 3.0|CC-BY-SA 3.0
 CC-BY 4.0|CC-BY 4.0
-CC-BY 3.0|CC-BY 3.0',
+CC-BY 3.0|CC-BY 3.0
+CC0|CC0',
         'available_options_php' => '',
         'markup_available_options_php' => '&lt;none&gt;',
         'other' => 'Other',
