@@ -818,3 +818,24 @@ function os_core_generate_resource_resource_page_menu_items() {
   ) + $args;
   drupal_form_submit('menu_edit_item', $form_state);
 }
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * Purpose of this hook is to add "Report to mollom" form on comment delete
+ * confirmation page.
+ */
+function os_core_form_views_form_admin_views_comment_system_2_alter(&$form, &$form_state) {
+   mollom_data_delete_form_alter($form, $form_state);
+  // Report before deletion.
+  array_unshift($form['#submit'], 'mollom_form_comment_multiple_delete_confirm_submit');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * Purpose of this hook is to add "Report to mollom" form on comment delete
+ * confirmation page.
+ */
+function os_core_form_views_form_admin_views_comment_system_1_alter(&$form, &$form_state) {
+   mollom_data_delete_form_alter($form, $form_state);
+  // Report before deletion.
+  array_unshift($form['#submit'], 'mollom_form_comment_multiple_delete_confirm_submit');
+}
