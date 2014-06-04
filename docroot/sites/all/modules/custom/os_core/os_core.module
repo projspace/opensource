@@ -372,6 +372,7 @@ function os_core_select_or_other_element_process($element, &$form_state) {
  */
 function os_core_form_comment_form_alter(&$form, &$form_state, $form_id) {
   global $user;
+  $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = FALSE;
   if (!$user->uid) {
     unset($form['author']['homepage']);
     $form['login-register'] = array(
