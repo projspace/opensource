@@ -609,6 +609,14 @@ function os_core_views_pre_render(&$view) {
       $link_text = $base_url . $view->field['uid']->options['alter']['text'];
       $view->field['uid']->options['alter']['text'] = $link_text;
       break;
+
+    case 'homepage':
+      // Displaying Poll text for poll content types. As poll are not categorized in "Article", "Video", and "Podcast" types.
+      foreach($view->result AS $result) {
+        if(empty($result->field_field_article_type)) {
+          $result->field_field_article_type[0]['rendered']['#markup'] = 'Poll';
+        }
+      }
   }
 }
 
