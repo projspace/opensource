@@ -31,6 +31,26 @@ class MigrateDestinationUserpoints extends MigrateDestination {
    * @return array|bool
    */
   function import(stdClass $userpoints, stdClass $row) {
+    // If updating previously-migrated content.
+    if (isset($row->migrate_map_destid1)) {
+      $updating = TRUE;
+      if (isset($userpoints->txn_id)) {
+        if ($userpoints->txn_id != $row->migrate_map_destid1) {
+          throw new MigrateException(t("Incoming id !id and map destination id !destid don't match.",
+              array('!id' => $userpoints->txn_id, '!destid' => $row->migrate_map_destid1)
+            ));
+        }
+      }
+      else {
+        $userpoints->txn_id = $row->migrate_map_destid1;
+      }
+    }
+    else {
+      $updating = FALSE;
+      // Clear out the txn_id, just to be safe.
+      unset($userpoints->txn_id);
+    }
+
     // Build params.
     $params = array();
     $fields = $this->fields();
@@ -44,6 +64,13 @@ class MigrateDestinationUserpoints extends MigrateDestination {
     $result = userpoints_userpointsapi($params);
     if ($result['status'] == TRUE && isset($result['transaction'])) {
       $txn_id = $result['transaction']['txn_id'];
+
+      if ($updating) {
+        $this->numUpdated++;
+      }
+      else {
+        $this->numCreated++;
+      }
 
       // Call any complete handlers.
       $this->complete($userpoints, $row);

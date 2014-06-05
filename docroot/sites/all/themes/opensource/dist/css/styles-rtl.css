@@ -1,237 +1,69 @@
-dd {
-  margin: 0 30px 0 0;
-}
+/*
+Syntax error: File to import not found or unreadable: compass/support.
+              Load paths:
+                /Users/skippednote/work/os7/docroot/sites/all/themes/opensource (DEPRECATED)
+                /Users/skippednote/work/os7/docroot/sites/all/themes/opensource/sass
+        on line 113 of sass/_init.scss
+        from line 7 of sass/styles-rtl.scss
 
-menu,
-ol,
-ul {
-  padding: 0 30px 0 0;
-}
+Backtrace:
+sass/_init.scss:113
+sass/styles-rtl.scss:7
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/import_node.rb:45:in `import'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:283:in `visit_import'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/stack.rb:79:in `block in with_base'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/stack.rb:121:in `with_frame'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/stack.rb:79:in `with_base'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:297:in `block (2 levels) in visit_import'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:297:in `map'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:297:in `block in visit_import'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/stack.rb:88:in `block in with_import'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/stack.rb:121:in `with_frame'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/stack.rb:88:in `with_import'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:294:in `visit_import'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/stack.rb:79:in `block in with_base'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/stack.rb:121:in `with_frame'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/stack.rb:79:in `with_base'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:151:in `visit'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/tree/root_node.rb:20:in `render'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/engine.rb:274:in `render'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/plugin/compiler.rb:186:in `each'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/plugin/compiler.rb:221:in `watch'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/plugin.rb:108:in `method_missing'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/exec.rb:509:in `watch_or_update'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/exec.rb:346:in `process_result'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/exec.rb:43:in `parse'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/lib/sass/exec.rb:22:in `parse!'
+/Users/skippednote/.rvm/gems/ruby-2.1.1@global/gems/sass-3.3.6/bin/sass:13:in `<top (required)>'
+/Users/skippednote/.rvm/gems/ruby-2.1.1/bin/sass:23:in `load'
+/Users/skippednote/.rvm/gems/ruby-2.1.1/bin/sass:23:in `<main>'
+*/
 
-@media all and (min-width: 480px) and (max-width: 959px) {
-  .sidebar-first #content {
-    float: right;
-    width: 66.66667%;
-    margin-right: 33.33333%;
-    margin-left: -100%;
-  }
-
-  .sidebar-first .region-sidebar-first {
-    float: right;
-    width: 33.33333%;
-    margin-right: 0%;
-    margin-left: -33.33333%;
-  }
-
-  .sidebar-second #content {
-    float: right;
-    width: 66.66667%;
-    margin-right: 0%;
-    margin-left: -66.66667%;
-  }
-
-  .sidebar-second .region-sidebar-second {
-    float: right;
-    width: 33.33333%;
-    margin-right: 66.66667%;
-    margin-left: -100%;
-  }
-
-  .two-sidebars #content {
-    float: right;
-    width: 66.66667%;
-    margin-right: 33.33333%;
-    margin-left: -100%;
-  }
-
-  .two-sidebars .region-sidebar-first {
-    float: right;
-    width: 33.33333%;
-    margin-right: 0%;
-    margin-left: -33.33333%;
-  }
-
-  .two-sidebars .region-sidebar-second {
-    float: right;
-    width: 100%;
-    margin-right: 0%;
-    margin-left: -100%;
-    padding-left: 0;
-    padding-right: 0;
-    clear: right;
-  }
-
-  .two-sidebars .region-sidebar-second .block {
-    padding-left: 10px;
-    padding-right: 10px;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    word-wrap: break-word;
-  }
-
-  .two-sidebars .region-sidebar-second .block:nth-child(3n+1) {
-    float: right;
-    width: 33.33333%;
-    margin-right: 0%;
-    margin-left: -33.33333%;
-    clear: right;
-  }
-
-  .two-sidebars .region-sidebar-second .block:nth-child(3n+2) {
-    float: right;
-    width: 33.33333%;
-    margin-right: 33.33333%;
-    margin-left: -66.66667%;
-  }
-
-  .two-sidebars .region-sidebar-second .block:nth-child(3n) {
-    float: right;
-    width: 33.33333%;
-    margin-right: 66.66667%;
-    margin-left: -100%;
-  }
-}
-
-@media all and (min-width: 960px) {
-  .sidebar-first #content {
-    float: right;
-    width: 80%;
-    margin-right: 20%;
-    margin-left: -100%;
-  }
-
-  .sidebar-first .region-sidebar-first {
-    float: right;
-    width: 20%;
-    margin-right: 0%;
-    margin-left: -20%;
-  }
-
-  .sidebar-second #content {
-    float: right;
-    width: 80%;
-    margin-right: 0%;
-    margin-left: -80%;
-  }
-
-  .sidebar-second .region-sidebar-second {
-    float: right;
-    width: 20%;
-    margin-right: 80%;
-    margin-left: -100%;
-  }
-
-  .two-sidebars #content {
-    float: right;
-    width: 60%;
-    margin-right: 20%;
-    margin-left: -80%;
-  }
-
-  .two-sidebars .region-sidebar-first {
-    float: right;
-    width: 20%;
-    margin-right: 0%;
-    margin-left: -20%;
-  }
-
-  .two-sidebars .region-sidebar-second {
-    float: right;
-    width: 20%;
-    margin-right: 80%;
-    margin-left: -100%;
-  }
-}
-
-.header__logo {
-  float: right;
-}
-
-.header__secondary-menu {
-  float: left;
-}
-
-#navigation .links,
-#navigation .menu {
-  text-align: right;
-}
-
-#navigation .links li,
-#navigation .menu li {
-  float: right;
-  padding: 0 0 0 10px;
-}
-
-.messages,
-.messages--status,
-.messages--warning,
-.messages--error {
-  padding: 10px 50px 10px 10px;
-  background-position: 99% 8px;
-}
-
-.tabs-primary__tab,
-.tabs-primary__tab.is-active,
-.tabs-secondary__tab,
-.tabs-secondary__tab.is-active {
-  float: right;
-}
-
-.inline li {
-  display: inline-block;
-  padding: 0 0 0 1em;
-}
-
-span.field-label {
-  padding: 0 0 0 1em;
-}
-
-.more-link {
-  text-align: left;
-}
-
-.more-help-link {
-  text-align: left;
-}
-
-.more-help-link a {
-  background-position: 100% 50%;
-  padding: 1px 20px 1px 0;
-}
-
-.menu__item.is-collapsed {
-  list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABNJREFUCB1j4GASYFJgcmD+A4IADUIDfIUMT4wAAAAASUVORK5CYII=');
-}
-
-.indented {
-  margin-left: 0;
-  margin-right: 30px;
-}
-
-#user-login-form {
-  text-align: right;
-}
-
-html.js #user-login-form li.openid-link,
-#user-login-form li.openid-link {
-  margin-left: 0;
-  margin-right: -20px;
-}
-
-form th {
-  text-align: right;
-  padding-left: 1em;
-  padding-right: 0;
-}
-
-html.js .collapsible .fieldset-legend {
-  background-position: 98% 75%;
-  padding-left: 0;
-  padding-right: 15px;
-}
-
-html.js .collapsed .fieldset-legend {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABNJREFUCB1j4GASYFJgcmD+A4IADUIDfIUMT4wAAAAASUVORK5CYII=');
-  background-position: 98% 50%;
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: compass/support.\A               Load paths:\A                 /Users/skippednote/work/os7/docroot/sites/all/themes/opensource (DEPRECATED)\A                 /Users/skippednote/work/os7/docroot/sites/all/themes/opensource/sass\A         on line 113 of sass/_init.scss\A         from line 7 of sass/styles-rtl.scss";
 }

@@ -1668,6 +1668,7 @@ body {
   line-height: 1.4;
   font-size: 0.75em;
   color: #333;
+  background: #5E6A71;
 }
 
 hr {
@@ -1718,6 +1719,16 @@ blockquote {
   padding: 0 0 0 1em;
 }
 
+#main {
+  background: #FFF;
+  max-width: 960px;
+  margin: auto;
+}
+
+#navigation {
+  padding: 0;
+}
+
 #content .burr-flipped-content img {
   border: 1px solid #C2C0C1;
 }
@@ -1738,7 +1749,13 @@ blockquote {
 }
 
 .pane-os-core-opensource-social-links ul {
-  padding: 0 !Important;
+  padding: 0 !important;
+}
+
+#footer {
+  background: white;
+  max-width: 960px;
+  margin: auto;
 }
 
 #content {
@@ -1747,7 +1764,6 @@ blockquote {
 
 .burr-flipped-content {
   width: 545px;
-  margin-right: 1em;
 }
 
 .burr-flipped-content-inner {
@@ -1755,8 +1771,8 @@ blockquote {
 }
 
 .burr-flipped-sidebar {
-  width: 375px;
-  padding-left: 1.8em;
+  width: 340px;
+  float: right;
 }
 
 .burr-flipped-sidebar .pane-menu-monthly-favorites h2.pane-title {
@@ -2000,14 +2016,14 @@ label {
 .region-navigation-top #block-menu-menu-about-menu a,
 .region-navigation-top #block-system-user-menu a {
   font-size: 12px;
-  color: #1D2754;
+  color: #5BC6E8;
   padding: 0 6px;
   text-decoration: none;
 }
 
 .region-navigation-top #block-menu-menu-about-menu a:hover,
 .region-navigation-top #block-system-user-menu a:hover {
-  color: #39f;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -3734,6 +3750,11 @@ label {
   padding-left: 12px;
 }
 
+.page-user .view-authored-content .views-field-view-node {
+  float: left;
+  margin-right: 10px;
+}
+
 .fivestar-open.source {
   float: left;
 }
@@ -4194,6 +4215,7 @@ body.page-search .search-results a:hover {
 .burr-flipped-sidebar .pane-block {
   background: #FFF;
   padding: 1em;
+  padding-right: 0;
   margin-bottom: 1.5em;
 }
 

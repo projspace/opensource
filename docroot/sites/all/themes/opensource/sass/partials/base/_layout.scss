@@ -2,17 +2,18 @@
     // background: url(../images/osdc_page_background.jpg) no-repeat 10px 0;
     padding: 2em;
 }
+
 .burr-flipped-content {
         width: 545px;
-        margin-right: 1em;
         @extend .box-wrapper;
 }
+
 .burr-flipped-content-inner {
         width: 520px;
 }
 .burr-flipped-sidebar {
-        width: 375px;
-        padding-left: 1.8em;
+        width: 340px;
+        float: right;
 
         .pane-menu-monthly-favorites {
                 h2.pane-title{

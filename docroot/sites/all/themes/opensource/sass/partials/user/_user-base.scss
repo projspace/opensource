@@ -226,8 +226,16 @@
     .page__title {
         padding-left: 12px;
     }
+
+    .view-authored-content {
+        .views-field-view-node {
+            float: left;
+            margin-right: 10px;
+        }
+    }
 }
 
 .fivestar-open.source {
     float: left;
 }
+

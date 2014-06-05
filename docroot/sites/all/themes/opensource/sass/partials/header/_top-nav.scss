@@ -17,14 +17,16 @@
         li {
             float: left;
             list-style: none;
-        } a {
+        }
+
+        a {
             font-size: 12px;
-            color: #1D2754;
+            color: #5BC6E8;
             padding: 0 6px;
             text-decoration: none;
 
             &:hover {
-                color: #39f;
+                color: #fff;
                 text-decoration: none;
             }
         }
