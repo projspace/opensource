@@ -172,7 +172,8 @@ function os_core_display_social_share_icons() {
   $title = urlencode($node->title);
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
-  $social_buttons .= '<a class="addthis_button_tweet"></a>';
+  $bitly = _os_core_shorten_tracking($url);
+  $social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $url . '" addthis:title="' . $title . '"></a>';
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $url_enc = urlencode($url);
@@ -841,3 +842,16 @@ function os_core_form_views_form_admin_views_comment_system_1_alter(&$form, &$fo
   // Report before deletion.
   array_unshift($form['#submit'], 'mollom_form_comment_multiple_delete_confirm_submit');
 }
+
+/**
+ * Our custom Shorten service to add tracking code to URLs.
+ */
+function _os_core_shorten_tracking($original, $code = 'sc_cid=70160000000IDmjAAG') {
+  $original = $original . '?' . $code;
+  $url = 'http://api.bit.ly/shorten?version=2.0.1&format=xml&history=1&login='.
+    variable_get('shorten_bitly_login', '') .'&apiKey='.
+    variable_get('shorten_bitly_key', '') .'&longUrl='. $original;
+  $bitly = shorten_fetch($url, 'shortUrl');
+  return $bitly;
+}
+
