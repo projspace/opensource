@@ -638,41 +638,6 @@ function opensource_preprocess_page(&$variables, $hook) {
     ),
   );
   drupal_add_html_head($element, 'opensource');
-
-  // share JS
-  /*
-  $vars['closure'] .= '<script type="text/javascript" src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script>';
-  $vars['closure'] .= '<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>';
-  $vars['closure'] .= '<script type="text/javascript">(function() { var s = document.createElement("SCRIPT"), s1 = document.getElementsByTagName("SCRIPT")[0]; s.type = "text/javascript"; s.async = true; s.src = "http://widgets.digg.com/buttons.js"; s1.parentNode.insertBefore(s, s1); })();</script>';
-  */
-  drupal_add_js('<script type="text/javascript">var addthis_config = {data_track_clickback:false};</script>' , 'inline');
-  drupal_add_js('<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=opensourceway"></script>');
-  drupal_add_js('<script type="text/javascript">var addthis_share = {url_transforms : {shorten: {twitter: \'bitly\'}}, shorteners : {bitly : {login: \'opensourceway\',apiKey: \'R_789680ae32a4a961941c3b9a7daf0495\'}}}</script>', 'inline');
-
-  //Acquia Support:99344
-  drupal_add_js('<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>', 'inline');
-  drupal_add_js('<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=opensourceway"></script>', 'inline');
-
-  drupal_add_js('<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=opensourceway"></script>', 'inline');
-
-
-  // Quicktabs executes a click on the default tab to ensure that it is active
-  // but we only want to track real clicks for omniture, so check for a clientX
-  drupal_add_js('<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-function trackTab(tabName, e) {
-  var evt = (window.event) ? window.event : e;
-  if (evt && evt.clientX) {
-    var oldPageName = s.pageName;
-    s.pageName = s.pageName + "|" + tabName;
-    //console.debug(s.t);
-    void(s.t());
-    s.pageName = oldPageName;
-  }
-}
-//--><!]]>
-</script>', 'inline');
-//var_dump($variables);
 }
 
 /**
