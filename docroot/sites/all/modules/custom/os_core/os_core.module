@@ -204,7 +204,8 @@ function os_core_display_social_share_icons_event_list($nid) {
   $title = urlencode($node->title);
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
-  $social_buttons .= '<a class="addthis_button_tweet"></a>';
+  $bitly = _os_core_shorten_tracking($url);
+  $social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly . '" addthis:title="' . $title . '"></a>';
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $url_enc = urlencode($url);
