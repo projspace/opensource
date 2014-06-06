@@ -171,10 +171,17 @@ function os_core_display_social_share_icons() {
   $node = node_load(filter_xss(arg(1)));
   $title = urlencode($node->title);
 
+  $social_buttons .= '
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+  ​<script type="text/javascript">
+    var addthis_config = addthis_config||{};
+    addthis_config.data_track_clickback = false;
+  </script>';
+
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $bitly = _os_core_shorten_tracking($url);
   $bitly_url = explode('#', $bitly);
-  $social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly_url[0] . '" addthis:title="' . $title . '"></a>';
+  $social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly_url[0] . '" addthis:title="' . $title. '"></a>';
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $url_enc = urlencode($url);
@@ -189,9 +196,6 @@ function os_core_display_social_share_icons() {
   $social_buttons .= '<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>';
 
   $social_buttons .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
-
-  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52fdaa9e37dcc3ed"></script>';
 
   return $social_buttons;
 }
