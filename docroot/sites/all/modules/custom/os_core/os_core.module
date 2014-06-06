@@ -173,7 +173,8 @@ function os_core_display_social_share_icons() {
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $bitly = _os_core_shorten_tracking($url);
-  $social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly . '" addthis:title="' . $title . '"></a>';
+  $bitly_url = explode('#', $bitly);
+  $social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly_url[0] . '" addthis:title="' . $title . '"></a>';
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $url_enc = urlencode($url);
