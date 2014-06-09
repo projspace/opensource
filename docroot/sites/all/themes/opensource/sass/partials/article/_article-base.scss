@@ -5,6 +5,12 @@
         float: left;
     }
 
+    .pane-articlepollpane {
+        .pane-title {
+            float: none;
+        }
+    }
+
     .fivestar-summary-average-count {
         font-size: 12px;
     }

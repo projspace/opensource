@@ -400,7 +400,7 @@ function os_core_form_article_node_form_alter(&$form, &$form_state, $form_id) {
  */
 function os_core_form_search_block_form_alter(&$form, &$form_state) {
   if (variable_get('search_default_module') == 'apachesolr_search') {
-    if (arg(0) == 'search' && arg(2) != NULL) {
+    if (arg(0) == 'search' && arg(1) != 'apachesolr_search' && arg(2) != NULL) {
       if ($form['#id'] == 'search-block-form') {
         $form['search_block_form']['#default_value'] = filter_xss(arg(2));
       }
@@ -610,6 +610,14 @@ function os_core_views_pre_render(&$view) {
       $link_text = $base_url . $view->field['uid']->options['alter']['text'];
       $view->field['uid']->options['alter']['text'] = $link_text;
       break;
+
+    case 'homepage':
+      // Displaying Poll text for poll content types. As poll are not categorized in "Article", "Video", and "Podcast" types.
+      foreach($view->result AS $result) {
+        if(empty($result->field_field_article_type)) {
+          $result->field_field_article_type[0]['rendered']['#markup'] = 'Poll';
+        }
+      }
   }
 }
 

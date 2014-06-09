@@ -2754,6 +2754,11 @@ label {
   float: left;
 }
 
+.node-type-poll .pane-articlepollpane .pane-title,
+.node-type-article .pane-articlepollpane .pane-title {
+  float: none;
+}
+
 .node-type-poll .fivestar-summary-average-count,
 .node-type-article .fivestar-summary-average-count {
   font-size: 12px;
