@@ -57,7 +57,7 @@ function article_pollpane_render($subtype, $conf, $args, $context) {
       }
     }
     $block = new stdClass();
-    $block->title = "";
+    $block->title = $pollnode->title;
     $block->content = $blockcontent;
     return $block;
   }
