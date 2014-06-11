@@ -44,17 +44,6 @@
         clear: both;
         padding-top: 10px;
 
-        .twitter-share-button {
-            position: relative;
-            top: 1px;
-            width: 80px !important;
-
-            & + a {
-                position: relative;
-                top: -6px;
-                margin-right: 9px;
-            }
-        }
     }
 
     .comment-by-node-author {
@@ -232,5 +221,16 @@
 .node-type-poll {
     .pane-node-body {
         font-size: 16px;
+    }
+}
+.twitter-share-button {
+    position: relative;
+    top: 1px;
+    width: 80px !important;
+
+    & + a {
+        position: relative;
+        top: -6px;
+        margin-right: 9px;
     }
 }
