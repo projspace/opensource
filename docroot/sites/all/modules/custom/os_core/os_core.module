@@ -402,7 +402,7 @@ function os_core_form_search_block_form_alter(&$form, &$form_state) {
   if (variable_get('search_default_module') == 'apachesolr_search') {
     if (arg(0) == 'search' && arg(1) != 'apachesolr_search' && arg(2) != NULL) {
       if ($form['#id'] == 'search-block-form') {
-        $form['search_block_form']['#default_value'] = filter_xss(arg(2));
+        $form['search_block_form']['#default_value'] = '';
       }
     }
     $form['#submit'][] = 'os_core_form_search_submit';
@@ -849,4 +849,15 @@ function os_core_form_views_form_admin_views_comment_system_1_alter(&$form, &$fo
    mollom_data_delete_form_alter($form, $form_state);
   // Report before deletion.
   array_unshift($form['#submit'], 'mollom_form_comment_multiple_delete_confirm_submit');
+}
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Adds a submit handler for search form.
+ */
+function os_core_form_apachesolr_panels_search_form_alter(&$form, &$form_state) {
+  if (variable_get('search_default_module') == 'apachesolr_search') {
+    $form['apachesolr_panels_search_form']['#default_value'] = '';
+    $form['#submit'][] = 'os_core_form_search_submit';
+  }
 }
