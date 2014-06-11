@@ -2800,6 +2800,20 @@ label {
   padding-top: 10px;
 }
 
+.node-type-poll .pane-os-core-opensource-article-share .twitter-share-button,
+.node-type-article .pane-os-core-opensource-article-share .twitter-share-button {
+  position: relative;
+  top: 1px;
+  width: 80px !important;
+}
+
+.node-type-poll .pane-os-core-opensource-article-share .twitter-share-button+a,
+.node-type-article .pane-os-core-opensource-article-share .twitter-share-button+a {
+  position: relative;
+  top: -6px;
+  margin-right: 9px;
+}
+
 .node-type-poll .comment-by-node-author,
 .node-type-article .comment-by-node-author {
   clear: left;
