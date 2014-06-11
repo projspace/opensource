@@ -105,7 +105,7 @@ function os_common_components_default_panels_mini() {
     $pane->panel = 'main';
     $pane->type = 'views_panes';
     $pane->subtype = 'poll_block-panel_pane_1';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'view_mode' => 'teaser',
