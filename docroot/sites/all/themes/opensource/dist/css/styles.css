@@ -4225,6 +4225,11 @@ body.page-search .search-results a:hover {
   margin-bottom: 1.5em;
 }
 
+.burr-flipped-sidebar .pane-menu-menu-opensource-resources-homepa {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .node_unpublished .burr-flipped-content {
   background: #FFF4F4;
 }
