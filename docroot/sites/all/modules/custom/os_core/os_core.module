@@ -174,14 +174,8 @@ function os_core_display_social_share_icons() {
   $social_buttons .= '
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
   ​<script type="text/javascript">
-    if (typeof addthis_config !== "undefined") {
-      addthis_config.data_track_clickback = false
-    }
-    else {
-      var addthis_config = {
-        data_track_clickback: false
-      };
-    }
+    var addthis_config = addthis_config||{};
+    addthis_config.data_track_clickback = false;
   </script>';
 
   $social_buttons .= '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
