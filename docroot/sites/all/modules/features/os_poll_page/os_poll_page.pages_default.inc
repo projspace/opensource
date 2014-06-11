@@ -599,6 +599,43 @@ function os_poll_page_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-18';
     $pane->panel = 'contentmain';
+    $pane->type = 'flag_link';
+    $pane->subtype = 'node';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 4,
+              1 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'flag_name' => 'poll_homepage',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 17;
+    $pane->locks = array();
+    $display->content['new-18'] = $pane;
+    $display->panels['contentmain'][17] = 'new-18';
+    $pane = new stdClass();
+    $pane->pid = 'new-19';
+    $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_alternative_license';
     $pane->shown = TRUE;
@@ -633,12 +670,12 @@ function os_poll_page_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 17;
+    $pane->position = 18;
     $pane->locks = array();
-    $display->content['new-18'] = $pane;
-    $display->panels['contentmain'][17] = 'new-18';
+    $display->content['new-19'] = $pane;
+    $display->panels['contentmain'][18] = 'new-19';
     $pane = new stdClass();
-    $pane->pid = 'new-19';
+    $pane->pid = 'new-20';
     $pane->panel = 'contentmain';
     $pane->type = 'block';
     $pane->subtype = 'os_core-opensource-article-share';
@@ -654,12 +691,12 @@ function os_poll_page_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 18;
+    $pane->position = 19;
     $pane->locks = array();
-    $display->content['new-19'] = $pane;
-    $display->panels['contentmain'][18] = 'new-19';
+    $display->content['new-20'] = $pane;
+    $display->panels['contentmain'][19] = 'new-20';
     $pane = new stdClass();
-    $pane->pid = 'new-20';
+    $pane->pid = 'new-21';
     $pane->panel = 'contentmain';
     $pane->type = 'node_comments';
     $pane->subtype = 'node_comments';
@@ -681,12 +718,12 @@ function os_poll_page_default_page_manager_handlers() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 19;
+    $pane->position = 20;
     $pane->locks = array();
-    $display->content['new-20'] = $pane;
-    $display->panels['contentmain'][19] = 'new-20';
+    $display->content['new-21'] = $pane;
+    $display->panels['contentmain'][20] = 'new-21';
     $pane = new stdClass();
-    $pane->pid = 'new-21';
+    $pane->pid = 'new-22';
     $pane->panel = 'contentmain';
     $pane->type = 'node_comment_form';
     $pane->subtype = 'node_comment_form';
@@ -704,12 +741,12 @@ function os_poll_page_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 20;
+    $pane->position = 21;
     $pane->locks = array();
-    $display->content['new-21'] = $pane;
-    $display->panels['contentmain'][20] = 'new-21';
+    $display->content['new-22'] = $pane;
+    $display->panels['contentmain'][21] = 'new-22';
     $pane = new stdClass();
-    $pane->pid = 'new-22';
+    $pane->pid = 'new-23';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
     $pane->subtype = 'author_info-panel_pane_1';
@@ -743,10 +780,10 @@ function os_poll_page_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-22'] = $pane;
-    $display->panels['sidebar'][0] = 'new-22';
+    $display->content['new-23'] = $pane;
+    $display->panels['sidebar'][0] = 'new-23';
     $pane = new stdClass();
-    $pane->pid = 'new-23';
+    $pane->pid = 'new-24';
     $pane->panel = 'sidebar';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -770,10 +807,10 @@ function os_poll_page_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-23'] = $pane;
-    $display->panels['sidebar'][1] = 'new-23';
+    $display->content['new-24'] = $pane;
+    $display->panels['sidebar'][1] = 'new-24';
     $pane = new stdClass();
-    $pane->pid = 'new-24';
+    $pane->pid = 'new-25';
     $pane->panel = 'sidebar';
     $pane->type = 'panels_mini';
     $pane->subtype = 'common_1';
@@ -791,8 +828,8 @@ function os_poll_page_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-24'] = $pane;
-    $display->panels['sidebar'][2] = 'new-24';
+    $display->content['new-25'] = $pane;
+    $display->panels['sidebar'][2] = 'new-25';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
