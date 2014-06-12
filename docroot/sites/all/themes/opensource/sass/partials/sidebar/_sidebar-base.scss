@@ -4,3 +4,15 @@
     padding-right: 0;
     margin-bottom: 1.5em;
 }
+
+.burr-flipped-sidebar {
+    .pane-author-info-panel-pane-1 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+        .view-content {
+            clear: both;
+            overflow: hidden;
+        }
+    }
+}
