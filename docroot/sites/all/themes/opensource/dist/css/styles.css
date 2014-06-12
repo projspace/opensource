@@ -2981,6 +2981,18 @@ label {
   font-size: 16px;
 }
 
+.twitter-share-button {
+  position: relative;
+  top: 1px;
+  width: 80px !important;
+}
+
+.twitter-share-button+a {
+  position: relative;
+  top: -6px;
+  margin-right: 9px;
+}
+
 .node-type-resource #page-title {
   display: none;
 }

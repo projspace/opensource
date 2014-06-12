@@ -171,8 +171,20 @@ function os_core_display_social_share_icons() {
   $node = node_load(filter_xss(arg(1)));
   $title = urlencode($node->title);
 
+  $social_buttons .= '
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+  ​<script type="text/javascript">
+    var addthis_config = addthis_config||{};
+    addthis_config.data_track_clickback = false;
+  </script>';
+
+  $social_buttons .= '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
-  $social_buttons .= '<a class="addthis_button_tweet"></a>';
+  $bitly = _os_core_shorten_tracking($url);
+  $bitly_url = explode('#', $bitly);
+  //$social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly_url[0] . '" addthis:title="' . $title. '"></a>';
+
+  $social_buttons .= '<a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-lang="en" data-size="medium" data-count="horizontal" data-url="'. $bitly_url[0].'" data-text="'. $title.'">Tweet</a>';
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $url_enc = urlencode($url);
@@ -188,9 +200,6 @@ function os_core_display_social_share_icons() {
 
   $social_buttons .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
 
-  $social_buttons .= '<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52fdaa9e37dcc3ed"></script>';
-
   return $social_buttons;
 }
 
@@ -203,7 +212,8 @@ function os_core_display_social_share_icons_event_list($nid) {
   $title = urlencode($node->title);
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
-  $social_buttons .= '<a class="addthis_button_tweet"></a>';
+  $bitly = _os_core_shorten_tracking($url);
+  $social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly . '" addthis:title="' . $title . '"></a>';
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $url_enc = urlencode($url);
@@ -850,3 +860,16 @@ function os_core_form_views_form_admin_views_comment_system_1_alter(&$form, &$fo
   // Report before deletion.
   array_unshift($form['#submit'], 'mollom_form_comment_multiple_delete_confirm_submit');
 }
+
+/**
+ * Our custom Shorten service to add tracking code to URLs.
+ */
+function _os_core_shorten_tracking($original, $code = 'sc_cid=70160000000IDmjAAG') {
+  $original = $original . '?' . $code;
+  $url = 'http://api.bit.ly/shorten?version=2.0.1&format=xml&history=1&login='.
+    variable_get('shorten_bitly_login', '') .'&apiKey='.
+    variable_get('shorten_bitly_key', '') .'&longUrl='. $original;
+  $bitly = shorten_fetch($url, 'shortUrl');
+  return $bitly;
+}
+
