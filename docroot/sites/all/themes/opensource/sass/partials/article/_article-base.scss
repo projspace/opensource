@@ -225,12 +225,18 @@
 }
 .twitter-share-button {
     position: relative;
-    top: 1px;
-    width: 80px !important;
+    top: 2px;
+    width: 81px !important;
 
     & + a {
         position: relative;
         top: -6px;
         margin-right: 9px;
+    }
+}
+
+.node-type-article {
+    .pane-node-body {
+        font-size: 14px;
     }
 }
