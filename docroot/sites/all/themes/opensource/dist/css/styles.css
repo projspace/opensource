@@ -1584,6 +1584,10 @@ tr.selected td {
   color: #39f;
 }
 
+.page-home .teaser-body {
+  font-size: 14px;
+}
+
 @media print {
   a:link,
   a:visited {
@@ -2983,14 +2987,18 @@ label {
 
 .twitter-share-button {
   position: relative;
-  top: 1px;
-  width: 80px !important;
+  top: 2px;
+  width: 81px !important;
 }
 
 .twitter-share-button+a {
   position: relative;
   top: -6px;
   margin-right: 9px;
+}
+
+.node-type-article .pane-node-body {
+  font-size: 14px;
 }
 
 .node-type-resource #page-title {
@@ -3803,6 +3811,10 @@ body[class*='section-'] .page__title {
 body[class*='section-'] .view-channel-articles .views-row {
   margin-bottom: 15px;
   padding: 10px 0;
+}
+
+body[class*='section-'] .view-channel-articles .views-field-body {
+  font-size: 14px;
 }
 
 body[class*='section-'] .view-channel-articles .views-field-title {
