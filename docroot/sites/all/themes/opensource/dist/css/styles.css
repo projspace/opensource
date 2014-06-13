@@ -3005,6 +3005,10 @@ label {
   display: none;
 }
 
+.node-type-resource .field-type-text-with-summary {
+  font-size: 14px;
+}
+
 .node-type-resource .pane-node-body img {
   margin: 8px;
 }
