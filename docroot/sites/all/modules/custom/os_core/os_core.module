@@ -182,11 +182,9 @@ function os_core_display_social_share_icons() {
   $social_buttons .= '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $bitly = shorten_url($url);
-  //$bitly_url = explode('#', $bitly);
-  //$social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly . '" addthis:title="' . $title. '"></a>';
 
   $data_count_url = $base_root . request_uri();
-  $social_buttons .= '<a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-lang="en" data-size="medium" data-count="horizontal" data-url="'. $bitly.'" data-text="'. $title.'" data-counturl="'. $data_count_url .'">Tweet</a>';
+  $social_buttons .= '<a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-lang="en" data-size="medium" data-count="horizontal" data-url="' . $bitly . '" data-text="' . $title . '" data-counturl="' . $data_count_url . '">Tweet</a>';
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $url_enc = urlencode($url);
