@@ -170,7 +170,7 @@ function os_core_display_social_share_icons() {
   global $base_root;
   $social_buttons = '';
   $node = node_load(filter_xss(arg(1)));
-  $title = ($node->title);
+  $title = $node->title;
 
   $social_buttons .= '
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
@@ -183,7 +183,7 @@ function os_core_display_social_share_icons() {
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $bitly = shorten_url($url);
   //$bitly_url = explode('#', $bitly);
-  $social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly . '" addthis:title="' . $node->$title. '"></a>';
+  $social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly . '" addthis:title="' . $title. '"></a>';
 
   //$data_count_url = $base_root . request_uri();
   //$social_buttons .= '<a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-lang="en" data-size="medium" data-count="horizontal" data-url="'. $bitly.'" data-text="'. $title.'" data-counturl="'. $data_count_url .'">Tweet</a>';
