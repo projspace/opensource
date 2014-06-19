@@ -183,10 +183,10 @@ function os_core_display_social_share_icons() {
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $bitly = shorten_url($url);
   //$bitly_url = explode('#', $bitly);
-  $social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly . '" addthis:title="' . $title. '"></a>';
+  //$social_buttons .= '<a class="addthis_button_tweet" addthis:url="' . $bitly . '" addthis:title="' . $title. '"></a>';
 
-  //$data_count_url = $base_root . request_uri();
-  //$social_buttons .= '<a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-lang="en" data-size="medium" data-count="horizontal" data-url="'. $bitly.'" data-text="'. $title.'" data-counturl="'. $data_count_url .'">Tweet</a>';
+  $data_count_url = $base_root . request_uri();
+  $social_buttons .= '<a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-lang="en" data-size="medium" data-count="horizontal" data-url="'. $bitly.'" data-text="'. $title.'" data-counturl="'. $data_count_url .'">Tweet</a>';
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $url_enc = urlencode($url);
