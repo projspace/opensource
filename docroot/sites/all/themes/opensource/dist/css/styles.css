@@ -3005,6 +3005,10 @@ label {
   display: none;
 }
 
+.node-type-resource .field-type-text-with-summary {
+  font-size: 14px;
+}
+
 .node-type-resource .pane-node-body img {
   margin: 8px;
 }
@@ -4133,7 +4137,11 @@ body.page-search #apachesolr-panels-search-form {
 
 body.page-search #search-block-form .form-text,
 body.page-search #apachesolr-panels-search-form .form-text {
-  padding: 15px 20px 15px 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 4px;
+  height: auto;
+  padding-right: 2px;
   margin-right: 10px;
 }
 
