@@ -170,7 +170,7 @@ function os_core_display_social_share_icons() {
   global $base_root;
   $social_buttons = '';
   $node = node_load(filter_xss(arg(1)));
-  $title = $node->title;
+  $title = htmlspecialchars(urlencode($node->title));
 
   $social_buttons .= '
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
