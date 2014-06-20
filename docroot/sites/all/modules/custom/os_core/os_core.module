@@ -214,7 +214,7 @@ function os_core_display_social_share_icons() {
 function os_core_display_social_share_icons_event_list($nid) {
   $social_buttons = '';
   $node = node_load($nid);
-  $title = htmlspecialchars(urlencode($node->title));
+  $title = htmlspecialchars($node->title);
 
   $url = url("node/" . $node->nid, array("absolute" => TRUE));
   $bitly = _os_core_shorten_tracking($url);
