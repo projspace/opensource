@@ -114,8 +114,8 @@ function os_omniture_sitecatalyst_variables($main) {
       's.channel' => "opensource",
       's.pageType' => "",
       's.prop1' => "",
-      's.prop13' => "{$nid}",
-      's.eVar26' => "{$nid}",
+      's.prop13' => "osdc {$nid}",
+      's.eVar26' => "osdc {$nid}",
       /* E-commerce Variables */
       's.campaign' => "",
       's.eVar1' => "",
