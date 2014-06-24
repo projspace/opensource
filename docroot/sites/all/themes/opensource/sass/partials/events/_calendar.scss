@@ -1,0 +1,274 @@
+.page-resources-conferences-and-events-monthly {
+    #page-title {
+        display: none;
+    }
+}
+
+%remove-spacing {
+    padding: 0;
+    margin: 0;
+}
+
+// Top pager
+.view.view-id-event_calendar {
+
+    .date-nav {
+        margin-top: 1em;
+        margin-bottom: 0;
+        background: #E6E7E8;
+        padding: 15px 0;
+    }
+
+    .pager {
+        margin: 0;
+        list-style: none;
+        background: none;
+
+        li {
+            background: none;
+            padding: 15px 20px;
+
+            a {
+                line-height: 1;
+                font-size: 22px;
+                text-decoration: none;
+                color: #c9cacc;
+                margin: 0;
+            }
+        }
+
+    }
+
+
+    .date-prev {
+        left: 0;
+        right: auto;
+    }
+
+    .date-heading {
+        h3 {
+            font-size: 22px;
+            line-height: 1;
+            font-weight: normal;
+            color: #ec4d25;
+        }
+    }
+}
+
+// Calendar Entry
+.monthview {
+    background: #d4dd4c !important;
+    line-height: 20px !important;
+    height: 20px !important;
+    border-radius: 0 !important;
+
+    a {
+        color: black !important;
+        font-size: 11px !important;
+    }
+}
+
+.cutoff {
+    border-radius: 0 !important;
+    background: #d4dd4c !important;
+}
+
+.continues {
+    @extend .cutoff;
+    padding-left: 0 !important;
+}
+
+.calendar-calendar .day {
+    padding: 0 !important;
+}
+
+.calendar-calendar td.empty {
+    color: #777;
+}
+
+// Event Listing
+.event-listing {
+
+    .view-header {
+        h2 {
+            font-size: 17px;
+            color: #292929;
+            margin: 12px 0;
+            line-height: 1.3;
+        }
+
+        ul {
+            padding-left: 24px;
+            margin: 12px 0;
+
+            a {
+                color: #39f;
+            }
+        }
+
+        .date-nav-wrapper {
+            .date-nav {
+                padding-bottom: 0;
+                margin-bottom: 12px;
+            }
+
+            .date-heading  h3 {
+                font-size: 17px;
+                font-weight: bold;
+                line-height: 1.3;
+                color: #292929;
+                border-bottom: 3px double #292929;
+                padding-bottom: 5px;
+                text-align: left;
+            }
+
+            .pager {
+                display: none;
+            }
+        }
+    }
+
+    .calendar-event-title {
+        color: #333;
+
+        &:hover {
+            color: #39f;
+        }
+    }
+
+    .ui-accordion {
+        position: relative;
+
+        .views-row {
+            border-bottom: 1px solid black;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+
+            &:before {
+                content: "+/-";
+                color: #c2c2c2;
+                font-weight: normal;
+                position: absolute;
+                left: 0;
+            }
+        }
+
+        .ui-accordion-header {
+            @extend %remove-spacing;
+            background: none;
+
+            a {
+                padding: 0;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .ui-accordion-content {
+        padding: 0;
+
+        p {
+            margin: 12px 0;
+            line-height: 1.4;
+        }
+
+        .social__container {
+            margin-bottom: 10px;
+
+            * {
+                margin-right: 3px;
+            }
+        }
+
+        a {
+            color: #6f6acc;
+            text-decoration: none;
+        }
+
+        .views-field-nothing {
+            margin: 7px 0;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 12px;
+            font-family: helvetica,sans-serif;
+
+            .views-label {
+                float: none !important;
+            }
+        }
+
+        .views-field {
+            line-height: 1.5;
+            font-size: 12px;
+
+            .views-label {
+                float: left;
+                margin-right: 5px;
+            }
+        }
+
+    }
+
+    .ui-state-focus,
+    .ui-state-active,
+    .ui-state-hover {
+        border: none !important;
+    }
+
+    .ui-icon {
+        display: none;
+    }
+}
+
+// Bottom Pager
+.event-listing .view-empty + .date-nav-wrapper,
+.ui-accordion + .date-nav-wrapper {
+    .date-heading {
+        display: none;
+    }
+
+    .date-nav {
+        height: auto;
+        min-height: 100%;
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            background: none !important;
+            padding: 0 !important;
+
+            a {
+                margin: 0 !important;
+                font-weight: bold;
+                color: #292929 !important;
+                font-size: 13px;
+                position: relative;
+                top: 3px;
+                height: 20px;
+                display: inline-block;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .date-prev {
+        left: 0;
+        right: auto;
+        a {
+            padding-left: 32px !important;
+            background: url("../images/arrow-previous.png") no-repeat left center !important;
+        }
+    }
+
+    .date-next {
+        a {
+            padding-right: 32px !important;
+            background: url("../images/arrow-next.png") no-repeat right center !important;
+        }
+    }
+
+}

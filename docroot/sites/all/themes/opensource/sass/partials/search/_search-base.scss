@@ -1,0 +1,114 @@
+%h2 {
+    float: none;
+    font-size: 12px;
+    font-weight: bold;
+    margin:0;
+}
+
+body.page-search {
+    .page__title {
+        display: block;
+    }
+
+    .pane-title {
+        @extend %h2;
+    }
+
+    #search-block-form,
+    #apachesolr-panels-search-form {
+        clear: both;
+        overflow: hidden;
+        margin-bottom: 12px;
+
+        .form-text {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 4px;
+            height: auto;
+            padding-right: 2px;
+            margin-right: 10px;
+        }
+
+        .form-item {
+            float: left;
+            margin: 0;
+        }
+
+        .form-actions {
+            float: left;
+            margin-top: 7px;
+        }
+
+    }
+
+    .view-admin-views-user {
+        margin: 12px 0;
+
+        .views-row {
+            margin-bottom: 12px;
+
+            a {
+                color: black;
+                font-size: 13px;
+
+                &:hover {
+                    color: #39f;
+                }
+            }
+        }
+
+        .views-field-mail,
+        .views-field-name {
+            display: inline;
+        }
+    }
+
+
+    .pane-admin-views-user-panel-pane-1,
+    .pane-apachesolr-result {
+        h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+    }
+
+    .search-results {
+        padding-left: 0;
+
+        .search-result {
+            margin: 0;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .title {
+            font-size: 13px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .search-snippet-info {
+            padding-left: 0;
+            margin-left: 24px;
+        }
+
+        .search-meta-info {
+            font-size: 10px;
+            margin-left: 24px;
+            margin-bottom: 12px;
+        }
+
+        a {
+            color: #333;
+            text-decoration: underline;
+
+            &:hover {
+                color: #39f;
+            }
+        }
+
+    }
+}

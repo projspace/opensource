@@ -1,0 +1,12 @@
+diff --git a/migrate_webform.migrate.inc b/migrate_webform.migrate.inc
+index d7fd202..8188015 100644
+--- a/migrate_webform.migrate.inc
++++ b/migrate_webform.migrate.inc
+@@ -56,6 +56,7 @@ function migrate_webform_migrate_api() {
+       'class_name' => 'WebformSettings',
+       'machine_name' => 'WebformSettings',
+       'description' => t('Migration of settings for webforms from Drupal 6'),
++      'dependencies' => $common_arguments['node_migrations'],
+   );
+   $components_arguments = $common_arguments + array(
+       'class_name' => 'WebformComponents',

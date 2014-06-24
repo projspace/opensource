@@ -1,0 +1,376 @@
+diff --git mollom/mollom.admin.inc mollom/mollom.admin.inc
+index 094664b..c48f234 100644
+--- mollom/mollom.admin.inc
++++ mollom/mollom.admin.inc
+@@ -9,6 +9,8 @@
+  * Menu callback; Displays a list of forms configured for Mollom.
+  */
+ function mollom_admin_form_list() {
++  $exportable = module_exists('ctools');
++
+   _mollom_testing_mode_warning();
+ 
+   // Reset the cached list of protected forms.
+@@ -24,11 +26,12 @@ function mollom_admin_form_list() {
+     t('Protection mode'),
+     array('data' => t('Operations'), 'colspan' => 2),
+   );
+-  $result = db_query('SELECT form_id FROM {mollom_form}')->fetchCol();
++  if ($exportable) {
++    $header[] = t('Storage');
++  }
+   $forms = array();
+-  $module_info = system_get_info('module');
+-  foreach ($result as $form_id) {
+-    $forms[$form_id] = mollom_form_load($form_id);
++  foreach (mollom_form_load_all(TRUE) as $form_id => $mollom_form) {
++    $forms[$form_id] = $mollom_form;
+     // system_get_info() only supports enabled modules. Default to the module's
+     // machine name in case it is disabled.
+     $module = $forms[$form_id]['module'];
+@@ -63,11 +66,52 @@ function mollom_admin_form_list() {
+       '#title' => t('Configure'),
+       '#href' => 'admin/config/content/mollom/manage/' . $form_id,
+     ));
+-    $row[] = array('data' => array(
+-      '#type' => 'link',
+-      '#title' => t('Unprotect'),
+-      '#href' => 'admin/config/content/mollom/unprotect/' . $form_id,
+-    ));
++    if ($exportable) {
++      // Remove protection.
++      if ($mollom_form['export_type'] === EXPORT_IN_DATABASE) {
++        $row[] = array('data' => array(
++          '#type' => 'link',
++          '#title' => t('Unprotect'),
++          '#href' => 'admin/config/content/mollom/unprotect/' . $form_id,
++        ));
++      }
++      elseif (empty($mollom_form['disabled'])) {
++        $row[] = array('data' => array(
++          '#type' => 'link',
++          '#title' => t('Disable'),
++          '#href' => 'admin/config/content/mollom/disable/' . $form_id,
++        ));
++      }
++      else {
++        $row[] = array('data' => array(
++          '#type' => 'link',
++          '#title' => t('Enable'),
++          '#href' => 'admin/config/content/mollom/enable/' . $form_id,
++        ));
++      }
++      // Storage operations
++      if (!empty($mollom_form['disabled'])) {
++        $row[] = t('Disabled');
++      }
++      else {
++        if ($mollom_form['export_type'] & EXPORT_IN_DATABASE && $mollom_form['export_type'] & EXPORT_IN_CODE) {
++          $row[] = t('Database overriding code (!revert | !export)', array('!revert' => l(t('revert'), 'admin/config/content/mollom/revert/' . $form_id), '!export' => l(t('export'), 'admin/config/content/mollom/export/' . $form_id)));
++        }
++        elseif ($mollom_form['export_type'] & EXPORT_IN_DATABASE) {
++          $row[] = t('In database (!export)', array('!export' => l(t('export'), 'admin/config/content/mollom/export/' . $form_id)));
++        }
++        elseif ($mollom_form['export_type'] & EXPORT_IN_CODE) {
++          $row[] = t('In code (!export)', array('!export' => l(t('export'), 'admin/config/content/mollom/export/' . $form_id)));
++        }
++      }
++    }
++    else {
++      $row[] = array('data' => array(
++        '#type' => 'link',
++        '#title' => t('Unprotect'),
++        '#href' => 'admin/config/content/mollom/unprotect/' . $form_id,
++      ));
++    }
+     $rows[] = $row;
+   }
+ 
+@@ -89,8 +133,7 @@ function mollom_admin_form_options() {
+   $form_list = mollom_form_list();
+ 
+   // Remove already configured form ids.
+-  $result = db_query('SELECT form_id FROM {mollom_form}')->fetchCol();
+-  foreach ($result as $form_id) {
++  foreach (mollom_form_load_all(TRUE) as $form_id => $mollom_form) {
+     unset($form_list[$form_id]);
+   }
+   // If all registered forms are configured already, output a message, and
+@@ -855,3 +898,70 @@ function mollom_reports_page($form, &$form_state) {
+   return $form;
+ }
+ 
++/**
++ * Form builder; Confirmation form for CTools operations.
++ */
++function mollom_admin_ctools_form($form, &$form_state, $action = 'revert', $mollom_form) {
++  $form = array();
++  $form['#tree'] = TRUE;
++  $form['mollom']['form_id'] = array(
++    '#type' => 'value',
++    '#value' => $mollom_form['form_id'],
++  );
++  $form['mollom']['action'] = array(
++    '#type' => 'value',
++    '#value' => $action,
++  );
++  switch ($action) {
++    case 'revert':
++      $question = t('Are you sure you want to revert this form?');
++      $description = t('The configuration for this form will be reverted to its default.');
++      break;
++
++    case 'disable':
++      $question = t('Are you sure you want to disable this form?');
++      $description = t('Mollom will no longer protect this form from spam while this configuration is disabled.');
++      break;
++
++    case 'enable':
++      $question = t('Are you sure you want to enable this form?');
++      $description = t('Mollom will begin protecting this form from spam.');
++      break;
++  }
++  return confirm_form($form, $question, 'admin/settings/mollom', $description);
++}
++
++/**
++ * Form submit handler for mollom_admin_revert_form().
++ */
++function mollom_admin_ctools_form_submit($form, &$form_state) {
++  switch ($form_state['values']['mollom']['action']) {
++    case 'revert':
++      mollom_admin_unprotect_form_submit($form, $form_state);
++      break;
++
++    case 'enable':
++      ctools_include('export');
++      ctools_export_set_status('mollom_form', $form_state['values']['mollom']['form_id'], FALSE);
++      break;
++
++    case 'disable':
++      ctools_include('export');
++      ctools_export_set_status('mollom_form', $form_state['values']['mollom']['form_id'], TRUE);
++      break;
++  }
++  $form_state['redirect'] = 'admin/config/content/mollom';
++}
++
++/**
++ * Form builder; Export a Mollom form configuration.
++ */
++function mollom_admin_export_form($form, $form_state, $form_id) {
++  ctools_include('export');
++  $objects = ctools_export_load_object('mollom_form', 'names', array($form_id));
++  if (!empty($objects[$form_id])) {
++    $export = ctools_export_object('mollom_form', $objects[$form_id]);
++    $form = ctools_export_form($form, $form_state, $export, t('Export Mollom form configuration'));
++  }
++  return $form;
++}
+diff --git mollom/mollom.install mollom/mollom.install
+index ec67f88..3b7ca52 100644
+--- mollom/mollom.install
++++ mollom/mollom.install
+@@ -238,6 +238,7 @@ function mollom_schema() {
+         'size' => 'tiny',
+         'not null' => TRUE,
+         'default' => 0,
++        'export callback' => 'mollom_ctools_var_export',
+       ),
+       'checks' => array(
+         'description' => 'Text analyis checks to perform.',
+@@ -288,6 +289,16 @@ function mollom_schema() {
+       ),
+     ),
+     'primary key' => array('form_id'),
++    'export' => array(
++      'key' => 'form_id',
++      'bulk export' => TRUE,
++      'api' => array(
++        'owner' => 'mollom',
++        'api' => 'mollom',
++        'minimum_version' => 1,
++        'current_version' => 1,
++      ),
++    ),
+   );
+ 
+   return $schema;
+diff --git mollom/mollom.module mollom/mollom.module
+index cbefde7..6a94f54 100644
+--- mollom/mollom.module
++++ mollom/mollom.module
+@@ -218,6 +218,41 @@ function mollom_menu() {
+     'access arguments' => array('administer mollom'),
+     'file' => 'mollom.admin.inc',
+   );
++  // Add storage operation callbacks if CTools is present.
++  if (module_exists('ctools')) {
++    $items['admin/config/content/mollom/revert/%mollom_form'] = array(
++      'title' => 'Revert',
++      'page callback' => 'drupal_get_form',
++      'page arguments' => array('mollom_admin_ctools_form', 'revert', 5),
++      'access arguments' => array('administer mollom'),
++      'type' => MENU_CALLBACK,
++      'file' => 'mollom.admin.inc',
++    );
++    $items['admin/config/content/mollom/disable/%mollom_form'] = array(
++      'title' => 'Disable',
++      'page callback' => 'drupal_get_form',
++      'page arguments' => array('mollom_admin_ctools_form', 'disable', 5),
++      'access arguments' => array('administer mollom'),
++      'type' => MENU_CALLBACK,
++      'file' => 'mollom.admin.inc',
++    );
++    $items['admin/config/content/mollom/enable/%mollom_form'] = array(
++      'title' => 'Enable',
++      'page callback' => 'drupal_get_form',
++      'page arguments' => array('mollom_admin_ctools_form', 'enable', 5),
++      'access arguments' => array('administer mollom'),
++      'type' => MENU_CALLBACK,
++      'file' => 'mollom.admin.inc',
++    );
++    $items['admin/config/content/mollom/export/%'] = array(
++      'title' => 'Export',
++      'page callback' => 'drupal_get_form',
++      'page arguments' => array('mollom_admin_export_form', 5),
++      'access arguments' => array('administer mollom'),
++      'type' => MENU_CALLBACK,
++      'file' => 'mollom.admin.inc',
++    );
++  }
+   $items['admin/config/content/mollom/blacklist'] = array(
+     'title' => 'Blacklists',
+     'description' => 'Configure blacklists.',
+@@ -721,6 +756,10 @@ function mollom_form_alter(&$form, &$form_state, $form_id) {
+   if (!user_access('bypass mollom protection')) {
+     // Retrieve configuration for this form.
+     if (isset($forms['protected'][$form_id]) && ($mollom_form = mollom_form_load($form_id))) {
++      // If form is disabled bypass validation.
++      if (!empty($mollom_form['disabled'])) {
++        return;
++      }
+       // Determine whether to bypass validation for the current user.
+       foreach ($mollom_form['bypass access'] as $permission) {
+         if (user_access($permission)) {
+@@ -868,7 +907,10 @@ function mollom_form_cache($reset = FALSE) {
+     return $forms;
+   }
+ 
+-  $forms['protected'] = db_query("SELECT form_id, module FROM {mollom_form}")->fetchAllKeyed();
++  $mollom_forms = mollom_form_load_all(TRUE);
++  foreach ($mollom_forms as $mollom_form) {
++    $forms['protected'][$mollom_form['form_id']] = $mollom_form['module'];
++  }
+ 
+   // Build a list of delete confirmation forms of entities integrating with
+   // Mollom, so we are able to alter the delete confirmation form to display
+@@ -1033,6 +1075,49 @@ function mollom_form_new($form_id) {
+ }
+ 
+ /**
++ * Return an array of all configured Mollom forms.
++ *
++ * @param $reset
++ *   Boolean flag to reset the static cache.
++ */
++function mollom_form_load_all($reset = FALSE) {
++  static $mollom_forms;
++
++  if (!isset($mollom_forms) || $reset) {
++    $mollom_forms = array();
++    if (module_exists('ctools')) {
++      ctools_include('export');
++      $mollom_forms = ctools_export_load_object('mollom_form');
++    }
++    else {
++      $result = db_query("SELECT * FROM {mollom_form}");
++      foreach ($result as $mollom_form) {
++        $mollom_form->enabled_fields = unserialize($mollom_form->enabled_fields);
++        $mollom_forms[$mollom_form->form_id] = $mollom_form;
++      }
++    }
++    foreach ($mollom_forms as $id => $mollom_form) {
++      // Cast each form as an array.
++      $mollom_form = (array) $mollom_form;
++
++      // Attach form registry information.
++      $mollom_form += mollom_form_info($id, $mollom_form['module']);
++
++      // Ensure default values (partially for administrative configuration).
++      $mollom_form += array(
++        'form_id' => $id,
++        'title' => $id,
++        'elements' => array(),
++      );
++
++      $mollom_forms[$id] = $mollom_form;
++    }
++  }
++
++  return $mollom_forms;
++}
++
++/**
+  * Menu argument loader; Loads Mollom configuration and form information for a given form id.
+  */
+ function mollom_form_load($form_id) {
+@@ -1041,11 +1126,21 @@ function mollom_form_load($form_id) {
+     return $cache->data;
+   }
+   else {
+-    $mollom_form = db_query('SELECT * FROM {mollom_form} WHERE form_id = :form_id', array(':form_id' => $form_id))->fetchAssoc();
+-    if ($mollom_form) {
+-      $mollom_form['checks'] = unserialize($mollom_form['checks']);
+-      $mollom_form['enabled_fields'] = unserialize($mollom_form['enabled_fields']);
+-
++    $mollom_form = FALSE;
++    if (module_exists('ctools')) {
++      ctools_include('export');
++      if ($objects = ctools_export_load_object('mollom_form', 'names', array($form_id))) {
++        $mollom_form = (array) $objects[$form_id];
++      }
++    }
++    else {
++      $mollom_form = db_query('SELECT * FROM {mollom_form} WHERE form_id = :form_id', array(':form_id' => $form_id))->fetchAssoc();
++      if ($mollom_form) {
++        $mollom_form['checks'] = unserialize($mollom_form['checks']);
++        $mollom_form['enabled_fields'] = unserialize($mollom_form['enabled_fields']);
++      }
++    }
++    if (!empty($mollom_form)) {
+       // Attach form registry information.
+       $form_info = mollom_form_info($form_id, $mollom_form['module']);
+       $mollom_form += $form_info;
+@@ -3103,6 +3198,31 @@ function mollom_moderate($data, $action) {
+  */
+ 
+ /**
++ * @name mollom_export CTools Bulk exporter integration for Mollom.
++ * @{
++ */
++
++/**
++ * Callback to export a single Mollom form configuration into code.
++ *
++ * @todo This looks unnecessary - is there no better default handling?
++ */
++function mollom_export_mollom_form($mollom_form) {
++  return ctools_export_object('mollom_form', $mollom_form);
++}
++
++/**
++ * Callback to perform a verbatim export of the value of a table field.
++ */
++function mollom_ctools_var_export($myobject, $field, $value, $indent) {
++  return $value;
++}
++
++/**
++ * @} End of "name mollom_export".
++ */
++
++/**
+  * @name mollom_node Node module integration for Mollom.
+  * @{
+  */

@@ -1,0 +1,3 @@
+name = "Opensource Reports"
+description = "Provides reports for various opensource.com activities"
+core = 7.x

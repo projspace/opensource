@@ -1,0 +1,23 @@
+.burr-flipped-sidebar .pane-block{
+    background: #FFF;
+    padding: 1em;
+    padding-right: 0;
+    margin-bottom: 1.5em
+}
+
+.burr-flipped-sidebar {
+    .pane-author-info-panel-pane-1 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+        .view-content {
+            clear: both;
+            overflow: hidden;
+        }
+    }
+}
+
+.burr-flipped-sidebar .pane-menu-menu-opensource-resources-homepa {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

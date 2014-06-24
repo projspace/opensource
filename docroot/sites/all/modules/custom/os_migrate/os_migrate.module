@@ -1,0 +1,465 @@
+<?php
+/**
+ * @file
+ * This contains code to register and support core migration from OS6 -> 7.
+ */
+
+/**
+ * Implements hook_flush_caches().
+ */
+function os_migrate_flush_caches() {
+  os_migrate_register_migrations();
+}
+
+/**
+ * Register all D6->D7 migrations.
+ */
+function os_migrate_register_migrations() {
+  // Best practice: use a variable (defined by setting $conf in settings.php
+  // or with drush vset) for database details rather than in the code.
+  $source_dir = variable_get('os_migrate_files_source_dir', 'http://opensource.com/sites/default/files');
+
+  // These are our common arguments for all our migrations.
+  $common_arguments = array(
+    'source_connection' => 'legacy',
+    'source_version' => 6,
+    'group_name' => 'opensource',
+  );
+
+  // Register User Picture migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of user pictures'),
+    'machine_name' => 'OsUserPicture',
+    'source_dir' => $source_dir,
+  );
+
+  Migration::registerMigration('DrupalPicture6Migration', $args['machine_name'], $args);
+
+  // Register Legal data migration.
+  $arguments = $common_arguments + array(
+    'description' => t('Migration of legal data from Drupal 6'),
+    'machine_name' => 'OsLegal',
+  );
+
+  Migration::registerMigration('OsMigrateLegalConditionsMigration', $arguments['machine_name'], $arguments);
+
+  // Register User migration.
+  $arguments = $common_arguments + array(
+    'description' => t('Migration of users from Drupal 6'),
+    'machine_name' => 'OsUser',
+    'dependencies' => array('OsUserPicture', 'OsLegal'),
+  );
+
+  Migration::registerMigration('OsMigrateUserMigration', $arguments['machine_name'], $arguments);
+
+  // Register Legal accepted data migration.
+  $arguments = $common_arguments + array(
+    'description' => t('Migration of legal accepted data from Drupal 6'),
+    'machine_name' => 'OsLegalAccepted',
+    'dependencies' => array('OsLegal', 'OsUser'),
+  );
+
+  Migration::registerMigration('OsMigrateLegalAcceptedMigration', $arguments['machine_name'], $arguments);
+
+  // Register User Badges migration.
+  $arguments = $common_arguments + array(
+    'description' => t('Migration of user badges from Drupal 6'),
+    'machine_name' => 'OsUserBadges',
+    'dependencies' => array('OsUser'),
+  );
+
+  Migration::registerMigration('OsMigrateUserBadgesMigration', $arguments['machine_name'], $arguments);
+
+  // Taxonomy migration start
+  // For vocabulary migrations, source_vocabulary and destination_vocabulary are
+  // required arguments. Note that in Drupal 6 vocabularies did not have machine
+  // names, so we use the vocabulary ID to uniquely identify them.
+  $vocabulary_arguments = array(
+    array(
+      'description' => t('Migration of Sections Vocab from OS Drupal 6'),
+      'machine_name' => 'OsVocabSections',
+      // D6 Vocabulary ID for Sections.
+      'source_vocabulary' => '7',
+      'destination_vocabulary' => 'sections',
+    ),
+    array(
+      'description' => t('Migration of Tags Vocab from OS Drupal 6'),
+      'machine_name' => 'OsVocabTags',
+      // D6 Vocabulary ID for Tags.
+      'source_vocabulary' => '6',
+      'destination_vocabulary' => 'tags',
+    ),
+  );
+
+  // The soft dependency says that while we don't have to run the user migration
+  // first, we want to make sure it's listed first so the vocubularies are
+  // listed right ahead of the node migrations.
+  $common_vocabulary_arguments = $common_arguments + array(
+    'class_name' => 'DrupalTerm6Migration',
+  );
+
+  // Mapping of taxonomy terms.
+  foreach ($vocabulary_arguments as $arguments) {
+    $arguments += $common_vocabulary_arguments;
+    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
+  }
+
+  // Register File migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of all managed files'),
+    'machine_name' => 'OsFile',
+    'source_dir' => $source_dir,
+    'user_migration' => 'OsUser',
+    'dependencies' => array('OsUser'),
+  );
+
+  Migration::registerMigration('DrupalFile6Migration', $args['machine_name'], $args);
+
+  // Register IMCE field's file migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of IMCE Image field files'),
+    'machine_name' => 'OsImageFieldFile',
+    'source_dir' => $source_dir,
+    'user_migration' => 'OsUser',
+    'dependencies' => array('OsUser'),
+  );
+
+  Migration::registerMigration('OsMigrateFieldImceImageMigration', $args['machine_name'], $args);
+
+  // Node migrations - each has its own class derived from the migrate_d2d class
+  // specifying its particular field mappings and transformations. source_type
+  // and destination_type are required arguments.
+  $node_arguments = array(
+    array(
+      'class_name' => 'OsMigrateWebformMigration',
+      'description' => t('Migration of webform nodes from Drupal 6'),
+      'machine_name' => 'OsContentWebform',
+      'dependencies' => array(),
+      'source_type' => 'webform',
+      'destination_type' => 'webform',
+    ),
+    array(
+      'class_name' => 'OsMigratePollMigration',
+      'description' => t('Migration of article nodes (with poll field) from Drupal 6'),
+      'machine_name' => 'OsContentPoll',
+      'dependencies' => array('OsFile', 'OsVocabTags'),
+      'source_type' => 'post',
+      'destination_type' => 'poll',
+    ),
+    array(
+      'class_name' => 'OsMigrateArticleMigration',
+      'description' => t('Migration of article nodes from Drupal 6'),
+      'machine_name' => 'OsContentArticle',
+      'dependencies' => array('OsFile', 'OsContentPoll', 'OsVocabTags'),
+      'source_type' => 'post',
+      'destination_type' => 'article',
+    ),
+    array(
+      'class_name' => 'OsMigrateArticleMigration',
+      'description' => t('Migration of podcast nodes from Drupal 6'),
+      'machine_name' => 'OsContentPodcast',
+      'dependencies' => array('OsFile', 'OsVocabTags'),
+      'source_type' => 'podcast',
+      'destination_type' => 'article',
+    ),
+    array(
+      'class_name' => 'OsMigrateArticleMigration',
+      'description' => t('Migration of video nodes from Drupal 6'),
+      'machine_name' => 'OsContentVideo',
+      'dependencies' => array('OsFile', 'OsVocabTags'),
+      'source_type' => 'video',
+      'destination_type' => 'article',
+    ),
+    array(
+      'class_name' => 'OsMigratePageMigration',
+      'description' => t('Migration of page nodes from Drupal 6'),
+      'machine_name' => 'OsContentPage',
+      'dependencies' => array('OsFile', 'OsVocabSections'),
+      'source_type' => 'page',
+      'destination_type' => 'page',
+    ),
+    array(
+      'class_name' => 'OsMigrateResourceMigration',
+      'description' => t('Migration of resource nodes from Drupal 6'),
+      'machine_name' => 'OsContentResource',
+      'dependencies' => array('OsFile'),
+      'source_type' => 'resource',
+      'destination_type' => 'resource',
+    ),
+    array(
+      'class_name' => 'OsMigrateGroupPageMigration',
+      'description' => t('Migration of group page nodes from Drupal 6'),
+      'machine_name' => 'OsContentGroupPage',
+      'source_type' => 'group_page',
+      'destination_type' => 'group_page',
+    ),
+    array(
+      'class_name' => 'OsMigrateEventMigration',
+      'description' => t('Migration of event nodes from Drupal 6'),
+      'machine_name' => 'OsContentEvent',
+      'source_type' => 'event',
+      'destination_type' => 'event',
+    ),
+  );
+  // Tell the node migrations where the users are coming from, so they can
+  // set up the dependency and resolve D6->D7 uids.
+  $common_node_arguments = $common_arguments + array(
+    'user_migration' => 'OsUser',
+    'dependencies' => array('OsUser'),
+  );
+  foreach ($node_arguments as $arguments) {
+    $arguments = array_merge_recursive($arguments, $common_node_arguments);
+    // Add OsContentWebform as dependency to every other content migration.
+    if ($arguments['machine_name'] != 'OsContentWebform') {
+      $arguments['dependencies'][] = 'OsContentWebform';
+    }
+    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
+  }
+
+  // Comment migration.
+  $comment_arguments = array(
+    array(
+      'class_name' => 'OsMigrateCommentMigration',
+      'description' => t('Migration of Article comments from Drupal 6'),
+      'machine_name' => 'OsArticleComments',
+      'source_type' => 'post',
+      'destination_type' => 'article',
+      'node_migration' => 'OsContentArticle',
+      'user_migration' => 'OsUser',
+      'default_uid' => 0,
+      'dependencies' => array('OsContentArticle'),
+    ),
+    array(
+      'class_name' => 'OsMigrateCommentMigration',
+      'description' => t('Migration of Podcast comments from Drupal 6'),
+      'machine_name' => 'OsPodcastComments',
+      'source_type' => 'podcast',
+      'destination_type' => 'article',
+      'node_migration' => 'OsContentPodcast',
+      'user_migration' => 'OsUser',
+      'default_uid' => 0,
+      'dependencies' => array('OsContentPodcast'),
+    ),
+    array(
+      'class_name' => 'OsMigrateCommentMigration',
+      'description' => t('Migration of Video comments from Drupal 6'),
+      'machine_name' => 'OsVideoComments',
+      'source_type' => 'video',
+      'destination_type' => 'article',
+      'node_migration' => 'OsContentVideo',
+      'user_migration' => 'OsUser',
+      'default_uid' => 0,
+      'dependencies' => array('OsContentVideo'),
+    ),
+    array(
+      'class_name' => 'OsMigrateCommentMigration',
+      'description' => t('Migration of Event comments from Drupal 6'),
+      'machine_name' => 'OsEventComments',
+      'source_type' => 'event',
+      'destination_type' => 'event',
+      'node_migration' => 'OsContentEvent',
+      'user_migration' => 'OsUser',
+      'default_uid' => 0,
+      'dependencies' => array('OsContentEvent'),
+    ),
+    array(
+      'class_name' => 'OsMigratePollCommentMigration',
+      'description' => t('Migration of Poll comments from Drupal 6'),
+      'machine_name' => 'OsPollComments',
+      'source_type' => 'post',
+      'destination_type' => 'poll',
+      'node_migration' => 'OsContentPoll',
+      'user_migration' => 'OsUser',
+      'default_uid' => 0,
+      'dependencies' => array('OsContentPoll'),
+    ),
+  );
+
+  foreach ($comment_arguments as $arguments) {
+    $arguments = array_merge_recursive($arguments, $common_arguments);
+    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
+  }
+
+  // VotingAPI migrations.
+  $votingapi_arguments = array(
+    array(
+      'machine_name' => 'OsArticleRating',
+      'class_name' => 'OsMigrateNodeRatingMigration',
+      'description' => t('Migration of votes for Articles from Drupal 6'),
+      'dependencies' => array(
+        'OsContentArticle',
+        'OsContentPodcast',
+        'OsContentVideo',
+      ),
+    ),
+    array(
+      'machine_name' => 'OsCommentRating',
+      'class_name' => 'OsMigrateCommentRatingMigration',
+      'description' => t('Migration of votes for comments from Drupal 6'),
+      'dependencies' => array(
+        'OsArticleComments',
+        'OsPodcastComments',
+        'OsVideoComments',
+        'OsEventComments',
+        'OsPollComments',
+      ),
+    ),
+  );
+
+  // Mapping of votingapi.
+  foreach ($votingapi_arguments as $arguments) {
+    $arguments += $common_arguments;
+    Migration::registerMigration($arguments['class_name'], $arguments['machine_name'], $arguments);
+  }
+
+  // Register spotlighted user migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of Spotlighted User content type to flags'),
+    'machine_name' => 'OsSpotlightedUser',
+    'user_migration' => 'OsUser',
+    'dependencies' => array('OsUser'),
+    'source_type' => 'spotlighted_user',
+    'destination_type' => '',
+  );
+
+  Migration::registerMigration('OsMigrateSpotlightedUserMigration', $args['machine_name'], $args);
+
+  // Register comment_abuse flag migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of Comment Abuse Flag'),
+    'machine_name' => 'OsCommentAbuseFlag',
+    'user_migration' => 'OsUser',
+    'content_migration' => 'OsArticleComments',
+    'dependencies' => array('OsUser', 'OsArticleComments'),
+    'source_flag_name' => 'comment_abuse',
+    'destination_flag_name' => 'comment_abuse',
+  );
+
+  Migration::registerMigration('OsMigrateFlagMigration', $args['machine_name'], $args);
+
+  // Register redirect migration.
+  $args = $common_arguments + array(
+    'description' => t('Migration of Redirects'),
+    'machine_name' => 'OsRedirect',
+    // Poll is a new content type and hence, we don't need to mark
+    // OsContentPoll as dependency.
+    'dependencies' => array(
+      'OsContentArticle',
+      'OsContentPodcast',
+      'OsContentVideo',
+      'OsContentPage',
+      'OsContentGroupPage',
+      'OsContentResource',
+      'OsContentEvent',
+    ),
+  );
+
+  Migration::registerMigration('OsMigrateRedirectMigration', $args['machine_name'], $args);
+
+  // Register User Points migration.
+  $arguments = $common_arguments + array(
+    'description' => t('Migration of user points from Drupal 6'),
+    'machine_name' => 'OsUserPoints',
+    'dependencies' => array(
+      'OsUser',
+      'OsContentArticle',
+      'OsContentPodcast',
+      'OsContentVideo',
+      'OsContentPage',
+      'OsContentGroupPage',
+      'OsContentResource',
+      'OsContentEvent',
+      'OsArticleComments',
+      'OsPodcastComments',
+      'OsVideoComments',
+      'OsEventComments',
+    ),
+  );
+
+  Migration::registerMigration('OsMigrateUserPointsMigration', $arguments['machine_name'], $arguments);
+
+  // Register Menu links migrations.
+  $args = $common_arguments + array(
+    'description' => t('Migration of menu links from Drupal 6'),
+    'machine_name' => 'OsMenuLinks',
+    'node_migrations' => array(
+      'OsContentArticle',
+      'OsContentPodcast',
+      'OsContentVideo',
+      'OsContentPage',
+      'OsContentGroupPage',
+      'OsContentResource',
+      'OsContentEvent',
+    ),
+    'dependencies' => array(
+      'OsContentArticle',
+      'OsContentPodcast',
+      'OsContentVideo',
+      'OsContentPage',
+      'OsContentGroupPage',
+      'OsContentResource',
+      'OsContentEvent',
+    ),
+  );
+  Migration::registerMigration('OsMigrateMenuLinksMigration', $args['machine_name'], $args);
+}
+
+/**
+ * Implements hook_migrate_api().
+ */
+function os_migrate_migrate_api() {
+  $disable_hooks = array(
+    'comment_insert' => array(
+      'comment_notify',
+    ),
+    'entity_insert' => array(
+      'comment_notify',
+      'rules',
+    ),
+    'entity_update' => array(
+      'rules',
+    ),
+    'user_insert' => array(
+      'os_badges',
+    ),
+    'userpoints' => array(
+      'os_badges',
+    ),
+    'votingapi_insert' => array(
+      'voting_rules',
+    ),
+  );
+
+  $api = array(
+    'api' => 2,
+    'groups' => array(
+      'opensource' => array(
+        'title' => 'OpenSource.com D6->D7 migration',
+        'disable_hooks' => $disable_hooks,
+      ),
+    ),
+  );
+  return $api;
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function os_migrate_module_implements_alter(&$implementation, $hook) {
+  // Ensure that the Migration class exists, as different bootstrap phases may
+  // not have included migration.inc yet.
+  if (class_exists('Migration') && $migration = Migration::currentMigration()) {
+    // Disable hooks only when a migration from opensource group is running.
+    $group = $migration->getGroup();
+    if ($group->getName() == 'opensource') {
+      // Be very careful in disabling hooks this way. It is always a better idea
+      // to disable specific hooks in a module.
+      unset($implementation['apachesolr']);
+      unset($implementation['apachesolr_access']);
+      unset($implementation['mollom']);
+      unset($implementation['search_api']);
+      unset($implementation['search_api_db']);
+      unset($implementation['os_badges']);
+    }
+  }
+}

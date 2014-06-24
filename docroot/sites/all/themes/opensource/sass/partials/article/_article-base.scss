@@ -1,0 +1,242 @@
+.node-type-poll,
+.node-type-article {
+    .description,
+    .fivestar-widget {
+        float: left;
+    }
+
+    .pane-articlepollpane {
+        .pane-title {
+            float: none;
+        }
+    }
+
+    .fivestar-summary-average-count {
+        font-size: 12px;
+    }
+
+    .author-feed {
+        p {
+            margin: 0;
+        }
+    }
+
+    .pane-node-field-rating {
+        .ajax-progress-throbber {
+            float: right;
+        }
+    }
+
+    .pane-node-body {
+        color: black;
+        margin-bottom: 2em;
+
+        p, h2, h3 {
+            margin: 12px 0;
+        }
+
+        a {
+            color: #5E6A71;
+        }
+    }
+
+    .pane-os-core-opensource-article-share {
+        clear: both;
+        padding-top: 10px;
+
+    }
+
+    .comment-by-node-author {
+        clear: left;
+    }
+
+    .tabs-primary {
+        padding-left: 0;
+    }
+
+    ul {
+        padding-left: 24px;
+    }
+
+    .article-title {
+        line-height: 1.3;
+        margin-bottom: 5px;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .author-feed {
+        background-position: bottom;
+    }
+
+    .pane-node-field-lead-image {
+        margin-top: 10px;
+    }
+
+    .pane-file-field-file-image-caption {
+        color: #999;
+        font-size: 10px;
+        font-style: italic;
+        margin-top: 10px;
+
+        p {
+            margin: 0;
+        }
+    }
+
+
+    .pane-related-articles-panel-pane-1 {
+        margin-top: 10px;
+
+        .pane-title {
+            float: none;
+        }
+
+        .related-content {
+
+            .view-content {
+                clear: both;
+                overflow: hidden;
+            }
+
+            .views-row {
+                float: left;
+                width: 33.33%;
+            }
+        }
+    }
+
+    .pane-node-field-tags {
+        .field-item {
+            margin-top: 0 !important;
+        }
+    }
+
+    .pane-node-field-default-license {
+        text-align: right;
+    }
+
+    .pane-node-comment-form {
+        .pane-title {
+            font-size: 18px;
+            line-height: 1;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .comment-form {
+            clear: left;
+        }
+
+        .form-text {
+            font-size: 14px;
+            border: 1px solid #cdcbca;
+            height: 30px;
+            padding: 0 8px;
+        }
+
+        .form-type-textarea label {
+            display: none;
+        }
+    }
+
+    .pane-os-core-opensource-article-share {
+        .addthis_button_tweet {
+            position: relative;
+            top: 2px;
+            width: 80px;
+            display: inline-block;
+
+            & + a {
+                position: relative;
+                top: -4px;
+                width: 80px;
+                display: inline-block;
+            }
+        }
+
+        .addthis_button_google_plusone {
+            position: relative;
+            top: 2px;
+            margin-left: 5px;
+        }
+
+
+    }
+}
+.pane-node-field-attachments {
+    .file {
+        img {
+            display: none;
+        }
+    }
+
+    th {
+        text-align: left;
+    }
+
+    tr.even {
+        background-color: #eee;
+    }
+}
+
+// Widgets
+.addthis_button_tweet {
+    position: relative;
+    top: 0;
+    width: 80px;
+    display: inline-block;
+    margin-right: 5px;
+
+    & + a {
+        position: relative;
+        top: -4px;
+        width: 80px;
+        display: inline-block;
+        margin-right: 5px;
+        left: -3px;
+    }
+}
+
+.addthis_button_google_plusone {
+    position: relative;
+    top: 2px;
+    margin-left: 5px;
+    left: -9px;
+}
+
+[id^="iframe-stmblpn-widget-"] {
+    margin-right: 5px !important;
+    left: -6px;
+    position: relative;
+}
+
+.addthis_button_facebook_like {
+    position: relative;
+    left: -9px;
+}
+
+.node-type-poll {
+    .pane-node-body {
+        font-size: 16px;
+    }
+}
+.twitter-share-button {
+    position: relative;
+    top: 2px;
+    width: 90px !important;
+
+    & + a {
+        position: relative;
+        top: -6px;
+        margin-right: 9px;
+    }
+}
+
+.node-type-article {
+    .pane-node-body {
+        font-size: 14px;
+    }
+}

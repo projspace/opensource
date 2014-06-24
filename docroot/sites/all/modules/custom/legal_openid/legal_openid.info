@@ -1,0 +1,7 @@
+name = Legal OpenID Support
+description = Add support for Legal module to OpenID and Anonymous comments.
+core = 7.x
+package = OpenSource.com Custom
+dependencies[] = legal
+dependencies[] = openid
+dependencies[] = comment

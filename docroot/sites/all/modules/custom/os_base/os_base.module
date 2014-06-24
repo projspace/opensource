@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Provides common helper functions.
+ */
+
+/**
+ * Move file entity to a new location and create a file entity.
+ */
+function os_base_file_create($source_path, $destination = 'public://', $replace = FILE_EXISTS_RENAME) {
+  if (file_exists($source_path)) {
+    $dfile = (object) array(
+      'uri' => $source_path,
+      'filemime' => file_get_mimetype($source_path),
+      'status' => 1,
+    );
+    file_prepare_directory($destination, FILE_CREATE_DIRECTORY);
+    $drupalfile = file_copy($dfile, $destination, $replace);
+    return $drupalfile->fid;
+  }
+  return FALSE;
+}

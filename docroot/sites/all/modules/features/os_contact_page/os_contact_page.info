@@ -1,0 +1,13 @@
+name = OpenSource Contact Page
+description = Contact page for the opensource.com
+core = 7.x
+package = OpenSource.com Components
+dependencies[] = bean
+dependencies[] = ctools
+dependencies[] = fe_block
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[fe_block_settings][] = bean-contact-block
+features[features_api][] = api:2
+features[page_manager_handlers][] = contact_site_panel_context
+project path = sites/all/modules/features

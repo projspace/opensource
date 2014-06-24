@@ -1,0 +1,24 @@
+<?php
+/**
+ * @file
+ * Hooks into various events and provides support for other rules features.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function os_rules_support_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'poll_view_voting':
+      $form['vote']['#submit'][] = 'os_rules_support_poll_view_voting_submit';
+      break;
+  }
+}
+
+/**
+ * Submit handler for poll_view_voting form.
+ */
+function os_rules_support_poll_view_voting_submit($form, &$form_state) {
+  // Invoke our custom rule and pass the loaded node object as an argument.
+  rules_invoke_event('os_rules_support_poll_vote', node_load($form['#node']->nid));
+}

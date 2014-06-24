@@ -1,0 +1,90 @@
+body[class*='section-'] {
+
+    .page__title {
+        display: none;
+    }
+
+    .view-channel-articles {
+
+        .views-row {
+            margin-bottom: 15px;
+            padding: 10px 0;
+        }
+
+        .views-field-body {
+            font-size: 14px;
+        }
+
+        .views-field-title {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.25;
+            margin-bottom: 12px;
+
+            a {
+                color: #333;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: #39f;
+                }
+            }
+        }
+
+
+        .views-field-field-lead-image {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .author-feed,
+        .username {
+            display: inline-block;
+            float: none;
+        }
+
+        .username {
+            margin-right: 0;
+        }
+
+        .author-feed {
+            position: relative;
+            top: 4px;
+        }
+
+        .views-field-created {
+            clear: both;
+        }
+
+        .teaser-date {
+            color: #333;
+        }
+
+        .teaser-author {
+            top: 0;
+            vertical-align: bottom;
+            margin-left: 0;
+
+            a {
+                text-decoration: none;
+                background-position: bottom;
+            }
+        }
+
+        .views-more-link {
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+
+            &:hover {
+                text-decoration: underline;
+                color: #39f;
+            }
+
+            &:before {
+                content: '» ';
+            }
+        }
+    }
+}

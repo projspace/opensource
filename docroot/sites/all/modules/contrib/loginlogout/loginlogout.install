@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the loginlogout module.
+ *
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function loginlogout_install() {
+  // make sure it runs before lightbox js
+  // Set the weight to 1
+  db_update('system')
+    ->fields(array('weight' => -1))
+    ->condition('type', 'module')
+    ->condition('name', 'loginlogout')
+    ->execute();
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function loginlogout_uninstall() {
+  // make sure it runs before lightbox js
+  variable_del('loginlogout_urls');
+}
+
+/**
+ * Changes the loginlogout_additional_urls variable to loginlogout_urls
+ */
+function loginlogout_update_6101() {
+  if ($paths = variable_get('loginlogout_additional_urls', NULL)) {
+    variable_set('loginlogout_urls', $paths . "\n" . LOGINLOGOUT_DEFAULT_URLS);
+    variable_del('loginlogout_additional_urls');
+  }
+  return array();
+}
+
+/**
+ * Changes the loginlogout_additional_urls variable to loginlogout_urls
+ */
+function loginlogout_update_7000() {
+  if ($paths = variable_get('loginlogout_urls', NULL)) {
+    $paths = str_replace('logout', 'user/logout', $paths);
+    variable_set('loginlogout_urls', $paths);
+  }
+  return array();
+}

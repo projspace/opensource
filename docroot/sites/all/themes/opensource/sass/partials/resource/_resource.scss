@@ -1,0 +1,65 @@
+.node-type-resource {
+    #page-title {
+        display: none;
+    }
+
+    .field-type-text-with-summary {
+        font-size: 14px;
+    }
+
+    .pane-node-body {
+        img {
+            margin: 8px;
+        }
+
+        h2 {
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 16px;
+            line-height: 1.3em;
+            margin-top: 0.769em;
+            margin-bottom: 0.769em;
+        }
+
+    }
+    #content {
+        .pane-os-core-opensource-article-share {
+            text-align: center;
+            padding: 1em 0;
+
+            img {
+                border: none;
+            }
+        }
+    }
+}
+
+.pane-menu-opensource-resources {
+
+    .pane-title {
+        text-decoration: none;
+        border: none;
+        font-family: sans-serif;
+        font-size: 22px;
+        color: #DD3823;
+        text-transform: none;
+        font-weight: normal;
+        background: none;
+    }
+
+    ul {
+        padding-left: 8px;
+    }
+
+    li {
+        list-style: none !important;
+        margin-bottom: 10px;
+
+        a {
+            display: block;
+        }
+    }
+}
+
