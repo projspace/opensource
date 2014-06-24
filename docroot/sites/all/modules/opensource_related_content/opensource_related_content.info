@@ -1,7 +1,0 @@
-core = "6.x"
-description = "Opensource Apachesolr Related content block"
-features[imagecache][] = "related_content_lead_thumbnail"
-name = "Opensource Related Content"
-package = "Features"
-project = "opensource_related_content"
-version = "6.x-1.0"

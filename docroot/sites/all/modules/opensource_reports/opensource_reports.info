@@ -1,4 +1,0 @@
-name = "Opensource Reports"
-description = "Provides reports for various opensource.com activities"
-core = 6.x
-version = 6.x-1.0-alpha

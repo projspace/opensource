@@ -1,4 +1,0 @@
-;  $Id:$
-name = Popular Content
-description = Tracks the most popular content on the site.
-core = 6.x

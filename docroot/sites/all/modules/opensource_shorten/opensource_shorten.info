@@ -1,3 +1,0 @@
-name = "Opensource Custom Shorten"
-description = "Implementation of Shorten API for adding tracking code to bit.ly URL."
-core = 6.x

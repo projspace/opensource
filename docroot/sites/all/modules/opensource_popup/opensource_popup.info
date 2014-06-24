@@ -1,3 +1,0 @@
-name = "Opensource Popup" 
-description = "Implementation of custom lightbox2 popup."
-core = 6.x

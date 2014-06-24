@@ -1,4 +1,0 @@
-name = OpenSource.com RSS
-description = Formatting of RSS feeds for the OpenSource.com.
-dependencies[] = og
-core = 6.x

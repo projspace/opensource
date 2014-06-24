@@ -1,6 +1,0 @@
-name = imceimage_2_filefield
-description = Migrates imceimage cck fields to filefield cck fields.
-core = 6.x
-
-dependencies[] = imceimage
-dependencies[] = filefield
