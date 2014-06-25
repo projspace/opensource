@@ -15,3 +15,4 @@ dependencies[] = os_taxonomy
 dependencies[] = os_common_components
 dependencies[] = os_user_page
 dependencies[] = os_workflow
+dependencies[] = shorten
