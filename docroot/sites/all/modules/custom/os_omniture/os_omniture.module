@@ -149,6 +149,11 @@ function os_omniture_sitecatalyst_variables($main) {
   // Implementing a custom footer. This is based on the footer in the omniture
   // module.
   $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/' . "\n";
+
+  $footer .= '<!-- begin Eloqua tracking -->' . "\n";
+  $footer .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqCfg.js'></script>" . "\n";
+  $footer .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqImg.js'></script>" . "\n";
+  $footer .= "<!-- end Eloqua tracking -->" . "\n";
   $footer .= '//--></script><script type="text/javascript" src="/sites/all/libraries/sitecatalyst/rh_omni_footer.js"></script>' . "\n";
   $footer .= '<script language="JavaScript" type="text/javascript"><!--' . "\n";
   $footer .= "if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')" . "\n";
