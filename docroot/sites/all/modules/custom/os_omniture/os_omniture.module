@@ -12,6 +12,8 @@ function os_omniture_sitecatalyst_variables($main) {
   global $user;
 
   $nid = '';
+  $pubDate = '';
+
   // Every page starts with the site name.
   $page_name = ($_SERVER['SERVER_NAME'] == 'opensource.com') ? ('opensource') : ('osdc:' . $_SERVER['SERVER_NAME']);
 
@@ -74,6 +76,7 @@ function os_omniture_sitecatalyst_variables($main) {
   // The user is viewing a node homepage.
   elseif (arg(0) == 'node' && is_numeric(arg(1)) && $node = node_load(arg(1))) {
     $nid = $node->nid;
+    $pubDate = $node->created;
     if ($node->type == 'article') {
       $channel_term = field_view_field('node', $node, 'field_channel', array('default'));
       $page_name .= '|' . strtolower(os_omniture_clean($channel_term[0]['#title'])) . '|article|' . os_omniture_clean($node->title);
@@ -107,26 +110,39 @@ function os_omniture_sitecatalyst_variables($main) {
   // to light.
   global $base_url;
 
+  $osdc_nid = '';
+  if (!empty($nid)){
+    $osdc_nid = "osdc {$nid}";
+  }
+
+  $url_arr = parse_url($base_url);
+  $host = $url_arr['host'];
+  $query = $url_arr['query'];
+
   $vars = array(
     'variables' => array(
       's.pageName' => $page_name,
-      's.server' => "",
+      's.server' => "opensource.com",
       's.channel' => "opensource",
       's.pageType' => "",
       's.prop1' => "",
-      's.prop13' => "osdc {$nid}",
-      's.eVar26' => "osdc {$nid}",
+      's.prop13' => $osdc_nid,
+      's.eVar26' => $osdc_nid,
       /* E-commerce Variables */
       's.campaign' => "",
       's.eVar1' => "",
       's.eVar2' => "",
       's.eVar3' => "",
-      's.eVar23' => $base_url . request_uri(),
+      's.eVar23' => $query,
+      's.prop4' => $query,
       's.events' => "",
       's.products' => "",
       's.state' => "",
       's.zip' => "",
       's.purchaseID' => "",
+      's.prop21' => $host . '/' . request_path(),
+      's.eVar18' => $host . '/' . request_path(),
+      's.prop61' => $pubDate,
     ),
   );
 
@@ -142,7 +158,11 @@ function os_omniture_sitecatalyst_variables($main) {
   $footer .= '<!-- End SiteCatalyst code version: ';
   $footer .= check_plain(variable_get("sitecatalyst_version", 'H.20.3.'));
   $footer .= ' -->' . "\n";
-
+  $footer .= '<!-- begin Google Remarketing -->' . "\n";
+  $footer .= '<img height="1" width="1" style="border-style:none;display:block;" alt="" ';
+  $footer .= ' src="//googleads.g.doubleclick.net/pagead/';
+  $footer .= 'viewthroughconversion/990030321/?value=0&amp;label=rxV4CN_35QQQ8dOK2AM&amp;';
+  $footer .= 'guid=ON&amp;script=0" /><!-- end Google Remarketing -->' . "\n";
   $vars['footer'] = $footer;
 
   return $vars;
