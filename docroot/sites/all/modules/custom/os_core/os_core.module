@@ -640,6 +640,16 @@ function os_core_views_pre_render(&$view) {
           $result->field_field_article_type[0]['rendered']['#markup'] = 'Poll';
         }
       }
+      break;
+
+    case 'channel_articles':
+      // If this is feed display - change the title.
+      if ( ($view->current_display == 'feed_1') && arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2)) ) {
+        $term = taxonomy_term_load(arg(2));
+        $view->build_info['title'] = $term->title;
+      }
+      break;
+
   }
 }
 
