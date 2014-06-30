@@ -5,5 +5,9 @@ docroot/sites/*/files/
 # Ignore configuration files that may contain sensitive information.
 
 # Ignore paths that contain user-generated content.
- docroot/sites/*/files
- docroot/sites/*/private
+docroot/sites/*/files
+docroot/sites/*/private
+
+# Ignore local settings file for dev / stage testing
+
+docroot/sites/default/local.settings.php

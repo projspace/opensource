@@ -601,3 +601,9 @@ $conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
 $conf['reverse_proxy_addresses'] = array('127.0.0.1');
 }
 
+ /* 
+  * Settings file routing
+  */
+ if (file_exists(dirname(__FILE__) . '/local.settings.php')) {
+    include dirname(__FILE__) . '/local.settings.php';
+ }
