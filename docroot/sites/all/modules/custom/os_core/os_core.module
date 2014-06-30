@@ -646,7 +646,16 @@ function os_core_views_pre_render(&$view) {
       // If this is feed display - change the title.
       if ( ($view->current_display == 'feed_1') && arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2)) ) {
         $term = taxonomy_term_load(arg(2));
-        $view->build_info['title'] = $term->name;
+        $view->build_info['title'] = $term->name . t( " at Opensource.com");
+      }
+      break;
+
+    case 'authored_content':
+      // If this is feed display - change the title.
+      if ( ($view->current_display == 'feed_1') && arg(0) == 'user' && is_numeric(arg(1)) ) {
+        $account = taxonomy_term_load(arg(1));
+        $username = isset($account->field_display_name[LANGUAGE_NONE][0]['value']) ? $account->field_display_name[LANGUAGE_NONE][0]['value']:$account->name;
+        $view->build_info['title'] = $username . t( " at Opensource.com");
       }
       break;
 
