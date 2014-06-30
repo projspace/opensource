@@ -13,6 +13,7 @@ function os_omniture_sitecatalyst_variables($main) {
 
   $nid = '';
   $pubDate = '';
+  $format = 'Y-j-d';
 
   // Every page starts with the site name.
   $page_name = ($_SERVER['SERVER_NAME'] == 'opensource.com') ? ('opensource') : ('osdc:' . $_SERVER['SERVER_NAME']);
@@ -76,7 +77,7 @@ function os_omniture_sitecatalyst_variables($main) {
   // The user is viewing a node homepage.
   elseif (arg(0) == 'node' && is_numeric(arg(1)) && $node = node_load(arg(1))) {
     $nid = $node->nid;
-    $pubDate = $node->created;
+    $pubDate = date($format, $node->created);
     if ($node->type == 'article') {
       $channel_term = field_view_field('node', $node, 'field_channel', array('default'));
       $page_name .= '|' . strtolower(os_omniture_clean($channel_term[0]['#title'])) . '|article|' . os_omniture_clean($node->title);
