@@ -551,7 +551,7 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 * Remove the leading hash signs to disable.
 */
 # $conf['allow_authorize_operations'] = FALSE;
-if (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) {
+if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTTP_HOST'], 'projspace') !== FALSE)) {
 // this is AXL server
   $extracts = explode("/",__FILE__);
 
@@ -601,3 +601,9 @@ $conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
 $conf['reverse_proxy_addresses'] = array('127.0.0.1');
 }
 
+ /* 
+  * Settings file routing
+  */
+ if (file_exists(dirname(__FILE__) . '/local.settings.php')) {
+    include dirname(__FILE__) . '/local.settings.php';
+ }
