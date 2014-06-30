@@ -646,7 +646,7 @@ function os_core_views_pre_render(&$view) {
       // If this is feed display - change the title.
       if ( ($view->current_display == 'feed_1') && arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2)) ) {
         $term = taxonomy_term_load(arg(2));
-        $view->build_info['title'] = $term->title;
+        $view->build_info['title'] = $term->name;
       }
       break;
 
