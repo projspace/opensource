@@ -10,6 +10,7 @@ dependencies[] = os_content_event
 dependencies[] = os_rules_support
 dependencies[] = os_workflow
 dependencies[] = rules
+dependencies[] = user_badges
 dependencies[] = userpoints_rules
 dependencies[] = voting_rules
 dependencies[] = workflow_rules
