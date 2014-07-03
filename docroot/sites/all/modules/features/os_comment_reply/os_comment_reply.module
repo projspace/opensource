@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Comment Reply feature.
+ */
+
+include_once 'os_comment_reply.features.inc';
