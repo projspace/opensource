@@ -1,0 +1,20 @@
+diff --git a/docroot/profiles/panopoly/modules/contrib/apps/apps.manifest.inc b/docroot/profiles/panopoly/modules/contrib/apps/apps.manifest.inc
+index b8a260a..a426478 100755
+--- a/docroot/profiles/panopoly/modules/contrib/apps/apps.manifest.inc
++++ b/docroot/profiles/panopoly/modules/contrib/apps/apps.manifest.inc
+@@ -316,12 +316,14 @@ function apps_retrieve_app_image($app, $url, $title = '', $alt = '') {
+ 
+     $file = new stdClass;
+     $file->mimetype = $request->headers['content-type'];
+-    $file->uri = file_unmanaged_save_data($request->data, $uri, FILE_EXISTS_RENAME);
++    $file->uri = file_unmanaged_save_data($request->data, $uri, FILE_EXISTS_REPLACE);
+     if ($current) {
+       $file->fid = $current->fid;
+     }
+     $file->title = !empty($title) ? $title : '';
+     $file->alt = !empty($alt) ? $alt : $file->title;
++    $file->filename = $file_name;
++    $file->status = 1;
+     file_save($file);
+     $file->path = $file->uri;
+     return (array)$file;
