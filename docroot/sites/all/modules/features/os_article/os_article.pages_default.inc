@@ -186,7 +186,7 @@ function os_article_default_page_manager_handlers() {
       'admin_title' => 'Author Feed',
       'title' => '',
       'body' => '<p><span><a href="/user/%user:uid/feed">Feed</a></span></p>',
-      'format' => 'panopoly_wysiwyg_text',
+      'format' => 'panopoly_html_text',
       'substitute' => 1,
     );
     $pane->cache = array();
