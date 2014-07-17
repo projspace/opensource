@@ -140,7 +140,11 @@ function os_omniture_sitecatalyst_variables($main) {
   $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqImg.js'></script>" . "\n";
   $header .= "<!-- end Eloqua tracking -->" . "\n";
   $header .= "<!-- begin Adobe Analytics -->" . "\n";
-  $header .= "<script type='text/javascript' language='JavaScript' src='/sites/all/libraries/omniture/s_code.js?20100731'></script>" . "\n";
+//  $header .= "<script type='text/javascript' language='JavaScript' src='/sites/all/libraries/sitecatalyst/s_code.js'></script>" . "\n";
+  $js_file_location = check_plain(variable_get("sitecatalyst_js_file_location", 'http://www.example.com/js/s_code_remote_h.js'));
+  $query_string = '?' . variable_get('css_js_query_string', '0');
+  $header .= "<script type=\"text/javascript\" src=\"";
+  $header .= $js_file_location . $query_string;
   $header .= '<script type="text/javascript" language="JavaScript"><!--';
 
   $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/' . "\n";
