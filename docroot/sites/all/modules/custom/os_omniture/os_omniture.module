@@ -139,6 +139,8 @@ function os_omniture_sitecatalyst_variables($main) {
   $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqCfg.js'></script>" . "\n";
   $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqImg.js'></script>" . "\n";
   $header .= "<!-- end Eloqua tracking -->" . "\n";
+  $header .= "<!-- begin Adobe Analytics -->" . "\n";
+  $header .= "<script type='text/javascript' language='JavaScript' src='/sites/all/libraries/omniture/s_code.js?20100731'></script>" . "\n";
   $header .= '<script type="text/javascript" language="JavaScript"><!--';
 
   $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/' . "\n";
@@ -155,18 +157,6 @@ function os_omniture_sitecatalyst_variables($main) {
   $footer .= 'viewthroughconversion/990030321/?value=0&amp;label=rxV4CN_35QQQ8dOK2AM&amp;';
   $footer .= 'guid=ON&amp;script=0" /><!-- end Google Remarketing -->' . "\n";
 
-  //--></script><noscript><img
-  //src="https://smtrcs.redhat.com/b/ss/redhatglobal,redhatopensourcecom/1/H.25--NS/0?[AQB]&amp;amp;amp;cdp=3&amp;amp;amp;[AQE]"
-  //height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
-  //<!-- end Adobe Analytics1 -->
-  //
-  //<!-- begin Google Remarketing -->
-  //<img height="1" width="1" style="border-style:none;display:block;" alt=""
-  //src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/990030321/?value=0&amp;label=rxV4CN_35QQQ8dOK2AM&amp;guid=ON&amp;script=0"
-  ///>
-  //<!-- end Google Remarketing -->
-  //
-  //
   $vars['header'] = $header;
   $vars['variables'] = $variables;
   $vars['footer'] = $footer;
