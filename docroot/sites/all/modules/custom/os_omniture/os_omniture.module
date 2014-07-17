@@ -107,6 +107,8 @@ function os_omniture_sitecatalyst_variables($main) {
     $page_name .= os_omniture_default_pattern();
   }
 
+  $page_name = strtolower($pagename);
+
   // @todo: Add in comment tracking and generic page tracking when details come
   // to light.
   global $base_url;
@@ -119,7 +121,7 @@ function os_omniture_sitecatalyst_variables($main) {
   $url_arr = parse_url($base_url);
   $host = $url_arr['host'];
   $query = $url_arr['query'];
-  $section = os_omniture_clean($channel_term[0]['#title']);
+  $section = strtolower(os_omniture_clean($channel_term[0]['#title']));
 
   $variables = array(
     's.pageName' => $page_name,
@@ -152,9 +154,8 @@ function os_omniture_sitecatalyst_variables($main) {
   $footer .= '//--></script><script type="text/javascript" src="/sites/all/libraries/sitecatalyst/rh_omni_footer.js"></script>' . "\n";
   $footer .= '<script language="JavaScript" type="text/javascript"><!--' . "\n";
   $footer .= "if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')" . "\n";
-  $footer .= '//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img src="';
-  $footer .= check_plain(variable_get("sitecatalyst_image_file_location", 'http://examplecom.112.2O7.net/b/ss/examplecom/1/H.20.3--NS/0')) . '/' . rand(0, 10000000) . '"' . "\n";
-  $footer .= 'height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->' . "\n";
+  $footer .= '//--></script><noscript><img src="https://smtrcs.redhat.com/b/ss/redhatglobal,redhatopensourcecom/1/H.25--NS/0?[AQB]&amp;amp;amp;cdp=3&amp;amp;amp;[AQE]" ';
+  $footer .= 'height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->' . "\n";
   $footer .= '<!-- end Adobe Analytics1 -->';
   $header .= "\n";
   $footer .= '<!-- begin Google Remarketing -->' . "\n";
