@@ -13,7 +13,7 @@ function os_omniture_sitecatalyst_variables($main) {
 
   $nid = '';
   $pubDate = '';
-  $format = 'Y-j-d';
+  $format = 'Y-m-d';
 
   // Every page starts with the site name.
   $page_name = ($_SERVER['SERVER_NAME'] == 'opensource.com') ? ('opensource') : ('osdc:' . $_SERVER['SERVER_NAME']);
@@ -119,30 +119,28 @@ function os_omniture_sitecatalyst_variables($main) {
   $url_arr = parse_url($base_url);
   $host = $url_arr['host'];
   $query = $url_arr['query'];
+  $section = arg(0);
 
   $vars = array(
     'variables' => array(
       's.pageName' => $page_name,
       's.server' => "opensource.com",
       's.channel' => "opensource",
-      's.pageType' => "",
-      's.prop1' => "",
       's.prop13' => $osdc_nid,
       's.eVar26' => $osdc_nid,
+      's.prop14' => $section,
+      's.eVar27' => $section,
       /* E-commerce Variables */
-      's.campaign' => "",
-      's.eVar1' => "",
-      's.eVar2' => "",
-      's.eVar3' => "",
-      's.eVar23' => $query,
-      's.prop4' => $query,
-      's.events' => "",
-      's.products' => "",
-      's.state' => "",
-      's.zip' => "",
-      's.purchaseID' => "",
-      's.prop21' => $host . '/' . request_path(),
-      's.eVar18' => $host . '/' . request_path(),
+    //  's.eVar3' => "",
+     // 's.eVar23' => $query,
+     // 's.prop4' => $query,
+     // 's.events' => "",
+     // 's.products' => "",
+     // 's.state' => "",
+     // 's.zip' => "",
+     // 's.purchaseID' => "",
+     // 's.prop21' => $host . '/' . request_path(),
+     // 's.eVar18' => $host . '/' . request_path(),
       's.prop61' => $pubDate,
     ),
   );
