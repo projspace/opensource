@@ -119,7 +119,7 @@ function os_omniture_sitecatalyst_variables($main) {
   $url_arr = parse_url($base_url);
   $host = $url_arr['host'];
   $query = $url_arr['query'];
-  $section = arg(0);
+  $section = os_omniture_clean($channel_term[0]['#title']);
 
   $vars = array(
     'variables' => array(
@@ -130,43 +130,45 @@ function os_omniture_sitecatalyst_variables($main) {
       's.eVar26' => $osdc_nid,
       's.prop14' => $section,
       's.eVar27' => $section,
-      /* E-commerce Variables */
-    //  's.eVar3' => "",
-     // 's.eVar23' => $query,
-     // 's.prop4' => $query,
-     // 's.events' => "",
-     // 's.products' => "",
-     // 's.state' => "",
-     // 's.zip' => "",
-     // 's.purchaseID' => "",
-     // 's.prop21' => $host . '/' . request_path(),
-     // 's.eVar18' => $host . '/' . request_path(),
       's.prop61' => $pubDate,
     ),
   );
 
-  // Implementing a custom footer. This is based on the footer in the omniture
+  // Implementing a custom header and footer. This is based on the footer in the sitecatalyst
   // module.
-  $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/' . "\n";
 
-  $footer .= '<!-- begin Eloqua tracking -->' . "\n";
-  $footer .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqCfg.js'></script>" . "\n";
-  $footer .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqImg.js'></script>" . "\n";
-  $footer .= "<!-- end Eloqua tracking -->" . "\n";
+  $header .= '<!-- begin Eloqua tracking -->' . "\n";
+  $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqCfg.js'></script>" . "\n";
+  $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqImg.js'></script>" . "\n";
+  $header .= "<!-- end Eloqua tracking -->" . "\n";
+
+  $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/' . "\n";
   $footer .= '//--></script><script type="text/javascript" src="/sites/all/libraries/sitecatalyst/rh_omni_footer.js"></script>' . "\n";
   $footer .= '<script language="JavaScript" type="text/javascript"><!--' . "\n";
   $footer .= "if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')" . "\n";
   $footer .= '//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img src="';
   $footer .= check_plain(variable_get("sitecatalyst_image_file_location", 'http://examplecom.112.2O7.net/b/ss/examplecom/1/H.20.3--NS/0')) . '/' . rand(0, 10000000) . '"' . "\n";
   $footer .= 'height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->' . "\n";
-  $footer .= '<!-- End SiteCatalyst code version: ';
-  $footer .= check_plain(variable_get("sitecatalyst_version", 'H.20.3.'));
-  $footer .= ' -->' . "\n";
+  $footer .= '<!-- end Adobe Analytics1 -->';
   $footer .= '<!-- begin Google Remarketing -->' . "\n";
   $footer .= '<img height="1" width="1" style="border-style:none;display:block;" alt="" ';
   $footer .= ' src="//googleads.g.doubleclick.net/pagead/';
   $footer .= 'viewthroughconversion/990030321/?value=0&amp;label=rxV4CN_35QQQ8dOK2AM&amp;';
   $footer .= 'guid=ON&amp;script=0" /><!-- end Google Remarketing -->' . "\n";
+
+  //--></script><noscript><img
+  //src="https://smtrcs.redhat.com/b/ss/redhatglobal,redhatopensourcecom/1/H.25--NS/0?[AQB]&amp;amp;amp;cdp=3&amp;amp;amp;[AQE]"
+  //height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+  //<!-- end Adobe Analytics1 -->
+  //
+  //<!-- begin Google Remarketing -->
+  //<img height="1" width="1" style="border-style:none;display:block;" alt=""
+  //src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/990030321/?value=0&amp;label=rxV4CN_35QQQ8dOK2AM&amp;guid=ON&amp;script=0"
+  ///>
+  //<!-- end Google Remarketing -->
+  //
+  //
+  $vars['header'] = $header;
   $vars['footer'] = $footer;
 
   return $vars;
