@@ -121,17 +121,15 @@ function os_omniture_sitecatalyst_variables($main) {
   $query = $url_arr['query'];
   $section = os_omniture_clean($channel_term[0]['#title']);
 
-  $vars = array(
-    'variables' => array(
-      's.pageName' => $page_name,
-      's.server' => "opensource.com",
-      's.channel' => "opensource",
-      's.prop13' => $osdc_nid,
-      's.eVar26' => $osdc_nid,
-      's.prop14' => $section,
-      's.eVar27' => $section,
-      's.prop61' => $pubDate,
-    ),
+  $variables => array(
+    's.pageName' => $page_name,
+    's.server' => "opensource.com",
+    's.channel' => "opensource",
+    's.prop13' => $osdc_nid,
+    's.eVar26' => $osdc_nid,
+    's.prop14' => $section,
+    's.eVar27' => $section,
+    's.prop61' => $pubDate,
   );
 
   // Implementing a custom header and footer. This is based on the footer in the sitecatalyst
@@ -141,6 +139,7 @@ function os_omniture_sitecatalyst_variables($main) {
   $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqCfg.js'></script>" . "\n";
   $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqImg.js'></script>" . "\n";
   $header .= "<!-- end Eloqua tracking -->" . "\n";
+  $header .= '<script type="text/javascript" language="JavaScript">';
 
   $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/' . "\n";
   $footer .= '//--></script><script type="text/javascript" src="/sites/all/libraries/sitecatalyst/rh_omni_footer.js"></script>' . "\n";
@@ -169,6 +168,7 @@ function os_omniture_sitecatalyst_variables($main) {
   //
   //
   $vars['header'] = $header;
+  $vars['variables'] = $variables;
   $vars['footer'] = $footer;
 
   return $vars;
