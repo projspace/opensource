@@ -107,7 +107,7 @@ function os_omniture_sitecatalyst_variables($main) {
     $page_name .= os_omniture_default_pattern();
   }
 
-  $page_name = strtolower($pagename);
+  $page_name = strtolower($page_name);
 
   // @todo: Add in comment tracking and generic page tracking when details come
   // to light.
