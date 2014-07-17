@@ -145,6 +145,9 @@ function os_omniture_sitecatalyst_variables($main) {
   $query_string = '?' . variable_get('css_js_query_string', '0');
   $header .= "<script type=\"text/javascript\" src=\"";
   $header .= $js_file_location . $query_string;
+  $header .= "\"></script>\n";
+  $header .= "\n";
+
   $header .= '<script type="text/javascript" language="JavaScript"><!--';
 
   $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/' . "\n";
@@ -155,6 +158,7 @@ function os_omniture_sitecatalyst_variables($main) {
   $footer .= check_plain(variable_get("sitecatalyst_image_file_location", 'http://examplecom.112.2O7.net/b/ss/examplecom/1/H.20.3--NS/0')) . '/' . rand(0, 10000000) . '"' . "\n";
   $footer .= 'height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->' . "\n";
   $footer .= '<!-- end Adobe Analytics1 -->';
+  $header .= "\n";
   $footer .= '<!-- begin Google Remarketing -->' . "\n";
   $footer .= '<img height="1" width="1" style="border-style:none;display:block;" alt="" ';
   $footer .= ' src="//googleads.g.doubleclick.net/pagead/';
