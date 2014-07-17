@@ -121,7 +121,7 @@ function os_omniture_sitecatalyst_variables($main) {
   $query = $url_arr['query'];
   $section = os_omniture_clean($channel_term[0]['#title']);
 
-  $variables => array(
+  $variables = array(
     's.pageName' => $page_name,
     's.server' => "opensource.com",
     's.channel' => "opensource",
@@ -139,7 +139,7 @@ function os_omniture_sitecatalyst_variables($main) {
   $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqCfg.js'></script>" . "\n";
   $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqImg.js'></script>" . "\n";
   $header .= "<!-- end Eloqua tracking -->" . "\n";
-  $header .= '<script type="text/javascript" language="JavaScript">';
+  $header .= '<script type="text/javascript" language="JavaScript"><!--';
 
   $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/' . "\n";
   $footer .= '//--></script><script type="text/javascript" src="/sites/all/libraries/sitecatalyst/rh_omni_footer.js"></script>' . "\n";
