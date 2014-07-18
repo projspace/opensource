@@ -12,6 +12,9 @@ function os_omniture_sitecatalyst_variables($main) {
   global $user;
 
   $nid = '';
+  $pubDate = '';
+  $format = 'Y-m-d';
+
   // Every page starts with the site name.
   $page_name = ($_SERVER['SERVER_NAME'] == 'opensource.com') ? ('opensource') : ('osdc:' . $_SERVER['SERVER_NAME']);
 
@@ -74,6 +77,7 @@ function os_omniture_sitecatalyst_variables($main) {
   // The user is viewing a node homepage.
   elseif (arg(0) == 'node' && is_numeric(arg(1)) && $node = node_load(arg(1))) {
     $nid = $node->nid;
+    $pubDate = date($format, $node->created);
     if ($node->type == 'article') {
       $channel_term = field_view_field('node', $node, 'field_channel', array('default'));
       $page_name .= '|' . strtolower(os_omniture_clean($channel_term[0]['#title'])) . '|article|' . os_omniture_clean($node->title);
@@ -103,46 +107,65 @@ function os_omniture_sitecatalyst_variables($main) {
     $page_name .= os_omniture_default_pattern();
   }
 
+  $page_name = strtolower($page_name);
+
   // @todo: Add in comment tracking and generic page tracking when details come
   // to light.
   global $base_url;
 
-  $vars = array(
-    'variables' => array(
-      's.pageName' => $page_name,
-      's.server' => "",
-      's.channel' => "opensource",
-      's.pageType' => "",
-      's.prop1' => "",
-      's.prop13' => "{$nid}",
-      's.eVar26' => "{$nid}",
-      /* E-commerce Variables */
-      's.campaign' => "",
-      's.eVar1' => "",
-      's.eVar2' => "",
-      's.eVar3' => "",
-      's.eVar23' => $base_url . request_uri(),
-      's.events' => "",
-      's.products' => "",
-      's.state' => "",
-      's.zip' => "",
-      's.purchaseID' => "",
-    ),
+  $osdc_nid = '';
+  if (!empty($nid)){
+    $osdc_nid = "osdc {$nid}";
+  }
+
+  $url_arr = parse_url($base_url);
+  $host = $url_arr['host'];
+  $query = $url_arr['query'];
+  $section = strtolower(os_omniture_clean($channel_term[0]['#title']));
+
+  $variables = array(
+    's.pageName' => $page_name,
+    's.server' => "opensource.com",
+    's.channel' => "opensource",
+    's.prop13' => $osdc_nid,
+    's.eVar26' => $osdc_nid,
+    's.prop14' => $section,
+    's.eVar27' => $section,
+    's.prop61' => $pubDate,
   );
 
-  // Implementing a custom footer. This is based on the footer in the omniture
+  // Implementing a custom header and footer. This is based on the footer in the sitecatalyst
   // module.
+
+  $header .= '<!-- begin Eloqua tracking -->' . "\n";
+  $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqCfg.js'></script>" . "\n";
+  $header .= "<script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqImg.js'></script>" . "\n";
+  $header .= "<!-- end Eloqua tracking -->" . "\n";
+  $header .= "<!-- begin Adobe Analytics -->" . "\n";
+//  $header .= "<script type='text/javascript' language='JavaScript' src='/sites/all/libraries/sitecatalyst/s_code.js'></script>" . "\n";
+  $js_file_location = check_plain(variable_get("sitecatalyst_js_file_location", 'http://www.example.com/js/s_code_remote_h.js'));
+  $query_string = '?' . variable_get('css_js_query_string', '0');
+  $header .= "<script type=\"text/javascript\" src=\"";
+  $header .= $js_file_location . $query_string;
+  $header .= "\"></script>\n";
+  $header .= '<script type="text/javascript" language="JavaScript"><!--';
+
   $footer = '/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/' . "\n";
   $footer .= '//--></script><script type="text/javascript" src="/sites/all/libraries/sitecatalyst/rh_omni_footer.js"></script>' . "\n";
   $footer .= '<script language="JavaScript" type="text/javascript"><!--' . "\n";
   $footer .= "if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')" . "\n";
-  $footer .= '//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img src="';
-  $footer .= check_plain(variable_get("sitecatalyst_image_file_location", 'http://examplecom.112.2O7.net/b/ss/examplecom/1/H.20.3--NS/0')) . '/' . rand(0, 10000000) . '"' . "\n";
-  $footer .= 'height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->' . "\n";
-  $footer .= '<!-- End SiteCatalyst code version: ';
-  $footer .= check_plain(variable_get("sitecatalyst_version", 'H.20.3.'));
-  $footer .= ' -->' . "\n";
+  $footer .= '//--></script><noscript><img src="https://smtrcs.redhat.com/b/ss/redhatglobal,redhatopensourcecom/1/H.25--NS/0?[AQB]&amp;amp;amp;cdp=3&amp;amp;amp;[AQE]" ';
+  $footer .= 'height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->' . "\n";
+  $footer .= '<!-- end Adobe Analytics1 -->';
+  $header .= "\n";
+  $footer .= '<!-- begin Google Remarketing -->' . "\n";
+  $footer .= '<img height="1" width="1" style="border-style:none;display:block;" alt="" ';
+  $footer .= ' src="//googleads.g.doubleclick.net/pagead/';
+  $footer .= 'viewthroughconversion/990030321/?value=0&amp;label=rxV4CN_35QQQ8dOK2AM&amp;';
+  $footer .= 'guid=ON&amp;script=0" /><!-- end Google Remarketing -->' . "\n";
 
+  $vars['header'] = $header;
+  $vars['variables'] = $variables;
   $vars['footer'] = $footer;
 
   return $vars;
