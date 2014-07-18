@@ -1045,7 +1045,7 @@ tr.selected td {
 
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1402226345');
+  background-image: url('../images/progress.gif?1404377508');
 }
 
 .image-title,
@@ -3350,6 +3350,10 @@ label {
 .vud-widget .up-score,
 .vud-widget .down-score {
   display: inline-block;
+}
+
+.vud-widget .up-score {
+  padding-right: 10px;
 }
 
 .pane-node-comment-form {
