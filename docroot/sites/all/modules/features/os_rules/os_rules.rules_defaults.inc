@@ -35,11 +35,11 @@ function os_rules_default_rules_configuration() {
     }
   }');
   $items['rules_article_published'] = entity_import('rules_config', '{ "rules_article_published" : {
-      "LABEL" : "Award points for published article",
+      "LABEL" : "Award points and badge for published article",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "TAGS" : [ "article", "points", "workflow" ],
-      "REQUIRES" : [ "rules", "workflow_rules", "userpoints_rules" ],
+      "TAGS" : [ "article", "badge", "points", "workflow" ],
+      "REQUIRES" : [ "rules", "workflow_rules", "userpoints_rules", "user_badges" ],
       "ON" : { "workflow_state_changed" : [] },
       "IF" : [
         { "entity_is_of_bundle" : {
@@ -61,7 +61,8 @@ function os_rules_default_rules_configuration() {
             "display" : 1,
             "moderate" : "default"
           }
-        }
+        },
+        { "add_badge_by_name" : { "badge" : "68", "user" : [ "node:author" ] } }
       ]
     }
   }');
