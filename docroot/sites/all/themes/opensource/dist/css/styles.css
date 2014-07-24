@@ -1052,7 +1052,7 @@ tr.selected td {
 }
 
 p br {
-  display: block;
+  display: block !important;
 }
 
 .image-title,
