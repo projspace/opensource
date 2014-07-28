@@ -805,3 +805,8 @@ tr.selected td {
     background-image: image-url("progress.gif");
   }
 }
+p {
+  br {
+    display: block!important;
+  }
+}

@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "US-ASCII";
 
 article,
 aside,
@@ -206,17 +206,17 @@ figure {
 fieldset {
   margin: 0 2px;
   border-color: #c0c0c0;
-  border-top-width: 0.0625em;
   border-top-style: solid;
+  border-top-width: 0.0625em;
   padding-top: 0.4625em;
-  border-bottom-width: 0.0625em;
   border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
   padding-bottom: 0.9125em;
-  border-left-width: 0.0625em;
   border-left-style: solid;
+  border-left-width: 0.0625em;
   padding-left: 0.9125em;
-  border-right-width: 0.0625em;
   border-right-style: solid;
+  border-right-width: 0.0625em;
   padding-right: 0.9125em;
 }
 
@@ -661,10 +661,10 @@ table {
 .tabs-primary,
 .tabs-secondary {
   overflow: hidden;
-  *zoom: 1;
-  background-image: -webkit-linear-gradient(bottom, #bbbbbb 1px,rgba(0,0,0,0) 1px);
-  background-image: -webkit-linear-gradient(bottom, #bbbbbb 1px, rgba(0,0,0,0) 1px);
-  background-image: linear-gradient(to top, #bbbbbb 1px,rgba(0,0,0,0) 1px);
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(100%, #bbbbbb), color-stop(100%, transparent));
+  background-image: -webkit-linear-gradient(bottom, #bbbbbb 1px,transparent 1px);
+  background-image: -webkit-linear-gradient(bottom, #bbbbbb 1px, transparent 1px);
+  background-image: linear-gradient(bottom, #bbbbbb 1px,transparent 1px);
   list-style: none;
   border-bottom: 1px solid #bbb \0/ie;
   margin: 1.5em 0;
@@ -728,8 +728,8 @@ a.tabs-primary__tab-link:focus {
 a.tabs-primary__tab-link:active,
 a.tabs-primary__tab-link.is-active {
   background-color: transparent;
-  *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE9E9E9', endColorstr='#00E9E9E9');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e9e9e9), color-stop(100%, rgba(233,233,233,0)));
   background-image: -webkit-linear-gradient(#e9e9e9,rgba(233,233,233,0));
   background-image: -webkit-linear-gradient(#e9e9e9, rgba(233,233,233,0));
   background-image: linear-gradient(#e9e9e9,rgba(233,233,233,0));
@@ -748,6 +748,7 @@ a.tabs-primary__tab-link.is-active {
 
 a.tabs-secondary__tab-link,
 a.tabs-secondary__tab-link.is-active {
+  -o-border-radius: 0.75em;
   border-radius: 0.75em;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -924,8 +925,9 @@ label.option {
 }
 
 a.button {
-  -moz-appearance: button;
   -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
 }
 
 .password-parent,
@@ -1040,12 +1042,17 @@ tr.selected td {
   background: #ccc;
   border-color: #666;
   margin: 0 0.2em;
+  -o-border-radius: 3px;
   border-radius: 3px;
 }
 
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1404377508');
+  background-image: url('../images/progress.gif?1405936608');
+}
+
+p br {
+  display: block !important;
 }
 
 .image-title,
