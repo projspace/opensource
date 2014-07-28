@@ -97,10 +97,33 @@ function os_mollom_default_mollom_form() {
   $mollom_form = new stdClass();
   $mollom_form->disabled = FALSE; /* Edit this to true to make a default mollom_form disabled initially */
   $mollom_form->api_version = 1;
+  $mollom_form->form_id = 'event_node_form';
+  $mollom_form->entity = 'node';
+  $mollom_form->bundle = 'event';
+  $mollom_form->mode = 1;
+  $mollom_form->checks = array(
+    0 => 'spam',
+  );
+  $mollom_form->unsure = 'captcha';
+  $mollom_form->discard = TRUE;
+  $mollom_form->moderation = FALSE;
+  $mollom_form->enabled_fields = array(
+    0 => 'title',
+    1 => 'field_event_location',
+    2 => 'field_event_submitter_name',
+    3 => 'field_event_summary',
+  );
+  $mollom_form->strictness = 'normal';
+  $mollom_form->module = 'node';
+  $export['event_node_form'] = $mollom_form;
+
+  $mollom_form = new stdClass();
+  $mollom_form->disabled = FALSE; /* Edit this to true to make a default mollom_form disabled initially */
+  $mollom_form->api_version = 1;
   $mollom_form->form_id = 'user_register_form';
   $mollom_form->entity = 'user';
   $mollom_form->bundle = 'user';
-  $mollom_form->mode = 2;
+  $mollom_form->mode = 1;
   $mollom_form->checks = array(
     0 => 'spam',
   );
