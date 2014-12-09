@@ -19,6 +19,7 @@ features[mollom_form][] = comment_node_article_form
 features[mollom_form][] = comment_node_poll_form
 features[mollom_form][] = contact_personal_form
 features[mollom_form][] = contact_site_form
+features[mollom_form][] = event_node_form
 features[mollom_form][] = user_register_form
 features[user_permission][] = administer mollom
 features[user_permission][] = bypass mollom protection
