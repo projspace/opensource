@@ -582,6 +582,8 @@ $databases['legacy'] = array (
     ),
 );
 
+$conf['file_private_path'] = "/mnt/gfs/{$_ENV['AH_SITE_NAME']}/sites/default/files-private";
+
 $conf['os_migrate_database'] = 'os6';
 $conf['os_migrate_username'] = 'root';
 $conf['os_migrate_password'] = '';
