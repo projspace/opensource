@@ -591,7 +591,6 @@ $conf['os_migrate_files_source_dir'] = '/mnt/www/filesD6';
 $conf['reverse_proxy'] = TRUE;
 $conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
 $conf['reverse_proxy_addresses'] = array('127.0.0.1');
-}
 
  /* 
   * Settings file routing
