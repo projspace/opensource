@@ -551,32 +551,24 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 * Remove the leading hash signs to disable.
 */
 # $conf['allow_authorize_operations'] = FALSE;
-if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTTP_HOST'], 'projspace') !== FALSE)) {
-// this is AXL server
-  $extracts = explode("/",__FILE__);
+//if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTTP_HOST'], 'projspace') !== FALSE)) {
+//// this is AXL server
+//  $extracts = explode("/",__FILE__);
+//
+//    $project = $extracts[2];
+//    $env = $extracts[4];
+//
+//      include "/home/$project/includes/$env.inc";
+//}
+//else {
 
-    $project = $extracts[2];
-    $env = $extracts[4];
-
-      include "/home/$project/includes/$env.inc";
+/**
+ * Acquia database settings
+ */
+if (file_exists('/var/www/site-php')) {
+  require('/var/www/site-php/osdc/osdc-settings.inc');
 }
-else {
 
-$databases = array (
-  'default' =>
-  array (
-    'default' =>
-   array (
-      'database' => 'os7',
-      'username' => 'root',
-      'password' => '',
-      'host' => 'localhost',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
 $databases['legacy'] = array (
   'default' =>
    array (
