@@ -569,26 +569,47 @@ if (file_exists('/var/www/site-php')) {
   require('/var/www/site-php/osdc/osdc-settings.inc');
 }
 
-$databases['legacy'] = array (
-  'default' =>
-   array (
-      'database' => 'os6',
-      'username' => 'root',
-      'password' => '',
-      'host' => 'localhost',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-);
+/**
+ * Determine Acquia environment and set universal Acquia Cloud settings.
+ */
+$ah_env = 'undefined';
+if (!empty($_ENV['AH_SITE_ENVIRONMENT'])) {
+  $ah_env = $_ENV['AH_SITE_ENVIRONMENT'];
 
-$conf['file_private_path'] = "/mnt/gfs/{$_ENV['AH_SITE_NAME']}/sites/default/files-private";
+  $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
+  $conf['cache_default_class'] = 'MemCacheDrupal';
+  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+  $conf['file_private_path'] = "/mnt/gfs/{$_ENV['AH_SITE_NAME']}/sites/default/files-private";
+}
 
-$conf['os_migrate_database'] = 'os6';
-$conf['os_migrate_username'] = 'root';
-$conf['os_migrate_password'] = '';
-$conf['os_migrate_files_source_dir'] = '/mnt/www/filesD6';
+/**
+ * Force settings based on environment
+ */
+switch ($ah_env) {
+  case 'prod':
+    // Disable Shield on prod by setting the shield_user variable to NULL
+    $conf['shield_user'] = NULL;
+    break;
 
+  case 'test':
+  case 'dev':
+  default:
+    $conf['shield_user'] = 'open';
+    $conf['shield_pass'] = 'sourceWAY';
+    $conf['apachesolr_environments']['acquia_search_server_1']['conf']['apachesolr_read_only'] = 1;
+    break;
+}
+
+/**
+ * Acquia Network keys
+ *
+ * The Acquia Network keys are required to connect your website to Acquia
+ * services, including Acquia Search and Insight.
+ *
+ * https://docs.acquia.com/network/install
+ */
+$conf['acquia_identifier'] = 'ABLX-69489';
+$conf['acquia_key'] = '56d4f380ec7713b9e07a261605cc9f07';
 
 $conf['reverse_proxy'] = TRUE;
 $conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
