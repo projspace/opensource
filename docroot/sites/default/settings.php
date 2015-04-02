@@ -612,8 +612,13 @@ $conf['acquia_identifier'] = 'ABLX-69489';
 $conf['acquia_key'] = '56d4f380ec7713b9e07a261605cc9f07';
 
 $conf['reverse_proxy'] = TRUE;
-$conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
-$conf['reverse_proxy_addresses'] = array('127.0.0.1');
+if (isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] == 'prod') {
+  $conf['reverse_proxy_header'] = 'HTTP_X_AH_CLIENT_IP';
+}
+if (!drupal_is_cli() && isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] == 'prod') { 
+  $elbAddresses = array_map('gethostbyname', array_map('gethostbyaddr', gethostbynamel($_SERVER['HTTP_HOST']))); 
+  $conf['reverse_proxy_addresses'] = isset($conf['reverse_proxy_addresses']) ? array_merge($conf['reverse_proxy_addresses'], $elbAddresses) : $elbAddresses; 
+}
 
  /* 
   * Settings file routing
