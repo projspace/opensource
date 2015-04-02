@@ -184,11 +184,182 @@ function _os_core_get_main_menu_items($level) {
   );
   $menu_items['level-0'][] = array(
     'values' => array(
+      'link_title' => 'Community',
+      'link_path' => 'should-be',
+      'menu_name' => 'main-menu',
+      'parent' => 'main-menu:0',
+      'weight' => -9,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'Editorial calendar',
+      'link_path' => 'resources/editorial-calendar',
+      'menu_name' => 'main-menu',
+      'parent' => 'Community',
+      'weight' => -30,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'Contributor spotlight',
+      'link_path' => 'should-be/spotlight',
+      'menu_name' => 'main-menu',
+      'parent' => 'Community',
+      'weight' => -29,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'Guides for writers',
+      'link_path' => 'writers',
+      'menu_name' => 'main-menu',
+      'parent' => 'Community',
+      'weight' => -28,
+    ),
+  );
+  $menu_items['level-2'][] = array(
+    'values' => array(
+      'link_title' => 'Article submission and style guide',
+      'link_path' => 'submission-style-guide',
+      'menu_name' => 'main-menu',
+      'parent' => 'Guides for writers',
+      'weight' => -30,
+    ),
+  );
+  $menu_items['level-2'][] = array(
+    'values' => array(
+      'link_title' => 'How to conduct an interview',
+      'link_path' => 'how-conduct-interview-opensourcecom',
+      'menu_name' => 'main-menu',
+      'parent' => 'Guides for writers',
+      'weight' => -29,
+    ),
+  );
+  $menu_items['level-2'][] = array(
+    'values' => array(
+      'link_title' => 'How to enter an article',
+      'link_path' => 'article-entering-and-editing-guidelines',
+      'menu_name' => 'main-menu',
+      'parent' => 'Guides for writers',
+      'weight' => -28,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'Meet the moderators',
+      'link_path' => 'opensourcecom-team',
+      'menu_name' => 'main-menu',
+      'parent' => 'Community',
+      'weight' => -27,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'Participate',
+      'link_path' => 'participate',
+      'menu_name' => 'main-menu',
+      'parent' => 'Community',
+      'weight' => -26,
+    ),
+  );
+  $menu_items['level-2'][] = array(
+    'values' => array(
+      'link_title' => 'Community Moderator program',
+      'link_path' => 'community-moderator-program',
+      'menu_name' => 'main-menu',
+      'parent' => 'Participate',
+      'weight' => -30,
+    ),
+  );
+  $menu_items['level-2'][] = array(
+    'values' => array(
+      'link_title' => 'Points and badges',
+      'link_path' => 'points-and-badges',
+      'menu_name' => 'main-menu',
+      'parent' => 'Participate',
+      'weight' => -29,
+    ),
+  );
+  $menu_items['level-2'][] = array(
+    'values' => array(
+      'link_title' => 'Rules for comments and discussions',
+      'link_path' => 'rules-comments-and-discussions',
+      'menu_name' => 'main-menu',
+      'parent' => 'Participate',
+      'weight' => -28,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'Register',
+      'link_path' => 'user/register',
+      'menu_name' => 'main-menu',
+      'parent' => 'Community',
+      'weight' => -25,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'Submit your story',
+      'link_path' => 'how-submit-article',
+      'menu_name' => 'main-menu',
+      'parent' => 'Community',
+      'weight' => -24,
+    ),
+  );
+  $menu_items['level-0'][] = array(
+    'values' => array(
+      'link_title' => 'About',
+      'link_path' => 'about',
+      'menu_name' => 'main-menu',
+      'parent' => 'main-menu:0',
+      'weight' => -8,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'The Open Source Way',
+      'link_path' => 'open-source-way',
+      'menu_name' => 'main-menu',
+      'parent' => 'About',
+      'weight' => -24,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'colophon',
+      'link_path' => 'colophon',
+      'menu_name' => 'main-menu',
+      'parent' => 'About',
+      'weight' => -23,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'Contact',
+      'link_path' => 'contact',
+      'menu_name' => 'main-menu',
+      'parent' => 'About',
+      'weight' => -22,
+    ),
+  );
+  $menu_items['level-1'][] = array(
+    'values' => array(
+      'link_title' => 'Media kit',
+      'link_path' => 'media-kit',
+      'menu_name' => 'main-menu',
+      'parent' => 'About',
+      'weight' => -21,
+    ),
+  );
+  $menu_items['level-0'][] = array(
+    'values' => array(
       'link_title' => 'Resources',
       'link_path' => 'resources',
       'menu_name' => 'main-menu',
       'parent' => 'main-menu:0',
-      'weight' => -9,
+      'weight' => -7,
     ),
   );
   $menu_items['level-1'][] = array(
@@ -310,7 +481,7 @@ function _os_core_get_main_menu_items($level) {
   );
   $menu_items['level-2'][] = array(
     'values' => array(
-      'link_title' => 'Open minded CEOs ',
+      'link_title' => 'Open minded CEOs',
       'link_path' => 'resources/ebook/ceo',
       'menu_name' => 'main-menu',
       'parent' => 'eBooks',
@@ -362,133 +533,6 @@ function _os_core_get_main_menu_items($level) {
       'weight' => -25,
     ),
   );
-  $menu_items['level-0'][] = array(
-    'values' => array(
-      'link_title' => 'Community ',
-      'link_path' => 'should-be ',
-      'menu_name' => 'main-menu',
-      'parent' => 'main-menu:0',
-      'weight' => -8,
-    ),
-  );
-  $menu_items['level-1'][] = array(
-    'values' => array(
-      'link_title' => 'Editorial calendar ',
-      'link_path' => 'resources/editorial-calendar ',
-      'menu_name' => 'main-menu',
-      'parent' => 'Community',
-      'weight' => -30,
-    ),
-  );
-  $menu_items['level-1'][] = array(
-    'values' => array(
-      'link_title' => 'Contributor spotlight ',
-      'link_path' => 'should-be/spotlight ',
-      'menu_name' => 'main-menu',
-      'parent' => 'Community',
-      'weight' => -29,
-    ),
-  );
-  $menu_items['level-1'][] = array(
-    'values' => array(
-      'link_title' => 'Guides for writers ',
-      'link_path' => 'writers ',
-      'menu_name' => 'main-menu',
-      'parent' => 'Community',
-      'weight' => -28,
-    ),
-  );
-  $menu_items['level-2'][] = array(
-    'values' => array(
-      'link_title' => 'Article submission and style guide ',
-      'link_path' => 'submission-style-guide ',
-      'menu_name' => 'main-menu',
-      'parent' => 'Guides for writers',
-      'weight' => -30,
-    ),
-  );
-  $menu_items['level-2'][] = array(
-    'values' => array(
-      'link_title' => 'How to conduct an interview ',
-      'link_path' => 'how-conduct-interview-opensourcecom ',
-      'menu_name' => 'main-menu',
-      'parent' => 'Guides for writers',
-      'weight' => -29,
-    ),
-  );
-  $menu_items['level-2'][] = array(
-    'values' => array(
-      'link_title' => 'How to enter an article ',
-      'link_path' => 'article-entering-and-editing-guidelines ',
-      'menu_name' => 'main-menu',
-      'parent' => 'Guides for writers',
-      'weight' => -28,
-    ),
-  );
-  $menu_items['level-1'][] = array(
-    'values' => array(
-      'link_title' => 'Meet the moderators',
-      'link_path' => 'opensourcecom-team',
-      'menu_name' => 'main-menu',
-      'parent' => 'Community',
-      'weight' => -27,
-    ),
-  );
-  $menu_items['level-1'][] = array(
-    'values' => array(
-      'link_title' => 'Participate ',
-      'link_path' => 'participate ',
-      'menu_name' => 'main-menu',
-      'parent' => 'Community',
-      'weight' => -26,
-    ),
-  );
-  $menu_items['level-2'][] = array(
-    'values' => array(
-      'link_title' => 'Community Moderator program ',
-      'link_path' => 'community-moderator-program ',
-      'menu_name' => 'main-menu',
-      'parent' => 'Participate',
-      'weight' => -30,
-    ),
-  );
-  $menu_items['level-2'][] = array(
-    'values' => array(
-      'link_title' => 'Points and badges',
-      'link_path' => 'points-and-badges',
-      'menu_name' => 'main-menu',
-      'parent' => 'Participate',
-      'weight' => -29,
-    ),
-  );
-  $menu_items['level-2'][] = array(
-    'values' => array(
-      'link_title' => 'Rules for comments and discussions ',
-      'link_path' => 'rules-comments-and-discussions ',
-      'menu_name' => 'main-menu',
-      'parent' => 'Participate',
-      'weight' => -28,
-    ),
-  );
-  $menu_items['level-1'][] = array(
-    'values' => array(
-      'link_title' => 'Register ',
-      'link_path' => 'user/register ',
-      'menu_name' => 'main-menu',
-      'parent' => 'Community',
-      'weight' => -25,
-    ),
-  );
-  $menu_items['level-1'][] = array(
-    'values' => array(
-      'link_title' => 'Submit your story ',
-      'link_path' => 'how-submit-article',
-      'menu_name' => 'main-menu',
-      'parent' => 'Community',
-      'weight' => -24,
-    ),
-  );
-
   return $menu_items[$level];
 }
 
