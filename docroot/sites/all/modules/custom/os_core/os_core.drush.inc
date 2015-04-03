@@ -43,13 +43,14 @@ function drush_os_core_generate_main_menu_links($level) {
   if ($level == 'level-0' || $level == 'all') {
     // Delete existing main menu items before creating new links
     $menu_data = menu_tree_all_data('main-menu', NULL, 4);
-    array_walk_recursive ( $menu_data , '_os_core_delete_menu_links');
+    array_walk_recursive($menu_data , '_os_core_delete_menu_links');
   }
   switch ($level) {
     case 'level-0':
       os_core_generate_main_menu_items($level);
       menu_rebuild();
-      break;
+       break;
+
     case 'all':
       os_core_generate_main_menu_items('level-0');
       menu_rebuild();
@@ -74,19 +75,19 @@ function os_core_generate_main_menu_items($level) {
   $args = array('build_info' => array('args' => array('add', array(), array())));
   $menu_items = _os_core_get_main_menu_items($level);
   foreach ($menu_items as $menu_item) {
-    // If this is a child item, get parent's mlid and assign parent to menu item
+    // If this is a child item, get parent's mlid and assign parent to menu item.
     if ($menu_item['values']['parent'] != 'main-menu:0') {
-      error_log($menu_item['values']['parent']);
-      //  Get parent 's mlid
+
+      //  Get parent 's mlid.
       $parent_mlid = _os_core_get_mlid($menu_item['values']['parent']);
-      error_log($parent_mlid);
+
       if (!empty($parent_mlid)) {
-        // Set parent attrib to create hierarchy
+        // Set parent attrib to create hierarchy.
         $menu_item['values']['parent'] = 'main-menu:' . $parent_mlid;
       }
     }
     $menu_item += $args;
-    // create menu item
+    // Create menu item.
     drupal_form_submit('menu_edit_item', $menu_item);
   }
 }
@@ -95,8 +96,8 @@ function os_core_generate_main_menu_items($level) {
  * Returns mlid of main menu item by title.
  */
 function _os_core_get_mlid($title) {
-  $mlid = db_select('menu_links' , 'ml')
-    ->fields('ml' , array('mlid'))
+  $mlid = db_select('menu_links', 'ml')
+    ->fields('ml', array('mlid'))
     ->condition('menu_name', 'main-menu', '=')
     ->condition('link_title', $title, '=')
     ->orderBy('mlid', 'DESC')
@@ -540,7 +541,7 @@ function _os_core_get_main_menu_items($level) {
  * Implements drush_hook_COMMAND_validate().
  */
 function drush_os_core_mbp_generate_term_validate() {
-  if(!module_exists('media_browser_plus')) {
+  if (!module_exists('media_browser_plus')) {
     return drush_set_error(dt('Media browser module is not enabled. Please enable it and try again.'));
   }
 }
@@ -548,14 +549,17 @@ function drush_os_core_mbp_generate_term_validate() {
  * Implements drush_hook_COMMAND_validate().
  */
 function drush_os_core_mbp_iterate_folders_validate() {
-  if(!module_exists('media_browser_plus')) {
+  if (!module_exists('media_browser_plus')) {
     return drush_set_error(dt('Media browser module is not enabled. Please enable it and try again.'));
   }
 }
 
+/**
+ * Callback function for mbp-generate-term.
+ */
 function drush_os_core_mbp_generate_term($filling = 'ascii') {
   $vid = taxonomy_vocabulary_machine_name_load('media_folders')->vid;
-  $parent_term =  taxonomy_get_term_by_name('Media Root', 'media_folders');
+  $parent_term = taxonomy_get_term_by_name('Media Root', 'media_folders');
   $term_names = array(
     '0' => array('name' => 'education', 'description' => 'Education images.'),
     '1' => array('name' => 'about', 'description' => 'About Category images.'),
@@ -587,7 +591,7 @@ function drush_os_core_mbp_generate_term($filling = 'ascii') {
 }
 
 /**
- * Implements drush_HOOK_command().
+ * Implements drush_hook_COMMAND().
  */
 function drush_os_core_mbp_iterate_folders($filling = 'ascii') {
   $query = new EntityFieldQuery();
@@ -604,7 +608,7 @@ function drush_os_core_mbp_iterate_folders($filling = 'ascii') {
     if (substr($file_uri[0], 0, strlen($prefix)) == $prefix) {
       $str = substr($file_uri[0], strlen($prefix));
       $a = strstr($str, '//');
-      if($a == '//') {
+      if ($a == '//') {
         $folder_heirarchical_name = explode('/', substr($str, 0, -2));
       }
       else {
@@ -615,7 +619,7 @@ function drush_os_core_mbp_iterate_folders($filling = 'ascii') {
       /*$vid = taxonomy_vocabulary_machine_name_load('media_folders')->vid;
       $parent_term =  taxonomy_get_term_by_name('Media Root', 'media_folders');
       $term = taxonomy_get_term_by_name($folder_name[0], 'media_folders');
-      if(empty($term) && sizeof($folder_name[0] > 1)) {
+      if (empty($term) && sizeof($folder_name[0] > 1)) {
         $term = new stdClass();
         $term->vid = $vid;
         $term->name = $folder_name[0];
@@ -623,14 +627,14 @@ function drush_os_core_mbp_iterate_folders($filling = 'ascii') {
         $term->parent = $parent_term->tid;
         taxonomy_term_save($term);
       }*/
-      if(sizeof($folder_names) == 1) {
+      if (sizeof($folder_names) == 1) {
         $vid = taxonomy_vocabulary_machine_name_load('media_folders')->vid;
         $parent_term =  taxonomy_get_term_by_name('Media Root', 'media_folders');
         if (!empty($parent_term)) {
           $parent_term = array_shift($parent_term);
         }
         $folderterm = taxonomy_get_term_by_name($folder_names[0], 'media_folders');
-        if(empty($folderterm) && (strlen($folder_names[0]) > 1)) {
+        if (empty($folderterm) && (strlen($folder_names[0]) > 1)) {
           $term = new stdClass();
           $term->vid = $vid;
           $term->name = $folder_names[0];
@@ -648,15 +652,15 @@ function drush_os_core_mbp_iterate_folders($filling = 'ascii') {
         }
       }
       else {
-        for($i = 0; $i < sizeof($folder_names); $i++) {
-          if($i == 0) {
+        for ($i = 0; $i < sizeof($folder_names); $i++) {
+          if ($i == 0) {
             $vid = taxonomy_vocabulary_machine_name_load('media_folders')->vid;
-            $parent_term =  taxonomy_get_term_by_name('Media Root', 'media_folders');
+            $parent_term = taxonomy_get_term_by_name('Media Root', 'media_folders');
             if (!empty($parent_term)) {
               $parent_term = array_shift($parent_term);
             }
             $folderterm = taxonomy_get_term_by_name($folder_names[$i], 'media_folders');
-            if(empty($folderterm) && (strlen($folder_names[$i]) > 1)) {
+            if (empty($folderterm) && (strlen($folder_names[$i]) > 1)) {
               $term = new stdClass();
               $term->vid = $vid;
               $term->name = $folder_names[0];
@@ -675,12 +679,12 @@ function drush_os_core_mbp_iterate_folders($filling = 'ascii') {
           }
           else {
             $vid = taxonomy_vocabulary_machine_name_load('media_folders')->vid;
-            $parent_term =  taxonomy_get_term_by_name($folder_names[0], 'media_folders');
+            $parent_term = taxonomy_get_term_by_name($folder_names[0], 'media_folders');
             if (!empty($parent_term)) {
               $parent_term = array_shift($parent_term);
             }
             $folderterm = taxonomy_get_term_by_name($folder_names[$i], 'media_folders');
-            if(empty($folderterm) && (strlen($folder_names[$i]) > 1)) {
+            if (empty($folderterm) && (strlen($folder_names[$i]) > 1)) {
               $term = new stdClass();
               $term->vid = $vid;
               $term->name = $folder_names[$i];
