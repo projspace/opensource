@@ -43,13 +43,13 @@ function drush_os_core_generate_main_menu_links($level) {
   if ($level == 'level-0' || $level == 'all') {
     // Delete existing main menu items before creating new links
     $menu_data = menu_tree_all_data('main-menu', NULL, 4);
-    array_walk_recursive($menu_data , '_os_core_delete_menu_links');
+    array_walk_recursive($menu_data, '_os_core_delete_menu_links');
   }
   switch ($level) {
     case 'level-0':
       os_core_generate_main_menu_items($level);
       menu_rebuild();
-       break;
+      break;
 
     case 'all':
       os_core_generate_main_menu_items('level-0');
@@ -78,7 +78,7 @@ function os_core_generate_main_menu_items($level) {
     // If this is a child item, get parent's mlid and assign parent to menu item.
     if ($menu_item['values']['parent'] != 'main-menu:0') {
 
-      //  Get parent 's mlid.
+      //  Get parent's mlid.
       $parent_mlid = _os_core_get_mlid($menu_item['values']['parent']);
 
       if (!empty($parent_mlid)) {
