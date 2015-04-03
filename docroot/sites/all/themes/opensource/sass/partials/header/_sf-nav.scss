@@ -1,0 +1,137 @@
+.block-title,#navigation #main-menu {
+    display: none;
+}
+
+
+.block-superfish  li {
+      background: none repeat scroll 0 0 #D1D4D3;
+  float: left;
+  font-size: 1.3em;
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 1px;
+  text-align: center;
+  width: 136.1px;
+  margin-top:5px;
+
+}
+
+* {
+    text-decoration: none;
+}
+
+
+
+.block-superfish  .menuparent ul 
+{
+    margin:7px 0px;
+    width: 13.6em !important;
+    font-size:10px;
+    background:#0099CC;
+}
+.block-superfish  .menuparent ul li a ,.block-superfish  .menuparent ul li
+{
+    background:#0099CC;
+    
+}
+
+ a
+{
+    color : rgb(95, 101, 105) ;
+}
+
+
+
+.block-superfish  li a:hover , .block-superfish  li:hover , .active-trail a
+{
+    color:white;
+    // background : #0099CC;
+
+}
+
+.sf-menu a
+{
+    position:initial !important;
+}
+
+
+.block-superfish  li a {
+  height: 40px;
+  padding-top: 10px;
+  width: 136px;
+overflow: hidden;
+}
+
+
+
+// .block-superfish  .menuparent li:after {
+//   content: "v";
+//   float: right;
+//   margin-right: 7px;
+// }
+
+// .block-superfish  .menuparent li:hover:after {
+//  content: ">";
+//   float: right;
+//   margin-right: 7px;
+// }
+
+
+
+
+
+.sf-main-menu {
+ li:nth-child(1) a {
+    background: white;
+    color:rgb(95, 101, 105);
+}
+li a:hover  {
+  color: white !important;
+  background:#0099CC;
+}
+    li.menuparent {
+      position: relative;
+
+      &:after {
+        content: 'v';
+        position: absolute;
+        right: 0;
+        top: 45%;
+      }
+      
+      &:hover {
+        &:after {
+          content: '^';         
+        }
+
+        a {
+          color: white;
+          background : #0099CC;
+        }
+      }
+    }
+  li.sf-depth-2 , li.sf-depth-2 a
+  {
+    color: rgb(95, 101, 105) !important;
+  }
+  
+  li.sf-depth-2 a
+{
+    &:before {
+            content: '>';
+            position: relative;
+            left: 0px;
+            top: 3px;
+            padding-right: 6px;
+          
+        }
+    &:hover {
+          color: white !important;
+          background : #0099CC !important;
+      }
+  }
+.active-trail{
+  background:#0099CC !important;
+  color:white !important;
+}
+}
