@@ -2801,111 +2801,124 @@ label {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\000036}}
-.block-superfish li {
-  background: none repeat scroll 0 0 #D1D4D3;
-  float: left;
-  font-size: 1.3em;
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 1px;
-  text-align: center;
-  width: 136.1px;
-  margin-top: 5px;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\000035}}
+.block-superfish {
+  margin: 0;
+  padding: 0;
+  background: #5e6a71;
+  height: 50px;
 }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000319}}
-* {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000313}}
+.block-superfish * {
   text-decoration: none;
 }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000317}}
+.block-superfish ul li.menuparent:nth-child(1) {
+  margin-left: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000323}}
+.block-superfish li {
+  background: none repeat scroll 0 0 #D1D4D3;
+  font-size: 1.3em;
+  margin-left: 6px;
+  text-align: center;
+  margin-top: 5px;
+  width: 24.5%;
+  padding: 0px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000334}}
+.block-superfish li:hover, .block-superfish lia:hover {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000339}}
+.block-superfish li a {
+  height: 40px;
+  padding-top: 12px;
+  color: white;
+  width: 100% !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000347}}
+.block-superfish li a.sf-depth-1 {
+  color: #4d4b4b;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000353}}
 .block-superfish .menuparent ul {
   margin: 7px 0px;
-  width: 13.6em !important;
-  font-size: 10px;
+  font-size: 11px;
   background: #0099CC;
 }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000359}}
 .block-superfish .menuparent ul li a, .block-superfish .menuparent ul li {
   background: #0099CC;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000338}}
-a {
-  color: #5f6569;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000368}}
+.sf-main-menu ul, .sf-main-menu a {
+  width: 100% !important;
 }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000345}}
-.block-superfish li a:hover, .block-superfish li:hover, .active-trail a {
-  color: white;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000352}}
-.sf-menu a {
-  position: initial !important;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000358}}
-.block-superfish li a {
-  height: 40px;
-  padding-top: 10px;
-  width: 136px;
-  overflow: hidden;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000372}}
 .sf-main-menu li:nth-child(1) a {
   background: white;
-  color: #5f6569;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000375}}
 .sf-main-menu li a:hover {
-  color: white !important;
   background: #0099CC;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000379}}
 .sf-main-menu li.menuparent {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000382}}
 .sf-main-menu li.menuparent:after {
-  content: 'v';
+  content: '\e800';
   position: absolute;
-  right: 0;
-  top: 45%;
+  right: 11px;
+  top: 21%;
+  font-family: "fontello";
+  font-size: 1.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000392}}
+.sf-main-menu li.menuparent:hover:after {
+  content: '\e801';
+  font-family: "fontello";
+  font-size: 1.5em;
+  top: 21%;
+  position: absolute;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003103}}
-.sf-main-menu li.menuparent:hover:after {
-  content: '^';
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003107}}
 .sf-main-menu li.menuparent:hover a {
   color: white;
   background: #0099CC;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003113}}
-.sf-main-menu li.sf-depth-2, .sf-main-menu li.sf-depth-2 a {
-  color: #5f6569 !important;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003114}}
+.sf-main-menu li.sf-depth-2 {
+  margin-left: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003118}}
+.sf-main-menu li.sf-depth-2 ul:hover {
+  overflow: visible !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003122}}
+.sf-main-menu li.sf-depth-2 a {
+  text-align: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003125}}
 .sf-main-menu li.sf-depth-2 a:before {
-  content: '>';
+  content: '\e802';
+  font-size: 1.2em;
   position: relative;
-  left: 0px;
-  top: 3px;
-  padding-right: 6px;
+  font-family: "fontello";
+  padding: 0px 10px 0px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003134}}
 .sf-main-menu li.sf-depth-2 a:hover {
-  color: white !important;
-  background: #0099CC !important;
+  color: #454749;
+  background: #D1D4D3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003142}}
 .sf-main-menu .active-trail {
-  background: #0099CC !important;
-  color: white !important;
+  background: #0099CC;
+  color: white;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/footer\/_footer-top\.scss}line{font-family:\000031}}

@@ -2,136 +2,150 @@
     display: none;
 }
 
+.block-superfish
+  {
 
-.block-superfish  li {
-      background: none repeat scroll 0 0 #D1D4D3;
-  float: left;
-  font-size: 1.3em;
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 1px;
-  text-align: center;
-  width: 136.1px;
-  margin-top:5px;
+    margin: 0;
+    padding: 0;
+    background: rgb(94, 106, 113);
+    height: 50px;
+
+    *{
+     text-decoration: none; 
+     }
+
+    ul li.menuparent:nth-child(1)
+      {
+        margin-left: 0px;
+      }
+
+
+    li 
+      {
+        background: none repeat scroll 0 0 #D1D4D3;
+        font-size: 1.3em;
+        margin-left: 6px;
+        text-align: center;
+        margin-top: 5px;
+        width: 24.5%;
+        padding:0px !important;
+
+
+        &:hover , &a:hover
+        {
+          color:white;
+        }
+
+        a
+        {
+          height: 40px;
+          padding-top:12px;
+          color: white;
+          width: 100% !important;
+
+        }
+        a.sf-depth-1 
+        {
+            color: rgb(77, 75, 75);
+        }
+      }
+
+    .menuparent ul 
+        {
+          margin:7px 0px;
+          font-size:11px;
+          background:#0099CC;
+
+          li a , li
+           {
+            background:#0099CC;
+           }
+        }
 
 }
-
-* {
-    text-decoration: none;
-}
-
-
-
-.block-superfish  .menuparent ul 
-{
-    margin:7px 0px;
-    width: 13.6em !important;
-    font-size:10px;
-    background:#0099CC;
-}
-.block-superfish  .menuparent ul li a ,.block-superfish  .menuparent ul li
-{
-    background:#0099CC;
-    
-}
-
- a
-{
-    color : rgb(95, 101, 105) ;
-}
-
-
-
-.block-superfish  li a:hover , .block-superfish  li:hover , .active-trail a
-{
-    color:white;
-    // background : #0099CC;
-
-}
-
-.sf-menu a
-{
-    position:initial !important;
-}
-
-
-.block-superfish  li a {
-  height: 40px;
-  padding-top: 10px;
-  width: 136px;
-overflow: hidden;
-}
-
-
-
-// .block-superfish  .menuparent li:after {
-//   content: "v";
-//   float: right;
-//   margin-right: 7px;
-// }
-
-// .block-superfish  .menuparent li:hover:after {
-//  content: ">";
-//   float: right;
-//   margin-right: 7px;
-// }
-
-
-
-
 
 .sf-main-menu {
+ ul,a
+ {
+  width: 100% !important;
+ }
  li:nth-child(1) a {
     background: white;
-    color:rgb(95, 101, 105);
 }
 li a:hover  {
-  color: white !important;
+
   background:#0099CC;
 }
     li.menuparent {
       position: relative;
 
       &:after {
-        content: 'v';
-        position: absolute;
-        right: 0;
-        top: 45%;
+        content: '\e800';
+          position: absolute;
+          right: 11px;
+          top: 21%;
+          font-family: "fontello";
+          font-size: 1.5em;
       }
       
       &:hover {
         &:after {
-          content: '^';         
+          content: '\e801';  
+        font-family: "fontello";
+        font-size: 1.5em;
+          top: 21%;
+          position: absolute;
+
+
+
         }
 
-        a {
-          color: white;
-          background : #0099CC;
-        }
+        a 
+          {
+            color: white;
+            background : #0099CC;
+          }
+        
       }
+      
     }
-  li.sf-depth-2 , li.sf-depth-2 a
+
+
+  li.sf-depth-2 
   {
-    color: rgb(95, 101, 105) !important;
-  }
-  
-  li.sf-depth-2 a
-{
-    &:before {
-            content: '>';
+    margin-left: 0px;
+
+    ul:hover
+    {
+      overflow: visible !important;
+    }
+    a
+    {
+      text-align: left;
+      &:before 
+      {
+            content: '\e802';
+            font-size: 1.2em;
             position: relative;
-            left: 0px;
-            top: 3px;
-            padding-right: 6px;
+            font-family: "fontello";
+            padding: 0px 10px 0px 10px;
           
         }
-    &:hover {
-          color: white !important;
-          background : #0099CC !important;
+    &:hover 
+    {
+          color: #454749 ;
+          background : #D1D4D3;
       }
   }
-.active-trail{
-  background:#0099CC !important;
-  color:white !important;
+  }
+  
+  .active-trail {
+    background:#0099CC ;
+    color:white ;
+  }
+
+
+
 }
-}
+
+

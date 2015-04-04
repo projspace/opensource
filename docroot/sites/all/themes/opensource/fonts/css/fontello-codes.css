@@ -1,3 +1,4 @@
 
-.icon-angle-up:before { content: '\e800'; } /* '' */
-.icon-angle-down:before { content: '\e801'; } /* '' */
+.icon-angle-down:before { content: '\e800'; } /* '' */
+.icon-angle-up:before { content: '\e801'; } /* '' */
+.icon-angle-right:before { content: '\e802'; } /* '' */

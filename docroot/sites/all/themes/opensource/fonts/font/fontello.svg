@@ -6,8 +6,9 @@
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
-<glyph glyph-name="angle-up" unicode="&#xe800;" d="m600 189q0-7-6-13l-28-27q-5-6-12-6t-13 6l-220 219-219-219q-5-6-13-6t-13 6l-27 27q-6 6-6 13t6 13l260 260q5 6 12 6t13-6l260-260q6-5 6-13z" horiz-adv-x="642.9" />
-<glyph glyph-name="angle-down" unicode="&#xe801;" d="m600 439q0-7-6-13l-260-260q-5-5-13-5t-12 5l-260 260q-6 6-6 13t6 13l27 28q6 6 13 6t13-6l219-219 220 219q5 6 13 6t12-6l28-28q6-5 6-13z" horiz-adv-x="642.9" />
+<glyph glyph-name="angle-down" unicode="&#xe800;" d="m600 439q0-7-6-13l-260-260q-5-5-13-5t-12 5l-260 260q-6 6-6 13t6 13l27 28q6 6 13 6t13-6l219-219 220 219q5 6 13 6t12-6l28-28q6-5 6-13z" horiz-adv-x="642.9" />
+<glyph glyph-name="angle-up" unicode="&#xe801;" d="m600 189q0-7-6-13l-28-27q-5-6-12-6t-13 6l-220 219-219-219q-5-6-13-6t-13 6l-27 27q-6 6-6 13t6 13l260 260q5 6 12 6t13-6l260-260q6-5 6-13z" horiz-adv-x="642.9" />
+<glyph glyph-name="angle-right" unicode="&#xe802;" d="m332 314q0-7-6-13l-260-260q-5-5-12-5t-13 5l-28 28q-6 6-6 13t6 13l219 219-219 220q-6 5-6 12t6 13l28 28q5 6 13 6t12-6l260-260q6-5 6-13z" horiz-adv-x="357.1" />
 </font>
 </defs>
 </svg>
