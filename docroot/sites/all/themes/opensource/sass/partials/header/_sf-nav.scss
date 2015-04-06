@@ -109,7 +109,10 @@ li a:hover  {
 }
     li.menuparent {
       position: relative;
-
+      &.sf-depth-2:after
+      {
+        content: "" !important;
+      }
       &:after {
         content: '\e800';
           position: absolute;
@@ -166,22 +169,22 @@ li a:hover  {
   }
   
   
+.sf-depth-1 > ul
+{
+  overflow: visible !important;
+  }
 
 li.sf-depth-2.menuparent:hover ul
 {
-  background : red !important;
-  // ul
-  // {
-  //   left:23.5em !important;
-  //     top:-7px !important;  
-  //     width: 24.5em !important;
-  // }
-  // li
-  // {
-  //                overflow: visible !important;
-  //   } 
+  position: absolute;
+  top: -9px !important;
+  left: 21.3em !important;
+
+  a{
+    width: auto !important;
+  margin-left: -13px;
+    
+  }
 }
 
 }
-
-
