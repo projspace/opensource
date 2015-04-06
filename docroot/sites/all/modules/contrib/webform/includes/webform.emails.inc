@@ -20,9 +20,9 @@ function webform_emails_form($form, $form_state, $node) {
   $form['components'] = array();
 
   foreach ($node->webform['emails'] as $eid => $email) {
-    $email_addresses = array_filter(explode(',', check_plain($email['email'])));
+    $email_addresses = array_filter(explode(',', $email['email']));
     foreach ($email_addresses as $key => $email_address) {
-      $email_addresses[$key] = webform_format_email_address($email_address, NULL, $node, NULL, FALSE);
+      $email_addresses[$key] = check_plain(webform_format_email_address($email_address, NULL, $node, NULL, FALSE));
     }
 
     $form['emails'][$eid]['email'] = array(
@@ -120,7 +120,7 @@ function theme_webform_emails_form($variables) {
   $rows[] = array('data' => $row_data, 'class' => array('webform-add-form'));
 
   $output = '';
-  $output .= theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'webform-emails')));
+  $output .= theme('table', array('header' => $header, 'rows' => $rows, 'sticky' => FALSE, 'attributes' => array('id' => 'webform-emails')));
   $output .= drupal_render_children($form);
   return $output;
 }
@@ -248,7 +248,7 @@ function webform_email_edit_form($form, $form_state, $node, $email = array(), $c
 
         // To avoid flooding the form with hundreds of textfields, skip select
         // lists that have huge numbers of options.
-        if (count($options) > variable_get('webform_email_select_max', 50)) {
+        if (count($options) > webform_variable_get('webform_email_select_max')) {
           unset($form[$field . '_component']['#options'][$cid]);
           continue;
         }
@@ -278,7 +278,7 @@ function webform_email_edit_form($form, $form_state, $node, $email = array(), $c
   }
 
   // Do not show the "E-mail from name" if using the short e-mail format.
-  if (variable_get('webform_email_address_format', 'long') == 'short') {
+  if (webform_variable_get('webform_email_address_format') == 'short') {
     $form['from_name_option']['#access'] = FALSE;
     $form['from_name_custom']['#access'] = FALSE;
     $form['from_name_component']['#access'] = FALSE;
@@ -311,7 +311,7 @@ function webform_email_edit_form($form, $form_state, $node, $email = array(), $c
     '#type' => 'textarea',
     '#rows' => max(10, min(20, count(explode("\n", $template)))),
     '#default_value' => $template,
-    '#wysiwyg' => webform_email_html_capable() ? NULL : FALSE,
+    '#wysiwyg' => webform_variable_get('webform_email_html_capable') ? NULL : FALSE,
     '#description' => theme('webform_token_help', array('groups' => array('node', 'submission'))),
   );
 
@@ -319,14 +319,14 @@ function webform_email_edit_form($form, $form_state, $node, $email = array(), $c
     '#type' => 'checkbox',
     '#title' => t('Send e-mail as HTML'),
     '#default_value' => $email['html'],
-    '#access' => webform_email_html_capable() && !variable_get('webform_format_override', 0),
+    '#access' => webform_variable_get('webform_email_html_capable') && !webform_variable_get('webform_format_override'),
   );
 
   $form['template']['attachments'] = array(
     '#type' => 'checkbox',
     '#title' => t('Include files as attachments'),
     '#default_value' => $email['attachments'],
-    '#access' => webform_email_html_capable(),
+    '#access' => webform_variable_get('webform_email_html_capable'),
   );
 
   $form['template']['components'] = array(
@@ -520,6 +520,9 @@ function webform_email_edit_form_submit($form, &$form_state) {
   $node = $form['#node'];
   webform_ensure_record($node);
 
+  // Remove duplicate email To: addresses.
+  $form_state['values']['email_custom'] = implode(',', array_unique(array_map('trim', explode(',', $form_state['values']['email_custom']))));
+
   // Merge the e-mail, name, address, and subject options into single values.
   $email = array(
     'eid' => $form_state['values']['eid'],
@@ -581,7 +584,7 @@ function webform_email_edit_form_submit($form, &$form_state) {
 
   // Clear the entity cache if Entity Cache module is installed.
   if (module_exists('entitycache')) {
-    cache_clear_all($node->nid, 'cache_entity_node');
+    entity_get_controller('node')->resetCache(array($node->nid));
   }
 
   $form_state['redirect'] = array('node/' . $node->nid . '/webform/emails');
@@ -629,7 +632,7 @@ function webform_email_delete_form_submit($form, &$form_state) {
 
   // Clear the entity cache if Entity Cache module is installed.
   if (module_exists('entitycache')) {
-    cache_clear_all($node->nid, 'cache_entity_node');
+    entity_get_controller('node')->resetCache(array($node->nid));
   }
 
   $form_state['redirect'] = 'node/' . $node->nid . '/webform/emails';
@@ -648,15 +651,15 @@ function webform_email_load($eid, $nid) {
       'from_address' => 'default',
       'template' => 'default',
       'excluded_components' => array(),
-      'html' => variable_get('webform_default_format', 0),
+      'html' => webform_variable_get('webform_default_format'),
       'attachments' => 0,
       'extra' => '',
     );
   }
   else {
     $email = isset($node->webform['emails'][$eid]) ? $node->webform['emails'][$eid] : FALSE;
-    if (variable_get('webform_format_override', 0)) {
-      $email['html'] = variable_get('webform_default_format', 0);
+    if (webform_variable_get('webform_format_override')) {
+      $email['html'] = webform_variable_get('webform_default_format');
     }
   }
 
