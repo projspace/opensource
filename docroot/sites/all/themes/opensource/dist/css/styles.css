@@ -6494,7 +6494,50 @@ label {
   }
 
   line {
-    font-family: \0000317;
+    font-family: \0000318;
+  }
+}
+
+.block-superfish li.active-trail {
+  background: white;
+  color: gray;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \0000322;
+  }
+}
+
+.block-superfish li.active-trail a {
+  color: #0099CC;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \0000327;
+  }
+}
+
+.block-superfish li.active-trail:hover {
+  color: white;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \0000335;
   }
 }
 
@@ -6508,7 +6551,7 @@ label {
   }
 
   line {
-    font-family: \0000323;
+    font-family: \0000341;
   }
 }
 
@@ -6528,13 +6571,12 @@ label {
   }
 
   line {
-    font-family: \0000334;
+    font-family: \0000351;
   }
 }
 
-.block-superfish li:hover,
-.block-superfish lia:hover {
-  color: white;
+.block-superfish li.sf-depth-1.active-trail > a {
+  color: #0099CC !important;
 }
 
 @media -sass-debug-info {
@@ -6543,7 +6585,22 @@ label {
   }
 
   line {
-    font-family: \0000339;
+    font-family: \0000359;
+  }
+}
+
+.block-superfish li:hover,
+.block-superfish lia:hover {
+  color: white !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \0000364;
   }
 }
 
@@ -6560,7 +6617,7 @@ label {
   }
 
   line {
-    font-family: \0000347;
+    font-family: \0000372;
   }
 }
 
@@ -6574,7 +6631,7 @@ label {
   }
 
   line {
-    font-family: \0000353;
+    font-family: \0000383;
   }
 }
 
@@ -6590,7 +6647,7 @@ label {
   }
 
   line {
-    font-family: \0000359;
+    font-family: \0000389;
   }
 }
 
@@ -6605,7 +6662,7 @@ label {
   }
 
   line {
-    font-family: \0000368;
+    font-family: \0000399;
   }
 }
 
@@ -6620,21 +6677,7 @@ label {
   }
 
   line {
-    font-family: \0000372;
-  }
-}
-
-.sf-main-menu li:nth-child(1) a {
-  background: white;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
-  }
-
-  line {
-    font-family: \0000375;
+    font-family: \00003106;
   }
 }
 
@@ -6648,7 +6691,7 @@ label {
   }
 
   line {
-    font-family: \0000379;
+    font-family: \00003110;
   }
 }
 
@@ -6662,7 +6705,7 @@ label {
   }
 
   line {
-    font-family: \0000382;
+    font-family: \00003113;
   }
 }
 
@@ -6681,7 +6724,7 @@ label {
   }
 
   line {
-    font-family: \0000392;
+    font-family: \00003123;
   }
 }
 
@@ -6699,12 +6742,12 @@ label {
   }
 
   line {
-    font-family: \00003103;
+    font-family: \00003132;
   }
 }
 
 .sf-main-menu li.menuparent:hover a {
-  color: white;
+  color: white !important;
   background: #0099CC;
 }
 
@@ -6714,7 +6757,7 @@ label {
   }
 
   line {
-    font-family: \00003114;
+    font-family: \00003143;
   }
 }
 
@@ -6728,21 +6771,7 @@ label {
   }
 
   line {
-    font-family: \00003118;
-  }
-}
-
-.sf-main-menu li.sf-depth-2 ul:hover {
-  overflow: visible !important;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
-  }
-
-  line {
-    font-family: \00003122;
+    font-family: \00003148;
   }
 }
 
@@ -6756,7 +6785,7 @@ label {
   }
 
   line {
-    font-family: \00003125;
+    font-family: \00003151;
   }
 }
 
@@ -6774,12 +6803,12 @@ label {
   }
 
   line {
-    font-family: \00003134;
+    font-family: \00003160;
   }
 }
 
 .sf-main-menu li.sf-depth-2 a:hover {
-  color: #454749;
+  color: #454749 !important;
   background: #D1D4D3;
 }
 
@@ -6789,13 +6818,12 @@ label {
   }
 
   line {
-    font-family: \00003142;
+    font-family: \00003170;
   }
 }
 
-.sf-main-menu .active-trail {
-  background: #0099CC;
-  color: white;
+.sf-main-menu li.sf-depth-2.menuparent:hover ul {
+  background: red !important;
 }
 
 @media -sass-debug-info {

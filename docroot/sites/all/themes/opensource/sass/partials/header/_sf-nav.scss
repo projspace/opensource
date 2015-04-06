@@ -14,6 +14,24 @@
      text-decoration: none; 
      }
 
+      
+      li.active-trail 
+      {
+       background:white ;
+       color:gray; 
+      a 
+      {
+          color: #0099CC;
+      }
+
+       &:hover
+       {
+        color: white;
+       }
+
+
+     }
+
     ul li.menuparent:nth-child(1)
       {
         margin-left: 0px;
@@ -30,10 +48,17 @@
         width: 24.5%;
         padding:0px !important;
 
+        &.sf-depth-1.active-trail > a
+        {
+
+          color: #0099CC !important ;
+
+
+        }
 
         &:hover , &a:hover
         {
-          color:white;
+          color:white !important;
         }
 
         a
@@ -47,6 +72,11 @@
         a.sf-depth-1 
         {
             color: rgb(77, 75, 75);
+            &.menuparent.active
+            {
+              // color: white;
+              // background:#0099CC;
+            }
         }
       }
 
@@ -62,6 +92,7 @@
            }
         }
 
+
 }
 
 .sf-main-menu {
@@ -69,9 +100,9 @@
  {
   width: 100% !important;
  }
- li:nth-child(1) a {
-    background: white;
-}
+
+
+
 li a:hover  {
 
   background:#0099CC;
@@ -91,18 +122,16 @@ li a:hover  {
       &:hover {
         &:after {
           content: '\e801';  
-        font-family: "fontello";
-        font-size: 1.5em;
+          font-family: "fontello";
+          font-size: 1.5em;
           top: 21%;
           position: absolute;
-
-
 
         }
 
         a 
           {
-            color: white;
+            color: white !important;
             background : #0099CC;
           }
         
@@ -115,10 +144,7 @@ li a:hover  {
   {
     margin-left: 0px;
 
-    ul:hover
-    {
-      overflow: visible !important;
-    }
+    
     a
     {
       text-align: left;
@@ -133,18 +159,28 @@ li a:hover  {
         }
     &:hover 
     {
-          color: #454749 ;
+          color: #454749 !important;
           background : #D1D4D3;
       }
   }
   }
   
-  .active-trail {
-    background:#0099CC ;
-    color:white ;
-  }
+  
 
-
+li.sf-depth-2.menuparent:hover ul
+{
+  background : red !important;
+  // ul
+  // {
+  //   left:23.5em !important;
+  //     top:-7px !important;  
+  //     width: 24.5em !important;
+  // }
+  // li
+  // {
+  //                overflow: visible !important;
+  //   } 
+}
 
 }
 
