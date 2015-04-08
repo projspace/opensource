@@ -551,7 +551,7 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 * Remove the leading hash signs to disable.
 */
 # $conf['allow_authorize_operations'] = FALSE;
-if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTTP_HOST'], 'projspace') == FALSE)) {
+if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTTP_HOST'], 'projspace') !== FALSE)) {
 
     // this is projspace server
     $databases = array (
@@ -570,12 +570,14 @@ if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTT
         ),
     );
 
-    $extracts = explode("/",__FILE__);
+#$extracts = explode("/",__FILE__);
 
-    $project = $extracts[2];
-    $env = $extracts[4];
-
-    include "/home/$project/includes/$env.inc";
+#$project = $extracts[2];
+#$env = $extracts[4];
+#$filename = '/home/$project/includes/$env.inc';
+#if (file_exists($filename)) {
+#include '$filename';
+#}
 
 } else {
 
@@ -624,3 +626,13 @@ if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTT
 if (file_exists(dirname(__FILE__) . '/local.settings.php')) {
     include dirname(__FILE__) . '/local.settings.php';
 }
+
+$extracts = explode("/",__FILE__);
+
+$project = $extracts[2];
+$env = $extracts[4];
+$filename = "/home/$project/includes/$env.inc";
+if (file_exists($filename)) {
+include "$filename";
+}
+
