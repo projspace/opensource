@@ -551,63 +551,25 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 * Remove the leading hash signs to disable.
 */
 # $conf['allow_authorize_operations'] = FALSE;
-// if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTTP_HOST'], 'projspace') !== FALSE)) {
-// // this is AXL server
-//   $extracts = explode("/",__FILE__);
+if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTTP_HOST'], 'projspace') !== FALSE)) {
+// this is AXL server
+  $extracts = explode("/",__FILE__);
 
-//     $project = $extracts[2];
-//     $env = $extracts[4];
+    $project = $extracts[2];
+    $env = $extracts[4];
 
-//       include "/home/$project/includes/$env.inc";
-// }
-// else {
+      include "/home/$project/includes/$env.inc";
+}
+else {
 
-// $databases = array (
-//   'default' =>
-//   array (
-//     'default' =>
-//    array (
-//       'database' => 'os7',
-//       'username' => 'root',
-//       'password' => '',
-//       'host' => 'localhost',
-//       'port' => '',
-//       'driver' => 'mysql',
-//       'prefix' => '',
-//     ),
-//   ),
-// );
-// $databases['legacy'] = array (
-//   'default' =>
-//    array (
-//       'database' => 'os6',
-//       'username' => 'root',
-//       'password' => '',
-//       'host' => 'localhost',
-//       'port' => '',
-//       'driver' => 'mysql',
-//       'prefix' => '',
-//     ),
-// );
-
-// $conf['os_migrate_database'] = 'os6';
-// $conf['os_migrate_username'] = 'root';
-// $conf['os_migrate_password'] = '';
-// $conf['os_migrate_files_source_dir'] = '/mnt/www/filesD6';
-
-
-// $conf['reverse_proxy'] = TRUE;
-// $conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
-// $conf['reverse_proxy_addresses'] = array('127.0.0.1');
-// }
 $databases = array (
   'default' =>
   array (
     'default' =>
-    array (
-      'database' => @$_SERVER['DB_NAME'],
-      'username' => ini_get('mysql.default_user'),
-      'password' => ini_get('mysql.default_password'),
+   array (
+      'database' => 'os7',
+      'username' => 'root',
+      'password' => '',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
@@ -615,13 +577,29 @@ $databases = array (
     ),
   ),
 );
+$databases['legacy'] = array (
+  'default' =>
+   array (
+      'database' => 'os6',
+      'username' => 'root',
+      'password' => '',
+      'host' => 'localhost',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+);
 
-$extracts = explode("/",__FILE__);
+$conf['os_migrate_database'] = 'os6';
+$conf['os_migrate_username'] = 'root';
+$conf['os_migrate_password'] = '';
+$conf['os_migrate_files_source_dir'] = '/mnt/www/filesD6';
 
-$project = $extracts[2];
-$env = $extracts[4];
 
-include "/home/$project/includes/$env.inc";	
+$conf['reverse_proxy'] = TRUE;
+$conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
+$conf['reverse_proxy_addresses'] = array('127.0.0.1');
+}
 
  /* 
   * Settings file routing
