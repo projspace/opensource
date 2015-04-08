@@ -21,7 +21,7 @@
        color:gray; 
       a 
       {
-          color: #0099CC;
+          color: #0099CC !important;
       }
 
        &:hover
@@ -44,18 +44,21 @@
         font-size: 1.3em;
         margin-left: 6px;
         text-align: center;
-        margin-top: 5px;
-        width: 24.5%;
+        width: 24.53%;
         padding:0px !important;
 
-        &.sf-depth-1.active-trail > a
+        &.sf-depth-1
+
+        {
+          margin-top:5px;
+          .active-trail > a
         {
 
           color: #0099CC !important ;
 
 
         }
-
+      }
         &:hover , &a:hover
         {
           color:white !important;
@@ -63,8 +66,7 @@
 
         a
         {
-          height: 40px;
-          padding-top:12px;
+          padding:12px;
           color: white;
           width: 100% !important;
 
@@ -93,7 +95,6 @@
         }
 
 
-}
 
 .sf-main-menu {
  ul,a
@@ -155,9 +156,8 @@ li a:hover  {
       {
             content: '\e802';
             font-size: 1.2em;
-            position: relative;
             font-family: "fontello";
-            padding: 0px 10px 0px 10px;
+            padding-right : 5%;
           
         }
     &:hover 
@@ -165,14 +165,22 @@ li a:hover  {
           color: #454749 !important;
           background : #D1D4D3;
       }
+
   }
+      .sf-hidden li a
+      {
+        overflow: hidden !important;
+
+
+    }
   }
   
-  
+
 .sf-depth-1 > ul
 {
   overflow: visible !important;
   }
+
 
 li.sf-depth-2.menuparent:hover ul
 {
@@ -180,11 +188,13 @@ li.sf-depth-2.menuparent:hover ul
   top: -9px !important;
   left: 21.3em !important;
 
+
   a{
-    width: auto !important;
-  margin-left: -13px;
-    
+     width: auto !important;
+     margin-left: -5.5px;
   }
+}
+
 }
 
 }

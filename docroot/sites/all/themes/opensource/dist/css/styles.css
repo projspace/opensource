@@ -6514,7 +6514,7 @@ label {
 }
 
 .block-superfish li.active-trail a {
-  color: #0099CC;
+  color: #0099CC !important;
 }
 
 @media -sass-debug-info {
@@ -6560,8 +6560,7 @@ label {
   font-size: 1.3em;
   margin-left: 6px;
   text-align: center;
-  margin-top: 5px;
-  width: 24.5%;
+  width: 24.53%;
   padding: 0px !important;
 }
 
@@ -6571,11 +6570,25 @@ label {
   }
 
   line {
-    font-family: \0000351;
+    font-family: \0000350;
   }
 }
 
-.block-superfish li.sf-depth-1.active-trail > a {
+.block-superfish li.sf-depth-1 {
+  margin-top: 5px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \0000354;
+  }
+}
+
+.block-superfish li.sf-depth-1 .active-trail > a {
   color: #0099CC !important;
 }
 
@@ -6585,7 +6598,7 @@ label {
   }
 
   line {
-    font-family: \0000359;
+    font-family: \0000362;
   }
 }
 
@@ -6600,13 +6613,12 @@ label {
   }
 
   line {
-    font-family: \0000364;
+    font-family: \0000367;
   }
 }
 
 .block-superfish li a {
-  height: 40px;
-  padding-top: 12px;
+  padding: 12px;
   color: white;
   width: 100% !important;
 }
@@ -6617,7 +6629,7 @@ label {
   }
 
   line {
-    font-family: \0000372;
+    font-family: \0000374;
   }
 }
 
@@ -6631,7 +6643,7 @@ label {
   }
 
   line {
-    font-family: \0000383;
+    font-family: \0000385;
   }
 }
 
@@ -6647,7 +6659,7 @@ label {
   }
 
   line {
-    font-family: \0000389;
+    font-family: \0000391;
   }
 }
 
@@ -6662,12 +6674,12 @@ label {
   }
 
   line {
-    font-family: \0000399;
+    font-family: \00003100;
   }
 }
 
-.sf-main-menu ul,
-.sf-main-menu a {
+.block-superfish .sf-main-menu ul,
+.block-superfish .sf-main-menu a {
   width: 100% !important;
 }
 
@@ -6677,11 +6689,11 @@ label {
   }
 
   line {
-    font-family: \00003106;
+    font-family: \00003107;
   }
 }
 
-.sf-main-menu li a:hover {
+.block-superfish .sf-main-menu li a:hover {
   background: #0099CC;
 }
 
@@ -6691,11 +6703,11 @@ label {
   }
 
   line {
-    font-family: \00003110;
+    font-family: \00003111;
   }
 }
 
-.sf-main-menu li.menuparent {
+.block-superfish .sf-main-menu li.menuparent {
   position: relative;
 }
 
@@ -6705,11 +6717,11 @@ label {
   }
 
   line {
-    font-family: \00003112;
+    font-family: \00003113;
   }
 }
 
-.sf-main-menu li.menuparent.sf-depth-2:after {
+.block-superfish .sf-main-menu li.menuparent.sf-depth-2:after {
   content: "" !important;
 }
 
@@ -6719,11 +6731,11 @@ label {
   }
 
   line {
-    font-family: \00003116;
+    font-family: \00003117;
   }
 }
 
-.sf-main-menu li.menuparent:after {
+.block-superfish .sf-main-menu li.menuparent:after {
   content: '\e800';
   position: absolute;
   right: 11px;
@@ -6738,11 +6750,11 @@ label {
   }
 
   line {
-    font-family: \00003126;
+    font-family: \00003127;
   }
 }
 
-.sf-main-menu li.menuparent:hover:after {
+.block-superfish .sf-main-menu li.menuparent:hover:after {
   content: '\e801';
   font-family: "fontello";
   font-size: 1.5em;
@@ -6756,11 +6768,11 @@ label {
   }
 
   line {
-    font-family: \00003135;
+    font-family: \00003136;
   }
 }
 
-.sf-main-menu li.menuparent:hover a {
+.block-superfish .sf-main-menu li.menuparent:hover a {
   color: white !important;
   background: #0099CC;
 }
@@ -6771,11 +6783,11 @@ label {
   }
 
   line {
-    font-family: \00003146;
+    font-family: \00003147;
   }
 }
 
-.sf-main-menu li.sf-depth-2 {
+.block-superfish .sf-main-menu li.sf-depth-2 {
   margin-left: 0px;
 }
 
@@ -6785,11 +6797,11 @@ label {
   }
 
   line {
-    font-family: \00003151;
+    font-family: \00003152;
   }
 }
 
-.sf-main-menu li.sf-depth-2 a {
+.block-superfish .sf-main-menu li.sf-depth-2 a {
   text-align: left;
 }
 
@@ -6799,16 +6811,15 @@ label {
   }
 
   line {
-    font-family: \00003154;
+    font-family: \00003155;
   }
 }
 
-.sf-main-menu li.sf-depth-2 a:before {
+.block-superfish .sf-main-menu li.sf-depth-2 a:before {
   content: '\e802';
   font-size: 1.2em;
-  position: relative;
   font-family: "fontello";
-  padding: 0px 10px 0px 10px;
+  padding-right: 5%;
 }
 
 @media -sass-debug-info {
@@ -6821,7 +6832,7 @@ label {
   }
 }
 
-.sf-main-menu li.sf-depth-2 a:hover {
+.block-superfish .sf-main-menu li.sf-depth-2 a:hover {
   color: #454749 !important;
   background: #D1D4D3;
 }
@@ -6832,11 +6843,25 @@ label {
   }
 
   line {
-    font-family: \00003172;
+    font-family: \00003170;
   }
 }
 
-.sf-main-menu .sf-depth-1 > ul {
+.block-superfish .sf-main-menu li.sf-depth-2 .sf-hidden li a {
+  overflow: hidden !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \00003179;
+  }
+}
+
+.block-superfish .sf-main-menu .sf-depth-1 > ul {
   overflow: visible !important;
 }
 
@@ -6846,11 +6871,11 @@ label {
   }
 
   line {
-    font-family: \00003177;
+    font-family: \00003185;
   }
 }
 
-.sf-main-menu li.sf-depth-2.menuparent:hover ul {
+.block-superfish .sf-main-menu li.sf-depth-2.menuparent:hover ul {
   position: absolute;
   top: -9px !important;
   left: 21.3em !important;
@@ -6862,13 +6887,13 @@ label {
   }
 
   line {
-    font-family: \00003183;
+    font-family: \00003192;
   }
 }
 
-.sf-main-menu li.sf-depth-2.menuparent:hover ul a {
+.block-superfish .sf-main-menu li.sf-depth-2.menuparent:hover ul a {
   width: auto !important;
-  margin-left: -13px;
+  margin-left: -5.5px;
 }
 
 @media -sass-debug-info {
