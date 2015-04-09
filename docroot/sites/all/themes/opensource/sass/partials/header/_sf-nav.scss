@@ -102,6 +102,7 @@
         {
           left: -100% !important;
           top:3px !important;
+
           a
           {
             margin-left:-6px !important;
@@ -133,7 +134,7 @@
             font-size: 1.5em;
             top: 21%;
             position: absolute;
-            color: white;
+            color:white;
           }
           a 
           {
@@ -150,6 +151,8 @@
       a
       {
         text-align: left;
+        margin-top:10px;
+
         &:before 
         {
           content: '\e802';
@@ -175,18 +178,28 @@
       overflow: visible !important;
     }
 
-    li.sf-depth-2.menuparent:hover ul
+    li.sf-depth-2 .menuparent:hover ul
     {
       position: absolute;
-      top: -9px !important;
-      left: 21.3em !important;
+      top: 2px !important;
+      left: 100% !important;
+      
       a
       {
        width: auto !important;
        margin-left: -5.5px;
+       margin-top:0px !important;
+
       }
     }
 
   } // sf-menu 
 
 } // block-superfish
+
+
+
+
+
+
+

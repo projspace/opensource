@@ -6634,7 +6634,11 @@ label {
 }
 
 .block-superfish li a.sf-depth-1 {
+<<<<<<< HEAD
   color: #595C5E;
+=======
+  color: gray;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
 }
 
 @media -sass-debug-info {
@@ -6717,13 +6721,21 @@ label {
   }
 
   line {
+<<<<<<< HEAD
     font-family: \00003101;
+=======
+    font-family: \00003100;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
   }
 }
 
 .block-superfish .sf-main-menu li.menuparent.last:hover ul ul {
   left: -100% !important;
+<<<<<<< HEAD
   top: 3px !important;
+=======
+  top: 2px;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
 }
 
 @media -sass-debug-info {
@@ -6732,7 +6744,11 @@ label {
   }
 
   line {
+<<<<<<< HEAD
     font-family: \00003105;
+=======
+    font-family: \00003104;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
   }
 }
 
@@ -6774,7 +6790,11 @@ label {
   top: 21%;
   font-family: "fontello";
   font-size: 1.5em;
+<<<<<<< HEAD
   color: #595C5E;
+=======
+  color: gray;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
 }
 
 @media -sass-debug-info {
@@ -6837,6 +6857,7 @@ label {
 
 .block-superfish .sf-main-menu li.sf-depth-2 a {
   text-align: left;
+  margin-top: 10px;
 }
 
 @media -sass-debug-info {
@@ -6845,7 +6866,11 @@ label {
   }
 
   line {
+<<<<<<< HEAD
     font-family: \00003153;
+=======
+    font-family: \00003155;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
   }
 }
 
@@ -6853,8 +6878,13 @@ label {
   content: '\e802';
   font-size: 1.2em;
   font-family: "fontello";
+<<<<<<< HEAD
   padding-left: 6%;
   padding-right: 12%;
+=======
+  padding-left: 6px;
+  padding-right: 12px;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
 }
 
 @media -sass-debug-info {
@@ -6863,12 +6893,20 @@ label {
   }
 
   line {
+<<<<<<< HEAD
     font-family: \00003161;
+=======
+    font-family: \00003163;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
   }
 }
 
 .block-superfish .sf-main-menu li.sf-depth-2 a:hover {
+<<<<<<< HEAD
   color: #595C5E !important;
+=======
+  color: gray !important;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
   background: #D1D4D3;
 }
 
@@ -6878,7 +6916,11 @@ label {
   }
 
   line {
+<<<<<<< HEAD
     font-family: \00003167;
+=======
+    font-family: \00003169;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
   }
 }
 
@@ -6892,7 +6934,11 @@ label {
   }
 
   line {
+<<<<<<< HEAD
     font-family: \00003173;
+=======
+    font-family: \00003175;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
   }
 }
 
@@ -6906,14 +6952,18 @@ label {
   }
 
   line {
+<<<<<<< HEAD
     font-family: \00003178;
+=======
+    font-family: \00003180;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
   }
 }
 
-.block-superfish .sf-main-menu li.sf-depth-2.menuparent:hover ul {
+.block-superfish .sf-main-menu li.sf-depth-2 .menuparent:hover ul {
   position: absolute;
-  top: -9px !important;
-  left: 21.3em !important;
+  top: 2px !important;
+  left: 100% !important;
 }
 
 @media -sass-debug-info {
@@ -6922,13 +6972,18 @@ label {
   }
 
   line {
+<<<<<<< HEAD
     font-family: \00003183;
+=======
+    font-family: \00003186;
+>>>>>>> a7c062285f9d3264fc998e0aaee7962ab6fb8269
   }
 }
 
-.block-superfish .sf-main-menu li.sf-depth-2.menuparent:hover ul a {
+.block-superfish .sf-main-menu li.sf-depth-2 .menuparent:hover ul a {
   width: auto !important;
   margin-left: -5.5px;
+  margin-top: 0px !important;
 }
 
 @media -sass-debug-info {
