@@ -6634,7 +6634,7 @@ label {
 }
 
 .block-superfish li a.sf-depth-1 {
-  color: #4d4b4b;
+  color: gray;
 }
 
 @media -sass-debug-info {
@@ -6717,7 +6717,37 @@ label {
   }
 
   line {
-    font-family: \00003102;
+    font-family: \00003100;
+  }
+}
+
+.block-superfish .sf-main-menu li.menuparent.last:hover ul ul {
+  left: -100% !important;
+  top: 2px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \00003104;
+  }
+}
+
+.block-superfish .sf-main-menu li.menuparent.last:hover ul ul a {
+  margin-left: -6px !important;
+  margin-top: 0px !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \00003111;
   }
 }
 
@@ -6733,7 +6763,7 @@ label {
   }
 
   line {
-    font-family: \00003107;
+    font-family: \00003116;
   }
 }
 
@@ -6744,6 +6774,7 @@ label {
   top: 21%;
   font-family: "fontello";
   font-size: 1.5em;
+  color: gray;
 }
 
 @media -sass-debug-info {
@@ -6752,7 +6783,7 @@ label {
   }
 
   line {
-    font-family: \00003119;
+    font-family: \00003129;
   }
 }
 
@@ -6762,6 +6793,7 @@ label {
   font-size: 1.5em;
   top: 21%;
   position: absolute;
+  color: white;
 }
 
 @media -sass-debug-info {
@@ -6770,7 +6802,7 @@ label {
   }
 
   line {
-    font-family: \00003127;
+    font-family: \00003138;
   }
 }
 
@@ -6785,7 +6817,7 @@ label {
   }
 
   line {
-    font-family: \00003136;
+    font-family: \00003147;
   }
 }
 
@@ -6799,44 +6831,13 @@ label {
   }
 
   line {
-    font-family: \00003139;
+    font-family: \00003150;
   }
 }
 
 .block-superfish .sf-main-menu li.sf-depth-2 a {
   text-align: left;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
-  }
-
-  line {
-    font-family: \00003142;
-  }
-}
-
-.block-superfish .sf-main-menu li.sf-depth-2 a:before {
-  content: '\e802';
-  font-size: 1.2em;
-  font-family: "fontello";
-  padding-right: 5%;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
-  }
-
-  line {
-    font-family: \00003149;
-  }
-}
-
-.block-superfish .sf-main-menu li.sf-depth-2 a:hover {
-  color: #454749 !important;
-  background: #D1D4D3;
+  margin-top: 10px;
 }
 
 @media -sass-debug-info {
@@ -6846,6 +6847,39 @@ label {
 
   line {
     font-family: \00003155;
+  }
+}
+
+.block-superfish .sf-main-menu li.sf-depth-2 a:before {
+  content: '\e802';
+  font-size: 1.2em;
+  font-family: "fontello";
+  padding-left: 6px;
+  padding-right: 12px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \00003163;
+  }
+}
+
+.block-superfish .sf-main-menu li.sf-depth-2 a:hover {
+  color: gray !important;
+  background: #D1D4D3;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \00003169;
   }
 }
 
@@ -6859,7 +6893,7 @@ label {
   }
 
   line {
-    font-family: \00003161;
+    font-family: \00003175;
   }
 }
 
@@ -6873,14 +6907,14 @@ label {
   }
 
   line {
-    font-family: \00003166;
+    font-family: \00003180;
   }
 }
 
-.block-superfish .sf-main-menu li.sf-depth-2.menuparent:hover ul {
+.block-superfish .sf-main-menu li.sf-depth-2 .menuparent:hover ul {
   position: absolute;
-  top: -9px !important;
-  left: 21.3em !important;
+  top: 2px !important;
+  left: 100% !important;
 }
 
 @media -sass-debug-info {
@@ -6889,13 +6923,14 @@ label {
   }
 
   line {
-    font-family: \00003171;
+    font-family: \00003186;
   }
 }
 
-.block-superfish .sf-main-menu li.sf-depth-2.menuparent:hover ul a {
+.block-superfish .sf-main-menu li.sf-depth-2 .menuparent:hover ul a {
   width: auto !important;
   margin-left: -5.5px;
+  margin-top: 0px !important;
 }
 
 @media -sass-debug-info {

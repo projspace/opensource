@@ -67,7 +67,7 @@
           }
           a.sf-depth-1 
           {
-            color: rgb(77, 75, 75);
+            color: gray;
           }
         }
 
@@ -97,7 +97,16 @@
       
        li.menuparent 
        {
-        
+          &.last:hover ul ul
+        {
+          left: -100% !important;
+          top:2px;
+          a
+          {
+            margin-left:-6px !important;
+            margin-top: 0px !important;
+          }
+        }
         position: relative;
         &.sf-depth-2:after , a.sf-depth-3:before
         {
@@ -112,6 +121,7 @@
             top: 21%;
             font-family: "fontello";
             font-size: 1.5em;
+            color : gray;
         }
         
         &:hover 
@@ -123,6 +133,7 @@
             font-size: 1.5em;
             top: 21%;
             position: absolute;
+            color:white;
           }
           a 
           {
@@ -139,16 +150,19 @@
       a
       {
         text-align: left;
+        margin-top:10px;
+
         &:before 
         {
           content: '\e802';
           font-size: 1.2em;
           font-family: "fontello";
-          padding-right : 5%;
+          padding-left:6px;
+          padding-right:12px;  
         }
         &:hover 
         {
-          color: #454749 !important;
+          color: gray !important;
           background : #D1D4D3;
         }
       }
@@ -163,18 +177,28 @@
       overflow: visible !important;
     }
 
-    li.sf-depth-2.menuparent:hover ul
+    li.sf-depth-2 .menuparent:hover ul
     {
       position: absolute;
-      top: -9px !important;
-      left: 21.3em !important;
+      top: 2px !important;
+      left: 100% !important;
+      
       a
       {
        width: auto !important;
        margin-left: -5.5px;
+       margin-top:0px !important;
+
       }
     }
 
   } // sf-menu 
 
 } // block-superfish
+
+
+
+
+
+
+
