@@ -6500,7 +6500,7 @@ label {
 
 .block-superfish li.active-trail {
   background: white;
-  color: gray;
+  color: #595C5E;
 }
 
 @media -sass-debug-info {
@@ -6634,7 +6634,7 @@ label {
 }
 
 .block-superfish li a.sf-depth-1 {
-  color: #4d4b4b;
+  color: #595C5E;
 }
 
 @media -sass-debug-info {
@@ -6717,7 +6717,37 @@ label {
   }
 
   line {
-    font-family: \00003102;
+    font-family: \00003101;
+  }
+}
+
+.block-superfish .sf-main-menu li.menuparent.last:hover ul ul {
+  left: -100% !important;
+  top: 3px !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \00003105;
+  }
+}
+
+.block-superfish .sf-main-menu li.menuparent.last:hover ul ul a {
+  margin-left: -6px !important;
+  margin-top: 0px !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \00003111;
   }
 }
 
@@ -6733,7 +6763,7 @@ label {
   }
 
   line {
-    font-family: \00003107;
+    font-family: \00003116;
   }
 }
 
@@ -6744,6 +6774,7 @@ label {
   top: 21%;
   font-family: "fontello";
   font-size: 1.5em;
+  color: #595C5E;
 }
 
 @media -sass-debug-info {
@@ -6752,7 +6783,7 @@ label {
   }
 
   line {
-    font-family: \00003119;
+    font-family: \00003129;
   }
 }
 
@@ -6762,6 +6793,7 @@ label {
   font-size: 1.5em;
   top: 21%;
   position: absolute;
+  color: white;
 }
 
 @media -sass-debug-info {
@@ -6770,7 +6802,7 @@ label {
   }
 
   line {
-    font-family: \00003127;
+    font-family: \00003138;
   }
 }
 
@@ -6785,7 +6817,7 @@ label {
   }
 
   line {
-    font-family: \00003136;
+    font-family: \00003147;
   }
 }
 
@@ -6799,7 +6831,7 @@ label {
   }
 
   line {
-    font-family: \00003139;
+    font-family: \00003150;
   }
 }
 
@@ -6813,7 +6845,7 @@ label {
   }
 
   line {
-    font-family: \00003142;
+    font-family: \00003153;
   }
 }
 
@@ -6821,7 +6853,8 @@ label {
   content: '\e802';
   font-size: 1.2em;
   font-family: "fontello";
-  padding-right: 5%;
+  padding-left: 6%;
+  padding-right: 12%;
 }
 
 @media -sass-debug-info {
@@ -6830,12 +6863,12 @@ label {
   }
 
   line {
-    font-family: \00003149;
+    font-family: \00003161;
   }
 }
 
 .block-superfish .sf-main-menu li.sf-depth-2 a:hover {
-  color: #454749 !important;
+  color: #595C5E !important;
   background: #D1D4D3;
 }
 
@@ -6845,7 +6878,7 @@ label {
   }
 
   line {
-    font-family: \00003155;
+    font-family: \00003167;
   }
 }
 
@@ -6859,7 +6892,7 @@ label {
   }
 
   line {
-    font-family: \00003161;
+    font-family: \00003173;
   }
 }
 
@@ -6873,7 +6906,7 @@ label {
   }
 
   line {
-    font-family: \00003166;
+    font-family: \00003178;
   }
 }
 
@@ -6889,7 +6922,7 @@ label {
   }
 
   line {
-    font-family: \00003171;
+    font-family: \00003183;
   }
 }
 
