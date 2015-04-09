@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenSource Open Organization feature.
+ */
+
+include_once 'opensource_open_organization.features.inc';
