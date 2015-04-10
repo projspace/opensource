@@ -407,7 +407,7 @@ function _os_core_get_main_menu_items($level) {
   $menu_items['level-2'][] = array(
     'values' => array(
       'link_title' => 'Open source in the library: A guide for open-minded bibliophiles',
-      'link_path' => 'resources/ebook/open-source-libraryguide',
+      'link_path' => 'resources/ebook/open-source-library-guide',
       'menu_name' => 'main-menu',
       'parent' => 'eBooks',
       'weight' => -27,
