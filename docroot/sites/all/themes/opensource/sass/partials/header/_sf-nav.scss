@@ -200,6 +200,26 @@
 
 
 
+// ///////////////////////////////////////////////
+.block-superfish .sf-menu-5 
+{
+  li{
+    width:19.50%;
 
+    &.sf-depth-2
+    {
+      width: 100% !important;
+      &.menuparent:hover ul
+      {
+        left:100% !important;
+        margin-top:19px;
+      }
+    }
+    &.sf-depth-3  , &.sf-depth-3  a
+    {
+      margin-top:0px !important;
+    }
 
+  }
 
+}
