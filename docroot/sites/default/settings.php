@@ -567,7 +567,18 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  */
 if (file_exists('/var/www/site-php')) {
   require('/var/www/site-php/osdc/osdc-settings.inc');
+} elseif (file_exists(dirname(__FILE__) . '/local.settings.php')) {
+  include dirname(__FILE__) . '/local.settings.php';
+} else {
+  //Projspace configuration
+  $extracts = explode("/",__FILE__);
+  $project = $extracts[2];
+  $env = $extracts[4];
+  if (file_exists("/home/$project/includes/$env.inc")) {
+    include "/home/$project/includes/$env.inc";
+  }
 }
+
 
 /**
  * Determine Acquia environment and set universal Acquia Cloud settings.
@@ -615,14 +626,10 @@ $conf['reverse_proxy'] = TRUE;
 if (isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] == 'prod') {
   $conf['reverse_proxy_header'] = 'HTTP_X_AH_CLIENT_IP';
 }
-if (!drupal_is_cli() && isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] == 'prod') { 
-  $elbAddresses = array_map('gethostbyname', array_map('gethostbyaddr', gethostbynamel($_SERVER['HTTP_HOST']))); 
-  $conf['reverse_proxy_addresses'] = isset($conf['reverse_proxy_addresses']) ? array_merge($conf['reverse_proxy_addresses'], $elbAddresses) : $elbAddresses; 
+if (!drupal_is_cli() && isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] == 'prod') {
+  $elbAddresses = array_map('gethostbyname', array_map('gethostbyaddr', gethostbynamel($_SERVER['HTTP_HOST'])));
+  $conf['reverse_proxy_addresses'] = isset($conf['reverse_proxy_addresses']) ? array_merge($conf['reverse_proxy_addresses'], $elbAddresses) : $elbAddresses;
 }
 
- /* 
-  * Settings file routing
-  */
- if (file_exists(dirname(__FILE__) . '/local.settings.php')) {
-    include dirname(__FILE__) . '/local.settings.php';
- }
+// increase memory limit to 256M
+ini_set("memory_limit","256M");
