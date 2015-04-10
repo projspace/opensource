@@ -47,6 +47,11 @@ function drush_os_core_generate_main_menu_links($level) {
   }
   switch ($level) {
     case 'level-0':
+      $path = array(
+          'source' => 'taxonomy/term/9217',
+          'alias' => 'community',
+        );
+      path_save($path);
       os_core_generate_main_menu_items($level);
       menu_rebuild();
       break;
@@ -186,7 +191,7 @@ function _os_core_get_main_menu_items($level) {
   $menu_items['level-0'][] = array(
     'values' => array(
       'link_title' => 'Community',
-      'link_path' => 'should-be',
+      'link_path' => 'community',
       'menu_name' => 'main-menu',
       'parent' => 'main-menu:0',
       'weight' => -9,
@@ -329,7 +334,7 @@ function _os_core_get_main_menu_items($level) {
   );
   $menu_items['level-1'][] = array(
     'values' => array(
-      'link_title' => 'colophon',
+      'link_title' => 'Colophon',
       'link_path' => 'colophon',
       'menu_name' => 'main-menu',
       'parent' => 'About',
