@@ -2989,6 +2989,11 @@ label {
   margin-top: 0px !important;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003237}}
+.block-superfish .sf-menu-6 li {
+  width: 16.14%;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/footer\/_footer-top\.scss}line{font-family:\000031}}
 #footer {
   font-size: 12px;

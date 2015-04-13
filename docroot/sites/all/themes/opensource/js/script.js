@@ -8,8 +8,14 @@
 		$menuItems =  $('.sf-main-menu > li');
 		$mainMenu = $('.sf-main-menu');
 
-		if ($menuItems.size() == 5) {
+		if ($menuItems.size() == 5) 
+		{
 			$mainMenu.addClass("sf-menu-5");
 		}
+		if ($menuItems.size() == 6)
+		{
+			$mainMenu.addClass("sf-menu-6");
+		}
+
 	});
 })(window, jQuery)
