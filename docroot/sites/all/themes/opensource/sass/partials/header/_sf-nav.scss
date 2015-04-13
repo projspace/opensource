@@ -33,16 +33,11 @@
 
     }
 
-    ul li.menuparent:nth-child(1)
-    {
-      margin-left: 0px;
-    }
-
+    
       li 
         {
           background: none repeat scroll 0 0 #D2D3D4;
           font-size: 1.3em;
-          margin-left: 6px;
           text-align: center;
           width: 24.53%;
           padding:0px !important;
@@ -50,10 +45,17 @@
           &.sf-depth-1
           {
             margin-top:5px;
+            margin-right: 6px;
+
+
            .active-trail > a
               {
                 color: #0099CC !important ;
               }
+          }
+          &.last
+          {
+            margin-right: 0px;
           }
           &:hover , &a:hover
           {
@@ -69,11 +71,12 @@
           {
             color: #5D6871;
           }
+          
         }
 
       .menuparent ul 
         {
-          margin:7px 0px;
+          // margin:7px 0px;
           font-size:11px;
           background:#0099CC;
 
@@ -101,12 +104,11 @@
           &.last ul li:hover ul 
         {
           left: -100% !important;
-          top:3px !important;
 
           a
           {
-            margin-left:-6px !important;
-            margin-top: 0px !important;
+            // margin-left:-6px !important;
+            // margin-top: 0px !important;
           }
         }
         &.sf-depth-2:after , a.sf-depth-3:before
@@ -148,11 +150,12 @@
 
     li.sf-depth-2 
     {
-      margin-left: 0px;
+      // margin-left: 0px;
+      top:17px;
       a
       {
         text-align: left;
-        margin-top:10px;
+        // margin-top:10px;
         &.sf-depth-2{
           padding-left:16% !important;
         }
@@ -182,20 +185,15 @@
       overflow: visible !important;
     }
 
-    li.sf-depth-2.menuparent:hover ul
+    li.sf-depth-2.menuparent:hover  ul
     {
-      position: absolute;
-      top: 2px !important;
+      position: absolute !important;
       left: 100% !important;
-      li
-      {
-        margin-top: 0px !important;
-      }
+      
       a
       {
        width: auto !important;
-       margin-left: -5.5px;
-       margin-top:0px !important;
+       z-index:-111111 !important;
 
       }
     }
@@ -216,6 +214,7 @@
     &.sf-depth-2
     {
       width: 100% !important;
+      top:17px;
               
       &.menuparent:hover ul
       {
@@ -224,7 +223,7 @@
     }
     &.sf-depth-3  , &.sf-depth-3  a
     {
-      margin-top:0px !important;
+      // margin-top:0px !important;
     }
 
   }
