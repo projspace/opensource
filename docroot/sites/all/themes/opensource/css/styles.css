@@ -2815,7 +2815,7 @@ label {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000319}}
 .block-superfish li.active-trail {
   background: white;
-  color: #595C5E;
+  color: #5D6871;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000323}}
 .block-superfish li.active-trail a {
@@ -2831,7 +2831,7 @@ label {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000341}}
 .block-superfish li {
-  background: none repeat scroll 0 0 #D1D4D3;
+  background: none repeat scroll 0 0 #D2D3D4;
   font-size: 1.3em;
   margin-left: 6px;
   text-align: center;
@@ -2858,7 +2858,7 @@ label {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000368}}
 .block-superfish li a.sf-depth-1 {
-  color: #595C5E;
+  color: #5D6871;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000374}}
 .block-superfish .menuparent ul {
@@ -2905,7 +2905,7 @@ label {
   top: 21%;
   font-family: "fontello";
   font-size: 1.5em;
-  color: #595C5E;
+  color: #5D6871;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003131}}
 .block-superfish .sf-main-menu li.menuparent:hover:after {
@@ -2944,8 +2944,8 @@ label {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003168}}
 .block-superfish .sf-main-menu li.sf-depth-2 a:hover {
-  color: #595C5E !important;
-  background: #D1D4D3;
+  color: #5D6871 !important;
+  background: #D2D3D4;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003174}}
 .block-superfish .sf-main-menu li.sf-depth-2 .sf-hidden li a {

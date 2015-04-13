@@ -6500,7 +6500,7 @@ label {
 
 .block-superfish li.active-trail {
   background: white;
-  color: #595C5E;
+  color: #5D6871;
 }
 
 @media -sass-debug-info {
@@ -6556,7 +6556,7 @@ label {
 }
 
 .block-superfish li {
-  background: none repeat scroll 0 0 #D1D4D3;
+  background: none repeat scroll 0 0 #D2D3D4;
   font-size: 1.3em;
   margin-left: 6px;
   text-align: center;
@@ -6634,7 +6634,7 @@ label {
 }
 
 .block-superfish li a.sf-depth-1 {
-  color: #595C5E;
+  color: #5D6871;
 }
 
 @media -sass-debug-info {
@@ -6774,7 +6774,7 @@ label {
   top: 21%;
   font-family: "fontello";
   font-size: 1.5em;
-  color: #595C5E;
+  color: #5D6871;
 }
 
 @media -sass-debug-info {
@@ -6883,8 +6883,8 @@ label {
 }
 
 .block-superfish .sf-main-menu li.sf-depth-2 a:hover {
-  color: #595C5E !important;
-  background: #D1D4D3;
+  color: #5D6871 !important;
+  background: #D2D3D4;
 }
 
 @media -sass-debug-info {

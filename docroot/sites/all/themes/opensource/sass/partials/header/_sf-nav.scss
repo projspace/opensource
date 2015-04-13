@@ -19,7 +19,7 @@
     li.active-trail 
     {
      background:white ;
-     color:#595C5E; 
+     color:#5D6871; 
     a 
     {
         color: #0099CC !important;
@@ -40,7 +40,7 @@
 
       li 
         {
-          background: none repeat scroll 0 0 #D1D4D3;
+          background: none repeat scroll 0 0 #D2D3D4;
           font-size: 1.3em;
           margin-left: 6px;
           text-align: center;
@@ -67,7 +67,7 @@
           }
           a.sf-depth-1 
           {
-            color: #595C5E;
+            color: #5D6871;
           }
         }
 
@@ -123,7 +123,7 @@
             top: 21%;
             font-family: "fontello";
             font-size: 1.5em;
-            color: #595C5E;
+            color: #5D6871;
         }
         
         &:hover 
@@ -167,8 +167,8 @@
         }
         &:hover 
         {
-          color: #595C5E !important;
-          background : #D1D4D3;
+          color: #5D6871 !important;
+          background : #D2D3D4;
         }
       }
       .sf-hidden li a
