@@ -553,7 +553,7 @@ function os_core_update_7109() {
 /**
  * Create new channel category for Open Organiation.
  */
-function os_core_update_7110() {
+function os_core_update_7112() {
   $vocabularies = array();
   foreach (taxonomy_get_vocabularies() as $vid => $vocab) {
     $vocabularies[$vocab->machine_name] = $vid;
@@ -563,7 +563,7 @@ function os_core_update_7110() {
 
   // Generate term for open organization page.
   $term = new stdClass();
-  $term->vid = $article_type_vid;
+  $term->vid = $channel_vid;
   $term->name = 'The Open Organization';
   $term->description = '';
   taxonomy_term_save($term);
