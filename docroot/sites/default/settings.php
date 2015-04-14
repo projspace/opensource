@@ -555,9 +555,9 @@ if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTT
 
     // this is projspace server
     $databases = array (
-        'default' => 
+        'default' =>
             array (
-        'default' => 
+        'default' =>
             array (
                 'database' => @$_SERVER['DB_NAME'],
                 'username' => ini_get('mysql.default_user'),
@@ -588,7 +588,7 @@ if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTT
                    array (
                       'database' => 'os7',
                       'username' => 'root',
-                      'password' => '',
+                      'password' => 'root',
                       'host' => 'localhost',
                       'port' => '',
                       'driver' => 'mysql',
@@ -613,14 +613,14 @@ if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTT
     $conf['os_migrate_username'] = 'root';
     $conf['os_migrate_password'] = '';
     $conf['os_migrate_files_source_dir'] = '/mnt/www/filesD6';
-    
-    
+
+
     $conf['reverse_proxy'] = TRUE;
     $conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
     $conf['reverse_proxy_addresses'] = array('127.0.0.1');
 }
 
-/* 
+/*
  * Settings file routing
  */
 if (file_exists(dirname(__FILE__) . '/local.settings.php')) {
@@ -636,3 +636,4 @@ if (file_exists($filename)) {
 include "$filename";
 }
 
+$conf['stage_file_proxy_origin'] = 'http://opensource.com';
