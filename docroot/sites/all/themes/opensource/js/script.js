@@ -16,24 +16,20 @@
 		if ($menuItems.size() == 6) {
 			$mainMenu.addClass("sf-menu-6");
 		}
+    var store = 0;
+    var whole = 960;
+    var list = jQuery('.sf-menu li.sf-depth-1');
+    var count = jQuery('.sf-menu li.sf-depth-1').length;
 
-	});
-})(window, jQuery)
+    jQuery.each(list, function(index, item) {
+      store += jQuery(item).width();
+    });
 
+    var diff = 960 - (store + (6 * (count -1)));
 
-(function(window, $) {
-  var store = 0;
-  var whole = 960;
-  var list = jQuery('.sf-menu li.sf-depth-1');
-  var count = jQuery('.sf-menu li.sf-depth-1').length;
+    jQuery.each(list, function(index, item) {
+      jQuery(item).find('.menuparent').css('padding', '12px ' + (diff/(count * 2)) + 'px');
+    });
 
-  jQuery.each(list, function(index, item) {
-    store += jQuery(item).width();
-  });
-
-  var diff = 960 - (store + (6 * (count -1)));
-
-  jQuery.each(list, function(index, item) {
-    jQuery(item).find('.menuparent').css('padding', '12px ' + (diff/(count * 2)) + 'px');
   });
 })(window, jQuery)
