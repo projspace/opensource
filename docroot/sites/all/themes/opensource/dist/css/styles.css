@@ -4915,6 +4915,286 @@ p br {
   font-size: 14px;
 }
 
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \000032;
+  }
+}
+
+.panel-panel {
+  margin-top: -10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \000035;
+  }
+}
+
+.panel-panel .pane-1 {
+  font-weight: bold;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \000039;
+  }
+}
+
+.panel-panel .pane-1 .pane-title {
+  font-size: 1.5em !important;
+  line-height: 2 !important;
+  font-weight: bold !important;
+  color: #39f;
+  margin-top: -15px;
+  padding-bottom: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000319;
+  }
+}
+
+.panel-panel .pane-1 img {
+  width: 222px;
+  height: 213px;
+  float: left;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000326;
+  }
+}
+
+.panel-panel .pane-1 p:last-child {
+  padding-left: 44%;
+  padding-bottom: 30px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000334;
+  }
+}
+
+.panel-panel .pane-1 .view-channel-articles img {
+  width: 222px;
+  height: 133px;
+  float: left;
+  position: relative;
+  margin: -53px 0px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000342;
+  }
+}
+
+.panel-panel .pane-1 .view-channel-articles .views-field-title {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-left: 44%;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000350;
+  }
+}
+
+.panel-panel .pane-1 .view-channel-articles .views-field-title a:hover {
+  text-decoration: none !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000356;
+  }
+}
+
+.panel-panel .pane-1 .view-channel-articles .views-field-body {
+  position: absolute;
+  left: 28%;
+  width: 29%;
+  text-align: justify;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000362;
+  }
+}
+
+.panel-panel .pane-1 .view-channel-articles .views-field-body span {
+  max-height: 82px !important;
+  display: block;
+  overflow: hidden;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000371;
+  }
+}
+
+.panel-panel .pane-1 .view-channel-articles .views-row {
+  margin-bottom: 15px;
+  padding: 20px 0 !important;
+  border-top: 1px solid #CCCCCC;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000378;
+  }
+}
+
+.panel-panel .pane-1 .view-channel-articles .views-field-created {
+  clear: both;
+  padding-top: 13%;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000382;
+  }
+}
+
+.panel-panel .pane-1 .view-channel-articles .views-field-created .teaser-comment {
+  border-right: 1px solid #76BE57 !important;
+  background: none !important;
+  padding-left: 0 !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000388;
+  }
+}
+
+.panel-panel .pane-1 .view-channel-articles .views-field-created .author-feed a {
+  display: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000392;
+  }
+}
+
+.panel-panel .pane-1 .view-channel-articles .views-field-created * {
+  color: #76BE57 !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003102;
+  }
+}
+
+.panel-panel.burr-flipped-sidebar {
+  background: #E9ECF0;
+  margin-right: -24px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003106;
+  }
+}
+
+.panel-panel.burr-flipped-sidebar .panel-panel-inner {
+  padding: 5px 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003110;
+  }
+}
+
+.panel-panel.burr-flipped-sidebar .panel-panel-inner h2 {
+  color: #39f;
+}
+
 /**
  * @file
  * Print styling
