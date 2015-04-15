@@ -552,24 +552,20 @@ function os_core_update_7109() {
 
 
 /**
- * update superfish related menu settings.
- * related issue: #13651.
+ * Create new channel category for Open Organiation.
  */
-function os_core_update_7110() {
-  // set superfish related variables
-  variable_set('superfish_delay_1', '0');
-  variable_set('superfish_depth_1', '3');
-  variable_set('superfish_arrow_1', 0);
-  variable_set('superfish_shadow_1', 0);
+function os_core_update_7112() {
+  $vocabularies = array();
+  foreach (taxonomy_get_vocabularies() as $vid => $vocab) {
+    $vocabularies[$vocab->machine_name] = $vid;
+  }
 
-  // place superfish menu block in navigation region
-  db_update('block')
-    ->fields(array(
-        'status' => 1,
-        'region' => 'navigation',
-      ))
-    ->condition('module', 'superfish')
-    ->condition('theme', 'opensource')
-    ->condition('delta', 1)
-    ->execute();
+  $channel_vid = $vocabularies['channel'];
+
+  // Generate term for open organization page.
+  $term = new stdClass();
+  $term->vid = $channel_vid;
+  $term->name = 'The Open Organization';
+  $term->description = '';
+  taxonomy_term_save($term);
 }
