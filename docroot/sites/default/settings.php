@@ -551,6 +551,7 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 * Remove the leading hash signs to disable.
 */
 # $conf['allow_authorize_operations'] = FALSE;
+<<<<<<< HEAD
 if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTTP_HOST'], 'projspace') !== FALSE)) {
 
     // this is projspace server
@@ -637,3 +638,86 @@ include "$filename";
 }
 
 $conf['stage_file_proxy_origin'] = 'http://opensource.com';
+
+//if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTTP_HOST'], 'projspace') !== FALSE)) {
+//// this is AXL server
+//  $extracts = explode("/",__FILE__);
+//
+//    $project = $extracts[2];
+//    $env = $extracts[4];
+//
+//      include "/home/$project/includes/$env.inc";
+//}
+//else {
+
+/**
+ * Acquia database settings
+ */
+if (file_exists('/var/www/site-php')) {
+  require('/var/www/site-php/osdc/osdc-settings.inc');
+} elseif (file_exists(dirname(__FILE__) . '/local.settings.php')) {
+  include dirname(__FILE__) . '/local.settings.php';
+} else {
+  //Projspace configuration
+  $extracts = explode("/",__FILE__);
+  $project = $extracts[2];
+  $env = $extracts[4];
+  if (file_exists("/home/$project/includes/$env.inc")) {
+    include "/home/$project/includes/$env.inc";
+  }
+}
+
+
+/**
+ * Determine Acquia environment and set universal Acquia Cloud settings.
+ */
+$ah_env = 'undefined';
+if (!empty($_ENV['AH_SITE_ENVIRONMENT'])) {
+  $ah_env = $_ENV['AH_SITE_ENVIRONMENT'];
+
+  $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
+  $conf['cache_default_class'] = 'MemCacheDrupal';
+  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+  $conf['file_private_path'] = "/mnt/gfs/{$_ENV['AH_SITE_NAME']}/sites/default/files-private";
+}
+
+/**
+ * Force settings based on environment
+ */
+switch ($ah_env) {
+  case 'prod':
+    // Disable Shield on prod by setting the shield_user variable to NULL
+    $conf['shield_user'] = NULL;
+    break;
+
+  case 'test':
+  case 'dev':
+  default:
+    $conf['shield_user'] = 'open';
+    $conf['shield_pass'] = 'sourceWAY';
+    $conf['apachesolr_environments']['acquia_search_server_1']['conf']['apachesolr_read_only'] = 1;
+    break;
+}
+
+/**
+ * Acquia Network keys
+ *
+ * The Acquia Network keys are required to connect your website to Acquia
+ * services, including Acquia Search and Insight.
+ *
+ * https://docs.acquia.com/network/install
+ */
+$conf['acquia_identifier'] = 'ABLX-69489';
+$conf['acquia_key'] = '56d4f380ec7713b9e07a261605cc9f07';
+
+$conf['reverse_proxy'] = TRUE;
+if (isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] == 'prod') {
+  $conf['reverse_proxy_header'] = 'HTTP_X_AH_CLIENT_IP';
+}
+if (!drupal_is_cli() && isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] == 'prod') {
+  $elbAddresses = array_map('gethostbyname', array_map('gethostbyaddr', gethostbynamel($_SERVER['HTTP_HOST'])));
+  $conf['reverse_proxy_addresses'] = isset($conf['reverse_proxy_addresses']) ? array_merge($conf['reverse_proxy_addresses'], $elbAddresses) : $elbAddresses;
+}
+
+// increase memory limit to 256M
+ini_set("memory_limit","256M");
