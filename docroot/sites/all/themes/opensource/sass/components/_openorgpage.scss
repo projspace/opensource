@@ -2,6 +2,12 @@
 .section-open-organization .panel-panel
 {
   margin-top: -10px;
+  .pane-title
+  {
+      font-weight: normal !important;
+      font-size:1.6em !important;
+
+  }
 
   .show-read-more 
   {
@@ -10,7 +16,7 @@
         text-decoration: none;
         color: #39f;
           float: left;
-  padding-top: 18px;
+          padding-top: 18px;
       }
   .more-text
   {
@@ -25,12 +31,15 @@
 { 
   .pane-title
   {
-  font-size: 1.5em !important;
   line-height: 2 !important;
-  font-weight: bold !important;
   color: #39f;
   margin-top: -15px;
-  padding-bottom:10px;
+  padding-bottom: 10px;
+  padding-right: 25px;
+  &:after
+  {
+    content: "" !important;
+  }
   }
   
   img
@@ -176,6 +185,11 @@
       & header
       {
       padding-top: 8px;
+      h2
+      {
+      font-weight:bold !important;
+      }
+
       }
       &:first-child
       {
@@ -194,6 +208,7 @@
     h2
     {
       color:#39f;
+      font-weight: normal !important;
     }
     .pane-4 h2:before
     {
@@ -203,10 +218,10 @@
         color: white;
         background: #39f;
         border-radius: 4px;
-        padding: 5px;
+        padding: 2px;
         float: left;
-          margin-top: -15px;
-          margin-right: 10px;
+        margin-top: -8px;
+        margin-right: 10px;
     }
   }
 
