@@ -34,7 +34,7 @@
 
     &.sf-depth-1 {
       margin-top:5px;
-      margin-right: 5px;
+      margin-right: 5.5px;
 
 
       .active-trail > a {
@@ -95,21 +95,21 @@
 
               }
               &:after {
-                content: '\e800';
+                content: '\e803';
                 position: absolute;
                 right: 11px;
-                top: 21%;
+                top: 29%;
                 font-family: "fontello";
-                font-size: 1.5em;
+                font-size: 1.2em;
                 color: #5D6871;
               }
 
               &:hover {
                 &:after {
-                  content: '\e801';
+                  content: '\e804';
                   font-family: "fontello";
-                  font-size: 1.5em;
-                  top: 21%;
+                  font-size: 1.2em;
+                  top: 29%;
                   position: absolute;
                   color:white;
                 }
@@ -131,8 +131,8 @@
                   padding-left:16% !important;
                 }
                 &:before {
-                  content: '\e802';
-                  font-size: 1.2em;
+                  content: '\e805';
+                  font-size: 1em;
                   font-family: "fontello";
                   position: absolute;
                   left:7% !important;

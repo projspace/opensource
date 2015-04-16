@@ -1,4 +1,5 @@
 
-.icon-angle-down:before { content: '\e800'; } /* '' */
-.icon-angle-up:before { content: '\e801'; } /* '' */
-.icon-angle-right:before { content: '\e802'; } /* '' */
+.icon-twitter:before { content: '\e800'; } /* '' */
+.icon-down-open:before { content: '\e803'; } /* '' */
+.icon-up-open:before { content: '\e804'; } /* '' */
+.icon-right-open:before { content: '\e805'; } /* '' */

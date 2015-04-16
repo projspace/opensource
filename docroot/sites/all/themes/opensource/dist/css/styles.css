@@ -4925,7 +4925,7 @@ p br {
   }
 }
 
-.panel-panel {
+.section-open-organization .panel-panel {
   margin-top: -10px;
 }
 
@@ -4935,12 +4935,15 @@ p br {
   }
 
   line {
-    font-family: \000035;
+    font-family: \000038;
   }
 }
 
-.panel-panel .pane-1 {
-  font-weight: bold;
+.section-open-organization .panel-panel .show-read-more .read-more {
+  text-decoration: none;
+  color: #39f;
+  float: left;
+  padding-top: 18px;
 }
 
 @media -sass-debug-info {
@@ -4949,11 +4952,25 @@ p br {
   }
 
   line {
-    font-family: \000039;
+    font-family: \0000315;
   }
 }
 
-.panel-panel .pane-1 .pane-title {
+.section-open-organization .panel-panel .show-read-more .more-text {
+  display: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000326;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .pane-title {
   font-size: 1.5em !important;
   line-height: 2 !important;
   font-weight: bold !important;
@@ -4968,12 +4985,12 @@ p br {
   }
 
   line {
-    font-family: \0000319;
+    font-family: \0000336;
   }
 }
 
-.panel-panel .pane-1 img {
-  width: 222px;
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner img {
+  width: 150px;
   height: 213px;
   float: left;
 }
@@ -4984,13 +5001,13 @@ p br {
   }
 
   line {
-    font-family: \0000326;
+    font-family: \0000343;
   }
 }
 
-.panel-panel .pane-1 p:last-child {
-  padding-left: 44%;
-  padding-bottom: 30px;
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner p:last-child {
+  padding-left: 32%;
+  padding-bottom: 13%;
 }
 
 @media -sass-debug-info {
@@ -4999,11 +5016,11 @@ p br {
   }
 
   line {
-    font-family: \0000334;
+    font-family: \0000351;
   }
 }
 
-.panel-panel .pane-1 .view-channel-articles img {
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles img {
   width: 222px;
   height: 133px;
   float: left;
@@ -5017,11 +5034,11 @@ p br {
   }
 
   line {
-    font-family: \0000342;
+    font-family: \0000359;
   }
 }
 
-.panel-panel .pane-1 .view-channel-articles .views-field-title {
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
   font-size: 18px;
   font-weight: bold;
   line-height: 1.25;
@@ -5036,11 +5053,11 @@ p br {
   }
 
   line {
-    font-family: \0000350;
+    font-family: \0000367;
   }
 }
 
-.panel-panel .pane-1 .view-channel-articles .views-field-title a:hover {
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title a:hover {
   text-decoration: none !important;
 }
 
@@ -5050,14 +5067,11 @@ p br {
   }
 
   line {
-    font-family: \0000356;
+    font-family: \0000373;
   }
 }
 
-.panel-panel .pane-1 .view-channel-articles .views-field-body {
-  position: absolute;
-  left: 28%;
-  width: 29%;
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
   text-align: justify;
 }
 
@@ -5067,11 +5081,11 @@ p br {
   }
 
   line {
-    font-family: \0000362;
+    font-family: \0000376;
   }
 }
 
-.panel-panel .pane-1 .view-channel-articles .views-field-body span {
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body span {
   max-height: 82px !important;
   display: block;
   overflow: hidden;
@@ -5083,59 +5097,14 @@ p br {
   }
 
   line {
-    font-family: \0000371;
+    font-family: \0000385;
   }
 }
 
-.panel-panel .pane-1 .view-channel-articles .views-row {
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-row {
   margin-bottom: 15px;
   padding: 20px 0 !important;
   border-top: 1px solid #CCCCCC;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
-  }
-
-  line {
-    font-family: \0000378;
-  }
-}
-
-.panel-panel .pane-1 .view-channel-articles .views-field-created {
-  clear: both;
-  padding-top: 13%;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
-  }
-
-  line {
-    font-family: \0000382;
-  }
-}
-
-.panel-panel .pane-1 .view-channel-articles .views-field-created .teaser-comment {
-  border-right: 1px solid #76BE57 !important;
-  background: none !important;
-  padding-left: 0 !important;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
-  }
-
-  line {
-    font-family: \0000388;
-  }
-}
-
-.panel-panel .pane-1 .view-channel-articles .views-field-created .author-feed a {
-  display: none;
 }
 
 @media -sass-debug-info {
@@ -5148,7 +5117,51 @@ p br {
   }
 }
 
-.panel-panel .pane-1 .view-channel-articles .views-field-created * {
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created {
+  padding-top: 5%;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000395;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created .teaser-comment {
+  border-right: 1px solid #76BE57 !important;
+  background: none !important;
+  padding-left: 0 !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003101;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created .author-feed a {
+  display: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003105;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created * {
   color: #76BE57 !important;
 }
 
@@ -5158,11 +5171,12 @@ p br {
   }
 
   line {
-    font-family: \00003102;
+    font-family: \00003116;
   }
 }
 
-.panel-panel.burr-flipped-sidebar {
+.section-open-organization .panel-panel.burr-flipped-sidebar {
+  width: 365px !important;
   background: #E9ECF0;
   margin-right: -24px;
 }
@@ -5173,11 +5187,110 @@ p br {
   }
 
   line {
-    font-family: \00003106;
+    font-family: \00003125;
   }
 }
 
-.panel-panel.burr-flipped-sidebar .panel-panel-inner {
+.section-open-organization .panel-panel.burr-flipped-sidebar .node-poll input[type='radio'] {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #333333;
+  border-radius: 50%;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003135;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .node-poll input[type='radio']:hover {
+  box-shadow: 0 0 5px 0px #39f inset;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003139;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .node-poll input[type='radio']:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003147;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .node-poll input[type='radio']:checked:before {
+  background: #39f;
+  border-radius: 5px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003152;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .node-poll .node-title a {
+  pointer-events: none;
+  color: #333333;
+  text-decoration: none;
+  font-size: .8em;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003159;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .node-poll .form-submit {
+  background: #39f;
+  color: white;
+  margin-bottom: 22px;
+  padding: 4px 18px 4px 18px;
+  font-size: 1.3em;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003168;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .panel-panel-inner {
   padding: 5px 10px;
 }
 
@@ -5187,12 +5300,106 @@ p br {
   }
 
   line {
-    font-family: \00003110;
+    font-family: \00003171;
   }
 }
 
-.panel-panel.burr-flipped-sidebar .panel-panel-inner h2 {
+.section-open-organization .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane {
+  border-bottom: 1px solid #CCCCCC;
+  padding-top: 8px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003176;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane header {
+  padding-top: 8px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003180;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane:first-child {
+  padding-top: 0 !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003184;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane:last-child {
+  border: none !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003188;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane.pane-4 {
+  padding-top: 30px !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003194;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .panel-panel-inner h2 {
   color: #39f;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \00003198;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-sidebar .panel-panel-inner .pane-4 h2:before {
+  content: "\e800";
+  font-size: 1.2em;
+  font-family: "fontello";
+  color: white;
+  background: #39f;
+  border-radius: 4px;
+  padding: 5px;
+  float: left;
+  margin-top: -15px;
+  margin-right: 10px;
 }
 
 /**
@@ -6840,7 +7047,7 @@ label {
 
 .block-superfish li.sf-depth-1 {
   margin-top: 5px;
-  margin-right: 5px;
+  margin-right: 5.5px;
 }
 
 @media -sass-debug-info {
@@ -7029,12 +7236,12 @@ label {
 }
 
 .block-superfish .sf-main-menu li.menuparent:after {
-  content: '\e800';
+  content: '\e803';
   position: absolute;
   right: 11px;
-  top: 21%;
+  top: 29%;
   font-family: "fontello";
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #5D6871;
 }
 
@@ -7049,10 +7256,10 @@ label {
 }
 
 .block-superfish .sf-main-menu li.menuparent:hover:after {
-  content: '\e801';
+  content: '\e804';
   font-family: "fontello";
-  font-size: 1.5em;
-  top: 21%;
+  font-size: 1.2em;
+  top: 29%;
   position: absolute;
   color: white;
 }
@@ -7126,8 +7333,8 @@ label {
 }
 
 .block-superfish .sf-main-menu li.sf-depth-2 a:before {
-  content: '\e802';
-  font-size: 1.2em;
+  content: '\e805';
+  font-size: 1em;
   font-family: "fontello";
   position: absolute;
   left: 7% !important;

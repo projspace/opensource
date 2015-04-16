@@ -1,6 +1,6 @@
 (function(window, $) {
 	$(document).ready(function() {
-
+$( ".burr-flipped-content-inner .pane-1 p:nth-child(3)" ).addClass( "show-read-more" );
 		$('#search-block-form #edit-search-block-form--2')
 			.attr('placeholder', 'Search opensource.com');
 
@@ -30,6 +30,26 @@
     jQuery.each(list, function(index, item) {
       jQuery(item).find('.menuparent').css('padding', '12px ' + (diff/(count * 2)) + 'px');
     });
+
+
+// //////////Read More
+var maxLength = 540;
+
+	$(".show-read-more").each(function(){
+		var myStr = $(this).text();
+		if($.trim(myStr).length > maxLength){
+			var newStr = myStr.substring(0, maxLength);
+			var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+			$(this).empty().html(newStr);
+			$(this).append(' <a href="javascript:void(0);" class="read-more">Read more  ></a>');
+			$(this).append('<span class="more-text">' + removedStr + '</span>');
+		}
+	});
+	$(".read-more").click(function(){
+		$(this).siblings(".more-text").contents().unwrap();
+		$(this).remove();
+	});
+
 
   });
 })(window, jQuery)
