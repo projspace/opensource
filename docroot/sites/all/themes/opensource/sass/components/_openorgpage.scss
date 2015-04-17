@@ -30,7 +30,7 @@
   &.burr-flipped-content .panel-panel-inner
 
 { 
-  .panel-pane.pane-views-panes
+  .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles
   {
       top: 68px;
   position: relative;
@@ -42,7 +42,7 @@
   color: #39f;
   margin-top: -15px;
   padding-bottom: 10px;
-  padding-right: 3em;
+  padding-right: 2em;
   &:after
   {
     content: "" !important;
@@ -81,6 +81,7 @@
       margin-bottom: 10px;
       display: inline-block;
       margin-left: 44%;
+        min-height: 40px;
       a:hover
       {
         text-decoration:none !important;
@@ -193,10 +194,7 @@
       & header
       {
       padding-top: 8px;
-      h2
-      {
-      font-weight:bold !important;
-      }
+      
 
       }
       &:first-child
