@@ -2266,19 +2266,16 @@ p br {
 .section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-field-lead-image {
   float: left;
   margin-right: 10px;
-  /* top: auto; */
-  /* position: absolute; */
-  margin-top: 0% !important;
+  position: absolute;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss}line{font-family:\0000374}}
 .section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles img {
   width: 222px;
   height: 133px;
   float: left;
   position: relative;
-  margin: -53px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss}line{font-family:\0000381}}
 .section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
   font-size: 18px;
   font-weight: bold;
@@ -2287,6 +2284,8 @@ p br {
   display: inline-block;
   margin-left: 44%;
   min-height: 40px;
+  float: right;
+  width: 55%;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss}line{font-family:\0000392}}
 .section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title a:hover {
@@ -2297,8 +2296,8 @@ p br {
   text-align: justify;
   position: relative;
   display: inline-block;
-  padding-left: 227px;
-  margin-top: -6%;
+  margin-left: 227px;
+  width: 55%;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss}line{font-family:\00003105}}
 .section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body span {
