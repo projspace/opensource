@@ -5,7 +5,7 @@
   .pane-title
   {
       font-weight: normal !important;
-      font-size:1.6em !important;
+      font-size:1.5em !important;
 
   }
 
@@ -35,7 +35,7 @@
   color: #39f;
   margin-top: -15px;
   padding-bottom: 10px;
-  padding-right: 25px;
+  padding-right: 3em;
   &:after
   {
     content: "" !important;
@@ -49,7 +49,7 @@
       float: left;
       
     }
-  p:last-child
+  p:nth-child(3)
   {
     padding-left: 32%;
     padding-bottom: 13%;

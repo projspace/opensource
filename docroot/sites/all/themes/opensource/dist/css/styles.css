@@ -4941,7 +4941,7 @@ p br {
 
 .section-open-organization .panel-panel .pane-title {
   font-weight: normal !important;
-  font-size: 1.6em !important;
+  font-size: 1.5em !important;
 }
 
 @media -sass-debug-info {
@@ -4990,7 +4990,7 @@ p br {
   color: #39f;
   margin-top: -15px;
   padding-bottom: 10px;
-  padding-right: 25px;
+  padding-right: 3em;
 }
 
 @media -sass-debug-info {
@@ -5033,7 +5033,7 @@ p br {
   }
 }
 
-.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner p:last-child {
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner p:nth-child(3) {
   padding-left: 32%;
   padding-bottom: 13%;
 }
