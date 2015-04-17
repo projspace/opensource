@@ -64,7 +64,14 @@
   // }
 .view-channel-articles 
 {
-
+  .views-field-field-lead-image
+  {
+      float: left;
+  margin-right: 10px;
+  /* top: auto; */
+  /* position: absolute; */
+  margin-top: 0% !important;
+  }
     img {
       width: 222px;
       height: 133px;
@@ -90,7 +97,11 @@
 
     .views-field-body
     {
-        text-align: justify;
+          text-align: justify;
+          position: relative;
+          display: inline-block;
+          padding-left: 227px;
+            margin-top: -6%;
         span
         {
             max-height: 82px !important;
