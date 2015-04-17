@@ -80,14 +80,7 @@
     }
     .views-field-title 
     {
-      font-size: 18px;
-        font-weight: bold;
-        line-height: 1.25;
-        margin-bottom: 10px;
-        display: inline-block;
-        margin-left: 44%;
-        min-height: 40px;
-        float: right;
+      float: right;
         width: 55%;
       a:hover
       {
@@ -97,17 +90,16 @@
 
     .views-field-body
     {
-          text-align: justify;
-          position: relative;
-          display: inline-block;
-          margin-left: 227px;
-          width: 55%;
-        span
+         text-align: justify;
+         position: relative;
+         display: inline-block;
+         margin-left: 233px;
+         width: 54%;
+         span
         {
-            max-height: 82px !important;
-            display: block;
             overflow: hidden;
         }
+        
     }
 
 

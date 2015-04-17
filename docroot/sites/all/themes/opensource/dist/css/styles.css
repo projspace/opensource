@@ -5084,13 +5084,6 @@ p br {
 }
 
 .section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 1.25;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-left: 44%;
-  min-height: 40px;
   float: right;
   width: 55%;
 }
@@ -5101,7 +5094,7 @@ p br {
   }
 
   line {
-    font-family: \0000392;
+    font-family: \0000385;
   }
 }
 
@@ -5115,7 +5108,7 @@ p br {
   }
 
   line {
-    font-family: \0000398;
+    font-family: \0000391;
   }
 }
 
@@ -5123,8 +5116,8 @@ p br {
   text-align: justify;
   position: relative;
   display: inline-block;
-  margin-left: 227px;
-  width: 55%;
+  margin-left: 233px;
+  width: 54%;
 }
 
 @media -sass-debug-info {
@@ -5133,13 +5126,11 @@ p br {
   }
 
   line {
-    font-family: \00003105;
+    font-family: \0000398;
   }
 }
 
 .section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body span {
-  max-height: 82px !important;
-  display: block;
   overflow: hidden;
 }
 
@@ -5149,7 +5140,7 @@ p br {
   }
 
   line {
-    font-family: \00003114;
+    font-family: \00003106;
   }
 }
 
@@ -5165,7 +5156,7 @@ p br {
   }
 
   line {
-    font-family: \00003121;
+    font-family: \00003113;
   }
 }
 
@@ -5179,7 +5170,7 @@ p br {
   }
 
   line {
-    font-family: \00003124;
+    font-family: \00003116;
   }
 }
 
@@ -5195,7 +5186,7 @@ p br {
   }
 
   line {
-    font-family: \00003130;
+    font-family: \00003122;
   }
 }
 
@@ -5209,7 +5200,7 @@ p br {
   }
 
   line {
-    font-family: \00003134;
+    font-family: \00003126;
   }
 }
 
@@ -5223,7 +5214,7 @@ p br {
   }
 
   line {
-    font-family: \00003145;
+    font-family: \00003137;
   }
 }
 
@@ -5239,7 +5230,7 @@ p br {
   }
 
   line {
-    font-family: \00003154;
+    font-family: \00003146;
   }
 }
 
@@ -5257,7 +5248,7 @@ p br {
   }
 
   line {
-    font-family: \00003164;
+    font-family: \00003156;
   }
 }
 
@@ -5271,7 +5262,7 @@ p br {
   }
 
   line {
-    font-family: \00003168;
+    font-family: \00003160;
   }
 }
 
@@ -5288,7 +5279,7 @@ p br {
   }
 
   line {
-    font-family: \00003176;
+    font-family: \00003168;
   }
 }
 
@@ -5303,7 +5294,7 @@ p br {
   }
 
   line {
-    font-family: \00003181;
+    font-family: \00003173;
   }
 }
 
@@ -5320,7 +5311,7 @@ p br {
   }
 
   line {
-    font-family: \00003188;
+    font-family: \00003180;
   }
 }
 
@@ -5338,7 +5329,7 @@ p br {
   }
 
   line {
-    font-family: \00003197;
+    font-family: \00003189;
   }
 }
 
@@ -5352,7 +5343,7 @@ p br {
   }
 
   line {
-    font-family: \00003200;
+    font-family: \00003192;
   }
 }
 
@@ -5367,7 +5358,7 @@ p br {
   }
 
   line {
-    font-family: \00003205;
+    font-family: \00003197;
   }
 }
 
@@ -5381,7 +5372,7 @@ p br {
   }
 
   line {
-    font-family: \00003211;
+    font-family: \00003203;
   }
 }
 
@@ -5395,7 +5386,7 @@ p br {
   }
 
   line {
-    font-family: \00003215;
+    font-family: \00003207;
   }
 }
 
@@ -5409,7 +5400,7 @@ p br {
   }
 
   line {
-    font-family: \00003219;
+    font-family: \00003211;
   }
 }
 
@@ -5423,7 +5414,7 @@ p br {
   }
 
   line {
-    font-family: \00003225;
+    font-family: \00003217;
   }
 }
 
@@ -5438,7 +5429,7 @@ p br {
   }
 
   line {
-    font-family: \00003230;
+    font-family: \00003222;
   }
 }
 
