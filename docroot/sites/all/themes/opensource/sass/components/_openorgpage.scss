@@ -2,6 +2,7 @@
 .section-open-organization .panel-panel
 {
   margin-top: -10px;
+  
   .pane-title
   {
       font-weight: normal !important;
@@ -29,13 +30,19 @@
   &.burr-flipped-content .panel-panel-inner
 
 { 
+  .panel-pane.pane-views-panes
+  {
+      top: 68px;
+  position: relative;
+  padding-top: 3px;
+}
   .pane-title
   {
   line-height: 2 !important;
   color: #39f;
   margin-top: -15px;
   padding-bottom: 10px;
-  padding-right: 4em;
+  padding-right: 3em;
   &:after
   {
     content: "" !important;
@@ -47,13 +54,14 @@
       width: 150px;
       height: 213px;
       float: left;
+      margin-right: 8px;
       
     }
-  p:nth-child(3)
-  {
-    padding-left: 32%;
-    padding-bottom: 13%;
-  }
+  // p:nth-child(3)
+  // {
+  //   padding-left: 32%;
+  //   padding-bottom: 13%;
+  // }
 .view-channel-articles 
 {
 

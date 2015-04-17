@@ -4935,7 +4935,7 @@ p br {
   }
 
   line {
-    font-family: \000035;
+    font-family: \000036;
   }
 }
 
@@ -4950,7 +4950,7 @@ p br {
   }
 
   line {
-    font-family: \0000314;
+    font-family: \0000315;
   }
 }
 
@@ -4967,7 +4967,7 @@ p br {
   }
 
   line {
-    font-family: \0000321;
+    font-family: \0000322;
   }
 }
 
@@ -4981,7 +4981,23 @@ p br {
   }
 
   line {
-    font-family: \0000332;
+    font-family: \0000333;
+  }
+}
+
+.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane.pane-views-panes {
+  top: 68px;
+  position: relative;
+  padding-top: 3px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
+  }
+
+  line {
+    font-family: \0000339;
   }
 }
 
@@ -4999,7 +5015,7 @@ p br {
   }
 
   line {
-    font-family: \0000339;
+    font-family: \0000346;
   }
 }
 
@@ -5013,7 +5029,7 @@ p br {
   }
 
   line {
-    font-family: \0000345;
+    font-family: \0000352;
   }
 }
 
@@ -5021,6 +5037,7 @@ p br {
   width: 150px;
   height: 213px;
   float: left;
+  margin-right: 8px;
 }
 
 @media -sass-debug-info {
@@ -5029,22 +5046,7 @@ p br {
   }
 
   line {
-    font-family: \0000352;
-  }
-}
-
-.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner p:nth-child(3) {
-  padding-left: 32%;
-  padding-bottom: 13%;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
-  }
-
-  line {
-    font-family: \0000360;
+    font-family: \0000368;
   }
 }
 
@@ -5062,7 +5064,7 @@ p br {
   }
 
   line {
-    font-family: \0000368;
+    font-family: \0000376;
   }
 }
 
@@ -5081,7 +5083,7 @@ p br {
   }
 
   line {
-    font-family: \0000376;
+    font-family: \0000384;
   }
 }
 
@@ -5095,7 +5097,7 @@ p br {
   }
 
   line {
-    font-family: \0000382;
+    font-family: \0000390;
   }
 }
 
@@ -5109,7 +5111,7 @@ p br {
   }
 
   line {
-    font-family: \0000385;
+    font-family: \0000393;
   }
 }
 
@@ -5125,7 +5127,7 @@ p br {
   }
 
   line {
-    font-family: \0000394;
+    font-family: \00003102;
   }
 }
 
@@ -5141,7 +5143,7 @@ p br {
   }
 
   line {
-    font-family: \00003101;
+    font-family: \00003109;
   }
 }
 
@@ -5155,7 +5157,7 @@ p br {
   }
 
   line {
-    font-family: \00003104;
+    font-family: \00003112;
   }
 }
 
@@ -5171,7 +5173,7 @@ p br {
   }
 
   line {
-    font-family: \00003110;
+    font-family: \00003118;
   }
 }
 
@@ -5185,7 +5187,7 @@ p br {
   }
 
   line {
-    font-family: \00003114;
+    font-family: \00003122;
   }
 }
 
@@ -5199,7 +5201,7 @@ p br {
   }
 
   line {
-    font-family: \00003125;
+    font-family: \00003133;
   }
 }
 
@@ -5215,7 +5217,7 @@ p br {
   }
 
   line {
-    font-family: \00003134;
+    font-family: \00003142;
   }
 }
 
@@ -5233,7 +5235,7 @@ p br {
   }
 
   line {
-    font-family: \00003144;
+    font-family: \00003152;
   }
 }
 
@@ -5247,7 +5249,7 @@ p br {
   }
 
   line {
-    font-family: \00003148;
+    font-family: \00003156;
   }
 }
 
@@ -5264,7 +5266,7 @@ p br {
   }
 
   line {
-    font-family: \00003156;
+    font-family: \00003164;
   }
 }
 
@@ -5279,7 +5281,7 @@ p br {
   }
 
   line {
-    font-family: \00003161;
+    font-family: \00003169;
   }
 }
 
@@ -5296,7 +5298,7 @@ p br {
   }
 
   line {
-    font-family: \00003168;
+    font-family: \00003176;
   }
 }
 
@@ -5314,7 +5316,7 @@ p br {
   }
 
   line {
-    font-family: \00003177;
+    font-family: \00003185;
   }
 }
 
@@ -5328,7 +5330,7 @@ p br {
   }
 
   line {
-    font-family: \00003180;
+    font-family: \00003188;
   }
 }
 
@@ -5343,7 +5345,7 @@ p br {
   }
 
   line {
-    font-family: \00003185;
+    font-family: \00003193;
   }
 }
 
@@ -5357,7 +5359,7 @@ p br {
   }
 
   line {
-    font-family: \00003188;
+    font-family: \00003196;
   }
 }
 
@@ -5371,7 +5373,7 @@ p br {
   }
 
   line {
-    font-family: \00003194;
+    font-family: \00003202;
   }
 }
 
@@ -5385,7 +5387,7 @@ p br {
   }
 
   line {
-    font-family: \00003198;
+    font-family: \00003206;
   }
 }
 
@@ -5399,7 +5401,7 @@ p br {
   }
 
   line {
-    font-family: \00003202;
+    font-family: \00003210;
   }
 }
 
@@ -5413,7 +5415,7 @@ p br {
   }
 
   line {
-    font-family: \00003208;
+    font-family: \00003216;
   }
 }
 
@@ -5428,7 +5430,7 @@ p br {
   }
 
   line {
-    font-family: \00003213;
+    font-family: \00003221;
   }
 }
 
