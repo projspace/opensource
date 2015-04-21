@@ -573,7 +573,7 @@ function os_core_update_7112() {
  * update superfish related menu settings.
  * related issue: #13651.
  */
-function os_core_update_7110() {
+function os_core_update_7113() {
   // set superfish related variables
   variable_set('superfish_delay_1', '800');
   variable_set('superfish_depth_1', '3');
