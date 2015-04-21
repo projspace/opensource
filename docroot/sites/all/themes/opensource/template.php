@@ -679,3 +679,7 @@ function _opensource_generate_node_title($node) {
   }
   return $title;
 }
+
+function opensource_css_alter(&$css) {
+  unset($css[libraries_get_path('superfish') . '/style/default.css']);
+}
