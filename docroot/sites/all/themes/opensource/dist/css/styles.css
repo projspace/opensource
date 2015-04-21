@@ -4989,6 +4989,7 @@ p br {
   top: 68px;
   position: relative;
   padding-top: 3px;
+  border-top: 1px solid #CCCCCC;
 }
 
 @media -sass-debug-info {
@@ -4997,7 +4998,7 @@ p br {
   }
 
   line {
-    font-family: \0000339;
+    font-family: \0000340;
   }
 }
 
@@ -5006,7 +5007,7 @@ p br {
   color: #39f;
   margin-top: -15px;
   padding-bottom: 10px;
-  padding-right: 2em;
+  padding-right: 2.5em;
 }
 
 @media -sass-debug-info {
@@ -5015,7 +5016,7 @@ p br {
   }
 
   line {
-    font-family: \0000346;
+    font-family: \0000347;
   }
 }
 
@@ -5029,7 +5030,7 @@ p br {
   }
 
   line {
-    font-family: \0000352;
+    font-family: \0000353;
   }
 }
 
@@ -5046,7 +5047,7 @@ p br {
   }
 
   line {
-    font-family: \0000367;
+    font-family: \0000368;
   }
 }
 
@@ -5062,7 +5063,7 @@ p br {
   }
 
   line {
-    font-family: \0000374;
+    font-family: \0000375;
   }
 }
 
@@ -5079,7 +5080,7 @@ p br {
   }
 
   line {
-    font-family: \0000381;
+    font-family: \0000382;
   }
 }
 
@@ -5095,7 +5096,7 @@ p br {
   }
 
   line {
-    font-family: \0000386;
+    font-family: \0000387;
   }
 }
 
@@ -5109,7 +5110,7 @@ p br {
   }
 
   line {
-    font-family: \0000392;
+    font-family: \0000393;
   }
 }
 
@@ -5129,14 +5130,13 @@ p br {
   }
 
   line {
-    font-family: \00003105;
+    font-family: \00003106;
   }
 }
 
 .section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-row {
   margin-bottom: 15px;
   padding: 20px 0 !important;
-  border-top: 1px solid #CCCCCC;
 }
 
 @media -sass-debug-info {
@@ -5159,51 +5159,7 @@ p br {
   }
 
   line {
-    font-family: \00003115;
-  }
-}
-
-.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created .teaser-comment {
-  border-right: 1px solid #76BE57 !important;
-  background: none !important;
-  padding-left: 0 !important;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
-  }
-
-  line {
-    font-family: \00003121;
-  }
-}
-
-.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created .author-feed a {
-  display: none;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
-  }
-
-  line {
-    font-family: \00003125;
-  }
-}
-
-.section-open-organization .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created * {
-  color: #76BE57 !important;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
-  }
-
-  line {
-    font-family: \00003136;
+    font-family: \00003120;
   }
 }
 
@@ -5219,7 +5175,7 @@ p br {
   }
 
   line {
-    font-family: \00003145;
+    font-family: \00003129;
   }
 }
 
@@ -5237,7 +5193,7 @@ p br {
   }
 
   line {
-    font-family: \00003155;
+    font-family: \00003139;
   }
 }
 
@@ -5251,7 +5207,7 @@ p br {
   }
 
   line {
-    font-family: \00003159;
+    font-family: \00003143;
   }
 }
 
@@ -5268,12 +5224,12 @@ p br {
   }
 
   line {
-    font-family: \00003167;
+    font-family: \00003151;
   }
 }
 
 .section-open-organization .panel-panel.burr-flipped-sidebar .node-poll input[type='radio']:checked:before {
-  background: #39f;
+  background: #39f !important;
   border-radius: 5px;
 }
 
@@ -5283,7 +5239,7 @@ p br {
   }
 
   line {
-    font-family: \00003172;
+    font-family: \00003156;
   }
 }
 
@@ -5300,16 +5256,17 @@ p br {
   }
 
   line {
-    font-family: \00003179;
+    font-family: \00003163;
   }
 }
 
 .section-open-organization .panel-panel.burr-flipped-sidebar .node-poll .form-submit {
-  background: #39f;
+  background: #1D2754;
   color: white;
   margin-bottom: 22px;
-  padding: 4px 18px 4px 18px;
+  padding: 3px 5px 3px 5px;
   font-size: 1.3em;
+  float: right;
 }
 
 @media -sass-debug-info {
@@ -5318,7 +5275,7 @@ p br {
   }
 
   line {
-    font-family: \00003188;
+    font-family: \00003173;
   }
 }
 
@@ -5332,12 +5289,11 @@ p br {
   }
 
   line {
-    font-family: \00003191;
+    font-family: \00003176;
   }
 }
 
 .section-open-organization .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane {
-  border-bottom: 1px solid #CCCCCC;
   padding-top: 8px;
 }
 
@@ -5347,7 +5303,7 @@ p br {
   }
 
   line {
-    font-family: \00003196;
+    font-family: \00003180;
   }
 }
 
@@ -5361,7 +5317,7 @@ p br {
   }
 
   line {
-    font-family: \00003202;
+    font-family: \00003186;
   }
 }
 
@@ -5375,7 +5331,7 @@ p br {
   }
 
   line {
-    font-family: \00003206;
+    font-family: \00003190;
   }
 }
 
@@ -5389,7 +5345,7 @@ p br {
   }
 
   line {
-    font-family: \00003210;
+    font-family: \00003194;
   }
 }
 
@@ -5403,7 +5359,7 @@ p br {
   }
 
   line {
-    font-family: \00003216;
+    font-family: \00003200;
   }
 }
 
@@ -5418,7 +5374,7 @@ p br {
   }
 
   line {
-    font-family: \00003221;
+    font-family: \00003205;
   }
 }
 

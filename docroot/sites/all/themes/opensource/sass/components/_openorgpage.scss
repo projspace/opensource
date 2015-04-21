@@ -35,6 +35,7 @@
       top: 68px;
   position: relative;
   padding-top: 3px;
+      border-top : 1px solid #CCCCCC;
 }
   .pane-title
   {
@@ -42,7 +43,7 @@
   color: #39f;
   margin-top: -15px;
   padding-bottom: 10px;
-  padding-right: 2em;
+  padding-right: 2.5em;
   &:after
   {
     content: "" !important;
@@ -106,28 +107,11 @@
     {
       margin-bottom: 15px;
       padding:20px 0 !important;
-      border-top: 1px solid #CCCCCC;
     }
 
     .views-field-created 
     {
       padding-top: 5%;
-      .teaser-comment
-      { 
-        border-right: 1px solid #76BE57 !important;
-        background: none !important;
-        padding-left:0 !important;
-      }
-      .author-feed a
-      {
-        display: none;
-      }
-      *
-      {
-      color:#76BE57 !important;
-    }
-
-
     }
 
    }
@@ -165,7 +149,7 @@
         // border-radius:50%;    
       }
       input[type='radio']:checked:before {
-        background:#39f;
+        background:#39f !important;
         border-radius:5px;
       }
 
@@ -178,11 +162,12 @@
     }
     .form-submit
     {
-      background: #39f;
+      background: #1D2754;
       color: white;
       margin-bottom: 22px;
-      padding: 4px 18px 4px 18px;
+      padding: 3px 5px 3px 5px;
       font-size: 1.3em;
+      float: right;
     }
   }
   .panel-panel-inner
@@ -191,7 +176,6 @@
     .panel-pane
     {
 
-      border-bottom : 1px solid #CCCCCC;
       padding-top: 8px;
       & header
       {
