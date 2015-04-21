@@ -567,6 +567,7 @@ function os_core_update_7112() {
   $term->name = 'The Open Organization';
   $term->description = '';
   taxonomy_term_save($term);
+}
 
 /**
  * update superfish related menu settings.
