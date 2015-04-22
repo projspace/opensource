@@ -4921,21 +4921,7 @@ p br {
   }
 
   line {
-    font-family: \000034;
-  }
-}
-
-.section-open-organization ul {
-  padding-left: 0 !important;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/components\/_openorgpage\.scss;
-  }
-
-  line {
-    font-family: \000038;
+    font-family: \000035;
   }
 }
 
@@ -4949,7 +4935,7 @@ p br {
   }
 
   line {
-    font-family: \0000316;
+    font-family: \0000313;
   }
 }
 
@@ -4964,7 +4950,7 @@ p br {
   }
 
   line {
-    font-family: \0000325;
+    font-family: \0000322;
   }
 }
 
@@ -4981,7 +4967,7 @@ p br {
   }
 
   line {
-    font-family: \0000332;
+    font-family: \0000329;
   }
 }
 
@@ -4995,7 +4981,7 @@ p br {
   }
 
   line {
-    font-family: \0000343;
+    font-family: \0000340;
   }
 }
 
@@ -5012,7 +4998,7 @@ p br {
   }
 
   line {
-    font-family: \0000350;
+    font-family: \0000347;
   }
 }
 
@@ -5030,7 +5016,7 @@ p br {
   }
 
   line {
-    font-family: \0000357;
+    font-family: \0000354;
   }
 }
 
@@ -5044,7 +5030,7 @@ p br {
   }
 
   line {
-    font-family: \0000363;
+    font-family: \0000360;
   }
 }
 
@@ -5061,7 +5047,7 @@ p br {
   }
 
   line {
-    font-family: \0000378;
+    font-family: \0000375;
   }
 }
 
@@ -5077,7 +5063,7 @@ p br {
   }
 
   line {
-    font-family: \0000385;
+    font-family: \0000382;
   }
 }
 
@@ -5094,7 +5080,7 @@ p br {
   }
 
   line {
-    font-family: \0000392;
+    font-family: \0000389;
   }
 }
 
@@ -5110,7 +5096,7 @@ p br {
   }
 
   line {
-    font-family: \0000397;
+    font-family: \0000394;
   }
 }
 
@@ -5124,7 +5110,7 @@ p br {
   }
 
   line {
-    font-family: \00003103;
+    font-family: \00003100;
   }
 }
 
@@ -5144,7 +5130,7 @@ p br {
   }
 
   line {
-    font-family: \00003116;
+    font-family: \00003113;
   }
 }
 
@@ -5159,7 +5145,7 @@ p br {
   }
 
   line {
-    font-family: \00003122;
+    font-family: \00003119;
   }
 }
 
@@ -5173,7 +5159,7 @@ p br {
   }
 
   line {
-    font-family: \00003130;
+    font-family: \00003127;
   }
 }
 
@@ -5189,7 +5175,7 @@ p br {
   }
 
   line {
-    font-family: \00003139;
+    font-family: \00003136;
   }
 }
 
@@ -5207,7 +5193,7 @@ p br {
   }
 
   line {
-    font-family: \00003149;
+    font-family: \00003146;
   }
 }
 
@@ -5221,7 +5207,7 @@ p br {
   }
 
   line {
-    font-family: \00003153;
+    font-family: \00003150;
   }
 }
 
@@ -5238,7 +5224,7 @@ p br {
   }
 
   line {
-    font-family: \00003161;
+    font-family: \00003158;
   }
 }
 
@@ -5253,7 +5239,7 @@ p br {
   }
 
   line {
-    font-family: \00003166;
+    font-family: \00003163;
   }
 }
 
@@ -5270,7 +5256,7 @@ p br {
   }
 
   line {
-    font-family: \00003173;
+    font-family: \00003170;
   }
 }
 
@@ -5289,7 +5275,7 @@ p br {
   }
 
   line {
-    font-family: \00003183;
+    font-family: \00003180;
   }
 }
 
@@ -5303,7 +5289,7 @@ p br {
   }
 
   line {
-    font-family: \00003186;
+    font-family: \00003183;
   }
 }
 
@@ -5317,7 +5303,7 @@ p br {
   }
 
   line {
-    font-family: \00003190;
+    font-family: \00003187;
   }
 }
 
@@ -5331,7 +5317,7 @@ p br {
   }
 
   line {
-    font-family: \00003196;
+    font-family: \00003193;
   }
 }
 
@@ -5345,7 +5331,7 @@ p br {
   }
 
   line {
-    font-family: \00003200;
+    font-family: \00003197;
   }
 }
 
@@ -5359,7 +5345,7 @@ p br {
   }
 
   line {
-    font-family: \00003204;
+    font-family: \00003201;
   }
 }
 
@@ -5373,7 +5359,7 @@ p br {
   }
 
   line {
-    font-family: \00003210;
+    font-family: \00003207;
   }
 }
 
@@ -5388,7 +5374,7 @@ p br {
   }
 
   line {
-    font-family: \00003215;
+    font-family: \00003212;
   }
 }
 
@@ -6962,6 +6948,7 @@ label {
   padding: 0;
   background: #5e6a71;
   height: 50px;
+  text-transform: capitalize;
 }
 
 @media -sass-debug-info {
@@ -6970,7 +6957,7 @@ label {
   }
 
   line {
-    font-family: \0000312;
+    font-family: \0000313;
   }
 }
 
@@ -6988,6 +6975,20 @@ label {
   }
 }
 
+.block-superfish .sf-main-menu ul {
+  padding: 0px !important;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss;
+  }
+
+  line {
+    font-family: \0000323;
+  }
+}
+
 .block-superfish li.active-trail {
   background: white;
   color: #5D6871;
@@ -6999,7 +7000,7 @@ label {
   }
 
   line {
-    font-family: \0000320;
+    font-family: \0000326;
   }
 }
 
@@ -7013,7 +7014,7 @@ label {
   }
 
   line {
-    font-family: \0000324;
+    font-family: \0000330;
   }
 }
 
@@ -7027,7 +7028,7 @@ label {
   }
 
   line {
-    font-family: \0000330;
+    font-family: \0000336;
   }
 }
 
@@ -7044,7 +7045,7 @@ label {
   }
 
   line {
-    font-family: \0000336;
+    font-family: \0000342;
   }
 }
 
@@ -7059,7 +7060,7 @@ label {
   }
 
   line {
-    font-family: \0000340;
+    font-family: \0000346;
   }
 }
 
@@ -7073,7 +7074,7 @@ label {
   }
 
   line {
-    font-family: \0000344;
+    font-family: \0000350;
   }
 }
 
@@ -7087,7 +7088,7 @@ label {
   }
 
   line {
-    font-family: \0000347;
+    font-family: \0000353;
   }
 }
 
@@ -7102,7 +7103,7 @@ label {
   }
 
   line {
-    font-family: \0000350;
+    font-family: \0000356;
   }
 }
 
@@ -7117,7 +7118,7 @@ label {
   }
 
   line {
-    font-family: \0000354;
+    font-family: \0000360;
   }
 }
 
@@ -7131,7 +7132,7 @@ label {
   }
 
   line {
-    font-family: \0000360;
+    font-family: \0000366;
   }
 }
 
@@ -7146,7 +7147,7 @@ label {
   }
 
   line {
-    font-family: \0000365;
+    font-family: \0000371;
   }
 }
 
@@ -7161,7 +7162,7 @@ label {
   }
 
   line {
-    font-family: \0000372;
+    font-family: \0000378;
   }
 }
 
@@ -7176,7 +7177,7 @@ label {
   }
 
   line {
-    font-family: \0000377;
+    font-family: \0000383;
   }
 }
 
@@ -7190,7 +7191,7 @@ label {
   }
 
   line {
-    font-family: \0000381;
+    font-family: \0000387;
   }
 }
 
@@ -7204,7 +7205,7 @@ label {
   }
 
   line {
-    font-family: \0000384;
+    font-family: \0000390;
   }
 }
 
@@ -7218,7 +7219,7 @@ label {
   }
 
   line {
-    font-family: \0000392;
+    font-family: \0000398;
   }
 }
 
@@ -7234,7 +7235,7 @@ label {
   }
 
   line {
-    font-family: \0000397;
+    font-family: \00003103;
   }
 }
 
@@ -7254,7 +7255,7 @@ label {
   }
 
   line {
-    font-family: \00003108;
+    font-family: \00003114;
   }
 }
 
@@ -7273,7 +7274,7 @@ label {
   }
 
   line {
-    font-family: \00003116;
+    font-family: \00003122;
   }
 }
 
@@ -7288,7 +7289,7 @@ label {
   }
 
   line {
-    font-family: \00003124;
+    font-family: \00003130;
   }
 }
 
@@ -7302,7 +7303,7 @@ label {
   }
 
   line {
-    font-family: \00003127;
+    font-family: \00003133;
   }
 }
 
@@ -7317,7 +7318,7 @@ label {
   }
 
   line {
-    font-family: \00003130;
+    font-family: \00003136;
   }
 }
 
@@ -7331,7 +7332,7 @@ label {
   }
 
   line {
-    font-family: \00003133;
+    font-family: \00003139;
   }
 }
 
@@ -7349,7 +7350,7 @@ label {
   }
 
   line {
-    font-family: \00003141;
+    font-family: \00003147;
   }
 }
 
@@ -7364,7 +7365,7 @@ label {
   }
 
   line {
-    font-family: \00003146;
+    font-family: \00003152;
   }
 }
 
@@ -7378,7 +7379,7 @@ label {
   }
 
   line {
-    font-family: \00003150;
+    font-family: \00003156;
   }
 }
 
@@ -7392,7 +7393,7 @@ label {
   }
 
   line {
-    font-family: \00003154;
+    font-family: \00003160;
   }
 }
 
@@ -7406,7 +7407,7 @@ label {
   }
 
   line {
-    font-family: \00003157;
+    font-family: \00003163;
   }
 }
 
@@ -7420,7 +7421,7 @@ label {
   }
 
   line {
-    font-family: \00003161;
+    font-family: \00003167;
   }
 }
 
@@ -7435,7 +7436,7 @@ label {
   }
 
   line {
-    font-family: \00003165;
+    font-family: \00003171;
   }
 }
 
@@ -7450,7 +7451,7 @@ label {
   }
 
   line {
-    font-family: \00003182;
+    font-family: \00003188;
   }
 }
 
@@ -7465,7 +7466,7 @@ label {
   }
 
   line {
-    font-family: \00003186;
+    font-family: \00003192;
   }
 }
 

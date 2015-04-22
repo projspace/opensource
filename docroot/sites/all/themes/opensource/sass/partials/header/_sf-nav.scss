@@ -9,9 +9,15 @@
   padding: 0;
   background: rgb(94, 106, 113);
   height: 50px;
+  text-transform: capitalize;
   * {
     text-decoration: none;
   }
+
+  .sf-main-menu ul {
+  padding: 0px !important;
+
+}
 
 
   li.active-trail {
