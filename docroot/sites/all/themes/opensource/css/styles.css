@@ -3060,20 +3060,20 @@ label {
   background: #0099CC;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000386}}
-.block-superfish .sf-main-menu li.menuparent {
+.block-superfish .sf-main-menu li.sf-depth-1 {
   position: relative;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000389}}
-.block-superfish .sf-main-menu li.menuparent.last ul li:hover ul {
+.block-superfish .sf-main-menu li.sf-depth-1.last ul li:hover ul {
   left: -100% !important;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\0000397}}
-.block-superfish .sf-main-menu li.menuparent.sf-depth-2:after, .block-superfish .sf-main-menu li.menuparent a.sf-depth-3:before {
+.block-superfish .sf-main-menu li.sf-depth-1.sf-depth-2:after, .block-superfish .sf-main-menu li.sf-depth-1 a.sf-depth-3:before {
   content: "" !important;
   position: absolute;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003102}}
-.block-superfish .sf-main-menu li.menuparent:after {
+.block-superfish .sf-main-menu li.sf-depth-1:after {
   content: '\e803';
   position: absolute;
   right: 11px;
@@ -3083,7 +3083,7 @@ label {
   color: #5D6871;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003113}}
-.block-superfish .sf-main-menu li.menuparent:hover:after {
+.block-superfish .sf-main-menu li.sf-depth-1:hover:after {
   content: '\e804';
   font-family: "fontello";
   font-size: 1.2em;
@@ -3092,7 +3092,7 @@ label {
   color: white;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/vagrant\/opensource\/docroot\/sites\/all\/themes\/opensource\/sass\/partials\/header\/_sf-nav\.scss}line{font-family:\00003121}}
-.block-superfish .sf-main-menu li.menuparent:hover a {
+.block-superfish .sf-main-menu li.sf-depth-1:hover a {
   color: white !important;
   background: #0099CC;
 }
