@@ -569,3 +569,26 @@ function os_core_update_7112() {
   $term->description = '';
   taxonomy_term_save($term);
 }
+
+/**
+ * update superfish related menu settings.
+ * related issue: #13651.
+ */
+function os_core_update_7113() {
+  // set superfish related variables
+  variable_set('superfish_delay_1', '0');
+  variable_set('superfish_depth_1', '3');
+  variable_set('superfish_arrow_1', 0);
+  variable_set('superfish_shadow_1', 0);
+
+  // place superfish menu block in navigation region
+  db_update('block')
+    ->fields(array(
+        'status' => 1,
+        'region' => 'navigation',
+      ))
+    ->condition('module', 'superfish')
+    ->condition('theme', 'opensource')
+    ->condition('delta', 1)
+    ->execute();
+}
