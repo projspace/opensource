@@ -575,7 +575,7 @@ function os_core_update_7112() {
  */
 function os_core_update_7113() {
   // set superfish related variables
-  variable_set('superfish_delay_1', '800');
+  variable_set('superfish_delay_1', '0');
   variable_set('superfish_depth_1', '3');
   variable_set('superfish_arrow_1', 0);
   variable_set('superfish_shadow_1', 0);

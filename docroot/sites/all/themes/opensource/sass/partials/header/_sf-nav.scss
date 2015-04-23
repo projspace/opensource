@@ -3,6 +3,7 @@
   display: none;
 }
 
+
 .block-superfish {
   margin: 0;
   padding: 0;
@@ -11,6 +12,11 @@
   * {
     text-decoration: none;
   }
+
+  .sf-main-menu ul {
+  padding: 0px !important;
+
+}
 
 
   li.active-trail {
@@ -35,7 +41,6 @@
     &.sf-depth-1 {
       margin-top:5px;
       margin-right: 5.5px;
-
 
       .active-trail > a {
         color: #0099CC !important ;
