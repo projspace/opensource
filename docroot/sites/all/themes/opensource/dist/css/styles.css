@@ -6948,7 +6948,6 @@ label {
   padding: 0;
   background: #5e6a71;
   height: 50px;
-  text-transform: capitalize;
 }
 
 @media -sass-debug-info {
@@ -6957,7 +6956,7 @@ label {
   }
 
   line {
-    font-family: \0000313;
+    font-family: \0000312;
   }
 }
 
@@ -6971,7 +6970,7 @@ label {
   }
 
   line {
-    font-family: \0000317;
+    font-family: \0000316;
   }
 }
 
@@ -6985,7 +6984,7 @@ label {
   }
 
   line {
-    font-family: \0000323;
+    font-family: \0000322;
   }
 }
 
@@ -7000,7 +6999,7 @@ label {
   }
 
   line {
-    font-family: \0000326;
+    font-family: \0000325;
   }
 }
 
@@ -7014,7 +7013,7 @@ label {
   }
 
   line {
-    font-family: \0000330;
+    font-family: \0000329;
   }
 }
 
@@ -7028,7 +7027,7 @@ label {
   }
 
   line {
-    font-family: \0000336;
+    font-family: \0000335;
   }
 }
 
@@ -7045,7 +7044,7 @@ label {
   }
 
   line {
-    font-family: \0000342;
+    font-family: \0000341;
   }
 }
 
@@ -7060,7 +7059,7 @@ label {
   }
 
   line {
-    font-family: \0000346;
+    font-family: \0000345;
   }
 }
 
@@ -7074,7 +7073,7 @@ label {
   }
 
   line {
-    font-family: \0000350;
+    font-family: \0000349;
   }
 }
 
@@ -7088,7 +7087,7 @@ label {
   }
 
   line {
-    font-family: \0000353;
+    font-family: \0000352;
   }
 }
 
@@ -7103,7 +7102,7 @@ label {
   }
 
   line {
-    font-family: \0000356;
+    font-family: \0000355;
   }
 }
 
@@ -7118,7 +7117,7 @@ label {
   }
 
   line {
-    font-family: \0000360;
+    font-family: \0000359;
   }
 }
 
@@ -7132,7 +7131,7 @@ label {
   }
 
   line {
-    font-family: \0000366;
+    font-family: \0000365;
   }
 }
 
@@ -7147,7 +7146,7 @@ label {
   }
 
   line {
-    font-family: \0000371;
+    font-family: \0000370;
   }
 }
 
@@ -7162,7 +7161,7 @@ label {
   }
 
   line {
-    font-family: \0000378;
+    font-family: \0000377;
   }
 }
 
@@ -7177,7 +7176,7 @@ label {
   }
 
   line {
-    font-family: \0000383;
+    font-family: \0000382;
   }
 }
 
@@ -7191,7 +7190,7 @@ label {
   }
 
   line {
-    font-family: \0000387;
+    font-family: \0000386;
   }
 }
 
@@ -7205,7 +7204,7 @@ label {
   }
 
   line {
-    font-family: \0000390;
+    font-family: \0000389;
   }
 }
 
@@ -7219,7 +7218,7 @@ label {
   }
 
   line {
-    font-family: \0000398;
+    font-family: \0000397;
   }
 }
 
@@ -7235,7 +7234,7 @@ label {
   }
 
   line {
-    font-family: \00003103;
+    font-family: \00003102;
   }
 }
 
@@ -7255,7 +7254,7 @@ label {
   }
 
   line {
-    font-family: \00003114;
+    font-family: \00003113;
   }
 }
 
@@ -7274,7 +7273,7 @@ label {
   }
 
   line {
-    font-family: \00003122;
+    font-family: \00003121;
   }
 }
 
@@ -7289,7 +7288,7 @@ label {
   }
 
   line {
-    font-family: \00003130;
+    font-family: \00003129;
   }
 }
 
@@ -7303,7 +7302,7 @@ label {
   }
 
   line {
-    font-family: \00003133;
+    font-family: \00003132;
   }
 }
 
@@ -7318,7 +7317,7 @@ label {
   }
 
   line {
-    font-family: \00003136;
+    font-family: \00003135;
   }
 }
 
@@ -7332,7 +7331,7 @@ label {
   }
 
   line {
-    font-family: \00003139;
+    font-family: \00003138;
   }
 }
 
@@ -7350,7 +7349,7 @@ label {
   }
 
   line {
-    font-family: \00003147;
+    font-family: \00003146;
   }
 }
 
@@ -7365,7 +7364,7 @@ label {
   }
 
   line {
-    font-family: \00003152;
+    font-family: \00003151;
   }
 }
 
@@ -7379,7 +7378,7 @@ label {
   }
 
   line {
-    font-family: \00003156;
+    font-family: \00003155;
   }
 }
 
@@ -7393,7 +7392,7 @@ label {
   }
 
   line {
-    font-family: \00003160;
+    font-family: \00003159;
   }
 }
 
@@ -7407,7 +7406,7 @@ label {
   }
 
   line {
-    font-family: \00003163;
+    font-family: \00003162;
   }
 }
 
@@ -7421,7 +7420,7 @@ label {
   }
 
   line {
-    font-family: \00003167;
+    font-family: \00003166;
   }
 }
 
@@ -7436,7 +7435,7 @@ label {
   }
 
   line {
-    font-family: \00003171;
+    font-family: \00003170;
   }
 }
 
@@ -7451,7 +7450,7 @@ label {
   }
 
   line {
-    font-family: \00003188;
+    font-family: \00003187;
   }
 }
 
@@ -7466,7 +7465,7 @@ label {
   }
 
   line {
-    font-family: \00003192;
+    font-family: \00003191;
   }
 }
 
