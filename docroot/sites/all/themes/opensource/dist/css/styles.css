@@ -7194,7 +7194,7 @@ label {
   }
 }
 
-.block-superfish .sf-main-menu li.menuparent {
+.block-superfish .sf-main-menu li.sf-depth-1 {
   position: relative;
 }
 
@@ -7208,7 +7208,7 @@ label {
   }
 }
 
-.block-superfish .sf-main-menu li.menuparent.last ul li:hover ul {
+.block-superfish .sf-main-menu li.sf-depth-1.last ul li:hover ul {
   left: -100% !important;
 }
 
@@ -7222,8 +7222,8 @@ label {
   }
 }
 
-.block-superfish .sf-main-menu li.menuparent.sf-depth-2:after,
-.block-superfish .sf-main-menu li.menuparent a.sf-depth-3:before {
+.block-superfish .sf-main-menu li.sf-depth-1.sf-depth-2:after,
+.block-superfish .sf-main-menu li.sf-depth-1 a.sf-depth-3:before {
   content: "" !important;
   position: absolute;
 }
@@ -7238,7 +7238,7 @@ label {
   }
 }
 
-.block-superfish .sf-main-menu li.menuparent:after {
+.block-superfish .sf-main-menu li.sf-depth-1:after {
   content: '\e803';
   position: absolute;
   right: 11px;
@@ -7258,7 +7258,7 @@ label {
   }
 }
 
-.block-superfish .sf-main-menu li.menuparent:hover:after {
+.block-superfish .sf-main-menu li.sf-depth-1:hover:after {
   content: '\e804';
   font-family: "fontello";
   font-size: 1.2em;
@@ -7277,7 +7277,7 @@ label {
   }
 }
 
-.block-superfish .sf-main-menu li.menuparent:hover a {
+.block-superfish .sf-main-menu li.sf-depth-1:hover a {
   color: white !important;
   background: #0099CC;
 }

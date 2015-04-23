@@ -28,7 +28,7 @@ $( ".burr-flipped-content-inner .pane-1 p:nth-child(3)" ).addClass( "show-read-m
     var diff = 960 - (store + (6 * (count -1)));
 
     jQuery.each(list, function(index, item) {
-      jQuery(item).find('.menuparent').css('padding', '12px ' + (diff/(count * 2)) + 'px');
+      jQuery(item).find('.sf-depth-1').css('padding', '12px ' + (diff/(count * 2)) + 'px');
     });
 
 
