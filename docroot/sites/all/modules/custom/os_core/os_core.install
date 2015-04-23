@@ -550,7 +550,6 @@ function os_core_update_7109() {
   variable_set('logintoboggan_login_with_email', 1);
 }
 
-
 /**
  * Create new channel category for Open Organiation.
  */
