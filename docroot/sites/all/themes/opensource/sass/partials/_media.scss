@@ -1,0 +1,10 @@
+@media screen and (max-width: 480px) {
+  #page,
+  #main,
+  .burr-flipped-content,
+  .burr-flipped-sidebar,
+  .burr-flipped-content-inner {
+    width: auto !important;
+    max-width: auto !important;
+  }
+}
