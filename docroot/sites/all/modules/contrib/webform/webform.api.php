@@ -71,17 +71,13 @@ function hook_webform_select_options_info_alter(&$items) {
  *   of key => value pairs. Select components support up to one level of
  *   nesting, but when results are displayed, the list needs to be returned
  *   without the nesting.
- * @param $filter
- *   Boolean value indicating whether the included options should be passed
- *   through the webform_replace_tokens() function for token replacement (only)
- *   needed if your list contains tokens).
  * @param $arguments
  *   The "options arguments" specified in hook_webform_select_options_info().
  * @return
  *   An array of key => value pairs suitable for a select list's #options
  *   FormAPI property.
  */
-function webform_options_example($component, $flat, $filter, $arguments) {
+function webform_options_example($component, $flat, $arguments) {
   $options = array(
     'one' => t('Pre-built option one'),
     'two' => t('Pre-built option two'),
@@ -231,6 +227,27 @@ function hook_webform_submission_actions($node, $submission) {
   }
 
   return $actions;
+}
+
+/**
+ * Modify the draft to be presented for editing.
+ *
+ * When drafts are enabled for the webform, by default, a pre-existig draft is
+ * presented when the webform is displayed to that user. To allow multiple
+ * drafts, implement this alter function to set the $sid to NULL, or use your
+ * application's business logic to determine whether a new draft or which of
+ * he pre-existing drafts should be presented.
+ *
+ * @param integer $sid
+ *    The id of the most recent submission to be presented for editing. Change
+ *    to a different draft's sid or set to NULL for a new draft.
+ * @param array $context
+ *    Array of context with indices 'nid' and 'uid'.
+ */
+function hook_webform_draft_alter(&$sid, $context) {
+  if ($_GET['newdraft']) {
+    $sid = NULL;
+  }
 }
 
 /**
@@ -622,6 +639,8 @@ function hook_webform_submission_access($node, $submission, $op = 'view', $accou
  *
  * Note in addition to the view access to the results granted here, the $account
  * must also have view access to the Webform node in order to see results.
+ * Access via this hook is in addition (adds permission) to the standard
+ * webform access.
  *
  * @see webform_results_access().
  *
@@ -641,6 +660,61 @@ function hook_webform_results_access($node, $account) {
     return FALSE;
   }
 }
+
+/**
+ * Determine if a user has access to clear the results of a webform.
+ *
+ * Access via this hook is in addition (adds permission) to the standard
+ * webform access (delete all webform submissions).
+ *
+ * @see webform_results_clear_access().
+ *
+ * @param $node object
+ *   The Webform node to check access on.
+ * @param $account object
+ *   The user account to check access on.
+ * @return boolean
+ *   TRUE or FALSE if the user can access the webform results.
+ */
+function hook_webform_results_clear_access($node, $account) {
+  return user_access('my additional access', $account);
+}
+
+/**
+ * Overrides the node_access and user_access permission to access and edit
+ * webform components, e-mails, conditions, and form settings.
+ *
+ * Return NULL to defer to other modules. If all implementations defer, then
+ * access to the node's EDIT tab plus 'edit webform components' permission
+ * determines access. To grant access, return TRUE; to deny access, return
+ * FALSE. If more than one implementation return TRUE/FALSE, all must be TRUE
+ * to grant access.
+ *
+ * In this way, access to the EDIT tab of the node may be decoupled from
+ * access to the WEBFORM tab. When returning TRUE, consider all aspects of
+ * access as this will be the only test. For example, 'return TRUE;' would grant
+ * annonymous access to creating webform components, which seldom be desired.
+ *
+ * @see webform_node_update_access().
+ *
+ * @param $node object
+ *   The Webform node to check access on.
+ * @param $account object
+ *   The user account to check access on.
+ * @return boolean|NULL
+ *   TRUE or FALSE if the user can access the webform results, or NULL if
+ *   access should be deferred to other implementations of this hook or
+ *   node_access('update') plus user_access('edit webform components').
+ */
+function hook_webform_update_access($node, $account) {
+  // Allow anyone who can see webform_editable_by_user nodes and who has
+  // 'my webform component edit access' permission to see, edit, and delete the
+  // webform components, e-mails, conditionals, and form settings.
+  if ($node->type == 'webform_editable_by_user') {
+    return node_access('view', $node, $account) && user_access('my webform component edit access', $account);
+  }
+}
+
 
 /**
  * Return an array of files associated with the component.
@@ -960,10 +1034,9 @@ function _webform_submit_component($component, $value) {
  */
 function _webform_delete_component($component, $value) {
   // Delete corresponding files when a submission is deleted.
-  $filedata = unserialize($value['0']);
-  if (isset($filedata['filepath']) && is_file($filedata['filepath'])) {
-    unlink($filedata['filepath']);
-    db_query("DELETE FROM {files} WHERE filepath = '%s'", $filedata['filepath']);
+  if (!empty($value[0]) && ($file = webform_get_file($value[0]))) {
+    file_usage_delete($file, 'webform');
+    file_delete($file);
   }
 }
 
@@ -1083,7 +1156,7 @@ function _webform_analysis_component($component, $sids = array(), $single = FALS
   $other = array();
   $other[] = l(t('More information'), 'node/' . $component['nid'] . '/webform-results/analysis/' . $component['cid']);
 
-  array(
+  return array(
     'table_header' => $header,
     'table_rows' => $rows,
     'other_data' => $other,
@@ -1180,6 +1253,73 @@ function _webform_csv_data_component($component, $export_options, $value) {
     $return[] = isset($value[$key]) ? $value[$key] : '';
   }
   return $return;
+}
+
+/**
+ * Adjusts the view field(s) that are automatically generated for number
+ * components.
+ *
+ * Provides each component the opportunity to adjust how this component is
+ * displayed in a view as a field in a view table. For example, a component may
+ * modify how it responds to click-sorting. Or it may add additional fields,
+ * such as a grid component having a column for each question.
+ *
+ * @param array $component
+ *   A Webform component array
+ * @param array $fields
+ *   An array of field-definition arrays. Will be passed one field definition,
+ *   which may be modified. Additional fields may be added to the array.
+ * @return array
+ *   The modified $fields array.
+ */
+function _webform_view_field_component($component, $fields) {
+  foreach ($fields as &$field) {
+    $field['webform_datatype'] = 'number';
+  }
+  return $fields;
+}
+
+/**
+ * Modify the how a view was expanded to show all the components.
+ *
+ * This alter function is only called when the view is actually modified. It
+ * provides modules an opportunity to alter the changes that webform made to
+ * the view.
+ *
+ * This hook is called from webform_views_pre_view. If another module also
+ * changes views by implementing this same views hook, the relative order of
+ * execution of the two implementations will depend upon the module weights of
+ * the two modules. Using hook_webform_view_alter instead guarantees an
+ * opportuinty to modify the view AFTER webform.
+ *
+ * @param object $view
+ *   The view object.
+ * @param string $display_id
+ *   The display_id that was expanded by webform.
+ * @param array $args
+ *   The argumentst that were passed to the view.
+ */
+function hook_webform_view_alter($view, $display_id, $args) {
+  // Don't show component with cid == 4
+  $fields = $view->get_items('field', $display_id);
+  foreach ($fields as $id => $field) {
+    if (isset($field['webform_cid']) && $field['webform_cid'] == 4) {
+      unset($fields[$id]);
+    }
+  }
+  $view->display[$display_id]->handler->set_option('fields', $fields);
+}
+
+/**
+ * Modify the list of mail systems that are capable of sending HTML email.
+ *
+ * @param array &$systems
+ *   An array of mail system class names.
+ */
+function hook_webform_html_capable_mail_systems_alter(&$systems) {
+  if (module_exists('my_module')) {
+    $systems[] = 'MyModuleMailSystem';
+  }
 }
 
 /**
