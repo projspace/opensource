@@ -105,7 +105,8 @@
          margin-left: 233px;
          width: 54%;
            overflow: hidden;
-  max-height: 82px;
+          max-height: 82px;
+          min-height: 82px;
         
     }
 
@@ -229,3 +230,118 @@
   }
 }
 }
+
+
+
+@media screen and (max-width: 480px)
+{
+
+.section-open-organization.page-taxonomy 
+  {
+    *
+    {
+      margin: 0 !important ;
+    }
+    .panel-panel.burr-flipped-content 
+      {
+          padding-bottom: 10%;
+        .panel-panel-inner
+        {
+          .panel-pane .show-read-more
+          {
+            .read-more
+            {
+            float: none;
+            position: absolute;
+            padding-top: 10%;
+            }
+          }
+          img
+          {
+              margin-right: 3px !important;
+              width: 47%;
+          }
+          .view-channel-articles 
+          {
+              .views-field-field-lead-image , img ,.views-field-title,.views-field-body
+              {
+                width: 100%;
+              }
+              .views-field-title
+              {
+                padding-top: 50%;
+                text-align: center;
+                width: 100%;
+                padding-right: 3%;
+
+              }
+              .views-field-created 
+              {
+              text-align: center;
+              }
+              .views-field-body
+              {
+                padding-top:5px;
+                  max-height: 48px;
+                  min-height: 40px;
+              }
+
+          }
+          .panel-pane
+           {
+             width:100%;
+             .pane-title
+             {
+               text-align:center;
+               padding-right: 0;
+             }
+           }
+
+           .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles
+           {
+            top: 35px;
+            padding-top:0px;
+           }
+
+          } // INNER
+        }
+
+        .panel-panel.burr-flipped-sidebar
+        {
+          width: 100% !important;
+          .panel-panel-inner h2
+          {
+            text-align: center;
+          }
+          header h2
+          {
+            text-align: justify !important;
+          }
+          .poll 
+            {
+            .choices
+            {
+                padding: 5% 0 5% 0 ;
+            }
+           .form-submit
+              {
+                width: 100%;
+
+              } 
+            }
+
+        .panel-pane.pane-custom.pane-4
+        {
+          h2
+          {
+          padding-left:15% !important;
+          padding-bottom:3%;
+          text-align:left;
+          }
+        }
+        }
+      }
+
+
+} ///// MEDIA
+
