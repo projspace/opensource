@@ -5116,12 +5116,10 @@ p br {
 
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
   text-align: justify;
-  position: relative;
-  display: inline-block;
   margin-left: 233px;
   width: 54%;
   overflow: hidden;
-  max-height: 82px;
+  min-height: 85px;
 }
 
 @media -sass-debug-info {
@@ -5130,7 +5128,7 @@ p br {
   }
 
   line {
-    font-family: \00003113;
+    font-family: \00003111;
   }
 }
 
@@ -5145,7 +5143,7 @@ p br {
   }
 
   line {
-    font-family: \00003119;
+    font-family: \00003117;
   }
 }
 
@@ -5159,7 +5157,7 @@ p br {
   }
 
   line {
-    font-family: \00003127;
+    font-family: \00003125;
   }
 }
 
@@ -5175,7 +5173,7 @@ p br {
   }
 
   line {
-    font-family: \00003136;
+    font-family: \00003134;
   }
 }
 
@@ -5193,7 +5191,7 @@ p br {
   }
 
   line {
-    font-family: \00003146;
+    font-family: \00003144;
   }
 }
 
@@ -5207,7 +5205,7 @@ p br {
   }
 
   line {
-    font-family: \00003150;
+    font-family: \00003148;
   }
 }
 
@@ -5224,7 +5222,7 @@ p br {
   }
 
   line {
-    font-family: \00003158;
+    font-family: \00003156;
   }
 }
 
@@ -5239,7 +5237,7 @@ p br {
   }
 
   line {
-    font-family: \00003163;
+    font-family: \00003161;
   }
 }
 
@@ -5256,7 +5254,7 @@ p br {
   }
 
   line {
-    font-family: \00003170;
+    font-family: \00003168;
   }
 }
 
@@ -5275,7 +5273,7 @@ p br {
   }
 
   line {
-    font-family: \00003180;
+    font-family: \00003178;
   }
 }
 
@@ -5289,7 +5287,7 @@ p br {
   }
 
   line {
-    font-family: \00003183;
+    font-family: \00003181;
   }
 }
 
@@ -5303,7 +5301,7 @@ p br {
   }
 
   line {
-    font-family: \00003187;
+    font-family: \00003185;
   }
 }
 
@@ -5317,7 +5315,7 @@ p br {
   }
 
   line {
-    font-family: \00003193;
+    font-family: \00003191;
   }
 }
 
@@ -5331,7 +5329,7 @@ p br {
   }
 
   line {
-    font-family: \00003197;
+    font-family: \00003195;
   }
 }
 
@@ -5345,7 +5343,7 @@ p br {
   }
 
   line {
-    font-family: \00003201;
+    font-family: \00003199;
   }
 }
 
@@ -5359,7 +5357,7 @@ p br {
   }
 
   line {
-    font-family: \00003207;
+    font-family: \00003205;
   }
 }
 
@@ -5374,7 +5372,7 @@ p br {
   }
 
   line {
-    font-family: \00003212;
+    font-family: \00003210;
   }
 }
 
