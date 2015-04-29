@@ -2093,71 +2093,6 @@ p br {
   margin-right: 10px;
 }
 
-@media screen and (max-width: 480px) {
-  .section-open-organization.page-taxonomy * {
-    margin: 0 !important;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content {
-    padding-bottom: 10%;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane .show-read-more .read-more {
-    float: none;
-    position: absolute;
-    padding-top: 10%;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner img {
-    margin-right: 3px !important;
-    width: 47%;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-field-lead-image, .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles img, .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title, .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
-    width: 100%;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
-    padding-top: 50%;
-    text-align: center;
-    width: 100%;
-    padding-right: 3%;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created {
-    text-align: center;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
-    padding-top: 5px;
-    max-height: 48px;
-    min-height: 40px;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane {
-    width: 100%;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane .pane-title {
-    text-align: center;
-    padding-right: 0;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles {
-    top: 35px;
-    padding-top: 0px;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar {
-    width: 100% !important;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner h2 {
-    text-align: center;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar header h2 {
-    text-align: justify !important;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .poll .choices {
-    padding: 5% 0 5% 0;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .poll .form-submit {
-    width: 100%;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-pane.pane-custom.pane-4 h2 {
-    padding-left: 15% !important;
-    padding-bottom: 3%;
-    text-align: left;
-  }
-}
 /**
  * @file
  * Print styling
@@ -2789,6 +2724,136 @@ label {
   left: 100% !important;
 }
 
+@media screen and (max-width: 480px) {
+  .section-open-organization.page-taxonomy * {
+    margin: 0 !important;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content {
+    padding-bottom: 10%;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane .show-read-more .read-more {
+    float: none;
+    position: absolute;
+    padding-top: 10%;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner img {
+    margin-right: 3px !important;
+    width: 47%;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-field-lead-image, .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles img, .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title, .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
+    width: 100%;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
+    padding-top: 50%;
+    text-align: center;
+    width: 100%;
+    padding-right: 3%;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created {
+    text-align: center;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
+    padding-top: 5px;
+    max-height: 48px;
+    min-height: 40px;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane {
+    width: 100%;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane .pane-title {
+    text-align: center;
+    padding-right: 0;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles {
+    top: 35px;
+    padding-top: 0px;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar {
+    width: 100% !important;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner h2 {
+    text-align: center;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar header h2 {
+    text-align: justify !important;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .poll .choices {
+    padding: 5% 0 5% 0;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .poll .form-submit {
+    width: 100%;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-pane.pane-custom.pane-4 h2 {
+    padding-left: 15% !important;
+    padding-bottom: 3%;
+    text-align: left;
+  }
+
+  .view-content .views-row .views-field-field-lead-image {
+    width: 100%;
+  }
+  .view-content .views-row .views-field-article-content {
+    width: 100% !important;
+  }
+  .view-content .views-row .views-field-article-content .teaser-main * {
+    padding-top: 2%;
+    text-align: center;
+  }
+  .view-content .views-row .views-field-article-content .teaser-body {
+    text-align: left;
+  }
+  .view-content .views-row .views-field-created {
+    text-align: center;
+  }
+
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane {
+    padding: 1% 2% 0 2%;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.menu {
+    padding: 0 4px !important;
+    margin: 0 !important;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.social-links.inline li {
+    padding: 0 0.93em 0 0 !important;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.social-links.inline li.last {
+    padding-right: 0 !important;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.social-links.inline .signup-email {
+    background-position: 3.5em;
+    padding: 4em 0em 0em 0em;
+    float: left;
+    width: 100%;
+    margin: 0;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links form div {
+    float: right;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links form div * {
+    margin: 0;
+    float: none;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links form div .form-item {
+    padding: 1em 0 1em 0;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links form div .form-submit {
+    margin-left: 17%;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.box-wrapper .poll .form-submit, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .node-type-poll .pane-node-comments .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.comment .poll .form-submit, .node-type-poll .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.comment .poll .form-submit,
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .node-type-article .pane-node-comments .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.comment .poll .form-submit,
+  .node-type-article .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.comment .poll .form-submit, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.burr-flipped-content .poll .form-submit, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.badge-wrapper .poll .form-submit,
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.pane-contributor-spotlight-panel-pane-promoted .poll .form-submit {
+    width: 100%;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-contributor-spotlight-panel-pane-promoted .views-field-field-community-description {
+    float: none !important;
+    display: table-cell;
+    text-align: justify;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-contributor-spotlight-panel-pane-promoted .more-link {
+    text-align: center !important;
+  }
+}
 #footer {
   font-size: 12px;
 }
