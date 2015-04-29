@@ -172,8 +172,6 @@
 
 .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner
 {
-  max-width: 100% !important;
-  overflow: hidden;
   
   .panel-pane 
   {
@@ -182,6 +180,10 @@
     {
       padding: 0 4px !important;
       margin: 0 !important;
+      li a
+      {
+        padding:0 !important;
+      }
     }
     ul.social-links.inline
     {

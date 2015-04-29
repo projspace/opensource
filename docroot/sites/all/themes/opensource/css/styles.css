@@ -2810,16 +2810,15 @@ label {
     padding-top: 1em;
   }
 
-  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner {
-    max-width: 100% !important;
-    overflow: hidden;
-  }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane {
     padding: 1% 2% 0 2%;
   }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.menu {
     padding: 0 4px !important;
     margin: 0 !important;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.menu li a {
+    padding: 0 !important;
   }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.social-links.inline li {
     padding: 0 0.93em 0 0 !important;
