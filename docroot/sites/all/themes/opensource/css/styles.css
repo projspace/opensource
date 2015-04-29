@@ -2804,6 +2804,7 @@ label {
   }
   .view-content .views-row .views-field-created {
     text-align: center;
+    padding-top: 1em;
   }
 
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane {
