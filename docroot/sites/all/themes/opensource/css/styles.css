@@ -2854,6 +2854,12 @@ label {
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-contributor-spotlight-panel-pane-promoted .more-link {
     text-align: center !important;
   }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.box-wrapper .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane .node-type-poll .pane-node-comments pane-block.pane-bean-readers-favorite-homepage.comment .content .field-item.even img, .node-type-poll .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.comment .content .field-item.even img,
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane .node-type-article .pane-node-comments pane-block.pane-bean-readers-favorite-homepage.comment .content .field-item.even img,
+  .node-type-article .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.comment .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.burr-flipped-content .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.badge-wrapper .content .field-item.even img,
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.pane-contributor-spotlight-panel-pane-promoted .content .field-item.even img {
+    margin: 0 !important;
+  }
 }
 #footer {
   font-size: 12px;

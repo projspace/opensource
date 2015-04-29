@@ -157,7 +157,7 @@
     {
       text-align:center;
       padding-top: 1em;
-      
+
     }
   }
 
@@ -241,6 +241,13 @@
       text-align: center !important;
     }
   }
+  &.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.box-wrapper
+ {
+  .content .field-item.even img
+  {
+    margin : 0 !important;
+  }
+ }
   }
 
   }
