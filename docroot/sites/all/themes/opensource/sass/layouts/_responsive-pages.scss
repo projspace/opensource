@@ -172,6 +172,8 @@
 
 .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner
 {
+  max-width: 100% !important;
+  overflow: hidden;
   
   .panel-pane 
   {
@@ -251,14 +253,12 @@
       text-align: center !important;
     }
   }
-  &.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.box-wrapper
- {
   .entity-bean .content .field-item.even img
   {
     margin : 2px 0 2px 0px !important;
     width: 100%;
   }
- }
+
   }
 
   }

@@ -2731,6 +2731,9 @@ label {
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content {
     padding-bottom: 10%;
   }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-pane div.view-related-articles .views- {
+    float: none !important;
+  }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane .show-read-more .read-more {
     float: none;
     position: absolute;
@@ -2807,6 +2810,10 @@ label {
     padding-top: 1em;
   }
 
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner {
+    max-width: 100% !important;
+    overflow: hidden;
+  }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane {
     padding: 1% 2% 0 2%;
   }
@@ -2857,11 +2864,9 @@ label {
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-contributor-spotlight-panel-pane-promoted .more-link {
     text-align: center !important;
   }
-  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.box-wrapper .entity-bean .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .node-type-poll .pane-node-comments .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.comment .entity-bean .content .field-item.even img, .node-type-poll .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.comment .entity-bean .content .field-item.even img,
-  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .node-type-article .pane-node-comments .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.comment .entity-bean .content .field-item.even img,
-  .node-type-article .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.comment .entity-bean .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.burr-flipped-content .entity-bean .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.badge-wrapper .entity-bean .content .field-item.even img,
-  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.pane-contributor-spotlight-panel-pane-promoted .entity-bean .content .field-item.even img {
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane .entity-bean .content .field-item.even img {
     margin: 2px 0 2px 0px !important;
+    width: 100%;
   }
 }
 #footer {
