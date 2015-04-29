@@ -13,6 +13,12 @@
     .panel-panel.burr-flipped-content 
       {
           padding-bottom: 10%;
+        .panel-pane div.view-related-articles .views-
+        {
+
+         float:none !important
+
+       }
         .panel-panel-inner
         {
           .panel-pane .show-read-more
@@ -121,7 +127,7 @@
 
   {
 
-    .views-field.views-field-field-lead-image , & img
+    .views-field.views-field-field-lead-image , &   img
     {
       width:100% !important;
     }
@@ -250,6 +256,7 @@
   .entity-bean .content .field-item.even img
   {
     margin : 2px 0 2px 0px !important;
+    width: 100%;
   }
  }
   }
