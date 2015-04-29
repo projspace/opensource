@@ -121,9 +121,9 @@
 
   {
 
-  .views-field-field-lead-image
+    .views-field.views-field-field-lead-image img
     {
-      width:100%;
+      width:100% !important;
     }
 
     .views-field-article-content
@@ -230,6 +230,10 @@
   }
   &.panel-pane.pane-views-panes.pane-contributor-spotlight-panel-pane-promoted
   {
+    div.views-field-user-badges-html
+    {
+      width: 100%;
+    }
     .views-field-field-community-description
     {
       float: none !important;
@@ -241,11 +245,11 @@
       text-align: center !important;
     }
   }
-  &.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.box-wrapper
+  &.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.box-wrapper
  {
-  .content .field-item.even img
+  .entity-bean .content .field-item.even img
   {
-    margin : 0 !important;
+    margin : 2px 0 2px 0px !important;
   }
  }
   }

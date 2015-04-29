@@ -2789,8 +2789,8 @@ label {
     text-align: left;
   }
 
-  .view-content .views-row .views-field-field-lead-image {
-    width: 100%;
+  .view-content .views-row .views-field.views-field-field-lead-image img {
+    width: 100% !important;
   }
   .view-content .views-row .views-field-article-content {
     width: 100% !important;
@@ -2846,6 +2846,9 @@ label {
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.pane-contributor-spotlight-panel-pane-promoted .poll .form-submit {
     width: 100%;
   }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-contributor-spotlight-panel-pane-promoted div.views-field-user-badges-html {
+    width: 100%;
+  }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-contributor-spotlight-panel-pane-promoted .views-field-field-community-description {
     float: none !important;
     display: table-cell;
@@ -2854,11 +2857,11 @@ label {
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-contributor-spotlight-panel-pane-promoted .more-link {
     text-align: center !important;
   }
-  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.box-wrapper .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane .node-type-poll .pane-node-comments pane-block.pane-bean-readers-favorite-homepage.comment .content .field-item.even img, .node-type-poll .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.comment .content .field-item.even img,
-  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane .node-type-article .pane-node-comments pane-block.pane-bean-readers-favorite-homepage.comment .content .field-item.even img,
-  .node-type-article .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.comment .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.burr-flipped-content .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.badge-wrapper .content .field-item.even img,
-  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane pane-block.pane-bean-readers-favorite-homepage.pane-contributor-spotlight-panel-pane-promoted .content .field-item.even img {
-    margin: 0 !important;
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.box-wrapper .entity-bean .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .node-type-poll .pane-node-comments .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.comment .entity-bean .content .field-item.even img, .node-type-poll .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.comment .entity-bean .content .field-item.even img,
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .node-type-article .pane-node-comments .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.comment .entity-bean .content .field-item.even img,
+  .node-type-article .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.comment .entity-bean .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.burr-flipped-content .entity-bean .content .field-item.even img, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.badge-wrapper .entity-bean .content .field-item.even img,
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.contextual-links-region.panel-pane.pane-block.pane-bean-readers-favorite-homepage.pane-contributor-spotlight-panel-pane-promoted .entity-bean .content .field-item.even img {
+    margin: 2px 0 2px 0px !important;
   }
 }
 #footer {
