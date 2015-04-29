@@ -2789,7 +2789,7 @@ label {
     text-align: left;
   }
 
-  .view-content .views-row .views-field.views-field-field-lead-image img {
+  .view-content .views-row .views-field.views-field-field-lead-image, .view-content .views-row img {
     width: 100% !important;
   }
   .view-content .views-row .views-field-article-content {
