@@ -2725,7 +2725,7 @@ label {
 }
 
 @media screen and (max-width: 480px) {
-  .section-open-organization.page-taxonomy * {
+  .section-open-organization.page-taxonomy div#main * {
     margin: 0 !important;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content {
@@ -2790,6 +2790,21 @@ label {
     padding-left: 15% !important;
     padding-bottom: 3%;
     text-align: left;
+  }
+
+  .page-panels .panel-pane.pane-2.author-feed, .page-panels .panel-pane.pane-node-author, .page-panels .panel-pane.pane-3, .page-panels .panel-pane.pane-node-field-rating {
+    width: 100%;
+  }
+  .page-panels .panel-pane.pane-block.pane-os-core-opensource-article-share * {
+    margin-left: 3px;
+    margin-right: 10px;
+  }
+  .page-panels .panel-pane.description.mollom-privacy {
+    padding-bottom: 2%;
+  }
+  .page-panels .panel-pane.pane-related-articles-panel-pane-1 .view-content .views-row {
+    min-height: 145px;
+    width: 50%;
   }
 
   .view-content .views-row .views-field.views-field-field-lead-image, .view-content .views-row img {

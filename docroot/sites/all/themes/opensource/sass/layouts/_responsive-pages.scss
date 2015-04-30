@@ -6,9 +6,12 @@
 // Landing Page /////////////////////////////////////
 .section-open-organization.page-taxonomy 
   {
-    *
+    div#main
     {
+      *
+      { 
       margin: 0 !important ;
+      }
     }
     .panel-panel.burr-flipped-content 
       {
@@ -120,6 +123,33 @@
 
 /////////////////////////////////Gen//////////////////
 
+.page-panels
+{
+  .panel-pane
+
+  {
+   &.pane-2.author-feed,&.pane-node-author,&.pane-3,&.pane-node-field-rating
+      {
+        width: 100%;
+      }
+    &.pane-block.pane-os-core-opensource-article-share *
+    {
+      margin-left: 3px;
+      margin-right: 10px;
+    }
+    &.description.mollom-privacy
+    {
+      padding-bottom : 2%;
+    }
+    &.pane-related-articles-panel-pane-1 .view-content .views-row
+    {
+      min-height: 145px;
+      width: 50%;
+    }
+
+  }
+
+}
 
 .view-content 
 {
