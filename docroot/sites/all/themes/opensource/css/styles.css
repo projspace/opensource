@@ -2725,6 +2725,10 @@ label {
 }
 
 @media screen and (max-width: 480px) {
+  .pager {
+    padding-bottom: 5%;
+  }
+
   .section-open-organization.page-taxonomy div#main * {
     margin: 0 !important;
   }
@@ -2792,6 +2796,19 @@ label {
     text-align: left;
   }
 
+  .page-panels .panel-pane p {
+    text-align: justify;
+  }
+  .page-panels .panel-pane h2 {
+    text-align: center;
+  }
+  .page-panels .panel-pane table {
+    width: auto !important;
+    margin: 0;
+  }
+  .page-panels .panel-pane.article-title p {
+    text-align: center !important;
+  }
   .page-panels .panel-pane.pane-2.author-feed, .page-panels .panel-pane.pane-node-author, .page-panels .panel-pane.pane-3, .page-panels .panel-pane.pane-node-field-rating {
     width: 100%;
   }
@@ -2799,12 +2816,22 @@ label {
     margin-left: 3px;
     margin-right: 10px;
   }
-  .page-panels .panel-pane.description.mollom-privacy {
+  .page-panels .panel-pane .description.mollom-privacy {
     padding-bottom: 2%;
   }
   .page-panels .panel-pane.pane-related-articles-panel-pane-1 .view-content .views-row {
     min-height: 145px;
     width: 50%;
+  }
+
+  .section-should-be .views-field-field-community-description {
+    width: 100% !important;
+    float: none !important;
+    text-align: justify;
+    display: table;
+  }
+  .section-should-be .user-badge {
+    padding-bottom: 15%;
   }
 
   .view-content .views-row .views-field.views-field-field-lead-image, .view-content .views-row img {
