@@ -6,6 +6,22 @@
 {
   padding-bottom : 5%;
 }
+   .view-contributor-spotlight .badge-visual
+  {
+     div
+    {
+      float: left;
+      width:111px;
+      margin:0;
+    }
+    div.user-badge
+    {
+      padding-left:29%;
+    }
+    img{
+      width: 50% !important
+    }
+  }
 // Landing Page /////////////////////////////////////
 .section-open-organization.page-taxonomy 
   {
@@ -16,6 +32,7 @@
       margin: 0 !important ;
       }
     }
+
     .panel-panel.burr-flipped-content 
       {
           padding-bottom: 10%;
@@ -129,6 +146,7 @@
 // Article Pages
 .page-panels
 {
+
   .panel-pane
 
   {

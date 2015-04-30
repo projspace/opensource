@@ -2729,6 +2729,18 @@ label {
     padding-bottom: 5%;
   }
 
+  .view-contributor-spotlight .badge-visual div {
+    float: left;
+    width: 111px;
+    margin: 0;
+  }
+  .view-contributor-spotlight .badge-visual div.user-badge {
+    padding-left: 29%;
+  }
+  .view-contributor-spotlight .badge-visual img {
+    width: 50% !important;
+  }
+
   .section-open-organization.page-taxonomy div#main * {
     margin: 0 !important;
   }
