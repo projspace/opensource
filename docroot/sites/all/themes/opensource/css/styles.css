@@ -2741,6 +2741,21 @@ label {
     width: 50% !important;
   }
 
+  .pane-quicktabs-homepage-tabs ul.quicktabs-tabs li.first {
+    width: 25% !important;
+  }
+  .pane-quicktabs-homepage-tabs ul.quicktabs-tabs li:nth-child(2) {
+    background-position: 3px 4px !important;
+    width: 41% !important;
+  }
+
+  .poll .choices {
+    padding: 5% 0 5% 0;
+  }
+  .poll .form-submit {
+    width: 100%;
+  }
+
   .section-open-organization.page-taxonomy div#main * {
     margin: 0 !important;
   }
@@ -2790,17 +2805,14 @@ label {
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar {
     width: 100% !important;
   }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .pane-3 {
+    width: 100% !important;
+  }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner h2 {
     text-align: center;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar header h2 {
     text-align: justify !important;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .poll .choices {
-    padding: 5% 0 5% 0;
-  }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .poll .form-submit {
-    width: 100%;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-pane.pane-custom.pane-4 h2 {
     padding-left: 15% !important;
@@ -2821,8 +2833,17 @@ label {
   .page-panels .panel-pane.article-title p, .page-panels .panel-pane.basic_title p {
     text-align: center !important;
   }
-  .page-panels .panel-pane.pane-2.author-feed, .page-panels .panel-pane.pane-node-author, .page-panels .panel-pane.pane-3, .page-panels .panel-pane.pane-node-field-rating {
-    width: 100%;
+  .page-panels .panel-pane.pane-2.author-feed {
+    width: 40%;
+  }
+  .page-panels .panel-pane.pane-node-author {
+    width: 60%;
+  }
+  .page-panels .panel-pane.pane-3 {
+    width: 15%;
+  }
+  .page-panels .panel-pane.pane-node-field-rating {
+    width: 85%;
   }
   .page-panels .panel-pane.pane-block.pane-os-core-opensource-article-share * {
     margin-left: 3px;
@@ -2863,7 +2884,14 @@ label {
     text-align: center;
     padding-top: 1em;
   }
+  .view-content .views-row .views-field-created .teaser-info span.teaser-author {
+    float: left;
+    padding-left: 24%;
+  }
 
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner {
+    padding-top: 5% !important;
+  }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane {
     padding: 1% 2% 0 2%;
   }
@@ -2875,7 +2903,7 @@ label {
     padding: 0 !important;
   }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.social-links.inline li {
-    padding: 0 0.93em 0 0 !important;
+    padding: 0 0.95em 0 0 !important;
   }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.social-links.inline li.last {
     padding-right: 0 !important;
@@ -2896,9 +2924,13 @@ label {
   }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links form div .form-item {
     padding: 1em 0 1em 0;
+    float: left;
+    position: absolute;
+    left: 15px;
   }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links form div .form-submit {
-    margin-left: 17%;
+    position: relative;
+    top: 12px;
   }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.box-wrapper .poll .form-submit, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .node-type-poll .pane-node-comments .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.comment .poll .form-submit, .node-type-poll .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.comment .poll .form-submit,
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .node-type-article .pane-node-comments .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.comment .poll .form-submit,
