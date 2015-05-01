@@ -14,6 +14,7 @@
   {
       font-weight: normal !important;
       font-size:1.5em !important;
+
   }
 
   .show-read-more 
@@ -99,13 +100,10 @@
     .views-field-body
     {
          text-align: justify;
-         position: relative;
-         display: inline-block;
          margin-left: 233px;
          width: 54%;
-           overflow: hidden;
-          max-height: 82px;
-          min-height: 82px;
+         overflow: hidden;
+         min-height: 85px;
         
     }
 
@@ -229,6 +227,3 @@
   }
 }
 }
-
-
-

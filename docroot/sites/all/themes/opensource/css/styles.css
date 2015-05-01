@@ -2004,13 +2004,10 @@ p br {
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
   text-align: justify;
-  position: relative;
-  display: inline-block;
   margin-left: 233px;
   width: 54%;
   overflow: hidden;
-  max-height: 82px;
-  min-height: 82px;
+  min-height: 85px;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-row {
   margin-bottom: 15px;
