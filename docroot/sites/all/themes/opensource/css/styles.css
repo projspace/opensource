@@ -2730,12 +2730,13 @@ label {
   }
 
   .view-contributor-spotlight .badge-visual div {
+    display: inline-block;
     float: left;
-    width: 111px;
-    margin: 0;
+    max-width: 103px;
+    padding-top: 2px;
   }
   .view-contributor-spotlight .badge-visual div.user-badge {
-    padding-left: 29%;
+    float: right;
   }
   .view-contributor-spotlight .badge-visual img {
     width: 50% !important;
@@ -2745,8 +2746,10 @@ label {
     width: 25% !important;
   }
   .pane-quicktabs-homepage-tabs ul.quicktabs-tabs li:nth-child(2) {
-    background-position: 3px 4px !important;
     width: 41% !important;
+  }
+  .pane-quicktabs-homepage-tabs ul.quicktabs-tabs li.last {
+    top: 3px;
   }
 
   .poll .choices {
@@ -2754,6 +2757,10 @@ label {
   }
   .poll .form-submit {
     width: 100%;
+  }
+
+  .pane-3.event-add-comment {
+    width: 100% !important;
   }
 
   .section-open-organization.page-taxonomy div#main * {
@@ -2903,7 +2910,7 @@ label {
     padding: 0 !important;
   }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.social-links.inline li {
-    padding: 0 0.95em 0 0 !important;
+    padding: 0 0.94em 0 0 !important;
   }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane ul.social-links.inline li.last {
     padding-right: 0 !important;
@@ -2915,22 +2922,11 @@ label {
     width: 100%;
     margin: 0;
   }
-  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links form div {
-    float: right;
-  }
-  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links form div * {
-    margin: 0;
-    float: none;
-  }
-  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links form div .form-item {
-    padding: 1em 0 1em 0;
-    float: left;
-    position: absolute;
-    left: 15px;
-  }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links form div .form-submit {
-    position: relative;
-    top: 12px;
+    margin-right: 0;
+  }
+  .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.pane-os-core-opensource-social-links .signup-email-title {
+    margin-left: 3.5em !important;
   }
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.box-wrapper .poll .form-submit, .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .node-type-poll .pane-node-comments .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.comment .poll .form-submit, .node-type-poll .pane-node-comments .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.comment .poll .form-submit,
   .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner .node-type-article .pane-node-comments .panel-pane.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.comment .poll .form-submit,

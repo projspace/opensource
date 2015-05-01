@@ -10,15 +10,17 @@
   {
      div
     {
+      display: inline-block;
       float: left;
-      width:111px;
-      margin:0;
+      max-width: 103px;
+      padding-top : 2px;
     }
     div.user-badge
     {
-      padding-left:29%;
+      float: right;
     }
-    img{
+    img
+    {
       width: 50% !important
     }
   }
@@ -33,8 +35,11 @@
 
     li:nth-child(2)
     {
-      background-position: 3px 4px !important;
         width: 41% !important;
+    }
+    li.last
+    {
+       top: 3px;
     }
   }
 
@@ -53,7 +58,10 @@
       } 
     }
 
-
+    .pane-3.event-add-comment
+    {
+      width: 100% !important;
+    }
 
 // Landing Page /////////////////////////////////////
 .section-open-organization.page-taxonomy 
@@ -333,7 +341,7 @@
     {
       li
       {
-        padding:0 0.95em 0 0 !important;
+        padding:0 0.94em 0 0 !important;
       &.last
       {
         padding-right: 0 !important;
@@ -357,25 +365,14 @@
     {
       form div
       {
-        float: right;
-         *
-        {
-          margin: 0;
-          float: none;
-        }
-        .form-item
-        {
-          padding: 1em 0 1em 0;
-          float: left;
-          position: absolute;
-          left: 15px;
-        }
         .form-submit
         {
-          position: relative;
-          top: 12px;
-
+          margin-right: 0;
         }
+      }
+      .signup-email-title
+      {
+        margin-left: 3.5em !important;
       }
     }
 

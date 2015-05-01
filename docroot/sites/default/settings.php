@@ -210,7 +210,21 @@
  *   );
  * @endcode
  */
-$databases = array();
+$databases = array (
+  'default' => 
+  array (
+    'default' => 
+    array (
+      'database' => 'os7',
+      'username' => 'root',
+      'password' => '',
+      'host' => 'localhost',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
+);
 
 /**
  * Access control for update.php script.
@@ -242,7 +256,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = '';
+$drupal_hash_salt = '4bV1j8Z307Ga7p6B3UgvMUZhZSmA_4mxuO4M90B7d0I';
 
 /**
  * Base URL (optional).
@@ -499,28 +513,28 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * the Drupal system log.
  *
  * You can choose to return a fast 404 page earlier for missing pages (as soon
-* as settings.php is loaded) by uncommenting the line below. This speeds up
-* server response time when loading 404 error pages and prevents the 404 error
-* from being logged in the Drupal system log. In order to prevent valid pages
-* such as image styles and other generated content that may match the
-* '404_fast_html' regular expression from returning 404 errors, it is necessary
-* to add them to the '404_fast_paths_exclude' regular expression above. Make
-* sure that you understand the effects of this feature before uncommenting the
-* line below.
-*/
+ * as settings.php is loaded) by uncommenting the line below. This speeds up
+ * server response time when loading 404 error pages and prevents the 404 error
+ * from being logged in the Drupal system log. In order to prevent valid pages
+ * such as image styles and other generated content that may match the
+ * '404_fast_html' regular expression from returning 404 errors, it is necessary
+ * to add them to the '404_fast_paths_exclude' regular expression above. Make
+ * sure that you understand the effects of this feature before uncommenting the
+ * line below.
+ */
 # drupal_fast_404();
 
 /**
-* External access proxy settings:
-*
-* If your site must access the Internet via a web proxy then you can enter
-* the proxy settings here. Currently only basic authentication is supported
-* by using the username and password variables. The proxy_user_agent variable
-* can be set to NULL for proxies that require no User-Agent header or to a
-* non-empty string for proxies that limit requests to a specific agent. The
-* proxy_exceptions variable is an array of host names to be accessed directly,
-* not via proxy.
-*/
+ * External access proxy settings:
+ *
+ * If your site must access the Internet via a web proxy then you can enter
+ * the proxy settings here. Currently only basic authentication is supported
+ * by using the username and password variables. The proxy_user_agent variable
+ * can be set to NULL for proxies that require no User-Agent header or to a
+ * non-empty string for proxies that limit requests to a specific agent. The
+ * proxy_exceptions variable is an array of host names to be accessed directly,
+ * not via proxy.
+ */
 # $conf['proxy_server'] = '';
 # $conf['proxy_port'] = 8080;
 # $conf['proxy_username'] = '';
@@ -529,110 +543,25 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 # $conf['proxy_exceptions'] = array('127.0.0.1', 'localhost');
 
 /**
-* Authorized file system operations:
-*
-* The Update manager module included with Drupal provides a mechanism for
-* site administrators to securely install missing updates for the site
-* directly through the web user interface. On securely-configured servers,
-* the Update manager will require the administrator to provide SSH or FTP
-* credentials before allowing the installation to proceed; this allows the
-* site to update the new files as the user who owns all the Drupal files,
-* instead of as the user the webserver is running as. On servers where the
-* webserver user is itself the owner of the Drupal files, the administrator
-* will not be prompted for SSH or FTP credentials (note that these server
-* setups are common on shared hosting, but are inherently insecure).
-*
-* Some sites might wish to disable the above functionality, and only update
-* the code directly via SSH or FTP themselves. This setting completely
-* disables all functionality related to these authorized file operations.
-*
-* @see http://drupal.org/node/244924
-*
-* Remove the leading hash signs to disable.
-*/
+ * Authorized file system operations:
+ *
+ * The Update manager module included with Drupal provides a mechanism for
+ * site administrators to securely install missing updates for the site
+ * directly through the web user interface. On securely-configured servers,
+ * the Update manager will require the administrator to provide SSH or FTP
+ * credentials before allowing the installation to proceed; this allows the
+ * site to update the new files as the user who owns all the Drupal files,
+ * instead of as the user the webserver is running as. On servers where the
+ * webserver user is itself the owner of the Drupal files, the administrator
+ * will not be prompted for SSH or FTP credentials (note that these server
+ * setups are common on shared hosting, but are inherently insecure).
+ *
+ * Some sites might wish to disable the above functionality, and only update
+ * the code directly via SSH or FTP themselves. This setting completely
+ * disables all functionality related to these authorized file operations.
+ *
+ * @see http://drupal.org/node/244924
+ *
+ * Remove the leading hash signs to disable.
+ */
 # $conf['allow_authorize_operations'] = FALSE;
-
-$conf['stage_file_proxy_origin'] = 'http://opensource.com';
-
-//if ( (stripos($_SERVER['HTTP_HOST'], 'os7') !== FALSE) || (stripos($_SERVER['HTTP_HOST'], 'projspace') !== FALSE)) {
-//// this is AXL server
-//  $extracts = explode("/",__FILE__);
-//
-//    $project = $extracts[2];
-//    $env = $extracts[4];
-//
-//      include "/home/$project/includes/$env.inc";
-//}
-//else {
-
-/**
- * Acquia database settings
- */
-if (file_exists('/var/www/site-php')) {
-  require('/var/www/site-php/osdc/osdc-settings.inc');
-} elseif (file_exists(dirname(__FILE__) . '/local.settings.php')) {
-  include dirname(__FILE__) . '/local.settings.php';
-} else {
-  //Projspace configuration
-  $extracts = explode("/",__FILE__);
-  $project = $extracts[2];
-  $env = $extracts[4];
-  if (file_exists("/home/$project/includes/$env.inc")) {
-    include "/home/$project/includes/$env.inc";
-  }
-}
-
-
-/**
- * Determine Acquia environment and set universal Acquia Cloud settings.
- */
-$ah_env = 'undefined';
-if (!empty($_ENV['AH_SITE_ENVIRONMENT'])) {
-  $ah_env = $_ENV['AH_SITE_ENVIRONMENT'];
-
-  $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
-  $conf['cache_default_class'] = 'MemCacheDrupal';
-  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
-  $conf['file_private_path'] = "/mnt/gfs/{$_ENV['AH_SITE_NAME']}/sites/default/files-private";
-}
-
-/**
- * Force settings based on environment
- */
-switch ($ah_env) {
-  case 'prod':
-    // Disable Shield on prod by setting the shield_user variable to NULL
-    $conf['shield_user'] = NULL;
-    break;
-
-  case 'test':
-  case 'dev':
-  default:
-    $conf['shield_user'] = 'open';
-    $conf['shield_pass'] = 'sourceWAY';
-    $conf['apachesolr_environments']['acquia_search_server_1']['conf']['apachesolr_read_only'] = 1;
-    break;
-}
-
-/**
- * Acquia Network keys
- *
- * The Acquia Network keys are required to connect your website to Acquia
- * services, including Acquia Search and Insight.
- *
- * https://docs.acquia.com/network/install
- */
-$conf['acquia_identifier'] = 'ABLX-69489';
-$conf['acquia_key'] = '56d4f380ec7713b9e07a261605cc9f07';
-
-$conf['reverse_proxy'] = TRUE;
-if (isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] == 'prod') {
-  $conf['reverse_proxy_header'] = 'HTTP_X_AH_CLIENT_IP';
-}
-if (!drupal_is_cli() && isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] == 'prod') {
-  $elbAddresses = array_map('gethostbyname', array_map('gethostbyaddr', gethostbynamel($_SERVER['HTTP_HOST'])));
-  $conf['reverse_proxy_addresses'] = isset($conf['reverse_proxy_addresses']) ? array_merge($conf['reverse_proxy_addresses'], $elbAddresses) : $elbAddresses;
-}
-
-// increase memory limit to 256M
-ini_set("memory_limit","256M");
