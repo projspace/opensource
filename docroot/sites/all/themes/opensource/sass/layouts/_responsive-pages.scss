@@ -205,16 +205,15 @@
     {
       text-align:center !important;
     }
+    &.pane-2.author-feed, &.pane-node-author
+    {
+      width: auto;
+      float: none;
+    }
     &.pane-2.author-feed
     {
-      width: 40%;
+      float: left !important;
     }
-
-    &.pane-node-author
-    {
-      width: 60%;
-    }
-
     &.pane-3
     {
       width: 15%;

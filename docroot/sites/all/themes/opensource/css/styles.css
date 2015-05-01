@@ -2837,11 +2837,12 @@ label {
   .page-panels .panel-pane.article-title p, .page-panels .panel-pane.basic_title p {
     text-align: center !important;
   }
-  .page-panels .panel-pane.pane-2.author-feed {
-    width: 40%;
+  .page-panels .panel-pane.pane-2.author-feed, .page-panels .panel-pane.pane-node-author {
+    width: auto;
+    float: none;
   }
-  .page-panels .panel-pane.pane-node-author {
-    width: 60%;
+  .page-panels .panel-pane.pane-2.author-feed {
+    float: left !important;
   }
   .page-panels .panel-pane.pane-3 {
     width: 15%;
