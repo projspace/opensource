@@ -1497,7 +1497,7 @@ tr.selected td {
 }
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1427178101');
+  background-image: url('../images/progress.gif?1427964710');
 }
 
 p br {
@@ -1995,7 +1995,16 @@ p br {
   position: relative;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
+<<<<<<< HEAD
   margin-bottom: 5px !important;
+=======
+  float: right;
+  width: 55%;
+  margin-bottom: 3px !important;
+}
+.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title a:hover {
+  text-decoration: none !important;
+>>>>>>> 46fcf6e442db20600e7cfa98010ae59c872d785a
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
   text-align: justify;
@@ -2464,6 +2473,7 @@ label {
   clear: both;
   overflow: hidden;
   padding-top: 1.9em;
+  padding-left: 2rem;
 }
 .region-navigation-top #block-menu-menu-about-menu, .region-navigation-top #block-system-user-menu {
   float: left;
