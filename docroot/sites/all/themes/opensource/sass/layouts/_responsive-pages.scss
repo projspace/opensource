@@ -2,10 +2,7 @@
 
 @media screen and (max-width: 480px)
 {
-.pager
-{
-  padding-bottom : 5%;
-}
+
    .view-contributor-spotlight .badge-visual
   {
      div
@@ -28,19 +25,28 @@
 
   .pane-quicktabs-homepage-tabs ul.quicktabs-tabs
   {
-    li.first
-    {
-      width: 25% !important;
-    }
+    li
+    {  
+      &.first
+      {
+        width: 25% !important;
+      }
 
-    li:nth-child(2)
-    {
+      &:nth-child(2)
+      {
         width: 41% !important;
+      }
+      &.last
+      {
+        top: 3px;
+      }
     }
-    li.last
-    {
-       top: 3px;
-    }
+  }
+
+
+  .menu-name-menu-monthly-favorites
+  {
+    padding-left:12px !important;
   }
 
 
@@ -62,7 +68,10 @@
     {
       width: 100% !important;
     }
-
+    .burr-flipped-content.burr-flipped-content-region.panel-panel
+    {
+      padding-bottom:0 !important;  
+    }
 // Landing Page /////////////////////////////////////
 .section-open-organization.page-taxonomy 
   {
@@ -323,10 +332,9 @@
 
 .burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner
 {
-  padding-top:5% !important;
   .panel-pane 
   {
-    padding: 1% 2% 0 2%;
+    padding: 0% 2% 0 2%;
     ul.menu
     {
       padding: 0 4px !important;
