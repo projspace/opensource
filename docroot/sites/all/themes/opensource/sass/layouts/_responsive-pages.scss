@@ -120,7 +120,7 @@
                 text-align: center;
                 width: 100%;
                 padding-right: 3%;
-
+                
               }
               .views-field-created 
               {
@@ -193,7 +193,15 @@
 // Article Pages
 .page-panels
 {
+  &.section-resources
+  {
+    a.addthis_button_google_plusone , .addthis_button_facebook_like
+    {
+      float: left;
+    }
 
+
+  }
   .panel-pane
 
   {
@@ -236,7 +244,7 @@
     &.pane-block.pane-os-core-opensource-article-share *
     {
       margin-left: 3px;
-      margin-right: 10px;
+      margin-right: 11px;
     }
     .description.mollom-privacy
     {
@@ -416,6 +424,8 @@
   }
 
   }
+
+
 
 
 } ///// MEDIA

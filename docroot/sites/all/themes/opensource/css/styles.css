@@ -2823,6 +2823,9 @@ label {
     text-align: left;
   }
 
+  .page-panels.section-resources a.addthis_button_google_plusone, .page-panels.section-resources .addthis_button_facebook_like {
+    float: left;
+  }
   .page-panels .panel-pane p {
     text-align: justify;
   }
@@ -2851,7 +2854,7 @@ label {
   }
   .page-panels .panel-pane.pane-block.pane-os-core-opensource-article-share * {
     margin-left: 3px;
-    margin-right: 10px;
+    margin-right: 11px;
   }
   .page-panels .panel-pane .description.mollom-privacy {
     padding-bottom: 2%;
