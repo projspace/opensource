@@ -2781,16 +2781,15 @@ label {
     width: 100%;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
-    padding-top: 50%;
     text-align: center;
     width: 100%;
-    padding-right: 3%;
+    padding: 0 0 0.3em 0;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created {
     text-align: center;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
-    padding-top: 5px;
+    padding: 9.3em 0;
     max-height: 48px;
     min-height: 40px;
   }
