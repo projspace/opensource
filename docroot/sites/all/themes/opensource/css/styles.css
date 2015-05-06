@@ -2839,6 +2839,9 @@ label {
   .page-panels .panel-pane h2, .page-panels .panel-pane h3 {
     text-align: center;
   }
+  .page-panels .panel-pane h2.node__title.node-title, .page-panels .panel-pane h3.node__title.node-title {
+    text-align: left !important;
+  }
   .page-panels .panel-pane table {
     width: auto !important;
     margin: 0;

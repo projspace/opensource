@@ -220,6 +220,10 @@
     h2,h3
     {
       text-align: center;
+      &.node__title.node-title
+      {
+        text-align:left !important;
+      }
     }
     table // Community calendar tables;
     {
