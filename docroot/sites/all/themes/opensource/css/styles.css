@@ -2717,14 +2717,17 @@ label {
 }
 
 @media screen and (max-width: 480px) {
-  .view-contributor-spotlight .badge-visual div {
-    display: inline-block;
+  .view-contributor-spotlight .badge-visual {
+    padding-bottom: 5px;
+  }
+  .view-contributor-spotlight .badge-visual div.user-pic {
     float: left;
-    max-width: 103px;
-    padding-top: 2px;
+    max-width: 30%;
   }
   .view-contributor-spotlight .badge-visual div.user-badge {
     float: right;
+    max-width: 61%;
+    padding-bottom: 10px !important;
   }
   .view-contributor-spotlight .badge-visual img {
     width: 50% !important;
@@ -2732,12 +2735,15 @@ label {
 
   .pane-quicktabs-homepage-tabs ul.quicktabs-tabs li.first {
     width: 25% !important;
+    background-size: 62px !important;
   }
   .pane-quicktabs-homepage-tabs ul.quicktabs-tabs li:nth-child(2) {
     width: 41% !important;
+    background-size: 105px !important;
   }
   .pane-quicktabs-homepage-tabs ul.quicktabs-tabs li.last {
     top: 3px;
+    background-size: 85px !important;
   }
 
   .menu-name-menu-monthly-favorites {
@@ -2759,6 +2765,10 @@ label {
     padding-bottom: 0 !important;
   }
 
+  .view.view-display-id-panel_pane_articles .views-row .views-field-title {
+    text-align: center;
+  }
+
   .section-open-organization.page-taxonomy div#main * {
     margin: 0 !important;
   }
@@ -2768,10 +2778,11 @@ label {
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-pane div.view-related-articles .views- {
     float: none !important;
   }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane .show-read-more {
+    text-align: center;
+  }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane .show-read-more .read-more {
-    float: none;
-    position: absolute;
-    padding-top: 10%;
+    float: left;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner img {
     margin-right: 3px !important;
@@ -2781,7 +2792,6 @@ label {
     width: 100%;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
-    text-align: center;
     width: 100%;
     padding: 0 0 0.3em 0;
   }
@@ -2789,9 +2799,10 @@ label {
     text-align: center;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
-    padding: 9.3em 0;
-    max-height: 48px;
-    min-height: 40px;
+    padding: 9.3em 0 0 0;
+  }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-row-last .views-field-created {
+    padding-bottom: 50px;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane {
     width: 100%;
@@ -2825,10 +2836,7 @@ label {
   .page-panels.section-resources a.addthis_button_google_plusone, .page-panels.section-resources .addthis_button_facebook_like {
     float: left;
   }
-  .page-panels .panel-pane p {
-    text-align: justify;
-  }
-  .page-panels .panel-pane h2 {
+  .page-panels .panel-pane h2, .page-panels .panel-pane h3 {
     text-align: center;
   }
   .page-panels .panel-pane table {
