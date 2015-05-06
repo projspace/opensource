@@ -2769,6 +2769,33 @@ label {
     text-align: center;
   }
 
+  .panel-pane.pane-node-comments .submitted {
+    text-align: center;
+    margin-left: 0 !important;
+    max-width: 80% !important;
+  }
+  .panel-pane.pane-node-comments .submitted div {
+    margin-top: 21px !Important;
+  }
+  .panel-pane.pane-node-comments .user-picture-badges {
+    max-width: 20%;
+    float: left;
+  }
+  .panel-pane.pane-node-comments .user-picture-badges .user_badges .badge_role {
+    margin-top: 4px !important;
+  }
+  .panel-pane.pane-node-comments .user-picture-badges .user_badges .badge_role img {
+    max-height: 32px !important;
+  }
+  .panel-pane.pane-node-comments .user_badges div {
+    display: inline !Important;
+    float: left;
+    max-width: 52px !important;
+  }
+  .panel-pane.pane-node-comments .user_badges div.badge_blue {
+    margin-right: 0 !important;
+  }
+
   .section-open-organization.page-taxonomy div#main * {
     margin: 0 !important;
   }
@@ -2836,10 +2863,10 @@ label {
   .page-panels.section-resources a.addthis_button_google_plusone, .page-panels.section-resources .addthis_button_facebook_like {
     float: left;
   }
-  .page-panels .panel-pane h2, .page-panels .panel-pane h3 {
+  .page-panels .panel-pane h1, .page-panels .panel-pane h2, .page-panels .panel-pane h3 {
     text-align: center;
   }
-  .page-panels .panel-pane h2.node__title.node-title, .page-panels .panel-pane h3.node__title.node-title {
+  .page-panels .panel-pane h1.node__title.node-title, .page-panels .panel-pane h2.node__title.node-title, .page-panels .panel-pane h3.node__title.node-title {
     text-align: left !important;
   }
   .page-panels .panel-pane table {
@@ -2882,6 +2909,19 @@ label {
   }
   .section-should-be .user-badge {
     padding-bottom: 15%;
+  }
+
+  .section-opensourcecom-team .burr-flipped-content-inner.burr-flipped-content-region-inner .field-name-body p {
+    margin: 5px 0 0 0;
+  }
+  .section-opensourcecom-team .burr-flipped-content-inner.burr-flipped-content-region-inner .field-name-body p img {
+    float: left;
+    max-width: 30%;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+  .section-opensourcecom-team .burr-flipped-content-inner.burr-flipped-content-region-inner .field-name-body p:nth-child(1) img {
+    max-width: 100% !important;
   }
 
   .view-content .views-row .views-field.views-field-field-lead-image, .view-content .views-row img {

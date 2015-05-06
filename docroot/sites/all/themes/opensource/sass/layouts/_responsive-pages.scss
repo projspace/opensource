@@ -83,6 +83,47 @@
       text-align:center;
     }
 
+    .panel-pane.pane-node-comments
+    {
+      .submitted
+      {
+        text-align:center;
+        margin-left: 0 !important;
+        max-width: 80% !important;
+        div
+        {
+          margin-top: 21px !Important;
+        }
+      }
+
+      .user-picture-badges 
+      {
+        max-width: 20%;
+        float: left;
+        .user_badges .badge_role 
+        {
+          margin-top: 4px !important;
+          img
+          {
+            max-height: 32px !important;
+          }
+        }
+      }
+      
+      .user_badges div 
+      {
+        display: inline !Important;
+        float: left;
+        max-width: 52px !important;
+        &.badge_blue
+        {
+          margin-right: 0 !important;
+        }
+      }
+
+
+    }
+
 // Landing Page /////////////////////////////////////
 .section-open-organization.page-taxonomy 
   {
@@ -217,7 +258,7 @@
 
   {
    
-    h2,h3
+    h1,h2,h3
     {
       text-align: center;
       &.node__title.node-title
@@ -290,7 +331,31 @@
   }
 
 
-
+///  OSDC TEAM PAGE
+.section-opensourcecom-team 
+{
+  .burr-flipped-content-inner.burr-flipped-content-region-inner
+  {
+    .field-name-body
+    {
+      p
+      {
+        margin: 5px 0 0 0;
+        img 
+        {
+          float: left;
+          max-width: 30%;
+          margin-right: 10px;
+          margin-top: 5px;
+        }
+        &:nth-child(1) img
+        {
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+}
 
 
 
