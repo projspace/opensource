@@ -94,6 +94,7 @@
         {
           margin-top: 21px !Important;
         }
+
       }
 
       .user-picture-badges 
@@ -124,7 +125,14 @@
 
     }
 
-
+// ////// Legal Page
+.navbar-vertical
+{
+  #content
+  {
+    padding:0 1em 0 0.5em !Important;
+  }
+}
 
 
 // Landing Page /////////////////////////////////////
@@ -315,11 +323,17 @@
       min-height: 145px;
       width: 50%;
     }
-    iframe
+    iframe , object
     {
       max-width: 100% !important;
     }
-
+    form.comment-form
+    {
+      div.form-actions.form-wrapper 
+      {
+        margin-top: 10px;
+      }
+    }
   }
 
 }
@@ -338,9 +352,19 @@
     .views-field.views-field-user-badges-html
     {
       width: 100%;
+      .user-pic img
+      {
+        max-height: 76px;
+      }
       .user-badge
       {
-        padding-bottom : 15%;      
+        padding-bottom : 15%;    
+        a
+        {
+          max-width: 50%;
+          float: left;
+          padding: 0 2px 2px 0;
+        }  
       }
     }
   }

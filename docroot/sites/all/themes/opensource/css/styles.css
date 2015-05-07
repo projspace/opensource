@@ -2796,6 +2796,10 @@ label {
     margin-right: 0 !important;
   }
 
+  .navbar-vertical #content {
+    padding: 0 1em 0 0.5em !Important;
+  }
+
   .section-open-organization.page-taxonomy div#main * {
     margin: 0 !important;
   }
@@ -2904,8 +2908,11 @@ label {
     min-height: 145px;
     width: 50%;
   }
-  .page-panels .panel-pane iframe {
+  .page-panels .panel-pane iframe, .page-panels .panel-pane object {
     max-width: 100% !important;
+  }
+  .page-panels .panel-pane form.comment-form div.form-actions.form-wrapper {
+    margin-top: 10px;
   }
 
   .section-should-be .views-field-field-community-description {
@@ -2917,8 +2924,16 @@ label {
   .section-should-be .views-field.views-field-user-badges-html {
     width: 100%;
   }
+  .section-should-be .views-field.views-field-user-badges-html .user-pic img {
+    max-height: 76px;
+  }
   .section-should-be .views-field.views-field-user-badges-html .user-badge {
     padding-bottom: 15%;
+  }
+  .section-should-be .views-field.views-field-user-badges-html .user-badge a {
+    max-width: 50%;
+    float: left;
+    padding: 0 2px 2px 0;
   }
 
   .section-opensourcecom-team .burr-flipped-content-inner.burr-flipped-content-region-inner .field-name-body p {
