@@ -1964,7 +1964,6 @@ p br {
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles {
   top: 42px;
   position: relative;
-  padding-top: 3px;
   border-top: 1px solid #CCCCCC;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .pane-title {
@@ -1983,6 +1982,12 @@ p br {
   float: left;
   margin-right: 8px;
 }
+.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-row.views-row-1 {
+  padding-top: 0px !important;
+}
+.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-row.views-row-1 .views-field-title {
+  margin-top: -6px;
+}
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-field-lead-image {
   float: left;
 }
@@ -1993,15 +1998,16 @@ p br {
   position: relative;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
-  margin-bottom: 5px !important;
+  margin-bottom: 2px !important;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
   text-align: justify;
   min-height: 98px;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-row {
+  padding: 19px 0 !important;
+  display: inline-block;
   margin-bottom: 0px;
-  padding: 20px 0 !important;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar {
   width: 365px !important;

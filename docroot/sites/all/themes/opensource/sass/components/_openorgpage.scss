@@ -41,7 +41,6 @@
   {
     top: 42px;
     position: relative;
-    padding-top: 3px;
     border-top : 1px solid #CCCCCC;
   }
   .pane-title
@@ -72,6 +71,14 @@
   // }
 .view-channel-articles 
 {
+  .views-row.views-row-1
+  {
+        padding-top:0px !important;
+        .views-field-title
+        {
+          margin-top:-6px;
+        }
+  }
   .views-field-field-lead-image
   {
       float: left;
@@ -86,7 +93,7 @@
     }
     .views-field-title 
     {
-        margin-bottom: 5px !important;
+        margin-bottom: 2px !important;
     }
 
     .views-field-body
@@ -99,8 +106,9 @@
 
     .views-row 
     {
-      margin-bottom:0px;
-      padding:20px 0 !important;
+      padding: 19px 0 !important;
+      display: inline-block;
+      margin-bottom: 0px;
     }
 
    }
