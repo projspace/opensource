@@ -1497,7 +1497,7 @@ tr.selected td {
 }
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1427964710');
+  background-image: url('../images/progress.gif?1427178101');
 }
 
 p br {
@@ -1962,7 +1962,7 @@ p br {
   display: none;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles {
-  top: 68px;
+  top: 42px;
   position: relative;
   padding-top: 3px;
   border-top: 1px solid #CCCCCC;
@@ -1985,40 +1985,23 @@ p br {
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-field-lead-image {
   float: left;
-  margin-right: 10px;
-  position: absolute;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles img {
-  width: 222px;
-  height: 127px;
+  width: 162px;
+  height: 92px;
   float: left;
   position: relative;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
-<<<<<<< HEAD
   margin-bottom: 5px !important;
-=======
-  float: right;
-  width: 55%;
-  margin-bottom: 3px !important;
-}
-.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title a:hover {
-  text-decoration: none !important;
->>>>>>> 46fcf6e442db20600e7cfa98010ae59c872d785a
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
   text-align: justify;
-  margin-left: 233px;
-  width: 54%;
-  overflow: hidden;
-  min-height: 115px;
+  min-height: 98px;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-row {
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   padding: 20px 0 !important;
-}
-.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-created {
-  padding-top: 5%;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar {
   width: 365px !important;
@@ -2075,7 +2058,7 @@ p br {
   border: none !important;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane.pane-4 {
-  padding-top: 30px !important;
+  padding-top: 0px !important;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner h2 {
   color: #39f;

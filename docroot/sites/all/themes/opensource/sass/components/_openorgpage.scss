@@ -39,11 +39,11 @@
 { 
   .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles
   {
-      top: 68px;
-  position: relative;
-  padding-top: 3px;
-      border-top : 1px solid #CCCCCC;
-}
+    top: 42px;
+    position: relative;
+    padding-top: 3px;
+    border-top : 1px solid #CCCCCC;
+  }
   .pane-title
   {
   line-height: 2 !important;
@@ -75,13 +75,11 @@
   .views-field-field-lead-image
   {
       float: left;
-      margin-right: 10px;
-      position: absolute;
   }
 
     img {
-      width: 222px;
-      height: 127px;
+      width: 162px;
+      height: 92px;
       float: left;
       position: relative;
       
@@ -93,24 +91,16 @@
 
     .views-field-body
     {
-         text-align: justify;
-         margin-left: 233px;
-         width: 54%;
-         overflow: hidden;
-         min-height: 115px;
+      text-align: justify;
+      min-height: 98px;
         
     }
 
 
     .views-row 
     {
-      margin-bottom: 15px;
+      margin-bottom:0px;
       padding:20px 0 !important;
-    }
-
-    .views-field-created 
-    {
-      padding-top: 5%;
     }
 
    }
@@ -192,7 +182,7 @@
       }
       &.pane-4
       {
-        padding-top : 30px !important;
+        padding-top : 0px !important;
       }
 
     }
