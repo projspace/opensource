@@ -124,6 +124,9 @@
 
     }
 
+
+
+
 // Landing Page /////////////////////////////////////
 .section-open-organization.page-taxonomy 
   {
@@ -307,6 +310,10 @@
     {
       min-height: 145px;
       width: 50%;
+    }
+    iframe
+    {
+      max-width: 100% !important;
     }
 
   }

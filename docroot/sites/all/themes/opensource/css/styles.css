@@ -2900,6 +2900,9 @@ label {
     min-height: 145px;
     width: 50%;
   }
+  .page-panels .panel-pane iframe {
+    max-width: 100% !important;
+  }
 
   .section-should-be .views-field-field-community-description {
     width: 100% !important;
