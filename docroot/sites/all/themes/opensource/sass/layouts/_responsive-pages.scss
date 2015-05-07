@@ -204,7 +204,11 @@
             top: 35px;
             padding-top:0px;
            }
-
+            .pager
+            {
+              position: relative;
+              top: -43px;
+            }
           } // INNER
         }
 
@@ -331,9 +335,13 @@
      text-align: justify;
      display: table;   
     }
-    .user-badge
+    .views-field.views-field-user-badges-html
     {
-      padding-bottom : 15%;      
+      width: 100%;
+      .user-badge
+      {
+        padding-bottom : 15%;      
+      }
     }
   }
 

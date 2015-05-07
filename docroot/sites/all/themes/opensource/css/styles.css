@@ -2842,6 +2842,10 @@ label {
     top: 35px;
     padding-top: 0px;
   }
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .pager {
+    position: relative;
+    top: -43px;
+  }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar {
     width: 100% !important;
   }
@@ -2910,7 +2914,10 @@ label {
     text-align: justify;
     display: table;
   }
-  .section-should-be .user-badge {
+  .section-should-be .views-field.views-field-user-badges-html {
+    width: 100%;
+  }
+  .section-should-be .views-field.views-field-user-badges-html .user-badge {
     padding-bottom: 15%;
   }
 
