@@ -45,14 +45,23 @@
   .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles
   {
     top: 42px;
+    > h2
+    {
+      margin:12px 0 -12px 0;
+    }
   }
   .pane-title
   {
-  line-height: 2 !important;
-  color: #39f;
-  margin-top: -15px;
-  padding-bottom: 10px;
-  padding-right: 2.5em;
+    color: #39f;
+  }
+
+  .panel-pane.pane-custom.pane-1 .pane-title
+  {
+    line-height: 2 !important;
+    margin-top: -15px;
+    padding-bottom: 10px;
+    padding-right: 2.5em;
+
   &:after
   {
     content: "" !important;
@@ -170,12 +179,12 @@
     {
 
       padding-top: 8px;
-      & header
-      {
-      padding-top: 8px;
+      // & header
+      // {
+      // padding-top: 8px;
       
 
-      }
+      // }
       &:first-child
       {
         padding-top:0 !important;
@@ -183,10 +192,11 @@
       &:last-child
       {
         border:none !important;
+        padding-top:0 !important;
       }
       &.pane-4
       {
-        padding-top : 0px !important;
+        padding-top : 2px !important;
       }
 
     }

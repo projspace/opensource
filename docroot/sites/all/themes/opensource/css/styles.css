@@ -1968,14 +1968,19 @@ p br {
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles {
   top: 42px;
 }
+.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles > h2 {
+  margin: 12px 0 -12px 0;
+}
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .pane-title {
-  line-height: 2 !important;
   color: #39f;
+}
+.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane.pane-custom.pane-1 .pane-title {
+  line-height: 2 !important;
   margin-top: -15px;
   padding-bottom: 10px;
   padding-right: 2.5em;
 }
-.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .pane-title:after {
+.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane.pane-custom.pane-1 .pane-title:after {
   content: "" !important;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner img {
@@ -2050,17 +2055,15 @@ p br {
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane {
   padding-top: 8px;
 }
-.section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane header {
-  padding-top: 8px;
-}
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane:first-child {
   padding-top: 0 !important;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane:last-child {
   border: none !important;
+  padding-top: 0 !important;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane.pane-4 {
-  padding-top: 0px !important;
+  padding-top: 2px !important;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner h2 {
   color: #39f;
