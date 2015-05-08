@@ -635,15 +635,5 @@ if (!drupal_is_cli() && isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_EN
 }
 
 
-   $databases['default']['default'] = array(
-      'driver' => 'mysql',
-      'database' => 'os7',
-      'username' => 'root',
-      'password' => '',
-      'host' => 'localhost',
-      'prefix' => '',
-    );
-
-
 // increase memory limit to 256M
 ini_set("memory_limit","256M");
