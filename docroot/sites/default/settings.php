@@ -74,6 +74,7 @@
  *   'collation' => 'utf8_general_ci',
  * );
  * @endcode
+ *
  * The "driver" property indicates what Drupal database driver the
  * connection should use.  This is usually the same as the name of the
  * database type, such as mysql or sqlite, but not always.  The other
@@ -241,7 +242,6 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-
 $drupal_hash_salt = '';
 
 /**
@@ -634,6 +634,16 @@ if (!drupal_is_cli() && isset($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_EN
   $conf['reverse_proxy_addresses'] = isset($conf['reverse_proxy_addresses']) ? array_merge($conf['reverse_proxy_addresses'], $elbAddresses) : $elbAddresses;
 }
 
+
+   $databases['default']['default'] = array(
+      'driver' => 'mysql',
+      'database' => 'os7',
+      'username' => 'root',
+      'password' => '',
+      'host' => 'localhost',
+      'prefix' => '',
+    );
+
+
 // increase memory limit to 256M
 ini_set("memory_limit","256M");
-

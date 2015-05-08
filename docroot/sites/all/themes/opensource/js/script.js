@@ -1,6 +1,6 @@
 (function(window, $) {
 	$(document).ready(function() {
-$( ".burr-flipped-content-inner .pane-1 p:nth-child(3)" ).addClass( "show-read-more" );
+$( ".burr-flipped-content-inner .pane-1 p:last-child" ).addClass( "show-read-more" );
 		$('#search-block-form #edit-search-block-form--2')
 			.attr('placeholder', 'Search opensource.com');
 
