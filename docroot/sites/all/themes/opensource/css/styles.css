@@ -1961,10 +1961,12 @@ p br {
 .section-open-organization.page-taxonomy .panel-panel .show-read-more .more-text {
   display: none;
 }
+.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner > .panel-pane.pane-custom {
+  border-bottom: 1px solid #CCCCCC;
+  min-height: 265px;
+}
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles {
   top: 42px;
-  position: relative;
-  border-top: 1px solid #CCCCCC;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .pane-title {
   line-height: 2 !important;
@@ -1981,9 +1983,6 @@ p br {
   height: 213px;
   float: left;
   margin-right: 8px;
-}
-.section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-row.views-row-1 {
-  padding-top: 0px !important;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-field-lead-image {
   float: left;
