@@ -2052,18 +2052,14 @@ p br {
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner {
   padding: 5px 10px;
 }
-.section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane {
-  padding-top: 8px;
+.section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane.pane-2 {
+  margin-bottom: 39px;
 }
-.section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane:first-child {
-  padding-top: 0 !important;
-}
-.section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane:last-child {
-  border: none !important;
-  padding-top: 0 !important;
+.section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane.pane-3 {
+  margin-bottom: 52px;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner .panel-pane.pane-4 {
-  padding-top: 2px !important;
+  margin-bottom: 29px;
 }
 .section-open-organization.page-taxonomy .panel-panel.burr-flipped-sidebar .panel-panel-inner h2 {
   color: #39f;

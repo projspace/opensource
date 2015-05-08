@@ -177,26 +177,19 @@
     padding:5px 10px;
     .panel-pane
     {
-
-      padding-top: 8px;
-      // & header
-      // {
-      // padding-top: 8px;
-      
-
-      // }
-      &:first-child
+      &.pane-2
       {
-        padding-top:0 !important;
+        margin-bottom: 39px;
       }
-      &:last-child
+
+      &.pane-3
       {
-        border:none !important;
-        padding-top:0 !important;
+        margin-bottom: 52px;
       }
+
       &.pane-4
       {
-        padding-top : 2px !important;
+        margin-bottom: 29px;
       }
 
     }
