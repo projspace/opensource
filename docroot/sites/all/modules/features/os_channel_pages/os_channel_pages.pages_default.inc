@@ -206,11 +206,13 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->panel = 'sidebar';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-opensource-resources-homepa';
-    $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->shown = FALSE;
+    $pane->access = array(
+      'logic' => 'and',
+    );
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Open source resources',
+      'override_title_text' => '<none>',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -393,10 +395,22 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-11';
     $pane->panel = 'sidebar';
-    $pane->type = 'panels_mini';
-    $pane->subtype = 'common_1';
+    $pane->type = 'block';
+    $pane->subtype = 'block-1';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'tags/openstack',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_title' => 1,
       'override_title_text' => '',
@@ -411,6 +425,27 @@ function os_channel_pages_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-11'] = $pane;
     $display->panels['sidebar'][0] = 'new-11';
+    $pane = new stdClass();
+    $pane->pid = 'new-12';
+    $pane->panel = 'sidebar';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'common_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-12'] = $pane;
+    $display->panels['sidebar'][1] = 'new-12';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

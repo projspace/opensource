@@ -13,6 +13,7 @@
 // Custom components
 @import "components/article";
 @import "components/homepage";
+@import "components/openorgpage";
 @import "print";
 
 @import "partials/base/drupal-resets";
@@ -23,7 +24,9 @@
 
 @import "partials/header/top-nav";
 @import "partials/header/banner";
-@import "partials/header/main-nav";
+
+@import "partials/header/sf-nav";
+@import "layouts/responsive-pages";
 
 @import "partials/footer/footer-top";
 @import "partials/footer/footer-nav";
@@ -61,3 +64,5 @@
 @import "partials/sidebar/_filter";
 @import "partials/sidebar/_sidebar-base";
 @import "partials/unpublished/_unpublished";
+
+@import "partials/media";

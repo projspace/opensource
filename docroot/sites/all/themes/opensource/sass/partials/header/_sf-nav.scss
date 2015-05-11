@@ -1,0 +1,202 @@
+.block-title,
+#navigation #main-menu {
+  display: none;
+}
+
+
+.block-superfish {
+  margin: 0;
+  padding: 0;
+  background: rgb(94, 106, 113);
+  height: 50px;
+  * {
+    text-decoration: none;
+  }
+
+  .sf-main-menu ul {
+  padding: 0px !important;
+
+}
+
+
+  li.active-trail {
+    background:white ;
+    color:#5D6871;
+    a {
+      color: #0099CC !important;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+
+
+  li {
+    background: none repeat scroll 0 0 #D2D3D4;
+    font-size: 1.3em;
+    text-align: center;
+    padding:0px !important;
+
+    &.sf-depth-1 {
+      margin-top:5px;
+      margin-right: 5.5px;
+
+      .active-trail > a {
+        color: #0099CC !important ;
+      }
+    }
+    &.last {
+      margin-right: 0px;
+    }
+    &:hover , &a:hover {
+      color:white !important;
+    }
+    a {
+      color: white;
+      width: 100% !important;
+    }
+    a.sf-depth-1 {
+      color: #5D6871;
+    }
+
+  }
+
+  .menuparent ul {
+            // margin:7px 0px;
+            font-size:11px;
+            background:#0099CC;
+
+            li a,
+            li {
+              background:#0099CC;
+            }
+          }
+
+          .sf-main-menu {
+            ul,
+            a {
+              width: 100% !important;
+            }
+
+            li a:hover {
+              background:#0099CC;
+            }
+
+            li.sf-depth-1{
+              position: relative;
+
+              &.last ul li:hover ul {
+                left: -100% !important;
+
+                a {
+                  // margin-left:-6px !important;
+                  // margin-top: 0px !important;
+                }
+              }
+              &.sf-depth-2:after , a.sf-depth-3:before {
+                content: "" !important;
+                position:absolute;
+
+              }
+              &:after {
+                content: '\e803';
+                position: absolute;
+                right: 11px;
+                top: 29%;
+                font-family: "fontello";
+                font-size: 1.2em;
+                color: #5D6871;
+              }
+
+              &:hover {
+                &:after {
+                  content: '\e804';
+                  font-family: "fontello";
+                  font-size: 1.2em;
+                  top: 29%;
+                  position: absolute;
+                  color:white;
+                }
+                a {
+                  color: white !important;
+                  background : #0099CC;
+                }
+              }
+            }
+
+
+            li.sf-depth-2 {
+              // margin-left: 0px;
+              top:17px;
+              a {
+                text-align: left;
+                padding:12px !important;
+                &.sf-depth-2{
+                  padding-left:16% !important;
+                }
+                &:before {
+                  content: '\e805';
+                  font-size: 1em;
+                  font-family: "fontello";
+                  position: absolute;
+                  left:7% !important;
+
+                }
+                &:hover {
+                  color: #5D6871 !important;
+                  background : #D2D3D4;
+                }
+              }
+              .sf-hidden li a {
+                overflow: hidden !important;
+              }
+            }
+            li.sf-depth-3 a
+            {
+              padding:12px !important;
+            }
+            .sf-depth-1 > ul {
+              overflow: visible !important;
+            }
+            li.sf-depth-1.last
+            {
+              margin-right: 0px !important;
+            }
+            li.sf-depth-2.menuparent:hover  ul {
+              position: absolute !important;
+              left: 100% !important;
+
+              a {
+                width: auto !important;
+                z-index:-111111 !important;
+
+              }
+            }
+
+          } // sf-menu
+
+        } // block-superfish
+
+
+
+
+        // ///////////////////////////////////////////////
+        .block-superfish .sf-menu-5 {
+          li{
+            &.sf-depth-2 {
+              width: 100% !important;
+              top:17px;
+
+              &.menuparent:hover ul {
+                left:100% !important;
+              }
+            }
+            &.sf-depth-3,
+            &.sf-depth-3  a {
+              // margin-top:0px !important;
+            }
+
+          }
+
+        }
