@@ -58,6 +58,9 @@ function os_homepage_default_page_manager_pages() {
         'title' => array(
           'value' => 'Open source is changing the world: join the movement | [site:name]',
         ),
+        'description' => array(
+          'value' => 'Explore how the principles behind open source--collaboration, transparency, and rapid prototyping--are proven catalysts for innovation.',
+        ),
       ),
     ),
   );
@@ -108,9 +111,15 @@ function os_homepage_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Open source resources',
+      'override_title_text' => '<none>',
     );
-    $pane->cache = array();
+    $pane->cache = array(
+      'method' => 'simple',
+      'settings' => array(
+        'lifetime' => '86400',
+        'granularity' => 'none',
+      ),
+    );
     $pane->style = array(
       'settings' => NULL,
     );
@@ -129,7 +138,9 @@ function os_homepage_default_page_manager_pages() {
     $pane->type = 'block';
     $pane->subtype = 'bean-readers-favorite-homepage';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'logic' => 'and',
+    );
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',
@@ -195,7 +206,13 @@ function os_homepage_default_page_manager_pages() {
       'override_title' => 0,
       'override_title_text' => '',
     );
-    $pane->cache = array();
+    $pane->cache = array(
+      'method' => 'simple',
+      'settings' => array(
+        'lifetime' => '86400',
+        'granularity' => 'none',
+      ),
+    );
     $pane->style = array(
       'settings' => NULL,
     );
