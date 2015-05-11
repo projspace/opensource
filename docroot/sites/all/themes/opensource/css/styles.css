@@ -1746,7 +1746,7 @@ p br {
   right: 2px;
 }
 
-#quicktabs-homepage_tabs .item-list li {
+#quicktabs-homepage_tabs .item-list ul.quicktabs-tabs li {
   background-position: center !important;
   border-right: 1px solid #ccc;
   width: 33.33%;
@@ -1754,26 +1754,26 @@ p br {
   display: block;
   position: relative;
 }
-#quicktabs-homepage_tabs .item-list li.first {
+#quicktabs-homepage_tabs .item-list ul.quicktabs-tabs li.first {
   background: url(../images/osdc_featured_active.png) no-repeat;
 }
-#quicktabs-homepage_tabs .item-list li.first.active {
+#quicktabs-homepage_tabs .item-list ul.quicktabs-tabs li.first.active {
   background: url(../images/osdc_featured_inactive.png) no-repeat;
 }
-#quicktabs-homepage_tabs .item-list li.last {
+#quicktabs-homepage_tabs .item-list ul.quicktabs-tabs li.last {
   background: url(../images/osdc_mostpopular_active.png) no-repeat;
   border-right: none;
 }
-#quicktabs-homepage_tabs .item-list li.last.active {
+#quicktabs-homepage_tabs .item-list ul.quicktabs-tabs li.last.active {
   background: url(../images/osdc_mostpopular_inactive.png) no-repeat;
 }
-#quicktabs-homepage_tabs .item-list li:nth-child(2) {
+#quicktabs-homepage_tabs .item-list ul.quicktabs-tabs li:nth-child(2) {
   background: url(../images/osdc_mostcomments_active.png) no-repeat;
 }
-#quicktabs-homepage_tabs .item-list li:nth-child(2).active {
+#quicktabs-homepage_tabs .item-list ul.quicktabs-tabs li:nth-child(2).active {
   background: url(../images/osdc_mostcomments_inactive.png) no-repeat;
 }
-#quicktabs-homepage_tabs .item-list li a {
+#quicktabs-homepage_tabs .item-list ul.quicktabs-tabs li a {
   color: transparent;
   padding: 0.25em 1em 0;
   display: block;
@@ -2717,11 +2717,11 @@ label {
   .view-contributor-spotlight .badge-visual {
     padding-bottom: 5px;
   }
-  .view-contributor-spotlight .badge-visual div.user-pic {
+  .view-contributor-spotlight .badge-visual .user-pic {
     float: left;
     max-width: 30%;
   }
-  .view-contributor-spotlight .badge-visual div.user-badge {
+  .view-contributor-spotlight .badge-visual .user-badge {
     float: right;
     max-width: 61%;
     padding-bottom: 10px !important;
@@ -2816,7 +2816,10 @@ label {
     margin-right: 3px !important;
     width: 47%;
   }
-  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-field-lead-image, .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles img, .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title, .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-field-lead-image,
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles img,
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title,
+  .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-body {
     width: 100%;
   }
   .section-open-organization.page-taxonomy .panel-panel.burr-flipped-content .panel-panel-inner .view-channel-articles .views-field-title {
