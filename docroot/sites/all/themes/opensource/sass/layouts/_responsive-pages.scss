@@ -1,0 +1,548 @@
+
+
+@media screen and (max-width: 480px)
+{
+
+   .view-contributor-spotlight .badge-visual
+  {
+    padding-bottom : 5px;
+     div.user-pic
+    {
+      float: left;
+      max-width: 30%;
+    }
+    div.user-badge
+    {
+      float: right;
+      max-width:61%;
+      padding-bottom :10px !important;
+    }
+
+    img
+    {
+      width: 50% !important
+    }
+  }
+
+
+  .pane-quicktabs-homepage-tabs ul.quicktabs-tabs
+  {
+    li
+    {  
+      &.first
+      {
+        width: 25% !important;
+        background-size: 62px !important;
+      }
+
+      &:nth-child(2)
+      {
+        width: 41% !important;
+        background-size: 105px !important;
+      }
+      &.last
+      {
+        top: 3px;
+        background-size: 85px !important;
+      }
+    }
+  }
+
+
+  .menu-name-menu-monthly-favorites
+  {
+    padding-left:12px !important;
+  }
+
+
+
+  .poll 
+    {
+    .choices
+    {
+        padding: 5% 0 5% 0 ;
+    }
+   .form-submit
+      {
+        width: 100%;
+
+      } 
+    }
+
+    .pane-3.event-add-comment
+    {
+      width: 100% !important;
+    }
+    .burr-flipped-content.burr-flipped-content-region.panel-panel
+    {
+      padding-bottom:0 !important;  
+    }
+
+   .view.view-display-id-panel_pane_articles .views-row .views-field-title 
+    {
+      text-align:center;
+    }
+
+    .panel-pane.pane-node-comments
+    {
+      .submitted
+      {
+        text-align:center;
+        margin-left: 0 !important;
+        max-width: 80% !important;
+        div
+        {
+          margin-top: 21px !Important;
+        }
+
+      }
+
+      .user-picture-badges 
+      {
+        max-width: 20%;
+        float: left;
+        .user_badges .badge_role 
+        {
+          margin-top: 4px !important;
+          img
+          {
+            max-height: 32px !important;
+          }
+        }
+      }
+      
+      .user_badges div 
+      {
+        display: inline !Important;
+        float: left;
+        max-width: 52px !important;
+        &.badge_blue
+        {
+          margin-right: 0 !important;
+        }
+      }
+
+
+    }
+
+// ////// Legal Page
+.navbar-vertical
+{
+  #content
+  {
+    padding:0 1em 0 0.5em !Important;
+  }
+}
+
+
+// Landing Page /////////////////////////////////////
+.section-open-organization.page-taxonomy 
+  {
+    div#main
+    {
+      *
+      { 
+      margin: 0 !important ;
+      }
+    }
+
+    .panel-panel.burr-flipped-content 
+      {
+          padding-bottom: 10%;
+        .panel-pane div.view-related-articles .views-
+        {
+
+         float:none !important
+
+       }
+        .panel-panel-inner
+        {
+          .panel-pane .show-read-more
+          {
+            text-align:center;
+            .read-more
+            {
+            float: left;
+            }
+
+          }
+          img
+          {
+              margin-right: 3px !important;
+              width: 47%;
+          }
+          .view-channel-articles 
+          {
+              .views-field-field-lead-image , img ,.views-field-title,.views-field-body
+              {
+                width: 100%;
+              }
+              .views-field-title
+              {
+                width: 100%;
+                padding: 0 0 0.3em 0;
+                                
+              }
+              .views-field-created 
+              {
+              text-align: center;
+              }
+              .views-field-body
+              {
+                  padding: 9.3em 0 0 0;
+              }
+              .views-row-last .views-field-created
+              {
+                padding-bottom:50px;
+              }
+
+          }
+          .panel-pane
+           {
+             width:100%;
+             .pane-title
+             {
+               text-align:center;
+               padding-right: 0;
+             }
+           }
+
+           .panel-pane.pane-views-panes.pane-channel-articles-panel-pane-articles
+           {
+            top: 35px;
+            padding-top:0px;
+           }
+            .pager
+            {
+              position: relative;
+              top: -43px;
+            }
+          } // INNER
+        }
+
+        .panel-panel.burr-flipped-sidebar
+        {
+          width: 100% !important;
+          .panel-panel-inner 
+          {
+            .pane-3
+            {
+              width: 100% !important;
+            }
+            h2
+            {
+              text-align: center;
+            }
+
+          }
+          header h2
+          {
+            text-align: justify !important;
+          }
+          
+        .panel-pane.pane-custom.pane-4
+        {
+          h2
+          {
+          padding-left:15% !important;
+          padding-bottom:3%;
+          text-align:left;
+          }
+        }
+
+        }
+      }
+//////////////////////////////////////////////
+
+
+/////////////////////////////////Gen//////////////////
+
+// Article Pages
+.page-panels
+{
+  &.section-resources
+  {
+    a.addthis_button_google_plusone , .addthis_button_facebook_like
+    {
+      float: left;
+    }
+
+
+  }
+  .panel-pane
+
+  {
+   
+    h1,h2,h3
+    {
+      text-align: center;
+      &.node__title.node-title
+      {
+        text-align:left !important;
+      }
+    }
+    table // Community calendar tables;
+    {
+      width: auto !important;
+      margin : 0;
+    }
+    &.article-title p ,&.basic_title p
+    {
+      text-align:center !important;
+    }
+    &.pane-2.author-feed, &.pane-node-author
+    {
+      width: auto;
+      float: none;
+    }
+    &.pane-2.author-feed
+    {
+      float: left !important;
+    }
+    &.pane-3
+    {
+      width: 15%;
+    }
+
+    &.pane-node-field-rating
+    {
+      width: 85%;
+    }
+
+    &.pane-block.pane-os-core-opensource-article-share *
+    {
+      margin-left: 3px;
+      margin-right: 11px;
+    }
+    .description.mollom-privacy
+    {
+      padding-bottom : 2%;
+    }
+    &.pane-related-articles-panel-pane-1 .view-content .views-row
+    {
+      min-height: 145px;
+      width: 50%;
+    }
+    iframe , object
+    {
+      max-width: 100% !important;
+    }
+    form.comment-form
+    {
+      div.form-actions.form-wrapper 
+      {
+        margin-top: 10px;
+      }
+    }
+  }
+
+}
+
+
+// Should Be spotlight section
+.section-should-be
+  {
+   .views-field-field-community-description
+    {
+     width: 100% !important;
+     float: none !important;
+     text-align: justify;
+     display: table;   
+    }
+    .views-field.views-field-user-badges-html
+    {
+      width: 100%;
+      .user-pic img
+      {
+        max-height: 76px;
+      }
+      .user-badge
+      {
+        padding-bottom : 15%;    
+        a
+        {
+          max-width: 50%;
+          float: left;
+          padding: 0 2px 2px 0;
+        }  
+      }
+    }
+  }
+
+
+///  OSDC TEAM PAGE
+.section-opensourcecom-team 
+{
+  .burr-flipped-content-inner.burr-flipped-content-region-inner
+  {
+    .field-name-body
+    {
+      p
+      {
+        margin: 5px 0 0 0;
+        img 
+        {
+          float: left;
+          max-width: 30%;
+          margin-right: 10px;
+          margin-top: 5px;
+        }
+        &:nth-child(1) img
+        {
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// 
+.view-content 
+{
+ .views-row
+
+  {
+
+    .views-field.views-field-field-lead-image , &   img
+    {
+      width:100% !important;
+    }
+
+    .views-field-article-content
+    {
+      width: 100% !important;
+      .teaser-main *
+      {
+        padding-top:2%;
+        text-align: center;
+      }
+
+      .teaser-channel-article
+      {
+
+      }
+
+      .teaser-title
+      {
+
+
+      }
+
+      .teaser-body
+      {
+        text-align:left;
+      }
+
+    }
+
+    .views-field-created
+    {
+      text-align:center;
+      padding-top: 1em;
+
+      .teaser-info span.teaser-author
+      {
+        float: left;
+        padding-left: 24%;
+      } 
+    }
+  }
+
+}
+
+
+.burr-flipped-sidebar-inner.burr-flipped-content-region-inner.panel-panel-inner
+{
+  .panel-pane 
+  {
+    padding: 0% 2% 0 2%;
+    ul.menu
+    {
+      padding: 0 4px !important;
+      margin: 0 !important;
+      li a
+      {
+        padding:0 !important;
+      }
+    }
+    ul.social-links.inline
+    {
+      li
+      {
+        padding:0 0.94em 0 0 !important;
+      &.last
+      {
+        padding-right: 0 !important;
+
+      }
+
+      }
+    .signup-email
+    {
+      background-position: 3.5em;
+      padding: 4em 0em 0em 0em;
+      float: left;
+      width: 100%;
+      margin: 0;
+
+      
+    }
+    
+    }
+    &.pane-os-core-opensource-social-links
+    {
+      form div
+      {
+        .form-submit
+        {
+          margin-right: 0;
+        }
+      }
+      .signup-email-title
+      {
+        margin-left: 3.5em !important;
+      }
+    }
+
+  &.panel-pane.pane-views-panes.pane-poll-homepage-panel-pane-1.box-wrapper
+  {
+    .poll .form-submit
+    {
+      width: 100%;
+    }
+  }
+  &.panel-pane.pane-views-panes.pane-contributor-spotlight-panel-pane-promoted
+  {
+    div.views-field-user-badges-html
+    {
+      width: 100%;
+    }
+    .views-field-field-community-description
+    {
+      float: none !important;
+      display: table-cell;
+      text-align: justify;
+    }
+    .more-link 
+    {
+      text-align: center !important;
+    }
+  }
+  .entity-bean .content .field-item.even img
+  {
+    margin : 2px 0 2px 0px !important;
+    width: 100%;
+  }
+
+  }
+
+  }
+
+
+
+
+} ///// MEDIA
+
