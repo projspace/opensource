@@ -47,7 +47,7 @@ function opensource_open_organization_default_page_manager_handlers() {
             2 => array(),
             1 => array(),
             5 => array(
-              10153 => '10153',
+              10661 => '10661',
             ),
             7 => array(),
             3 => array(),
@@ -110,6 +110,9 @@ function opensource_open_organization_default_page_manager_handlers() {
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
+      'override_title' => '',
+      'override_title_text' => '',
+      'widget_title' => 'Articles',
     );
     $pane->cache = array();
     $pane->style = array(
